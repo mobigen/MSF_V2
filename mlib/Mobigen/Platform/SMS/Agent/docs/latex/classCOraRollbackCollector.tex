@@ -1,0 +1,71 @@
+\section{COra\-Rollback\-Collector  클래스 참조}
+\label{classCOraRollbackCollector}\index{COraRollbackCollector@{COra\-Rollback\-Collector}}
+Rollback 상태 정보(Rollback segment name, status)를 수집하는 클래스. 
+
+
+{\tt \#include $<$COra\-Rollback\-Collector.h$>$}
+
+COra\-Rollback\-Collector에 대한 상속 도표:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCOraRollbackCollector}
+\end{center}
+\end{figure}
+\subsection*{공용 메소드}
+\begin{CompactItemize}
+\item 
+{\bf COra\-Rollback\-Collector} ()
+\item 
+virtual {\bf $\sim$COra\-Rollback\-Collector} ()
+\item 
+void {\bf collect} ()
+\item 
+bool {\bf collect\-Ora\-Data} ()
+\item 
+void {\bf make\-Message} ()
+\end{CompactItemize}
+
+
+\subsection{상세한 내용}
+Rollback 상태 정보(Rollback segment name, status)를 수집하는 클래스.
+
+
+
+\subsection{생성자 \& 소멸자 문서화}
+\index{COraRollbackCollector@{COra\-Rollback\-Collector}!COraRollbackCollector@{COraRollbackCollector}}
+\index{COraRollbackCollector@{COraRollbackCollector}!COraRollbackCollector@{COra\-Rollback\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}COra\-Rollback\-Collector::COra\-Rollback\-Collector ()}\label{classCOraRollbackCollector_a0}
+
+
+생성자 \index{COraRollbackCollector@{COra\-Rollback\-Collector}!~COraRollbackCollector@{$\sim$COraRollbackCollector}}
+\index{~COraRollbackCollector@{$\sim$COraRollbackCollector}!COraRollbackCollector@{COra\-Rollback\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}COra\-Rollback\-Collector::$\sim$COra\-Rollback\-Collector ()\hspace{0.3cm}{\tt  [virtual]}}\label{classCOraRollbackCollector_a1}
+
+
+소멸자 
+
+\subsection{멤버 함수 문서화}
+\index{COraRollbackCollector@{COra\-Rollback\-Collector}!collect@{collect}}
+\index{collect@{collect}!COraRollbackCollector@{COra\-Rollback\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void COra\-Rollback\-Collector::collect ()\hspace{0.3cm}{\tt  [virtual]}}\label{classCOraRollbackCollector_a2}
+
+
+Oracle rollback segment status 정보를 수집하여 SMS Manager로 전송하기 위한 메시지 포맷으로 변환하여 메시지 큐로 전송하는 메쏘드. 
+
+{\bf CCollector} {\rm (페이지\,\pageref{classCCollector_a2})}으로부터 재구현된.\index{COraRollbackCollector@{COra\-Rollback\-Collector}!collectOraData@{collectOraData}}
+\index{collectOraData@{collectOraData}!COraRollbackCollector@{COra\-Rollback\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool COra\-Rollback\-Collector::collect\-Ora\-Data ()}\label{classCOraRollbackCollector_a3}
+
+
+Oracle에 SQL Query를 질의하여 결과를 얻어오는 메쏘드. \index{COraRollbackCollector@{COra\-Rollback\-Collector}!makeMessage@{makeMessage}}
+\index{makeMessage@{makeMessage}!COraRollbackCollector@{COra\-Rollback\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void COra\-Rollback\-Collector::make\-Message ()\hspace{0.3cm}{\tt  [virtual]}}\label{classCOraRollbackCollector_a4}
+
+
+수집된 Oracle rollback segment status 정보를 SMS Manager로 전송하기 위한 메시지 포맷으로 변환하는 메쏘드. 
+
+{\bf CCollector} {\rm (페이지\,\pageref{classCCollector_a3})}으로부터 재구현된.
+
+이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:\begin{CompactItemize}
+\item 
+{\bf COra\-Rollback\-Collector.h}\end{CompactItemize}

@@ -1,0 +1,219 @@
+
+#define SQLCA_NONE
+#include <sqlca.h>
+extern struct sqlca sqlca;
+
+#include "COraDBLinkCollector.h"
+#include "CAlarmProcessor.h"
+
+
+COraDBLinkCollector::COraDBLinkCollector()
+{
+	m_list = NULL;
+}
+
+COraDBLinkCollector::~COraDBLinkCollector()
+{
+	if(m_list!=NULL)
+		scCoreViewRelease(&m_list);
+}
+
+void COraDBLinkCollector::collect()
+{
+	char *msg=NULL;
+
+	if(collectOraData()==false) return;
+
+	if(m_pollitem->getPollType() == TYPE_EVENT) {
+		CAlarmProcessor ap(this);
+		ap.check();
+	} else {
+		makeMessage();
+		msg = m_msgfmt.makeMessage();
+
+		if(m_pollitem->getPollType() == TYPE_PASSIVE){
+			m_envvar->getRespQ()->enqueue(msg, NULL);		
+		}else{
+			if(isShortPerf()==true){
+				m_envvar->getShortPerfQ()->enqueue(msg, NULL);		
+			}else{
+				m_envvar->getLongPerfQ()->enqueue(msg, NULL);		
+			}
+		}
+	}
+}
+
+void COraDBLinkCollector::makeMessage()
+{
+	int i=0, at=0;
+	char buf[1024], temp[32], tab=0x09;
+	CQueue *instQ = m_pollitem->getInstQ();
+	elem *e=NULL;
+
+	if(m_list == NULL) return;
+	m_msgfmt.setItem(m_pollitem->getItem());
+	m_msgfmt.setPollTime(m_pollitem->getPollTime());
+	m_msgfmt.setType(m_pollitem->getPollType());
+	if(m_pollitem->getPollType()==TYPE_PASSIVE)
+		m_msgfmt.setCommand((char *)m_pollitem->getCommand().c_str());
+
+	memset(buf, 0x00, sizeof(buf));
+	sprintf(buf, "dblink%cownerid%clogon%cprotocol\n", tab, tab, tab);
+	m_msgfmt.setTitle(buf);
+
+	while((m_dblink = (st_dblink *)ll_element_at(m_list, at++)) != NULL){
+		memset(buf, 0x00, sizeof(buf));
+		sprintf(buf, "%s%c%d%c%s%c%s\n",
+			m_dblink->db_link, tab, m_dblink->owner_id, tab,
+			m_dblink->logged_on, tab, m_dblink->protocol);
+		m_msgfmt.addMessage(strdup(buf));
+	}
+
+	return;
+}
+
+bool COraDBLinkCollector::collectOraData()
+{
+	bool b=true;
+	CDBSession *_sess=NULL;
+	CAgentConfigVar *ccv = m_envvar->getAgentConfigVar();
+	EXEC SQL BEGIN DECLARE SECTION;
+		VARCHAR _db_link[132];
+		int _owner_id;
+		VARCHAR _logged_on[4];
+		VARCHAR _protocol[8];
+		sql_context *_ctx=NULL;
+	EXEC SQL END DECLARE SECTION;
+		st_dblink _dblink;
+
+	if((_sess = m_envvar->getDBPool()->getSession(
+		(char *)ccv->getOraUID().c_str(),
+		(char *)ccv->getOraPasswd().c_str(),
+		(char *)ccv->getOraSID().c_str()))==NULL)
+		return false;
+
+	if((m_list = ll_create_node(NULL,1))==NULL) {
+		//_sess->returnConnection();
+		m_envvar->getDBPool()->returnSession(_sess);
+		return false;
+	}
+
+	_ctx = (sql_context *)_sess->getConnection();
+
+	EXEC SQL CONTEXT USE :*_ctx;
+	EXEC SQL DECLARE SQL_CUR CURSOR FOR
+		SELECT DB_LINK, OWNER_ID, LOGGED_ON, PROTOCOL FROM v$dblink;
+
+	EXEC SQL CONTEXT USE :*_ctx;
+	EXEC SQL OPEN SQL_CUR;
+
+	while(1){
+		memset(&_dblink, 0x00, sizeof(_dblink));
+		memset(&_db_link, 0x00, sizeof(_db_link));
+		memset(&_logged_on, 0x00, sizeof(_logged_on));
+		memset(&_protocol, 0x00, sizeof(_protocol));
+		EXEC SQL CONTEXT USE :*_ctx;
+		EXEC SQL FETCH SQL_CUR INTO
+			:_db_link, :_owner_id, :_logged_on, :_protocol;
+
+		if(sqlca.sqlcode == 1403) break;
+		else if(sqlca.sqlcode){
+			b = false;
+			goto out_sql;
+		}
+
+		strncpy(_dblink.db_link, (const char *)_db_link.arr, _db_link.len);
+		_dblink.owner_id = _owner_id;
+		strncpy(_dblink.logged_on, (const char *)_logged_on.arr, _logged_on.len);
+		strncpy(_dblink.protocol, (const char *)_protocol.arr, _protocol.len);
+		
+		ll_insert_node(m_list, &_dblink, sizeof(st_dblink), NULL);
+	}
+
+out_sql:
+	EXEC SQL CONTEXT USE :*_ctx;
+	EXEC SQL CLOSE SQL_CUR;
+
+	_sess->returnConnection();
+	m_envvar->getDBPool()->returnSession(_sess);
+	return b;
+}
+
+
+void COraDBLinkCollector::isOverThreshold(CItemCondition *cond)
+{
+	int at=0,i=0;
+	char temp[250];
+	bool b=false;
+
+	if(cond->getElement() > 3) return;
+	if (m_list == NULL) return;
+
+
+
+	while((m_dblink = (st_dblink *)ll_element_at(m_list, at++))!=NULL) {
+
+		if(cond->getInstanceName() == "ALL" || cond->getInstanceName() ==  m_dblink->db_link) {
+			/* check alarm */
+			if(cond->getElement() == 1) { /* owner_id */
+				b = cond->isOverThreshold( m_dblink->owner_id );
+			} else if(cond->getElement() == 2) { /* logged_on */
+				b = cond->isOverThreshold( m_dblink->logged_on );
+			} else if(cond->getElement() == 3) { /* protocol */
+				b = cond->isOverThreshold( m_dblink->protocol );
+			} 
+			checkAlarm(cond, m_dblink->db_link, b, m_dblink);
+		}
+	}
+
+	return ;
+}
+
+void COraDBLinkCollector::checkAlarm(CItemCondition *_cond, char *inst, bool ialarm, st_dblink *dblink)
+{
+	st_item_alarm alarm;
+	bool _ialarm = false;
+	CItem *item = this->getPolicyItem()->getItem();
+	CMessageFormatter msgfmt;
+	char buf[1024], tab=0x09, *msg;
+
+	memset(&alarm, 0x00, sizeof(st_item_alarm));
+	strncpy(alarm.instance, inst, sizeof(alarm.instance));
+	alarm.condid = _cond->getIndex();
+
+	_ialarm = item->isAlarm(&alarm);
+
+	if(ialarm == false && _ialarm == false) return;
+	else if(ialarm == true && _ialarm == true) return;
+	else if(ialarm == true && _ialarm == false){ /* alarm occurred */
+		st_item_alarm *ia = (st_item_alarm *)malloc(sizeof(st_item_alarm));
+		memset(ia, 0x00, sizeof(st_item_alarm));
+		ia->condid = alarm.condid;
+		strcpy(ia->instance, alarm.instance);
+		item->addAlarm(ia);
+	}else if(ialarm == false && _ialarm == true){ /* alarm cleared */
+		item->delAlarm(&alarm);
+	}
+
+	msgfmt.setItem(m_pollitem->getItem());
+	msgfmt.setPollTime(m_pollitem->getPollTime());
+	msgfmt.setType(m_pollitem->getPollType());
+	msgfmt.setItemCondition(_cond);
+	msgfmt.setEventStatus(ialarm);
+
+	memset(buf, 0x00, sizeof(buf));
+
+	sprintf(buf, "dblink%cownerid%clogon%cprotocol\n", tab, tab, tab);
+	m_msgfmt.setTitle(buf);
+
+	memset(buf, 0x00, sizeof(buf));
+	sprintf(buf, "%s%c%d%c%s%c%s\n",
+		dblink->db_link, tab, dblink->owner_id, tab,
+		dblink->logged_on, tab, dblink->protocol);
+	msgfmt.addMessage(strdup(buf));
+
+	msg = msgfmt.makeMessage();
+	m_envvar->getEventQ()->enqueue(msg, NULL);		
+
+	return;
+}

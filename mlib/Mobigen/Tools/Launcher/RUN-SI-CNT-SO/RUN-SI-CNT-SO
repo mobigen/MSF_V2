@@ -1,0 +1,197 @@
+#!/usr/bin/python
+
+# last update : 060721
+
+# input  : PType1
+# output : PType1
+
+import os, sys, time, re, getopt, socket
+import threading
+import subprocess as SP
+
+import signal
+SHUTDOWN = False
+
+def shutdown(sigNum=0, frame=0) :
+	global SHUTDOWN
+	SHUTDOWN = True
+
+signal.signal(signal.SIGTERM, shutdown)
+signal.signal(signal.SIGINT, shutdown)
+signal.signal(signal.SIGHUP, shutdown)
+signal.signal(signal.SIGPIPE, shutdown)
+
+def error(val) :
+	try:
+		sys.stderr.write( "--- error : %s\n" % val )
+		sys.stderr.flush()
+	except:
+		pass
+
+def debug(val) :
+	try:
+		sys.stderr.write( "*** debug : %s\n" % val )
+		sys.stderr.flush()
+	except:
+		pass
+
+def log(val) :
+	try:
+		sys.stderr.write( "+++ log   : %s\n" % val )
+		sys.stderr.flush()
+	except:
+		pass
+
+class CountProcess(threading.Thread) :
+
+	def __init__(self, psName, count=1000, type=1) :
+		threading.Thread.__init__(self)
+
+		self.runCount = count
+		self.psName = psName
+		self.p = None
+		self.type = type
+
+		self.shutdown = False
+
+	def __del__(self):
+		if self.p:
+			self.p.stdin.close()
+			self.p.stdout.close()
+			self.p.stderr.close()
+
+			del self.p
+			self.p = None
+
+	def kill(self) :
+		self.shutdown = True
+		log( 'CountProcess.kill : called kill method')
+
+	def readLen(self, lenNum) :
+		remain = lenNum
+		res = ''
+
+		while 1 : 
+			try :
+				if self.shutdown : break
+				data = sys.stdin.read(remain)
+				if not data : raise Exception, 'disconnected'
+
+				res += data
+				remain -= len(data)
+
+			except IOError :
+				time.sleep(0.1)
+				continue
+
+			if remain == 0 : break
+		return res
+
+	def recvFast(self) :
+		overHead = self.readLen(16)
+		valLen = int(overHead[6:])
+		val = self.readLen(valLen)
+		return overHead, val
+
+	def write(self, overHead, recvData):
+		if self.p:
+			data = ''
+			if self.type == 1:
+				data = overHead + recvData
+			elif self.type == 12:
+				data = recvData
+			elif self.type == 11:
+				data = recvData + "\n"
+			else: # default ptype 1
+				data = overHead + recvData
+			
+			self.p.stdin.write(data)
+			self.p.stdin.flush()
+
+	def popenProcess(self):
+		if self.p:
+			self.p.stdin.close()
+			self.p.stdout.close()
+			self.p.stderr.close()
+
+			del self.p
+			self.p = None
+			log( 'process stop ')
+
+		self.p = SP.Popen(self.psName, shell=True, bufsize=100, \
+			stdin=SP.PIPE, stdout=SP.PIPE, stderr=SP.PIPE, close_fds=True)
+		log( 'process start ')
+	
+	def run(self) :
+		log( 'CountProcess.run : started, runCnt=[%s] protocol[%s]'  % \
+			(self.runCount, self.type))
+
+		try :
+
+			self.popenProcess()
+
+			count = 0
+			while 1 :
+				if self.shutdown  : break 
+				overHead, val = self.recvFast()
+				data = overHead + val
+
+				count = count + 1
+				if self.runCount < count:
+					count = 0
+					self.popenProcess()
+
+				log( 'log :(%s)'  % data)
+				self.write(overHead, val)
+
+		except Exception, err :
+			if self.shutdown : pass
+			else :
+				error( "CountProcess.run : " + err.__str__() )
+		
+		shutdown()
+		log( 'CountProcess.run : thread closed' )
+
+def usage():
+	print 'usage : %s [-h] [-p[N]] processName restartCount' % (sys.argv[0])
+	print 'example: %s -h' % (sys.argv[0])
+	print '         %s -p12 out.py 10' % (sys.argv[0])
+
+
+def main() :
+	if len(sys.argv) < 3 :
+		usage()
+		sys.exit()
+
+	type = 1
+
+	try:
+		opts, args = getopt.getopt(sys.argv[1:], "hp:", ["help"])
+	except :
+		# print help information and exit:
+		usage()
+		sys.exit(2)
+
+	for o, a in opts:
+		if o in ("-h", "--help"):
+			usage()
+			sys.exit()
+		if o in ("-p"):
+			type = int(a)
+
+	
+	processName, restartCount = args
+
+	countProcess = CountProcess(processName, int(restartCount), type)
+	countProcess.setDaemon(True)
+	countProcess.start()
+
+	while 1 :
+		if SHUTDOWN : break
+		else : time.sleep(1)
+
+	countProcess.kill()
+
+	log('MAIN : closed')
+
+main()

@@ -1,0 +1,727 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CQueue class Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CQueue  클래스 참조</h1>각종 데이터를 저장하기 위한 리스트 큐 클래스. 
+<a href="#_details">More...</a>
+<p>
+<code>#include &lt;<a class="el" href="CQueue_8h-source.html">CQueue.h</a>&gt;</code>
+<p>
+<a href="classCQueue-members.html">모든 구성원들(members)의 명단</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td colspan=2><br><h2>공용 메소드</h2></td></tr>
+<tr><td nowrap align=right valign=top>&nbsp;</td><td valign=bottom><a class="el" href="classCQueue.html#a0">CQueue</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>&nbsp;</td><td valign=bottom><a class="el" href="classCQueue.html#a1">CQueue</a> (std::string)</td></tr>
+<tr><td nowrap align=right valign=top>virtual&nbsp;</td><td valign=bottom><a class="el" href="classCQueue.html#a2">~CQueue</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCQueue.html#a3">initialize</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCQueue.html#a4">isWritable</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>elem*&nbsp;</td><td valign=bottom><a class="el" href="classCQueue.html#a5">frontNode</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>elem*&nbsp;</td><td valign=bottom><a class="el" href="classCQueue.html#a6">getNext</a> (elem *e)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCQueue.html#a7">setWritable</a> (bool b)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCQueue.html#a8">removeAll</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCQueue.html#a9">enqueue</a> (void *d, void(*h)(void *))</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCQueue.html#a10">push</a> (void *d, void(*h)(void *))</td></tr>
+<tr><td nowrap align=right valign=top>void*&nbsp;</td><td valign=bottom><a class="el" href="classCQueue.html#a11">dequeue</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void*&nbsp;</td><td valign=bottom><a class="el" href="classCQueue.html#a12">deleteNode</a> (elem *e)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCQueue.html#a13">removeNode</a> (elem *e)</td></tr>
+<tr><td nowrap align=right valign=top>void*&nbsp;</td><td valign=bottom><a class="el" href="classCQueue.html#a14">getData</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>int&nbsp;</td><td valign=bottom><a class="el" href="classCQueue.html#a15">size</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCQueue.html#a16">isEmpty</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>std::string&nbsp;</td><td valign=bottom><a class="el" href="classCQueue.html#a17">getName</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCQueue.html#a18">setName</a> (std::string name)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCQueue.html#a19">setIsRemove</a> (bool)</td></tr>
+</table>
+<hr><a name="_details"></a><h2>상세한 내용</h2>
+각종 데이터를 저장하기 위한 리스트 큐 클래스.
+<p>
+SMS Agent가 기동하면서 필요한 각종 데이터를 저장하고, 관리하는 리스트 큐 클래스. 
+<p>
+<hr><h2>생성자 &amp; 소멸자 문서화</h2>
+<a name="a0" doxytag="CQueue::CQueue"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CQueue::CQueue (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+생성자     </td>
+  </tr>
+</table>
+<a name="a1" doxytag="CQueue::CQueue"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CQueue::CQueue (
+          </b></td>
+          <td valign="bottom"><b>
+std::string&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+생성자. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a2" doxytag="CQueue::~CQueue"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CQueue::~CQueue (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [virtual]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+소멸자     </td>
+  </tr>
+</table>
+<hr><h2>멤버 함수 문서화</h2>
+<a name="a12" doxytag="CQueue::deleteNode"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void * CQueue::deleteNode (
+          </b></td>
+          <td valign="bottom"><b>
+elem * <em>e</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+큐에서 특정 노드를 삭제하는 메쏘드. 노드 정보는 삭제되고 실 데이터 정보는 반환된다. 반환된 데이터는 반환받은 개체가 메모리에서 삭제해주어야 한다. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+</table>
+</dl><dl compact><dt>
+<b>반환: </b><dd>
+삭제된 노드가 저장하고 있던 데이터. </dl>    </td>
+  </tr>
+</table>
+<a name="a11" doxytag="CQueue::dequeue"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void * CQueue::dequeue (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+큐에서 가장 처음에 들어온 데이터를 가져오는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>data</em>
+&nbsp;</td><td>
+pointer. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a9" doxytag="CQueue::enqueue"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CQueue::enqueue (
+          </b></td>
+          <td valign="bottom"><b>
+void * <em>d</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+void(* <em>h</em>)(void *)&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+큐에 데이터를 주가하는 메쏘드. FIFO처럼 가장 끝 노드에 추가한다. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a5" doxytag="CQueue::frontNode"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+elem * CQueue::frontNode (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+큐의 첫번째 노드를 조회하는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+첫번째 노드 포인터. </dl>    </td>
+  </tr>
+</table>
+<a name="a14" doxytag="CQueue::getData"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void * CQueue::getData (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+첫번째 노드의 데이터 정보를 가져오는 메쏘드. 현재 의미없음.     </td>
+  </tr>
+</table>
+<a name="a17" doxytag="CQueue::getName"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+std::string CQueue::getName (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+큐 이름을 조회하는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+queue name. </dl>    </td>
+  </tr>
+</table>
+<a name="a6" doxytag="CQueue::getNext"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+elem * CQueue::getNext (
+          </b></td>
+          <td valign="bottom"><b>
+elem * <em>e</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+주어진 노드의 다음 노드 정보를 조회하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+</table>
+</dl><dl compact><dt>
+<b>반환: </b><dd>
+노드 포일터. </dl>    </td>
+  </tr>
+</table>
+<a name="a3" doxytag="CQueue::initialize"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CQueue::initialize (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+큐 초기화 메쏘드.     </td>
+  </tr>
+</table>
+<a name="a16" doxytag="CQueue::isEmpty"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CQueue::isEmpty (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+큐가 비어 있는지 여부를 판단하는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+true if queue is empty, else return false. </dl>    </td>
+  </tr>
+</table>
+<a name="a4" doxytag="CQueue::isWritable"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CQueue::isWritable (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+큐에 대한 쓰기 가능 여부을 조회하는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+true : 쓰기 가능, false : 쓰기 불가능. </dl>    </td>
+  </tr>
+</table>
+<a name="a10" doxytag="CQueue::push"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CQueue::push (
+          </b></td>
+          <td valign="bottom"><b>
+void * <em>d</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+void(* <em>h</em>)(void *)&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+큐에 데이터를 주가하는 메쏘드. 스택처럼 가장 처음 노드에 추가한다. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a8" doxytag="CQueue::removeAll"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CQueue::removeAll (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+큐에 존재하는 모든 노드 및 데이터를 삭제하는 메쏘드.     </td>
+  </tr>
+</table>
+<a name="a13" doxytag="CQueue::removeNode"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CQueue::removeNode (
+          </b></td>
+          <td valign="bottom"><b>
+elem * <em>e</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+큐에서 특정 노드 및 데이터 정보를 삭제하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a19" doxytag="CQueue::setIsRemove"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CQueue::setIsRemove (
+          </b></td>
+          <td valign="bottom"><b>
+bool&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+큐의 데이터 삭제 여부를 설정하는 메쏘드. 현재 의미 없음.     </td>
+  </tr>
+</table>
+<a name="a18" doxytag="CQueue::setName"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CQueue::setName (
+          </b></td>
+          <td valign="bottom"><b>
+std::string <em>name</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+큐 이름을 설정하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>queue</em>
+&nbsp;</td><td>
+name. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a7" doxytag="CQueue::setWritable"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CQueue::setWritable (
+          </b></td>
+          <td valign="bottom"><b>
+bool <em>b</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+큐의 쓰기 가능 여부를 설정하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>true</em>
+&nbsp;</td><td>
+: 쓰기 가능, false : 쓰기 불가능. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a15" doxytag="CQueue::size"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+int CQueue::size (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+큐의 저장된 데이터 개수를 조회하는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+data count. </dl>    </td>
+  </tr>
+</table>
+<hr>이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:<ul>
+<li><a class="el" href="CQueue_8h-source.html">CQueue.h</a></ul>
+<hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

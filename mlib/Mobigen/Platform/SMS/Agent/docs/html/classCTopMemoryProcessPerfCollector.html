@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CTopMemoryProcessPerfCollector class Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CTopMemoryProcessPerfCollector  클래스 참조</h1>메모리 점유율 순서로 Top N개의 프로세스 정보를 수집하는 클래스. 
+<a href="#_details">More...</a>
+<p>
+<code>#include &lt;<a class="el" href="CTopMemoryProcessPerfCollector_8h-source.html">CTopMemoryProcessPerfCollector.h</a>&gt;</code>
+<p>
+<p>CTopMemoryProcessPerfCollector에 대한 상속 도표:
+<p><center><img src="classCTopMemoryProcessPerfCollector.gif" usemap="#CTopMemoryProcessPerfCollector_map" border="0"></center>
+<map name="CTopMemoryProcessPerfCollector_map">
+<area href="classCCollector.html" alt="CCollector" shape="rect" coords="0,0,209,24">
+</map>
+<a href="classCTopMemoryProcessPerfCollector-members.html">모든 구성원들(members)의 명단</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td colspan=2><br><h2>공용 메소드</h2></td></tr>
+<tr><td nowrap align=right valign=top>&nbsp;</td><td valign=bottom><a class="el" href="classCTopMemoryProcessPerfCollector.html#a0">CTopMemoryProcessPerfCollector</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>&nbsp;</td><td valign=bottom><a class="el" href="classCTopMemoryProcessPerfCollector.html#a1">~CTopMemoryProcessPerfCollector</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCTopMemoryProcessPerfCollector.html#a2">collect</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCTopMemoryProcessPerfCollector.html#a3">makeMessage</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCTopMemoryProcessPerfCollector.html#a4">isOverThreshold</a> (<a class="el" href="classCItemCondition.html">CItemCondition</a> *cond)</td></tr>
+</table>
+<hr><a name="_details"></a><h2>상세한 내용</h2>
+메모리 점유율 순서로 Top N개의 프로세스 정보를 수집하는 클래스.
+<p>
+scagent.xml 파일에 다음과 같이 설정되어 있다면,<br>
+ &lt;instances&gt;<br>
+ &lt;instance name="memory|5"&gt;memory|5&lt;/instance&gt;<br>
+ &lt;/instances&gt;<br>
+ 메모리 점유율 상위 5개의 프로세스 정보를 수집하여 처리한다. 
+<p>
+<hr><h2>생성자 &amp; 소멸자 문서화</h2>
+<a name="a0" doxytag="CTopMemoryProcessPerfCollector::CTopMemoryProcessPerfCollector"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CTopMemoryProcessPerfCollector::CTopMemoryProcessPerfCollector (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+생성자     </td>
+  </tr>
+</table>
+<a name="a1" doxytag="CTopMemoryProcessPerfCollector::~CTopMemoryProcessPerfCollector"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CTopMemoryProcessPerfCollector::~CTopMemoryProcessPerfCollector (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+소멸자     </td>
+  </tr>
+</table>
+<hr><h2>멤버 함수 문서화</h2>
+<a name="a2" doxytag="CTopMemoryProcessPerfCollector::collect"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CTopMemoryProcessPerfCollector::collect (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [virtual]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+메모리 점유율 순서로 Top N개의 프로세스 정보를 수집하여 SMS Manager로 전송하기 위한 메시지 포맷으로 변환하여 메시지 큐로 전송하는 메쏘드. 
+<p>
+<a class="el" href="classCCollector.html#a2">CCollector</a>으로부터 재구현된.    </td>
+  </tr>
+</table>
+<a name="a4" doxytag="CTopMemoryProcessPerfCollector::isOverThreshold"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CTopMemoryProcessPerfCollector::isOverThreshold (
+          </b></td>
+          <td valign="bottom"><b>
+<a class="el" href="classCItemCondition.html">CItemCondition</a> * <em>cond</em>&nbsp;)<code> [inline, virtual]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+장애 판단을 위한 메쏘드. 현재 사용되지 않음. 
+<p>
+<a class="el" href="classCCollector.html#a4">CCollector</a>으로부터 재구현된.    </td>
+  </tr>
+</table>
+<a name="a3" doxytag="CTopMemoryProcessPerfCollector::makeMessage"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CTopMemoryProcessPerfCollector::makeMessage (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [virtual]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+수집된 메모리 점유율 순서로 Top N개의 프로세스 정보를 SMS Manager로 전송하기 위한 메시지 포맷으로 변환하는 메쏘드. 
+<p>
+<a class="el" href="classCCollector.html#a3">CCollector</a>으로부터 재구현된.    </td>
+  </tr>
+</table>
+<hr>이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:<ul>
+<li><a class="el" href="CTopMemoryProcessPerfCollector_8h-source.html">CTopMemoryProcessPerfCollector.h</a></ul>
+<hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

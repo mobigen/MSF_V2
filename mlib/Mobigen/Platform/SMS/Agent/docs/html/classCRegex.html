@@ -1,0 +1,568 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CRegex class Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CRegex  클래스 참조</h1>정규표현식을 처리하는 클래스. 
+<a href="#_details">More...</a>
+<p>
+<code>#include &lt;<a class="el" href="CRegex_8h-source.html">CRegex.h</a>&gt;</code>
+<p>
+<a href="classCRegex-members.html">모든 구성원들(members)의 명단</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td colspan=2><br><h2>공용 메소드</h2></td></tr>
+<tr><td nowrap align=right valign=top>&nbsp;</td><td valign=bottom><a class="el" href="classCRegex.html#a0">CRegex</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>&nbsp;</td><td valign=bottom><a class="el" href="classCRegex.html#a1">CRegex</a> (char *pattern)</td></tr>
+<tr><td nowrap align=right valign=top>&nbsp;</td><td valign=bottom><a class="el" href="classCRegex.html#a2">~CRegex</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>char*&nbsp;</td><td valign=bottom><a class="el" href="classCRegex.html#a3">getMatchedString</a> (char *msg)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCRegex.html#a4">setPattern</a> (char *pattern)</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCRegex.html#a5">isMatched</a> (char *str)</td></tr>
+<tr><td colspan=2><br><h2>프로텍티드 메소드</h2></td></tr>
+<tr><td nowrap align=right valign=top>int&nbsp;</td><td valign=bottom><a class="el" href="classCRegex.html#b0">initRegex</a> (regex_t *re, char *msg)</td></tr>
+<tr><td nowrap align=right valign=top>char*&nbsp;</td><td valign=bottom><a class="el" href="classCRegex.html#b1">getMatchedString</a> (regex_t *re, char *msg)</td></tr>
+<tr><td nowrap align=right valign=top>char*&nbsp;</td><td valign=bottom><a class="el" href="classCRegex.html#b2">getMatchedStartPoint</a> (regex_t *re, char *msg)</td></tr>
+<tr><td nowrap align=right valign=top>char*&nbsp;</td><td valign=bottom><a class="el" href="classCRegex.html#b3">getMatchedEndPoint</a> (regex_t *re, char *msg)</td></tr>
+<tr><td nowrap align=right valign=top>regmatch_t*&nbsp;</td><td valign=bottom><a class="el" href="classCRegex.html#b4">getRegMatch</a> (regex_t *re, char *msg)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCRegex.html#b5">freeRegex</a> (regex_t *re)</td></tr>
+<tr><td colspan=2><br><h2>Protected Attributes</h2></td></tr>
+<tr><td nowrap align=right valign=top>regex_t&nbsp;</td><td valign=bottom><a class="el" href="classCRegex.html#n0">m_re</a></td></tr>
+<tr><td nowrap align=right valign=top>char*&nbsp;</td><td valign=bottom><a class="el" href="classCRegex.html#n1">m_pattern</a></td></tr>
+</table>
+<hr><a name="_details"></a><h2>상세한 내용</h2>
+정규표현식을 처리하는 클래스.
+<p>
+특정 메시지에서 정규 표현식으로 주어진 메시지를 분석 및 파싱하는 클래스. 
+<p>
+<hr><h2>생성자 &amp; 소멸자 문서화</h2>
+<a name="a0" doxytag="CRegex::CRegex"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CRegex::CRegex (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+생성자     </td>
+  </tr>
+</table>
+<a name="a1" doxytag="CRegex::CRegex"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CRegex::CRegex (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>pattern</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+생성자 <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+</td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a2" doxytag="CRegex::~CRegex"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CRegex::~CRegex (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+소멸자     </td>
+  </tr>
+</table>
+<hr><h2>멤버 함수 문서화</h2>
+<a name="b5" doxytag="CRegex::freeRegex"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CRegex::freeRegex (
+          </b></td>
+          <td valign="bottom"><b>
+regex_t * <em>re</em>&nbsp;)<code> [protected]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+정규 패턴식을 메모리에서 해지하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="b3" doxytag="CRegex::getMatchedEndPoint"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+char * CRegex::getMatchedEndPoint (
+          </b></td>
+          <td valign="bottom"><b>
+regex_t * <em>re</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+char * <em>msg</em>&nbsp;)<code> [protected]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+주어진 메시지에서 정규 패턴과 일치하는 메시지의 마지막 포인터를 얻어오는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="b2" doxytag="CRegex::getMatchedStartPoint"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+char * CRegex::getMatchedStartPoint (
+          </b></td>
+          <td valign="bottom"><b>
+regex_t * <em>re</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+char * <em>msg</em>&nbsp;)<code> [protected]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+주어진 메시지에서 정규 패턴과 일치하는 메시지의 첫 번째 포인터를 얻어오는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a3" doxytag="CRegex::getMatchedString"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+char * CRegex::getMatchedString (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>msg</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+주어진 메시지에서 정규 패턴과 일치하는 메시지를 얻어오는 메쏘드. 얻어온 메시지는 반환받은 개체에서 메모리를 해지해 주어야 한다. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>return</em>
+&nbsp;</td><td>
+파싱된 메시지. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="b1" doxytag="CRegex::getMatchedString"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+char * CRegex::getMatchedString (
+          </b></td>
+          <td valign="bottom"><b>
+regex_t * <em>re</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+char * <em>msg</em>&nbsp;)<code> [protected]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+주어진 메시지에서 정규 패턴과 일치하는 메시지를 얻어오는 메쏘드. 얻어온 메시지는 반환받은 개체에서 메모리를 해지해 주어야 한다. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em>return</em>
+&nbsp;</td><td>
+파싱된 메시지. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="b4" doxytag="CRegex::getRegMatch"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+regmatch_t * CRegex::getRegMatch (
+          </b></td>
+          <td valign="bottom"><b>
+regex_t * <em>re</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+char * <em>msg</em>&nbsp;)<code> [protected]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+주어진 메시지에서 정규 패턴과 일치하는 메시지의 정보를 얻어오는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em>return</em>
+&nbsp;</td><td>
+정규 패턴과 일치하는 메시지의 정보 </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="b0" doxytag="CRegex::initRegex"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+int CRegex::initRegex (
+          </b></td>
+          <td valign="bottom"><b>
+regex_t * <em>re</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+char * <em>msg</em>&nbsp;)<code> [protected]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+정규 패턴식을 초기화하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+</table>
+</dl><dl compact><dt>
+<b>반환: </b><dd>
+return 1 if success, else return -1. </dl>    </td>
+  </tr>
+</table>
+<a name="a5" doxytag="CRegex::isMatched"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CRegex::isMatched (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>str</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+주어진 메시지에 정규 패턴과 일치하는 메시지가 존재하는지 여부를 판단하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>return</em>
+&nbsp;</td><td>
+true : 정규 패턴과 일치하는 문자열이 존재, false : 정규 패턴과 일치하는 문자열이 없음. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a4" doxytag="CRegex::setPattern"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CRegex::setPattern (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>pattern</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+정규 패턴식을 설정하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+</td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<hr><h2>멤서 데이타 문서화</h2>
+<a name="n1" doxytag="CRegex::m_pattern"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+char * CRegex::m_pattern<code> [protected]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+정규 패턴식     </td>
+  </tr>
+</table>
+<a name="n0" doxytag="CRegex::m_re"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+regex_t CRegex::m_re<code> [protected]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+정규 패턴 정보를 지닌 키 변수     </td>
+  </tr>
+</table>
+<hr>이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:<ul>
+<li><a class="el" href="CRegex_8h-source.html">CRegex.h</a></ul>
+<hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

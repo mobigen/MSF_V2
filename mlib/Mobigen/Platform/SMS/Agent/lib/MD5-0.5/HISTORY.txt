@@ -1,0 +1,16 @@
+MD5-0.5: 2006/01/11 nomota
+ * AIX용 컴파일 플래그 추가 
+ * -D_POSIX_REENTRANT_FUNCTIONS -D_POSIX_THREADS -D_THREAD_SAFE 
+
+MD5-0.4: 2005/08/18 smy
+ * MD5 생성 알고리즘 소스를 변경함.
+   기존에는 MD5_in.c를 사용하였는데, 현재는 MD5LIB.h/MD5LIB.c를 사용함.
+   
+   오픈 소스 변경 이유 :
+       HP에서 64bit gcc를 이용하여 컴파일하면, 정상적인 MD5 값을 리턴하지 않음.
+        
+MD5-0.3.2: 2005/04/26 nomota
+ * Makefile -fPIC added
+
+MD5-0.3.1 : 2004/10/20 smy
+ * Makefile에 build-hp를 추가했음.

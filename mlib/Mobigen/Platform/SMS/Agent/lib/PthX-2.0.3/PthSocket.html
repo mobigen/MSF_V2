@@ -1,0 +1,158 @@
+<HTML>
+<HEAD><TITLE>PthSocket class</TITLE></HEAD>
+
+<BODY>
+
+<HR>
+<FONT SIZE=+3 COLOR=BLUE><B>PthSocket Class</B></FONT> 
+<FONT SIZE=+2><B>a class for Pth Socket Handling  (C++)</B></FONT>
+<P>
+Visual Basic에서의 MS-Socket과 비슷한 인터페이스를 갖는 유닉스용 미니 클래스,
+단순성을 위해서 많이 포기함. 
+간단한 인터페이스. TCP 소켓만 허용 
+
+<P>
+Updates: KIM Hiongun, hiongun@kt.co.kr (김형근)
+<UL>
+ <LI> 2002/08/27 initially documented
+</UL>
+  
+<HR>
+
+<OL>
+ <LI><A HREF=./PthSocket.h++>PthSocket.h++</A> (PthSocket 클래스 선언)
+ <LI><A HREF=./PthSocket.c++>PthSocket.c++</A> (PthSocket 클래스 구현)
+ <LI><A HREF=./Pth.html>Pth.html</A> (관련 클래스)
+ <LI><A HREF=./PthServer.html>PthServer.html</A> (PthServer 클래스)
+ <LI><A HREF=./Makefile>Makefile</A>
+</OL>
+
+<HR>
+
+<H3>Usage</H3>
+
+<OL>
+ <LI>
+  <B>PthSocket *pPthSocket = new PthSocket(int port);</B><BR>
+  서버형 소켓만들기<BR>
+  <B>PthSocket *pPthSocket = new PthSocket(char *remoteHost, int port);</B> <BR>
+  클라이언트형 소켓 만들기
+  delete pPthSocket으로 없애야 함.<BR>
+  만약 초기화에 실패하면 pTCP->error == true, <BR>
+  pTCP->errstr ==> 에러 메시지 <BR>
+  <P>
+
+ <LI>
+  <B>int pPthSocket->readline(char *pBuf, int timeout = 0 )</B><BR>
+  pBuf에 새로 받아들인 자료를 저장, 이 버퍼영역은 명시적으로 free()해
+  주어야 함. 자료의 크기를 리턴. timeout 을 0보다 큰값을 설정하면 
+  timeout까지 기다림<BR>
+  <B>int pPthSocket->write(char *Buf, int len)</B><BR>
+  Buf속에 있는 자료중에 len길이 만큼을 소켓에 써넣음. 실제로 제대로 
+  써넣어진 양을 리턴함.
+  <P>
+  <B>char * pPthSocket->peeraddr()</B><BR>
+  <B>char * pPthSocket->peername()</B><BR>
+  연결된 상대방 호스트 IP를 리턴한다. getpeername을 사용 
+  <P>
+</OL>
+
+<HR>
+<H3>사용법 -- 서버 소켓 </H3>
+<PRE>
+int main()
+{
+    PthSocket *server_sock = new PthSocket(9994);
+
+    while (1) {
+        PthSocket *client_sock = server_sock->accept(5);
+        if (client_sock == NULL || client_sock->error) {
+            DEBUG_PRINT("accept_fail: try accept again\n");
+            pth_sleep(1);
+            continue;
+        }
+
+        while (1) {
+            char buf[BUFSIZ];
+            int r = client_sock->readline(buf, 10);
+            if (r < 0) {
+                DEBUG_PRINT("timeout or socket_error\n");
+                client_sock->close();
+                break;
+            } else if (r == 0) {
+                DEBUG_PRINT("socket closed\n");
+                client_sock->close();
+                break;
+            } else {
+                for (int i = 0; i < r; i++) {
+                    buf[i] = toupper(buf[i]);
+                }
+
+                client_sock->write(buf, r);
+
+                if (strncmp(buf, "QUIT", 4) == 0) {
+                    client_sock->close();
+                    break;
+                }
+            }
+        }
+
+        delete client_sock;
+    }
+
+    return 0;
+}
+
+</PRE>
+
+<H3>사용법 -- 클라이언트 소켓 </H3>
+<PRE>
+main()
+{
+ restart:
+
+   PthSocket *client_sock = new PthSocket("127.0.0.1", 9993); // , 5);
+
+   if (client_sock == NULL || client_sock->error) {
+       printf("new PthSocket(127.0.0.1, 9993) failed, %s\n",
+           strerror(errno));
+
+       goto restart;
+
+       return;
+   }
+
+   char welcome[BUFSIZ];
+   int r = client_sock->readline(welcome);
+   if (r <= 0) {
+       client_sock->close();
+       delete client_sock;
+       return;
+   }
+
+   bool broken = false;
+   for (int i = 0; i < 100; i++) {
+       char *line = "fkldsjfkldsajflkdsjfdslkfjaklfsjdaklfd\r\n";
+       client_sock->write(line, strlen(line));
+
+       char buf[BUFSIZ];
+       int n = client_sock->readline(buf); // , 10);
+
+       if (n <= 0) {
+           broken = true;
+           break;
+       }
+   }
+
+   if (! broken) {
+       client_sock->write("quit\r\n", 6);
+   }
+
+   client_sock->close();
+
+   delete client_sock;
+
+}
+</PRE>
+
+<HR>

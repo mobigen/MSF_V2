@@ -1,0 +1,336 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CItemInstance class Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CItemInstance  클래스 참조</h1>Item의 Instance 정보를 관리하는 클래스. 
+<a href="#_details">More...</a>
+<p>
+<code>#include &lt;<a class="el" href="CItemInstance_8h-source.html">CItemInstance.h</a>&gt;</code>
+<p>
+<a href="classCItemInstance-members.html">모든 구성원들(members)의 명단</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td colspan=2><br><h2>공용 메소드</h2></td></tr>
+<tr><td nowrap align=right valign=top>&nbsp;</td><td valign=bottom><a class="el" href="classCItemInstance.html#a0">CItemInstance</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>virtual&nbsp;</td><td valign=bottom><a class="el" href="classCItemInstance.html#a1">~CItemInstance</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>std::string&nbsp;</td><td valign=bottom><a class="el" href="classCItemInstance.html#a2">getName</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>std::string&nbsp;</td><td valign=bottom><a class="el" href="classCItemInstance.html#a3">getValue</a> ()</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="classCQueue.html">CQueue</a>*&nbsp;</td><td valign=bottom><a class="el" href="classCItemInstance.html#a4">getDataQ</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCItemInstance.html#a5">setName</a> (char *name)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCItemInstance.html#a6">setValue</a> (char *value)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCItemInstance.html#a7">setName</a> (std::string name)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCItemInstance.html#a8">setValue</a> (std::string value)</td></tr>
+</table>
+<hr><a name="_details"></a><h2>상세한 내용</h2>
+Item의 Instance 정보를 관리하는 클래스.
+<p>
+Instance name, Instance value 정보를 관리한다. 현재 Instance name, Instance value은 같은 정보로 설정 관리되어야 한다. scagent.xml 파일에서 당음과 같은 형식으로 저장된 정보를 기록한다. &lt;instances&gt; &lt;instance name="test"&gt;test&lt;/instance&gt; &lt;/instances&gt; 
+<p>
+<hr><h2>생성자 &amp; 소멸자 문서화</h2>
+<a name="a0" doxytag="CItemInstance::CItemInstance"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CItemInstance::CItemInstance (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+생성자     </td>
+  </tr>
+</table>
+<a name="a1" doxytag="CItemInstance::~CItemInstance"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CItemInstance::~CItemInstance (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [virtual]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+소멸자     </td>
+  </tr>
+</table>
+<hr><h2>멤버 함수 문서화</h2>
+<a name="a4" doxytag="CItemInstance::getDataQ"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+<a class="el" href="classCQueue.html">CQueue</a> * CItemInstance::getDataQ (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+데이터 저장소를 반환하는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+<a class="el" href="classCQueue.html">CQueue</a> pointer. </dl>    </td>
+  </tr>
+</table>
+<a name="a2" doxytag="CItemInstance::getName"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+std::string CItemInstance::getName (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Instance 명을 반환하는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+instance name. </dl>    </td>
+  </tr>
+</table>
+<a name="a3" doxytag="CItemInstance::getValue"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+std::string CItemInstance::getValue (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Instance 값을 반환하는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+instance value. </dl>    </td>
+  </tr>
+</table>
+<a name="a7" doxytag="CItemInstance::setName"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CItemInstance::setName (
+          </b></td>
+          <td valign="bottom"><b>
+std::string <em>name</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Instance name을 설정하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>instance</em>
+&nbsp;</td><td>
+name. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a5" doxytag="CItemInstance::setName"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CItemInstance::setName (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>name</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Instance name을 설정하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>instance</em>
+&nbsp;</td><td>
+name. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a8" doxytag="CItemInstance::setValue"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CItemInstance::setValue (
+          </b></td>
+          <td valign="bottom"><b>
+std::string <em>value</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Instance value를 설정하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>instance</em>
+&nbsp;</td><td>
+value. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a6" doxytag="CItemInstance::setValue"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CItemInstance::setValue (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>value</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Instance value를 설정하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>instance</em>
+&nbsp;</td><td>
+value. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<hr>이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:<ul>
+<li><a class="el" href="CItemInstance_8h-source.html">CItemInstance.h</a></ul>
+<hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

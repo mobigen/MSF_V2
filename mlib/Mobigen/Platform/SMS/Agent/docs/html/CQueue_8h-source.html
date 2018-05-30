@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CQueue.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CQueue.h</h1><div class="fragment"><pre>00001 
+00002 <font class="preprocessor">#ifndef __CQUEUE_H__</font>
+00003 <font class="preprocessor"></font><font class="preprocessor">#define __CQUEUE_H__ </font>
+00004 <font class="preprocessor"></font>
+00005 <font class="preprocessor">#include &lt;stdio.h&gt;</font>
+00006 <font class="preprocessor">#include &lt;stdlib.h&gt;</font>
+00007 <font class="preprocessor">#include &lt;assert.h&gt;</font>
+00008 <font class="preprocessor">#include &lt;pthread.h&gt;</font>
+00009 <font class="preprocessor">#include &lt;errno.h&gt;</font>
+00010 <font class="preprocessor">#include &lt;unistd.h&gt;</font>
+00011 <font class="preprocessor">#include &lt;string&gt;</font>
+00012 
+00013 <font class="preprocessor">#define MAX_QUEUE_SIZE  10000</font>
+00014 <font class="preprocessor"></font>
+<a name="l00018"></a><a class="code" href="struct____elem____.html">00018</a> <font class="keyword">typedef</font> <font class="keyword">struct </font><a class="code" href="struct____elem____.html">__elem__</a>
+00019 {
+00020         <font class="keywordtype">void</font> *d;
+00021         void (*handler)(<font class="keywordtype">void</font> *);
+00022         <font class="keyword">struct </font><a class="code" href="struct____elem____.html">__elem__</a> *next;
+00023         <font class="keyword">struct </font><a class="code" href="struct____elem____.html">__elem__</a> *prev;
+00024 }<a class="code" href="struct____elem____.html">elem</a>;
+00025 
+00026 
+00028 
+<a name="l00031"></a><a class="code" href="classCQueue.html">00031</a> <font class="keyword">class </font><a class="code" href="classCQueue.html">CQueue</a>
+00032 {
+00033         <font class="keyword">private</font>:
+00034                 <font class="keywordtype">bool</font> m_writable;                        
+00035                 <font class="keywordtype">int</font> m_count;                            
+00036                 std::string m_name;                     
+00037                 <a class="code" href="struct____elem____.html">elem</a> *m_head;                           
+00038                 <a class="code" href="struct____elem____.html">elem</a> *m_tail;                           
+00039                 pthread_mutex_t m_lockkey;      
+00040                 <font class="keywordtype">int</font> type;                                       
+00042                 <font class="keywordtype">void</font> lock();
+00044                 <font class="keywordtype">void</font> unlock();
+00046                 <font class="keywordtype">bool</font> isRemove;
+00047         
+00048         <font class="keyword">public</font>:
+00050                 <a class="code" href="classCQueue.html#a0">CQueue</a>();
+00055                 <a class="code" href="classCQueue.html#a0">CQueue</a>(std::string);
+00057                 <font class="keyword">virtual</font> <a class="code" href="classCQueue.html#a2">~CQueue</a>();
+00061                 <font class="keywordtype">void</font> <a class="code" href="classCQueue.html#a3">initialize</a>();
+00066                 <font class="keywordtype">bool</font> <a class="code" href="classCQueue.html#a4">isWritable</a>();
+00071                 <a class="code" href="struct____elem____.html">elem</a> *<a class="code" href="classCQueue.html#a5">frontNode</a>();
+00077                 <a class="code" href="struct____elem____.html">elem</a> *<a class="code" href="classCQueue.html#a6">getNext</a>(<a class="code" href="struct____elem____.html">elem</a> *e);
+00082                 <font class="keywordtype">void</font> <a class="code" href="classCQueue.html#a7">setWritable</a>(<font class="keywordtype">bool</font> b);
+00086                 <font class="keywordtype">void</font> <a class="code" href="classCQueue.html#a8">removeAll</a>();
+00092                 <font class="keywordtype">void</font> <a class="code" href="classCQueue.html#a9">enqueue</a>(<font class="keywordtype">void</font> *d, <font class="keywordtype">void</font> (*h)(<font class="keywordtype">void</font> *));
+00098                 <font class="keywordtype">void</font> <a class="code" href="classCQueue.html#a10">push</a>(<font class="keywordtype">void</font> *d, <font class="keywordtype">void</font> (*h)(<font class="keywordtype">void</font> *));
+00103                 <font class="keywordtype">void</font> *<a class="code" href="classCQueue.html#a11">dequeue</a>();
+00104                 <font class="comment">//void *front();</font>
+00111 <font class="comment"></font>                <font class="keywordtype">void</font> *<a class="code" href="classCQueue.html#a12">deleteNode</a>(<a class="code" href="struct____elem____.html">elem</a> *e);
+00116                 <font class="keywordtype">void</font> <a class="code" href="classCQueue.html#a13">removeNode</a>(<a class="code" href="struct____elem____.html">elem</a> *e);
+00120                 <font class="keywordtype">void</font> *<a class="code" href="classCQueue.html#a14">getData</a>();
+00125                 <font class="keywordtype">int</font> <a class="code" href="classCQueue.html#a15">size</a>();
+00130                 <font class="keywordtype">bool</font> <a class="code" href="classCQueue.html#a16">isEmpty</a>();
+00135                 std::string <a class="code" href="classCQueue.html#a17">getName</a>();
+00140                 <font class="keywordtype">void</font> <a class="code" href="classCQueue.html#a18">setName</a>(std::string name);
+00144                 <font class="keywordtype">void</font> <a class="code" href="classCQueue.html#a19">setIsRemove</a>(<font class="keywordtype">bool</font>);
+00145 };
+00146 
+00147 <font class="preprocessor">#endif </font><font class="comment">/* __CQUEUE_H__ */</font>
+</pre></div><hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

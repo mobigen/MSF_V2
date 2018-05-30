@@ -1,0 +1,41 @@
+#!/usr/bin/python
+import threading, sys
+import subprocess as SP
+
+class Child(threading.Thread) :
+	def __init__(self, psName) :
+		self.psName = psName
+		threading.Thread.__init__(self)
+		self.p = SP.Popen( psName, shell=True, bufsize=100, stdin=SP.PIPE, stdout=SP.PIPE, stderr=SP.PIPE, close_fds=True)
+		#(child_stdin, child_stdout, child_stderr) = (p.stdin, p.stdout, p.stderr)
+
+	def init(self, destIn, destOut) :
+		self.destIn = destIn
+		self.destOut = destOut
+
+	def run(self) :
+		while 1 :
+			# self.p.stdout.write( self.destIn.read(1) )
+			buf = self.destOut.read(1)
+			#print "debug : buf = %s:[%s]" % (self.psName, buf)
+			self.p.stdin.write( "%s" % buf )
+			self.p.stdin.flush()
+
+			if self.psName == 'shout.py' :
+				print self.p.stderr.read(1)
+				sys.stdout.flush()
+
+def main() :
+	th1 = Child('echo.py')
+	th2 = Child('shout.py')
+
+	th1.init( th2.p.stdin, th2.p.stdout )
+	th2.init( th1.p.stdin, th1.p.stdout )
+
+	th1.start()
+	th2.start()
+
+	th1.join()
+	th2.join()
+
+main()

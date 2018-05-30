@@ -1,0 +1,17 @@
+u_time.c: In function `time2str':
+u_time.c:282: warning: comparison between signed and unsigned
+sc_system.c: In function `psinfo_cmdline2proc':
+sc_system.c:3085: warning: signed and unsigned type in conditional expression
+CSyslogMonitorThread.cpp: In member function `void CSyslogMonitorThread::checkFD()':
+CSyslogMonitorThread.cpp:115: warning: comparison between signed and unsigned integer expressions
+CSocketWorker.cpp: In member function `int CSocketWorker::setAddress(sockaddr_in*, const char*)':
+CSocketWorker.cpp:236: warning: comparison between signed and unsigned integer expressions
+CProtocolProcessor.cpp: In member function `void CProtocolProcessor::execSETCOND(char*)':
+CProtocolProcessor.cpp:532: warning: comparison between signed and unsigned integer expressions
+CProtocolProcessor.cpp: In member function `void CProtocolProcessor::execDELCOND(char*)':
+CProtocolProcessor.cpp:651: warning: comparison between signed and unsigned integer expressions
+CSchedulerThread.cpp: In member function `virtual void CSchedulerThread::run()':
+CSchedulerThread.cpp:47: warning: comparison between signed and unsigned integer expressions
+CSchedulerThread.cpp:69: warning: comparison between signed and unsigned integer expressions
+CMisc.cpp: In function `int gethostipaddr(char*)':
+CMisc.cpp:122: warning: comparison between signed and unsigned integer expressions

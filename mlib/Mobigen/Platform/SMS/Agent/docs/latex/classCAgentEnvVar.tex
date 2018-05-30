@@ -1,0 +1,191 @@
+\section{CAgent\-Env\-Var  클래스 참조}
+\label{classCAgentEnvVar}\index{CAgentEnvVar@{CAgent\-Env\-Var}}
+SMS Agent가 기동하면서 필요한 모든 환경 설정 정보 및 item 정보를 관리하는 클래스. 
+
+
+{\tt \#include $<$CAgent\-Env\-Var.h$>$}
+
+\subsection*{공용 메소드}
+\begin{CompactItemize}
+\item 
+{\bf CAgent\-Env\-Var} ()
+\item 
+{\bf $\sim$CAgent\-Env\-Var} ()
+\item 
+{\bf CQueue}$\ast$ {\bf get\-Event\-Q} ()
+\item 
+{\bf CQueue}$\ast$ {\bf get\-Short\-Perf\-Q} ()
+\item 
+{\bf CQueue}$\ast$ {\bf get\-Long\-Perf\-Q} ()
+\item 
+{\bf CQueue}$\ast$ {\bf get\-Resp\-Q} ()
+\item 
+{\bf CQueue}$\ast$ {\bf get\-Cmd\-Q} ()
+\item 
+{\bf CQueue}$\ast$ {\bf get\-Policy\-Q} ()
+\item 
+{\bf CKernel\-Core}$\ast$ {\bf get\-Kernel\-Core} ()
+\item 
+{\bf CAgent\-Config\-Var}$\ast$ {\bf get\-Agent\-Config\-Var} ()
+\item 
+bool$\ast$ {\bf get\-Event\-Session} ()
+\item 
+bool$\ast$ {\bf get\-Short\-Perf\-Session} ()
+\item 
+bool$\ast$ {\bf get\-Long\-Perf\-Session} ()
+\item 
+bool$\ast$ {\bf get\-Resp\-Session} ()
+\item 
+bool$\ast$ {\bf get\-Cmd\-Session} ()
+\end{CompactItemize}
+
+
+\subsection{상세한 내용}
+SMS Agent가 기동하면서 필요한 모든 환경 설정 정보 및 item 정보를 관리하는 클래스.
+
+system kernel 정보를 조회하기 위한 인터페이스({\bf CKernel\-Core} {\rm (페이지\,\pageref{classCKernelCore})})\par
+ item code 정보를 관리하는 인터페이스({\bf CAgent\-Config\-Var} {\rm (페이지\,\pageref{classCAgentConfigVar})})\par
+ SMS Agent 내부적으로 데이터를 주고받기 위한 각종 메시지 큐\par
+ SMS Agent session 상태 정보\par
+ Database session pool 정보 등을 관리한다. \begin{Desc}
+\item[{\bf 참조하시요: }]\par
+{\bf CKernel\-Core} {\rm (페이지\,\pageref{classCKernelCore})}, CAgent\-Config, {\bf CDBPool} {\rm (페이지\,\pageref{classCDBPool})}. \end{Desc}
+
+
+
+
+\subsection{생성자 \& 소멸자 문서화}
+\index{CAgentEnvVar@{CAgent\-Env\-Var}!CAgentEnvVar@{CAgentEnvVar}}
+\index{CAgentEnvVar@{CAgentEnvVar}!CAgentEnvVar@{CAgent\-Env\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CAgent\-Env\-Var::CAgent\-Env\-Var ()\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentEnvVar_a0}
+
+
+생성자 각종 변수를 초기화한다. \index{CAgentEnvVar@{CAgent\-Env\-Var}!~CAgentEnvVar@{$\sim$CAgentEnvVar}}
+\index{~CAgentEnvVar@{$\sim$CAgentEnvVar}!CAgentEnvVar@{CAgent\-Env\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CAgent\-Env\-Var::$\sim$CAgent\-Env\-Var ()\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentEnvVar_a1}
+
+
+소멸자 
+
+\subsection{멤버 함수 문서화}
+\index{CAgentEnvVar@{CAgent\-Env\-Var}!getAgentConfigVar@{getAgentConfigVar}}
+\index{getAgentConfigVar@{getAgentConfigVar}!CAgentEnvVar@{CAgent\-Env\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CAgent\-Config\-Var} $\ast$ CAgent\-Env\-Var::get\-Agent\-Config\-Var ()\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentEnvVar_a9}
+
+
+item code 정보를 관리하는 클래스({\bf CAgent\-Config\-Var} {\rm (페이지\,\pageref{classCAgentConfigVar})})를 얻어오기 위한 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+{\bf CAgent\-Config\-Var} {\rm (페이지\,\pageref{classCAgentConfigVar})} pointer. \end{Desc}
+\begin{Desc}
+\item[{\bf 참조하시요: }]\par
+{\bf CAgent\-Config\-Var} {\rm (페이지\,\pageref{classCAgentConfigVar})} \end{Desc}
+\index{CAgentEnvVar@{CAgent\-Env\-Var}!getCmdQ@{getCmdQ}}
+\index{getCmdQ@{getCmdQ}!CAgentEnvVar@{CAgent\-Env\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CQueue} $\ast$ CAgent\-Env\-Var::get\-Cmd\-Q ()\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentEnvVar_a6}
+
+
+명령어 처리기({\bf CProtocol\-Processor} {\rm (페이지\,\pageref{classCProtocolProcessor})})와 명령 코드 처리 소켓 쓰레드({\bf CSocket\-Worker\-Thread} {\rm (페이지\,\pageref{classCSocketWorkerThread})})와 통신한기 위한 메시지 큐를 얻어오는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+명령 메시지 Queue. \end{Desc}
+\begin{Desc}
+\item[{\bf 참조하시요: }]\par
+{\bf CProtocol\-Processor} {\rm (페이지\,\pageref{classCProtocolProcessor})}, {\bf CSocket\-Worker\-Thread} {\rm (페이지\,\pageref{classCSocketWorkerThread})}, {\bf CQueue} {\rm (페이지\,\pageref{classCQueue})}. \end{Desc}
+\index{CAgentEnvVar@{CAgent\-Env\-Var}!getCmdSession@{getCmdSession}}
+\index{getCmdSession@{getCmdSession}!CAgentEnvVar@{CAgent\-Env\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool $\ast$ CAgent\-Env\-Var::get\-Cmd\-Session ()\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentEnvVar_a14}
+
+
+SMS Agent와 SMS Manager간의 명령어 처리 소켓 세션 상태 정보를 얻어오는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+session status pointer. \end{Desc}
+\index{CAgentEnvVar@{CAgent\-Env\-Var}!getEventQ@{getEventQ}}
+\index{getEventQ@{getEventQ}!CAgentEnvVar@{CAgent\-Env\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CQueue} $\ast$ CAgent\-Env\-Var::get\-Event\-Q ()\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentEnvVar_a2}
+
+
+수집기와 Event 메시지 처리 소켓 쓰레드와 통신한기 위한 메시지 큐를 얻어오는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+Event(Alarm) message Queue. \end{Desc}
+\index{CAgentEnvVar@{CAgent\-Env\-Var}!getEventSession@{getEventSession}}
+\index{getEventSession@{getEventSession}!CAgentEnvVar@{CAgent\-Env\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool $\ast$ CAgent\-Env\-Var::get\-Event\-Session ()\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentEnvVar_a10}
+
+
+SMS Agent와 SMS Manager간의 장애 소켓 세션 상태 정보를 얻어오는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+session status pointer. \end{Desc}
+\index{CAgentEnvVar@{CAgent\-Env\-Var}!getKernelCore@{getKernelCore}}
+\index{getKernelCore@{getKernelCore}!CAgentEnvVar@{CAgent\-Env\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CKernel\-Core} $\ast$ CAgent\-Env\-Var::get\-Kernel\-Core ()\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentEnvVar_a8}
+
+
+system kernel core interface class(CKernel\-Core)를 얻어오기 위한 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+{\bf CKernel\-Core} {\rm (페이지\,\pageref{classCKernelCore})} pointer. \end{Desc}
+\begin{Desc}
+\item[{\bf 참조하시요: }]\par
+{\bf CKernel\-Core} {\rm (페이지\,\pageref{classCKernelCore})} \end{Desc}
+\index{CAgentEnvVar@{CAgent\-Env\-Var}!getLongPerfQ@{getLongPerfQ}}
+\index{getLongPerfQ@{getLongPerfQ}!CAgentEnvVar@{CAgent\-Env\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CQueue} $\ast$ CAgent\-Env\-Var::get\-Long\-Perf\-Q ()\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentEnvVar_a4}
+
+
+수집기와 중장기 성능 메시지 처리 소켓 쓰레드와 통신한기 위한 메시지 큐를 얻어오는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+중장기 성능 message Queue. \end{Desc}
+\index{CAgentEnvVar@{CAgent\-Env\-Var}!getLongPerfSession@{getLongPerfSession}}
+\index{getLongPerfSession@{getLongPerfSession}!CAgentEnvVar@{CAgent\-Env\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool $\ast$ CAgent\-Env\-Var::get\-Long\-Perf\-Session ()\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentEnvVar_a12}
+
+
+SMS Agent와 SMS Manager간의 중장기 소켓 세션 상태 정보를 얻어오는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+session status pointer. \end{Desc}
+\index{CAgentEnvVar@{CAgent\-Env\-Var}!getPolicyQ@{getPolicyQ}}
+\index{getPolicyQ@{getPolicyQ}!CAgentEnvVar@{CAgent\-Env\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CQueue} $\ast$ CAgent\-Env\-Var::get\-Policy\-Q ()\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentEnvVar_a7}
+
+
+스케쥴러(CScheduler)와 정보 수집 쓰레드({\bf SCThread} {\rm (페이지\,\pageref{classSCThread})})와 통신한기 위한 정책 큐를 얻어오는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+수집 정책 Queue. \end{Desc}
+\begin{Desc}
+\item[{\bf 참조하시요: }]\par
+CScheduler, {\bf SCThread} {\rm (페이지\,\pageref{classSCThread})}, {\bf CPolicy\-Item} {\rm (페이지\,\pageref{classCPolicyItem})}, {\bf CQueue} {\rm (페이지\,\pageref{classCQueue})} \end{Desc}
+\index{CAgentEnvVar@{CAgent\-Env\-Var}!getRespQ@{getRespQ}}
+\index{getRespQ@{getRespQ}!CAgentEnvVar@{CAgent\-Env\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CQueue} $\ast$ CAgent\-Env\-Var::get\-Resp\-Q ()\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentEnvVar_a5}
+
+
+수집기와 명령 응답 메시지 처리 소켓 쓰레드와 통신한기 위한 메시지 큐를 얻어오는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+명령 응담 message Queue. \end{Desc}
+\index{CAgentEnvVar@{CAgent\-Env\-Var}!getRespSession@{getRespSession}}
+\index{getRespSession@{getRespSession}!CAgentEnvVar@{CAgent\-Env\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool $\ast$ CAgent\-Env\-Var::get\-Resp\-Session ()\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentEnvVar_a13}
+
+
+SMS Agent와 SMS Manager간의 명령 응답 소켓 세션 상태 정보를 얻어오는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+session status pointer. \end{Desc}
+\index{CAgentEnvVar@{CAgent\-Env\-Var}!getShortPerfQ@{getShortPerfQ}}
+\index{getShortPerfQ@{getShortPerfQ}!CAgentEnvVar@{CAgent\-Env\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CQueue} $\ast$ CAgent\-Env\-Var::get\-Short\-Perf\-Q ()\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentEnvVar_a3}
+
+
+수집기와 단기 성능 메시지 처리 소켓 쓰레드와 통신한기 위한 메시지 큐를 얻어오는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+단기 성능 message Queue. \end{Desc}
+\index{CAgentEnvVar@{CAgent\-Env\-Var}!getShortPerfSession@{getShortPerfSession}}
+\index{getShortPerfSession@{getShortPerfSession}!CAgentEnvVar@{CAgent\-Env\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool $\ast$ CAgent\-Env\-Var::get\-Short\-Perf\-Session ()\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentEnvVar_a11}
+
+
+SMS Agent와 SMS Manager간의 단기 성능 소켓 세션 상태 정보를 얻어오는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+session status pointer. \end{Desc}
+
+
+이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:\begin{CompactItemize}
+\item 
+{\bf CAgent\-Env\-Var.h}\end{CompactItemize}

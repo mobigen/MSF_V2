@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CItemCondition.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CItemCondition.h</h1><div class="fragment"><pre>00001 
+00002 
+00003 <font class="preprocessor">#ifndef _CITEMCONDITION_H__</font>
+00004 <font class="preprocessor"></font><font class="preprocessor">#define _CITEMCONDITION_H__ 1</font>
+00005 <font class="preprocessor"></font>
+00006 <font class="preprocessor">#include &lt;stdio.h&gt;</font>
+00007 <font class="preprocessor">#include &lt;stdlib.h&gt;</font>
+00008 <font class="preprocessor">#include &lt;string&gt;</font>
+00009 
+00010 <font class="preprocessor">#define MAX_COND_COUNT 20</font>
+00011 <font class="preprocessor"></font>
+00012 <font class="preprocessor">#define COND_OPCODE_EGT '1'</font>
+00013 <font class="preprocessor"></font><font class="preprocessor">#define COND_OPCODE_GT  '2'</font>
+00014 <font class="preprocessor"></font><font class="preprocessor">#define COND_OPCODE_ELT '3'</font>
+00015 <font class="preprocessor"></font><font class="preprocessor">#define COND_OPCODE_LT  '4'</font>
+00016 <font class="preprocessor"></font><font class="preprocessor">#define COND_OPCODE_NEQ '5'</font>
+00017 <font class="preprocessor"></font><font class="preprocessor">#define COND_OPCODE_EQ  '6'</font>
+00018 <font class="preprocessor"></font><font class="preprocessor">#define COND_OPCODE_SUBSTR      '7'</font>
+00019 <font class="preprocessor"></font><font class="preprocessor">#define COND_OPCODE_NSUBSTR     '8'</font>
+00020 <font class="preprocessor"></font>
+00021 
+<a name="l00028"></a><a class="code" href="structst__conditem.html">00028</a> <font class="keyword">typedef</font> <font class="keyword">struct </font><a class="code" href="structst__conditem.html">st_conditem</a>
+00029 {
+00030         <font class="keywordtype">char</font> opcode;
+00031         <font class="keywordtype">char</font> type;
+00032         <font class="keyword">union </font>{
+00033                 <font class="keywordtype">double</font> d;
+00034                 <font class="keywordtype">char</font> s[1024];
+00035         }val;
+00036 }<a class="code" href="structst__conditem.html">st_conditem</a>;
+00037 
+<a name="l00044"></a><a class="code" href="structst__condition.html">00044</a> <font class="keyword">typedef</font> <font class="keyword">struct </font><a class="code" href="structst__condition.html">st_condition</a>
+00045 {
+00046         <font class="keywordtype">int</font> count;
+00047         <font class="keywordtype">char</font> c[MAX_COND_COUNT];
+00048         <a class="code" href="structst__conditem.html">st_conditem</a> item[MAX_COND_COUNT];
+00049 }<a class="code" href="structst__condition.html">st_condition</a>;
+00050 
+00051 
+00053 
+<a name="l00062"></a><a class="code" href="classCItemCondition.html">00062</a> <font class="keyword">class </font><a class="code" href="classCItemCondition.html">CItemCondition</a>
+00063 {
+00064         <font class="keyword">public</font>:
+00066                 <a class="code" href="classCItemCondition.html#a0">CItemCondition</a>();
+00068                 <font class="keyword">virtual</font> <a class="code" href="classCItemCondition.html#a1">~CItemCondition</a>();
+<a name="l00073"></a><a class="code" href="classCItemCondition.html#a2">00073</a>                 <font class="keywordtype">unsigned</font> <font class="keywordtype">int</font> <a class="code" href="classCItemCondition.html#a2">getIndex</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_index; }
+<a name="l00081"></a><a class="code" href="classCItemCondition.html#a3">00081</a>                 <font class="keywordtype">unsigned</font> <font class="keywordtype">int</font> <a class="code" href="classCItemCondition.html#a3">getElement</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_element; }
+<a name="l00086"></a><a class="code" href="classCItemCondition.html#a4">00086</a>                 std::string <a class="code" href="classCItemCondition.html#a4">getInstanceName</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_instName; }
+<a name="l00092"></a><a class="code" href="classCItemCondition.html#a5">00092</a>                 std::string <a class="code" href="classCItemCondition.html#a5">getCondition</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_condition; }
+<a name="l00098"></a><a class="code" href="classCItemCondition.html#a6">00098</a>                 std::string <a class="code" href="classCItemCondition.html#a6">getSeverity</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_severity; }
+00099 
+<a name="l00104"></a><a class="code" href="classCItemCondition.html#a7">00104</a>                 <font class="keywordtype">void</font> <a class="code" href="classCItemCondition.html#a7">setIndex</a>(<font class="keywordtype">unsigned</font> <font class="keywordtype">int</font> index)<font class="keyword"> </font>{ m_index = index; }
+<a name="l00109"></a><a class="code" href="classCItemCondition.html#a8">00109</a>                 <font class="keywordtype">void</font> <a class="code" href="classCItemCondition.html#a8">setElement</a>(<font class="keywordtype">unsigned</font> <font class="keywordtype">int</font> element)<font class="keyword"> </font>{ m_element = element; }
+<a name="l00115"></a><a class="code" href="classCItemCondition.html#a9">00115</a>                 <font class="keywordtype">void</font> <a class="code" href="classCItemCondition.html#a9">setInstanceName</a>(std::string instName)<font class="keyword"> </font>{ m_instName = instName; }
+<a name="l00121"></a><a class="code" href="classCItemCondition.html#a10">00121</a>                 <font class="keywordtype">void</font> <a class="code" href="classCItemCondition.html#a10">setCondition</a>(std::string condition)<font class="keyword"> </font>{ m_condition = condition; }
+<a name="l00127"></a><a class="code" href="classCItemCondition.html#a11">00127</a>                 <font class="keywordtype">void</font> <a class="code" href="classCItemCondition.html#a11">setSeverity</a>(std::string severity)<font class="keyword"> </font>{ m_severity = severity; }
+<a name="l00134"></a><a class="code" href="classCItemCondition.html#a12">00134</a>                 <font class="keywordtype">bool</font> <a class="code" href="classCItemCondition.html#a12">isOverThreshold</a>(<font class="keywordtype">unsigned</font> <font class="keywordtype">int</font> value)<font class="keyword"> </font>{ <font class="keywordflow">return</font> <a class="code" href="classCItemCondition.html#a12">isOverThreshold</a>((<font class="keywordtype">unsigned</font> <font class="keywordtype">long</font>) value); }
+00141                 <font class="keywordtype">bool</font> <a class="code" href="classCItemCondition.html#a12">isOverThreshold</a>(<font class="keywordtype">unsigned</font> <font class="keywordtype">long</font> value);
+00148                 <font class="keywordtype">bool</font> <a class="code" href="classCItemCondition.html#a12">isOverThreshold</a>(<font class="keywordtype">int</font> value);
+00155                 <font class="keywordtype">bool</font> <a class="code" href="classCItemCondition.html#a12">isOverThreshold</a>(<font class="keywordtype">long</font> value);
+00162                 <font class="keywordtype">bool</font> <a class="code" href="classCItemCondition.html#a12">isOverThreshold</a>(<font class="keywordtype">double</font> value);
+00169                 <font class="keywordtype">bool</font> <a class="code" href="classCItemCondition.html#a12">isOverThreshold</a>(std::string cond);
+00176                 <font class="keywordtype">bool</font> <a class="code" href="classCItemCondition.html#a12">isOverThreshold</a>(<font class="keywordtype">char</font> *value);
+00182                 <font class="keywordtype">bool</font> <a class="code" href="classCItemCondition.html#a19">checkOperator</a>(<font class="keywordtype">char</font> *pcmd);
+00189                 <font class="keywordtype">bool</font> <a class="code" href="classCItemCondition.html#a20">checkCondition</a>(<a class="code" href="structst__conditem.html">st_conditem</a> *item, <font class="keywordtype">double</font> val);
+00196                 <font class="keywordtype">bool</font> <a class="code" href="classCItemCondition.html#a20">checkCondition</a>(<a class="code" href="structst__conditem.html">st_conditem</a> *item, <font class="keywordtype">char</font> *val);
+00206                 <font class="keywordtype">bool</font> <a class="code" href="classCItemCondition.html#a20">checkCondition</a>(<font class="keywordtype">bool</font> b, <font class="keywordtype">char</font> op, <a class="code" href="structst__conditem.html">st_conditem</a> *item, <font class="keywordtype">double</font> val);
+00216                 <font class="keywordtype">bool</font> <a class="code" href="classCItemCondition.html#a20">checkCondition</a>(<font class="keywordtype">bool</font> b, <font class="keywordtype">char</font> op, <a class="code" href="structst__conditem.html">st_conditem</a> *item, <font class="keywordtype">char</font> *val);
+00222                 <font class="keywordtype">void</font> <a class="code" href="classCItemCondition.html#a24">parseCondition</a>(<font class="keywordtype">char</font> *msg);
+00223 
+00224         <font class="keyword">private</font>:
+00225                 <font class="keywordtype">unsigned</font> <font class="keywordtype">int</font> m_index;                           
+00226                 <font class="keywordtype">unsigned</font> <font class="keywordtype">int</font> m_element;                         
+00227                 std::string m_instName;                         
+00228                 std::string m_condition;                        
+00229                 std::string m_severity;                         
+00230                 <a class="code" href="structst__condition.html">st_condition</a> m_parsecondition;          
+00231 };
+00232 
+00233 <font class="keywordtype">void</font> deleteCItemCondition(<font class="keywordtype">void</font> *d);
+00234 
+00235 <font class="preprocessor">#endif </font><font class="comment">/* _CITEMCONDITION_H__ */</font>
+</pre></div><hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

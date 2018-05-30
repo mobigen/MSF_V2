@@ -1,0 +1,115 @@
+\section{CSocket\-Worker\-Thread  클래스 참조}
+\label{classCSocketWorkerThread}\index{CSocketWorkerThread@{CSocket\-Worker\-Thread}}
+SMS Manager와 SMS Agent간 통신을 담당하는 클래스. 
+
+
+{\tt \#include $<$CSocket\-Worker\-Thread.h$>$}
+
+CSocket\-Worker\-Thread에 대한 상속 도표:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCSocketWorkerThread}
+\end{center}
+\end{figure}
+\subsection*{공용 메소드}
+\begin{CompactItemize}
+\item 
+{\bf CSocket\-Worker\-Thread} ({\bf CAgent\-Env\-Var} $\ast$envvar, void $\ast$\_\-data, bool $\ast$\_\-session, int port, int num\-Elts, int type)
+\item 
+virtual {\bf $\sim$CSocket\-Worker\-Thread} ()
+\item 
+virtual void {\bf run} ()
+\item 
+void {\bf process\-Event\-Message} ()
+\item 
+void {\bf process\-Command\-Message} ()
+\item 
+void {\bf process\-Session\-Status} ()
+\item 
+void {\bf lock} ()
+\item 
+void {\bf unlock} ()
+\item 
+void {\bf quit} ()
+\item 
+bool {\bf login} ()
+\end{CompactItemize}
+
+
+\subsection{상세한 내용}
+SMS Manager와 SMS Agent간 통신을 담당하는 클래스.
+
+
+
+\subsection{생성자 \& 소멸자 문서화}
+\index{CSocketWorkerThread@{CSocket\-Worker\-Thread}!CSocketWorkerThread@{CSocketWorkerThread}}
+\index{CSocketWorkerThread@{CSocketWorkerThread}!CSocketWorkerThread@{CSocket\-Worker\-Thread}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CSocket\-Worker\-Thread::CSocket\-Worker\-Thread ({\bf CAgent\-Env\-Var} $\ast$ {\em envvar}, void $\ast$ {\em \_\-data}, bool $\ast$ {\em \_\-session}, int {\em port}, int {\em num\-Elts}, int {\em type})\hspace{0.3cm}{\tt  [inline]}}\label{classCSocketWorkerThread_a0}
+
+
+생성자 \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em SMS}]Agent 환경 정보 관리 클래스. \item[
+{\em void}]data pointer. \item[
+{\em pointer.}]\item[
+{\em element}]number. 의미없음. \item[
+{\em EVENT}]REPORT, ACCEPT COMMAND, SESSION STATUS REPORT) \end{description}
+\end{Desc}
+\index{CSocketWorkerThread@{CSocket\-Worker\-Thread}!~CSocketWorkerThread@{$\sim$CSocketWorkerThread}}
+\index{~CSocketWorkerThread@{$\sim$CSocketWorkerThread}!CSocketWorkerThread@{CSocket\-Worker\-Thread}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CSocket\-Worker\-Thread::$\sim$CSocket\-Worker\-Thread ()\hspace{0.3cm}{\tt  [inline, virtual]}}\label{classCSocketWorkerThread_a1}
+
+
+소멸자 
+
+\subsection{멤버 함수 문서화}
+\index{CSocketWorkerThread@{CSocket\-Worker\-Thread}!lock@{lock}}
+\index{lock@{lock}!CSocketWorkerThread@{CSocket\-Worker\-Thread}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CSocket\-Worker\-Thread::lock ()}\label{classCSocketWorkerThread_a6}
+
+
+쓰레드 잠금 메쏘드 \index{CSocketWorkerThread@{CSocket\-Worker\-Thread}!login@{login}}
+\index{login@{login}!CSocketWorkerThread@{CSocket\-Worker\-Thread}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CSocket\-Worker\-Thread::login ()}\label{classCSocketWorkerThread_a9}
+
+
+SMS Manager가 SMS Agent로 접속하기 위해 필요한 로그인 인증 절차를 처리하는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+true if login success, else return false. \end{Desc}
+\index{CSocketWorkerThread@{CSocket\-Worker\-Thread}!processCommandMessage@{processCommandMessage}}
+\index{processCommandMessage@{processCommandMessage}!CSocketWorkerThread@{CSocket\-Worker\-Thread}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CSocket\-Worker\-Thread::process\-Command\-Message ()}\label{classCSocketWorkerThread_a4}
+
+
+ACCEPT COMMAND FROM SMS MANAGER \index{CSocketWorkerThread@{CSocket\-Worker\-Thread}!processEventMessage@{processEventMessage}}
+\index{processEventMessage@{processEventMessage}!CSocketWorkerThread@{CSocket\-Worker\-Thread}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CSocket\-Worker\-Thread::process\-Event\-Message ()}\label{classCSocketWorkerThread_a3}
+
+
+EVENT REPOPRT METHOD \index{CSocketWorkerThread@{CSocket\-Worker\-Thread}!processSessionStatus@{processSessionStatus}}
+\index{processSessionStatus@{processSessionStatus}!CSocketWorkerThread@{CSocket\-Worker\-Thread}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CSocket\-Worker\-Thread::process\-Session\-Status ()}\label{classCSocketWorkerThread_a5}
+
+
+REPORT AGENT SESSION STATUS \index{CSocketWorkerThread@{CSocket\-Worker\-Thread}!quit@{quit}}
+\index{quit@{quit}!CSocketWorkerThread@{CSocket\-Worker\-Thread}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CSocket\-Worker\-Thread::quit ()}\label{classCSocketWorkerThread_a8}
+
+
+쓰레드 종료 요청 메쏘드 \index{CSocketWorkerThread@{CSocket\-Worker\-Thread}!run@{run}}
+\index{run@{run}!CSocketWorkerThread@{CSocket\-Worker\-Thread}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CSocket\-Worker\-Thread::run ()\hspace{0.3cm}{\tt  [virtual]}}\label{classCSocketWorkerThread_a2}
+
+
+쓰레드 기동 메쏘드 \index{CSocketWorkerThread@{CSocket\-Worker\-Thread}!unlock@{unlock}}
+\index{unlock@{unlock}!CSocketWorkerThread@{CSocket\-Worker\-Thread}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CSocket\-Worker\-Thread::unlock ()}\label{classCSocketWorkerThread_a7}
+
+
+쓰레드 잠금 해지 메쏘드 
+
+이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:\begin{CompactItemize}
+\item 
+{\bf CSocket\-Worker\-Thread.h}\end{CompactItemize}

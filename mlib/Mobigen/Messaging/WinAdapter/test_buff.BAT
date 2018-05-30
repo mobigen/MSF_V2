@@ -1,0 +1,1 @@
+.\WinAdapter.py -p1 --level=DEBUG 150.23.15.92 25000 WinAdapter

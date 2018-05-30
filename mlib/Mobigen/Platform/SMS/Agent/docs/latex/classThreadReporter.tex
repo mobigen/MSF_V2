@@ -1,0 +1,61 @@
+\section{Thread\-Reporter  클래스 참조}
+\label{classThreadReporter}\index{ThreadReporter@{Thread\-Reporter}}
+Basic thread reporter class. 
+
+
+{\tt \#include $<$Thread\-Reporter.h$>$}
+
+Thread\-Reporter에 대한 상속 도표:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.86667cm]{classThreadReporter}
+\end{center}
+\end{figure}
+\subsection*{공용 메소드}
+\begin{CompactItemize}
+\item 
+\index{ThreadReporter@{ThreadReporter}!ThreadReporter@{Thread\-Reporter}}\index{ThreadReporter@{ThreadReporter}!ThreadReporter@{Thread\-Reporter}}
+{\bf Thread\-Reporter} ()\label{classThreadReporter_a0}
+
+\item 
+\index{~ThreadReporter@{$\sim$ThreadReporter}!ThreadReporter@{Thread\-Reporter}}\index{ThreadReporter@{ThreadReporter}!~ThreadReporter@{$\sim$Thread\-Reporter}}
+virtual {\bf $\sim$Thread\-Reporter} ()\label{classThreadReporter_a1}
+
+\item 
+\index{addObserver@{addObserver}!ThreadReporter@{Thread\-Reporter}}\index{ThreadReporter@{ThreadReporter}!addObserver@{add\-Observer}}
+void {\bf add\-Observer} (Thread\-Observer $\ast$observer)\label{classThreadReporter_a2}
+
+\item 
+\index{removeObserver@{removeObserver}!ThreadReporter@{Thread\-Reporter}}\index{ThreadReporter@{ThreadReporter}!removeObserver@{remove\-Observer}}
+void {\bf remove\-Observer} (Thread\-Observer $\ast$observer)\label{classThreadReporter_a3}
+
+\end{CompactItemize}
+\subsection*{프로텍티드 메소드}
+\begin{CompactItemize}
+\item 
+\index{notifyObserversStarted@{notifyObserversStarted}!ThreadReporter@{Thread\-Reporter}}\index{ThreadReporter@{ThreadReporter}!notifyObserversStarted@{notify\-Observers\-Started}}
+void {\bf notify\-Observers\-Started} (const int thread\-Id)\label{classThreadReporter_b0}
+
+\item 
+\index{notifyObserversFinished@{notifyObserversFinished}!ThreadReporter@{Thread\-Reporter}}\index{ThreadReporter@{ThreadReporter}!notifyObserversFinished@{notify\-Observers\-Finished}}
+void {\bf notify\-Observers\-Finished} (const int thread\-Id)\label{classThreadReporter_b1}
+
+\item 
+\index{notifyObserversMessage@{notifyObserversMessage}!ThreadReporter@{Thread\-Reporter}}\index{ThreadReporter@{ThreadReporter}!notifyObserversMessage@{notify\-Observers\-Message}}
+void {\bf notify\-Observers\-Message} (const int thread\-Id, const char $\ast$message)\label{classThreadReporter_b2}
+
+\item 
+\index{notifyObserversError@{notifyObserversError}!ThreadReporter@{Thread\-Reporter}}\index{ThreadReporter@{ThreadReporter}!notifyObserversError@{notify\-Observers\-Error}}
+void {\bf notify\-Observers\-Error} (const int thread\-Id, const char $\ast$error\-Message)\label{classThreadReporter_b3}
+
+\end{CompactItemize}
+
+
+\subsection{상세한 내용}
+Basic thread reporter class.
+
+
+
+이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:\begin{CompactItemize}
+\item 
+{\bf Thread\-Reporter.h}\end{CompactItemize}

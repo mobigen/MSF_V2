@@ -1,0 +1,453 @@
+\section{CAgent\-Config\-Var  클래스 참조}
+\label{classCAgentConfigVar}\index{CAgentConfigVar@{CAgent\-Config\-Var}}
+scagent.xml 파일로부터 환경 설정 정보 및 Item Code 정보를 로딩하여 관리하는 클래스. 
+
+
+{\tt \#include $<$CAgent\-Config\-Var.h$>$}
+
+\subsection*{공용 메소드}
+\begin{CompactItemize}
+\item 
+{\bf CAgent\-Config\-Var} ()
+\begin{CompactList}\small\item\em 생성자.\item\end{CompactList}\item 
+virtual {\bf $\sim$CAgent\-Config\-Var} ()
+\begin{CompactList}\small\item\em 소멸자.\item\end{CompactList}\item 
+void {\bf load\-XMLConfig\-Var} ()
+\begin{CompactList}\small\item\em scagent.xml 파일을 로딩하는 함수.\item\end{CompactList}\item 
+{\bf CItem}$\ast$ {\bf get\-Item} (char $\ast$code)
+\begin{CompactList}\small\item\em 주어진 Item Code에 해당한는 Item 정보를 얻어오는 함수.\item\end{CompactList}\item 
+{\bf CItem}$\ast$ {\bf get\-Item} (std::string code)
+\begin{CompactList}\small\item\em 주어진 Item Code에 해당한는 Item 정보를 얻어오는 함수.\item\end{CompactList}\item 
+void {\bf add\-Item} ({\bf CItem} $\ast$item)
+\begin{CompactList}\small\item\em 특정 Item을 추가하는 함수.\item\end{CompactList}\item 
+void {\bf set\-Item} ({\bf CItem} $\ast$item)
+\begin{CompactList}\small\item\em 특정 Item의 내용을 변경하는 함수.\item\end{CompactList}\item 
+void {\bf del\-Item} (std::string code)
+\begin{CompactList}\small\item\em 특정 Item의 내용을 삭제하는 함수.\item\end{CompactList}\item 
+{\bf CQueue}$\ast$ {\bf get\-Item\-Q} ()
+\item 
+void {\bf unload\-XMLConfig\-Var} ()
+\begin{CompactList}\small\item\em scagent.xml 파일을 업데이트하는 함수.\item\end{CompactList}\item 
+Ti\-Xml\-Element$\ast$ {\bf make\-Xml\-Element} ({\bf CItem} $\ast$item)
+\item 
+void {\bf link\-End\-Child} (std::string str, Ti\-Xml\-Element $\ast$elem, const char $\ast$name)
+\item 
+void {\bf link\-End\-Child} (unsigned long l, Ti\-Xml\-Element $\ast$elem, const char $\ast$name)
+\item 
+void {\bf remove\-Doc\-Item} (std::string code)
+\item 
+int {\bf get\-Event\-Port} ()
+\item 
+int {\bf get\-Short\-Perf\-Port} ()
+\item 
+int {\bf get\-Long\-Perf\-Port} ()
+\item 
+int {\bf get\-Resp\-Port} ()
+\item 
+int {\bf get\-Cmd\-Port} ()
+\item 
+int {\bf get\-Session\-Port} ()
+\item 
+std::string {\bf get\-Userid} ()
+\item 
+std::string {\bf get\-Passwd} ()
+\item 
+std::string {\bf get\-Access\-IP} ()
+\item 
+std::string {\bf get\-Ora\-UID} ()
+\item 
+std::string {\bf get\-Ora\-Passwd} ()
+\item 
+std::string {\bf get\-Ora\-SID} ()
+\item 
+void {\bf set\-Ora\-UID} (char $\ast$uid)
+\item 
+void {\bf set\-Ora\-SID} (char $\ast$sid)
+\item 
+void {\bf set\-Ora\-Passwd} (char $\ast$passwd)
+\item 
+void {\bf set\-Userid} (char $\ast$userid)
+\item 
+void {\bf set\-Passwd} (char $\ast$passwd)
+\item 
+void {\bf set\-Access\-IP} (char $\ast$accessip)
+\item 
+bool {\bf set\-User\-Info} (std::string sid, std::string userid, std::string password)
+\item 
+void {\bf lock} ()
+\item 
+void {\bf unlock} ()
+\end{CompactItemize}
+
+
+\subsection{상세한 내용}
+scagent.xml 파일로부터 환경 설정 정보 및 Item Code 정보를 로딩하여 관리하는 클래스.
+
+Item Code 정보를 읽어서 {\bf CItem} {\rm (페이지\,\pageref{classCItem})} class에 저장하고 관리하며,  기타 오라클 로그인에 필요한 계정,  SMS Manager와 통신하기 위한 리슨 포트 및  SMS Agent로 로그인하기 위한 계정 및 접속 허용 아이피 정보를 관리한다. 
+
+
+
+\subsection{생성자 \& 소멸자 문서화}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!CAgentConfigVar@{CAgentConfigVar}}
+\index{CAgentConfigVar@{CAgentConfigVar}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CAgent\-Config\-Var::CAgent\-Config\-Var ()}\label{classCAgentConfigVar_a0}
+
+
+생성자.
+
+Detail : \index{CAgentConfigVar@{CAgent\-Config\-Var}!~CAgentConfigVar@{$\sim$CAgentConfigVar}}
+\index{~CAgentConfigVar@{$\sim$CAgentConfigVar}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CAgent\-Config\-Var::$\sim$CAgent\-Config\-Var ()\hspace{0.3cm}{\tt  [virtual]}}\label{classCAgentConfigVar_a1}
+
+
+소멸자.
+
+Detail : 
+
+\subsection{멤버 함수 문서화}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!addItem@{addItem}}
+\index{addItem@{addItem}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CAgent\-Config\-Var::add\-Item ({\bf CItem} $\ast$ {\em item})}\label{classCAgentConfigVar_a5}
+
+
+특정 Item을 추가하는 함수.
+
+\begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em CItem}]pointer. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 참조하시요: }]\par
+{\bf CItem} {\rm (페이지\,\pageref{classCItem})}. \end{Desc}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!delItem@{delItem}}
+\index{delItem@{delItem}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CAgent\-Config\-Var::del\-Item (std::string {\em code})}\label{classCAgentConfigVar_a7}
+
+
+특정 Item의 내용을 삭제하는 함수.
+
+\begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em string}]item code name. \end{description}
+\end{Desc}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!getAccessIP@{getAccessIP}}
+\index{getAccessIP@{getAccessIP}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}std::string CAgent\-Config\-Var::get\-Access\-IP ()\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentConfigVar_a22}
+
+
+SMS Agent로 접속이 허용된 IP 대역 정보를 반환하는 함수. \begin{Desc}
+\item[{\bf 반환: }]\par
+permmitted access ip address. \end{Desc}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!getCmdPort@{getCmdPort}}
+\index{getCmdPort@{getCmdPort}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int CAgent\-Config\-Var::get\-Cmd\-Port ()\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentConfigVar_a18}
+
+
+SMS Manager로부터 명령을 전달받기 위한 리슨 포트를 반환하는 함수. \begin{Desc}
+\item[{\bf 반환: }]\par
+TCP/IP command listen port. \end{Desc}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!getEventPort@{getEventPort}}
+\index{getEventPort@{getEventPort}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int CAgent\-Config\-Var::get\-Event\-Port ()\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentConfigVar_a14}
+
+
+SMS Agent가 수집하는 장애 정보를 SMS Manager로 전송하기 위한 리슨 포트를 반환하는 함수. \begin{Desc}
+\item[{\bf 반환: }]\par
+TCP/IP Alarm listen port. \end{Desc}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!getItem@{getItem}}
+\index{getItem@{getItem}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CItem} $\ast$ CAgent\-Config\-Var::get\-Item (std::string {\em code})}\label{classCAgentConfigVar_a4}
+
+
+주어진 Item Code에 해당한는 Item 정보를 얻어오는 함수.
+
+\begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em a}]string value \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 반환: }]\par
+return {\bf CItem} {\rm (페이지\,\pageref{classCItem})} class, if failed return NULL. \end{Desc}
+\begin{Desc}
+\item[{\bf 참조하시요: }]\par
+{\bf CItem} {\rm (페이지\,\pageref{classCItem})} class. \end{Desc}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!getItem@{getItem}}
+\index{getItem@{getItem}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CItem} $\ast$ CAgent\-Config\-Var::get\-Item (char $\ast$ {\em code})\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentConfigVar_a3}
+
+
+주어진 Item Code에 해당한는 Item 정보를 얻어오는 함수.
+
+\begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em a}]charater pointer. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 반환: }]\par
+return {\bf CItem} {\rm (페이지\,\pageref{classCItem})} class, if failed return NULL. \end{Desc}
+\begin{Desc}
+\item[{\bf 참조하시요: }]\par
+{\bf CItem} {\rm (페이지\,\pageref{classCItem})} \end{Desc}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!getItemQ@{getItemQ}}
+\index{getItemQ@{getItemQ}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CQueue} $\ast$ CAgent\-Config\-Var::get\-Item\-Q ()}\label{classCAgentConfigVar_a8}
+
+
+Item list를 반환하는 함수. 현재 SMS Agent가 관리하고 있는 {\bf CItem} {\rm (페이지\,\pageref{classCItem})} class(item code)를 저장하고 있는 리스트 큐.를 반환하여 준다. \begin{Desc}
+\item[{\bf 반환: }]\par
+{\bf CQueue} {\rm (페이지\,\pageref{classCQueue})} pointer. \end{Desc}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!getLongPerfPort@{getLongPerfPort}}
+\index{getLongPerfPort@{getLongPerfPort}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int CAgent\-Config\-Var::get\-Long\-Perf\-Port ()\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentConfigVar_a16}
+
+
+SMS Agent가 수집하는 중장기(1시간 이상) 성능 정보를 SMS Manager로 전송하기 위한 리슨 포트를 반환하는 함수. \begin{Desc}
+\item[{\bf 반환: }]\par
+TCP/IP long period Performance listen port. \end{Desc}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!getOraPasswd@{getOraPasswd}}
+\index{getOraPasswd@{getOraPasswd}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}std::string CAgent\-Config\-Var::get\-Ora\-Passwd ()\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentConfigVar_a24}
+
+
+Oracle system 계정의 암호를 반환하는 함수. \begin{Desc}
+\item[{\bf 반환: }]\par
+Oracle system account password. \end{Desc}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!getOraSID@{getOraSID}}
+\index{getOraSID@{getOraSID}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}std::string CAgent\-Config\-Var::get\-Ora\-SID ()\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentConfigVar_a25}
+
+
+Oracle SID 정보를 반환하는 함수. \begin{Desc}
+\item[{\bf 반환: }]\par
+Oracle SID. \end{Desc}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!getOraUID@{getOraUID}}
+\index{getOraUID@{getOraUID}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}std::string CAgent\-Config\-Var::get\-Ora\-UID ()\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentConfigVar_a23}
+
+
+Oracle system 계정을 반환하는 함수. \begin{Desc}
+\item[{\bf 반환: }]\par
+Oracle system account. \end{Desc}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!getPasswd@{getPasswd}}
+\index{getPasswd@{getPasswd}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}std::string CAgent\-Config\-Var::get\-Passwd ()\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentConfigVar_a21}
+
+
+SMS Agent로 접속하기 위한 패스워드 정보를 반환하는 함수. \begin{Desc}
+\item[{\bf 반환: }]\par
+SMS Agent access password. \end{Desc}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!getRespPort@{getRespPort}}
+\index{getRespPort@{getRespPort}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int CAgent\-Config\-Var::get\-Resp\-Port ()\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentConfigVar_a17}
+
+
+SMS Manager로부터 전달받은 명령을 수행한 결과값을 SMS Manager로 전송하기 위한 리슨 포트를 반환하는 함수. \begin{Desc}
+\item[{\bf 반환: }]\par
+TCP/IP command response listen port. \end{Desc}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!getSessionPort@{getSessionPort}}
+\index{getSessionPort@{getSessionPort}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int CAgent\-Config\-Var::get\-Session\-Port ()\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentConfigVar_a19}
+
+
+SMS Manager와 SMS Agent간의 연결된 세션 상태 및 각 세션별 누적 메시지 정보를 전송하기 위한 리슨 포트를 반환하는 함수. \begin{Desc}
+\item[{\bf 반환: }]\par
+TCP/IP listen port to get session status. \end{Desc}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!getShortPerfPort@{getShortPerfPort}}
+\index{getShortPerfPort@{getShortPerfPort}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int CAgent\-Config\-Var::get\-Short\-Perf\-Port ()\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentConfigVar_a15}
+
+
+SMS Agent가 수집하는 단기(1시간 이하) 성능 정보를 SMS Manager로 전송하기 위한 리슨 포트를 반환하는 함수. \begin{Desc}
+\item[{\bf 반환: }]\par
+TCP/IP short period Performance listen port. \end{Desc}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!getUserid@{getUserid}}
+\index{getUserid@{getUserid}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}std::string CAgent\-Config\-Var::get\-Userid ()\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentConfigVar_a20}
+
+
+SMS Agent로 접속하기 위한 계정 정보를 반환하는 함수. \begin{Desc}
+\item[{\bf 반환: }]\par
+SMS Agent user id. \end{Desc}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!linkEndChild@{linkEndChild}}
+\index{linkEndChild@{linkEndChild}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CAgent\-Config\-Var::link\-End\-Child (unsigned long {\em l}, Ti\-Xml\-Element $\ast$ {\em elem}, const char $\ast$ {\em name})}\label{classCAgentConfigVar_a12}
+
+
+주어진 name에 해당하는 XML Element를 생성하여,  해당 element에 첫번째 인자인 str XML Text를 생성하여 추가한 후 XML Element XML Document(m\_\-doc)에 추가한다. example) $<$instance name=\char`\"{}0\char`\"{} /$>$ 인 경우, name = name, 0 = l 이 된다. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em XML}]Text에 들어갈 내용(unsigned long). \item[
+{\em XML}]Element. \item[
+{\em XML}]Element의 Title. \end{description}
+\end{Desc}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!linkEndChild@{linkEndChild}}
+\index{linkEndChild@{linkEndChild}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CAgent\-Config\-Var::link\-End\-Child (std::string {\em str}, Ti\-Xml\-Element $\ast$ {\em elem}, const char $\ast$ {\em name})}\label{classCAgentConfigVar_a11}
+
+
+주어진 name에 해당하는 XML Element를 생성하여,  해당 element에 첫번째 인자인 str XML Text를 생성하여 추가한 후 XML Element XML Document(m\_\-doc)에 추가한다. example) $<$instance name=\char`\"{}test\char`\"{} /$>$ 인 경우, name = name, test = str 이 된다. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em XML}]Text에 들어갈 내용(string). \item[
+{\em XML}]Element. \item[
+{\em XML}]Element의 Title. \end{description}
+\end{Desc}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!loadXMLConfigVar@{loadXMLConfigVar}}
+\index{loadXMLConfigVar@{loadXMLConfigVar}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CAgent\-Config\-Var::load\-XMLConfig\-Var ()}\label{classCAgentConfigVar_a2}
+
+
+scagent.xml 파일을 로딩하는 함수.
+
+xml 파일로부터 Item Code 및 기타 환경 정보를 로딩한다. \index{CAgentConfigVar@{CAgent\-Config\-Var}!lock@{lock}}
+\index{lock@{lock}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CAgent\-Config\-Var::lock ()}\label{classCAgentConfigVar_a33}
+
+
+method for locking. \index{CAgentConfigVar@{CAgent\-Config\-Var}!makeXmlElement@{makeXmlElement}}
+\index{makeXmlElement@{makeXmlElement}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Ti\-Xml\-Element $\ast$ CAgent\-Config\-Var::make\-Xml\-Element ({\bf CItem} $\ast$ {\em item})}\label{classCAgentConfigVar_a10}
+
+
+XML Document(m\_\-doc)에 특정 item code를 추가하는 함수. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em CItem}]class \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 반환: }]\par
+추가된 XML Element pointer. \end{Desc}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!removeDocItem@{removeDocItem}}
+\index{removeDocItem@{removeDocItem}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CAgent\-Config\-Var::remove\-Doc\-Item (std::string {\em code})}\label{classCAgentConfigVar_a13}
+
+
+주어진 코드에 해당하는 item을 XML Document에서 삭제한다. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em item}]code. \end{description}
+\end{Desc}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!setAccessIP@{setAccessIP}}
+\index{setAccessIP@{setAccessIP}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CAgent\-Config\-Var::set\-Access\-IP (char $\ast$ {\em accessip})\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentConfigVar_a31}
+
+
+method for setting permmitted ip address to access SMS Agent. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em permmitted}]ip address range(ex : 127.0.0.$\ast$) \end{description}
+\end{Desc}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!setItem@{setItem}}
+\index{setItem@{setItem}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CAgent\-Config\-Var::set\-Item ({\bf CItem} $\ast$ {\em item})}\label{classCAgentConfigVar_a6}
+
+
+특정 Item의 내용을 변경하는 함수.
+
+\begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em CItem}]pointer. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 참조하시요: }]\par
+{\bf CItem} {\rm (페이지\,\pageref{classCItem})}. \end{Desc}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!setOraPasswd@{setOraPasswd}}
+\index{setOraPasswd@{setOraPasswd}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CAgent\-Config\-Var::set\-Ora\-Passwd (char $\ast$ {\em passwd})\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentConfigVar_a28}
+
+
+method for setting oracle system account password. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em oracle}]system account password. \end{description}
+\end{Desc}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!setOraSID@{setOraSID}}
+\index{setOraSID@{setOraSID}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CAgent\-Config\-Var::set\-Ora\-SID (char $\ast$ {\em sid})\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentConfigVar_a27}
+
+
+method for setting oracle SID. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em oracle}]SID. \end{description}
+\end{Desc}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!setOraUID@{setOraUID}}
+\index{setOraUID@{setOraUID}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CAgent\-Config\-Var::set\-Ora\-UID (char $\ast$ {\em uid})\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentConfigVar_a26}
+
+
+method for setting oracle system account. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em oracle}]system account user id. \end{description}
+\end{Desc}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!setPasswd@{setPasswd}}
+\index{setPasswd@{setPasswd}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CAgent\-Config\-Var::set\-Passwd (char $\ast$ {\em passwd})\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentConfigVar_a30}
+
+
+method for setting SMS Agent account password. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em SMS}]Agent password. \end{description}
+\end{Desc}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!setUserInfo@{setUserInfo}}
+\index{setUserInfo@{setUserInfo}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CAgent\-Config\-Var::set\-User\-Info (std::string {\em sid}, std::string {\em userid}, std::string {\em password})}\label{classCAgentConfigVar_a32}
+
+
+주어진 userid에 해당하는 SMS Agent의 password 및 접속 허용 ip address를 설정하는 함수. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em SMS}]Agent account user id. \item[
+{\em SMS}]Agent account password. \item[
+{\em permmitted}]ip address range. \end{description}
+\end{Desc}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!setUserid@{setUserid}}
+\index{setUserid@{setUserid}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CAgent\-Config\-Var::set\-Userid (char $\ast$ {\em userid})\hspace{0.3cm}{\tt  [inline]}}\label{classCAgentConfigVar_a29}
+
+
+method for setting SMS Agent account user id. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em SMS}]Agent account user id. \end{description}
+\end{Desc}
+\index{CAgentConfigVar@{CAgent\-Config\-Var}!unloadXMLConfigVar@{unloadXMLConfigVar}}
+\index{unloadXMLConfigVar@{unloadXMLConfigVar}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CAgent\-Config\-Var::unload\-XMLConfig\-Var ()}\label{classCAgentConfigVar_a9}
+
+
+scagent.xml 파일을 업데이트하는 함수.
+
+현재 SMS Agent가 관리하고 있는 item code 및 환경 설정 정보를 scagent.xml파일로 저장하는 함수이다. \index{CAgentConfigVar@{CAgent\-Config\-Var}!unlock@{unlock}}
+\index{unlock@{unlock}!CAgentConfigVar@{CAgent\-Config\-Var}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CAgent\-Config\-Var::unlock ()}\label{classCAgentConfigVar_a34}
+
+
+method for unlocking 
+
+이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:\begin{CompactItemize}
+\item 
+{\bf CAgent\-Config\-Var.h}\end{CompactItemize}

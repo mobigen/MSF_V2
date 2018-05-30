@@ -1,0 +1,479 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CCollector class Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CCollector  클래스 참조</h1>정보 수집 클래스. 
+<a href="#_details">More...</a>
+<p>
+<code>#include &lt;<a class="el" href="CCollector_8h-source.html">CCollector.h</a>&gt;</code>
+<p>
+<p>CCollector에 대한 상속 도표:
+<p><center><img src="classCCollector.gif" usemap="#CCollector_map" border="0"></center>
+<map name="CCollector_map">
+<area href="classCCPUConfCollector.html" alt="CCPUConfCollector" shape="rect" coords="219,56,428,80">
+<area href="classCCPULoadPerfCollector.html" alt="CCPULoadPerfCollector" shape="rect" coords="219,112,428,136">
+<area href="classCCPUPerfCollector.html" alt="CCPUPerfCollector" shape="rect" coords="219,168,428,192">
+<area href="classCDiskConfCollector.html" alt="CDiskConfCollector" shape="rect" coords="219,224,428,248">
+<area href="classCDiskIOPerfCollector.html" alt="CDiskIOPerfCollector" shape="rect" coords="219,280,428,304">
+<area href="classCDiskPerfCollector.html" alt="CDiskPerfCollector" shape="rect" coords="219,336,428,360">
+<area href="classCHostConfCollector.html" alt="CHostConfCollector" shape="rect" coords="219,392,428,416">
+<area href="classCIFConfCollector.html" alt="CIFConfCollector" shape="rect" coords="219,448,428,472">
+<area href="classCIFPerfCollector.html" alt="CIFPerfCollector" shape="rect" coords="219,504,428,528">
+<area href="classCLogCheckCollector.html" alt="CLogCheckCollector" shape="rect" coords="219,560,428,584">
+<area href="classCMemoryConfCollector.html" alt="CMemoryConfCollector" shape="rect" coords="219,616,428,640">
+<area href="classCMemoryPerfCollector.html" alt="CMemoryPerfCollector" shape="rect" coords="219,672,428,696">
+<area href="classCOraDBLinkCollector.html" alt="COraDBLinkCollector" shape="rect" coords="219,728,428,752">
+<area href="classCOraHitRatioCollector.html" alt="COraHitRatioCollector" shape="rect" coords="219,784,428,808">
+<area href="classCOraRollbackCollector.html" alt="COraRollbackCollector" shape="rect" coords="219,840,428,864">
+<area href="classCOraSessionCountCollector.html" alt="COraSessionCountCollector" shape="rect" coords="219,896,428,920">
+<area href="classCOraTableSpaceCollector.html" alt="COraTableSpaceCollector" shape="rect" coords="219,952,428,976">
+<area href="classCOraTopSqlCollector.html" alt="COraTopSqlCollector" shape="rect" coords="219,1008,428,1032">
+<area href="classCPatchConfCollector.html" alt="CPatchConfCollector" shape="rect" coords="219,1064,428,1088">
+<area href="classCProcessPerfCollector.html" alt="CProcessPerfCollector" shape="rect" coords="219,1120,428,1144">
+<area href="classCShellCommandCollector.html" alt="CShellCommandCollector" shape="rect" coords="219,1176,428,1200">
+<area href="classCSWConfCollector.html" alt="CSWConfCollector" shape="rect" coords="219,1232,428,1256">
+<area href="classCTopCPUProcessPerfCollector.html" alt="CTopCPUProcessPerfCollector" shape="rect" coords="219,1288,428,1312">
+<area href="classCTopMemoryProcessPerfCollector.html" alt="CTopMemoryProcessPerfCollector" shape="rect" coords="219,1344,428,1368">
+</map>
+<a href="classCCollector-members.html">모든 구성원들(members)의 명단</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td colspan=2><br><h2>공용 메소드</h2></td></tr>
+<tr><td nowrap align=right valign=top>&nbsp;</td><td valign=bottom><a class="el" href="classCCollector.html#a0">CCollector</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>virtual&nbsp;</td><td valign=bottom><a class="el" href="classCCollector.html#a1">~CCollector</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>virtual void&nbsp;</td><td valign=bottom><a class="el" href="classCCollector.html#a2">collect</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>virtual void&nbsp;</td><td valign=bottom><a class="el" href="classCCollector.html#a3">makeMessage</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>virtual void&nbsp;</td><td valign=bottom><a class="el" href="classCCollector.html#a4">isOverThreshold</a> (<a class="el" href="classCItemCondition.html">CItemCondition</a> *cond)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCCollector.html#a5">setPolicyItem</a> (<a class="el" href="classCPolicyItem.html">CPolicyItem</a> *pollitem)</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="classCPolicyItem.html">CPolicyItem</a>*&nbsp;</td><td valign=bottom><a class="el" href="classCCollector.html#a6">getPolicyItem</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCCollector.html#a7">setEnvVar</a> (<a class="el" href="classCAgentEnvVar.html">CAgentEnvVar</a> *envvar)</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="classCAgentEnvVar.html">CAgentEnvVar</a>*&nbsp;</td><td valign=bottom><a class="el" href="classCCollector.html#a8">getEnvVar</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCCollector.html#a9">isShortPerf</a> ()</td></tr>
+<tr><td colspan=2><br><h2>Protected Attributes</h2></td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="classCAgentEnvVar.html">CAgentEnvVar</a>*&nbsp;</td><td valign=bottom><a class="el" href="classCCollector.html#n0">m_envvar</a></td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="classCPolicyItem.html">CPolicyItem</a>*&nbsp;</td><td valign=bottom><a class="el" href="classCCollector.html#n1">m_pollitem</a></td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="classCMessageFormatter.html">CMessageFormatter</a>&nbsp;</td><td valign=bottom><a class="el" href="classCCollector.html#n2">m_msgfmt</a></td></tr>
+</table>
+<hr><a name="_details"></a><h2>상세한 내용</h2>
+정보 수집 클래스.
+<p>
+모든 정보 수집기는 이 클래스를 상속하여 구현된다. 
+<p>
+<hr><h2>생성자 &amp; 소멸자 문서화</h2>
+<a name="a0" doxytag="CCollector::CCollector"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CCollector::CCollector (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+생성자     </td>
+  </tr>
+</table>
+<a name="a1" doxytag="CCollector::~CCollector"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CCollector::~CCollector (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline, virtual]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+소멸자     </td>
+  </tr>
+</table>
+<hr><h2>멤버 함수 문서화</h2>
+<a name="a2" doxytag="CCollector::collect"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CCollector::collect (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline, virtual]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+정보 수집 쓰레드(<a class="el" href="classSCThread.html">SCThread</a>)에 의해 정보 수집을 요청하는 메쏘드 <dl compact><dt>
+<b>참조하시요: </b><dd>
+<a class="el" href="classSCThread.html">SCThread</a> </dl>
+<p>
+<a class="el" href="classCCPUConfCollector.html#a2">CCPUConfCollector</a>, <a class="el" href="classCCPULoadPerfCollector.html#a2">CCPULoadPerfCollector</a>, <a class="el" href="classCCPUPerfCollector.html#a2">CCPUPerfCollector</a>, <a class="el" href="classCDiskConfCollector.html#a2">CDiskConfCollector</a>, <a class="el" href="classCDiskIOPerfCollector.html#a2">CDiskIOPerfCollector</a>, <a class="el" href="classCDiskPerfCollector.html#a2">CDiskPerfCollector</a>, <a class="el" href="classCHostConfCollector.html#a2">CHostConfCollector</a>, <a class="el" href="classCIFConfCollector.html#a2">CIFConfCollector</a>, <a class="el" href="classCIFPerfCollector.html#a2">CIFPerfCollector</a>, <a class="el" href="classCLogCheckCollector.html#a2">CLogCheckCollector</a>, <a class="el" href="classCMemoryConfCollector.html#a2">CMemoryConfCollector</a>, <a class="el" href="classCMemoryPerfCollector.html#a2">CMemoryPerfCollector</a>, <a class="el" href="classCPatchConfCollector.html#a2">CPatchConfCollector</a>, <a class="el" href="classCProcessPerfCollector.html#a2">CProcessPerfCollector</a>, <a class="el" href="classCShellCommandCollector.html#a2">CShellCommandCollector</a>, <a class="el" href="classCSWConfCollector.html#a2">CSWConfCollector</a>, <a class="el" href="classCTopCPUProcessPerfCollector.html#a2">CTopCPUProcessPerfCollector</a>, <a class="el" href="classCTopMemoryProcessPerfCollector.html#a2">CTopMemoryProcessPerfCollector</a>, <a class="el" href="classCOraDBLinkCollector.html#a2">COraDBLinkCollector</a>, <a class="el" href="classCOraHitRatioCollector.html#a2">COraHitRatioCollector</a>, <a class="el" href="classCOraRollbackCollector.html#a2">COraRollbackCollector</a>, <a class="el" href="classCOraSessionCountCollector.html#a2">COraSessionCountCollector</a>, <a class="el" href="classCOraTableSpaceCollector.html#a2">COraTableSpaceCollector</a>, and <a class="el" href="classCOraTopSqlCollector.html#a2">COraTopSqlCollector</a>에서 재구현된.    </td>
+  </tr>
+</table>
+<a name="a8" doxytag="CCollector::getEnvVar"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+<a class="el" href="classCAgentEnvVar.html">CAgentEnvVar</a> * CCollector::getEnvVar (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Agent 환경 정보를 관리하는 클래스를 얻어오는 메쏘드 <dl compact><dt>
+<b>반환: </b><dd>
+<a class="el" href="classCAgentEnvVar.html">CAgentEnvVar</a> pointer </dl><dl compact><dt>
+<b>참조하시요: </b><dd>
+<a class="el" href="classCAgentEnvVar.html">CAgentEnvVar</a> </dl>    </td>
+  </tr>
+</table>
+<a name="a6" doxytag="CCollector::getPolicyItem"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+<a class="el" href="classCPolicyItem.html">CPolicyItem</a> * CCollector::getPolicyItem (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+수집 정책 정보를 얻어오기 위한 메쏘드 <dl compact><dt>
+<b>반환: </b><dd>
+<a class="el" href="classCPolicyItem.html">CPolicyItem</a> pointer. </dl>    </td>
+  </tr>
+</table>
+<a name="a4" doxytag="CCollector::isOverThreshold"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CCollector::isOverThreshold (
+          </b></td>
+          <td valign="bottom"><b>
+<a class="el" href="classCItemCondition.html">CItemCondition</a> * <em>cond</em>&nbsp;)<code> [inline, virtual]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+수집된 정보가 임계치(<a class="el" href="classCItemCondition.html">CItemCondition</a>)에 위배 되는지 여부를 판단하여 장애를 발생시키는 메쏘드. <dl compact><dt>
+<b>참조하시요: </b><dd>
+<a class="el" href="classCItemCondition.html">CItemCondition</a>, CAalarmProcessor </dl>
+<p>
+<a class="el" href="classCCPUConfCollector.html#a4">CCPUConfCollector</a>, <a class="el" href="classCCPULoadPerfCollector.html#a4">CCPULoadPerfCollector</a>, <a class="el" href="classCCPUPerfCollector.html#a4">CCPUPerfCollector</a>, <a class="el" href="classCDiskConfCollector.html#a4">CDiskConfCollector</a>, <a class="el" href="classCDiskIOPerfCollector.html#a4">CDiskIOPerfCollector</a>, <a class="el" href="classCDiskPerfCollector.html#a4">CDiskPerfCollector</a>, <a class="el" href="classCHostConfCollector.html#a4">CHostConfCollector</a>, <a class="el" href="classCIFConfCollector.html#a4">CIFConfCollector</a>, <a class="el" href="classCIFPerfCollector.html#a4">CIFPerfCollector</a>, <a class="el" href="classCLogCheckCollector.html#a11">CLogCheckCollector</a>, <a class="el" href="classCMemoryConfCollector.html#a4">CMemoryConfCollector</a>, <a class="el" href="classCMemoryPerfCollector.html#a4">CMemoryPerfCollector</a>, <a class="el" href="classCPatchConfCollector.html#a4">CPatchConfCollector</a>, <a class="el" href="classCProcessPerfCollector.html#a4">CProcessPerfCollector</a>, <a class="el" href="classCShellCommandCollector.html#a4">CShellCommandCollector</a>, <a class="el" href="classCSWConfCollector.html#a4">CSWConfCollector</a>, <a class="el" href="classCTopCPUProcessPerfCollector.html#a4">CTopCPUProcessPerfCollector</a>, and <a class="el" href="classCTopMemoryProcessPerfCollector.html#a4">CTopMemoryProcessPerfCollector</a>에서 재구현된.    </td>
+  </tr>
+</table>
+<a name="a9" doxytag="CCollector::isShortPerf"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CCollector::isShortPerf (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+수집 정책이 단기 수집인지 여부를 판단하는 메쏘드 <dl compact><dt>
+<b>반환: </b><dd>
+true if short period, else return false </dl>    </td>
+  </tr>
+</table>
+<a name="a3" doxytag="CCollector::makeMessage"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CCollector::makeMessage (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline, virtual]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+수집된 정보를 SMS Manager로 전송하기 위한 규약된 메시지 포맷으로 변환하는 메쏘드. 
+<p>
+<a class="el" href="classCCPUConfCollector.html#a3">CCPUConfCollector</a>, <a class="el" href="classCCPULoadPerfCollector.html#a3">CCPULoadPerfCollector</a>, <a class="el" href="classCCPUPerfCollector.html#a3">CCPUPerfCollector</a>, <a class="el" href="classCDiskConfCollector.html#a3">CDiskConfCollector</a>, <a class="el" href="classCDiskIOPerfCollector.html#a3">CDiskIOPerfCollector</a>, <a class="el" href="classCDiskPerfCollector.html#a3">CDiskPerfCollector</a>, <a class="el" href="classCHostConfCollector.html#a3">CHostConfCollector</a>, <a class="el" href="classCIFConfCollector.html#a3">CIFConfCollector</a>, <a class="el" href="classCIFPerfCollector.html#a3">CIFPerfCollector</a>, <a class="el" href="classCLogCheckCollector.html#a9">CLogCheckCollector</a>, <a class="el" href="classCMemoryConfCollector.html#a3">CMemoryConfCollector</a>, <a class="el" href="classCMemoryPerfCollector.html#a3">CMemoryPerfCollector</a>, <a class="el" href="classCPatchConfCollector.html#a3">CPatchConfCollector</a>, <a class="el" href="classCProcessPerfCollector.html#a3">CProcessPerfCollector</a>, <a class="el" href="classCShellCommandCollector.html#a3">CShellCommandCollector</a>, <a class="el" href="classCSWConfCollector.html#a3">CSWConfCollector</a>, <a class="el" href="classCTopCPUProcessPerfCollector.html#a3">CTopCPUProcessPerfCollector</a>, <a class="el" href="classCTopMemoryProcessPerfCollector.html#a3">CTopMemoryProcessPerfCollector</a>, <a class="el" href="classCOraDBLinkCollector.html#a4">COraDBLinkCollector</a>, <a class="el" href="classCOraHitRatioCollector.html#a4">COraHitRatioCollector</a>, <a class="el" href="classCOraRollbackCollector.html#a4">COraRollbackCollector</a>, <a class="el" href="classCOraSessionCountCollector.html#a4">COraSessionCountCollector</a>, <a class="el" href="classCOraTableSpaceCollector.html#a4">COraTableSpaceCollector</a>, and <a class="el" href="classCOraTopSqlCollector.html#a4">COraTopSqlCollector</a>에서 재구현된.    </td>
+  </tr>
+</table>
+<a name="a7" doxytag="CCollector::setEnvVar"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CCollector::setEnvVar (
+          </b></td>
+          <td valign="bottom"><b>
+<a class="el" href="classCAgentEnvVar.html">CAgentEnvVar</a> * <em>envvar</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Agent 환경 정보를 관리하는 클래스를 설정하는 메쏘드 <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>CAgentEnvVar</em>
+&nbsp;</td><td>
+pointer </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>참조하시요: </b><dd>
+<a class="el" href="classCAgentEnvVar.html">CAgentEnvVar</a> </dl>    </td>
+  </tr>
+</table>
+<a name="a5" doxytag="CCollector::setPolicyItem"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CCollector::setPolicyItem (
+          </b></td>
+          <td valign="bottom"><b>
+<a class="el" href="classCPolicyItem.html">CPolicyItem</a> * <em>pollitem</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+정보 수집 정책 클래스(<a class="el" href="classCPolicyItem.html">CPolicyItem</a>)를 설정하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+</table>
+</dl><dl compact><dt>
+<b>참조하시요: </b><dd>
+<a class="el" href="classCPolicyItem.html">CPolicyItem</a> </dl>    </td>
+  </tr>
+</table>
+<hr><h2>멤서 데이타 문서화</h2>
+<a name="n0" doxytag="CCollector::m_envvar"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+<a class="el" href="classCAgentEnvVar.html">CAgentEnvVar</a> * CCollector::m_envvar<code> [protected]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Agent 환경 정보를 관리하는 클래스     </td>
+  </tr>
+</table>
+<a name="n2" doxytag="CCollector::m_msgfmt"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+<a class="el" href="classCMessageFormatter.html">CMessageFormatter</a> CCollector::m_msgfmt<code> [protected]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+메시지 변환기     </td>
+  </tr>
+</table>
+<a name="n1" doxytag="CCollector::m_pollitem"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+<a class="el" href="classCPolicyItem.html">CPolicyItem</a> * CCollector::m_pollitem<code> [protected]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+수집 정책     </td>
+  </tr>
+</table>
+<hr>이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:<ul>
+<li><a class="el" href="CCollector_8h-source.html">CCollector.h</a></ul>
+<hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

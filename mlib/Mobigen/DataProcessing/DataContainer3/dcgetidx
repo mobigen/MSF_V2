@@ -1,0 +1,19 @@
+#!/usr/bin/python
+
+from DataLog import *
+import sys
+
+def main() :
+	if len(sys.argv) != 2 :
+		print "usage : %s dbFileName"
+		sys.exit()
+
+	dbFileName = sys.argv[1]
+
+	rdl = DataLog( dbFileName )
+
+	while 1 :
+		key = int( raw_input('* recno = ') )
+		idxRecNo, dataOffset, msgTime, opt = rdl.getIdx(key)
+		print "idxRecNo, dataOffset, msgTime, opt = %s, %s, %s, %s" % (idxRecNo, dataOffset, msgTime, opt)
+main()

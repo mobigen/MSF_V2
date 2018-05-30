@@ -1,0 +1,387 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CSocketWorkerThread class Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CSocketWorkerThread  클래스 참조</h1>SMS Manager와 SMS Agent간 통신을 담당하는 클래스. 
+<a href="#_details">More...</a>
+<p>
+<code>#include &lt;<a class="el" href="CSocketWorkerThread_8h-source.html">CSocketWorkerThread.h</a>&gt;</code>
+<p>
+<p>CSocketWorkerThread에 대한 상속 도표:
+<p><center><img src="classCSocketWorkerThread.gif" usemap="#CSocketWorkerThread_map" border="0"></center>
+<map name="CSocketWorkerThread_map">
+<area href="classThreadReporter.html" alt="ThreadReporter" shape="rect" coords="150,0,290,24">
+<area href="classCSocketWorker.html" alt="CSocketWorker" shape="rect" coords="300,0,440,24">
+</map>
+<a href="classCSocketWorkerThread-members.html">모든 구성원들(members)의 명단</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td colspan=2><br><h2>공용 메소드</h2></td></tr>
+<tr><td nowrap align=right valign=top>&nbsp;</td><td valign=bottom><a class="el" href="classCSocketWorkerThread.html#a0">CSocketWorkerThread</a> (<a class="el" href="classCAgentEnvVar.html">CAgentEnvVar</a> *envvar, void *_data, bool *_session, int port, int numElts, int type)</td></tr>
+<tr><td nowrap align=right valign=top>virtual&nbsp;</td><td valign=bottom><a class="el" href="classCSocketWorkerThread.html#a1">~CSocketWorkerThread</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>virtual void&nbsp;</td><td valign=bottom><a class="el" href="classCSocketWorkerThread.html#a2">run</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCSocketWorkerThread.html#a3">processEventMessage</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCSocketWorkerThread.html#a4">processCommandMessage</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCSocketWorkerThread.html#a5">processSessionStatus</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCSocketWorkerThread.html#a6">lock</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCSocketWorkerThread.html#a7">unlock</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCSocketWorkerThread.html#a8">quit</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCSocketWorkerThread.html#a9">login</a> ()</td></tr>
+</table>
+<hr><a name="_details"></a><h2>상세한 내용</h2>
+SMS Manager와 SMS Agent간 통신을 담당하는 클래스.
+<p>
+<hr><h2>생성자 &amp; 소멸자 문서화</h2>
+<a name="a0" doxytag="CSocketWorkerThread::CSocketWorkerThread"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CSocketWorkerThread::CSocketWorkerThread (
+          </b></td>
+          <td valign="bottom"><b>
+<a class="el" href="classCAgentEnvVar.html">CAgentEnvVar</a> * <em>envvar</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+void * <em>_data</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+bool * <em>_session</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+int <em>port</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+int <em>numElts</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+int <em>type</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+생성자 <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>SMS</em>
+&nbsp;</td><td>
+Agent 환경 정보 관리 클래스. </td></tr>
+<tr><td valign=top><em>void</em>
+&nbsp;</td><td>
+data pointer. </td></tr>
+<tr><td valign=top><em>pointer.</em>
+&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em>element</em>
+&nbsp;</td><td>
+number. 의미없음. </td></tr>
+<tr><td valign=top><em>EVENT</em>
+&nbsp;</td><td>
+REPORT, ACCEPT COMMAND, SESSION STATUS REPORT) </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a1" doxytag="CSocketWorkerThread::~CSocketWorkerThread"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CSocketWorkerThread::~CSocketWorkerThread (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline, virtual]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+소멸자     </td>
+  </tr>
+</table>
+<hr><h2>멤버 함수 문서화</h2>
+<a name="a6" doxytag="CSocketWorkerThread::lock"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CSocketWorkerThread::lock (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+쓰레드 잠금 메쏘드     </td>
+  </tr>
+</table>
+<a name="a9" doxytag="CSocketWorkerThread::login"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CSocketWorkerThread::login (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Manager가 SMS Agent로 접속하기 위해 필요한 로그인 인증 절차를 처리하는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+true if login success, else return false. </dl>    </td>
+  </tr>
+</table>
+<a name="a4" doxytag="CSocketWorkerThread::processCommandMessage"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CSocketWorkerThread::processCommandMessage (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+ACCEPT COMMAND FROM SMS MANAGER     </td>
+  </tr>
+</table>
+<a name="a3" doxytag="CSocketWorkerThread::processEventMessage"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CSocketWorkerThread::processEventMessage (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+EVENT REPOPRT METHOD     </td>
+  </tr>
+</table>
+<a name="a5" doxytag="CSocketWorkerThread::processSessionStatus"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CSocketWorkerThread::processSessionStatus (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+REPORT AGENT SESSION STATUS     </td>
+  </tr>
+</table>
+<a name="a8" doxytag="CSocketWorkerThread::quit"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CSocketWorkerThread::quit (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+쓰레드 종료 요청 메쏘드     </td>
+  </tr>
+</table>
+<a name="a2" doxytag="CSocketWorkerThread::run"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CSocketWorkerThread::run (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [virtual]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+쓰레드 기동 메쏘드     </td>
+  </tr>
+</table>
+<a name="a7" doxytag="CSocketWorkerThread::unlock"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CSocketWorkerThread::unlock (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+쓰레드 잠금 해지 메쏘드     </td>
+  </tr>
+</table>
+<hr>이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:<ul>
+<li><a class="el" href="CSocketWorkerThread_8h-source.html">CSocketWorkerThread.h</a></ul>
+<hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

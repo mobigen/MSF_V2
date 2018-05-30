@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CPolicyItem.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CPolicyItem.h</h1><div class="fragment"><pre>00001 
+00002 
+00003 <font class="preprocessor">#ifndef __CPOLICYITEM_H__</font>
+00004 <font class="preprocessor"></font><font class="preprocessor">#define __CPOLICYITEM_H__ 1</font>
+00005 <font class="preprocessor"></font>
+00006 
+00007 <font class="preprocessor">#include "CAgentEnvVar.h"</font>
+00008 <font class="preprocessor">#include "CMessageFormatter.h"</font>
+00009 
+00010 
+00012 
+<a name="l00015"></a><a class="code" href="classCPolicyItem.html">00015</a> <font class="keyword">class </font><a class="code" href="classCPolicyItem.html">CPolicyItem</a> 
+00016 {
+00017         <font class="keyword">public</font>:
+<a name="l00019"></a><a class="code" href="classCPolicyItem.html#a0">00019</a>                 <a class="code" href="classCPolicyItem.html#a0">CPolicyItem</a>()<font class="keyword"> </font>{ m_instQ = <font class="keyword">new</font> <a class="code" href="classCQueue.html">CQueue</a>; }
+<a name="l00021"></a><a class="code" href="classCPolicyItem.html#a1">00021</a>                 <a class="code" href="classCPolicyItem.html#a1">~CPolicyItem</a>()<font class="keyword"> </font>{ <font class="keyword">delete</font> m_instQ; }
+<a name="l00026"></a><a class="code" href="classCPolicyItem.html#a2">00026</a>                 <font class="keywordtype">void</font> <a class="code" href="classCPolicyItem.html#a2">setPollTime</a>(time_t t)<font class="keyword"></font>{ m_polltime = t; }
+<a name="l00031"></a><a class="code" href="classCPolicyItem.html#a3">00031</a>                 <font class="keywordtype">void</font> <a class="code" href="classCPolicyItem.html#a3">setItem</a>(<a class="code" href="classCItem.html">CItem</a> *item)<font class="keyword"> </font>{ m_item = item; }
+<a name="l00036"></a><a class="code" href="classCPolicyItem.html#a4">00036</a>                 <font class="keywordtype">void</font> <a class="code" href="classCPolicyItem.html#a4">setPollType</a>(<font class="keywordtype">unsigned</font> <font class="keywordtype">int</font> type)<font class="keyword"> </font>{ m_polltype = type; }
+<a name="l00041"></a><a class="code" href="classCPolicyItem.html#a5">00041</a>                 time_t <a class="code" href="classCPolicyItem.html#a5">getPollTime</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_polltime; }
+<a name="l00047"></a><a class="code" href="classCPolicyItem.html#a6">00047</a>                 <a class="code" href="classCItem.html">CItem</a> *<a class="code" href="classCPolicyItem.html#a6">getItem</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_item; }
+<a name="l00052"></a><a class="code" href="classCPolicyItem.html#a7">00052</a>                 <font class="keywordtype">unsigned</font> <font class="keywordtype">int</font> <a class="code" href="classCPolicyItem.html#a7">getPollType</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_polltype; }
+<a name="l00058"></a><a class="code" href="classCPolicyItem.html#a8">00058</a>                 <a class="code" href="classCQueue.html">CQueue</a> *<a class="code" href="classCPolicyItem.html#a8">getInstQ</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_instQ; }
+<a name="l00063"></a><a class="code" href="classCPolicyItem.html#a9">00063</a>                 <font class="keywordtype">void</font> <a class="code" href="classCPolicyItem.html#a9">setCommand</a>(<font class="keywordtype">char</font> *cmd)<font class="keyword"> </font>{ m_cmd = cmd; }
+<a name="l00068"></a><a class="code" href="classCPolicyItem.html#a10">00068</a>                 std::string <a class="code" href="classCPolicyItem.html#a10">getCommand</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_cmd; }
+00069 
+00070         <font class="keyword">private</font>:
+00071                 std::string m_cmd;                      
+00072                 time_t m_polltime;                      
+00073                 <font class="keywordtype">unsigned</font> <font class="keywordtype">int</font> m_polltype;        
+00074                 <a class="code" href="classCItem.html">CItem</a> *m_item;                          
+00075                 <a class="code" href="classCQueue.html">CQueue</a> *m_instQ;                        
+00076 };
+00077 
+00078 <font class="preprocessor">#endif </font><font class="comment">/* __CPOLICYITEM_H__ */</font>
+</pre></div><hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

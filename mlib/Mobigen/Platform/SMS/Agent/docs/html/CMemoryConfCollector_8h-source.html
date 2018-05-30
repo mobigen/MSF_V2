@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CMemoryConfCollector.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CMemoryConfCollector.h</h1><div class="fragment"><pre>00001 
+00002 
+00003 
+00004 <font class="preprocessor">#ifndef __CMEMORYCONFCOLLECTOR_H__</font>
+00005 <font class="preprocessor"></font><font class="preprocessor">#define __CMEMORYCONFCOLLECTOR_H__ 1</font>
+00006 <font class="preprocessor"></font>
+00007 <font class="preprocessor">#include "CCollector.h"</font>
+00008 
+00009 
+00011 
+<a name="l00014"></a><a class="code" href="classCMemoryConfCollector.html">00014</a> <font class="keyword">class </font><a class="code" href="classCMemoryConfCollector.html">CMemoryConfCollector</a>:<font class="keyword">public</font> <a class="code" href="classCCollector.html">CCollector</a>
+00015 {
+00016         <font class="keyword">public</font>:
+00018                 <a class="code" href="classCMemoryConfCollector.html#a0">CMemoryConfCollector</a>();
+00020                 <a class="code" href="classCMemoryConfCollector.html#a1">~CMemoryConfCollector</a>();
+00025                 <font class="keywordtype">void</font> <a class="code" href="classCCollector.html#a2">collect</a>();
+00029                 <font class="keywordtype">void</font> <a class="code" href="classCCollector.html#a3">makeMessage</a>();
+<a name="l00033"></a><a class="code" href="classCMemoryConfCollector.html#a4">00033</a>                 <font class="keywordtype">void</font> <a class="code" href="classCCollector.html#a4">isOverThreshold</a>(<a class="code" href="classCItemCondition.html">CItemCondition</a> *cond)<font class="keyword"></font>{};
+00034 
+00035         <font class="keyword">private</font>:
+00036                 scCoreView *m_coreview; 
+00037                 scMemStatus m_mem;              
+00038 };
+00039 
+00040 <font class="preprocessor">#endif </font><font class="comment">/* __CMEMORYCONFCOLLECTOR_H__ */</font>
+</pre></div><hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

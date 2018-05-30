@@ -1,0 +1,148 @@
+\section{CPolicy\-Item  클래스 참조}
+\label{classCPolicyItem}\index{CPolicyItem@{CPolicy\-Item}}
+스케쥴러에 의해 수집 쓰레드에 수집 요청을 할때 필요한 정책 정보를 관리하는 클래스. 
+
+
+{\tt \#include $<$CPolicy\-Item.h$>$}
+
+\subsection*{공용 메소드}
+\begin{CompactItemize}
+\item 
+{\bf CPolicy\-Item} ()
+\item 
+{\bf $\sim$CPolicy\-Item} ()
+\item 
+void {\bf set\-Poll\-Time} (time\_\-t t)
+\item 
+void {\bf set\-Item} ({\bf CItem} $\ast$item)
+\item 
+void {\bf set\-Poll\-Type} (unsigned int type)
+\item 
+time\_\-t {\bf get\-Poll\-Time} ()
+\item 
+{\bf CItem}$\ast$ {\bf get\-Item} ()
+\item 
+unsigned int {\bf get\-Poll\-Type} ()
+\item 
+{\bf CQueue}$\ast$ {\bf get\-Inst\-Q} ()
+\item 
+void {\bf set\-Command} (char $\ast$cmd)
+\item 
+std::string {\bf get\-Command} ()
+\end{CompactItemize}
+
+
+\subsection{상세한 내용}
+스케쥴러에 의해 수집 쓰레드에 수집 요청을 할때 필요한 정책 정보를 관리하는 클래스.
+
+수집 요청 item, 수집 유형, 수집 시간, 수집 명령어 등의 정보를 담고 있는 정보 클래스이다. 
+
+
+
+\subsection{생성자 \& 소멸자 문서화}
+\index{CPolicyItem@{CPolicy\-Item}!CPolicyItem@{CPolicyItem}}
+\index{CPolicyItem@{CPolicyItem}!CPolicyItem@{CPolicy\-Item}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CPolicy\-Item::CPolicy\-Item ()\hspace{0.3cm}{\tt  [inline]}}\label{classCPolicyItem_a0}
+
+
+생성자 \index{CPolicyItem@{CPolicy\-Item}!~CPolicyItem@{$\sim$CPolicyItem}}
+\index{~CPolicyItem@{$\sim$CPolicyItem}!CPolicyItem@{CPolicy\-Item}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CPolicy\-Item::$\sim$CPolicy\-Item ()\hspace{0.3cm}{\tt  [inline]}}\label{classCPolicyItem_a1}
+
+
+소멸자 
+
+\subsection{멤버 함수 문서화}
+\index{CPolicyItem@{CPolicy\-Item}!getCommand@{getCommand}}
+\index{getCommand@{getCommand}!CPolicyItem@{CPolicy\-Item}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}std::string CPolicy\-Item::get\-Command ()\hspace{0.3cm}{\tt  [inline]}}\label{classCPolicyItem_a10}
+
+
+SMS Manager에 의해 수집 요청된 경우 수집 요청된 명령어를 조회하는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+command(수집 요청 명령어) \end{Desc}
+\index{CPolicyItem@{CPolicy\-Item}!getInstQ@{getInstQ}}
+\index{getInstQ@{getInstQ}!CPolicyItem@{CPolicy\-Item}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CQueue} $\ast$ CPolicy\-Item::get\-Inst\-Q ()\hspace{0.3cm}{\tt  [inline]}}\label{classCPolicyItem_a8}
+
+
+수집 대상 인스턴스 정보를 조회하는 메쏘드.\par
+ 인스턴스가 없을 경우는 조회 가능한 모든 인스턴스를 조회한다. \begin{Desc}
+\item[{\bf 반환: }]\par
+{\bf CQueue} {\rm (페이지\,\pageref{classCQueue})} pointer(instance queue) \end{Desc}
+\index{CPolicyItem@{CPolicy\-Item}!getItem@{getItem}}
+\index{getItem@{getItem}!CPolicyItem@{CPolicy\-Item}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CItem} $\ast$ CPolicy\-Item::get\-Item ()\hspace{0.3cm}{\tt  [inline]}}\label{classCPolicyItem_a6}
+
+
+수집 item 클래스를 조회하는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+{\bf CItem} {\rm (페이지\,\pageref{classCItem})} pointer. \end{Desc}
+\begin{Desc}
+\item[{\bf 참조하시요: }]\par
+{\bf CItem} {\rm (페이지\,\pageref{classCItem})} \end{Desc}
+\index{CPolicyItem@{CPolicy\-Item}!getPollTime@{getPollTime}}
+\index{getPollTime@{getPollTime}!CPolicyItem@{CPolicy\-Item}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}time\_\-t CPolicy\-Item::get\-Poll\-Time ()\hspace{0.3cm}{\tt  [inline]}}\label{classCPolicyItem_a5}
+
+
+수집시간 정보를 조회하는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+수집 시간(seconds) \end{Desc}
+\index{CPolicyItem@{CPolicy\-Item}!getPollType@{getPollType}}
+\index{getPollType@{getPollType}!CPolicyItem@{CPolicy\-Item}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned int CPolicy\-Item::get\-Poll\-Type ()\hspace{0.3cm}{\tt  [inline]}}\label{classCPolicyItem_a7}
+
+
+수집 유형 정보를 조회하는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+수집 유형(TYPE\_\-PASSIVE, TYPE\_\-ACTIVFE, TYPE\_\-EVENT) \end{Desc}
+\index{CPolicyItem@{CPolicy\-Item}!setCommand@{setCommand}}
+\index{setCommand@{setCommand}!CPolicyItem@{CPolicy\-Item}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CPolicy\-Item::set\-Command (char $\ast$ {\em cmd})\hspace{0.3cm}{\tt  [inline]}}\label{classCPolicyItem_a9}
+
+
+SMS Manager에 의해 수집 요청된 경우 수집 요청된 명령어를 설정하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em command}](수집 요청 명령어) \end{description}
+\end{Desc}
+\index{CPolicyItem@{CPolicy\-Item}!setItem@{setItem}}
+\index{setItem@{setItem}!CPolicyItem@{CPolicy\-Item}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CPolicy\-Item::set\-Item ({\bf CItem} $\ast$ {\em item})\hspace{0.3cm}{\tt  [inline]}}\label{classCPolicyItem_a3}
+
+
+item 정보를 설정하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em CItem}]pointer. \end{description}
+\end{Desc}
+\index{CPolicyItem@{CPolicy\-Item}!setPollTime@{setPollTime}}
+\index{setPollTime@{setPollTime}!CPolicyItem@{CPolicy\-Item}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CPolicy\-Item::set\-Poll\-Time (time\_\-t {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{classCPolicyItem_a2}
+
+
+수집 시간 정보를 설정하는 메쏘드  \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em .}]\end{description}
+\end{Desc}
+\index{CPolicyItem@{CPolicy\-Item}!setPollType@{setPollType}}
+\index{setPollType@{setPollType}!CPolicyItem@{CPolicy\-Item}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CPolicy\-Item::set\-Poll\-Type (unsigned int {\em type})\hspace{0.3cm}{\tt  [inline]}}\label{classCPolicyItem_a4}
+
+
+수집 유형 정보를 설정하는 메쏘드. 수집 유형(TYPE\_\-PASSIVE, TYPE\_\-ACTIVFE, TYPE\_\-EVENT) \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em TYPE\_\-PASSIVE, TYPE\_\-ACTIVFE, TYPE\_\-EVENT}]) \end{description}
+\end{Desc}
+
+
+이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:\begin{CompactItemize}
+\item 
+{\bf CPolicy\-Item.h}\end{CompactItemize}

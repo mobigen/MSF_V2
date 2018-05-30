@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CItemInstance.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CItemInstance.h</h1><div class="fragment"><pre>00001 
+00002 
+00003 
+00004 <font class="preprocessor">#ifndef __CITEMINSTANCE_H__</font>
+00005 <font class="preprocessor"></font><font class="preprocessor">#define __CITEMINSTANCE_H__ 1</font>
+00006 <font class="preprocessor"></font>
+00007 <font class="preprocessor">#include &lt;stdio.h&gt;</font>
+00008 <font class="preprocessor">#include &lt;stdlib.h&gt;</font>
+00009 <font class="preprocessor">#include &lt;string&gt;</font>
+00010 
+00011 <font class="preprocessor">#include "CQueue.h"</font>
+00012 
+00013 
+00015 
+<a name="l00023"></a><a class="code" href="classCItemInstance.html">00023</a> <font class="keyword">class </font><a class="code" href="classCItemInstance.html">CItemInstance</a>
+00024 {
+00025         <font class="keyword">public</font>:
+00027                 <a class="code" href="classCItemInstance.html#a0">CItemInstance</a>();
+00029                 <font class="keyword">virtual</font> <a class="code" href="classCItemInstance.html#a1">~CItemInstance</a>();
+<a name="l00034"></a><a class="code" href="classCItemInstance.html#a2">00034</a>                 std::string <a class="code" href="classCItemInstance.html#a2">getName</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_name; }
+<a name="l00039"></a><a class="code" href="classCItemInstance.html#a3">00039</a>                 std::string <a class="code" href="classCItemInstance.html#a3">getValue</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_value; }
+<a name="l00044"></a><a class="code" href="classCItemInstance.html#a4">00044</a>                 <a class="code" href="classCQueue.html">CQueue</a> *<a class="code" href="classCItemInstance.html#a4">getDataQ</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_dataQ; }
+<a name="l00049"></a><a class="code" href="classCItemInstance.html#a5">00049</a>                 <font class="keywordtype">void</font> <a class="code" href="classCItemInstance.html#a5">setName</a>(<font class="keywordtype">char</font> *name)<font class="keyword"> </font>{ m_name = name; }
+<a name="l00054"></a><a class="code" href="classCItemInstance.html#a6">00054</a>                 <font class="keywordtype">void</font> <a class="code" href="classCItemInstance.html#a6">setValue</a>(<font class="keywordtype">char</font> *value)<font class="keyword"> </font>{ m_value = value; }
+<a name="l00059"></a><a class="code" href="classCItemInstance.html#a7">00059</a>                 <font class="keywordtype">void</font> <a class="code" href="classCItemInstance.html#a5">setName</a>(std::string name)<font class="keyword"> </font>{ m_name = name; }
+<a name="l00064"></a><a class="code" href="classCItemInstance.html#a8">00064</a>                 <font class="keywordtype">void</font> <a class="code" href="classCItemInstance.html#a6">setValue</a>(std::string value)<font class="keyword"> </font>{ m_value = value; }
+00065 
+00066         <font class="keyword">private</font>:
+00067                 std::string m_name;             
+00068                 std::string m_value;    
+00070                 <a class="code" href="classCQueue.html">CQueue</a> *m_dataQ; 
+00071 };
+00072 
+00073 <font class="keywordtype">void</font> deleteCItemInstance(<font class="keywordtype">void</font> *d);
+00074 
+00075 <font class="preprocessor">#endif </font><font class="comment">/* __CITEMINSTANCE_H__ */</font>
+</pre></div><hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CProtocolProcessor.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CProtocolProcessor.h</h1><div class="fragment"><pre>00001 
+00002 <font class="preprocessor">#ifndef __CPROTOCOLPROCESSOR_H__</font>
+00003 <font class="preprocessor"></font><font class="preprocessor">#define __CPROTOCOLPROCESSOR_H__ 1</font>
+00004 <font class="preprocessor"></font>
+00005 <font class="preprocessor">#include &lt;stdio.h&gt;</font>
+00006 <font class="preprocessor">#include &lt;stdlib.h&gt;</font>
+00007 <font class="preprocessor">#include &lt;string&gt;</font>
+00008 
+00009 <font class="preprocessor">#include "CAgentEnvVar.h"</font>
+00010 <font class="preprocessor">#include "CRegex.h"</font>
+00011 <font class="preprocessor">#include "CMisc.h"</font>
+00012 <font class="preprocessor">#include "CMessageFormatter.h"</font>
+00013 <font class="preprocessor">#include "CPolicyItem.h"</font>
+00014 
+00015 <font class="preprocessor">#define OPCODE_COL 1</font>
+00016 <font class="preprocessor"></font><font class="preprocessor">#define OPCODE_GET 2</font>
+00017 <font class="preprocessor"></font><font class="preprocessor">#define OPCODE_SET 3</font>
+00018 <font class="preprocessor"></font><font class="preprocessor">#define OPCODE_GETCOND 4</font>
+00019 <font class="preprocessor"></font><font class="preprocessor">#define OPCODE_SETCOND 5</font>
+00020 <font class="preprocessor"></font><font class="preprocessor">#define OPCODE_ADDCOND 6</font>
+00021 <font class="preprocessor"></font><font class="preprocessor">#define OPCODE_DELCOND 7</font>
+00022 <font class="preprocessor"></font><font class="preprocessor">#define OPCODE_COLINST 8</font>
+00023 <font class="preprocessor"></font><font class="preprocessor">#define OPCODE_GETINST 9</font>
+00024 <font class="preprocessor"></font><font class="preprocessor">#define OPCODE_SETINST 10</font>
+00025 <font class="preprocessor"></font><font class="preprocessor">#define OPCODE_ADDINST 11</font>
+00026 <font class="preprocessor"></font><font class="preprocessor">#define OPCODE_DELINST 12</font>
+00027 <font class="preprocessor"></font>
+00028 <font class="preprocessor">#define MAX_ATTRIBUTE_NUM 20</font>
+00029 <font class="preprocessor"></font>
+00030 <font class="preprocessor">#define STR_COMMAND_PATTERN "((COL)|(GET)|(SET)|(COLINST)|(GETINST)|(SETINST)|(ADDINST)|(DELINST)|(GETCOND)|(SETCOND)|(ADDCOND)|(DELCOND)):CODE=[0-9a-zA-Z]+.*"</font>
+00031 <font class="preprocessor"></font>
+00032 <font class="preprocessor">#define SC_ITEM_CODE_USERINFO                           "UserInfo"</font>
+00033 <font class="preprocessor"></font><font class="preprocessor">#define SC_ITEM_ATTR_USERID                             "userid"</font>
+00034 <font class="preprocessor"></font><font class="preprocessor">#define SC_ITEM_ATTR_PASSWD                             "passwd"</font>
+00035 <font class="preprocessor"></font><font class="preprocessor">#define SC_ITEM_ATTR_ACCESSIP                           "accessip"</font>
+00036 <font class="preprocessor"></font>
+00037 <font class="preprocessor">#define SC_ITEM_ATTR_SCHEDULE                           "schedule"</font>
+00038 <font class="preprocessor"></font><font class="preprocessor">#define SC_ITEM_ATTR_EVENT_SCHEDULE             "eschedule"</font>
+00039 <font class="preprocessor"></font><font class="preprocessor">#define SC_ITEM_ATTR_ENABLE                             "enable"</font>
+00040 <font class="preprocessor"></font><font class="preprocessor">#define SC_ITEM_ATTR_METHOD                             "method"</font>
+00041 <font class="preprocessor"></font><font class="preprocessor">#define SC_ITEM_ATTR_LEVEL                                      "level"</font>
+00042 <font class="preprocessor"></font><font class="preprocessor">#define SC_ITEM_ATTR_ELEMENT                            "element"</font>
+00043 <font class="preprocessor"></font><font class="preprocessor">#define SC_ITEM_ATTR_INSTANCE                           "INST"</font>
+00044 <font class="preprocessor"></font><font class="preprocessor">#define SC_ITEM_ATTR_CONDITION                          "COND"</font>
+00045 <font class="preprocessor"></font><font class="preprocessor">#define SC_ITEM_ATTR_CONDITIONID                        "CONDID"</font>
+00046 <font class="preprocessor"></font>
+<a name="l00050"></a><a class="code" href="struct__st__attribute.html">00050</a> <font class="keyword">typedef</font> <font class="keyword">struct </font><a class="code" href="struct__st__attribute.html">_st_attribute</a> {
+00051         std::string name;
+00052         std::string value;
+00053 }<a class="code" href="struct__st__attribute.html">st_attribute</a>;
+00054 
+<a name="l00058"></a><a class="code" href="struct__st__cmd.html">00058</a> <font class="keyword">typedef</font> <font class="keyword">struct </font><a class="code" href="struct__st__cmd.html">_st_cmd</a> {
+00059         <font class="keywordtype">unsigned</font> <font class="keywordtype">int</font> opcode;
+00060         std::string itemcode;
+00061         <font class="keywordtype">int</font> attr_num;
+00062         <a class="code" href="struct__st__attribute.html">st_attribute</a> attr[MAX_ATTRIBUTE_NUM];
+00063 }<a class="code" href="struct__st__cmd.html">st_cmd</a>;
+00064 
+00066 
+<a name="l00070"></a><a class="code" href="classCProtocolProcessor.html">00070</a> <font class="keyword">class </font><a class="code" href="classCProtocolProcessor.html">CProtocolProcessor</a>
+00071 {
+00072         <font class="keyword">public</font>:
+<a name="l00077"></a><a class="code" href="classCProtocolProcessor.html#a0">00077</a>                 <a class="code" href="classCProtocolProcessor.html#a0">CProtocolProcessor</a>()<font class="keyword"></font>{ m_reg = <font class="keyword">new</font> CRegex(STR_COMMAND_PATTERN); }
+<a name="l00081"></a><a class="code" href="classCProtocolProcessor.html#a1">00081</a>                 <a class="code" href="classCProtocolProcessor.html#a1">~CProtocolProcessor</a>()<font class="keyword"></font>{ <font class="keyword">delete</font> m_reg; }
+00086                 <font class="keywordtype">void</font> <a class="code" href="classCProtocolProcessor.html#a2">process</a>(<font class="keywordtype">char</font> *pcmd);
+00091                 <font class="keywordtype">void</font> <a class="code" href="classCProtocolProcessor.html#a3">execute</a>(<font class="keywordtype">char</font> *pcmd);
+00096                 <font class="keywordtype">void</font> <a class="code" href="classCProtocolProcessor.html#a4">execCOL</a>(<font class="keywordtype">char</font> *pcmd);
+00101                 <font class="keywordtype">void</font> <a class="code" href="classCProtocolProcessor.html#a5">execGET</a>(<font class="keywordtype">char</font> *pcmd);
+00106                 <font class="keywordtype">void</font> <a class="code" href="classCProtocolProcessor.html#a6">execSET</a>(<font class="keywordtype">char</font> *pcmd);
+00111                 <font class="keywordtype">void</font> <a class="code" href="classCProtocolProcessor.html#a7">execGETINST</a>(<font class="keywordtype">char</font> *pcmd);
+00116                 <font class="keywordtype">void</font> <a class="code" href="classCProtocolProcessor.html#a8">execSETINST</a>(<font class="keywordtype">char</font> *pcmd);
+00121                 <font class="keywordtype">void</font> <a class="code" href="classCProtocolProcessor.html#a9">execADDINST</a>(<font class="keywordtype">char</font> *pcmd);
+00126                 <font class="keywordtype">void</font> <a class="code" href="classCProtocolProcessor.html#a10">execDELINST</a>(<font class="keywordtype">char</font> *pcmd);
+00131                 <font class="keywordtype">void</font> <a class="code" href="classCProtocolProcessor.html#a11">execGETCOND</a>(<font class="keywordtype">char</font> *pcmd);
+00136                 <font class="keywordtype">void</font> <a class="code" href="classCProtocolProcessor.html#a12">execSETCOND</a>(<font class="keywordtype">char</font> *pcmd);
+00141                 <font class="keywordtype">void</font> <a class="code" href="classCProtocolProcessor.html#a13">execADDCOND</a>(<font class="keywordtype">char</font> *pcmd);
+00146                 <font class="keywordtype">void</font> <a class="code" href="classCProtocolProcessor.html#a14">execDELCOND</a>(<font class="keywordtype">char</font> *pcmd);
+00152                 <font class="keywordtype">void</font> <a class="code" href="classCProtocolProcessor.html#a15">setUserInfo</a>(<font class="keywordtype">char</font> *pcmd);
+00159                 <font class="keywordtype">char</font> * <a class="code" href="classCProtocolProcessor.html#a16">parse</a>(<font class="keywordtype">char</font> *pcmd);
+<a name="l00165"></a><a class="code" href="classCProtocolProcessor.html#a17">00165</a>                 <font class="keywordtype">void</font> <a class="code" href="classCProtocolProcessor.html#a17">setEnvVar</a>(<a class="code" href="classCAgentEnvVar.html">CAgentEnvVar</a> *var)<font class="keyword"></font>{ m_envvar = var; }
+<a name="l00171"></a><a class="code" href="classCProtocolProcessor.html#a18">00171</a>                 <a class="code" href="classCAgentEnvVar.html">CAgentEnvVar</a>* <a class="code" href="classCProtocolProcessor.html#a18">getEnvVar</a>()<font class="keyword"></font>{ <font class="keywordflow">return</font> m_envvar; }
+00172 
+00173         <font class="keyword">private</font>:
+00174                 <a class="code" href="classCRegex.html">CRegex</a> *m_reg;                          
+00175                 <a class="code" href="classCAgentEnvVar.html">CAgentEnvVar</a> *m_envvar;         
+00176                 <a class="code" href="struct__st__cmd.html">st_cmd</a> m_cmd;                           
+00177                 std::string m_itemcode;         
+00183                 <font class="keywordtype">bool</font> parseCommand(<font class="keywordtype">char</font> *);
+00184 };
+00185 
+00186 <font class="preprocessor">#endif </font><font class="comment">/* __CPROTOCOLPROCESSOR_H__ */</font>
+</pre></div><hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

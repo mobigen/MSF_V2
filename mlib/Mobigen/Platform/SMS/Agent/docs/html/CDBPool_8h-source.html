@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CDBPool.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CDBPool.h</h1><div class="fragment"><pre>00001 
+00002 
+00003 <font class="preprocessor">#ifndef __CDBPOOL_H__</font>
+00004 <font class="preprocessor"></font><font class="preprocessor">#define __CDBPOOL_H__</font>
+00005 <font class="preprocessor"></font>
+00006 <font class="preprocessor">#include &lt;stdio.h&gt;</font>
+00007 <font class="preprocessor">#include &lt;stdlib.h&gt;</font>
+00008 <font class="preprocessor">#include &lt;string.h&gt;</font>
+00009 <font class="preprocessor">#include &lt;errno.h&gt;</font>
+00010 <font class="preprocessor">#include &lt;pthread.h&gt;</font>
+00011 
+00012 <font class="preprocessor">#include "CQueue.h"</font>
+00013 <font class="preprocessor">#include "CDBSession.h"</font>
+00014 
+00015 <font class="preprocessor">#define USERID   "system"</font>
+00016 <font class="preprocessor"></font><font class="preprocessor">#define PASSWORD "manager"</font>
+00017 <font class="preprocessor"></font>
+00018 
+00020 
+<a name="l00023"></a><a class="code" href="classCDBPool.html">00023</a> <font class="keyword">class </font><a class="code" href="classCDBPool.html">CDBPool</a>
+00024 {
+00025         <font class="keyword">public</font>:
+00027                 <a class="code" href="classCDBPool.html#a0">CDBPool</a>();
+00029                 <font class="keyword">virtual</font> <a class="code" href="classCDBPool.html#a1">~CDBPool</a>();
+00035                 <font class="keywordtype">void</font> <a class="code" href="classCDBPool.html#a2">putSession</a>(<a class="code" href="classCDBSession.html">CDBSession</a> *session);
+00044                 <a class="code" href="classCDBSession.html">CDBSession</a> *<a class="code" href="classCDBPool.html#a3">getSession</a>(<font class="keywordtype">char</font> *userid, <font class="keywordtype">char</font> *passwd, <font class="keywordtype">char</font> *sid);
+00051                 <a class="code" href="classCDBSession.html">CDBSession</a> *<a class="code" href="classCDBPool.html#a3">getSession</a>(<font class="keywordtype">char</font> *key);
+00057                 <font class="keywordtype">void</font> <a class="code" href="classCDBPool.html#a5">returnSession</a>(<a class="code" href="classCDBSession.html">CDBSession</a> *);
+00062                 <font class="keywordtype">int</font> <a class="code" href="classCDBPool.html#a6">size</a>();
+00063 
+00064         <font class="keyword">private</font>:
+00065                 pthread_mutex_t m_mutex;        
+00066                 <a class="code" href="classCQueue.html">CQueue</a> *m_pool;                         
+00067 };
+00068 
+00069 <font class="preprocessor">#endif</font>
+</font></pre></div><hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

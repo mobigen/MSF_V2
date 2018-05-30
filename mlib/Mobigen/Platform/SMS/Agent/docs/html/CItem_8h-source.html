@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CItem.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CItem.h</h1><div class="fragment"><pre>00001 
+00002 <font class="preprocessor">#ifndef _CITEM_H__</font>
+00003 <font class="preprocessor"></font><font class="preprocessor">#define _CITEM_H__ 1</font>
+00004 <font class="preprocessor"></font>
+00005 
+00006 <font class="preprocessor">#include &lt;stdio.h&gt;</font>
+00007 <font class="preprocessor">#include &lt;stdlib.h&gt;</font>
+00008 <font class="preprocessor">#include &lt;errno.h&gt;</font>
+00009 <font class="preprocessor">#include &lt;unistd.h&gt;</font>
+00010 <font class="preprocessor">#include &lt;time.h&gt;</font>
+00011 <font class="preprocessor">#include &lt;string&gt;</font>
+00012 <font class="preprocessor">#include &lt;iostream&gt;</font>
+00013 
+00014 <font class="preprocessor">#include "CQueue.h"</font>
+00015 <font class="preprocessor">#include "CItemInstance.h"</font>
+00016 <font class="preprocessor">#include "CItemCondition.h"</font>
+00017 
+00018 <font class="keyword">typedef</font> <font class="keyword">struct </font>_st_item_alarm {
+00019         <font class="keywordtype">char</font> instance[128];
+00020         <font class="keywordtype">int</font> condid;
+00021 } st_item_alarm;
+00022 
+00024 
+<a name="l00029"></a><a class="code" href="classCItem.html">00029</a> <font class="keyword">class </font><a class="code" href="classCItem.html">CItem</a>
+00030 {
+00031         <font class="keyword">public</font>:
+00033                 <a class="code" href="classCItem.html#a0">CItem</a>();
+00035                 <font class="keyword">virtual</font> <a class="code" href="classCItem.html#a1">~CItem</a>();
+<a name="l00040"></a><a class="code" href="classCItem.html#a2">00040</a>                 std::string <a class="code" href="classCItem.html#a2">getCode</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_code; }
+<a name="l00045"></a><a class="code" href="classCItem.html#a3">00045</a>                 std::string <a class="code" href="classCItem.html#a3">getName</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_name; }
+00046 
+<a name="l00051"></a><a class="code" href="classCItem.html#a4">00051</a>                 <font class="keywordtype">unsigned</font> <font class="keywordtype">long</font> <a class="code" href="classCItem.html#a4">getSchedule</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_schedule; }
+00052 
+<a name="l00057"></a><a class="code" href="classCItem.html#a5">00057</a>                 <font class="keywordtype">unsigned</font> <font class="keywordtype">long</font> <a class="code" href="classCItem.html#a5">getEventSchedule</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_eventSchedule; }
+<a name="l00062"></a><a class="code" href="classCItem.html#a6">00062</a>                 std::string <a class="code" href="classCItem.html#a6">getEnable</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_enable; }
+<a name="l00067"></a><a class="code" href="classCItem.html#a7">00067</a>                 std::string <a class="code" href="classCItem.html#a7">getMethod</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_method; }
+<a name="l00072"></a><a class="code" href="classCItem.html#a8">00072</a>                 time_t <a class="code" href="classCItem.html#a8">getCollectTime</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_collect; }
+<a name="l00077"></a><a class="code" href="classCItem.html#a9">00077</a>                 time_t <a class="code" href="classCItem.html#a9">getEventCollectTime</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_eventCollect; }
+<a name="l00082"></a><a class="code" href="classCItem.html#a10">00082</a>                 <a class="code" href="classCQueue.html">CQueue</a> *<a class="code" href="classCItem.html#a10">getInstanceQ</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_instQ; }
+<a name="l00088"></a><a class="code" href="classCItem.html#a11">00088</a>                 <a class="code" href="classCQueue.html">CQueue</a> *<a class="code" href="classCItem.html#a11">getConditionQ</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_condQ; }
+<a name="l00093"></a><a class="code" href="classCItem.html#a12">00093</a>                 <a class="code" href="classCQueue.html">CQueue</a> *<a class="code" href="classCItem.html#a12">getAlarmInstanceQ</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_alarmInstanceQ; }
+00094 
+<a name="l00099"></a><a class="code" href="classCItem.html#a13">00099</a>                 <font class="keywordtype">void</font> <a class="code" href="classCItem.html#a13">setCode</a>(std::string code)<font class="keyword"> </font>{ m_code = code; }
+<a name="l00104"></a><a class="code" href="classCItem.html#a14">00104</a>                 <font class="keywordtype">void</font> <a class="code" href="classCItem.html#a14">setName</a>(std::string name)<font class="keyword"> </font>{ m_name = name; }
+<a name="l00109"></a><a class="code" href="classCItem.html#a15">00109</a>                 <font class="keywordtype">void</font> <a class="code" href="classCItem.html#a15">setSchedule</a>(<font class="keywordtype">unsigned</font> <font class="keywordtype">long</font> schedule)<font class="keyword"> </font>{ m_schedule = schedule; }
+<a name="l00114"></a><a class="code" href="classCItem.html#a16">00114</a>                 <font class="keywordtype">void</font> <a class="code" href="classCItem.html#a16">setEventSchedule</a>(<font class="keywordtype">unsigned</font> <font class="keywordtype">long</font> eventSchedule)<font class="keyword"> </font>{ m_eventSchedule = eventSchedule; }
+<a name="l00119"></a><a class="code" href="classCItem.html#a17">00119</a>                 <font class="keywordtype">void</font> <a class="code" href="classCItem.html#a17">setEnable</a>(std::string enable)<font class="keyword"> </font>{ m_enable = enable; }
+<a name="l00124"></a><a class="code" href="classCItem.html#a18">00124</a>                 <font class="keywordtype">void</font> <a class="code" href="classCItem.html#a18">setMethod</a>(std::string method)<font class="keyword"> </font>{ m_method = method; }
+<a name="l00129"></a><a class="code" href="classCItem.html#a19">00129</a>                 <font class="keywordtype">void</font> <a class="code" href="classCItem.html#a19">setCollectTime</a>(time_t collect)<font class="keyword"> </font>{ m_collect = collect; }
+<a name="l00134"></a><a class="code" href="classCItem.html#a20">00134</a>                 <font class="keywordtype">void</font> <a class="code" href="classCItem.html#a20">setEventCollectTime</a>(time_t eventCollect)<font class="keyword"> </font>{ m_eventCollect = eventCollect; }
+<a name="l00140"></a><a class="code" href="classCItem.html#a21">00140</a>                 <font class="keywordtype">void</font> <a class="code" href="classCItem.html#a21">setIsCollect</a>(<font class="keywordtype">bool</font> b)<font class="keyword"> </font>{ m_isCollect = b; }
+00141 
+00146                 <font class="keywordtype">void</font> <a class="code" href="classCItem.html#a22">addInstance</a>(<a class="code" href="classCItemInstance.html">CItemInstance</a> *inst);
+00151                 <font class="keywordtype">void</font> <a class="code" href="classCItem.html#a23">addCondition</a>(<a class="code" href="classCItemCondition.html">CItemCondition</a> *cond);
+00156                 <font class="keywordtype">void</font> <a class="code" href="classCItem.html#a24">delAlarm</a>(st_item_alarm *alarm);
+00161                 <font class="keywordtype">void</font> <a class="code" href="classCItem.html#a25">addAlarm</a>(st_item_alarm *alarm);
+00166                 <font class="keywordtype">bool</font> <a class="code" href="classCItem.html#a26">isAlarm</a>(st_item_alarm *alarm);
+00167                 
+<a name="l00172"></a><a class="code" href="classCItem.html#a27">00172</a>                 <font class="keywordtype">bool</font> <a class="code" href="classCItem.html#a27">isCollect</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_isCollect; }
+00177                 <font class="keywordtype">bool</font> <a class="code" href="classCItem.html#a28">isEnable</a>();
+00182                 <font class="keywordtype">bool</font> <a class="code" href="classCItem.html#a29">isPassive</a>();
+00187                 <font class="keywordtype">bool</font> <a class="code" href="classCItem.html#a30">isReportable</a>();
+00192                 <font class="keywordtype">bool</font> <a class="code" href="classCItem.html#a31">isEnableEvent</a>();
+00193 
+<a name="l00197"></a><a class="code" href="classCItem.html#a32">00197</a>                 <font class="keywordtype">void</font> <a class="code" href="classCItem.html#a32">printItem</a>()<font class="keyword"></font>
+00198 <font class="keyword">                </font>{
+00199                         std::cout &lt;&lt; <font class="stringliteral">"code : "</font> &lt;&lt; m_code ;
+00200                         std::cout &lt;&lt; <font class="stringliteral">", name : "</font> &lt;&lt; m_name ;
+00201                         std::cout &lt;&lt; <font class="stringliteral">", schedule : "</font> &lt;&lt; m_schedule ;
+00202                         std::cout &lt;&lt; <font class="stringliteral">", eschedule : "</font> &lt;&lt; m_eventSchedule ;
+00203                         std::cout &lt;&lt; <font class="stringliteral">", enable : "</font> &lt;&lt; m_enable ;
+00204                         std::cout &lt;&lt; <font class="stringliteral">", method : "</font> &lt;&lt; m_method &lt;&lt; std::endl;
+00205                 }
+00206 
+00207         <font class="keyword">private</font>:
+00208                 std::string m_code;                             
+00209                 std::string m_name;                             
+00210                 <font class="keywordtype">unsigned</font> <font class="keywordtype">long</font> m_schedule;               
+00211                 <font class="keywordtype">unsigned</font> <font class="keywordtype">long</font> m_eventSchedule;  
+00212                 std::string m_enable;                   
+00213                 std::string m_method;                   
+00214                 <a class="code" href="classCQueue.html">CQueue</a> *m_instQ;                                
+00215                 <a class="code" href="classCQueue.html">CQueue</a> *m_condQ;                                
+00216                 <a class="code" href="classCQueue.html">CQueue</a> *m_alarmInstanceQ;               
+00218                 time_t m_collect;                               
+00219                 time_t m_eventCollect;                  
+00221                 <font class="keywordtype">bool</font> m_isCollect;                               
+00222 };
+00223 
+00224 
+00225 <font class="keywordtype">void</font> deleteCItem(<font class="keywordtype">void</font> *d);
+00226 
+00227 <font class="preprocessor">#endif </font><font class="comment">/* _CITEM_H__ */</font>
+</pre></div><hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

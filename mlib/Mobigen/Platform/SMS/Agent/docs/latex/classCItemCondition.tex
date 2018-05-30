@@ -1,0 +1,367 @@
+\section{CItem\-Condition  클래스 참조}
+\label{classCItemCondition}\index{CItemCondition@{CItem\-Condition}}
+장애 임계치를 판단하는 조건을 저장하는 정보 개체. 
+
+
+{\tt \#include $<$CItem\-Condition.h$>$}
+
+\subsection*{공용 메소드}
+\begin{CompactItemize}
+\item 
+{\bf CItem\-Condition} ()
+\item 
+virtual {\bf $\sim$CItem\-Condition} ()
+\item 
+unsigned int {\bf get\-Index} ()
+\item 
+unsigned int {\bf get\-Element} ()
+\item 
+std::string {\bf get\-Instance\-Name} ()
+\item 
+std::string {\bf get\-Condition} ()
+\item 
+std::string {\bf get\-Severity} ()
+\item 
+void {\bf set\-Index} (unsigned int index)
+\item 
+void {\bf set\-Element} (unsigned int element)
+\item 
+void {\bf set\-Instance\-Name} (std::string inst\-Name)
+\item 
+void {\bf set\-Condition} (std::string condition)
+\item 
+void {\bf set\-Severity} (std::string severity)
+\item 
+bool {\bf is\-Over\-Threshold} (unsigned int value)
+\item 
+bool {\bf is\-Over\-Threshold} (unsigned long value)
+\item 
+bool {\bf is\-Over\-Threshold} (int value)
+\item 
+bool {\bf is\-Over\-Threshold} (long value)
+\item 
+bool {\bf is\-Over\-Threshold} (double value)
+\item 
+bool {\bf is\-Over\-Threshold} (std::string cond)
+\item 
+bool {\bf is\-Over\-Threshold} (char $\ast$value)
+\item 
+bool {\bf check\-Operator} (char $\ast$pcmd)
+\item 
+bool {\bf check\-Condition} ({\bf st\_\-conditem} $\ast$item, double val)
+\item 
+bool {\bf check\-Condition} ({\bf st\_\-conditem} $\ast$item, char $\ast$val)
+\item 
+bool {\bf check\-Condition} (bool b, char op, {\bf st\_\-conditem} $\ast$item, double val)
+\item 
+bool {\bf check\-Condition} (bool b, char op, {\bf st\_\-conditem} $\ast$item, char $\ast$val)
+\item 
+void {\bf parse\-Condition} (char $\ast$msg)
+\end{CompactItemize}
+
+
+\subsection{상세한 내용}
+장애 임계치를 판단하는 조건을 저장하는 정보 개체.
+
+condition id, 장애 등급(severity or level), 임계치 판단 대상(element), instance(판단 대상 instance) 임계치 판단 조건(condition) 정보를 관리하는 클래스. 현재는 CPUPerf, Network\-Perf에, Log\-Check item에 대해서만 적용가능한다. scagent.xml 파일에서 당음과 같은 형식으로 저장된 정보를 기록한다. $<$conditions$>$ $<$condition id=\char`\"{}1\char`\"{} instance=\char`\"{}ALL\char`\"{} element=\char`\"{}1\char`\"{} level=\char`\"{}Major\char`\"{}$>$$>$=5$<$/condition$>$ $<$/conditions$>$ 
+
+
+
+\subsection{생성자 \& 소멸자 문서화}
+\index{CItemCondition@{CItem\-Condition}!CItemCondition@{CItemCondition}}
+\index{CItemCondition@{CItemCondition}!CItemCondition@{CItem\-Condition}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CItem\-Condition::CItem\-Condition ()}\label{classCItemCondition_a0}
+
+
+생성자 \index{CItemCondition@{CItem\-Condition}!~CItemCondition@{$\sim$CItemCondition}}
+\index{~CItemCondition@{$\sim$CItemCondition}!CItemCondition@{CItem\-Condition}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CItem\-Condition::$\sim$CItem\-Condition ()\hspace{0.3cm}{\tt  [virtual]}}\label{classCItemCondition_a1}
+
+
+소멸자 
+
+\subsection{멤버 함수 문서화}
+\index{CItemCondition@{CItem\-Condition}!checkCondition@{checkCondition}}
+\index{checkCondition@{checkCondition}!CItemCondition@{CItem\-Condition}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CItem\-Condition::check\-Condition (bool {\em b}, char {\em op}, {\bf st\_\-conditem} $\ast$ {\em item}, char $\ast$ {\em val})}\label{classCItemCondition_a23}
+
+
+임계치 판단 조건이 여러 조건의 논리 연산(AND, OR)의 조합으로 이루어진 경우 주어진 문자열과 임계치 조건을 비교 판단한 결과값과 이전에 연산 결과을 논리 연산(AND, OR)한 결과를 반환하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em .}]\item[
+{\em AND, OR}]). \item[
+{\em .}]\item[
+{\em .}]\end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 반환: }]\par
+true : 장애 발생, false : 장애 해지. \end{Desc}
+\index{CItemCondition@{CItem\-Condition}!checkCondition@{checkCondition}}
+\index{checkCondition@{checkCondition}!CItemCondition@{CItem\-Condition}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CItem\-Condition::check\-Condition (bool {\em b}, char {\em op}, {\bf st\_\-conditem} $\ast$ {\em item}, double {\em val})}\label{classCItemCondition_a22}
+
+
+임계치 판단 조건이 여러 조건의 논리 연산(AND, OR)의 조합으로 이루어진 경우 주어진 값(double)과 임계치 조건을 비교 판단한 결과값과 이전에 연산 결과을 논리 연산(AND, OR)한 결과를 반환하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em .}]\item[
+{\em AND, OR}]). \item[
+{\em .}]\item[
+{\em double}]). \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 반환: }]\par
+true : 장애 발생, false : 장애 해지. \end{Desc}
+\index{CItemCondition@{CItem\-Condition}!checkCondition@{checkCondition}}
+\index{checkCondition@{checkCondition}!CItemCondition@{CItem\-Condition}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CItem\-Condition::check\-Condition ({\bf st\_\-conditem} $\ast$ {\em item}, char $\ast$ {\em val})}\label{classCItemCondition_a21}
+
+
+주어진 문자열과 임계치 조건({\bf st\_\-conditem} {\rm (페이지\,\pageref{structst__conditem})})을 비교하여 장애 발생 여부를 판단하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em .}]\item[
+{\em return}]true : 장애 발생, false : 장애 해지. \end{description}
+\end{Desc}
+\index{CItemCondition@{CItem\-Condition}!checkCondition@{checkCondition}}
+\index{checkCondition@{checkCondition}!CItemCondition@{CItem\-Condition}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CItem\-Condition::check\-Condition ({\bf st\_\-conditem} $\ast$ {\em item}, double {\em val})}\label{classCItemCondition_a20}
+
+
+주어진 값(double)과 임계치 조건({\bf st\_\-conditem} {\rm (페이지\,\pageref{structst__conditem})})을 비교하여 장애 발생 여부를 판단하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em .}]\item[
+{\em double}]) \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 반환: }]\par
+true : 장애 발생, false : 장애 해지. \end{Desc}
+\index{CItemCondition@{CItem\-Condition}!checkOperator@{checkOperator}}
+\index{checkOperator@{checkOperator}!CItemCondition@{CItem\-Condition}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CItem\-Condition::check\-Operator (char $\ast$ {\em pcmd})}\label{classCItemCondition_a19}
+
+
+주어진 문자열에서 연산자($>$=, $>$, $<$=, $<$, ==, !=, $<$$<$, $>$$>$)를 파싱한다. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em .}]\end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 반환: }]\par
+true : parsing success, false : parsing fail. \end{Desc}
+\index{CItemCondition@{CItem\-Condition}!getCondition@{getCondition}}
+\index{getCondition@{getCondition}!CItemCondition@{CItem\-Condition}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}std::string CItem\-Condition::get\-Condition ()\hspace{0.3cm}{\tt  [inline]}}\label{classCItemCondition_a5}
+
+
+장애 임계치 판단 조건을 반환하는 메쏘드. 전체 instance는 \char`\"{}ALL\char`\"{}로 설정하면 된다. \begin{Desc}
+\item[{\bf 반환: }]\par
+임계치 판단 조건. \end{Desc}
+\index{CItemCondition@{CItem\-Condition}!getElement@{getElement}}
+\index{getElement@{getElement}!CItemCondition@{CItem\-Condition}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned int CItem\-Condition::get\-Element ()\hspace{0.3cm}{\tt  [inline]}}\label{classCItemCondition_a3}
+
+
+element 번호를 얻어오는 메쏘드. element는 장애 판단 대상 항목의 번호를 의미하며,  각 항목의 번호는 COL명령으로 데이터를 조회할 경우에 얻어지는 데이터의 테이블의 헤더 순서대로 부여된다. \begin{Desc}
+\item[{\bf 반환: }]\par
+element number. \end{Desc}
+\index{CItemCondition@{CItem\-Condition}!getIndex@{getIndex}}
+\index{getIndex@{getIndex}!CItemCondition@{CItem\-Condition}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned int CItem\-Condition::get\-Index ()\hspace{0.3cm}{\tt  [inline]}}\label{classCItemCondition_a2}
+
+
+condition id를 얻어오는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+condition id. \end{Desc}
+\index{CItemCondition@{CItem\-Condition}!getInstanceName@{getInstanceName}}
+\index{getInstanceName@{getInstanceName}!CItemCondition@{CItem\-Condition}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}std::string CItem\-Condition::get\-Instance\-Name ()\hspace{0.3cm}{\tt  [inline]}}\label{classCItemCondition_a4}
+
+
+장애 임계치 판단 대상 개체명을 반환하는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+instance name. \end{Desc}
+\index{CItemCondition@{CItem\-Condition}!getSeverity@{getSeverity}}
+\index{getSeverity@{getSeverity}!CItemCondition@{CItem\-Condition}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}std::string CItem\-Condition::get\-Severity ()\hspace{0.3cm}{\tt  [inline]}}\label{classCItemCondition_a6}
+
+
+장애 등급 정보를 반환하는 메쏘스. 설정된 장애 등급('Critical', 'Major', 'Minor', 'Warning', 'Undeterminate')을 반환한다. \begin{Desc}
+\item[{\bf 반환: }]\par
+alarm severity. \end{Desc}
+\index{CItemCondition@{CItem\-Condition}!isOverThreshold@{isOverThreshold}}
+\index{isOverThreshold@{isOverThreshold}!CItemCondition@{CItem\-Condition}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CItem\-Condition::is\-Over\-Threshold (char $\ast$ {\em value})}\label{classCItemCondition_a18}
+
+
+장애 발생 여부를 판단하는 메쏘드. 주어진 값을 장애 판단 조건과 비교하여 장애 발생 여부를 판단한다. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em character}]value. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 반환: }]\par
+true : 장애 발생, false : 장애 해지. \end{Desc}
+\index{CItemCondition@{CItem\-Condition}!isOverThreshold@{isOverThreshold}}
+\index{isOverThreshold@{isOverThreshold}!CItemCondition@{CItem\-Condition}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CItem\-Condition::is\-Over\-Threshold (std::string {\em cond})}\label{classCItemCondition_a17}
+
+
+장애 발생 여부를 판단하는 메쏘드. 주어진 값을 장애 판단 조건과 비교하여 장애 발생 여부를 판단한다. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em string}]value. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 반환: }]\par
+true : 장애 발생, false : 장애 해지. \end{Desc}
+\index{CItemCondition@{CItem\-Condition}!isOverThreshold@{isOverThreshold}}
+\index{isOverThreshold@{isOverThreshold}!CItemCondition@{CItem\-Condition}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CItem\-Condition::is\-Over\-Threshold (double {\em value})}\label{classCItemCondition_a16}
+
+
+장애 발생 여부를 판단하는 메쏘드. 주어진 값을 임계치 판단 조건과 비교하여 장애 발생 여부를 판단한다. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em double}]value. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 반환: }]\par
+true : 임계치 초과 혹은 장애 발생, false : 임계치 미달 혹은 장애 해지. \end{Desc}
+\index{CItemCondition@{CItem\-Condition}!isOverThreshold@{isOverThreshold}}
+\index{isOverThreshold@{isOverThreshold}!CItemCondition@{CItem\-Condition}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CItem\-Condition::is\-Over\-Threshold (long {\em value})}\label{classCItemCondition_a15}
+
+
+장애 발생 여부를 판단하는 메쏘드. 주어진 값을 임계치 판단 조건과 비교하여 장애 발생 여부를 판단한다. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em long}]value. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 반환: }]\par
+true : 임계치 초과 혹은 장애 발생, false : 임계치 미달 혹은 장애 해지. \end{Desc}
+\index{CItemCondition@{CItem\-Condition}!isOverThreshold@{isOverThreshold}}
+\index{isOverThreshold@{isOverThreshold}!CItemCondition@{CItem\-Condition}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CItem\-Condition::is\-Over\-Threshold (int {\em value})}\label{classCItemCondition_a14}
+
+
+장애 발생 여부를 판단하는 메쏘드. 주어진 값을 임계치 판단 조건과 비교하여 장애 발생 여부를 판단한다. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em integer}]value. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 반환: }]\par
+true : 임계치 초과 혹은 장애 발생, false : 임계치 미달 혹은 장애 해지. \end{Desc}
+\index{CItemCondition@{CItem\-Condition}!isOverThreshold@{isOverThreshold}}
+\index{isOverThreshold@{isOverThreshold}!CItemCondition@{CItem\-Condition}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CItem\-Condition::is\-Over\-Threshold (unsigned long {\em value})}\label{classCItemCondition_a13}
+
+
+장애 발생 여부를 판단하는 메쏘드. 주어진 값을 임계치 판단 조건과 비교하여 장애 발생 여부를 판단한다. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em unsigned}]long value. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 반환: }]\par
+true : 임계치 초과 혹은 장애 발생, false : 임계치 미달 혹은 장애 해지. \end{Desc}
+\index{CItemCondition@{CItem\-Condition}!isOverThreshold@{isOverThreshold}}
+\index{isOverThreshold@{isOverThreshold}!CItemCondition@{CItem\-Condition}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CItem\-Condition::is\-Over\-Threshold (unsigned int {\em value})\hspace{0.3cm}{\tt  [inline]}}\label{classCItemCondition_a12}
+
+
+장애 발생 여부를 판단하는 메쏘드. 주어진 값을 임계치 판단 조건과 비교하여 장애 발생 여부를 판단한다. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em unsigned}]integer value. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 반환: }]\par
+true : 임계치 초과 혹은 장애 발생, false : 임계치 미달 혹은 장애 해지. \end{Desc}
+\index{CItemCondition@{CItem\-Condition}!parseCondition@{parseCondition}}
+\index{parseCondition@{parseCondition}!CItemCondition@{CItem\-Condition}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CItem\-Condition::parse\-Condition (char $\ast$ {\em msg})}\label{classCItemCondition_a24}
+
+
+주어진 임계치 판단 조건을 parsing하여 m\_\-parsecondition 변수에 상세 정보를 기록하는 메쏘드. 실제 장애 판단은 m\_\-parsecondition에 주어진 조건과 비교 판단하여 장애 발생 여부를 판단한다. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em .}]\end{description}
+\end{Desc}
+\index{CItemCondition@{CItem\-Condition}!setCondition@{setCondition}}
+\index{setCondition@{setCondition}!CItemCondition@{CItem\-Condition}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CItem\-Condition::set\-Condition (std::string {\em condition})\hspace{0.3cm}{\tt  [inline]}}\label{classCItemCondition_a10}
+
+
+임계치 판단 조건을 설정하는 메쏘드. 장애 발생 조건(임계치)을 설정한다. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em .}]\end{description}
+\end{Desc}
+\index{CItemCondition@{CItem\-Condition}!setElement@{setElement}}
+\index{setElement@{setElement}!CItemCondition@{CItem\-Condition}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CItem\-Condition::set\-Element (unsigned int {\em element})\hspace{0.3cm}{\tt  [inline]}}\label{classCItemCondition_a8}
+
+
+element number를 설정하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em element}]number. \end{description}
+\end{Desc}
+\index{CItemCondition@{CItem\-Condition}!setIndex@{setIndex}}
+\index{setIndex@{setIndex}!CItemCondition@{CItem\-Condition}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CItem\-Condition::set\-Index (unsigned int {\em index})\hspace{0.3cm}{\tt  [inline]}}\label{classCItemCondition_a7}
+
+
+condition id를 설정하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em condition}]id. \end{description}
+\end{Desc}
+\index{CItemCondition@{CItem\-Condition}!setInstanceName@{setInstanceName}}
+\index{setInstanceName@{setInstanceName}!CItemCondition@{CItem\-Condition}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CItem\-Condition::set\-Instance\-Name (std::string {\em inst\-Name})\hspace{0.3cm}{\tt  [inline]}}\label{classCItemCondition_a9}
+
+
+Instance 명을 설정하는 메쏘드. 모든 Instance인 경우에는 \char`\"{}ALL\char`\"{}로 설정하면 된다. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em instance}]name. \end{description}
+\end{Desc}
+\index{CItemCondition@{CItem\-Condition}!setSeverity@{setSeverity}}
+\index{setSeverity@{setSeverity}!CItemCondition@{CItem\-Condition}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CItem\-Condition::set\-Severity (std::string {\em severity})\hspace{0.3cm}{\tt  [inline]}}\label{classCItemCondition_a11}
+
+
+장애 등급을 설정하는 메쏘드. 장애 등급('Critical', 'Major', 'Minor', 'Warning', 'Undeterminate' 등)을 설정한다. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em alarm}]severity. \end{description}
+\end{Desc}
+
+
+이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:\begin{CompactItemize}
+\item 
+{\bf CItem\-Condition.h}\end{CompactItemize}

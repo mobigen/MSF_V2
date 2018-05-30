@@ -1,0 +1,403 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CPolicyItem class Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CPolicyItem  클래스 참조</h1>스케쥴러에 의해 수집 쓰레드에 수집 요청을 할때 필요한 정책 정보를 관리하는 클래스. 
+<a href="#_details">More...</a>
+<p>
+<code>#include &lt;<a class="el" href="CPolicyItem_8h-source.html">CPolicyItem.h</a>&gt;</code>
+<p>
+<a href="classCPolicyItem-members.html">모든 구성원들(members)의 명단</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td colspan=2><br><h2>공용 메소드</h2></td></tr>
+<tr><td nowrap align=right valign=top>&nbsp;</td><td valign=bottom><a class="el" href="classCPolicyItem.html#a0">CPolicyItem</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>&nbsp;</td><td valign=bottom><a class="el" href="classCPolicyItem.html#a1">~CPolicyItem</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCPolicyItem.html#a2">setPollTime</a> (time_t t)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCPolicyItem.html#a3">setItem</a> (<a class="el" href="classCItem.html">CItem</a> *item)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCPolicyItem.html#a4">setPollType</a> (unsigned int type)</td></tr>
+<tr><td nowrap align=right valign=top>time_t&nbsp;</td><td valign=bottom><a class="el" href="classCPolicyItem.html#a5">getPollTime</a> ()</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="classCItem.html">CItem</a>*&nbsp;</td><td valign=bottom><a class="el" href="classCPolicyItem.html#a6">getItem</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>unsigned int&nbsp;</td><td valign=bottom><a class="el" href="classCPolicyItem.html#a7">getPollType</a> ()</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="classCQueue.html">CQueue</a>*&nbsp;</td><td valign=bottom><a class="el" href="classCPolicyItem.html#a8">getInstQ</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCPolicyItem.html#a9">setCommand</a> (char *cmd)</td></tr>
+<tr><td nowrap align=right valign=top>std::string&nbsp;</td><td valign=bottom><a class="el" href="classCPolicyItem.html#a10">getCommand</a> ()</td></tr>
+</table>
+<hr><a name="_details"></a><h2>상세한 내용</h2>
+스케쥴러에 의해 수집 쓰레드에 수집 요청을 할때 필요한 정책 정보를 관리하는 클래스.
+<p>
+수집 요청 item, 수집 유형, 수집 시간, 수집 명령어 등의 정보를 담고 있는 정보 클래스이다. 
+<p>
+<hr><h2>생성자 &amp; 소멸자 문서화</h2>
+<a name="a0" doxytag="CPolicyItem::CPolicyItem"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CPolicyItem::CPolicyItem (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+생성자     </td>
+  </tr>
+</table>
+<a name="a1" doxytag="CPolicyItem::~CPolicyItem"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CPolicyItem::~CPolicyItem (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+소멸자     </td>
+  </tr>
+</table>
+<hr><h2>멤버 함수 문서화</h2>
+<a name="a10" doxytag="CPolicyItem::getCommand"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+std::string CPolicyItem::getCommand (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Manager에 의해 수집 요청된 경우 수집 요청된 명령어를 조회하는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+command(수집 요청 명령어) </dl>    </td>
+  </tr>
+</table>
+<a name="a8" doxytag="CPolicyItem::getInstQ"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+<a class="el" href="classCQueue.html">CQueue</a> * CPolicyItem::getInstQ (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+수집 대상 인스턴스 정보를 조회하는 메쏘드.<br>
+ 인스턴스가 없을 경우는 조회 가능한 모든 인스턴스를 조회한다. <dl compact><dt>
+<b>반환: </b><dd>
+<a class="el" href="classCQueue.html">CQueue</a> pointer(instance queue) </dl>    </td>
+  </tr>
+</table>
+<a name="a6" doxytag="CPolicyItem::getItem"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+<a class="el" href="classCItem.html">CItem</a> * CPolicyItem::getItem (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+수집 item 클래스를 조회하는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+<a class="el" href="classCItem.html">CItem</a> pointer. </dl><dl compact><dt>
+<b>참조하시요: </b><dd>
+<a class="el" href="classCItem.html">CItem</a> </dl>    </td>
+  </tr>
+</table>
+<a name="a5" doxytag="CPolicyItem::getPollTime"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+time_t CPolicyItem::getPollTime (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+수집시간 정보를 조회하는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+수집 시간(seconds) </dl>    </td>
+  </tr>
+</table>
+<a name="a7" doxytag="CPolicyItem::getPollType"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+unsigned int CPolicyItem::getPollType (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+수집 유형 정보를 조회하는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+수집 유형(TYPE_PASSIVE, TYPE_ACTIVFE, TYPE_EVENT) </dl>    </td>
+  </tr>
+</table>
+<a name="a9" doxytag="CPolicyItem::setCommand"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CPolicyItem::setCommand (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>cmd</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Manager에 의해 수집 요청된 경우 수집 요청된 명령어를 설정하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>command</em>
+&nbsp;</td><td>
+(수집 요청 명령어) </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a3" doxytag="CPolicyItem::setItem"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CPolicyItem::setItem (
+          </b></td>
+          <td valign="bottom"><b>
+<a class="el" href="classCItem.html">CItem</a> * <em>item</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+item 정보를 설정하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>CItem</em>
+&nbsp;</td><td>
+pointer. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a2" doxytag="CPolicyItem::setPollTime"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CPolicyItem::setPollTime (
+          </b></td>
+          <td valign="bottom"><b>
+time_t <em>t</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+수집 시간 정보를 설정하는 메쏘드  <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a4" doxytag="CPolicyItem::setPollType"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CPolicyItem::setPollType (
+          </b></td>
+          <td valign="bottom"><b>
+unsigned int <em>type</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+수집 유형 정보를 설정하는 메쏘드. 수집 유형(TYPE_PASSIVE, TYPE_ACTIVFE, TYPE_EVENT) <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>TYPE_PASSIVE, TYPE_ACTIVFE, TYPE_EVENT</em>
+&nbsp;</td><td>
+) </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<hr>이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:<ul>
+<li><a class="el" href="CPolicyItem_8h-source.html">CPolicyItem.h</a></ul>
+<hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

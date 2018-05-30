@@ -1,0 +1,87 @@
+PthX-2.0.3:
+    * 2004/10/19 smy
+    * 변경된 파일: PthServer.cpp 
+      * start()에서 touch_heart_beat_pid()를 호출하여
+        pid file을 만들도록 추가함.
+        --> init_child()의 수행시간이 오래 걸리면 부모 프로세스가
+            자식 프로세스를 kill명령으로 죽이는 문제가 발생하여 수정했음.
+
+PthX-2.0.2:
+    * 2004/10/07 smy
+    * 변경된 파일: PthSocket.h
+      * socket write(), write_line()함수에서 default timeout값을 '60'에서
+        '5'으로 변경
+      * 두개의 write_line함수를 사용할때 argument를 2개 주면 어떤 함수를
+        사용해야할 지 컴파일러가 모르게 되는 문제로 인하여 변경하였음.
+        size_t write_line(const void *buf, size_t size, int timeout = 5);
+        ==> size_t write_line(const void *buf, size_t size, int timeout);
+    * 변경된 파일: PthMutex.cpp
+	  * include file 추가(EAGAIN때문에 컴파일 에러남) 
+        #include <errno.h>
+
+PthX-2.0.1:
+	* 2004/10/06 nomota
+	* Tru64를 위해서, PthMutex_test2.cpp PthMutex_test3.cpp 추가함.
+	* BUGGY: pthread_mutex가 안됨.
+
+PthX-2.0:
+      * 2004/08/03 readline()에서 소켓이 닫혔는데, lookahead_buffer에 뭔가
+        있는 경우, 그것을 리턴한다. 기존 버젼은 맨 끝에 '\n'없는 라인이
+        있을 경우, 유실되고 있었음.
+
+PthX-1.9:
+	2004/06/15 PthTask::usleep()을 PthTask::start()에서 제거함
+	2004/06/15 PthCondition() 클래스 추가됨.
+	라킹 관련 코드를 추가함 libPthMutex.a 추가됨.
+	* PthMutex, PthGuard(), PthGuard(PthMutex &)가 추가됨
+
+PthX-1.8.5.2:
+        * if (wait_fd.revents & (POLLERR | POLLHUP)) 추가됨
+
+PthX-1.8.5.1:
+	* write(): __usleep(100) => __usleep(1)
+	* added -g option for optimizing compilation
+
+PthX-1.8.5:
+    * 2004/04/21 PthTask::start() pthread_create() 실패시
+      usleep(1) 한 후에, 재시도 하도록 코드를 고침
+
+PthX-1.8.4:
+    * 2004/04/20 goto write_again: 직전에 __usleep(100)을 넣어서
+    CPU를 과점하는 현상 제거, PthSocket::write() default timeout 60으로 조정.
+    write() fail시 error 코드를 true로 바꿔 줌.
+
+PthX-1.8.3:
+	* 2004/02/28 pth-2.0.0 을 사용하지 않고, posix pthread를 이용해서
+  	똑같은 API 함수를 만족하도록 만듬. 기존의 Pth-1.8.3과 완벽히 호환하는
+	것이 목표임.
+
+Pth-1.8.3:
+     * 2004/02/21
+        * pth_select()로 wait하지 않고, pth_poll()로 wait하도록 수정함.
+
+     * 2004/01/09
+        * svc.conf 에 max_service_per_child 라는 개념을 넣어서,
+          일정 횟수 이상 서비스를 한 후에는 child프로세스가 죽도록
+          처리함. -- 메모리 증가 문제와 서비스 블락 문제를 동시에
+          완화 시키는 시도임.
+
+Pth-1.8: 2003/12/02
+	* wait_socket_ready()에서 에러상황도 체크하도록 함으로써, 
+	  timeout되어서 에러 나오는 링크를 정확하게 처리하도록 함.
+	* cygwin에서 #define int socklen_t 오류 나오는 것 제거 
+	* 쓸데없는 파일들을 제거해서, 클래스 크기를 줄임.
+
+Pth-1.7.1: 2003/11/03
+	* assert.h 추가 PthMsg.cpp PthFramework.cpp
+
+Pth-1.7: 2003/06/09
+	* heartbeat 개념을 도입하여, process가 alive 상태라
+	  해도, heartbeat 가 울리지 않으면, 죽은 프로세스로
+	  간주하고 프로세스를 죽이고 새로 살리는 기능 추가
+
+
+Pth-1.5: 2003/04/23
+	* thr_self() 함수가 pth_t를 리턴하지 않고, 
+          몇번째 스레드 인지를 리턴한다.
+

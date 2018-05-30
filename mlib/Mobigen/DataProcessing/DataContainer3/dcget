@@ -1,0 +1,22 @@
+#!/usr/bin/python
+
+VERSION = '1.1'
+# 050906 : tesse
+
+import sys
+import DataContainer
+
+def main() :
+	if len(sys.argv) != 3 :
+		print 'usage : %s homeDir fileTime(yyyymmddhh0000)' % (sys.argv[0])
+		sys.exit()
+
+	homeDir, fileTime = sys.argv[1:3]
+
+	db = DataContainer.DataContainer(homeDir)
+	while True :
+		recno = int(raw_input('* recno = '))
+		fileTime, msgTime, opt, key, val = db.get(fileTime, recno)
+		print '%s|%s|%s|%s|%s' % (fileTime, msgTime, opt, key, val)
+
+main()

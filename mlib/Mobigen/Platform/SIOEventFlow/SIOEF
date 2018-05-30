@@ -1,0 +1,48 @@
+#!/bin/env python
+
+from SIOEventFlow import SIOEventFlow as SomeCore
+from Mobigen.Platform.AsynCore.AsynCore import AsynCore
+import asyncore, os, re
+import Mobigen.Common.Log as Log
+import sys, os, getopt, time
+
+# SIOEF 0.0.0.0 5252 /home/kisa/conf/SIOEventFlow_KISA.conf.TRM_LOAD
+
+def Main() :
+	
+	OPT, ARGS = getopt.getopt(sys.argv[1:], 'd')
+	try : LOG_NAME = '~/log/%s.%s.log' % (os.path.basename(sys.argv[0]), sys.argv[2])
+	except : LOG_NAME = '~/log/%s.log' % (os.path.basename(sys.argv[0]))
+	
+	try : OPT.index(('-d', '')); Log.Init()
+	except : Log.Init(Log.CRotatingLog(os.path.expanduser(LOG_NAME), 1000000, 10))
+	sys.argv = [sys.argv[0]] + ARGS
+
+	if len(sys.argv) != 4 :
+		print "usage : %s ip port confFileName" % (sys.argv[0])
+		sys.exit()
+	
+	ip = sys.argv[1]
+	port = int( sys.argv[2] )
+	confFileName = sys.argv[3]
+
+	p = os.popen("ps -efl | grep SIOEF | grep -v grep") 
+	for line in p.readlines() :
+		line = line.strip()
+		lineList = re.split('\s+', line)
+		if re.search("SIOEF\s+\S+\s+(\d+)\s+\S+$", line.strip()) :
+			portexists = re.search("SIOEF\s+\S+\s+(\d+)\s+\S+$", line.strip()).group(1)
+			if int(port) == int(portexists) and int(lineList[3]) != int(os.getpid()) :
+				print "SIOEF PORT %s aleady exists !!! Please use another port." % port
+				sys.exit()
+	p.close()
+
+	__LOG__.Trace("*********************************")
+	__LOG__.Trace("**** START !!!")
+	__LOG__.Trace("*********************************")
+
+
+	server = AsynCore( ip, port, confFileName)
+	asyncore.loop()
+
+if __name__ == "__main__" : Main()

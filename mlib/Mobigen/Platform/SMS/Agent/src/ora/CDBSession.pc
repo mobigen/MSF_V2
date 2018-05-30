@@ -1,0 +1,156 @@
+
+#include "CDBSession.h"
+#include <sqlca.h>
+
+#ifdef DCE_THREADS
+#include <pthread.h>
+#else
+#include <pthread.h>
+typedef void*       pthread_addr_t;
+typedef void*      (*pthread_startroutine_t) (void*);
+#define pthread_attr_default  (const pthread_attr_t *)NULL
+#endif
+
+
+int      err_report(struct sqlca sqlca);
+
+int      err_report(struct sqlca sqlca)
+{
+	if (sqlca.sqlcode < 0){
+		printf("\n%.*s\n\n",sqlca.sqlerrm.sqlerrml,sqlca.sqlerrm.sqlerrmc);
+		return -1;
+	}
+
+	return 1;
+}
+
+
+CDBSession::CDBSession()
+{
+	pthread_mutex_init(&m_mutex, NULL);
+
+	memset(orasid, 0x00, sizeof(orasid));
+	memset(oradba, 0x00, sizeof(oradba));
+	memset(orapw, 0x00, sizeof(orapw));
+	memset(m_key, 0x00, sizeof(m_key));
+	m_count=5;
+	m_session = NULL;
+	m_dbq = new CQueue();
+}
+
+CDBSession::~CDBSession()
+{
+	pthread_mutex_destroy(&m_mutex);
+}
+
+
+void CDBSession::setOraInfo(const char* sid, const char* dba, const char* pw)
+{
+	strcpy(orasid, sid);
+	strcpy(oradba, dba);
+	strcpy(orapw, pw);
+	setKey(oradba, orapw, orasid);
+}
+
+void CDBSession::setKey(char *userid, char *passwd, char *sid)
+{
+	sprintf(m_key, "%s/%s@%s", userid, passwd, sid);
+}
+
+void CDBSession::setKey(char *key)
+{
+	strncpy(m_key, key, strlen(key));
+}
+
+char *CDBSession::getKey()
+{
+	return m_key;
+}
+
+int CDBSession::connect()
+{
+	return connect(oradba, orapw, orasid);
+}
+
+int CDBSession::connect(char *userid, char *passwd, char *sid)
+{
+	char uid[128];
+	memset(uid, 0x00, sizeof(uid));
+	sprintf(uid, "%s/%s@%s", userid, passwd, sid);
+	setKey(uid);
+	return connect(uid);
+}
+
+int CDBSession::connect(char *userid)
+{
+	EXEC SQL BEGIN DECLARE SECTION;
+		VARCHAR uid[128];
+		static sql_context ctx;
+	EXEC SQL END DECLARE SECTION;
+	int i=0;
+
+	pthread_mutex_lock(&m_mutex);
+
+	EXEC SQL ENABLE THREADS;
+
+	memset(&uid, 0x00, sizeof(uid));
+	uid.len = sprintf((char*)uid.arr, "%s", userid);
+
+	sqlca.sqlcode = 0;
+	EXEC SQL CONTEXT ALLOCATE :ctx;
+	if(err_report(sqlca)<0){
+		m_status = false;
+		pthread_mutex_unlock(&m_mutex);
+		return -1;
+	}
+
+	EXEC SQL CONTEXT USE :ctx;
+	EXEC SQL CONNECT :uid;
+	if(err_report(sqlca)<0){
+		m_status = false;
+		pthread_mutex_unlock(&m_mutex);
+		return -1;
+	}
+
+	m_status = true;
+	m_session = (void *)&ctx;
+	pthread_mutex_unlock(&m_mutex);
+
+	printf("connect to oracle[%s] success\n", userid);
+
+	return 1;
+}
+
+void * CDBSession::getConnection()
+{
+	if(isOpen()==false) return NULL;
+	pthread_mutex_lock(&m_mutex);
+	return m_session;
+}
+
+void CDBSession::returnConnection()
+{
+	if(isOpen()==false) return ;
+	pthread_mutex_unlock(&m_mutex);
+}
+
+void CDBSession::closeConnection()
+{
+	EXEC SQL BEGIN DECLARE SECTION;
+	sql_context *_p = (sql_context *)m_session;
+	EXEC SQL END DECLARE SECTION;
+
+	pthread_mutex_lock(&m_mutex);
+	EXEC SQL CONTEXT USE :*_p;
+	EXEC SQL COMMIT WORK RELEASE;
+	err_report(sqlca);
+
+	EXEC SQL CONTEXT FREE :*_p;
+	err_report(sqlca);
+	pthread_mutex_unlock(&m_mutex);
+}
+
+bool CDBSession::isOpen()
+{
+	return m_status;
+}

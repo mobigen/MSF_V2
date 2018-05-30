@@ -1,0 +1,35 @@
+\section{st\_\-conditem  구조체 참조}
+\label{structst__conditem}\index{st_conditem@{st\_\-conditem}}
+{\tt \#include $<$CItem\-Condition.h$>$}
+
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+\index{opcode@{opcode}!st_conditem@{st\_\-conditem}}\index{st_conditem@{st\_\-conditem}!opcode@{opcode}}
+char {\bf opcode}\label{structst__conditem_m0}
+
+\item 
+\index{type@{type}!st_conditem@{st\_\-conditem}}\index{st_conditem@{st\_\-conditem}!type@{type}}
+char {\bf type}\label{structst__conditem_m1}
+
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+\index{val@{val}!st_conditem@{st\_conditem}}\index{st_conditem@{st\_conditem}!val@{val}}
+union \{\\
+\>double {\bf d}\\
+\>char {\bf s} [1024]\\
+\} {\bf val}\label{structst__conditem_m4}
+
+\end{tabbing}
+\end{CompactItemize}
+
+
+\subsection{상세한 내용}
+장애(임계치) 판단 조건 및 기준 값을 저장하는 구조체. OPCODE : $>$=, $>$, $<$=, $<$, !=, ==, $<$$<$, $>$$>$등의 OPERATION CODE. TYPE : double, string 등의 기준 값 유형. val : 조건 판단 기준값. 
+
+
+
+이 구조체을 위한 문서화는 다음의 파일로부터 생성되었습니다:\begin{CompactItemize}
+\item 
+{\bf CItem\-Condition.h}\end{CompactItemize}

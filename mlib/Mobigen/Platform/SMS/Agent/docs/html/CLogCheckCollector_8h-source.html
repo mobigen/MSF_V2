@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CLogCheckCollector.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CLogCheckCollector.h</h1><div class="fragment"><pre>00001 
+00002 
+00003 <font class="preprocessor">#ifndef __CLOGCHECKCOLLECTOR_H__</font>
+00004 <font class="preprocessor"></font><font class="preprocessor">#define __CLOGCHECKCOLLECTOR_H__ 1</font>
+00005 <font class="preprocessor"></font>
+00006 <font class="preprocessor">#include "CCollector.h"</font>
+00007 <font class="preprocessor">#include &lt;sys/types.h&gt;</font>
+00008 <font class="preprocessor">#include &lt;sys/stat.h&gt;</font>
+00009 <font class="preprocessor">#include &lt;unistd.h&gt;</font>
+00010 
+<a name="l00014"></a><a class="code" href="struct__st__loginst.html">00014</a> <font class="keyword">typedef</font> <font class="keyword">struct </font><a class="code" href="struct__st__loginst.html">_st_loginst</a> {
+00015         <font class="keywordtype">char</font> instance[256];
+00016         <font class="keywordtype">char</font> fmt_instance[256];
+00017         <font class="keyword">struct </font>stat sbuf;
+00018 }<a class="code" href="struct__st__loginst.html">st_loginst</a>;
+00019 
+00021 
+<a name="l00032"></a><a class="code" href="classCLogCheckCollector.html">00032</a> <font class="keyword">class </font><a class="code" href="classCLogCheckCollector.html">CLogCheckCollector</a>:<font class="keyword">public</font> <a class="code" href="classCCollector.html">CCollector</a>
+00033 {
+00034         <font class="keyword">public</font>:
+00036                 <a class="code" href="classCLogCheckCollector.html#a0">CLogCheckCollector</a>();
+00038                 <a class="code" href="classCLogCheckCollector.html#a1">~CLogCheckCollector</a>();
+00043                 <font class="keywordtype">void</font> <a class="code" href="classCCollector.html#a2">collect</a>();
+00047                 <font class="keywordtype">void</font> <a class="code" href="classCLogCheckCollector.html#a3">collectLog</a>();
+00054                 <font class="keywordtype">void</font> <a class="code" href="classCLogCheckCollector.html#a4">collectLogInstance</a>(<a class="code" href="struct__st__loginst.html">st_loginst</a> *loginst);
+00060                 <font class="keywordtype">void</font> <a class="code" href="classCLogCheckCollector.html#a5">checkFmtInstance</a>();
+00064                 <font class="keywordtype">void</font> <a class="code" href="classCLogCheckCollector.html#a6">setFmtInstance</a>();
+00071                 <font class="keywordtype">void</font> <a class="code" href="classCLogCheckCollector.html#a7">checkCondition</a>(<a class="code" href="struct__st__loginst.html">st_loginst</a> *loginst, <font class="keywordtype">char</font> *log);
+00078                 <font class="keywordtype">void</font> <a class="code" href="classCLogCheckCollector.html#a8">sendEvent</a>(<a class="code" href="classCItemCondition.html">CItemCondition</a> *cond, <a class="code" href="struct__st__loginst.html">st_loginst</a> *loginst, <font class="keywordtype">char</font> *log);
+00082                 <font class="keywordtype">void</font> <a class="code" href="classCCollector.html#a3">makeMessage</a>();
+00088                 <font class="keywordtype">void</font> <a class="code" href="classCLogCheckCollector.html#a10">setLogFileInfo</a>(<a class="code" href="struct__st__loginst.html">st_loginst</a> *loginst, <font class="keywordtype">bool</font> b);
+<a name="l00090"></a><a class="code" href="classCLogCheckCollector.html#a11">00090</a>                 <font class="keywordtype">void</font> <a class="code" href="classCCollector.html#a4">isOverThreshold</a>(<a class="code" href="classCItemCondition.html">CItemCondition</a> *cond)<font class="keyword"></font>{};
+00091 
+00092         <font class="keyword">private</font>:
+00093                 <a class="code" href="classCQueue.html">CQueue</a> m_instq;         
+00094 };
+00095 
+00096 <font class="preprocessor">#endif </font><font class="comment">/* __CLOGCHECKCOLLECTOR_H__ */</font>
+</pre></div><hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

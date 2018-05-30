@@ -1,0 +1,171 @@
+\section{CDBSession  클래스 참조}
+\label{classCDBSession}\index{CDBSession@{CDBSession}}
+Database 연결 세션 정보를 관리하는 클래스(Thread safe). 
+
+
+{\tt \#include $<$CDBSession.h$>$}
+
+\subsection*{공용 메소드}
+\begin{CompactItemize}
+\item 
+{\bf CDBSession} ()
+\item 
+virtual {\bf $\sim$CDBSession} ()
+\item 
+int {\bf connect} ()
+\item 
+int {\bf connect} (char $\ast$account)
+\item 
+int {\bf connect} (char $\ast$userid, char $\ast$password, char $\ast$sid)
+\item 
+void {\bf set\-Ora\-Info} (const char $\ast$sid, const char $\ast$userid, const char $\ast$password)
+\item 
+void$\ast$ {\bf get\-Connection} ()
+\item 
+void {\bf close\-Connection} ()
+\item 
+void {\bf return\-Connection} ()
+\item 
+void {\bf set\-Key} (char $\ast$userid, char $\ast$password, char $\ast$sid)
+\item 
+void {\bf set\-Key} (char $\ast$account)
+\item 
+char$\ast$ {\bf get\-Key} ()
+\item 
+bool {\bf is\-Open} ()
+\end{CompactItemize}
+
+
+\subsection{상세한 내용}
+Database 연결 세션 정보를 관리하는 클래스(Thread safe).
+
+
+
+\subsection{생성자 \& 소멸자 문서화}
+\index{CDBSession@{CDBSession}!CDBSession@{CDBSession}}
+\index{CDBSession@{CDBSession}!CDBSession@{CDBSession}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CDBSession::CDBSession ()}\label{classCDBSession_a0}
+
+
+생성자 \index{CDBSession@{CDBSession}!~CDBSession@{$\sim$CDBSession}}
+\index{~CDBSession@{$\sim$CDBSession}!CDBSession@{CDBSession}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CDBSession::$\sim$CDBSession ()\hspace{0.3cm}{\tt  [virtual]}}\label{classCDBSession_a1}
+
+
+소멸자 
+
+\subsection{멤버 함수 문서화}
+\index{CDBSession@{CDBSession}!closeConnection@{closeConnection}}
+\index{closeConnection@{closeConnection}!CDBSession@{CDBSession}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CDBSession::close\-Connection ()}\label{classCDBSession_a7}
+
+
+Oracle connection을 close하는 메쏘드. \index{CDBSession@{CDBSession}!connect@{connect}}
+\index{connect@{connect}!CDBSession@{CDBSession}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int CDBSession::connect (char $\ast$ {\em userid}, char $\ast$ {\em password}, char $\ast$ {\em sid})}\label{classCDBSession_a4}
+
+
+오라클 데이터베이스로 접속을 시도하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em userid}]\item[
+{\em password}]\item[
+{\em oracle}]sid \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 반환: }]\par
+return 1 if success, else return -1 \end{Desc}
+\index{CDBSession@{CDBSession}!connect@{connect}}
+\index{connect@{connect}!CDBSession@{CDBSession}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int CDBSession::connect (char $\ast$ {\em account})}\label{classCDBSession_a3}
+
+
+오라클 데이터베이스로 접속을 시도하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em userid}]/{\tt passwd@sid}) \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 반환: }]\par
+return 1 if success, else return -1 \end{Desc}
+\index{CDBSession@{CDBSession}!connect@{connect}}
+\index{connect@{connect}!CDBSession@{CDBSession}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int CDBSession::connect ()}\label{classCDBSession_a2}
+
+
+오라클 데이터베이스로 접속을 시도하는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+return 1 if success, else return -1 \end{Desc}
+\index{CDBSession@{CDBSession}!getConnection@{getConnection}}
+\index{getConnection@{getConnection}!CDBSession@{CDBSession}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ CDBSession::get\-Connection ()}\label{classCDBSession_a6}
+
+
+Oracle connection을 얻어오는 메쏘드. 오라클 세션 동기화 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+sql\_\-context pointer. \end{Desc}
+\index{CDBSession@{CDBSession}!getKey@{getKey}}
+\index{getKey@{getKey}!CDBSession@{CDBSession}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ CDBSession::get\-Key ()}\label{classCDBSession_a11}
+
+
+오라클 세션 키를 얻어오는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+Oracle session key(userid/{\tt password@sid}) \end{Desc}
+\index{CDBSession@{CDBSession}!isOpen@{isOpen}}
+\index{isOpen@{isOpen}!CDBSession@{CDBSession}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CDBSession::is\-Open ()}\label{classCDBSession_a12}
+
+
+Oracle database session이 연결되어 있는지 확인하는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+return true if database is open, else return false. \end{Desc}
+\index{CDBSession@{CDBSession}!returnConnection@{returnConnection}}
+\index{returnConnection@{returnConnection}!CDBSession@{CDBSession}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CDBSession::return\-Connection ()}\label{classCDBSession_a8}
+
+
+Oracle session을 반납하는 메쏘드. 오라클 세션 동기화 메쏘드. \index{CDBSession@{CDBSession}!setKey@{setKey}}
+\index{setKey@{setKey}!CDBSession@{CDBSession}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CDBSession::set\-Key (char $\ast$ {\em account})}\label{classCDBSession_a10}
+
+
+오라클 세션 키를 등록하는 메쏘드. 세션 키는 \char`\"{}userid/{\tt password@sid}\char`\"{}로 이루어진다. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em userid}]/{\tt password@sid} \end{description}
+\end{Desc}
+\index{CDBSession@{CDBSession}!setKey@{setKey}}
+\index{setKey@{setKey}!CDBSession@{CDBSession}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CDBSession::set\-Key (char $\ast$ {\em userid}, char $\ast$ {\em password}, char $\ast$ {\em sid})}\label{classCDBSession_a9}
+
+
+오라클 세션 키를 등록하는 메쏘드. 세션 키는 \char`\"{}userid/{\tt password@sid}\char`\"{}로 이루어진다. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em userid}]\item[
+{\em password}]\item[
+{\em sid}]\end{description}
+\end{Desc}
+\index{CDBSession@{CDBSession}!setOraInfo@{setOraInfo}}
+\index{setOraInfo@{setOraInfo}!CDBSession@{CDBSession}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CDBSession::set\-Ora\-Info (const char $\ast$ {\em sid}, const char $\ast$ {\em userid}, const char $\ast$ {\em password})}\label{classCDBSession_a5}
+
+
+오라클 접속에 필요한 계정 정보를 설정하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em oracle}]sid. \item[
+{\em userid.}]\item[
+{\em password.}]\end{description}
+\end{Desc}
+
+
+이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:\begin{CompactItemize}
+\item 
+{\bf CDBSession.h}\end{CompactItemize}

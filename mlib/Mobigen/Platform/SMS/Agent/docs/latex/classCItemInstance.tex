@@ -1,0 +1,124 @@
+\section{CItem\-Instance  클래스 참조}
+\label{classCItemInstance}\index{CItemInstance@{CItem\-Instance}}
+Item의 Instance 정보를 관리하는 클래스. 
+
+
+{\tt \#include $<$CItem\-Instance.h$>$}
+
+\subsection*{공용 메소드}
+\begin{CompactItemize}
+\item 
+{\bf CItem\-Instance} ()
+\item 
+virtual {\bf $\sim$CItem\-Instance} ()
+\item 
+std::string {\bf get\-Name} ()
+\item 
+std::string {\bf get\-Value} ()
+\item 
+{\bf CQueue}$\ast$ {\bf get\-Data\-Q} ()
+\item 
+void {\bf set\-Name} (char $\ast$name)
+\item 
+void {\bf set\-Value} (char $\ast$value)
+\item 
+void {\bf set\-Name} (std::string name)
+\item 
+void {\bf set\-Value} (std::string value)
+\end{CompactItemize}
+
+
+\subsection{상세한 내용}
+Item의 Instance 정보를 관리하는 클래스.
+
+Instance name, Instance value 정보를 관리한다. 현재 Instance name, Instance value은 같은 정보로 설정 관리되어야 한다. scagent.xml 파일에서 당음과 같은 형식으로 저장된 정보를 기록한다. $<$instances$>$ $<$instance name=\char`\"{}test\char`\"{}$>$test$<$/instance$>$ $<$/instances$>$ 
+
+
+
+\subsection{생성자 \& 소멸자 문서화}
+\index{CItemInstance@{CItem\-Instance}!CItemInstance@{CItemInstance}}
+\index{CItemInstance@{CItemInstance}!CItemInstance@{CItem\-Instance}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CItem\-Instance::CItem\-Instance ()}\label{classCItemInstance_a0}
+
+
+생성자 \index{CItemInstance@{CItem\-Instance}!~CItemInstance@{$\sim$CItemInstance}}
+\index{~CItemInstance@{$\sim$CItemInstance}!CItemInstance@{CItem\-Instance}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CItem\-Instance::$\sim$CItem\-Instance ()\hspace{0.3cm}{\tt  [virtual]}}\label{classCItemInstance_a1}
+
+
+소멸자 
+
+\subsection{멤버 함수 문서화}
+\index{CItemInstance@{CItem\-Instance}!getDataQ@{getDataQ}}
+\index{getDataQ@{getDataQ}!CItemInstance@{CItem\-Instance}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CQueue} $\ast$ CItem\-Instance::get\-Data\-Q ()\hspace{0.3cm}{\tt  [inline]}}\label{classCItemInstance_a4}
+
+
+데이터 저장소를 반환하는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+{\bf CQueue} {\rm (페이지\,\pageref{classCQueue})} pointer. \end{Desc}
+\index{CItemInstance@{CItem\-Instance}!getName@{getName}}
+\index{getName@{getName}!CItemInstance@{CItem\-Instance}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}std::string CItem\-Instance::get\-Name ()\hspace{0.3cm}{\tt  [inline]}}\label{classCItemInstance_a2}
+
+
+Instance 명을 반환하는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+instance name. \end{Desc}
+\index{CItemInstance@{CItem\-Instance}!getValue@{getValue}}
+\index{getValue@{getValue}!CItemInstance@{CItem\-Instance}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}std::string CItem\-Instance::get\-Value ()\hspace{0.3cm}{\tt  [inline]}}\label{classCItemInstance_a3}
+
+
+Instance 값을 반환하는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+instance value. \end{Desc}
+\index{CItemInstance@{CItem\-Instance}!setName@{setName}}
+\index{setName@{setName}!CItemInstance@{CItem\-Instance}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CItem\-Instance::set\-Name (std::string {\em name})\hspace{0.3cm}{\tt  [inline]}}\label{classCItemInstance_a7}
+
+
+Instance name을 설정하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em instance}]name. \end{description}
+\end{Desc}
+\index{CItemInstance@{CItem\-Instance}!setName@{setName}}
+\index{setName@{setName}!CItemInstance@{CItem\-Instance}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CItem\-Instance::set\-Name (char $\ast$ {\em name})\hspace{0.3cm}{\tt  [inline]}}\label{classCItemInstance_a5}
+
+
+Instance name을 설정하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em instance}]name. \end{description}
+\end{Desc}
+\index{CItemInstance@{CItem\-Instance}!setValue@{setValue}}
+\index{setValue@{setValue}!CItemInstance@{CItem\-Instance}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CItem\-Instance::set\-Value (std::string {\em value})\hspace{0.3cm}{\tt  [inline]}}\label{classCItemInstance_a8}
+
+
+Instance value를 설정하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em instance}]value. \end{description}
+\end{Desc}
+\index{CItemInstance@{CItem\-Instance}!setValue@{setValue}}
+\index{setValue@{setValue}!CItemInstance@{CItem\-Instance}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CItem\-Instance::set\-Value (char $\ast$ {\em value})\hspace{0.3cm}{\tt  [inline]}}\label{classCItemInstance_a6}
+
+
+Instance value를 설정하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em instance}]value. \end{description}
+\end{Desc}
+
+
+이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:\begin{CompactItemize}
+\item 
+{\bf CItem\-Instance.h}\end{CompactItemize}

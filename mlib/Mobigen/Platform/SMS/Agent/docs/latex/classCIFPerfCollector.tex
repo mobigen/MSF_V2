@@ -1,0 +1,100 @@
+\section{CIFPerf\-Collector  클래스 참조}
+\label{classCIFPerfCollector}\index{CIFPerfCollector@{CIFPerf\-Collector}}
+Interface 성능 정보를 수집하는 클래스. 
+
+
+{\tt \#include $<$CIFPerf\-Collector.h$>$}
+
+CIFPerf\-Collector에 대한 상속 도표:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCIFPerfCollector}
+\end{center}
+\end{figure}
+\subsection*{공용 메소드}
+\begin{CompactItemize}
+\item 
+{\bf CIFPerf\-Collector} ()
+\item 
+{\bf $\sim$CIFPerf\-Collector} ()
+\item 
+void {\bf collect} ()
+\item 
+void {\bf make\-Message} ()
+\item 
+void {\bf is\-Over\-Threshold} ({\bf CItem\-Condition} $\ast$cond)
+\item 
+void {\bf check\-Alarm} ({\bf CItem\-Condition} $\ast$cond, char $\ast$instname, bool b, sc\-Interface\-Status $\ast$status)
+\end{CompactItemize}
+
+
+\subsection{상세한 내용}
+Interface 성능 정보를 수집하는 클래스.
+
+Interface packet in, packet out, packet in error, packet out error, collisions 정보를 수집하는 클래스. 
+
+
+
+\subsection{생성자 \& 소멸자 문서화}
+\index{CIFPerfCollector@{CIFPerf\-Collector}!CIFPerfCollector@{CIFPerfCollector}}
+\index{CIFPerfCollector@{CIFPerfCollector}!CIFPerfCollector@{CIFPerf\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CIFPerf\-Collector::CIFPerf\-Collector ()}\label{classCIFPerfCollector_a0}
+
+
+생성자. \index{CIFPerfCollector@{CIFPerf\-Collector}!~CIFPerfCollector@{$\sim$CIFPerfCollector}}
+\index{~CIFPerfCollector@{$\sim$CIFPerfCollector}!CIFPerfCollector@{CIFPerf\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CIFPerf\-Collector::$\sim$CIFPerf\-Collector ()}\label{classCIFPerfCollector_a1}
+
+
+소멸자 
+
+\subsection{멤버 함수 문서화}
+\index{CIFPerfCollector@{CIFPerf\-Collector}!checkAlarm@{checkAlarm}}
+\index{checkAlarm@{checkAlarm}!CIFPerfCollector@{CIFPerf\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CIFPerf\-Collector::check\-Alarm ({\bf CItem\-Condition} $\ast$ {\em cond}, char $\ast$ {\em instname}, bool {\em b}, sc\-Interface\-Status $\ast$ {\em status})}\label{classCIFPerfCollector_a5}
+
+
+Interface 성능 임계치 장애를 발생시키는 메쏘드. 임계치를 초과한 경우에는 장애를 발생시키고,  이전에 장애가 발생한 적이 있고, 임계치를 초과하지 않은 경우에는 장애를 해지시킨다.\begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em CItem\-Condition}]pointer. \item[
+{\em character}]interface name. \item[
+{\em .}]임계치를 넘은 경우는 true, 초과하지 않은 경우 false. \item[
+{\em Interface}]성능 정보를 저장하고 있는 구조체. \end{description}
+\end{Desc}
+\index{CIFPerfCollector@{CIFPerf\-Collector}!collect@{collect}}
+\index{collect@{collect}!CIFPerfCollector@{CIFPerf\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CIFPerf\-Collector::collect ()\hspace{0.3cm}{\tt  [virtual]}}\label{classCIFPerfCollector_a2}
+
+
+Interface 성능 정보를 수집하여 SMS Manager로 전송하기 위한 메시지 포맷으로 변환하여 메시지 큐로 전송하는 메쏘드. 
+
+{\bf CCollector} {\rm (페이지\,\pageref{classCCollector_a2})}으로부터 재구현된.\index{CIFPerfCollector@{CIFPerf\-Collector}!isOverThreshold@{isOverThreshold}}
+\index{isOverThreshold@{isOverThreshold}!CIFPerfCollector@{CIFPerf\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CIFPerf\-Collector::is\-Over\-Threshold ({\bf CItem\-Condition} $\ast$ {\em cond})\hspace{0.3cm}{\tt  [virtual]}}\label{classCIFPerfCollector_a4}
+
+
+수집된 Interface 성능 정보를 {\bf CItem\-Condition} {\rm (페이지\,\pageref{classCItemCondition})}에 주어진 임계치 정보와 비교하여 장애 판단을 하여 장애를 발생시키는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em CItem\-Condition}]pointer. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 참조하시요: }]\par
+{\bf CItem\-Condition} {\rm (페이지\,\pageref{classCItemCondition})} \end{Desc}
+
+
+{\bf CCollector} {\rm (페이지\,\pageref{classCCollector_a4})}으로부터 재구현된.\index{CIFPerfCollector@{CIFPerf\-Collector}!makeMessage@{makeMessage}}
+\index{makeMessage@{makeMessage}!CIFPerfCollector@{CIFPerf\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CIFPerf\-Collector::make\-Message ()\hspace{0.3cm}{\tt  [virtual]}}\label{classCIFPerfCollector_a3}
+
+
+수집된 Interface 성능 정보를 SMS Manager로 전송하기 위한 메시지 포맷으로 변환하는 메쏘드. 
+
+{\bf CCollector} {\rm (페이지\,\pageref{classCCollector_a3})}으로부터 재구현된.
+
+이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:\begin{CompactItemize}
+\item 
+{\bf CIFPerf\-Collector.h}\end{CompactItemize}

@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CDBSession.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CDBSession.h</h1><div class="fragment"><pre>00001 
+00002 <font class="preprocessor">#ifndef __CDBSESSION_H__</font>
+00003 <font class="preprocessor"></font><font class="preprocessor">#define __CDBSESSION_H__</font>
+00004 <font class="preprocessor"></font>
+00005 <font class="preprocessor">#include &lt;stdio.h&gt;</font>
+00006 <font class="preprocessor">#include &lt;stdlib.h&gt;</font>
+00007 <font class="preprocessor">#include &lt;string.h&gt;</font>
+00008 <font class="preprocessor">#include &lt;strings.h&gt;</font>
+00009 <font class="preprocessor">#include &lt;errno.h&gt;</font>
+00010 <font class="preprocessor">#include &lt;pthread.h&gt;</font>
+00011 
+00012 <font class="preprocessor">#include "CQueue.h"</font>
+00013 
+<a name="l00015"></a><a class="code" href="classCDBSession.html">00015</a> <font class="keyword">class </font><a class="code" href="classCDBSession.html">CDBSession</a>
+00016 {
+00017         <font class="keyword">public</font>:
+00019                 <a class="code" href="classCDBSession.html#a0">CDBSession</a>();
+00021                 <font class="keyword">virtual</font> <a class="code" href="classCDBSession.html#a1">~CDBSession</a>();
+00026                 <font class="keywordtype">int</font> <a class="code" href="classCDBSession.html#a2">connect</a>();
+00032                 <font class="keywordtype">int</font> <a class="code" href="classCDBSession.html#a2">connect</a>(<font class="keywordtype">char</font> *account);
+00040                 <font class="keywordtype">int</font> <a class="code" href="classCDBSession.html#a2">connect</a>(<font class="keywordtype">char</font> *userid, <font class="keywordtype">char</font> *password, <font class="keywordtype">char</font> *sid);
+00047                 <font class="keywordtype">void</font> <a class="code" href="classCDBSession.html#a5">setOraInfo</a>(<font class="keyword">const</font> <font class="keywordtype">char</font> * sid, <font class="keyword">const</font> <font class="keywordtype">char</font> * userid, <font class="keyword">const</font> <font class="keywordtype">char</font> * password);
+00052                 <font class="keywordtype">void</font> * <a class="code" href="classCDBSession.html#a6">getConnection</a>();
+00056                 <font class="keywordtype">void</font> <a class="code" href="classCDBSession.html#a7">closeConnection</a>();
+00060                 <font class="keywordtype">void</font> <a class="code" href="classCDBSession.html#a8">returnConnection</a>();
+00067                 <font class="keywordtype">void</font> <a class="code" href="classCDBSession.html#a9">setKey</a>(<font class="keywordtype">char</font> *userid, <font class="keywordtype">char</font> *password, <font class="keywordtype">char</font> *sid);
+00072                 <font class="keywordtype">void</font> <a class="code" href="classCDBSession.html#a9">setKey</a>(<font class="keywordtype">char</font> *account);
+00077                 <font class="keywordtype">char</font> *<a class="code" href="classCDBSession.html#a11">getKey</a>();
+00082                 <font class="keywordtype">bool</font> <a class="code" href="classCDBSession.html#a12">isOpen</a>();
+00083 
+00084         <font class="keyword">private</font>:
+00085                 pthread_mutex_t m_mutex;        
+00086                 <font class="keywordtype">char</font> orasid[32];                        
+00087                 <font class="keywordtype">char</font> oradba[32];                        
+00088                 <font class="keywordtype">char</font> orapw[32];                         
+00089                 <font class="keywordtype">char</font> m_key[128];                        
+00090                 <font class="keywordtype">int</font> m_count;                            
+00091                 <a class="code" href="classCQueue.html">CQueue</a> *m_dbq;                          
+00092                 <font class="keywordtype">void</font> *m_session;                        
+00093                 <font class="keywordtype">int</font> m_idx[10];                          
+00094                 <font class="keywordtype">bool</font> m_status;                          
+00095 };
+00096 
+00097 <font class="preprocessor">#endif</font>
+</font></pre></div><hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

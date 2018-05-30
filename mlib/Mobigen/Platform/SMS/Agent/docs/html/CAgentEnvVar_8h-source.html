@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CAgentEnvVar.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CAgentEnvVar.h</h1><div class="fragment"><pre>00001 
+00002 <font class="preprocessor">#ifndef _CAGENTENVVAR_H__</font>
+00003 <font class="preprocessor"></font><font class="preprocessor">#define _CAGENTENVVAR_H__</font>
+00004 <font class="preprocessor"></font>
+00005 <font class="preprocessor">#include &lt;stdio.h&gt;</font>
+00006 <font class="preprocessor">#include &lt;stdlib.h&gt;</font>
+00007 <font class="preprocessor">#include &lt;errno.h&gt;</font>
+00008 <font class="preprocessor">#include &lt;unistd.h&gt;</font>
+00009 <font class="preprocessor">#include &lt;string&gt;</font>
+00010 
+00011 <font class="preprocessor">#include "CAgentConfigVar.h"</font>
+00012 <font class="preprocessor">#include "CQueue.h"</font>
+00013 <font class="preprocessor">#include "CKernelCore.h"</font>
+00014 
+00015 <font class="preprocessor">#if defined(ORACLE_ENABLE)</font>
+00016 <font class="preprocessor"></font><font class="preprocessor">#include "CDBPool.h"</font>
+00017 <font class="preprocessor">#endif </font><font class="comment">/* ORACLE_ENABLE */</font>
+00018 
+00019 
+00021 
+<a name="l00029"></a><a class="code" href="classCAgentEnvVar.html">00029</a> <font class="keyword">class </font><a class="code" href="classCAgentEnvVar.html">CAgentEnvVar</a> 
+00030 {
+00031         <font class="keyword">public</font> :
+<a name="l00036"></a><a class="code" href="classCAgentEnvVar.html#a0">00036</a>                 <a class="code" href="classCAgentEnvVar.html#a0">CAgentEnvVar</a>()<font class="keyword"></font>{
+00037                         m_kernel = <font class="keyword">new</font> <a class="code" href="classCKernelCore.html">CKernelCore</a>;
+00038                         m_configVar = <font class="keyword">new</font> <a class="code" href="classCAgentConfigVar.html">CAgentConfigVar</a>;
+00039                         m_eventQ = <font class="keyword">new</font> <a class="code" href="classCQueue.html">CQueue</a>;
+00040                         m_shortPerfQ = <font class="keyword">new</font> <a class="code" href="classCQueue.html">CQueue</a>;
+00041                         m_longPerfQ = <font class="keyword">new</font> <a class="code" href="classCQueue.html">CQueue</a>;
+00042                         m_respQ = <font class="keyword">new</font> <a class="code" href="classCQueue.html">CQueue</a>;
+00043                         m_cmdQ = <font class="keyword">new</font> <a class="code" href="classCQueue.html">CQueue</a>;
+00044                         m_policyQ = <font class="keyword">new</font> <a class="code" href="classCQueue.html">CQueue</a>;
+00045 <font class="preprocessor">#if defined(ORACLE_ENABLE)</font>
+00046 <font class="preprocessor"></font>                        m_dbpool = <font class="keyword">new</font> <a class="code" href="classCDBPool.html">CDBPool</a>;
+00047 <font class="preprocessor">#endif </font><font class="comment">/* ORACLE_ENABLE */</font>
+00048                         m_session_event = <font class="keyword">false</font>;
+00049                         m_session_shortperf = <font class="keyword">false</font>;
+00050                         m_session_longperf = <font class="keyword">false</font>;
+00051                         m_session_resp = <font class="keyword">false</font>;
+00052                         m_session_cmd = <font class="keyword">false</font>;
+00053                 }
+<a name="l00055"></a><a class="code" href="classCAgentEnvVar.html#a1">00055</a>                 <a class="code" href="classCAgentEnvVar.html#a1">~CAgentEnvVar</a>()<font class="keyword"></font>{
+00056                         <font class="keyword">delete</font> m_configVar;
+00057                         <font class="keyword">delete</font> m_eventQ;
+00058                         <font class="keyword">delete</font> m_shortPerfQ;
+00059                         <font class="keyword">delete</font> m_longPerfQ;
+00060                         <font class="keyword">delete</font> m_respQ;
+00061                         <font class="keyword">delete</font> m_cmdQ;
+00062                         <font class="keyword">delete</font> m_policyQ;
+00063                         <font class="keyword">delete</font> m_kernel;
+00064 <font class="preprocessor">#if defined(ORACLE_ENABLE)</font>
+00065 <font class="preprocessor"></font>                        <font class="keyword">delete</font> m_dbpool;
+00066 <font class="preprocessor">#endif </font><font class="comment">/* ORACLE_ENABLE */</font>
+00067                 }
+<a name="l00072"></a><a class="code" href="classCAgentEnvVar.html#a2">00072</a>                 <a class="code" href="classCQueue.html">CQueue</a> *<a class="code" href="classCAgentEnvVar.html#a2">getEventQ</a>()<font class="keyword"></font>{ <font class="keywordflow">return</font> m_eventQ; }
+<a name="l00077"></a><a class="code" href="classCAgentEnvVar.html#a3">00077</a>                 <a class="code" href="classCQueue.html">CQueue</a> *<a class="code" href="classCAgentEnvVar.html#a3">getShortPerfQ</a>()<font class="keyword"></font>{ <font class="keywordflow">return</font> m_shortPerfQ; }
+<a name="l00082"></a><a class="code" href="classCAgentEnvVar.html#a4">00082</a>                 <a class="code" href="classCQueue.html">CQueue</a> *<a class="code" href="classCAgentEnvVar.html#a4">getLongPerfQ</a>()<font class="keyword"></font>{ <font class="keywordflow">return</font> m_longPerfQ; }
+<a name="l00087"></a><a class="code" href="classCAgentEnvVar.html#a5">00087</a>                 <a class="code" href="classCQueue.html">CQueue</a> *<a class="code" href="classCAgentEnvVar.html#a5">getRespQ</a>()<font class="keyword"></font>{ <font class="keywordflow">return</font> m_respQ; }
+<a name="l00093"></a><a class="code" href="classCAgentEnvVar.html#a6">00093</a>                 <a class="code" href="classCQueue.html">CQueue</a> *<a class="code" href="classCAgentEnvVar.html#a6">getCmdQ</a>()<font class="keyword"></font>{ <font class="keywordflow">return</font> m_cmdQ; }
+<a name="l00099"></a><a class="code" href="classCAgentEnvVar.html#a7">00099</a>                 <a class="code" href="classCQueue.html">CQueue</a> *<a class="code" href="classCAgentEnvVar.html#a7">getPolicyQ</a>()<font class="keyword"></font>{ <font class="keywordflow">return</font> m_policyQ; }
+<a name="l00105"></a><a class="code" href="classCAgentEnvVar.html#a8">00105</a>                 <a class="code" href="classCKernelCore.html">CKernelCore</a> *<a class="code" href="classCAgentEnvVar.html#a8">getKernelCore</a>()<font class="keyword"></font>{ <font class="keywordflow">return</font> m_kernel; }
+<a name="l00111"></a><a class="code" href="classCAgentEnvVar.html#a9">00111</a>                 <a class="code" href="classCAgentConfigVar.html">CAgentConfigVar</a> *<a class="code" href="classCAgentEnvVar.html#a9">getAgentConfigVar</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_configVar; }
+00112 <font class="preprocessor">#if defined(ORACLE_ENABLE)</font>
+00113 <font class="preprocessor"></font>
+00118                 <a class="code" href="classCDBPool.html">CDBPool</a> *getDBPool()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_dbpool; }
+00119 <font class="preprocessor">#endif </font><font class="comment">/* ORACLE_ENABLE */</font>
+00120 
+<a name="l00124"></a><a class="code" href="classCAgentEnvVar.html#a10">00124</a>                 <font class="keywordtype">bool</font> *<a class="code" href="classCAgentEnvVar.html#a10">getEventSession</a>()<font class="keyword"></font>{ <font class="keywordflow">return</font> &amp;m_session_event; }
+<a name="l00129"></a><a class="code" href="classCAgentEnvVar.html#a11">00129</a>                 <font class="keywordtype">bool</font> *<a class="code" href="classCAgentEnvVar.html#a11">getShortPerfSession</a>()<font class="keyword"></font>{ <font class="keywordflow">return</font> &amp;m_session_shortperf; }
+<a name="l00134"></a><a class="code" href="classCAgentEnvVar.html#a12">00134</a>                 <font class="keywordtype">bool</font> *<a class="code" href="classCAgentEnvVar.html#a12">getLongPerfSession</a>()<font class="keyword"></font>{ <font class="keywordflow">return</font> &amp;m_session_longperf; }
+<a name="l00139"></a><a class="code" href="classCAgentEnvVar.html#a13">00139</a>                 <font class="keywordtype">bool</font> *<a class="code" href="classCAgentEnvVar.html#a13">getRespSession</a>()<font class="keyword"></font>{ <font class="keywordflow">return</font> &amp;m_session_resp; }
+<a name="l00144"></a><a class="code" href="classCAgentEnvVar.html#a14">00144</a>                 <font class="keywordtype">bool</font> *<a class="code" href="classCAgentEnvVar.html#a14">getCmdSession</a>()<font class="keyword"></font>{ <font class="keywordflow">return</font> &amp;m_session_cmd; }
+00145 
+00146         <font class="keyword">private</font> :
+00147                 <a class="code" href="classCKernelCore.html">CKernelCore</a> *m_kernel;                  
+00148                 <a class="code" href="classCAgentConfigVar.html">CAgentConfigVar</a> *m_configVar;   
+00149                 <a class="code" href="classCQueue.html">CQueue</a> *m_eventQ;                               
+00150                 <a class="code" href="classCQueue.html">CQueue</a> *m_shortPerfQ;                   
+00151                 <a class="code" href="classCQueue.html">CQueue</a> *m_longPerfQ;                    
+00152                 <a class="code" href="classCQueue.html">CQueue</a> *m_respQ;                                
+00153                 <a class="code" href="classCQueue.html">CQueue</a> *m_cmdQ;                                 
+00154                 <a class="code" href="classCQueue.html">CQueue</a> *m_policyQ;                              
+00155 <font class="preprocessor">#if defined(ORACLE_ENABLE)</font>
+00156 <font class="preprocessor"></font>                <a class="code" href="classCDBPool.html">CDBPool</a> *m_dbpool;                              
+00157 <font class="preprocessor">#endif </font><font class="comment">/* ORACLE_ENABLE */</font>
+00158                 <font class="keywordtype">bool</font> m_session_event;                   
+00159                 <font class="keywordtype">bool</font> m_session_shortperf;               
+00160                 <font class="keywordtype">bool</font> m_session_longperf;                
+00161                 <font class="keywordtype">bool</font> m_session_resp;                    
+00162                 <font class="keywordtype">bool</font> m_session_cmd;                             
+00163 };
+00164 
+00165 <font class="preprocessor">#endif </font><font class="comment">/* _CAGENTENVVAR_H__ */</font>
+</pre></div><hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

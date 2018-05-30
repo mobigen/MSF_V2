@@ -1,0 +1,117 @@
+<HTML>
+<HEAD>
+<TITLE>Pth class</TITLE>
+</HEAD>
+
+<BODY>
+
+<HR>
+<FONT COLOR=BLUE SIZE=+3><B>Pth</B></FONT>
+<FONT SIZE=+2><B>- thread를 생성,수행,운용하는 Class</B></FONT>
+<P>
+
+GNU Pth class를 이용하여 thread를 생성,수행,운용하는 Class로서, JAVA와 유사한 interface를 제공한다.<br>
+
+한 프로세스 내에서의 전체적인 thread 관리를 위해 내부적으로 PThContainer class를 사용하나 User가 알 필요는 없다.<br>
+
+<P>
+수행은 다음과 같은 Flow를 따른다.<br>
+Pth로부터 상속되는 class를 정의한다. 이 class에서는 void run()만 정의하면 된다.<br>
+<P>
+갱신: 김형근, hiongun@mobigen.com
+<UL>
+ <LI> 2002/08/27 initially created.
+</UL>
+<HR>
+
+<OL>
+ <LI> <A HREF=Pth.h++>Pth.h++</A> (Pth 클래스 정의)
+ <LI> <A HREF=Pth.c++>Pth.c++</A> (Pth 클래스 구현)
+ <LI> <A HREF=PthSocket.html>PthSocket.html</A> (PthSocket 클래스)
+ <LI> <A HREF=PthServer.html>PthServer.html</A> (PthServer 클래스)
+ <LI> <A HREF=Makefile>Makefile</A>
+</OL>
+
+<HR>
+
+<H3>Usage -- PThread</H3>
+
+<OL>
+
+ <LI> <B>Pth();</B><br>
+      Pth Class Constructor<br>
+      <P>
+
+ <LI> <B>void  run() = 0;</B><br>
+      Class로부터 inherit 받은 class를 사용할 경우에 이 member function을 정의해 주어야 한다.<br>
+      Pth 의해 virtual fuction으로 선언되어 있다.<br>
+      <P>
+
+ <LI> <B>void start();</B><br>
+      해당 Pth class의 동작을 시작한다. thread 하나를 생성한다.<br>
+      <P>
+
+ <LI> <B>void join();</B><br>
+      <P>
+
+
+ <LI> <B>int activeCount();</B><br>
+      현재 프로세스 내에 동작중인 thread의 총 갯수를 return 한다.<br>
+      <P>
+
+ <LI> <B>void yield();</B><br>
+      현재 Pth의 수행을 양보하여 thread context switching을 요청한다.<br>
+      <P>
+
+ <LI> <B>void sleep(int sec);</B><br>
+      현재 Pth의 수행을 잠시 멈춘다. <br>
+      <P>
+</OL>
+
+<HR>
+
+<H3>Example</H3>
+
+<pre>
+
+class MyThread: public Pth
+{
+   public:
+     void run();
+};
+
+void MyThread::run()
+{
+    DEBUG_PRINT("MyThread::run()\n");
+
+    while (1) {
+        DEBUG_PRINT("MyThread::run() running...\n");
+        printf("my_thread_id: %p\n", pth_self());
+        Pth::sleep(1);
+    }
+}
+
+int main()
+{
+    MyThread *thr1 = new MyThread();
+    MyThread *thr2 = new MyThread();
+
+    thr1->start();
+    thr2->start();
+
+    while (Pth::activeCount() > 0) {
+        DEBUG_PRINT("Pth::activeCount(): %d, sleep(1)..\n", Pth::activeCount());
+        Pth::sleep(1);
+    }
+
+    delete thr1;
+    delete thr2;
+
+    return 0;
+}
+
+</pre>
+
+</body>
+</html>
+

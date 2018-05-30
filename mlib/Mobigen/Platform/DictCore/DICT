@@ -1,0 +1,9 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import asyncore
+from DictCore import DictCore as SomeCore
+from Mobigen.Platform.AsynCore.AsynCore import AsynCore
+
+server = AsynCore("0.0.0.0", 54487, "")
+asyncore.loop()

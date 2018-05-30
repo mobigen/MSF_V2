@@ -1,0 +1,69 @@
+#!/usr/bin/perl -w
+
+use strict;
+use IO::Socket;
+use IO::Handle;
+use POSIX;
+
+sub getPort()
+{
+	my $port = '1992';
+
+	my $userName = getpwuid(POSIX::getuid());
+	#print $userName , "\n";
+
+	my $fileName = "/tmp/mps.d.$userName/port";
+
+	if (!-f $fileName) {
+		return $port;
+	}
+
+	local(*F);
+	if (open(F, "< $fileName") ) {
+		$port = <F>;
+		close(F);
+	}
+	
+	return $port;
+}
+
+MAIN:
+{
+
+	if ( @ARGV < 1 )
+	{
+		push @ARGV,'show';
+		push @ARGV,'all';
+		#print "<error>\n";
+		#print "need arguments!!!\n";
+		#print "<end>\n";
+		#exit;
+	}
+
+	my $port  = getPort();
+
+	my $sock = new IO::Socket::INET(
+            PeerAddr => '127.0.0.1',
+            PeerPort => $port,
+            Proto => 'tcp' );
+   
+   
+    unless ( $sock )
+    {
+        print "<error>\n";
+		print "socket create fail.. $! \n";
+		print "<end>\n";
+        exit;
+    }
+
+	print $sock "@ARGV\n";
+	while (my $line = <$sock>)
+	{
+		print $line;
+		if ( $line =~ /\<end\>/)
+		{
+			print $sock "quit\n";
+			exit;
+		}
+	}
+}

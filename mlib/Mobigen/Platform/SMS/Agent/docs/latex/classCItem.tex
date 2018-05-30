@@ -1,0 +1,391 @@
+\section{CItem  클래스 참조}
+\label{classCItem}\index{CItem@{CItem}}
+수집 대상 item 정보 객체. 
+
+
+{\tt \#include $<$CItem.h$>$}
+
+\subsection*{공용 메소드}
+\begin{CompactItemize}
+\item 
+{\bf CItem} ()
+\item 
+virtual {\bf $\sim$CItem} ()
+\item 
+std::string {\bf get\-Code} ()
+\item 
+std::string {\bf get\-Name} ()
+\item 
+unsigned long {\bf get\-Schedule} ()
+\item 
+unsigned long {\bf get\-Event\-Schedule} ()
+\item 
+std::string {\bf get\-Enable} ()
+\item 
+std::string {\bf get\-Method} ()
+\item 
+time\_\-t {\bf get\-Collect\-Time} ()
+\item 
+time\_\-t {\bf get\-Event\-Collect\-Time} ()
+\item 
+{\bf CQueue}$\ast$ {\bf get\-Instance\-Q} ()
+\item 
+{\bf CQueue}$\ast$ {\bf get\-Condition\-Q} ()
+\item 
+{\bf CQueue}$\ast$ {\bf get\-Alarm\-Instance\-Q} ()
+\item 
+void {\bf set\-Code} (std::string code)
+\item 
+void {\bf set\-Name} (std::string name)
+\item 
+void {\bf set\-Schedule} (unsigned long schedule)
+\item 
+void {\bf set\-Event\-Schedule} (unsigned long event\-Schedule)
+\item 
+void {\bf set\-Enable} (std::string enable)
+\item 
+void {\bf set\-Method} (std::string method)
+\item 
+void {\bf set\-Collect\-Time} (time\_\-t collect)
+\item 
+void {\bf set\-Event\-Collect\-Time} (time\_\-t event\-Collect)
+\item 
+void {\bf set\-Is\-Collect} (bool b)
+\item 
+void {\bf add\-Instance} ({\bf CItem\-Instance} $\ast$inst)
+\item 
+void {\bf add\-Condition} ({\bf CItem\-Condition} $\ast$cond)
+\item 
+void {\bf del\-Alarm} (st\_\-item\_\-alarm $\ast$alarm)
+\item 
+void {\bf add\-Alarm} (st\_\-item\_\-alarm $\ast$alarm)
+\item 
+bool {\bf is\-Alarm} (st\_\-item\_\-alarm $\ast$alarm)
+\item 
+bool {\bf is\-Collect} ()
+\item 
+bool {\bf is\-Enable} ()
+\item 
+bool {\bf is\-Passive} ()
+\item 
+bool {\bf is\-Reportable} ()
+\item 
+bool {\bf is\-Enable\-Event} ()
+\item 
+void {\bf print\-Item} ()
+\end{CompactItemize}
+
+
+\subsection{상세한 내용}
+수집 대상 item 정보 객체.
+
+item code, 수집 주기(schedule), 장애 수집 주기(eschedule), 수집여부(enable), 상세수집여부(method) 수집 대상 instance, 장애 임계치 판단 condition 정보 등을 관리한다. 
+
+
+
+\subsection{생성자 \& 소멸자 문서화}
+\index{CItem@{CItem}!CItem@{CItem}}
+\index{CItem@{CItem}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CItem::CItem ()}\label{classCItem_a0}
+
+
+생성자 \index{CItem@{CItem}!~CItem@{$\sim$CItem}}
+\index{~CItem@{$\sim$CItem}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CItem::$\sim$CItem ()\hspace{0.3cm}{\tt  [virtual]}}\label{classCItem_a1}
+
+
+소멸자 
+
+\subsection{멤버 함수 문서화}
+\index{CItem@{CItem}!addAlarm@{addAlarm}}
+\index{addAlarm@{addAlarm}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CItem::add\-Alarm (st\_\-item\_\-alarm $\ast$ {\em alarm})}\label{classCItem_a25}
+
+
+item에 발생한 장애를 등록. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em condition}]id, instance name을 키로 하는 추가 대상 장애 정보. \end{description}
+\end{Desc}
+\index{CItem@{CItem}!addCondition@{addCondition}}
+\index{addCondition@{addCondition}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CItem::add\-Condition ({\bf CItem\-Condition} $\ast$ {\em cond})}\label{classCItem_a23}
+
+
+item에 임계치 판단 조건을 추가하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em CItem\-Condition}]) pointer. \end{description}
+\end{Desc}
+\index{CItem@{CItem}!addInstance@{addInstance}}
+\index{addInstance@{addInstance}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CItem::add\-Instance ({\bf CItem\-Instance} $\ast$ {\em inst})}\label{classCItem_a22}
+
+
+item에 수집 대상 instance를 추가하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em instance}]({\bf CItem\-Instance} {\rm (페이지\,\pageref{classCItemInstance})}) pointer. \end{description}
+\end{Desc}
+\index{CItem@{CItem}!delAlarm@{delAlarm}}
+\index{delAlarm@{delAlarm}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CItem::del\-Alarm (st\_\-item\_\-alarm $\ast$ {\em alarm})}\label{classCItem_a24}
+
+
+item에 현재 발생된 장애 삭제. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em condition}]id, instance name을 키로 하는 삭제 대상 장애 정보. \end{description}
+\end{Desc}
+\index{CItem@{CItem}!getAlarmInstanceQ@{getAlarmInstanceQ}}
+\index{getAlarmInstanceQ@{getAlarmInstanceQ}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CQueue} $\ast$ CItem::get\-Alarm\-Instance\-Q ()\hspace{0.3cm}{\tt  [inline]}}\label{classCItem_a12}
+
+
+condition id와 instance 명을 키로하여 장애 발생 여부 정보를 저장하고 있는 리스트를 반환하는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+장애 발생 여부 정보. \end{Desc}
+\index{CItem@{CItem}!getCode@{getCode}}
+\index{getCode@{getCode}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}std::string CItem::get\-Code ()\hspace{0.3cm}{\tt  [inline]}}\label{classCItem_a2}
+
+
+method for getting item code. \begin{Desc}
+\item[{\bf 반환: }]\par
+item code. \end{Desc}
+\index{CItem@{CItem}!getCollectTime@{getCollectTime}}
+\index{getCollectTime@{getCollectTime}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}time\_\-t CItem::get\-Collect\-Time ()\hspace{0.3cm}{\tt  [inline]}}\label{classCItem_a8}
+
+
+정보 수집 시간을 반환하는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+정보 수집 시간. \end{Desc}
+\index{CItem@{CItem}!getConditionQ@{getConditionQ}}
+\index{getConditionQ@{getConditionQ}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CQueue} $\ast$ CItem::get\-Condition\-Q ()\hspace{0.3cm}{\tt  [inline]}}\label{classCItem_a11}
+
+
+item별로 장애 판단 임계치 및 장애 수집 대상 instance 정보를 관리하는 condition(CItem\-Condition) 객체를 저장하고 있는 리스트를 반환하는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+condition(CItem\-Condition) 객체를 저장하고 있는 리스트 Queue \end{Desc}
+\index{CItem@{CItem}!getEnable@{getEnable}}
+\index{getEnable@{getEnable}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}std::string CItem::get\-Enable ()\hspace{0.3cm}{\tt  [inline]}}\label{classCItem_a6}
+
+
+정보 수집 여부를 반환하는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+정보 수집 여부('O', 'X') \end{Desc}
+\index{CItem@{CItem}!getEventCollectTime@{getEventCollectTime}}
+\index{getEventCollectTime@{getEventCollectTime}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}time\_\-t CItem::get\-Event\-Collect\-Time ()\hspace{0.3cm}{\tt  [inline]}}\label{classCItem_a9}
+
+
+장애 수집 시간을 반환하는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+정보 수집 시간. \end{Desc}
+\index{CItem@{CItem}!getEventSchedule@{getEventSchedule}}
+\index{getEventSchedule@{getEventSchedule}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned long CItem::get\-Event\-Schedule ()\hspace{0.3cm}{\tt  [inline]}}\label{classCItem_a5}
+
+
+method for getting event schedule period(장애 수집 주기). \begin{Desc}
+\item[{\bf 반환: }]\par
+event schedule period. \end{Desc}
+\index{CItem@{CItem}!getInstanceQ@{getInstanceQ}}
+\index{getInstanceQ@{getInstanceQ}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CQueue} $\ast$ CItem::get\-Instance\-Q ()\hspace{0.3cm}{\tt  [inline]}}\label{classCItem_a10}
+
+
+item별로 수집 등록된 instance(CItem\-Instance) 객체를 저장하고 있는 리스트를 반환하는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+instance(CItem\-Instance) 객체를 저장하고 있는 리스트 Queue \end{Desc}
+\index{CItem@{CItem}!getMethod@{getMethod}}
+\index{getMethod@{getMethod}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}std::string CItem::get\-Method ()\hspace{0.3cm}{\tt  [inline]}}\label{classCItem_a7}
+
+
+유형별 정보 수집 여부를 반환하는 메쏘드(ACTIVE/PASSIVE/EVENT). \begin{Desc}
+\item[{\bf 반환: }]\par
+정보 수집 여부('OOO', 'XXX', ...) \end{Desc}
+\index{CItem@{CItem}!getName@{getName}}
+\index{getName@{getName}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}std::string CItem::get\-Name ()\hspace{0.3cm}{\tt  [inline]}}\label{classCItem_a3}
+
+
+method for getting item description. \begin{Desc}
+\item[{\bf 반환: }]\par
+item code description. \end{Desc}
+\index{CItem@{CItem}!getSchedule@{getSchedule}}
+\index{getSchedule@{getSchedule}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned long CItem::get\-Schedule ()\hspace{0.3cm}{\tt  [inline]}}\label{classCItem_a4}
+
+
+method for getting schedule(정보 수집 주기) period. \begin{Desc}
+\item[{\bf 반환: }]\par
+schedule period. \end{Desc}
+\index{CItem@{CItem}!isAlarm@{isAlarm}}
+\index{isAlarm@{isAlarm}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CItem::is\-Alarm (st\_\-item\_\-alarm $\ast$ {\em alarm})}\label{classCItem_a26}
+
+
+condition id, instance name을 키로 하는 장애가 발생된 적이 있는지를 판단하는 메쏘드. 장애 중복 처리를 위해 존재. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em condition}]id, instance name을 키로 하는 장애 정보. \end{description}
+\end{Desc}
+\index{CItem@{CItem}!isCollect@{isCollect}}
+\index{isCollect@{isCollect}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CItem::is\-Collect ()\hspace{0.3cm}{\tt  [inline]}}\label{classCItem_a27}
+
+
+현재 item에 대해 정보를 수집중인지 아닌지 여부를 판단하는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+true : 수집중, false : 수집 가능. \end{Desc}
+\index{CItem@{CItem}!isEnable@{isEnable}}
+\index{isEnable@{isEnable}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CItem::is\-Enable ()}\label{classCItem_a28}
+
+
+정보 수집 가능 여부를 판단하는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+true : 수집 가능, false : 수집 불가. \end{Desc}
+\index{CItem@{CItem}!isEnableEvent@{isEnableEvent}}
+\index{isEnableEvent@{isEnableEvent}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CItem::is\-Enable\-Event ()}\label{classCItem_a31}
+
+
+EVENT 수집 여부를 판단하는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+true : 수집, false : 수집 차단. \end{Desc}
+\index{CItem@{CItem}!isPassive@{isPassive}}
+\index{isPassive@{isPassive}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CItem::is\-Passive ()}\label{classCItem_a29}
+
+
+SMS Manager로부터 command를 수집받아서 수집 하는 기능 차단 여부. \begin{Desc}
+\item[{\bf 반환: }]\par
+true : 수집 가능, false : 수집 차단. \end{Desc}
+\index{CItem@{CItem}!isReportable@{isReportable}}
+\index{isReportable@{isReportable}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CItem::is\-Reportable ()}\label{classCItem_a30}
+
+
+ACTIVE 메시지 수집 여부를 판단하는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+true : 수집, false : 수집 차단. \end{Desc}
+\index{CItem@{CItem}!printItem@{printItem}}
+\index{printItem@{printItem}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CItem::print\-Item ()\hspace{0.3cm}{\tt  [inline]}}\label{classCItem_a32}
+
+
+item 개체 정보를 프린트하는 메쏘드 \index{CItem@{CItem}!setCode@{setCode}}
+\index{setCode@{setCode}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CItem::set\-Code (std::string {\em code})\hspace{0.3cm}{\tt  [inline]}}\label{classCItem_a13}
+
+
+item code 정보를 설정하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em item}]code. \end{description}
+\end{Desc}
+\index{CItem@{CItem}!setCollectTime@{setCollectTime}}
+\index{setCollectTime@{setCollectTime}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CItem::set\-Collect\-Time (time\_\-t {\em collect})\hspace{0.3cm}{\tt  [inline]}}\label{classCItem_a19}
+
+
+다음 정보 수집 시간을 설정하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em .}]\end{description}
+\end{Desc}
+\index{CItem@{CItem}!setEnable@{setEnable}}
+\index{setEnable@{setEnable}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CItem::set\-Enable (std::string {\em enable})\hspace{0.3cm}{\tt  [inline]}}\label{classCItem_a17}
+
+
+정보 수집 여부를 설정하는 메쏘드('0' or 'X') \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em O}]' or 'X') \end{description}
+\end{Desc}
+\index{CItem@{CItem}!setEventCollectTime@{setEventCollectTime}}
+\index{setEventCollectTime@{setEventCollectTime}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CItem::set\-Event\-Collect\-Time (time\_\-t {\em event\-Collect})\hspace{0.3cm}{\tt  [inline]}}\label{classCItem_a20}
+
+
+다음 장애 수집 시간을 설정하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em .}]\end{description}
+\end{Desc}
+\index{CItem@{CItem}!setEventSchedule@{setEventSchedule}}
+\index{setEventSchedule@{setEventSchedule}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CItem::set\-Event\-Schedule (unsigned long {\em event\-Schedule})\hspace{0.3cm}{\tt  [inline]}}\label{classCItem_a16}
+
+
+장애 정보 수집 주기를 설정하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em :seconds}]) \end{description}
+\end{Desc}
+\index{CItem@{CItem}!setIsCollect@{setIsCollect}}
+\index{setIsCollect@{setIsCollect}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CItem::set\-Is\-Collect (bool {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{classCItem_a21}
+
+
+현재 정보를 수집하고 있는지 여부를 판단하는 메쏘드. 현재 정보를 수집하고 있는 item은 scheduler가 수집 요청을 하지 않는다. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em true}]: 현재 정보 수집 중, false : 정보를 수집하고 있지 않음). \end{description}
+\end{Desc}
+\index{CItem@{CItem}!setMethod@{setMethod}}
+\index{setMethod@{setMethod}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CItem::set\-Method (std::string {\em method})\hspace{0.3cm}{\tt  [inline]}}\label{classCItem_a18}
+
+
+정보 수집 상세 여부를 설정하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em ACTIVE}]/PASSIVE/EVENT) \end{description}
+\end{Desc}
+\index{CItem@{CItem}!setName@{setName}}
+\index{setName@{setName}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CItem::set\-Name (std::string {\em name})\hspace{0.3cm}{\tt  [inline]}}\label{classCItem_a14}
+
+
+item description 정보를 설정하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em item}]description. \end{description}
+\end{Desc}
+\index{CItem@{CItem}!setSchedule@{setSchedule}}
+\index{setSchedule@{setSchedule}!CItem@{CItem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CItem::set\-Schedule (unsigned long {\em schedule})\hspace{0.3cm}{\tt  [inline]}}\label{classCItem_a15}
+
+
+정보 수집 주기를 설정하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em :seconds}]) \end{description}
+\end{Desc}
+
+
+이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:\begin{CompactItemize}
+\item 
+{\bf CItem.h}\end{CompactItemize}

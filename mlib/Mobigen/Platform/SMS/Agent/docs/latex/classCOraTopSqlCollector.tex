@@ -1,0 +1,71 @@
+\section{COra\-Top\-Sql\-Collector  클래스 참조}
+\label{classCOraTopSqlCollector}\index{COraTopSqlCollector@{COra\-Top\-Sql\-Collector}}
+EXECUTIONS, BUFFER\_\-GETS, DISK\_\-READS, ROWS\_\-PROCESSED 등의 최근에 수행된 SQL문 정보를 수집하는 클래스. 
+
+
+{\tt \#include $<$COra\-Top\-Sql\-Collector.h$>$}
+
+COra\-Top\-Sql\-Collector에 대한 상속 도표:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCOraTopSqlCollector}
+\end{center}
+\end{figure}
+\subsection*{공용 메소드}
+\begin{CompactItemize}
+\item 
+{\bf COra\-Top\-Sql\-Collector} ()
+\item 
+virtual {\bf $\sim$COra\-Top\-Sql\-Collector} ()
+\item 
+void {\bf collect} ()
+\item 
+bool {\bf collect\-Ora\-Data} ()
+\item 
+void {\bf make\-Message} ()
+\end{CompactItemize}
+
+
+\subsection{상세한 내용}
+EXECUTIONS, BUFFER\_\-GETS, DISK\_\-READS, ROWS\_\-PROCESSED 등의 최근에 수행된 SQL문 정보를 수집하는 클래스.
+
+
+
+\subsection{생성자 \& 소멸자 문서화}
+\index{COraTopSqlCollector@{COra\-Top\-Sql\-Collector}!COraTopSqlCollector@{COraTopSqlCollector}}
+\index{COraTopSqlCollector@{COraTopSqlCollector}!COraTopSqlCollector@{COra\-Top\-Sql\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}COra\-Top\-Sql\-Collector::COra\-Top\-Sql\-Collector ()}\label{classCOraTopSqlCollector_a0}
+
+
+생성자 \index{COraTopSqlCollector@{COra\-Top\-Sql\-Collector}!~COraTopSqlCollector@{$\sim$COraTopSqlCollector}}
+\index{~COraTopSqlCollector@{$\sim$COraTopSqlCollector}!COraTopSqlCollector@{COra\-Top\-Sql\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}COra\-Top\-Sql\-Collector::$\sim$COra\-Top\-Sql\-Collector ()\hspace{0.3cm}{\tt  [virtual]}}\label{classCOraTopSqlCollector_a1}
+
+
+소멸자 
+
+\subsection{멤버 함수 문서화}
+\index{COraTopSqlCollector@{COra\-Top\-Sql\-Collector}!collect@{collect}}
+\index{collect@{collect}!COraTopSqlCollector@{COra\-Top\-Sql\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void COra\-Top\-Sql\-Collector::collect ()\hspace{0.3cm}{\tt  [virtual]}}\label{classCOraTopSqlCollector_a2}
+
+
+EXECUTIONS, BUFFER\_\-GETS, DISK\_\-READS, ROWS\_\-PROCESSED 등의 최근에 수행된 SQL문 정보를 수집하여 SMS Manager로 전송하기 위한 메시지 포맷으로 변환하여 메시지 큐로 전송하는 메쏘드. 
+
+{\bf CCollector} {\rm (페이지\,\pageref{classCCollector_a2})}으로부터 재구현된.\index{COraTopSqlCollector@{COra\-Top\-Sql\-Collector}!collectOraData@{collectOraData}}
+\index{collectOraData@{collectOraData}!COraTopSqlCollector@{COra\-Top\-Sql\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool COra\-Top\-Sql\-Collector::collect\-Ora\-Data ()}\label{classCOraTopSqlCollector_a3}
+
+
+Oracle에 SQL Query를 질의하여 결과를 얻어오는 메쏘드. \index{COraTopSqlCollector@{COra\-Top\-Sql\-Collector}!makeMessage@{makeMessage}}
+\index{makeMessage@{makeMessage}!COraTopSqlCollector@{COra\-Top\-Sql\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void COra\-Top\-Sql\-Collector::make\-Message ()\hspace{0.3cm}{\tt  [virtual]}}\label{classCOraTopSqlCollector_a4}
+
+
+EXECUTIONS, BUFFER\_\-GETS, DISK\_\-READS, ROWS\_\-PROCESSED 등의 최근에 수행된 SQL문 정보를 SMS Manager로 전송하기 위한 메시지 포맷으로 변환하는 메쏘드. 
+
+{\bf CCollector} {\rm (페이지\,\pageref{classCCollector_a3})}으로부터 재구현된.
+
+이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:\begin{CompactItemize}
+\item 
+{\bf COra\-Top\-Sql\-Collector.h}\end{CompactItemize}

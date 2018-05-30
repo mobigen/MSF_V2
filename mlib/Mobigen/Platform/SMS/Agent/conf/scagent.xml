@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<userinfo userid="admin" password="e1aa80a61b0b4fb2cbe5a0b3f6ce834f" accessip="*.*.*.*" />
+<envvar eventport="40001" shortperfport="40002" longperfport="40003" respport="40004" cmdport="40005" sessionport="40006" />
+<config DBTYPE="None" ORASID="None" ORADBA="None" ORAPW="None">
+    <item>
+        <code>CPUConf</code>
+		<collector>CPUConfCollector</collector>
+        <name>CPU Configuration Monitoring!!</name>
+        <schedule>3600</schedule>
+        <eschedule>3600</eschedule>
+        <enable>X</enable>
+        <method>OOX</method>
+    </item>
+    <item>
+        <code>MemoryConf</code>
+		<collector>MemoryConfCollector</collector>  
+        <name>Memory Configuration Monitoring!!</name>
+        <schedule>3600</schedule>
+        <eschedule>3600</eschedule>
+        <enable>X</enable>
+        <method>OOX</method>
+    </item>
+    <item>
+        <code>DiskConf</code>
+		<collector>DiskConfCollector</collector>
+        <name>Disk Configuration Monitoring!!</name>
+        <schedule>3600</schedule>
+        <eschedule>3600</eschedule>
+        <enable>X</enable>
+        <method>OOX</method>
+    </item>
+    <item>
+        <code>InterfaceConf</code>
+		<collector>InterfaceConfCollector</collector>
+        <name>Interface Configuration Monitoring!!</name>
+        <schedule>3600</schedule>
+        <eschedule>3600</eschedule>
+        <enable>X</enable>
+        <method>OOX</method>
+    </item>
+    <item>
+        <code>CPULoad</code>
+		<collector>CPULoadCollector</collector>
+        <name>CPU Performance Monitoring!!</name>
+        <schedule>10</schedule>
+        <eschedule>10</eschedule>
+        <enable>O</enable>
+        <method>OOX</method>
+    </item>
+    <item>
+        <code>DiskIOPerf</code>
+		<collector>DiskIOPerfCollector</collector>
+        <name>Disk IO Performance Monitoring!!</name>
+        <schedule>10</schedule>
+        <eschedule>10</eschedule>
+        <enable>O</enable>
+        <method>OOX</method>
+    </item>
+    <item>
+		<code>InterfacePerf</code>
+        <collector>InterfacePerfCollector</collector>
+        <name>Network Performance Monitoring!!</name>
+        <schedule>10</schedule>
+        <eschedule>10</eschedule>
+        <enable>O</enable>
+        <method>OOX</method>
+    </item>
+    <item>
+        <code>CPUPerf</code>
+		<collector>CPUPerfCollector</collector> 
+        <name>CPU Performance Monitoring!!</name>
+        <schedule>10</schedule>
+        <eschedule>10</eschedule>
+        <enable>O</enable>
+        <method>OOX</method>
+    </item>
+    <item>
+        <code>DiskPerf</code>
+		<collector>DiskPerfCollector</collector>
+        <name>Disk Performance Monitoring!!</name>
+        <schedule>10</schedule>
+        <eschedule>10</eschedule>
+        <enable>O</enable>
+        <method>OOX</method>
+    </item>
+    <item>
+        <code>MemoryPerf</code>
+		<collector>MemoryPerfCollector</collector> 
+        <name>Memory Performance Monitoring!!</name>
+        <schedule>10</schedule>
+        <eschedule>10</eschedule>
+        <enable>O</enable>
+        <method>OOX</method>
+    </item>
+</config>

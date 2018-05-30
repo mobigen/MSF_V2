@@ -1,0 +1,245 @@
+\section{CQueue  클래스 참조}
+\label{classCQueue}\index{CQueue@{CQueue}}
+각종 데이터를 저장하기 위한 리스트 큐 클래스. 
+
+
+{\tt \#include $<$CQueue.h$>$}
+
+\subsection*{공용 메소드}
+\begin{CompactItemize}
+\item 
+{\bf CQueue} ()
+\item 
+{\bf CQueue} (std::string)
+\item 
+virtual {\bf $\sim$CQueue} ()
+\item 
+void {\bf initialize} ()
+\item 
+bool {\bf is\-Writable} ()
+\item 
+elem$\ast$ {\bf front\-Node} ()
+\item 
+elem$\ast$ {\bf get\-Next} (elem $\ast$e)
+\item 
+void {\bf set\-Writable} (bool b)
+\item 
+void {\bf remove\-All} ()
+\item 
+void {\bf enqueue} (void $\ast$d, void($\ast$h)(void $\ast$))
+\item 
+void {\bf push} (void $\ast$d, void($\ast$h)(void $\ast$))
+\item 
+void$\ast$ {\bf dequeue} ()
+\item 
+void$\ast$ {\bf delete\-Node} (elem $\ast$e)
+\item 
+void {\bf remove\-Node} (elem $\ast$e)
+\item 
+void$\ast$ {\bf get\-Data} ()
+\item 
+int {\bf size} ()
+\item 
+bool {\bf is\-Empty} ()
+\item 
+std::string {\bf get\-Name} ()
+\item 
+void {\bf set\-Name} (std::string name)
+\item 
+void {\bf set\-Is\-Remove} (bool)
+\end{CompactItemize}
+
+
+\subsection{상세한 내용}
+각종 데이터를 저장하기 위한 리스트 큐 클래스.
+
+SMS Agent가 기동하면서 필요한 각종 데이터를 저장하고, 관리하는 리스트 큐 클래스. 
+
+
+
+\subsection{생성자 \& 소멸자 문서화}
+\index{CQueue@{CQueue}!CQueue@{CQueue}}
+\index{CQueue@{CQueue}!CQueue@{CQueue}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CQueue::CQueue ()}\label{classCQueue_a0}
+
+
+생성자 \index{CQueue@{CQueue}!CQueue@{CQueue}}
+\index{CQueue@{CQueue}!CQueue@{CQueue}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CQueue::CQueue (std::string)}\label{classCQueue_a1}
+
+
+생성자. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em .}]\end{description}
+\end{Desc}
+\index{CQueue@{CQueue}!~CQueue@{$\sim$CQueue}}
+\index{~CQueue@{$\sim$CQueue}!CQueue@{CQueue}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CQueue::$\sim$CQueue ()\hspace{0.3cm}{\tt  [virtual]}}\label{classCQueue_a2}
+
+
+소멸자 
+
+\subsection{멤버 함수 문서화}
+\index{CQueue@{CQueue}!deleteNode@{deleteNode}}
+\index{deleteNode@{deleteNode}!CQueue@{CQueue}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ CQueue::delete\-Node (elem $\ast$ {\em e})}\label{classCQueue_a12}
+
+
+큐에서 특정 노드를 삭제하는 메쏘드. 노드 정보는 삭제되고 실 데이터 정보는 반환된다. 반환된 데이터는 반환받은 개체가 메모리에서 삭제해주어야 한다. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em .}]\end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 반환: }]\par
+삭제된 노드가 저장하고 있던 데이터. \end{Desc}
+\index{CQueue@{CQueue}!dequeue@{dequeue}}
+\index{dequeue@{dequeue}!CQueue@{CQueue}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ CQueue::dequeue ()}\label{classCQueue_a11}
+
+
+큐에서 가장 처음에 들어온 데이터를 가져오는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em data}]pointer. \end{description}
+\end{Desc}
+\index{CQueue@{CQueue}!enqueue@{enqueue}}
+\index{enqueue@{enqueue}!CQueue@{CQueue}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CQueue::enqueue (void $\ast$ {\em d}, void($\ast$ {\em h})(void $\ast$))}\label{classCQueue_a9}
+
+
+큐에 데이터를 주가하는 메쏘드. FIFO처럼 가장 끝 노드에 추가한다. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em .}]\item[
+{\em .}]\end{description}
+\end{Desc}
+\index{CQueue@{CQueue}!frontNode@{frontNode}}
+\index{frontNode@{frontNode}!CQueue@{CQueue}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}elem $\ast$ CQueue::front\-Node ()}\label{classCQueue_a5}
+
+
+큐의 첫번째 노드를 조회하는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+첫번째 노드 포인터. \end{Desc}
+\index{CQueue@{CQueue}!getData@{getData}}
+\index{getData@{getData}!CQueue@{CQueue}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ CQueue::get\-Data ()}\label{classCQueue_a14}
+
+
+첫번째 노드의 데이터 정보를 가져오는 메쏘드. 현재 의미없음. \index{CQueue@{CQueue}!getName@{getName}}
+\index{getName@{getName}!CQueue@{CQueue}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}std::string CQueue::get\-Name ()}\label{classCQueue_a17}
+
+
+큐 이름을 조회하는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+queue name. \end{Desc}
+\index{CQueue@{CQueue}!getNext@{getNext}}
+\index{getNext@{getNext}!CQueue@{CQueue}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}elem $\ast$ CQueue::get\-Next (elem $\ast$ {\em e})}\label{classCQueue_a6}
+
+
+주어진 노드의 다음 노드 정보를 조회하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em .}]\end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 반환: }]\par
+노드 포일터. \end{Desc}
+\index{CQueue@{CQueue}!initialize@{initialize}}
+\index{initialize@{initialize}!CQueue@{CQueue}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CQueue::initialize ()}\label{classCQueue_a3}
+
+
+큐 초기화 메쏘드. \index{CQueue@{CQueue}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!CQueue@{CQueue}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CQueue::is\-Empty ()}\label{classCQueue_a16}
+
+
+큐가 비어 있는지 여부를 판단하는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+true if queue is empty, else return false. \end{Desc}
+\index{CQueue@{CQueue}!isWritable@{isWritable}}
+\index{isWritable@{isWritable}!CQueue@{CQueue}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CQueue::is\-Writable ()}\label{classCQueue_a4}
+
+
+큐에 대한 쓰기 가능 여부을 조회하는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+true : 쓰기 가능, false : 쓰기 불가능. \end{Desc}
+\index{CQueue@{CQueue}!push@{push}}
+\index{push@{push}!CQueue@{CQueue}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CQueue::push (void $\ast$ {\em d}, void($\ast$ {\em h})(void $\ast$))}\label{classCQueue_a10}
+
+
+큐에 데이터를 주가하는 메쏘드. 스택처럼 가장 처음 노드에 추가한다. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em .}]\item[
+{\em .}]\end{description}
+\end{Desc}
+\index{CQueue@{CQueue}!removeAll@{removeAll}}
+\index{removeAll@{removeAll}!CQueue@{CQueue}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CQueue::remove\-All ()}\label{classCQueue_a8}
+
+
+큐에 존재하는 모든 노드 및 데이터를 삭제하는 메쏘드. \index{CQueue@{CQueue}!removeNode@{removeNode}}
+\index{removeNode@{removeNode}!CQueue@{CQueue}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CQueue::remove\-Node (elem $\ast$ {\em e})}\label{classCQueue_a13}
+
+
+큐에서 특정 노드 및 데이터 정보를 삭제하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em .}]\end{description}
+\end{Desc}
+\index{CQueue@{CQueue}!setIsRemove@{setIsRemove}}
+\index{setIsRemove@{setIsRemove}!CQueue@{CQueue}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CQueue::set\-Is\-Remove (bool)}\label{classCQueue_a19}
+
+
+큐의 데이터 삭제 여부를 설정하는 메쏘드. 현재 의미 없음. \index{CQueue@{CQueue}!setName@{setName}}
+\index{setName@{setName}!CQueue@{CQueue}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CQueue::set\-Name (std::string {\em name})}\label{classCQueue_a18}
+
+
+큐 이름을 설정하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em queue}]name. \end{description}
+\end{Desc}
+\index{CQueue@{CQueue}!setWritable@{setWritable}}
+\index{setWritable@{setWritable}!CQueue@{CQueue}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CQueue::set\-Writable (bool {\em b})}\label{classCQueue_a7}
+
+
+큐의 쓰기 가능 여부를 설정하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em true}]: 쓰기 가능, false : 쓰기 불가능. \end{description}
+\end{Desc}
+\index{CQueue@{CQueue}!size@{size}}
+\index{size@{size}!CQueue@{CQueue}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int CQueue::size ()}\label{classCQueue_a15}
+
+
+큐의 저장된 데이터 개수를 조회하는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+data count. \end{Desc}
+
+
+이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:\begin{CompactItemize}
+\item 
+{\bf CQueue.h}\end{CompactItemize}

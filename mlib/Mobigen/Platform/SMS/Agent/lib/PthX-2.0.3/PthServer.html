@@ -1,0 +1,136 @@
+<HTML>
+<HEAD><TITLE>PthServer class</TITLE></HEAD>
+
+<BODY>
+
+<HR>
+<FONT SIZE=+3 COLOR=BLUE><B>PthServer Class</B></FONT> 
+<FONT SIZE=+2><B>generic server class (C++)</B></FONT>
+<P>
+일반적인 네트웩서버 데몬을 만들기 위한 기본 클래스 
+서비스 로직만을 공급해주면, 프로세스나 쓰레드 관리를 자동으로 알아서 해준다.
+<P>
+Updates: KIM Hiongun, nomota@mobigen.com (김형근)
+<UL>
+ <LI> 2002/08/28 initially documented
+</UL>
+  
+<HR>
+
+<OL>
+ <LI><A HREF=./PthServer.h++>PthServer.h++</A> (PthServer 클래스 선언)
+ <LI><A HREF=./PthServer.c++>PthServer.c++</A> (PthServer 클래스 구현)
+ <LI><A HREF=./Pth.html>Pth.html</A> (관련 클래스)
+ <LI><A HREF=./PthSocket.html>PthSocket.html</A> (관련 클래스)
+ <LI><A HREF=./Makefile>Makefile</A>
+</OL>
+
+<HR>
+
+<H3>Usage</H3>
+
+<OL>
+ <LI>
+  <B>PthServer *pPthServer = new PthServer();</B><BR>
+  Port를 대기하는 기본 Echo 서버를 하나 생성시킨다. 생성된 에코 서버는
+  Preforked + Threaded 모델로 동작하므로, 하나의 관리 프로세스와, 1개이상의
+  실제 서비스용 프로세스가 생성되는데, 각각의 서비스용 프로세스내에서
+  네트웍 접속이 시도 될 때마다 하나의 서비스용 쓰레드가 생성된다.
+  <p>
+  <b>pPthServer->setPort(int port);</b><br>
+  대기할 포트 번호 지정
+  <p>
+  <b>pPthServer->setMaxThreads(int max_threads);</b><br>
+  한 프로세스 내에서 일정 갯수 이상의 스레드가 생성되었으면, 그 프로세스가
+  죽도록 되어 있음. (오류가 누적되지 않도록 하는 조치임.) <br>
+  주의: 동시 접속수가 아님!!! 
+  
+  <P>
+  <b>pPthServer->setMaxChildren(int max_children);</b><br>
+  동시에 몇개의 서비스용 프로세스가 살아 있도록 할 것인가... 서비스용 프로세스
+  외에, 감시용 프로세스가 별도로 하나 뜨므로, 같은 이름의 프로세스가
+  max_children + 1 개 뜬다.
+  <p>
+  <b>void pPthServer->start()</b><br>
+  실제 서비스 데몬 프로그램을 실행시키는 엔트리임.
+  <p>
+ <LI>
+  <b>virtual void PthServer::service(PthSocket *sock)</b><br>
+  이 함수가 바로 서비스를 실제로 수행하는 함수이다. 이 함수 내에서
+  sock은 클라이언트로 부터 들어온 접속 소켓이다.
+  이 소켓을 이용해서 데이타를 클라이언트와 서버 간에 주고 받은 후에,
+  서비스가 끝나면, delete sock을 호출해 줘야 한다.
+  <p>
+</OL>
+
+<HR>
+<H3>사용법</H3>
+<PRE>
+
+#include "PthServer.h++"
+
+int main()
+{
+    // 아무런 상속 없이 그냥 쓰면, Echo 서버가 생성된다.
+    PthServer *server = new PthServer();
+
+    server->setPort(9994);
+    // server->setMaxChildren(2);
+    // server->setMaxThreads(2);
+
+    server->start();
+
+    delete server;
+
+    return 0;
+}
+
+<b>또는 원하는 서비스 루틴을 다음과 같이 제공해 주면 됨.</b>
+
+#include "PthServer.h++"
+
+class MyService: public PthServer {
+  public:
+    void service(PthSocket *sock)
+    {
+        char *welcome = "OK Welcome MyService\r\n";
+        sock->write(welcome, strlen(welcome));
+
+        while (1) {
+            char buf[BUFSIZ]; // buf크기는 반드시 BUFSIZ이어야 함.
+            int r = sock->readline(buf, 10); // timeout = 10 seconds
+
+            if (r < 0) { printf("SOCK ERROR or TIMEOUT\r\n"); break; }
+
+            if (r == 0) { printf("SOCK CLOSED\r\n"); break; }
+
+            char *ok = "OK "; 
+
+            sock->write(ok, strlen(ok));
+            sock->write(buf, strlen(buf));
+
+            if (strncmp(buf, "QUIT", 4) == 0 || strncmp(buf, "quit", 4) == 0) {
+                break;
+            }
+        }
+
+        sock->close();
+
+        delete sock;
+    }
+};
+
+int main()
+{
+    MyService service();
+
+    service.setPort(9995);
+    service.setMaxChildren(1);
+    service.setMaxThreads(100);
+
+    service.start();
+
+    return 0;
+}
+
+</PRE>

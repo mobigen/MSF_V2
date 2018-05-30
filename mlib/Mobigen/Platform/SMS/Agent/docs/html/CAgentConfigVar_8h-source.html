@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CAgentConfigVar.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CAgentConfigVar.h</h1><div class="fragment"><pre>00001 
+00002 <font class="preprocessor">#ifndef _CAGENTCONFIGVAR_H__</font>
+00003 <font class="preprocessor"></font><font class="preprocessor">#define _CAGENTCONFIGVAR_H__</font>
+00004 <font class="preprocessor"></font>
+00005 <font class="preprocessor">#include &lt;stdio.h&gt;</font>
+00006 <font class="preprocessor">#include &lt;stdlib.h&gt;</font>
+00007 <font class="preprocessor">#include &lt;errno.h&gt;</font>
+00008 <font class="preprocessor">#include &lt;pthread.h&gt;</font>
+00009 <font class="preprocessor">#include &lt;unistd.h&gt;</font>
+00010 <font class="preprocessor">#include &lt;string&gt;</font>
+00011 
+00012 <font class="preprocessor">#include "MD5LIB.h"</font>
+00013 <font class="preprocessor">#include "MD5.h"</font>
+00014 
+00015 <font class="preprocessor">#include "tinyxml.h"</font>
+00016 <font class="preprocessor">#include "CItem.h"</font>
+00017 
+00019 
+<a name="l00025"></a><a class="code" href="classCAgentConfigVar.html">00025</a> <font class="keyword">class </font><a class="code" href="classCAgentConfigVar.html">CAgentConfigVar</a>
+00026 {
+00027         <font class="keyword">public</font>:
+00029 
+00030                 <a class="code" href="classCAgentConfigVar.html#a0">CAgentConfigVar</a>();
+00032 
+00033                 <font class="keyword">virtual</font> <a class="code" href="classCAgentConfigVar.html#a1">~CAgentConfigVar</a>();
+00035 
+00036                 <font class="keywordtype">void</font> <a class="code" href="classCAgentConfigVar.html#a2">loadXMLConfigVar</a>();
+00038 
+<a name="l00043"></a><a class="code" href="classCAgentConfigVar.html#a3">00043</a>                 <a class="code" href="classCItem.html">CItem</a> *<a class="code" href="classCAgentConfigVar.html#a3">getItem</a>(<font class="keywordtype">char</font> *code)<font class="keyword"></font>{
+00044                         std::string strcode = code;
+00045                         <font class="keywordflow">return</font> <a class="code" href="classCAgentConfigVar.html#a3">getItem</a>(strcode); }
+00046 
+00048 
+00053                 <a class="code" href="classCItem.html">CItem</a> *<a class="code" href="classCAgentConfigVar.html#a3">getItem</a>(std::string code);
+00054 
+00056 
+00060                 <font class="keywordtype">void</font> <a class="code" href="classCAgentConfigVar.html#a5">addItem</a>(<a class="code" href="classCItem.html">CItem</a> *item);
+00062 
+00066                 <font class="keywordtype">void</font> <a class="code" href="classCAgentConfigVar.html#a6">setItem</a>(<a class="code" href="classCItem.html">CItem</a> *item);
+00068 
+00071                 <font class="keywordtype">void</font> <a class="code" href="classCAgentConfigVar.html#a7">delItem</a>(std::string code);
+00076                 <a class="code" href="classCQueue.html">CQueue</a> *<a class="code" href="classCAgentConfigVar.html#a8">getItemQ</a>();
+00078 
+00081                 <font class="keywordtype">void</font> <a class="code" href="classCAgentConfigVar.html#a9">unloadXMLConfigVar</a>();
+00082 
+00088                 TiXmlElement *<a class="code" href="classCAgentConfigVar.html#a10">makeXmlElement</a>(<a class="code" href="classCItem.html">CItem</a> *item);
+00089 
+00099                 <font class="keywordtype">void</font> <a class="code" href="classCAgentConfigVar.html#a11">linkEndChild</a>(std::string str, TiXmlElement *<a class="code" href="struct____elem____.html">elem</a>, <font class="keyword">const</font> <font class="keywordtype">char</font> *name);
+00100 
+00110                 <font class="keywordtype">void</font> <a class="code" href="classCAgentConfigVar.html#a11">linkEndChild</a>(<font class="keywordtype">unsigned</font> <font class="keywordtype">long</font> l, TiXmlElement *<a class="code" href="struct____elem____.html">elem</a>, <font class="keyword">const</font> <font class="keywordtype">char</font> *name);
+00111 
+00116                 <font class="keywordtype">void</font> <a class="code" href="classCAgentConfigVar.html#a13">removeDocItem</a>(std::string code);
+00117                 
+<a name="l00122"></a><a class="code" href="classCAgentConfigVar.html#a14">00122</a>                 <font class="keywordtype">int</font> <a class="code" href="classCAgentConfigVar.html#a14">getEventPort</a>()<font class="keyword"></font>{ <font class="keywordflow">return</font> m_eventport; }
+00123 
+<a name="l00128"></a><a class="code" href="classCAgentConfigVar.html#a15">00128</a>                 <font class="keywordtype">int</font> <a class="code" href="classCAgentConfigVar.html#a15">getShortPerfPort</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_shortperfport; }
+00129 
+<a name="l00134"></a><a class="code" href="classCAgentConfigVar.html#a16">00134</a>                 <font class="keywordtype">int</font> <a class="code" href="classCAgentConfigVar.html#a16">getLongPerfPort</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_longperfport; }
+00135 
+<a name="l00140"></a><a class="code" href="classCAgentConfigVar.html#a17">00140</a>                 <font class="keywordtype">int</font> <a class="code" href="classCAgentConfigVar.html#a17">getRespPort</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_respport; }
+00141 
+<a name="l00146"></a><a class="code" href="classCAgentConfigVar.html#a18">00146</a>                 <font class="keywordtype">int</font> <a class="code" href="classCAgentConfigVar.html#a18">getCmdPort</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_cmdport; }
+00147 
+<a name="l00152"></a><a class="code" href="classCAgentConfigVar.html#a19">00152</a>                 <font class="keywordtype">int</font> <a class="code" href="classCAgentConfigVar.html#a19">getSessionPort</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_sessionport; }
+00153                 
+<a name="l00158"></a><a class="code" href="classCAgentConfigVar.html#a20">00158</a>                 std::string <a class="code" href="classCAgentConfigVar.html#a20">getUserid</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_userid; }
+00159 
+<a name="l00164"></a><a class="code" href="classCAgentConfigVar.html#a21">00164</a>                 std::string <a class="code" href="classCAgentConfigVar.html#a21">getPasswd</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_passwd; }
+00165 
+<a name="l00170"></a><a class="code" href="classCAgentConfigVar.html#a22">00170</a>                 std::string <a class="code" href="classCAgentConfigVar.html#a22">getAccessIP</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_accessip; }
+00171                 
+<a name="l00176"></a><a class="code" href="classCAgentConfigVar.html#a23">00176</a>                 std::string <a class="code" href="classCAgentConfigVar.html#a23">getOraUID</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_orauid; }
+00177 
+<a name="l00182"></a><a class="code" href="classCAgentConfigVar.html#a24">00182</a>                 std::string <a class="code" href="classCAgentConfigVar.html#a24">getOraPasswd</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_orapasswd; }
+00183                 
+<a name="l00188"></a><a class="code" href="classCAgentConfigVar.html#a25">00188</a>                 std::string <a class="code" href="classCAgentConfigVar.html#a25">getOraSID</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_orasid; }
+00189 
+<a name="l00194"></a><a class="code" href="classCAgentConfigVar.html#a26">00194</a>                 <font class="keywordtype">void</font> <a class="code" href="classCAgentConfigVar.html#a26">setOraUID</a>(<font class="keywordtype">char</font> *uid)<font class="keyword"> </font>{ m_orauid = uid; }
+00195 
+<a name="l00200"></a><a class="code" href="classCAgentConfigVar.html#a27">00200</a>                 <font class="keywordtype">void</font> <a class="code" href="classCAgentConfigVar.html#a27">setOraSID</a>(<font class="keywordtype">char</font> *sid)<font class="keyword"> </font>{ m_orasid = sid; }
+00201 
+<a name="l00206"></a><a class="code" href="classCAgentConfigVar.html#a28">00206</a>                 <font class="keywordtype">void</font> <a class="code" href="classCAgentConfigVar.html#a28">setOraPasswd</a>(<font class="keywordtype">char</font> *passwd)<font class="keyword"> </font>{ m_orapasswd = passwd; }
+00207 
+<a name="l00212"></a><a class="code" href="classCAgentConfigVar.html#a29">00212</a>                 <font class="keywordtype">void</font> <a class="code" href="classCAgentConfigVar.html#a29">setUserid</a>(<font class="keywordtype">char</font> *userid)<font class="keyword"> </font>{ m_userid = userid; }
+00213 
+<a name="l00218"></a><a class="code" href="classCAgentConfigVar.html#a30">00218</a>                 <font class="keywordtype">void</font> <a class="code" href="classCAgentConfigVar.html#a30">setPasswd</a>(<font class="keywordtype">char</font> *passwd)<font class="keyword"> </font>{ m_passwd = passwd; }
+00219 
+<a name="l00224"></a><a class="code" href="classCAgentConfigVar.html#a31">00224</a>                 <font class="keywordtype">void</font> <a class="code" href="classCAgentConfigVar.html#a31">setAccessIP</a>(<font class="keywordtype">char</font> *accessip)<font class="keyword"> </font>{ m_accessip = accessip; }
+00225                 
+00232                 <font class="keywordtype">bool</font> <a class="code" href="classCAgentConfigVar.html#a32">setUserInfo</a>(std::string sid, std::string userid, std::string password);
+00233                 
+00237                 <font class="keywordtype">void</font> <a class="code" href="classCAgentConfigVar.html#a33">lock</a>();
+00238 
+00240                 <font class="keywordtype">void</font> <a class="code" href="classCAgentConfigVar.html#a34">unlock</a>();
+00241 
+00242         <font class="keyword">private</font>:
+00243                 TiXmlDocument *m_doc;   
+00244                 <a class="code" href="classCQueue.html">CQueue</a> *m_itemQ;                
+00245                 <font class="keywordtype">int</font> m_eventport;                
+00246                 <font class="keywordtype">int</font> m_shortperfport;    
+00247                 <font class="keywordtype">int</font> m_longperfport;             
+00248                 <font class="keywordtype">int</font> m_respport;                 
+00249                 <font class="keywordtype">int</font> m_cmdport;                  
+00250                 <font class="keywordtype">int</font> m_sessionport;              
+00251                 std::string m_orauid;   
+00252                 std::string m_orapasswd; 
+00253                 std::string m_orasid;   
+00254                 std::string m_userid;   
+00255                 std::string m_passwd;   
+00256                 std::string m_accessip; 
+00257                 pthread_mutex_t m_lock; 
+00259 };
+00260 
+00261 <font class="preprocessor">#endif </font><font class="comment">/* _CAGENTCONFIGVAR_H__ */</font>
+</pre></div><hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

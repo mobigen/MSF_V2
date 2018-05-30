@@ -1,0 +1,613 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CMessageFormatter class Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CMessageFormatter  클래스 참조</h1>수집된 메시지를 SMS Manager와 규약된 메시지 포맷으로 변환하는 클래스. 
+<a href="#_details">More...</a>
+<p>
+<code>#include &lt;<a class="el" href="CMessageFormatter_8h-source.html">CMessageFormatter.h</a>&gt;</code>
+<p>
+<a href="classCMessageFormatter-members.html">모든 구성원들(members)의 명단</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td colspan=2><br><h2>공용 메소드</h2></td></tr>
+<tr><td nowrap align=right valign=top>&nbsp;</td><td valign=bottom><a class="el" href="classCMessageFormatter.html#a0">CMessageFormatter</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>&nbsp;</td><td valign=bottom><a class="el" href="classCMessageFormatter.html#a1">~CMessageFormatter</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCMessageFormatter.html#a2">setPollTime</a> (time_t polltime)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCMessageFormatter.html#a3">setItem</a> (<a class="el" href="classCItem.html">CItem</a> *item)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCMessageFormatter.html#a4">setTitle</a> (char *title)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCMessageFormatter.html#a5">setCommand</a> (char *cmd)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCMessageFormatter.html#a6">setType</a> (unsigned int type)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCMessageFormatter.html#a7">setItemCondition</a> (<a class="el" href="classCItemCondition.html">CItemCondition</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCMessageFormatter.html#a8">setItemCode</a> (char *code)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCMessageFormatter.html#a9">setItemCode</a> (std::string)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCMessageFormatter.html#a10">setEventStatus</a> (bool b)</td></tr>
+<tr><td nowrap align=right valign=top>char*&nbsp;</td><td valign=bottom><a class="el" href="classCMessageFormatter.html#a11">makeMessage</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>std::string&nbsp;</td><td valign=bottom><a class="el" href="classCMessageFormatter.html#a12">makeErrorMessage</a> (char *msg)</td></tr>
+<tr><td nowrap align=right valign=top>std::string&nbsp;</td><td valign=bottom><a class="el" href="classCMessageFormatter.html#a13">makeErrorMessage</a> (std::string msg)</td></tr>
+<tr><td nowrap align=right valign=top>std::string&nbsp;</td><td valign=bottom><a class="el" href="classCMessageFormatter.html#a14">getTypeCode</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCMessageFormatter.html#a15">addMessage</a> (char *msg)</td></tr>
+</table>
+<hr><a name="_details"></a><h2>상세한 내용</h2>
+수집된 메시지를 SMS Manager와 규약된 메시지 포맷으로 변환하는 클래스.
+<p>
+메시지 유형에 따라 다음 3가지 포맷으로 변환시킨다.<ol>
+<li>PASSIVE :<br>
+ ${HOSTNAME} YYYY-MM-DD HH:MI:SS<br>
+ ${ITEM_CODE} ${ITEM_DESCRIPTION}<br>
+ PASSIVE ${COMMAND}<br>
+ ${DATA HEADER}<br>
+ ${DATA}<br>
+ COMPLETED<br>
+<li>ACTIVE :<br>
+ ${HOSTNAME} YYYY-MM-DD HH:MI:SS<br>
+ ${ITEM_CODE} ${ITEM_DESCRIPTION}<br>
+ ACTIVE<br>
+ ${DATA HEADER}<br>
+ ${DATA}<br>
+ COMPLETED<br>
+<li>EVENT :<br>
+ ${HOSTNAME} YYYY-MM-DD HH:MI:SS<br>
+ ${ITEM_CODE} ${ITEM_DESCRIPTION}<br>
+ EVENT ${CONDITION} ${ELEMENT} ${SEVERITY} ${START/END}<br>
+ ${DATA HEADER}<br>
+ ${DATA}<br>
+ COMPLETED<br>
+ </ol>
+
+<p>
+<hr><h2>생성자 &amp; 소멸자 문서화</h2>
+<a name="a0" doxytag="CMessageFormatter::CMessageFormatter"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CMessageFormatter::CMessageFormatter (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+생성자     </td>
+  </tr>
+</table>
+<a name="a1" doxytag="CMessageFormatter::~CMessageFormatter"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CMessageFormatter::~CMessageFormatter (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+소멸자     </td>
+  </tr>
+</table>
+<hr><h2>멤버 함수 문서화</h2>
+<a name="a15" doxytag="CMessageFormatter::addMessage"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CMessageFormatter::addMessage (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>msg</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+작성될 메시지를 추가하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a14" doxytag="CMessageFormatter::getTypeCode"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+std::string CMessageFormatter::getTypeCode (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+수집 유형 정보를 반환하는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+수집 유형(TYPE_ACTIVE/TYPE_PASSIVE/TYPE_EVENT) </dl>    </td>
+  </tr>
+</table>
+<a name="a13" doxytag="CMessageFormatter::makeErrorMessage"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+std::string CMessageFormatter::makeErrorMessage (
+          </b></td>
+          <td valign="bottom"><b>
+std::string <em>msg</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+에러 메시지를 생성하기 위한 메쏘드. 현재 의미 없음.     </td>
+  </tr>
+</table>
+<a name="a12" doxytag="CMessageFormatter::makeErrorMessage"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+std::string CMessageFormatter::makeErrorMessage (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>msg</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+에러 메시지를 생성하기 위한 메쏘드. 현재 의미 없음.     </td>
+  </tr>
+</table>
+<a name="a11" doxytag="CMessageFormatter::makeMessage"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+char * CMessageFormatter::makeMessage (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+수집된 정보를 SMS Manager로 전송하기 위한 메시지 포맷으로 변환하는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+변환된 메시지. </dl>    </td>
+  </tr>
+</table>
+<a name="a5" doxytag="CMessageFormatter::setCommand"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CMessageFormatter::setCommand (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>cmd</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+PASSIVE에 의한 데이터 수집인 경우, SMS Manager로부터 전송받은 수집 명령어를 설정하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a10" doxytag="CMessageFormatter::setEventStatus"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CMessageFormatter::setEventStatus (
+          </b></td>
+          <td valign="bottom"><b>
+bool <em>b</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+수집된 정보가 장애 정보인 경우 장애 발생 여부. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>true</em>
+&nbsp;</td><td>
+: START, end : END. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a3" doxytag="CMessageFormatter::setItem"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CMessageFormatter::setItem (
+          </b></td>
+          <td valign="bottom"><b>
+<a class="el" href="classCItem.html">CItem</a> * <em>item</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+수집하는 item(CItem) 정보를 설정하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>CItem</em>
+&nbsp;</td><td>
+pointer. </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>참조하시요: </b><dd>
+<a class="el" href="classCItem.html">CItem</a>. </dl>    </td>
+  </tr>
+</table>
+<a name="a9" doxytag="CMessageFormatter::setItemCode"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CMessageFormatter::setItemCode (
+          </b></td>
+          <td valign="bottom"><b>
+std::string&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+수집된 item code 정보를 설정하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>item</em>
+&nbsp;</td><td>
+code(string). </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a8" doxytag="CMessageFormatter::setItemCode"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CMessageFormatter::setItemCode (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>code</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+수집된 item code 정보를 설정하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>item</em>
+&nbsp;</td><td>
+code(character). </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a7" doxytag="CMessageFormatter::setItemCondition"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CMessageFormatter::setItemCondition (
+          </b></td>
+          <td valign="bottom"><b>
+<a class="el" href="classCItemCondition.html">CItemCondition</a> *&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+수집된 데이터가 장애 데이터인 경우에 장애 판단 조건을 설정하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>CItemCondition</em>
+&nbsp;</td><td>
+) pointer. </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>참조하시요: </b><dd>
+<a class="el" href="classCItemCondition.html">CItemCondition</a> </dl>    </td>
+  </tr>
+</table>
+<a name="a2" doxytag="CMessageFormatter::setPollTime"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CMessageFormatter::setPollTime (
+          </b></td>
+          <td valign="bottom"><b>
+time_t <em>polltime</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+수집 시간을 설정하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a4" doxytag="CMessageFormatter::setTitle"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CMessageFormatter::setTitle (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>title</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+데이터의 수집 항목에 대한 Header 정보를 설정하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>header</em>
+&nbsp;</td><td>
+정보. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a6" doxytag="CMessageFormatter::setType"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CMessageFormatter::setType (
+          </b></td>
+          <td valign="bottom"><b>
+unsigned int <em>type</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+수집 유형을 설정하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>TYPE_PASSIVE</em>
+&nbsp;</td><td>
+/TYPE_ACTIVE/TYPE_EVENT) </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<hr>이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:<ul>
+<li><a class="el" href="CMessageFormatter_8h-source.html">CMessageFormatter.h</a></ul>
+<hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

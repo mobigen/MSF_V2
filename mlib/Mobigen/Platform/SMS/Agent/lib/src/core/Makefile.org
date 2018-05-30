@@ -1,0 +1,44 @@
+#
+# Descript : Make KernelView Libraries
+# Platform : SunOS
+#
+# $ID
+#
+
+include $(HOME)/ktfsm/MakeVars
+
+MISC	=	$(HOME)/ktfsm/lib/src/misc
+IFLAGS=-I$(MISC)
+
+#
+# compile options
+
+ATARGET=./libsccore.a
+
+#
+# object
+OBJS	=	sc_core.o \
+		sc_system.o  \
+		sc_network.o
+
+#
+# default
+all: $(OBJS) $(ATARGET)
+
+$(ATARGET):
+	$(AR) cr $@ $(OBJS)
+
+sc_core.o: sc_common.h sc_core.h sc_core.c
+	$(CC) $(CFLAGS) $(IFLAGS) -c sc_core.c
+
+sc_system.o: sc_common.h sc_system.h sc_system.c
+	$(CC) $(CFLAGS) $(IFLAGS) -c sc_system.c
+
+sc_network.o: sc_common.h sc_network.h sc_network.c
+	$(CC) $(CFLAGS) $(IFLAGS) -c sc_network.c
+
+clean:
+	rm -rf $(OBJS) $(ATARGET)
+
+
+

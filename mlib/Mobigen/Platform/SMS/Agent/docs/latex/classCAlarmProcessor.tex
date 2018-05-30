@@ -1,0 +1,76 @@
+\section{CAlarm\-Processor  클래스 참조}
+\label{classCAlarmProcessor}\index{CAlarmProcessor@{CAlarm\-Processor}}
+수집된 정보를 이용하여 장애 처리를 담당하는 클래스. 
+
+
+{\tt \#include $<$CAlarm\-Processor.h$>$}
+
+\subsection*{공용 메소드}
+\begin{CompactItemize}
+\item 
+{\bf CAlarm\-Processor} ()
+\item 
+{\bf CAlarm\-Processor} ({\bf CCollector} $\ast$collector)
+\item 
+{\bf $\sim$CAlarm\-Processor} ()
+\item 
+void {\bf check} ()
+\item 
+void {\bf check\-Alarm} ({\bf CItem\-Condition} $\ast$cond)
+\end{CompactItemize}
+
+
+\subsection{상세한 내용}
+수집된 정보를 이용하여 장애 처리를 담당하는 클래스.
+
+
+
+\subsection{생성자 \& 소멸자 문서화}
+\index{CAlarmProcessor@{CAlarm\-Processor}!CAlarmProcessor@{CAlarmProcessor}}
+\index{CAlarmProcessor@{CAlarmProcessor}!CAlarmProcessor@{CAlarm\-Processor}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CAlarm\-Processor::CAlarm\-Processor ()\hspace{0.3cm}{\tt  [inline]}}\label{classCAlarmProcessor_a0}
+
+
+생성자 \index{CAlarmProcessor@{CAlarm\-Processor}!CAlarmProcessor@{CAlarmProcessor}}
+\index{CAlarmProcessor@{CAlarmProcessor}!CAlarmProcessor@{CAlarm\-Processor}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CAlarm\-Processor::CAlarm\-Processor ({\bf CCollector} $\ast$ {\em collector})\hspace{0.3cm}{\tt  [inline]}}\label{classCAlarmProcessor_a1}
+
+
+생성자 \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em CCollector}]pointer \end{description}
+\end{Desc}
+\index{CAlarmProcessor@{CAlarm\-Processor}!~CAlarmProcessor@{$\sim$CAlarmProcessor}}
+\index{~CAlarmProcessor@{$\sim$CAlarmProcessor}!CAlarmProcessor@{CAlarm\-Processor}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CAlarm\-Processor::$\sim$CAlarm\-Processor ()\hspace{0.3cm}{\tt  [inline]}}\label{classCAlarmProcessor_a2}
+
+
+소멸자 
+
+\subsection{멤버 함수 문서화}
+\index{CAlarmProcessor@{CAlarm\-Processor}!check@{check}}
+\index{check@{check}!CAlarmProcessor@{CAlarm\-Processor}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CAlarm\-Processor::check ()}\label{classCAlarmProcessor_a3}
+
+
+임계치 장애를 판단하는 메쏘드 \index{CAlarmProcessor@{CAlarm\-Processor}!checkAlarm@{checkAlarm}}
+\index{checkAlarm@{checkAlarm}!CAlarmProcessor@{CAlarm\-Processor}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CAlarm\-Processor::check\-Alarm ({\bf CItem\-Condition} $\ast$ {\em cond})}\label{classCAlarmProcessor_a4}
+
+
+수집기({\bf CCollector} {\rm (페이지\,\pageref{classCCollector})})에서 수집한 데이터와 {\bf CItem\-Condition} {\rm (페이지\,\pageref{classCItemCondition})}에 설정된 임계치 조건식을 분석하여 장애를 발생시키는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em CItem\-Condition}]pointer. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 참조하시요: }]\par
+{\bf CItem\-Condition} {\rm (페이지\,\pageref{classCItemCondition})}, {\bf CCollector} {\rm (페이지\,\pageref{classCCollector})} \end{Desc}
+
+
+이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:\begin{CompactItemize}
+\item 
+{\bf CAlarm\-Processor.h}\end{CompactItemize}

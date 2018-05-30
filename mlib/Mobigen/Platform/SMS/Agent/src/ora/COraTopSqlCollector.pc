@@ -1,0 +1,250 @@
+
+#define SQLCA_NONE
+#include <sqlca.h>
+extern struct sqlca sqlca;
+
+#include "COraTopSqlCollector.h"
+#include "CAlarmProcessor.h"
+
+
+
+COraTopSqlCollector::COraTopSqlCollector()
+{
+	m_topn=10;
+	m_sort=0;
+	m_list = NULL;
+}
+
+COraTopSqlCollector::~COraTopSqlCollector()
+{
+	if(m_list!=NULL)
+		scCoreViewRelease(&m_list);
+}
+
+void COraTopSqlCollector::collect()
+{
+	char *msg=NULL;
+	CItemInstance *instance=NULL;
+
+	if(m_pollitem->getInstQ()->size()>0){
+		char inst[128], tmp[32], *p=NULL, *q=NULL;
+		p = (char *)m_pollitem->getInstQ()->frontNode()->d;
+		memset(tmp, 0x00, sizeof(tmp));
+		if((q=(char *)strchr(p,':'))!=NULL){
+			strncpy(tmp, p, strlen(p)-strlen(q));
+			q++;
+			m_topn = atoi(tmp);
+			m_sort = atoi(q);
+		}
+	}
+
+	if(collectOraData()==false) return;
+
+	if(m_pollitem->getPollType() == TYPE_EVENT) {
+		CAlarmProcessor ap(this);
+		ap.check();
+	} else {
+		makeMessage();
+		msg = m_msgfmt.makeMessage();
+
+		if(m_pollitem->getPollType() == TYPE_PASSIVE){
+			m_envvar->getRespQ()->enqueue(msg, NULL);		
+		}else{
+			if(isShortPerf()==true){
+				m_envvar->getShortPerfQ()->enqueue(msg, NULL);		
+			}else{
+				m_envvar->getLongPerfQ()->enqueue(msg, NULL);		
+			}
+		}
+	}
+}
+
+void COraTopSqlCollector::makeMessage()
+{
+	int i=0, at=0;
+	char buf[1024], temp[32], tab=0x09;
+	CQueue *instQ = m_pollitem->getInstQ();
+	elem *e=NULL;
+
+	if(m_list == NULL) return;
+	m_msgfmt.setItem(m_pollitem->getItem());
+	m_msgfmt.setPollTime(m_pollitem->getPollTime());
+	m_msgfmt.setType(m_pollitem->getPollType());
+	if(m_pollitem->getPollType()==TYPE_PASSIVE)
+		m_msgfmt.setCommand((char *)m_pollitem->getCommand().c_str());
+
+	memset(buf, 0x00, sizeof(buf));
+	sprintf(buf, "SQL%cExecution%cBufferGets%cDiskReads%crowsProcessed\n",
+		tab, tab, tab, tab);
+	m_msgfmt.setTitle(buf);
+
+	while((m_topsql = (st_topsql *)ll_element_at(m_list, at++)) != NULL){
+		memset(buf, 0x00, sizeof(buf));
+		sprintf(buf, "%s%c%d%c%d%c%d%c%d\n",
+			m_topsql->_sqltext, tab, m_topsql->executions, tab,
+			m_topsql->buffergets, tab, m_topsql->diskreads, tab,
+			m_topsql->rowsprocessed);
+		m_msgfmt.addMessage(strdup(buf));
+	}
+
+	return;
+}
+
+bool COraTopSqlCollector::collectOraData()
+{
+	bool b=true;
+	CDBSession *_sess=NULL;
+	CAgentConfigVar *ccv = m_envvar->getAgentConfigVar();
+	EXEC SQL BEGIN DECLARE SECTION;
+		VARCHAR _sqltext[1024];
+		int _executions;
+		int _buffergets;
+		int _diskreads;
+		int _rowsprocessed;
+		sql_context *_ctx=NULL;
+		char __sql[4096];
+	EXEC SQL END DECLARE SECTION;
+		st_topsql _topsql;
+
+	if((_sess = m_envvar->getDBPool()->getSession(
+		(char *)ccv->getOraUID().c_str(),
+		(char *)ccv->getOraPasswd().c_str(),
+		(char *)ccv->getOraSID().c_str()))==NULL)
+		return false;
+
+	if((m_list = ll_create_node(NULL,1))==NULL) {
+		//_sess->returnConnection();
+		m_envvar->getDBPool()->returnSession(_sess);
+		return false;
+	}
+
+	_ctx = (sql_context *)_sess->getConnection();
+
+	memset(__sql, 0x00, sizeof(__sql));
+	sprintf(__sql, " SELECT SQL_TEXT, BUFFER_GETS, DISK_READS, EXECUTIONS, ROWS_PROCESSED "
+				" FROM V$SQLAREA "
+				" WHERE ROWNUM <= %d "
+				" ORDER BY %s DESC ",
+				m_topn>0 ? m_topn : 10,
+				m_sort == 1 ? "EXECUTIONS" : (m_sort == 2 ? "BUFFER_GETS" : (m_sort == 4 ? "ROWS_PROCESSED" : "DISK_READS")));
+	EXEC SQL CONTEXT USE :*_ctx;
+	EXEC SQL PREPARE TOP_STMT FROM :__sql;
+
+	EXEC SQL CONTEXT USE :*_ctx;
+	EXEC SQL DECLARE SQL_CUR CURSOR FOR TOP_STMT;
+
+	EXEC SQL CONTEXT USE :*_ctx;
+	EXEC SQL OPEN SQL_CUR;
+
+	while(1){
+		memset(&_topsql, 0x00, sizeof(_topsql));
+		memset(&_sqltext, 0x00, sizeof(_sqltext));
+		EXEC SQL CONTEXT USE :*_ctx;
+		EXEC SQL FETCH SQL_CUR INTO
+			:_sqltext, :_buffergets, :_diskreads, :_executions, :_rowsprocessed;
+		if(sqlca.sqlcode == 1403) break;
+		else if(sqlca.sqlcode){
+			b = false;
+			goto out_sql;
+		}
+
+		strncpy(_topsql._sqltext, (const char *)_sqltext.arr, _sqltext.len);
+		_topsql.executions = _executions;
+		_topsql.buffergets = _buffergets;
+		_topsql.diskreads = _diskreads;
+		_topsql.rowsprocessed = _rowsprocessed;
+		
+		ll_insert_node(m_list, &_topsql, sizeof(st_topsql), NULL);
+	}
+
+out_sql:
+	EXEC SQL CONTEXT USE :*_ctx;
+	EXEC SQL CLOSE SQL_CUR;
+
+	_sess->returnConnection();
+	m_envvar->getDBPool()->returnSession(_sess);
+	return b;
+}
+
+
+void COraTopSqlCollector::isOverThreshold(CItemCondition *cond)
+{
+	int at=0,i=0;
+	char temp[250];
+	bool b=false;
+
+	if(cond->getElement() > 4) return;
+	if (m_list == NULL) return;
+
+
+	while((m_topsql = (st_topsql *)ll_element_at(m_list, at++))!=NULL) {
+
+		if(cond->getInstanceName() == "ALL" || cond->getInstanceName() ==  m_topsql->_sqltext) {
+			/* check alarm */
+			if(cond->getElement() == 1) { /* executions */
+				b = cond->isOverThreshold( m_topsql->executions );
+			} else if(cond->getElement() == 2) { /* buffergets */
+				b = cond->isOverThreshold( m_topsql->buffergets );
+			} else if(cond->getElement() == 3) { /* diskreads */
+				b = cond->isOverThreshold( m_topsql->diskreads );
+			} else if(cond->getElement() == 4) { /* rowsprocessed */
+				b = cond->isOverThreshold( m_topsql->rowsprocessed );
+			}
+			checkAlarm(cond, m_topsql->_sqltext, b, m_topsql);
+		}
+	}
+
+	return ;
+}
+
+void COraTopSqlCollector::checkAlarm(CItemCondition *_cond, char *inst, bool ialarm, st_topsql *topsql)
+{
+	st_item_alarm alarm;
+	bool _ialarm = false;
+	CItem *item = this->getPolicyItem()->getItem();
+	CMessageFormatter msgfmt;
+	char buf[1024], tab=0x09, *msg;
+
+	memset(&alarm, 0x00, sizeof(st_item_alarm));
+	strncpy(alarm.instance, inst, sizeof(alarm.instance));
+	alarm.condid = _cond->getIndex();
+
+	_ialarm = item->isAlarm(&alarm);
+
+	if(ialarm == false && _ialarm == false) return;
+	else if(ialarm == true && _ialarm == true) return;
+	else if(ialarm == true && _ialarm == false){ /* alarm occurred */
+		st_item_alarm *ia = (st_item_alarm *)malloc(sizeof(st_item_alarm));
+		memset(ia, 0x00, sizeof(st_item_alarm));
+		ia->condid = alarm.condid;
+		strcpy(ia->instance, alarm.instance);
+		item->addAlarm(ia);
+	}else if(ialarm == false && _ialarm == true){ /* alarm cleared */
+		item->delAlarm(&alarm);
+	}
+
+	msgfmt.setItem(m_pollitem->getItem());
+	msgfmt.setPollTime(m_pollitem->getPollTime());
+	msgfmt.setType(m_pollitem->getPollType());
+	msgfmt.setItemCondition(_cond);
+	msgfmt.setEventStatus(ialarm);
+
+	memset(buf, 0x00, sizeof(buf));
+
+	sprintf(buf, "SQL%cExecution%cBufferGets%cDiskReads%crowsProcessed\n",
+		tab, tab, tab, tab);
+	m_msgfmt.setTitle(buf);
+
+	memset(buf, 0x00, sizeof(buf));
+	sprintf(buf, "%s%c%d%c%d%c%d%c%d\n",
+			topsql->_sqltext, tab, topsql->executions, tab,
+			topsql->buffergets, tab, topsql->diskreads, tab,
+			topsql->rowsprocessed);
+
+	msgfmt.addMessage(strdup(buf));
+
+	msg = msgfmt.makeMessage();
+	m_envvar->getEventQ()->enqueue(msg, NULL);		
+
+	return;
+}

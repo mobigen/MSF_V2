@@ -1,0 +1,21 @@
+[General]
+dump dir = ./dump
+
+[Node]
+ps1 = ev1.py
+ps2 = ev2.py
+ps3 = ev3.py
+ps4 = ev4.py 111
+
+[Flow]
+ps1 = ps2
+ps2 = ps3,ps4
+#ps3 = ps4
+
+[Group]
+msc1 = ps1,ps2
+#msc2 = ps4,ps5,ps6
+
+#Collect = ps1,ps4
+#Parser = ps2,ps5
+

@@ -1,0 +1,302 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CDBPool class Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CDBPool  클래스 참조</h1>Database pool class. 
+<a href="#_details">More...</a>
+<p>
+<code>#include &lt;<a class="el" href="CDBPool_8h-source.html">CDBPool.h</a>&gt;</code>
+<p>
+<a href="classCDBPool-members.html">모든 구성원들(members)의 명단</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td colspan=2><br><h2>공용 메소드</h2></td></tr>
+<tr><td nowrap align=right valign=top>&nbsp;</td><td valign=bottom><a class="el" href="classCDBPool.html#a0">CDBPool</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>virtual&nbsp;</td><td valign=bottom><a class="el" href="classCDBPool.html#a1">~CDBPool</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCDBPool.html#a2">putSession</a> (<a class="el" href="classCDBSession.html">CDBSession</a> *session)</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="classCDBSession.html">CDBSession</a>*&nbsp;</td><td valign=bottom><a class="el" href="classCDBPool.html#a3">getSession</a> (char *userid, char *passwd, char *sid)</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="classCDBSession.html">CDBSession</a>*&nbsp;</td><td valign=bottom><a class="el" href="classCDBPool.html#a4">getSession</a> (char *key)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCDBPool.html#a5">returnSession</a> (<a class="el" href="classCDBSession.html">CDBSession</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>int&nbsp;</td><td valign=bottom><a class="el" href="classCDBPool.html#a6">size</a> ()</td></tr>
+</table>
+<hr><a name="_details"></a><h2>상세한 내용</h2>
+Database pool class.
+<p>
+수집 쓰레드에서 데이터 베이스 접근에 필요한 데이터베이스 connect session을 관리하는 클래스. 
+<p>
+<hr><h2>생성자 &amp; 소멸자 문서화</h2>
+<a name="a0" doxytag="CDBPool::CDBPool"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CDBPool::CDBPool (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+생성자     </td>
+  </tr>
+</table>
+<a name="a1" doxytag="CDBPool::~CDBPool"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CDBPool::~CDBPool (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [virtual]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+소멸자     </td>
+  </tr>
+</table>
+<hr><h2>멤버 함수 문서화</h2>
+<a name="a4" doxytag="CDBPool::getSession"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+<a class="el" href="classCDBSession.html">CDBSession</a> * CDBPool::getSession (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>key</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+주어진 key에 해당하는 Database session을 얻어오는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>database</em>
+&nbsp;</td><td>
+session key(character string). </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>반환: </b><dd>
+<a class="el" href="classCDBSession.html">CDBSession</a> pointer. </dl><dl compact><dt>
+<b>참조하시요: </b><dd>
+CDBsession </dl>    </td>
+  </tr>
+</table>
+<a name="a3" doxytag="CDBPool::getSession"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+<a class="el" href="classCDBSession.html">CDBSession</a> * CDBPool::getSession (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>userid</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+char * <em>passwd</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+char * <em>sid</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+주어진 User ID, password, SID에 해당하는 Database session을 얻어오는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>oracle</em>
+&nbsp;</td><td>
+user id. </td></tr>
+<tr><td valign=top><em>password.</em>
+&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em>Oracle</em>
+&nbsp;</td><td>
+SID. </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>반환: </b><dd>
+<a class="el" href="classCDBSession.html">CDBSession</a> pointer. </dl><dl compact><dt>
+<b>참조하시요: </b><dd>
+<a class="el" href="classCDBSession.html">CDBSession</a> </dl>    </td>
+  </tr>
+</table>
+<a name="a2" doxytag="CDBPool::putSession"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CDBPool::putSession (
+          </b></td>
+          <td valign="bottom"><b>
+<a class="el" href="classCDBSession.html">CDBSession</a> * <em>session</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+새로운 데이터베이스 연결 세션을 추가하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>CDBSession</em>
+&nbsp;</td><td>
+pointer. </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>참조하시요: </b><dd>
+<a class="el" href="classCDBSession.html">CDBSession</a> </dl>    </td>
+  </tr>
+</table>
+<a name="a5" doxytag="CDBPool::returnSession"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CDBPool::returnSession (
+          </b></td>
+          <td valign="bottom"><b>
+<a class="el" href="classCDBSession.html">CDBSession</a> *&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+얻어온 Database session을 Database pool로 반납하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>CDBSession</em>
+&nbsp;</td><td>
+pointer. </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>참조하시요: </b><dd>
+<a class="el" href="classCDBSession.html">CDBSession</a> </dl>    </td>
+  </tr>
+</table>
+<a name="a6" doxytag="CDBPool::size"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+int CDBPool::size (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+현재 데이터베이스 pool에 저장된 Database 연결 세션 개수을 얻어온는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+database session count. </dl>    </td>
+  </tr>
+</table>
+<hr>이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:<ul>
+<li><a class="el" href="CDBPool_8h-source.html">CDBPool.h</a></ul>
+<hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

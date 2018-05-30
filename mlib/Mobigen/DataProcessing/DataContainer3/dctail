@@ -1,0 +1,51 @@
+#!/usr/bin/python
+
+VERSION = '1.2'
+# V1.1 : 050906 : tesse
+# V1.2 : 060727 : tesse
+
+import sys, struct, time, getopt
+import DataContainer
+import DataLog
+
+def prn(fileTime, msgTime, opt, key, val, **optDict) :
+
+	if '-e' in optDict :
+		print '%s|%s|%s|%s' % (fileTime, msgTime, opt, key)
+
+	elif '-o' in optDict :
+		print '%s' % (val)
+
+	else :
+		print '%s|%s|%s|%s|%s' % (fileTime, msgTime, opt, key, val)
+
+def main() :
+	try :
+		optList, args = getopt.getopt(sys.argv[1:], 'leo')
+		if len(args) != 3 : raise Exception
+		optDict = {}
+		for optKey, optVal in optList : optDict[optKey] = optVal
+	except Exception, err :
+		print 'usage : %s [-eol] homeDir fileTime(yyyymmddhh0000) recno(0)' % (sys.argv[0])
+		print '        -e : print only DC2 HeADER'
+		print '        -o : print only DC2 BoDY'
+		print '        -l : print lAST fileTime and recno'
+		sys.exit()
+
+	homeDir, fileTime, recno = args[:3]
+	recno = int(recno)
+
+	db = DataContainer.DataContainer(homeDir)
+
+	if '-l' in optDict :
+		fileTime, msgTime, opt, key, val = db.getLast()
+	else :
+		fileTime, msgTime, opt, key, val = db.get(fileTime, recno)
+
+	prn( fileTime, msgTime, opt, key, val, **optDict )
+
+	while True :
+		fileTime, msgTime, opt, key, val = db.next()
+		prn( fileTime, msgTime, opt, key, val, **optDict )
+
+if __name__ == '__main__' : main()

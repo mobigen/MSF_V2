@@ -1,0 +1,238 @@
+\section{CMessage\-Formatter  클래스 참조}
+\label{classCMessageFormatter}\index{CMessageFormatter@{CMessage\-Formatter}}
+수집된 메시지를 SMS Manager와 규약된 메시지 포맷으로 변환하는 클래스. 
+
+
+{\tt \#include $<$CMessage\-Formatter.h$>$}
+
+\subsection*{공용 메소드}
+\begin{CompactItemize}
+\item 
+{\bf CMessage\-Formatter} ()
+\item 
+{\bf $\sim$CMessage\-Formatter} ()
+\item 
+void {\bf set\-Poll\-Time} (time\_\-t polltime)
+\item 
+void {\bf set\-Item} ({\bf CItem} $\ast$item)
+\item 
+void {\bf set\-Title} (char $\ast$title)
+\item 
+void {\bf set\-Command} (char $\ast$cmd)
+\item 
+void {\bf set\-Type} (unsigned int type)
+\item 
+void {\bf set\-Item\-Condition} ({\bf CItem\-Condition} $\ast$)
+\item 
+void {\bf set\-Item\-Code} (char $\ast$code)
+\item 
+void {\bf set\-Item\-Code} (std::string)
+\item 
+void {\bf set\-Event\-Status} (bool b)
+\item 
+char$\ast$ {\bf make\-Message} ()
+\item 
+std::string {\bf make\-Error\-Message} (char $\ast$msg)
+\item 
+std::string {\bf make\-Error\-Message} (std::string msg)
+\item 
+std::string {\bf get\-Type\-Code} ()
+\item 
+void {\bf add\-Message} (char $\ast$msg)
+\end{CompactItemize}
+
+
+\subsection{상세한 내용}
+수집된 메시지를 SMS Manager와 규약된 메시지 포맷으로 변환하는 클래스.
+
+메시지 유형에 따라 다음 3가지 포맷으로 변환시킨다.\begin{enumerate}
+\item 
+PASSIVE :\par
+ \$\{HOSTNAME\} YYYY-MM-DD HH:MI:SS\par
+ \$\{ITEM\_\-CODE\} \$\{ITEM\_\-DESCRIPTION\}\par
+ PASSIVE \$\{COMMAND\}\par
+ \$\{DATA HEADER\}\par
+ \$\{DATA\}\par
+ COMPLETED\par
+\item 
+ACTIVE :\par
+ \$\{HOSTNAME\} YYYY-MM-DD HH:MI:SS\par
+ \$\{ITEM\_\-CODE\} \$\{ITEM\_\-DESCRIPTION\}\par
+ ACTIVE\par
+ \$\{DATA HEADER\}\par
+ \$\{DATA\}\par
+ COMPLETED\par
+\item 
+EVENT :\par
+ \$\{HOSTNAME\} YYYY-MM-DD HH:MI:SS\par
+ \$\{ITEM\_\-CODE\} \$\{ITEM\_\-DESCRIPTION\}\par
+ EVENT \$\{CONDITION\} \$\{ELEMENT\} \$\{SEVERITY\} \$\{START/END\}\par
+ \$\{DATA HEADER\}\par
+ \$\{DATA\}\par
+ COMPLETED\par
+ \end{enumerate}
+
+
+
+
+\subsection{생성자 \& 소멸자 문서화}
+\index{CMessageFormatter@{CMessage\-Formatter}!CMessageFormatter@{CMessageFormatter}}
+\index{CMessageFormatter@{CMessageFormatter}!CMessageFormatter@{CMessage\-Formatter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CMessage\-Formatter::CMessage\-Formatter ()}\label{classCMessageFormatter_a0}
+
+
+생성자 \index{CMessageFormatter@{CMessage\-Formatter}!~CMessageFormatter@{$\sim$CMessageFormatter}}
+\index{~CMessageFormatter@{$\sim$CMessageFormatter}!CMessageFormatter@{CMessage\-Formatter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CMessage\-Formatter::$\sim$CMessage\-Formatter ()}\label{classCMessageFormatter_a1}
+
+
+소멸자 
+
+\subsection{멤버 함수 문서화}
+\index{CMessageFormatter@{CMessage\-Formatter}!addMessage@{addMessage}}
+\index{addMessage@{addMessage}!CMessageFormatter@{CMessage\-Formatter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CMessage\-Formatter::add\-Message (char $\ast$ {\em msg})\hspace{0.3cm}{\tt  [inline]}}\label{classCMessageFormatter_a15}
+
+
+작성될 메시지를 추가하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em .}]\end{description}
+\end{Desc}
+\index{CMessageFormatter@{CMessage\-Formatter}!getTypeCode@{getTypeCode}}
+\index{getTypeCode@{getTypeCode}!CMessageFormatter@{CMessage\-Formatter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}std::string CMessage\-Formatter::get\-Type\-Code ()}\label{classCMessageFormatter_a14}
+
+
+수집 유형 정보를 반환하는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+수집 유형(TYPE\_\-ACTIVE/TYPE\_\-PASSIVE/TYPE\_\-EVENT) \end{Desc}
+\index{CMessageFormatter@{CMessage\-Formatter}!makeErrorMessage@{makeErrorMessage}}
+\index{makeErrorMessage@{makeErrorMessage}!CMessageFormatter@{CMessage\-Formatter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}std::string CMessage\-Formatter::make\-Error\-Message (std::string {\em msg})}\label{classCMessageFormatter_a13}
+
+
+에러 메시지를 생성하기 위한 메쏘드. 현재 의미 없음. \index{CMessageFormatter@{CMessage\-Formatter}!makeErrorMessage@{makeErrorMessage}}
+\index{makeErrorMessage@{makeErrorMessage}!CMessageFormatter@{CMessage\-Formatter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}std::string CMessage\-Formatter::make\-Error\-Message (char $\ast$ {\em msg})}\label{classCMessageFormatter_a12}
+
+
+에러 메시지를 생성하기 위한 메쏘드. 현재 의미 없음. \index{CMessageFormatter@{CMessage\-Formatter}!makeMessage@{makeMessage}}
+\index{makeMessage@{makeMessage}!CMessageFormatter@{CMessage\-Formatter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ CMessage\-Formatter::make\-Message ()}\label{classCMessageFormatter_a11}
+
+
+수집된 정보를 SMS Manager로 전송하기 위한 메시지 포맷으로 변환하는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+변환된 메시지. \end{Desc}
+\index{CMessageFormatter@{CMessage\-Formatter}!setCommand@{setCommand}}
+\index{setCommand@{setCommand}!CMessageFormatter@{CMessage\-Formatter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CMessage\-Formatter::set\-Command (char $\ast$ {\em cmd})\hspace{0.3cm}{\tt  [inline]}}\label{classCMessageFormatter_a5}
+
+
+PASSIVE에 의한 데이터 수집인 경우, SMS Manager로부터 전송받은 수집 명령어를 설정하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em .}]\end{description}
+\end{Desc}
+\index{CMessageFormatter@{CMessage\-Formatter}!setEventStatus@{setEventStatus}}
+\index{setEventStatus@{setEventStatus}!CMessageFormatter@{CMessage\-Formatter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CMessage\-Formatter::set\-Event\-Status (bool {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{classCMessageFormatter_a10}
+
+
+수집된 정보가 장애 정보인 경우 장애 발생 여부. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em true}]: START, end : END. \end{description}
+\end{Desc}
+\index{CMessageFormatter@{CMessage\-Formatter}!setItem@{setItem}}
+\index{setItem@{setItem}!CMessageFormatter@{CMessage\-Formatter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CMessage\-Formatter::set\-Item ({\bf CItem} $\ast$ {\em item})\hspace{0.3cm}{\tt  [inline]}}\label{classCMessageFormatter_a3}
+
+
+수집하는 item(CItem) 정보를 설정하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em CItem}]pointer. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 참조하시요: }]\par
+{\bf CItem} {\rm (페이지\,\pageref{classCItem})}. \end{Desc}
+\index{CMessageFormatter@{CMessage\-Formatter}!setItemCode@{setItemCode}}
+\index{setItemCode@{setItemCode}!CMessageFormatter@{CMessage\-Formatter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CMessage\-Formatter::set\-Item\-Code (std::string)}\label{classCMessageFormatter_a9}
+
+
+수집된 item code 정보를 설정하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em item}]code(string). \end{description}
+\end{Desc}
+\index{CMessageFormatter@{CMessage\-Formatter}!setItemCode@{setItemCode}}
+\index{setItemCode@{setItemCode}!CMessageFormatter@{CMessage\-Formatter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CMessage\-Formatter::set\-Item\-Code (char $\ast$ {\em code})}\label{classCMessageFormatter_a8}
+
+
+수집된 item code 정보를 설정하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em item}]code(character). \end{description}
+\end{Desc}
+\index{CMessageFormatter@{CMessage\-Formatter}!setItemCondition@{setItemCondition}}
+\index{setItemCondition@{setItemCondition}!CMessageFormatter@{CMessage\-Formatter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CMessage\-Formatter::set\-Item\-Condition ({\bf CItem\-Condition} $\ast$)}\label{classCMessageFormatter_a7}
+
+
+수집된 데이터가 장애 데이터인 경우에 장애 판단 조건을 설정하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em CItem\-Condition}]) pointer. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 참조하시요: }]\par
+{\bf CItem\-Condition} {\rm (페이지\,\pageref{classCItemCondition})} \end{Desc}
+\index{CMessageFormatter@{CMessage\-Formatter}!setPollTime@{setPollTime}}
+\index{setPollTime@{setPollTime}!CMessageFormatter@{CMessage\-Formatter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CMessage\-Formatter::set\-Poll\-Time (time\_\-t {\em polltime})\hspace{0.3cm}{\tt  [inline]}}\label{classCMessageFormatter_a2}
+
+
+수집 시간을 설정하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em .}]\end{description}
+\end{Desc}
+\index{CMessageFormatter@{CMessage\-Formatter}!setTitle@{setTitle}}
+\index{setTitle@{setTitle}!CMessageFormatter@{CMessage\-Formatter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CMessage\-Formatter::set\-Title (char $\ast$ {\em title})\hspace{0.3cm}{\tt  [inline]}}\label{classCMessageFormatter_a4}
+
+
+데이터의 수집 항목에 대한 Header 정보를 설정하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em header}]정보. \end{description}
+\end{Desc}
+\index{CMessageFormatter@{CMessage\-Formatter}!setType@{setType}}
+\index{setType@{setType}!CMessageFormatter@{CMessage\-Formatter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CMessage\-Formatter::set\-Type (unsigned int {\em type})\hspace{0.3cm}{\tt  [inline]}}\label{classCMessageFormatter_a6}
+
+
+수집 유형을 설정하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em TYPE\_\-PASSIVE}]/TYPE\_\-ACTIVE/TYPE\_\-EVENT) \end{description}
+\end{Desc}
+
+
+이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:\begin{CompactItemize}
+\item 
+{\bf CMessage\-Formatter.h}\end{CompactItemize}

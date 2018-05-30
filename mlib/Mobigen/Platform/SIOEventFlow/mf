@@ -1,0 +1,49 @@
+#!/usr/bin/perl -w
+
+use strict;
+use IO::Socket;
+use IO::Handle;
+
+MAIN:
+{
+	if ( @ARGV < 1 ) 
+	{
+		print "usage : mf port [command]\n";
+		print "ex    : mf 9100 act,ps00\n";
+		exit;
+	}
+
+    if ( @ARGV < 2 )
+    {
+        push @ARGV,'shw';
+        #push @ARGV,'all';
+        #print "<error>\n";
+        #print "need arguments!!!\n";
+        #print "<end>\n";
+        #exit;
+    }
+    my $sock = new IO::Socket::INET(
+            PeerAddr => '127.0.0.1',
+            PeerPort => $ARGV[0],
+            Proto => 'tcp' );
+
+
+    unless ( $sock )
+    {
+        print "<error>\n";
+        print "socket create fail.. $! \n";
+        print "<end>\n";
+        exit;
+    }
+
+    print $sock "$ARGV[1]\n";
+    while (my $line = <$sock>)
+    {
+        print $line;
+        if ( $line =~ /\<end\>/)
+        {
+            print $sock "bye\n";
+            exit;
+        }
+    }
+}

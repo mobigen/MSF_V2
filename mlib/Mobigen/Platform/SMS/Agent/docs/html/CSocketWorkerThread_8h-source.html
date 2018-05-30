@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CSocketWorkerThread.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CSocketWorkerThread.h</h1><div class="fragment"><pre>00001 
+00002 <font class="preprocessor">#ifndef __CSOCKETWORKERTHREADH__</font>
+00003 <font class="preprocessor"></font><font class="preprocessor">#define __CSOCKETWORKERTHREADH__</font>
+00004 <font class="preprocessor"></font>
+00005 <font class="preprocessor">#include "termio.h"</font>
+00006 <font class="preprocessor">#include "CAgentEnvVar.h"</font>
+00007 <font class="preprocessor">#include "CSocketWorker.h"</font>
+00008 <font class="preprocessor">#include "SCThreadObserver.h"</font>
+00009 <font class="preprocessor">#include "CProtocolProcessor.h"</font>
+00010 <font class="preprocessor">#include "CMisc.h"</font>
+00011 
+00012 <font class="keyword">extern</font> pthread_mutex_t g_session_lock;
+00013 
+00014 <font class="preprocessor">#define SC_STREAM_TYPE_EVENT 1</font>
+00015 <font class="preprocessor"></font><font class="preprocessor">#define SC_STREAM_TYPE_COMMAND 2</font>
+00016 <font class="preprocessor"></font><font class="preprocessor">#define SC_STREAM_TYPE_SESSION 3</font>
+00017 <font class="preprocessor"></font>
+00018 <font class="preprocessor">#define TELNET_SE               240 </font>
+00019 <font class="preprocessor"></font><font class="preprocessor">#define TELNET_NOP              241 </font>
+00020 <font class="preprocessor"></font><font class="preprocessor">#define TELNET_DATA_MARK        242 </font>
+00021 <font class="preprocessor"></font><font class="preprocessor">#define TELNET_BRK              243 </font>
+00022 <font class="preprocessor"></font><font class="preprocessor">#define TELNET_IP               244 </font>
+00023 <font class="preprocessor"></font><font class="preprocessor">#define TELNET_AO               245 </font>
+00024 <font class="preprocessor"></font><font class="preprocessor">#define TELNET_AYT              246 </font>
+00025 <font class="preprocessor"></font><font class="preprocessor">#define TELNET_EC               247 </font>
+00026 <font class="preprocessor"></font><font class="preprocessor">#define TELNET_EL               248 </font>
+00027 <font class="preprocessor"></font><font class="preprocessor">#define TELNET_GA               249 </font>
+00028 <font class="preprocessor"></font><font class="preprocessor">#define TELNET_SB               250 </font>
+00029 <font class="preprocessor"></font><font class="preprocessor">#define TELNET_WILL             251 </font>
+00030 <font class="preprocessor"></font><font class="preprocessor">#define TELNET_WONT             252 </font>
+00031 <font class="preprocessor"></font><font class="preprocessor">#define TELNET_DO               253 </font>
+00032 <font class="preprocessor"></font><font class="preprocessor">#define TELNET_DONT             254 </font>
+00033 <font class="preprocessor"></font><font class="preprocessor">#define TELNET_IAC              255 </font>
+00034 <font class="preprocessor"></font>
+00035 
+00036 <font class="preprocessor">#define TELNET_ECHO               1 </font>
+00037 <font class="preprocessor"></font><font class="preprocessor">#define TELNET_SUPPRESS_GO_AHEAD  3 </font>
+00038 <font class="preprocessor"></font>
+00039 
+<a name="l00041"></a><a class="code" href="classCSocketWorkerThread.html">00041</a> <font class="keyword">class </font><a class="code" href="classCSocketWorkerThread.html">CSocketWorkerThread</a> : <font class="keyword">public</font> OpenThreads::Thread, <font class="keyword">public</font> <a class="code" href="classThreadReporter.html">ThreadReporter</a>, <font class="keyword">public</font> <a class="code" href="classCSocketWorker.html">CSocketWorker</a> {
+00042 
+00043 <font class="keyword">public</font>:
+<a name="l00052"></a><a class="code" href="classCSocketWorkerThread.html#a0">00052</a>     <a class="code" href="classCSocketWorkerThread.html#a0">CSocketWorkerThread</a>(<a class="code" href="classCAgentEnvVar.html">CAgentEnvVar</a> *envvar, <font class="keywordtype">void</font> *_data, <font class="keywordtype">bool</font> *_session, <font class="keywordtype">int</font> port, <font class="keywordtype">int</font> numElts, <font class="keywordtype">int</font> type) : OpenThreads::Thread(), <a class="code" href="classThreadReporter.html">ThreadReporter</a>(),
+00053         m_envvar(envvar), m_data(_data), m_session_status(_session), m_port(port), _numElts(numElts), _quitflag(false), m_type(type) { pthread_mutex_init(&amp;m_lock, NULL); };
+<a name="l00055"></a><a class="code" href="classCSocketWorkerThread.html#a1">00055</a>     <font class="keyword">virtual</font> <a class="code" href="classCSocketWorkerThread.html#a1">~CSocketWorkerThread</a>()<font class="keyword"> </font>{ pthread_mutex_destroy(&amp;m_lock); };
+00057     <font class="keyword">virtual</font> <font class="keywordtype">void</font> <a class="code" href="classCSocketWorkerThread.html#a2">run</a>();
+00059         <font class="keywordtype">void</font> <a class="code" href="classCSocketWorkerThread.html#a3">processEventMessage</a>();
+00061         <font class="keywordtype">void</font> <a class="code" href="classCSocketWorkerThread.html#a4">processCommandMessage</a>();
+00063         <font class="keywordtype">void</font> <a class="code" href="classCSocketWorkerThread.html#a5">processSessionStatus</a>();
+00065         <font class="keywordtype">void</font> <a class="code" href="classCSocketWorkerThread.html#a6">lock</a>();
+00067         <font class="keywordtype">void</font> <a class="code" href="classCSocketWorkerThread.html#a7">unlock</a>();
+00069     <font class="keywordtype">void</font> <a class="code" href="classCSocketWorkerThread.html#a8">quit</a>();
+00074         <font class="keywordtype">bool</font> <a class="code" href="classCSocketWorkerThread.html#a9">login</a>();
+00075 
+00076 <font class="keyword">private</font>:
+00077         <font class="keywordtype">bool</font> *m_session_status; 
+00078         <font class="keywordtype">int</font> m_port;     
+00079         <font class="keywordtype">int</font> m_type;     
+00080         <font class="keywordtype">void</font> *m_data;   
+00081         <a class="code" href="classCAgentEnvVar.html">CAgentEnvVar</a> *m_envvar; 
+00083     <font class="keywordtype">int</font> _numElts;       
+00084     <font class="keyword">volatile</font> <font class="keywordtype">bool</font> _quitflag;    
+00085         pthread_mutex_t m_lock;         
+00086     <font class="comment">//OpenThreads::Mutex _quitmutex;</font>
+00087 };
+00088 
+00089 <font class="keywordtype">void</font> startSocketWorkerThread(<a class="code" href="classCAgentEnvVar.html">CAgentEnvVar</a> *envvar, <font class="keywordtype">void</font> *data, <font class="keywordtype">bool</font> *b, <font class="keywordtype">int</font> port, <font class="keywordtype">int</font> type);
+00090 
+00091 
+00092 <font class="preprocessor">#endif </font><font class="comment">/* __CSOCKETWORKERTHREADH__ */</font>
+</pre></div><hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

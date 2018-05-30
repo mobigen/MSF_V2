@@ -1,0 +1,155 @@
+\section{CLog\-Check\-Collector  클래스 참조}
+\label{classCLogCheckCollector}\index{CLogCheckCollector@{CLog\-Check\-Collector}}
+로그 파일의 내용을 수집하여 보고하는 클래스. 
+
+
+{\tt \#include $<$CLog\-Check\-Collector.h$>$}
+
+CLog\-Check\-Collector에 대한 상속 도표:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCLogCheckCollector}
+\end{center}
+\end{figure}
+\subsection*{공용 메소드}
+\begin{CompactItemize}
+\item 
+{\bf CLog\-Check\-Collector} ()
+\item 
+{\bf $\sim$CLog\-Check\-Collector} ()
+\item 
+void {\bf collect} ()
+\item 
+void {\bf collect\-Log} ()
+\item 
+void {\bf collect\-Log\-Instance} (st\_\-loginst $\ast$loginst)
+\item 
+void {\bf check\-Fmt\-Instance} ()
+\item 
+void {\bf set\-Fmt\-Instance} ()
+\item 
+void {\bf check\-Condition} (st\_\-loginst $\ast$loginst, char $\ast$log)
+\item 
+void {\bf send\-Event} ({\bf CItem\-Condition} $\ast$cond, st\_\-loginst $\ast$loginst, char $\ast$log)
+\item 
+void {\bf make\-Message} ()
+\item 
+void {\bf set\-Log\-File\-Info} (st\_\-loginst $\ast$loginst, bool b)
+\item 
+void {\bf is\-Over\-Threshold} ({\bf CItem\-Condition} $\ast$cond)
+\end{CompactItemize}
+
+
+\subsection{상세한 내용}
+로그 파일의 내용을 수집하여 보고하는 클래스.
+
+로그 파일명(instance name)은 일반 파일 및 다음과 같은 포맷의 파일 형태가 올 수 있다. Y : 4자리 년도. y : 2자리 년도. m : 2자리 월. d : 2자리 일. H : 2자리 시간. M : 2자리 분. S : 2자리 초. ex) instance가 \char`\"{}logfile\_\-Y-m-d\char`\"{}라면, 실제 파일명은 \char`\"{}logfile\_\-2006-04-25\char`\"{}로 변경된다. 
+
+
+
+\subsection{생성자 \& 소멸자 문서화}
+\index{CLogCheckCollector@{CLog\-Check\-Collector}!CLogCheckCollector@{CLogCheckCollector}}
+\index{CLogCheckCollector@{CLogCheckCollector}!CLogCheckCollector@{CLog\-Check\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CLog\-Check\-Collector::CLog\-Check\-Collector ()}\label{classCLogCheckCollector_a0}
+
+
+생성자 \index{CLogCheckCollector@{CLog\-Check\-Collector}!~CLogCheckCollector@{$\sim$CLogCheckCollector}}
+\index{~CLogCheckCollector@{$\sim$CLogCheckCollector}!CLogCheckCollector@{CLog\-Check\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CLog\-Check\-Collector::$\sim$CLog\-Check\-Collector ()}\label{classCLogCheckCollector_a1}
+
+
+소멸자 
+
+\subsection{멤버 함수 문서화}
+\index{CLogCheckCollector@{CLog\-Check\-Collector}!checkCondition@{checkCondition}}
+\index{checkCondition@{checkCondition}!CLogCheckCollector@{CLog\-Check\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CLog\-Check\-Collector::check\-Condition (st\_\-loginst $\ast$ {\em loginst}, char $\ast$ {\em log})}\label{classCLogCheckCollector_a7}
+
+
+주어진 문자열의 내용이 장애 발생 조건식({\bf CItem\-Condition} {\rm (페이지\,\pageref{classCItemCondition})})을 만족하는지 여부를 판단하고, 장애를 발생시키는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em instance}]). \item[
+{\em .}]\end{description}
+\end{Desc}
+\index{CLogCheckCollector@{CLog\-Check\-Collector}!checkFmtInstance@{checkFmtInstance}}
+\index{checkFmtInstance@{checkFmtInstance}!CLogCheckCollector@{CLog\-Check\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CLog\-Check\-Collector::check\-Fmt\-Instance ()}\label{classCLogCheckCollector_a5}
+
+
+시간 정보가 변경되어 로그 파일명이 새로운 시간으로 새로 생긴 경우에 이를 확인하기 위한 메쏘드. 예를 들어 Instace가 \char`\"{}log.Y-m-d\char`\"{}로 등록되어 이전까지 \char`\"{}log.2006-04-20\char`\"{}파일의 정보를 수집하다가, 시스템의 현재 시간이 2006년 4월 21일로 바뀐 경우는 \char`\"{}log.2006-04-21\char`\"{}파일로 변경되었기 때문에 이에 대한 확인이 필요한다. \index{CLogCheckCollector@{CLog\-Check\-Collector}!collect@{collect}}
+\index{collect@{collect}!CLogCheckCollector@{CLog\-Check\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CLog\-Check\-Collector::collect ()\hspace{0.3cm}{\tt  [virtual]}}\label{classCLogCheckCollector_a2}
+
+
+로그 정보를 수집하는 메쏘드. {\bf CCollector} {\rm (페이지\,\pageref{classCCollector})} 클래스의 메쏘드를 overriding한다. \begin{Desc}
+\item[{\bf 참조하시요: }]\par
+{\bf CCollector} {\rm (페이지\,\pageref{classCCollector})}. \end{Desc}
+
+
+{\bf CCollector} {\rm (페이지\,\pageref{classCCollector_a2})}으로부터 재구현된.\index{CLogCheckCollector@{CLog\-Check\-Collector}!collectLog@{collectLog}}
+\index{collectLog@{collectLog}!CLogCheckCollector@{CLog\-Check\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CLog\-Check\-Collector::collect\-Log ()}\label{classCLogCheckCollector_a3}
+
+
+실제 로그 정보를 수집하는 메쏘드. \index{CLogCheckCollector@{CLog\-Check\-Collector}!collectLogInstance@{collectLogInstance}}
+\index{collectLogInstance@{collectLogInstance}!CLogCheckCollector@{CLog\-Check\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CLog\-Check\-Collector::collect\-Log\-Instance (st\_\-loginst $\ast$ {\em loginst})}\label{classCLogCheckCollector_a4}
+
+
+등록된 인스턴스(로그 파일) 개별로 로그 정보를 수집하는 메쏘드. 처음 기동시에는 정보를 수집하지 않고, 두 번째 수집 주기부터, 발생하는 로그 정보를 수집하여, {\bf CItem\-Condition} {\rm (페이지\,\pageref{classCItemCondition})}에 등록된 장애 발생 조건과 비교하여 event를 발생시킨다. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em instance}]) 정보. \end{description}
+\end{Desc}
+\index{CLogCheckCollector@{CLog\-Check\-Collector}!isOverThreshold@{isOverThreshold}}
+\index{isOverThreshold@{isOverThreshold}!CLogCheckCollector@{CLog\-Check\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CLog\-Check\-Collector::is\-Over\-Threshold ({\bf CItem\-Condition} $\ast$ {\em cond})\hspace{0.3cm}{\tt  [inline, virtual]}}\label{classCLogCheckCollector_a11}
+
+
+장애 임계치 판단을 하는 메쏘드. 본 클래스에서는 의미없음. 
+
+{\bf CCollector} {\rm (페이지\,\pageref{classCCollector_a4})}으로부터 재구현된.\index{CLogCheckCollector@{CLog\-Check\-Collector}!makeMessage@{makeMessage}}
+\index{makeMessage@{makeMessage}!CLogCheckCollector@{CLog\-Check\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CLog\-Check\-Collector::make\-Message ()\hspace{0.3cm}{\tt  [virtual]}}\label{classCLogCheckCollector_a9}
+
+
+수집된 로그 정보를 SMS Manager로 전송하기 위한 메시지 포맷으로 변환하는 메쏘드. 
+
+{\bf CCollector} {\rm (페이지\,\pageref{classCCollector_a3})}으로부터 재구현된.\index{CLogCheckCollector@{CLog\-Check\-Collector}!sendEvent@{sendEvent}}
+\index{sendEvent@{sendEvent}!CLogCheckCollector@{CLog\-Check\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CLog\-Check\-Collector::send\-Event ({\bf CItem\-Condition} $\ast$ {\em cond}, st\_\-loginst $\ast$ {\em loginst}, char $\ast$ {\em log})}\label{classCLogCheckCollector_a8}
+
+
+장애 메시지를 생성하여 장애 메시지 버퍼로 전송하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em CItem\-Condition}]pointer. \item[
+{\em Instance}]). \item[
+{\em .}]\end{description}
+\end{Desc}
+\index{CLogCheckCollector@{CLog\-Check\-Collector}!setFmtInstance@{setFmtInstance}}
+\index{setFmtInstance@{setFmtInstance}!CLogCheckCollector@{CLog\-Check\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CLog\-Check\-Collector::set\-Fmt\-Instance ()}\label{classCLogCheckCollector_a6}
+
+
+변경된 새로운 로그 파일명으로 설정하는 메쏘드. \index{CLogCheckCollector@{CLog\-Check\-Collector}!setLogFileInfo@{setLogFileInfo}}
+\index{setLogFileInfo@{setLogFileInfo}!CLogCheckCollector@{CLog\-Check\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CLog\-Check\-Collector::set\-Log\-File\-Info (st\_\-loginst $\ast$ {\em loginst}, bool {\em b})}\label{classCLogCheckCollector_a10}
+
+
+로그 파일의 상세 정보를 조회하여 설정하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em Instance}]). \item[
+{\em .}]true : 처음 기동하여 로그를 수집, false : 이전에 로그를 수집한 적이 있음. \end{description}
+\end{Desc}
+
+
+이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:\begin{CompactItemize}
+\item 
+{\bf CLog\-Check\-Collector.h}\end{CompactItemize}

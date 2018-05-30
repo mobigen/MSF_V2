@@ -1,0 +1,82 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import re
+import os
+import sys
+import copy
+import time
+import signal
+import socket
+import urlparse
+import ConfigParser
+import SummaryCore
+import CorrelationCore
+import Mobigen.Common.Log as Log; Log.Init()
+
+TERM = False
+
+def handler(snum, sfrm) :
+	global TERM
+	TERM = True
+
+signal.signal(signal.SIGTERM, handler)
+signal.signal(signal.SIGINT, handler)
+
+def usage() :
+	print "usage : %s section conf" % sys.argv[0]
+	print "ex    : %s META_KPI ../conf/Config.conf" % sys.argv[0]
+	sys.exit()
+
+
+def main() :
+	if (len(sys.argv) != 3) : usage()
+
+	section, conf = sys.argv[1:]
+
+	while (not TERM) :
+#	{
+		in_message = sys.stdin.readline()
+
+		urls = urlparse.urlsplit(in_message)
+
+		file_scheme = urls.scheme.strip()
+		file_name = urls.path.strip()
+
+		if (file_scheme != "file") : continue
+
+		if (os.path.exists(file_name)) :
+		#	start = time.time()
+
+			# pre correlation
+			cc = CorrelationCore.CorrelationCore(section, conf)
+
+			fd = open(file_name)
+			for line in fd.xreadlines() :
+				cc.sfio("PUT," + line)
+			fd.close()
+
+			try : cc.correlation()
+			except : __LOG__.Exception()
+
+			# save file
+			try : file_time = re.search("(\d{12})", file_name).group(1) + "00"
+			except : file_time = "None"
+
+			out_message = cc.sfio("SVF" + "," + file_time + "," + "\n")
+			sys.stdout.write("file://" + out_message + "\n")
+			sys.stdout.flush()
+
+			# pre correlation close
+			cc.close()
+
+		#	end = time.time()
+		#	print "elapsed time (%.2f)" % (end - start)
+		
+		sys.stderr.write(in_message)
+		sys.stderr.flush()
+#	}
+
+if __name__ == "__main__" :
+	Log.Init(Log.CRotatingLog("PC.log", 100000, 5))
+	main()

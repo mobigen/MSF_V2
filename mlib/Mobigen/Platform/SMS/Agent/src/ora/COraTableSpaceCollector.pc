@@ -1,0 +1,249 @@
+
+#define SQLCA_NONE
+#include <sqlca.h>
+extern struct sqlca sqlca;
+
+#include "COraTableSpaceCollector.h"
+#include "CAlarmProcessor.h"
+
+
+COraTableSpaceCollector::COraTableSpaceCollector()
+{
+	m_list = NULL;
+}
+
+COraTableSpaceCollector::~COraTableSpaceCollector()
+{
+	if(m_list!=NULL)
+		scCoreViewRelease(&m_list);
+}
+
+void COraTableSpaceCollector::collect()
+{
+	char *msg=NULL;
+
+	if(collectOraData()==false) return;
+
+	if(m_pollitem->getPollType() == TYPE_EVENT) {
+		CAlarmProcessor ap(this);
+		ap.check();
+	} else {
+		makeMessage();
+		msg = m_msgfmt.makeMessage();
+
+		if(m_pollitem->getPollType() == TYPE_PASSIVE){
+			m_envvar->getRespQ()->enqueue(msg, NULL);		
+		}else{
+			if(isShortPerf()==true){
+				m_envvar->getShortPerfQ()->enqueue(msg, NULL);		
+			}else{
+				m_envvar->getLongPerfQ()->enqueue(msg, NULL);		
+			}
+		}
+	}
+}
+
+void COraTableSpaceCollector::makeMessage()
+{
+	int i=0, at=0;
+	char buf[1024], temp[32], tab=0x09;
+	CQueue *instQ = m_pollitem->getInstQ();
+	elem *e=NULL;
+
+	if(m_list == NULL) return;
+	m_msgfmt.setItem(m_pollitem->getItem());
+	m_msgfmt.setPollTime(m_pollitem->getPollTime());
+	m_msgfmt.setType(m_pollitem->getPollType());
+	if(m_pollitem->getPollType()==TYPE_PASSIVE)
+		m_msgfmt.setCommand((char *)m_pollitem->getCommand().c_str());
+
+	memset(buf, 0x00, sizeof(buf));
+	sprintf(buf, "Instance%ctotalsize(KB)%cused(KB)%cstatus%cusage(%%)\n",
+		tab, tab, tab,tab);
+	m_msgfmt.setTitle(buf);
+
+	while((m_tspace = (st_tspace *)ll_element_at(m_list, at++)) != NULL){
+		memset(buf, 0x00, sizeof(buf));
+		sprintf(buf, "%s%c%d%c%d%c%s%c%.2f\n",
+			m_tspace->name, tab, m_tspace->total, tab,
+			(m_tspace->total-m_tspace->_free), tab, m_tspace->status, tab,
+			m_tspace->usage);
+		m_msgfmt.addMessage(strdup(buf));
+	}
+
+	return;
+}
+
+bool COraTableSpaceCollector::collectOraData()
+{
+	bool b=true;
+	CDBSession *_sess=NULL;
+	CAgentConfigVar *ccv = m_envvar->getAgentConfigVar();
+	EXEC SQL BEGIN DECLARE SECTION;
+		VARCHAR _name[32];
+		VARCHAR _status[12];
+		long _total;
+		long _free;
+		long _largest;
+		double _usage;
+		sql_context *_ctx=NULL;
+	EXEC SQL END DECLARE SECTION;
+		st_tspace _tspace;
+
+
+	if((_sess = m_envvar->getDBPool()->getSession(
+		(char *)ccv->getOraUID().c_str(),
+		(char *)ccv->getOraPasswd().c_str(),
+		(char *)ccv->getOraSID().c_str()))==NULL)
+		return false;
+
+	if((m_list = ll_create_node(NULL,1))==NULL) {
+		//_sess->returnConnection();
+		m_envvar->getDBPool()->returnSession(_sess);
+		return false;
+	}
+
+	_ctx = (sql_context *)_sess->getConnection();
+
+	EXEC SQL CONTEXT USE :*_ctx;
+	EXEC SQL DECLARE SQL_CUR CURSOR FOR
+		SELECT	a.TABLESPACE_NAME,
+				TRUNC(a.BYTES/1024,0) bytes_total,
+				TRUNC(b.BYTES/1024,0)  bytes_free,
+				TRUNC(b.largest/1024,0) largest,
+				a.STATUS,
+				TRUNC(((a.BYTES-b.BYTES)/a.BYTES)*100,5) useRatio
+		FROM
+			(
+				select 	TABLESPACE_NAME,
+						STATUS,
+						sum(BYTES) BYTES 
+				from 	dba_data_files 
+				group 	by TABLESPACE_NAME, STATUS
+			) a,
+			(
+				select 	TABLESPACE_NAME,
+						sum(BYTES) BYTES ,
+						max(BYTES) largest 
+				from 	dba_free_space 
+				group 	by TABLESPACE_NAME
+			) b
+		WHERE a.TABLESPACE_NAME=b.TABLESPACE_NAME
+		ORDER BY useRatio desc;
+
+	EXEC SQL CONTEXT USE :*_ctx;
+	EXEC SQL OPEN SQL_CUR;
+
+	while(1){
+		memset(&_tspace, 0x00, sizeof(_tspace));
+		memset(&_name, 0x00, sizeof(_name));
+		memset(&_status, 0x00, sizeof(_status));
+		EXEC SQL CONTEXT USE :*_ctx;
+		EXEC SQL FETCH SQL_CUR INTO
+			:_name, :_total, :_free, :_largest, :_status, :_usage;
+
+		if(sqlca.sqlcode == 1403) break;
+		else if(sqlca.sqlcode){
+			b = false;
+			goto out_sql;
+		}
+
+		strncpy(_tspace.name, (const char *)_name.arr, _name.len);
+		strncpy(_tspace.status, (const char *)_status.arr, _status.len);
+		_tspace.total = _total;
+		_tspace._free = _free;
+		_tspace.largest = _largest;
+		_tspace.usage = _usage;
+		
+		ll_insert_node(m_list, &_tspace, sizeof(st_tspace), NULL);
+	}
+
+out_sql:
+	EXEC SQL CONTEXT USE :*_ctx;
+	EXEC SQL CLOSE SQL_CUR;
+
+	_sess->returnConnection();
+	m_envvar->getDBPool()->returnSession(_sess);
+	return b;
+}
+
+
+void COraTableSpaceCollector::isOverThreshold(CItemCondition *cond)
+{
+	int at=0,i=0;
+	char temp[250];
+	bool b=false;
+
+	if(cond->getElement() > 4) return;
+	if (m_list == NULL) return;
+
+
+	while((m_tspace = (st_tspace *)ll_element_at(m_list, at++))!=NULL) {
+		if(cond->getInstanceName() == "ALL" || cond->getInstanceName() ==  m_tspace->name) {
+			/* check alarm */
+			if(cond->getElement() == 1) { /* totalsize */
+				b = cond->isOverThreshold( m_tspace->total );
+			} else if(cond->getElement() == 2) { /* used */
+				b = cond->isOverThreshold( (m_tspace->total-m_tspace->_free) );
+			} else if(cond->getElement() == 3) { /* status */
+				b = cond->isOverThreshold( m_tspace->status );
+			}  else if(cond->getElement() == 4) { /* status */
+				b = cond->isOverThreshold( m_tspace->usage );
+			} 
+			checkAlarm(cond, m_tspace->name, b, m_tspace);
+		}
+	}
+
+	return ;
+}
+
+
+void COraTableSpaceCollector::checkAlarm(CItemCondition *_cond, char *inst, bool ialarm, st_tspace *tspace)
+{
+	st_item_alarm alarm;
+	bool _ialarm = false;
+	CItem *item = this->getPolicyItem()->getItem();
+	CMessageFormatter msgfmt;
+	char buf[1024], tab=0x09, *msg;
+
+	memset(&alarm, 0x00, sizeof(st_item_alarm));
+	strncpy(alarm.instance, inst, sizeof(alarm.instance));
+	alarm.condid = _cond->getIndex();
+
+	_ialarm = item->isAlarm(&alarm);
+
+	if(ialarm == false && _ialarm == false) return;
+	else if(ialarm == true && _ialarm == true) return;
+	else if(ialarm == true && _ialarm == false){ /* alarm occurred */
+		st_item_alarm *ia = (st_item_alarm *)malloc(sizeof(st_item_alarm));
+		memset(ia, 0x00, sizeof(st_item_alarm));
+		ia->condid = alarm.condid;
+		strcpy(ia->instance, alarm.instance);
+		item->addAlarm(ia);
+	}else if(ialarm == false && _ialarm == true){ /* alarm cleared */
+		item->delAlarm(&alarm);
+	}
+
+	msgfmt.setItem(m_pollitem->getItem());
+	msgfmt.setPollTime(m_pollitem->getPollTime());
+	msgfmt.setType(m_pollitem->getPollType());
+	msgfmt.setItemCondition(_cond);
+	msgfmt.setEventStatus(ialarm);
+
+	memset(buf, 0x00, sizeof(buf));
+
+	sprintf(buf, "Instance%ctotalsize(KB)%cused(KB)%cstatus%cusage(%%)\n",
+		tab, tab, tab, tab);
+	msgfmt.setTitle(buf);
+
+	memset(buf, 0x00, sizeof(buf));
+	sprintf(buf, "%s%c%d%c%d%c%s%c%.2f\n",
+		tspace->name, tab, tspace->total, tab,
+		(tspace->total-tspace->_free), tab, tspace->status, tab, tspace->usage);
+	msgfmt.addMessage(strdup(buf));
+
+	msg = msgfmt.makeMessage();
+	m_envvar->getEventQ()->enqueue(msg, NULL);		
+
+	return;
+}

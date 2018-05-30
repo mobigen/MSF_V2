@@ -1,0 +1,54 @@
+* INTRO
+	시스템에서 운용하는 프로세스들을 관리한다.
+	비정상 종료되는 프로세스는 다시 실행 시키고, 외부로 프로세스 관리(실행,
+	종료) command를 입력 받아서 이를 수행한다.
+
+* MANIFEST
+	mps.d			실행파일
+	mps.conf		환경설정 파일 
+	mps				mps.d에 TCP/IP를 통해서 명령어를 전달하는 명령어
+	mps.launcher	부팅스크립트에 등록되어서 rebooting시에 실행하도록하기
+					위한 파일
+
+* DEPENDENCY
+	1. python 2.4.x 이상
+
+
+* INSTALLATION
+
+	* CONFIGURATION
+		* 명령어는 절대경로를 입력한다.
+	{{{
+[Process 그룹명]
+고유번호, 종료시 사용되는 시그널, 프로세스설명 = 명령어
+
+[CONF]
+# logfile fullpath
+LOGFILE=/home/eva/log/mps.log 
+	}}}
+
+		* ex
+		{{{
+[Process Group1]
+1001, 15, Group1_prog1 = /group1/test1.d
+1002, 15, Group1_prog2 = /group1/test2.d
+
+[Process Group2]
+2001, 15, Group2_prog1 = /group2/test1.d
+2002, 15, Group2_prog2 = /group2/test2.d
+
+[CONF]
+#LOGFILE default stderr
+LOGFILE=/home/eva/log/mps.log
+		}}}
+
+* RUN
+
+	* 실행
+	$ mps act 고유번호
+	$ mps act 1000-1003
+	$ mps act Group1
+
+	* 중지
+	$ mpa term 고유번호
+	$ mpa term Group2

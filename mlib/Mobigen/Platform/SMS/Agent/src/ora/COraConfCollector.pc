@@ -1,0 +1,319 @@
+
+#define SQLCA_NONE
+#include <sqlca.h>
+extern struct sqlca sqlca;
+
+#include "COraConfCollector.h"
+
+
+COraConfCollector::COraConfCollector()
+{
+	m_list = NULL;
+}
+
+COraConfCollector::~COraConfCollector()
+{
+	if(m_list!=NULL)
+		scCoreViewRelease(&m_list);
+}
+
+void COraConfCollector::collect()
+{
+	char *msg=NULL;
+
+	if(m_pollitem->getPollType() == TYPE_EVENT) {
+		return;
+	}
+
+	if(collectOraData()==false) return;
+
+	makeMessage();
+	msg = m_msgfmt.makeMessage();
+
+	if(m_pollitem->getPollType() == TYPE_PASSIVE){
+		m_envvar->getRespQ()->enqueue(msg, NULL);		
+	}else{
+		if(isShortPerf()==true){
+			m_envvar->getShortPerfQ()->enqueue(msg, NULL);		
+		}else{
+			m_envvar->getLongPerfQ()->enqueue(msg, NULL);		
+		}
+	}
+}
+
+void COraConfCollector::makeMessage()
+{
+	int i=0, at=0;
+	char buf[1024], temp[32], tab=0x09;
+	CQueue *instQ = m_pollitem->getInstQ();
+	elem *e=NULL;
+
+	if(m_list == NULL) return;
+	m_msgfmt.setItem(m_pollitem->getItem());
+	m_msgfmt.setPollTime(m_pollitem->getPollTime());
+	m_msgfmt.setType(m_pollitem->getPollType());
+	if(m_pollitem->getPollType()==TYPE_PASSIVE)
+		m_msgfmt.setCommand((char *)m_pollitem->getCommand().c_str());
+
+	memset(buf, 0x00, sizeof(buf));
+	sprintf(buf, "dbname%cservicename%cdb_uptime%cversion%csga_max_size%csession%cprocesses%cdb_files\n \
+		session_max_files%copen_cursors%cdb_block_size%cshared_pool_size%cshared_pool_reserved_size\n	\
+		sort_area_size%cdbwr_io_slaves\n", 
+		tab,tab,tab,tab,tab,tab,tab,
+		tab,tab,tab,tab, tab);
+	m_msgfmt.setTitle(buf);
+
+	while((m_oraconf = (st_oraconf *)ll_element_at(m_list, at++)) != NULL){
+		memset(buf, 0x00, sizeof(buf));
+		sprintf(buf, 
+		"%s%c%s%c%s%c%s%c%d%c%d%c%d%c%d\n \
+		%d%c%d%c%d%c%d%c%d\n	\
+		%d%c%d\n", 
+		m_oraconf->dbname, tab,m_oraconf->service_name,tab,
+		m_oraconf->db_uptime,tab,m_oraconf->version,tab,m_oraconf->sga_max_size,tab,
+		m_oraconf->sessions,tab,m_oraconf->processes,tab,m_oraconf->db_files,
+		m_oraconf->session_max_files,tab,m_oraconf->open_cursors,tab,m_oraconf->db_block_size,tab,
+		m_oraconf->shared_pool_size,tab,m_oraconf->shared_pool_reserved_size,
+		m_oraconf->sort_area_size,tab,m_oraconf->dbwr_io_slaves);
+
+		m_msgfmt.addMessage(strdup(buf));
+	}
+
+	return;
+}
+
+bool COraConfCollector::collectOraData()
+{
+	bool b=true;
+	CDBSession *_sess=NULL;
+
+	st_oraconf _oraconf;
+	memset(&_oraconf, 0x00, sizeof(_oraconf));
+
+	if((m_list = ll_create_node(NULL,1))==NULL) {
+		//_sess->returnConnection();
+		m_envvar->getDBPool()->returnSession(_sess);
+		return false;
+	}
+
+	collectOraVersion(&_oraconf);
+	collectOraParameter(&_oraconf);
+
+	ll_insert_node(m_list, &_oraconf, sizeof(st_oraconf), NULL);
+
+	return b;
+}
+
+bool COraConfCollector::collectOraVersion(st_oraconf *_oraconf)
+{
+	bool b=true;
+	CDBSession *_sess=NULL;
+	CAgentConfigVar *ccv = m_envvar->getAgentConfigVar();
+
+	EXEC SQL BEGIN DECLARE SECTION;
+		VARCHAR 	_dbname[64];
+		VARCHAR 	_status[20];
+		VARCHAR		_version[20];
+		VARCHAR		_db_uptime[20];
+
+		sql_context *_ctx=NULL;
+
+	EXEC SQL END DECLARE SECTION;
+
+	if((_sess = m_envvar->getDBPool()->getSession(
+		(char *)ccv->getOraUID().c_str(),
+		(char *)ccv->getOraPasswd().c_str(),
+		(char *)ccv->getOraSID().c_str()))==NULL)
+		return false;
+
+	_ctx = (sql_context *)_sess->getConnection();
+
+	EXEC SQL CONTEXT USE :*_ctx;
+	EXEC SQL DECLARE SQL_CUR CURSOR FOR
+		SELECT	
+			INSTANCE_NAME, VERSION,TO_CHAR(STARTUP_TIME,'YYYYMMDDHH24MISS')
+		FROM SYS.V_$INSTANCE;
+
+	EXEC SQL CONTEXT USE :*_ctx;
+	EXEC SQL OPEN SQL_CUR;
+
+	while(1)
+	{
+		memset(&_dbname, 0x00, sizeof(_dbname));
+		memset(&_version, 0x00, sizeof(_version));
+		memset(&_db_uptime, 0x00, sizeof(_db_uptime));
+
+		EXEC SQL CONTEXT USE :*_ctx;
+		EXEC SQL FETCH SQL_CUR INTO :_dbname, :_version, :_db_uptime;
+
+		if(sqlca.sqlcode == 1403) break;
+		else if(sqlca.sqlcode){
+			b = false;
+			goto out_sql;
+		}
+
+		strncpy(_oraconf->dbname, (const char *)_dbname.arr, _dbname.len);
+		strncpy(_oraconf->version, (const char *)_version.arr, _version.len);
+		strncpy(_oraconf->db_uptime, (const char *)_db_uptime.arr, _db_uptime.len);
+
+		break;
+	}
+
+out_sql:
+	EXEC SQL CONTEXT USE :*_ctx;
+	EXEC SQL CLOSE SQL_CUR;
+
+	_sess->returnConnection();
+	m_envvar->getDBPool()->returnSession(_sess);
+
+	return b;
+}
+
+bool COraConfCollector::collectOraParameter(st_oraconf *_oraconf)
+{
+	bool b=true;
+	CDBSession *_sess=NULL;
+	CAgentConfigVar *ccv = m_envvar->getAgentConfigVar();
+
+	EXEC SQL BEGIN DECLARE SECTION;
+		VARCHAR 	_dbname[64];
+		VARCHAR 	_status[20];
+		VARCHAR		_version[20];
+		VARCHAR		_db_uptime[20];
+		long		_sga_max_size=0;
+		int			_sessions=0;
+		int			_processes=0;
+		int			_db_files=0;
+		int			_session_max_files=0;
+		int			_open_cursors=0;
+		VARCHAR		_character_set[64];
+		int			_db_block_size=0;
+		long		_shared_pool_size=0;
+		long		_shared_pool_reserved_size=0;
+		long		_sort_area_size=0;
+		int			_dbwr_io_slaves=0;
+		int			_log_archive_mode=0;
+
+		VARCHAR		_name[255];
+		VARCHAR		_value[255];
+
+		sql_context *_ctx1=NULL;
+
+	EXEC SQL END DECLARE SECTION;
+
+	if((_sess = m_envvar->getDBPool()->getSession(
+		(char *)ccv->getOraUID().c_str(),
+		(char *)ccv->getOraPasswd().c_str(),
+		(char *)ccv->getOraSID().c_str()))==NULL)
+		return false;
+
+	_ctx1 = (sql_context *)_sess->getConnection();
+
+	EXEC SQL CONTEXT USE :*_ctx1;
+	EXEC SQL DECLARE SQL_CUR2 CURSOR FOR
+		SELECT	NAME, VALUE
+		FROM 	V$PARAMETER
+		where name in (
+		'processes',
+		'sessions',
+		'shared_pool_size',
+		'sga_max_size',
+		'shared_pool_reserved_size',
+		'db_block_size',
+		'service_names',
+		'sort_area_size',
+		'open_cursors',
+		'db_files',
+		'session_max_open_files',
+		'dbwr_io_slaves');
+
+	EXEC SQL CONTEXT USE :*_ctx1;
+	EXEC SQL OPEN SQL_CUR2;
+
+	while(1)
+	{
+		memset(&_name, 0x00, sizeof(_name));
+		memset(&_value, 0x00, sizeof(_value));
+
+		EXEC SQL CONTEXT USE :*_ctx1;
+		EXEC SQL FETCH SQL_CUR2 INTO :_name, :_value;
+
+		if(sqlca.sqlcode == 1403) break;
+		else if( sqlca.sqlcode < 0 )
+		{
+			if( sqlca.sqlcode != -1405 )
+			{
+				b = false;
+				goto out_sql2;
+			}
+		}
+
+		if( _value.len == 0 )
+		{
+			continue;
+		}
+
+		_name.arr[_name.len] 
+			= _value.arr[_value.len]
+			= 0;
+
+		if( strstr((char *)_name.arr, "processes") )
+		{
+			_oraconf->processes = atoi((char *)_value.arr);
+		}
+		else if( strstr((char *)_name.arr, "sessions") )
+		{
+			_oraconf->sessions = atoi((char *)_value.arr);
+		}
+		else if( strstr((char *)_name.arr,"shared_pool_size") )
+		{
+			_oraconf->shared_pool_size = atol((char *)_value.arr);
+		}
+		else if( strstr((char *)_name.arr, "sga_max_size") )
+		{
+			_oraconf->sga_max_size = atol( (char *)_value.arr);
+		}
+		else if( strstr((char *)_name.arr, "shared_pool_reserved_size") )
+		{
+			_oraconf->shared_pool_reserved_size = atol( (char *)_value.arr);
+		}
+		else if( strstr((char *)_name.arr, "db_block_size") )
+		{
+			_oraconf->db_block_size = atoi( (char *)_value.arr);
+		}
+		else if( strstr((char *)_name.arr, "service_names") )
+		{
+			strncpy(_oraconf->service_name, (char *)_value.arr, _value.len);
+		}
+		else if( strstr((char *)_name.arr, "sort_area_size") )
+		{
+			_oraconf->sort_area_size = atol( (char *)_value.arr);
+		}
+		else if( strstr((char *)_name.arr, "open_cursors") )
+		{
+			_oraconf->open_cursors = atoi( (char *)_value.arr);
+		}
+		else if( strstr((char *)_name.arr, "db_files") )
+		{
+			_oraconf->db_files = atoi( (char *)_value.arr);
+		}
+		else if( strstr((char *)_name.arr, "session_max_open_files") )
+		{
+			_oraconf->session_max_files = atoi( (char *)_value.arr);
+		}
+		else if( strstr((char *)_name.arr, "dbwr_io_slaves") )
+		{
+			_oraconf->dbwr_io_slaves = atoi( (char *)_value.arr);
+		}
+
+	}
+
+out_sql2:
+	EXEC SQL CONTEXT USE :*_ctx1;
+	EXEC SQL CLOSE SQL_CUR2;
+
+	_sess->returnConnection();
+	m_envvar->getDBPool()->returnSession(_sess);
+	return b;
+}
+

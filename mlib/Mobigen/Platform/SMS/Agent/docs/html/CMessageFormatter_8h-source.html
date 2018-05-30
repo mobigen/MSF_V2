@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CMessageFormatter.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CMessageFormatter.h</h1><div class="fragment"><pre>00001 
+00002 
+00003 <font class="preprocessor">#ifndef __CMESSAGEFORMATTER_H__</font>
+00004 <font class="preprocessor"></font><font class="preprocessor">#define __CMESSAGEFORMATTER_H__ 1</font>
+00005 <font class="preprocessor"></font>
+00006 <font class="preprocessor">#include &lt;stdio.h&gt;</font>
+00007 <font class="preprocessor">#include &lt;stdlib.h&gt;</font>
+00008 <font class="preprocessor">#include &lt;string&gt;</font>
+00009 <font class="preprocessor">#include &lt;unistd.h&gt;</font>
+00010 <font class="preprocessor">#include &lt;sys/time.h&gt;</font>
+00011 <font class="preprocessor">#include &lt;time.h&gt;</font>
+00012 
+00013 
+00014 <font class="preprocessor">#include "CItem.h"</font>
+00015 
+00016 
+00017 <font class="preprocessor">#define TYPE_PASSIVE 1</font>
+00018 <font class="preprocessor"></font><font class="preprocessor">#define TYPE_EVENT 2</font>
+00019 <font class="preprocessor"></font><font class="preprocessor">#define TYPE_ACTIVE 3</font>
+00020 <font class="preprocessor"></font>
+00021 
+00023 
+<a name="l00047"></a><a class="code" href="classCMessageFormatter.html">00047</a> <font class="keyword">class </font><a class="code" href="classCMessageFormatter.html">CMessageFormatter</a>
+00048 {
+00049         <font class="keyword">public</font>:
+00051                 <a class="code" href="classCMessageFormatter.html#a0">CMessageFormatter</a>();
+00053                 <a class="code" href="classCMessageFormatter.html#a1">~CMessageFormatter</a>();
+<a name="l00058"></a><a class="code" href="classCMessageFormatter.html#a2">00058</a>                 <font class="keywordtype">void</font> <a class="code" href="classCMessageFormatter.html#a2">setPollTime</a>(time_t polltime)<font class="keyword"> </font>{ m_polltime = polltime; }
+<a name="l00064"></a><a class="code" href="classCMessageFormatter.html#a3">00064</a>                 <font class="keywordtype">void</font> <a class="code" href="classCMessageFormatter.html#a3">setItem</a>(<a class="code" href="classCItem.html">CItem</a> *item)<font class="keyword"></font>{ m_item = item; }
+<a name="l00069"></a><a class="code" href="classCMessageFormatter.html#a4">00069</a>                 <font class="keywordtype">void</font> <a class="code" href="classCMessageFormatter.html#a4">setTitle</a>(<font class="keywordtype">char</font> *title)<font class="keyword"> </font>{ m_title = title; }
+<a name="l00074"></a><a class="code" href="classCMessageFormatter.html#a5">00074</a>                 <font class="keywordtype">void</font> <a class="code" href="classCMessageFormatter.html#a5">setCommand</a>(<font class="keywordtype">char</font> *cmd)<font class="keyword"> </font>{ m_cmd = cmd; }
+<a name="l00079"></a><a class="code" href="classCMessageFormatter.html#a6">00079</a>                 <font class="keywordtype">void</font> <a class="code" href="classCMessageFormatter.html#a6">setType</a>(<font class="keywordtype">unsigned</font> <font class="keywordtype">int</font> type)<font class="keyword"></font>{ m_type = type; }
+00085                 <font class="keywordtype">void</font> <a class="code" href="classCMessageFormatter.html#a7">setItemCondition</a>(<a class="code" href="classCItemCondition.html">CItemCondition</a> *);
+00090                 <font class="keywordtype">void</font> <a class="code" href="classCMessageFormatter.html#a8">setItemCode</a>(<font class="keywordtype">char</font> *code);
+00095                 <font class="keywordtype">void</font> <a class="code" href="classCMessageFormatter.html#a8">setItemCode</a>(std::string );
+<a name="l00100"></a><a class="code" href="classCMessageFormatter.html#a10">00100</a>                 <font class="keywordtype">void</font> <a class="code" href="classCMessageFormatter.html#a10">setEventStatus</a>(<font class="keywordtype">bool</font> b)<font class="keyword"> </font>{ m_alarm = b; }
+00105                 <font class="keywordtype">char</font> * <a class="code" href="classCMessageFormatter.html#a11">makeMessage</a>();
+00110                 std::string <a class="code" href="classCMessageFormatter.html#a12">makeErrorMessage</a>(<font class="keywordtype">char</font> *msg);
+00115                 std::string <a class="code" href="classCMessageFormatter.html#a12">makeErrorMessage</a>(std::string msg );
+00120                 std::string <a class="code" href="classCMessageFormatter.html#a14">getTypeCode</a>();
+<a name="l00125"></a><a class="code" href="classCMessageFormatter.html#a15">00125</a>                 <font class="keywordtype">void</font> <a class="code" href="classCMessageFormatter.html#a15">addMessage</a>(<font class="keywordtype">char</font> *msg)<font class="keyword"> </font>{ m_msgQ.<a class="code" href="classCQueue.html#a9">enqueue</a>(msg, NULL); }
+00126 
+00127         <font class="keyword">private</font>:
+00128                 <font class="keywordtype">bool</font> m_alarm;                   
+00129                 <font class="keywordtype">unsigned</font> <font class="keywordtype">int</font> m_type;    
+00130                 time_t m_polltime;              
+00131                 std::string m_code;             
+00132                 std::string m_title;    
+00133                 std::string m_cmd;              
+00134                 <a class="code" href="classCItem.html">CItem</a> *m_item;                  
+00135                 <a class="code" href="classCItemCondition.html">CItemCondition</a> *m_cond; 
+00136                 <a class="code" href="classCQueue.html">CQueue</a> m_msgQ;                  
+00137 };
+00138 
+00139 <font class="preprocessor">#endif </font><font class="comment">/* __CMESSAGEFORMATTER_H__ */</font>
+</pre></div><hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<userinfo userid="admin" password="e1aa80a61b0b4fb2cbe5a0b3f6ce834f" accessip="*.*.*.*" />
+<envvar eventport="10001" shortperfport="10002" longperfport="10003" respport="10004" cmdport="10005" sessionport="10006" />
+<config DBTYPE="Oracle" ORASID="VTN1X" ORADBA="sms" ORAPW="sms">
+    <item>
+        <code>SWConf</code>
+        <name>SW Configuration Monitoring!!</name>
+        <schedule>3600</schedule>
+        <eschedule>3600</eschedule>
+        <enable>X</enable>
+        <method>OOX</method>
+    </item>
+    <item>
+        <code>PatchConf</code>
+        <name>Patch Configuration Monitoring!!</name>
+        <schedule>3600</schedule>
+        <eschedule>3600</eschedule>
+        <enable>O</enable>
+        <method>OOX</method>
+    </item>
+    <item>
+        <code>CPUConf</code>
+        <name>CPU Configuration Monitoring!!</name>
+        <schedule>600</schedule>
+        <eschedule>600</eschedule>
+        <enable>O</enable>
+        <method>OOX</method>
+    </item>
+    <item>
+        <code>MemoryConf</code>
+        <name>Memory Configuration Monitoring!!</name>
+        <schedule>600</schedule>
+        <eschedule>600</eschedule>
+        <enable>O</enable>
+        <method>OOX</method>
+    </item>
+    <item>
+        <code>DiskConf</code>
+        <name>Disk Configuration Monitoring!!</name>
+        <schedule>600</schedule>
+        <eschedule>600</eschedule>
+        <enable>O</enable>
+        <method>OOX</method>
+    </item>
+    <item>
+        <code>HostConf</code>
+        <name>Host Configuration Monitoring!!</name>
+        <schedule>600</schedule>
+        <eschedule>600</eschedule>
+        <enable>O</enable>
+        <method>OOX</method>
+    </item>
+    <item>
+        <code>InterfaceConf</code>
+        <name>Interface Configuration Monitoring!!</name>
+        <schedule>600</schedule>
+        <eschedule>600</eschedule>
+        <enable>O</enable>
+        <method>OOX</method>
+    </item>
+    <item>
+        <code>CPULoad</code>
+        <name>CPU Performance Monitoring!!</name>
+        <schedule>60</schedule>
+        <eschedule>600</eschedule>
+        <enable>O</enable>
+        <method>OOO</method>
+    </item>
+    <item>
+        <code>DiskIOPerf</code>
+        <name>Disk IO Performance Monitoring!!</name>
+        <schedule>60</schedule>
+        <eschedule>600</eschedule>
+        <enable>O</enable>
+        <method>OOO</method>
+    </item>
+    <item>
+        <code>NetworkPerf</code>
+        <name>Network Performance Monitoring!!</name>
+        <schedule>60</schedule>
+        <eschedule>5</eschedule>
+        <enable>O</enable>
+        <method>OOO</method>
+        <conditions>
+            <condition id="1" instance="ALL" element="1" level="Major">&gt;=50</condition>
+        </conditions>
+    </item>
+    <item>
+        <code>TopMemProcess</code>
+        <name>Top N Memory Process Performance Monitoring!!</name>
+        <schedule>60</schedule>
+        <eschedule>600</eschedule>
+        <enable>O</enable>
+        <method>OOX</method>
+        <instances>
+            <instance name="memory|10">memory|10</instance>
+        </instances>
+    </item>
+    <item>
+        <code>TopCPUProcess</code>
+        <name>Top N CPU Process Performance Monitoring!!</name>
+        <schedule>60</schedule>
+        <eschedule>600</eschedule>
+        <enable>O</enable>
+        <method>OOX</method>
+        <instances>
+            <instance name="cpu|10">cpu|10</instance>
+        </instances>
+    </item>
+    <item>
+        <code>OraTopSql</code>
+        <name>OraTopSql Monitoring!!</name>
+        <schedule>600</schedule>
+        <eschedule>600</eschedule>
+        <enable>O</enable>
+        <method>OOX</method>
+    </item>
+    <item>
+        <code>OraSessionCount</code>
+        <name>OraSessionCount Monitoring!!</name>
+        <schedule>600</schedule>
+        <eschedule>600</eschedule>
+        <enable>O</enable>
+        <method>OOX</method>
+    </item>
+    <item>
+        <code>OraDBLink</code>
+        <name>OraDBLink Monitoring!!</name>
+        <schedule>600</schedule>
+        <eschedule>600</eschedule>
+        <enable>O</enable>
+        <method>OOO</method>
+    </item>
+    <item>
+        <code>OraRollback</code>
+        <name>OraRollback Monitoring!!</name>
+        <schedule>600</schedule>
+        <eschedule>600</eschedule>
+        <enable>O</enable>
+        <method>OOO</method>
+    </item>
+    <item>
+        <code>Syslog</code>
+        <name>Syslog Monitoring!!</name>
+        <schedule>60</schedule>
+        <eschedule>600</eschedule>
+        <enable>O</enable>
+        <method>OOX</method>
+        <instances>
+            <instance name="/tmp/log/messages">/tmp/log/messages</instance>
+        </instances>
+        <conditions>
+            <condition id="1" instance="ALL" element="0" level="Minor">&gt;&gt;failure</condition>
+        </conditions>
+    </item>
+    <item>
+        <code>ShellCommand</code>
+        <name>Shell Command execute!!</name>
+        <schedule>60</schedule>
+        <eschedule>600</eschedule>
+        <enable>O</enable>
+        <method>OOX</method>
+        <instances>
+            <instance name="ls / | wc -l">ls / | wc -l</instance>
+        </instances>
+    </item>
+    <item>
+        <code>LogCheck</code>
+        <name>Log Monitoring!!</name>
+        <schedule>60</schedule>
+        <eschedule>600</eschedule>
+        <enable>O</enable>
+        <method>OOX</method>
+        <instances>
+            <instance name="/tmp/log.%Y%m%d%H%M">/tmp/log.%Y%m%d%H%M</instance>
+        </instances>
+        <conditions>
+            <condition id="1" instance="ALL" element="0" level="Major">&gt;&gt;test</condition>
+        </conditions>
+    </item>
+    <item>
+        <code>SessionPerf</code>
+        <name>Session Performance Monitoring!!</name>
+        <schedule>600</schedule>
+        <eschedule>600</eschedule>
+        <enable>O</enable>
+        <method>OOX</method>
+    </item>
+    <item>
+        <code>OracleConf</code>
+        <name>Oracle Conf Collection</name>
+        <schedule>600</schedule>
+        <eschedule>600</eschedule>
+        <enable>O</enable>
+        <method>OOX</method>
+    </item>
+    <item>
+        <code>AgentConf</code>
+        <name>Agent Configuration Monitoring!!</name>
+        <schedule>60</schedule>
+        <eschedule>60</eschedule>
+        <enable>O</enable>
+        <method>OOX</method>
+    </item>
+    <item>
+        <code>ProcessHealth</code>
+        <name>Process Health Monitoring!!</name>
+        <schedule>60</schedule>
+        <eschedule>60</eschedule>
+        <enable>O</enable>
+        <method>OOO</method>
+        <instances>
+            <instance name="ora_qmn0_VTN1X">ora_qmn0_VTN1X</instance>
+        </instances>
+        <conditions>
+            <condition id="1" instance="ALL" element="1" level="Major">&gt;10</condition>
+            <condition id="2" instance="ora_qmn0_VTN1X" element="1" level="Critical">==0</condition>
+        </conditions>
+    </item>
+    <item>
+        <code>CPUPerf</code>
+        <name>CPU Performance Monitoring!!</name>
+        <schedule>60</schedule>
+        <eschedule>3</eschedule>
+        <enable>O</enable>
+        <method>OOO</method>
+    </item>
+    <item>
+        <code>OraHitRatio</code>
+        <name>OraHitRatio Monitoring!!</name>
+        <schedule>600</schedule>
+        <eschedule>600</eschedule>
+        <enable>O</enable>
+        <method>OOO</method>
+        <conditions>
+            <condition id="1" instance="ALL" element="0" level="MAJOR">&gt;=60</condition>
+            <condition id="2" instance="ALL" element="1" level="MAJOR">&gt;=60</condition>
+            <condition id="3" instance="ALL" element="2" level="MAJOR">&gt;=60</condition>
+        </conditions>
+    </item>
+    <item>
+        <code>OraTableSpace</code>
+        <name>OraTableSpace Monitoring!!</name>
+        <schedule>600</schedule>
+        <eschedule>600</eschedule>
+        <enable>O</enable>
+        <method>OOO</method>
+        <conditions>
+            <condition id="1" instance="ALL" element="4" level="MAJOR">&gt;=80</condition>
+        </conditions>
+    </item>
+    <item>
+        <code>ProcessPerf</code>
+        <name>Process Performance Monitoring!!</name>
+        <schedule>60</schedule>
+        <eschedule>600</eschedule>
+        <enable>O</enable>
+        <method>OOO</method>
+        <conditions>
+            <condition id="1" instance="ALL" element="1" level="MAJOR">&gt;=30</condition>
+        </conditions>
+    </item>
+    <item>
+        <code>DiskPerf</code>
+        <name>Disk Performance Monitoring!!</name>
+        <schedule>60</schedule>
+        <eschedule>600</eschedule>
+        <enable>O</enable>
+        <method>OOO</method>
+    </item>
+    <item>
+        <code>MemoryPerf</code>
+        <name>Memory Performance Monitoring!!</name>
+        <schedule>60</schedule>
+        <eschedule>600</eschedule>
+        <enable>O</enable>
+        <method>OOO</method>
+    </item>
+</config>

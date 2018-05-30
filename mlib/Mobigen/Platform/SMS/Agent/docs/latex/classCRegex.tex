@@ -1,0 +1,203 @@
+\section{CRegex  클래스 참조}
+\label{classCRegex}\index{CRegex@{CRegex}}
+정규표현식을 처리하는 클래스. 
+
+
+{\tt \#include $<$CRegex.h$>$}
+
+\subsection*{공용 메소드}
+\begin{CompactItemize}
+\item 
+{\bf CRegex} ()
+\item 
+{\bf CRegex} (char $\ast$pattern)
+\item 
+{\bf $\sim$CRegex} ()
+\item 
+char$\ast$ {\bf get\-Matched\-String} (char $\ast$msg)
+\item 
+void {\bf set\-Pattern} (char $\ast$pattern)
+\item 
+bool {\bf is\-Matched} (char $\ast$str)
+\end{CompactItemize}
+\subsection*{프로텍티드 메소드}
+\begin{CompactItemize}
+\item 
+int {\bf init\-Regex} (regex\_\-t $\ast$re, char $\ast$msg)
+\item 
+char$\ast$ {\bf get\-Matched\-String} (regex\_\-t $\ast$re, char $\ast$msg)
+\item 
+char$\ast$ {\bf get\-Matched\-Start\-Point} (regex\_\-t $\ast$re, char $\ast$msg)
+\item 
+char$\ast$ {\bf get\-Matched\-End\-Point} (regex\_\-t $\ast$re, char $\ast$msg)
+\item 
+regmatch\_\-t$\ast$ {\bf get\-Reg\-Match} (regex\_\-t $\ast$re, char $\ast$msg)
+\item 
+void {\bf free\-Regex} (regex\_\-t $\ast$re)
+\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+regex\_\-t {\bf m\_\-re}
+\item 
+char$\ast$ {\bf m\_\-pattern}
+\end{CompactItemize}
+
+
+\subsection{상세한 내용}
+정규표현식을 처리하는 클래스.
+
+특정 메시지에서 정규 표현식으로 주어진 메시지를 분석 및 파싱하는 클래스. 
+
+
+
+\subsection{생성자 \& 소멸자 문서화}
+\index{CRegex@{CRegex}!CRegex@{CRegex}}
+\index{CRegex@{CRegex}!CRegex@{CRegex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CRegex::CRegex ()\hspace{0.3cm}{\tt  [inline]}}\label{classCRegex_a0}
+
+
+생성자 \index{CRegex@{CRegex}!CRegex@{CRegex}}
+\index{CRegex@{CRegex}!CRegex@{CRegex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CRegex::CRegex (char $\ast$ {\em pattern})}\label{classCRegex_a1}
+
+
+생성자 \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\end{description}
+\end{Desc}
+\index{CRegex@{CRegex}!~CRegex@{$\sim$CRegex}}
+\index{~CRegex@{$\sim$CRegex}!CRegex@{CRegex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CRegex::$\sim$CRegex ()}\label{classCRegex_a2}
+
+
+소멸자 
+
+\subsection{멤버 함수 문서화}
+\index{CRegex@{CRegex}!freeRegex@{freeRegex}}
+\index{freeRegex@{freeRegex}!CRegex@{CRegex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CRegex::free\-Regex (regex\_\-t $\ast$ {\em re})\hspace{0.3cm}{\tt  [protected]}}\label{classCRegex_b5}
+
+
+정규 패턴식을 메모리에서 해지하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em .}]\end{description}
+\end{Desc}
+\index{CRegex@{CRegex}!getMatchedEndPoint@{getMatchedEndPoint}}
+\index{getMatchedEndPoint@{getMatchedEndPoint}!CRegex@{CRegex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ CRegex::get\-Matched\-End\-Point (regex\_\-t $\ast$ {\em re}, char $\ast$ {\em msg})\hspace{0.3cm}{\tt  [protected]}}\label{classCRegex_b3}
+
+
+주어진 메시지에서 정규 패턴과 일치하는 메시지의 마지막 포인터를 얻어오는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em .}]\item[
+{\em .}]\item[
+{\em .}]\end{description}
+\end{Desc}
+\index{CRegex@{CRegex}!getMatchedStartPoint@{getMatchedStartPoint}}
+\index{getMatchedStartPoint@{getMatchedStartPoint}!CRegex@{CRegex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ CRegex::get\-Matched\-Start\-Point (regex\_\-t $\ast$ {\em re}, char $\ast$ {\em msg})\hspace{0.3cm}{\tt  [protected]}}\label{classCRegex_b2}
+
+
+주어진 메시지에서 정규 패턴과 일치하는 메시지의 첫 번째 포인터를 얻어오는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em .}]\item[
+{\em .}]\item[
+{\em .}]\end{description}
+\end{Desc}
+\index{CRegex@{CRegex}!getMatchedString@{getMatchedString}}
+\index{getMatchedString@{getMatchedString}!CRegex@{CRegex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ CRegex::get\-Matched\-String (char $\ast$ {\em msg})}\label{classCRegex_a3}
+
+
+주어진 메시지에서 정규 패턴과 일치하는 메시지를 얻어오는 메쏘드. 얻어온 메시지는 반환받은 개체에서 메모리를 해지해 주어야 한다. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em return}]파싱된 메시지. \end{description}
+\end{Desc}
+\index{CRegex@{CRegex}!getMatchedString@{getMatchedString}}
+\index{getMatchedString@{getMatchedString}!CRegex@{CRegex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ CRegex::get\-Matched\-String (regex\_\-t $\ast$ {\em re}, char $\ast$ {\em msg})\hspace{0.3cm}{\tt  [protected]}}\label{classCRegex_b1}
+
+
+주어진 메시지에서 정규 패턴과 일치하는 메시지를 얻어오는 메쏘드. 얻어온 메시지는 반환받은 개체에서 메모리를 해지해 주어야 한다. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em .}]\item[
+{\em return}]파싱된 메시지. \end{description}
+\end{Desc}
+\index{CRegex@{CRegex}!getRegMatch@{getRegMatch}}
+\index{getRegMatch@{getRegMatch}!CRegex@{CRegex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}regmatch\_\-t $\ast$ CRegex::get\-Reg\-Match (regex\_\-t $\ast$ {\em re}, char $\ast$ {\em msg})\hspace{0.3cm}{\tt  [protected]}}\label{classCRegex_b4}
+
+
+주어진 메시지에서 정규 패턴과 일치하는 메시지의 정보를 얻어오는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em .}]\item[
+{\em return}]정규 패턴과 일치하는 메시지의 정보 \end{description}
+\end{Desc}
+\index{CRegex@{CRegex}!initRegex@{initRegex}}
+\index{initRegex@{initRegex}!CRegex@{CRegex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int CRegex::init\-Regex (regex\_\-t $\ast$ {\em re}, char $\ast$ {\em msg})\hspace{0.3cm}{\tt  [protected]}}\label{classCRegex_b0}
+
+
+정규 패턴식을 초기화하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em .}]\item[
+{\em .}]\end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 반환: }]\par
+return 1 if success, else return -1. \end{Desc}
+\index{CRegex@{CRegex}!isMatched@{isMatched}}
+\index{isMatched@{isMatched}!CRegex@{CRegex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CRegex::is\-Matched (char $\ast$ {\em str})}\label{classCRegex_a5}
+
+
+주어진 메시지에 정규 패턴과 일치하는 메시지가 존재하는지 여부를 판단하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em return}]true : 정규 패턴과 일치하는 문자열이 존재, false : 정규 패턴과 일치하는 문자열이 없음. \end{description}
+\end{Desc}
+\index{CRegex@{CRegex}!setPattern@{setPattern}}
+\index{setPattern@{setPattern}!CRegex@{CRegex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CRegex::set\-Pattern (char $\ast$ {\em pattern})}\label{classCRegex_a4}
+
+
+정규 패턴식을 설정하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\end{description}
+\end{Desc}
+
+
+\subsection{멤서 데이타 문서화}
+\index{CRegex@{CRegex}!m_pattern@{m\_\-pattern}}
+\index{m_pattern@{m\_\-pattern}!CRegex@{CRegex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ CRegex::m\_\-pattern\hspace{0.3cm}{\tt  [protected]}}\label{classCRegex_n1}
+
+
+정규 패턴식 \index{CRegex@{CRegex}!m_re@{m\_\-re}}
+\index{m_re@{m\_\-re}!CRegex@{CRegex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}regex\_\-t CRegex::m\_\-re\hspace{0.3cm}{\tt  [protected]}}\label{classCRegex_n0}
+
+
+정규 패턴 정보를 지닌 키 변수 
+
+이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:\begin{CompactItemize}
+\item 
+{\bf CRegex.h}\end{CompactItemize}

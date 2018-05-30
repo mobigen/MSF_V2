@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>ThreadObserver.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>ThreadObserver.h</h1><div class="fragment"><pre>00001 <font class="comment">//</font>
+00002 <font class="comment">// OpenThread library, Copyright (C) 2002 - 2003  The Open Thread Group</font>
+00003 <font class="comment">//</font>
+00004 <font class="comment">// This library is free software; you can redistribute it and/or</font>
+00005 <font class="comment">// modify it under the terms of the GNU Lesser General Public</font>
+00006 <font class="comment">// License as published by the Free Software Foundation; either</font>
+00007 <font class="comment">// version 2.1 of the License, or (at your option) any later version.</font>
+00008 <font class="comment">//</font>
+00009 <font class="comment">// This library is distributed in the hope that it will be useful,</font>
+00010 <font class="comment">// but WITHOUT ANY WARRANTY; without even the implied warranty of</font>
+00011 <font class="comment">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</font>
+00012 <font class="comment">// Lesser General Public License for more details.</font>
+00013 <font class="comment">// </font>
+00014 <font class="comment">// You should have received a copy of the GNU Lesser General Public</font>
+00015 <font class="comment">// License along with this library; if not, write to the Free Software</font>
+00016 <font class="comment">// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</font>
+00017 <font class="comment">//</font>
+00018 
+00019 <font class="comment">//</font>
+00020 <font class="comment">// ThreadObserver.h - provide a basic thread observer class</font>
+00021 <font class="comment">// ~~~~~~~~~~~~~~~~</font>
+00022 <font class="comment">//</font>
+00023 
+00024 <font class="preprocessor">#ifndef _THREADOBSERVER_H_</font>
+00025 <font class="preprocessor"></font><font class="preprocessor">#define _THREADOBSERVER_H_</font>
+00026 <font class="preprocessor"></font>
+00027 <font class="keyword">class </font>ThreadObserver {
+00028 
+00030 <font class="keyword">public</font>:
+00031 
+00032     ThreadObserver()<font class="keyword"> </font>{};
+00033 
+00034     <font class="keyword">virtual</font> ~ThreadObserver()<font class="keyword"> </font>{};
+00035 
+00036     <font class="keyword">virtual</font> <font class="keywordtype">void</font> threadStarted (<font class="keyword">const</font> <font class="keywordtype">int</font> threadId);
+00037 
+00038     <font class="keyword">virtual</font> <font class="keywordtype">void</font> threadFinished(<font class="keyword">const</font> <font class="keywordtype">int</font> threadId);
+00039 
+00040     <font class="keyword">virtual</font> <font class="keywordtype">void</font> threadMessage(<font class="keyword">const</font> <font class="keywordtype">int</font> threadId, <font class="keyword">const</font> <font class="keywordtype">char</font> *message);
+00041 
+00042     <font class="keyword">virtual</font> <font class="keywordtype">void</font> threadError(<font class="keyword">const</font> <font class="keywordtype">int</font> threadId, <font class="keyword">const</font> <font class="keywordtype">char</font> *errorMessage);
+00043 
+00044 };
+00045 
+00046 <font class="preprocessor">#endif</font>
+</font></pre></div><hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

@@ -1,0 +1,71 @@
+\section{COra\-Hit\-Ratio\-Collector  클래스 참조}
+\label{classCOraHitRatioCollector}\index{COraHitRatioCollector@{COra\-Hit\-Ratio\-Collector}}
+Oracle buffer cache hit ratio, library cache hit ratio, data dictionary hit ratio 정보를 수집하는 클래스. 
+
+
+{\tt \#include $<$COra\-Hit\-Ratio\-Collector.h$>$}
+
+COra\-Hit\-Ratio\-Collector에 대한 상속 도표:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCOraHitRatioCollector}
+\end{center}
+\end{figure}
+\subsection*{공용 메소드}
+\begin{CompactItemize}
+\item 
+{\bf COra\-Hit\-Ratio\-Collector} ()
+\item 
+virtual {\bf $\sim$COra\-Hit\-Ratio\-Collector} ()
+\item 
+void {\bf collect} ()
+\item 
+bool {\bf collect\-Ora\-Data} ()
+\item 
+void {\bf make\-Message} ()
+\end{CompactItemize}
+
+
+\subsection{상세한 내용}
+Oracle buffer cache hit ratio, library cache hit ratio, data dictionary hit ratio 정보를 수집하는 클래스.
+
+
+
+\subsection{생성자 \& 소멸자 문서화}
+\index{COraHitRatioCollector@{COra\-Hit\-Ratio\-Collector}!COraHitRatioCollector@{COraHitRatioCollector}}
+\index{COraHitRatioCollector@{COraHitRatioCollector}!COraHitRatioCollector@{COra\-Hit\-Ratio\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}COra\-Hit\-Ratio\-Collector::COra\-Hit\-Ratio\-Collector ()}\label{classCOraHitRatioCollector_a0}
+
+
+생성자 \index{COraHitRatioCollector@{COra\-Hit\-Ratio\-Collector}!~COraHitRatioCollector@{$\sim$COraHitRatioCollector}}
+\index{~COraHitRatioCollector@{$\sim$COraHitRatioCollector}!COraHitRatioCollector@{COra\-Hit\-Ratio\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}COra\-Hit\-Ratio\-Collector::$\sim$COra\-Hit\-Ratio\-Collector ()\hspace{0.3cm}{\tt  [virtual]}}\label{classCOraHitRatioCollector_a1}
+
+
+소멸자 
+
+\subsection{멤버 함수 문서화}
+\index{COraHitRatioCollector@{COra\-Hit\-Ratio\-Collector}!collect@{collect}}
+\index{collect@{collect}!COraHitRatioCollector@{COra\-Hit\-Ratio\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void COra\-Hit\-Ratio\-Collector::collect ()\hspace{0.3cm}{\tt  [virtual]}}\label{classCOraHitRatioCollector_a2}
+
+
+Oracle buffer cache hit ratio, library cache hit ratio, data dictionary hit ratio 정보를 수집하여 SMS Manager로 전송하기 위한 메시지 포맷으로 변환하여 메시지 큐로 전송하는 메쏘드. 
+
+{\bf CCollector} {\rm (페이지\,\pageref{classCCollector_a2})}으로부터 재구현된.\index{COraHitRatioCollector@{COra\-Hit\-Ratio\-Collector}!collectOraData@{collectOraData}}
+\index{collectOraData@{collectOraData}!COraHitRatioCollector@{COra\-Hit\-Ratio\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool COra\-Hit\-Ratio\-Collector::collect\-Ora\-Data ()}\label{classCOraHitRatioCollector_a3}
+
+
+Oracle에 SQL Query를 질의하여 결과를 얻어오는 메쏘드. \index{COraHitRatioCollector@{COra\-Hit\-Ratio\-Collector}!makeMessage@{makeMessage}}
+\index{makeMessage@{makeMessage}!COraHitRatioCollector@{COra\-Hit\-Ratio\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void COra\-Hit\-Ratio\-Collector::make\-Message ()\hspace{0.3cm}{\tt  [virtual]}}\label{classCOraHitRatioCollector_a4}
+
+
+수집된 buffer cache hit ratio, library cache hit ratio, data dictionary hit ratio 정보를 SMS Manager로 전송하기 위한 메시지 포맷으로 변환하는 메쏘드. 
+
+{\bf CCollector} {\rm (페이지\,\pageref{classCCollector_a3})}으로부터 재구현된.
+
+이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:\begin{CompactItemize}
+\item 
+{\bf COra\-Hit\-Ratio\-Collector.h}\end{CompactItemize}

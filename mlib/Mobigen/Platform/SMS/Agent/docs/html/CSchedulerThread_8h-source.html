@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CSchedulerThread.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CSchedulerThread.h</h1><div class="fragment"><pre>00001 
+00002 <font class="preprocessor">#ifndef __CSCHEDULERTHREADH__</font>
+00003 <font class="preprocessor"></font><font class="preprocessor">#define __CSCHEDULERTHREADH__</font>
+00004 <font class="preprocessor"></font>
+00005 <font class="preprocessor">#include "SCThreadObserver.h"</font>
+00006 <font class="preprocessor">#include "CPolicyItem.h"</font>
+00007 
+00009 
+<a name="l00013"></a><a class="code" href="classCSchedulerThread.html">00013</a> <font class="keyword">class </font><a class="code" href="classCSchedulerThread.html">CSchedulerThread</a> : <font class="keyword">public</font> OpenThreads::Thread, <font class="keyword">public</font> <a class="code" href="classThreadReporter.html">ThreadReporter</a> {
+00014 
+00015 <font class="keyword">public</font>:
+<a name="l00021"></a><a class="code" href="classCSchedulerThread.html#a0">00021</a>     <a class="code" href="classCSchedulerThread.html#a0">CSchedulerThread</a>(<font class="keywordtype">void</font> *_data, <font class="keywordtype">int</font> numElts) : OpenThreads::Thread(), 
+00022         <a class="code" href="classThreadReporter.html">ThreadReporter</a>(),
+00023         m_data(_data), _numElts(numElts), _quitflag(false) { pthread_mutex_init(&amp;m_lock, NULL); };
+<a name="l00025"></a><a class="code" href="classCSchedulerThread.html#a1">00025</a>     <font class="keyword">virtual</font> <a class="code" href="classCSchedulerThread.html#a1">~CSchedulerThread</a>()<font class="keyword"> </font>{ pthread_mutex_destroy(&amp;m_lock); };
+00029     <font class="keyword">virtual</font> <font class="keywordtype">void</font> <a class="code" href="classCSchedulerThread.html#a2">run</a>();
+00031         <font class="keywordtype">void</font> <a class="code" href="classCSchedulerThread.html#a3">lock</a>();
+00033         <font class="keywordtype">void</font> <a class="code" href="classCSchedulerThread.html#a4">unlock</a>();
+00040         <font class="keywordtype">void</font> <a class="code" href="classCSchedulerThread.html#a5">addInstanceToPollItem</a>(<a class="code" href="classCPolicyItem.html">CPolicyItem</a> *pollitem, <a class="code" href="classCItem.html">CItem</a> *item);
+00044     <font class="keywordtype">void</font> <a class="code" href="classCSchedulerThread.html#a6">quit</a>();
+00045 
+00046 <font class="keyword">private</font>:
+00047         <font class="keywordtype">void</font> *m_data;   
+00049     <font class="keywordtype">int</font> _numElts;       
+00050     <font class="keyword">volatile</font> <font class="keywordtype">bool</font> _quitflag;    
+00051         pthread_mutex_t m_lock; 
+00052 };
+00053 
+00054 <font class="keywordtype">void</font> startSchedulerThread(<font class="keywordtype">void</font> *data);
+00055 
+00056 
+00057 <font class="preprocessor">#endif </font><font class="comment">/* __CSCHEDULERTHREADH__ */</font>
+</pre></div><hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

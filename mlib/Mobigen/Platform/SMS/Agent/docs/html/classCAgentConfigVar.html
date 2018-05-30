@@ -1,0 +1,1315 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CAgentConfigVar class Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CAgentConfigVar  클래스 참조</h1>scagent.xml 파일로부터 환경 설정 정보 및 Item Code 정보를 로딩하여 관리하는 클래스. 
+<a href="#_details">More...</a>
+<p>
+<code>#include &lt;<a class="el" href="CAgentConfigVar_8h-source.html">CAgentConfigVar.h</a>&gt;</code>
+<p>
+<a href="classCAgentConfigVar-members.html">모든 구성원들(members)의 명단</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td colspan=2><br><h2>공용 메소드</h2></td></tr>
+<tr><td nowrap align=right valign=top>&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a0">CAgentConfigVar</a> ()</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>생성자.</em> <a href="#a0">More...</a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>virtual&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a1">~CAgentConfigVar</a> ()</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>소멸자.</em> <a href="#a1">More...</a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a2">loadXMLConfigVar</a> ()</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>scagent.xml 파일을 로딩하는 함수.</em> <a href="#a2">More...</a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="classCItem.html">CItem</a>*&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a3">getItem</a> (char *code)</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>주어진 Item Code에 해당한는 Item 정보를 얻어오는 함수.</em> <a href="#a3">More...</a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="classCItem.html">CItem</a>*&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a4">getItem</a> (std::string code)</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>주어진 Item Code에 해당한는 Item 정보를 얻어오는 함수.</em> <a href="#a4">More...</a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a5">addItem</a> (<a class="el" href="classCItem.html">CItem</a> *item)</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>특정 Item을 추가하는 함수.</em> <a href="#a5">More...</a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a6">setItem</a> (<a class="el" href="classCItem.html">CItem</a> *item)</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>특정 Item의 내용을 변경하는 함수.</em> <a href="#a6">More...</a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a7">delItem</a> (std::string code)</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>특정 Item의 내용을 삭제하는 함수.</em> <a href="#a7">More...</a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="classCQueue.html">CQueue</a>*&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a8">getItemQ</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a9">unloadXMLConfigVar</a> ()</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>scagent.xml 파일을 업데이트하는 함수.</em> <a href="#a9">More...</a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>TiXmlElement*&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a10">makeXmlElement</a> (<a class="el" href="classCItem.html">CItem</a> *item)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a11">linkEndChild</a> (std::string str, TiXmlElement *elem, const char *name)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a12">linkEndChild</a> (unsigned long l, TiXmlElement *elem, const char *name)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a13">removeDocItem</a> (std::string code)</td></tr>
+<tr><td nowrap align=right valign=top>int&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a14">getEventPort</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>int&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a15">getShortPerfPort</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>int&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a16">getLongPerfPort</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>int&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a17">getRespPort</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>int&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a18">getCmdPort</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>int&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a19">getSessionPort</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>std::string&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a20">getUserid</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>std::string&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a21">getPasswd</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>std::string&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a22">getAccessIP</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>std::string&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a23">getOraUID</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>std::string&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a24">getOraPasswd</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>std::string&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a25">getOraSID</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a26">setOraUID</a> (char *uid)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a27">setOraSID</a> (char *sid)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a28">setOraPasswd</a> (char *passwd)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a29">setUserid</a> (char *userid)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a30">setPasswd</a> (char *passwd)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a31">setAccessIP</a> (char *accessip)</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a32">setUserInfo</a> (std::string sid, std::string userid, std::string password)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a33">lock</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCAgentConfigVar.html#a34">unlock</a> ()</td></tr>
+</table>
+<hr><a name="_details"></a><h2>상세한 내용</h2>
+scagent.xml 파일로부터 환경 설정 정보 및 Item Code 정보를 로딩하여 관리하는 클래스.
+<p>
+Item Code 정보를 읽어서 <a class="el" href="classCItem.html">CItem</a> class에 저장하고 관리하며,  기타 오라클 로그인에 필요한 계정,  SMS Manager와 통신하기 위한 리슨 포트 및  SMS Agent로 로그인하기 위한 계정 및 접속 허용 아이피 정보를 관리한다. 
+<p>
+<hr><h2>생성자 &amp; 소멸자 문서화</h2>
+<a name="a0" doxytag="CAgentConfigVar::CAgentConfigVar"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CAgentConfigVar::CAgentConfigVar (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+생성자.
+<p>
+Detail :     </td>
+  </tr>
+</table>
+<a name="a1" doxytag="CAgentConfigVar::~CAgentConfigVar"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CAgentConfigVar::~CAgentConfigVar (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [virtual]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+소멸자.
+<p>
+Detail :     </td>
+  </tr>
+</table>
+<hr><h2>멤버 함수 문서화</h2>
+<a name="a5" doxytag="CAgentConfigVar::addItem"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CAgentConfigVar::addItem (
+          </b></td>
+          <td valign="bottom"><b>
+<a class="el" href="classCItem.html">CItem</a> * <em>item</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+특정 Item을 추가하는 함수.
+<p>
+<dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>CItem</em>
+&nbsp;</td><td>
+pointer. </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>참조하시요: </b><dd>
+<a class="el" href="classCItem.html">CItem</a>. </dl>    </td>
+  </tr>
+</table>
+<a name="a7" doxytag="CAgentConfigVar::delItem"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CAgentConfigVar::delItem (
+          </b></td>
+          <td valign="bottom"><b>
+std::string <em>code</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+특정 Item의 내용을 삭제하는 함수.
+<p>
+<dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>string</em>
+&nbsp;</td><td>
+item code name. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a22" doxytag="CAgentConfigVar::getAccessIP"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+std::string CAgentConfigVar::getAccessIP (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Agent로 접속이 허용된 IP 대역 정보를 반환하는 함수. <dl compact><dt>
+<b>반환: </b><dd>
+permmitted access ip address. </dl>    </td>
+  </tr>
+</table>
+<a name="a18" doxytag="CAgentConfigVar::getCmdPort"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+int CAgentConfigVar::getCmdPort (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Manager로부터 명령을 전달받기 위한 리슨 포트를 반환하는 함수. <dl compact><dt>
+<b>반환: </b><dd>
+TCP/IP command listen port. </dl>    </td>
+  </tr>
+</table>
+<a name="a14" doxytag="CAgentConfigVar::getEventPort"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+int CAgentConfigVar::getEventPort (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Agent가 수집하는 장애 정보를 SMS Manager로 전송하기 위한 리슨 포트를 반환하는 함수. <dl compact><dt>
+<b>반환: </b><dd>
+TCP/IP Alarm listen port. </dl>    </td>
+  </tr>
+</table>
+<a name="a4" doxytag="CAgentConfigVar::getItem"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+<a class="el" href="classCItem.html">CItem</a> * CAgentConfigVar::getItem (
+          </b></td>
+          <td valign="bottom"><b>
+std::string <em>code</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+주어진 Item Code에 해당한는 Item 정보를 얻어오는 함수.
+<p>
+<dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>a</em>
+&nbsp;</td><td>
+string value </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>반환: </b><dd>
+return <a class="el" href="classCItem.html">CItem</a> class, if failed return NULL. </dl><dl compact><dt>
+<b>참조하시요: </b><dd>
+<a class="el" href="classCItem.html">CItem</a> class. </dl>    </td>
+  </tr>
+</table>
+<a name="a3" doxytag="CAgentConfigVar::getItem"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+<a class="el" href="classCItem.html">CItem</a> * CAgentConfigVar::getItem (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>code</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+주어진 Item Code에 해당한는 Item 정보를 얻어오는 함수.
+<p>
+<dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>a</em>
+&nbsp;</td><td>
+charater pointer. </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>반환: </b><dd>
+return <a class="el" href="classCItem.html">CItem</a> class, if failed return NULL. </dl><dl compact><dt>
+<b>참조하시요: </b><dd>
+<a class="el" href="classCItem.html">CItem</a> </dl>    </td>
+  </tr>
+</table>
+<a name="a8" doxytag="CAgentConfigVar::getItemQ"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+<a class="el" href="classCQueue.html">CQueue</a> * CAgentConfigVar::getItemQ (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Item list를 반환하는 함수. 현재 SMS Agent가 관리하고 있는 <a class="el" href="classCItem.html">CItem</a> class(item code)를 저장하고 있는 리스트 큐.를 반환하여 준다. <dl compact><dt>
+<b>반환: </b><dd>
+<a class="el" href="classCQueue.html">CQueue</a> pointer. </dl>    </td>
+  </tr>
+</table>
+<a name="a16" doxytag="CAgentConfigVar::getLongPerfPort"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+int CAgentConfigVar::getLongPerfPort (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Agent가 수집하는 중장기(1시간 이상) 성능 정보를 SMS Manager로 전송하기 위한 리슨 포트를 반환하는 함수. <dl compact><dt>
+<b>반환: </b><dd>
+TCP/IP long period Performance listen port. </dl>    </td>
+  </tr>
+</table>
+<a name="a24" doxytag="CAgentConfigVar::getOraPasswd"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+std::string CAgentConfigVar::getOraPasswd (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Oracle system 계정의 암호를 반환하는 함수. <dl compact><dt>
+<b>반환: </b><dd>
+Oracle system account password. </dl>    </td>
+  </tr>
+</table>
+<a name="a25" doxytag="CAgentConfigVar::getOraSID"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+std::string CAgentConfigVar::getOraSID (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Oracle SID 정보를 반환하는 함수. <dl compact><dt>
+<b>반환: </b><dd>
+Oracle SID. </dl>    </td>
+  </tr>
+</table>
+<a name="a23" doxytag="CAgentConfigVar::getOraUID"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+std::string CAgentConfigVar::getOraUID (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Oracle system 계정을 반환하는 함수. <dl compact><dt>
+<b>반환: </b><dd>
+Oracle system account. </dl>    </td>
+  </tr>
+</table>
+<a name="a21" doxytag="CAgentConfigVar::getPasswd"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+std::string CAgentConfigVar::getPasswd (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Agent로 접속하기 위한 패스워드 정보를 반환하는 함수. <dl compact><dt>
+<b>반환: </b><dd>
+SMS Agent access password. </dl>    </td>
+  </tr>
+</table>
+<a name="a17" doxytag="CAgentConfigVar::getRespPort"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+int CAgentConfigVar::getRespPort (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Manager로부터 전달받은 명령을 수행한 결과값을 SMS Manager로 전송하기 위한 리슨 포트를 반환하는 함수. <dl compact><dt>
+<b>반환: </b><dd>
+TCP/IP command response listen port. </dl>    </td>
+  </tr>
+</table>
+<a name="a19" doxytag="CAgentConfigVar::getSessionPort"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+int CAgentConfigVar::getSessionPort (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Manager와 SMS Agent간의 연결된 세션 상태 및 각 세션별 누적 메시지 정보를 전송하기 위한 리슨 포트를 반환하는 함수. <dl compact><dt>
+<b>반환: </b><dd>
+TCP/IP listen port to get session status. </dl>    </td>
+  </tr>
+</table>
+<a name="a15" doxytag="CAgentConfigVar::getShortPerfPort"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+int CAgentConfigVar::getShortPerfPort (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Agent가 수집하는 단기(1시간 이하) 성능 정보를 SMS Manager로 전송하기 위한 리슨 포트를 반환하는 함수. <dl compact><dt>
+<b>반환: </b><dd>
+TCP/IP short period Performance listen port. </dl>    </td>
+  </tr>
+</table>
+<a name="a20" doxytag="CAgentConfigVar::getUserid"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+std::string CAgentConfigVar::getUserid (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Agent로 접속하기 위한 계정 정보를 반환하는 함수. <dl compact><dt>
+<b>반환: </b><dd>
+SMS Agent user id. </dl>    </td>
+  </tr>
+</table>
+<a name="a12" doxytag="CAgentConfigVar::linkEndChild"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CAgentConfigVar::linkEndChild (
+          </b></td>
+          <td valign="bottom"><b>
+unsigned long <em>l</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+TiXmlElement * <em>elem</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+const char * <em>name</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+주어진 name에 해당하는 XML Element를 생성하여,  해당 element에 첫번째 인자인 str XML Text를 생성하여 추가한 후 XML Element XML Document(m_doc)에 추가한다. example) &lt;instance name="0" /&gt; 인 경우, name = name, 0 = l 이 된다. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>XML</em>
+&nbsp;</td><td>
+Text에 들어갈 내용(unsigned long). </td></tr>
+<tr><td valign=top><em>XML</em>
+&nbsp;</td><td>
+Element. </td></tr>
+<tr><td valign=top><em>XML</em>
+&nbsp;</td><td>
+Element의 Title. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a11" doxytag="CAgentConfigVar::linkEndChild"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CAgentConfigVar::linkEndChild (
+          </b></td>
+          <td valign="bottom"><b>
+std::string <em>str</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+TiXmlElement * <em>elem</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+const char * <em>name</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+주어진 name에 해당하는 XML Element를 생성하여,  해당 element에 첫번째 인자인 str XML Text를 생성하여 추가한 후 XML Element XML Document(m_doc)에 추가한다. example) &lt;instance name="test" /&gt; 인 경우, name = name, test = str 이 된다. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>XML</em>
+&nbsp;</td><td>
+Text에 들어갈 내용(string). </td></tr>
+<tr><td valign=top><em>XML</em>
+&nbsp;</td><td>
+Element. </td></tr>
+<tr><td valign=top><em>XML</em>
+&nbsp;</td><td>
+Element의 Title. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a2" doxytag="CAgentConfigVar::loadXMLConfigVar"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CAgentConfigVar::loadXMLConfigVar (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+scagent.xml 파일을 로딩하는 함수.
+<p>
+xml 파일로부터 Item Code 및 기타 환경 정보를 로딩한다.     </td>
+  </tr>
+</table>
+<a name="a33" doxytag="CAgentConfigVar::lock"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CAgentConfigVar::lock (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+method for locking.     </td>
+  </tr>
+</table>
+<a name="a10" doxytag="CAgentConfigVar::makeXmlElement"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+TiXmlElement * CAgentConfigVar::makeXmlElement (
+          </b></td>
+          <td valign="bottom"><b>
+<a class="el" href="classCItem.html">CItem</a> * <em>item</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+XML Document(m_doc)에 특정 item code를 추가하는 함수. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>CItem</em>
+&nbsp;</td><td>
+class </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>반환: </b><dd>
+추가된 XML Element pointer. </dl>    </td>
+  </tr>
+</table>
+<a name="a13" doxytag="CAgentConfigVar::removeDocItem"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CAgentConfigVar::removeDocItem (
+          </b></td>
+          <td valign="bottom"><b>
+std::string <em>code</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+주어진 코드에 해당하는 item을 XML Document에서 삭제한다. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>item</em>
+&nbsp;</td><td>
+code. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a31" doxytag="CAgentConfigVar::setAccessIP"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CAgentConfigVar::setAccessIP (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>accessip</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+method for setting permmitted ip address to access SMS Agent. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>permmitted</em>
+&nbsp;</td><td>
+ip address range(ex : 127.0.0.*) </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a6" doxytag="CAgentConfigVar::setItem"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CAgentConfigVar::setItem (
+          </b></td>
+          <td valign="bottom"><b>
+<a class="el" href="classCItem.html">CItem</a> * <em>item</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+특정 Item의 내용을 변경하는 함수.
+<p>
+<dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>CItem</em>
+&nbsp;</td><td>
+pointer. </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>참조하시요: </b><dd>
+<a class="el" href="classCItem.html">CItem</a>. </dl>    </td>
+  </tr>
+</table>
+<a name="a28" doxytag="CAgentConfigVar::setOraPasswd"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CAgentConfigVar::setOraPasswd (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>passwd</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+method for setting oracle system account password. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>oracle</em>
+&nbsp;</td><td>
+system account password. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a27" doxytag="CAgentConfigVar::setOraSID"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CAgentConfigVar::setOraSID (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>sid</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+method for setting oracle SID. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>oracle</em>
+&nbsp;</td><td>
+SID. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a26" doxytag="CAgentConfigVar::setOraUID"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CAgentConfigVar::setOraUID (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>uid</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+method for setting oracle system account. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>oracle</em>
+&nbsp;</td><td>
+system account user id. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a30" doxytag="CAgentConfigVar::setPasswd"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CAgentConfigVar::setPasswd (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>passwd</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+method for setting SMS Agent account password. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>SMS</em>
+&nbsp;</td><td>
+Agent password. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a32" doxytag="CAgentConfigVar::setUserInfo"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CAgentConfigVar::setUserInfo (
+          </b></td>
+          <td valign="bottom"><b>
+std::string <em>sid</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+std::string <em>userid</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+std::string <em>password</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+주어진 userid에 해당하는 SMS Agent의 password 및 접속 허용 ip address를 설정하는 함수. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>SMS</em>
+&nbsp;</td><td>
+Agent account user id. </td></tr>
+<tr><td valign=top><em>SMS</em>
+&nbsp;</td><td>
+Agent account password. </td></tr>
+<tr><td valign=top><em>permmitted</em>
+&nbsp;</td><td>
+ip address range. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a29" doxytag="CAgentConfigVar::setUserid"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CAgentConfigVar::setUserid (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>userid</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+method for setting SMS Agent account user id. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>SMS</em>
+&nbsp;</td><td>
+Agent account user id. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a9" doxytag="CAgentConfigVar::unloadXMLConfigVar"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CAgentConfigVar::unloadXMLConfigVar (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+scagent.xml 파일을 업데이트하는 함수.
+<p>
+현재 SMS Agent가 관리하고 있는 item code 및 환경 설정 정보를 scagent.xml파일로 저장하는 함수이다.     </td>
+  </tr>
+</table>
+<a name="a34" doxytag="CAgentConfigVar::unlock"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CAgentConfigVar::unlock (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+method for unlocking     </td>
+  </tr>
+</table>
+<hr>이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:<ul>
+<li><a class="el" href="CAgentConfigVar_8h-source.html">CAgentConfigVar.h</a></ul>
+<hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

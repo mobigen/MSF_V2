@@ -1,0 +1,521 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CDBSession class Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CDBSession  클래스 참조</h1>Database 연결 세션 정보를 관리하는 클래스(Thread safe). 
+<a href="#_details">More...</a>
+<p>
+<code>#include &lt;<a class="el" href="CDBSession_8h-source.html">CDBSession.h</a>&gt;</code>
+<p>
+<a href="classCDBSession-members.html">모든 구성원들(members)의 명단</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td colspan=2><br><h2>공용 메소드</h2></td></tr>
+<tr><td nowrap align=right valign=top>&nbsp;</td><td valign=bottom><a class="el" href="classCDBSession.html#a0">CDBSession</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>virtual&nbsp;</td><td valign=bottom><a class="el" href="classCDBSession.html#a1">~CDBSession</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>int&nbsp;</td><td valign=bottom><a class="el" href="classCDBSession.html#a2">connect</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>int&nbsp;</td><td valign=bottom><a class="el" href="classCDBSession.html#a3">connect</a> (char *account)</td></tr>
+<tr><td nowrap align=right valign=top>int&nbsp;</td><td valign=bottom><a class="el" href="classCDBSession.html#a4">connect</a> (char *userid, char *password, char *sid)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCDBSession.html#a5">setOraInfo</a> (const char *sid, const char *userid, const char *password)</td></tr>
+<tr><td nowrap align=right valign=top>void*&nbsp;</td><td valign=bottom><a class="el" href="classCDBSession.html#a6">getConnection</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCDBSession.html#a7">closeConnection</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCDBSession.html#a8">returnConnection</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCDBSession.html#a9">setKey</a> (char *userid, char *password, char *sid)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCDBSession.html#a10">setKey</a> (char *account)</td></tr>
+<tr><td nowrap align=right valign=top>char*&nbsp;</td><td valign=bottom><a class="el" href="classCDBSession.html#a11">getKey</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCDBSession.html#a12">isOpen</a> ()</td></tr>
+</table>
+<hr><a name="_details"></a><h2>상세한 내용</h2>
+Database 연결 세션 정보를 관리하는 클래스(Thread safe).
+<p>
+<hr><h2>생성자 &amp; 소멸자 문서화</h2>
+<a name="a0" doxytag="CDBSession::CDBSession"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CDBSession::CDBSession (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+생성자     </td>
+  </tr>
+</table>
+<a name="a1" doxytag="CDBSession::~CDBSession"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CDBSession::~CDBSession (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [virtual]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+소멸자     </td>
+  </tr>
+</table>
+<hr><h2>멤버 함수 문서화</h2>
+<a name="a7" doxytag="CDBSession::closeConnection"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CDBSession::closeConnection (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Oracle connection을 close하는 메쏘드.     </td>
+  </tr>
+</table>
+<a name="a4" doxytag="CDBSession::connect"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+int CDBSession::connect (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>userid</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+char * <em>password</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+char * <em>sid</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+오라클 데이터베이스로 접속을 시도하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>userid</em>
+&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em>password</em>
+&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em>oracle</em>
+&nbsp;</td><td>
+sid </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>반환: </b><dd>
+return 1 if success, else return -1 </dl>    </td>
+  </tr>
+</table>
+<a name="a3" doxytag="CDBSession::connect"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+int CDBSession::connect (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>account</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+오라클 데이터베이스로 접속을 시도하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>userid</em>
+&nbsp;</td><td>
+/<a href="mailto:passwd@sid">passwd@sid</a>) </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>반환: </b><dd>
+return 1 if success, else return -1 </dl>    </td>
+  </tr>
+</table>
+<a name="a2" doxytag="CDBSession::connect"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+int CDBSession::connect (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+오라클 데이터베이스로 접속을 시도하는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+return 1 if success, else return -1 </dl>    </td>
+  </tr>
+</table>
+<a name="a6" doxytag="CDBSession::getConnection"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void * CDBSession::getConnection (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Oracle connection을 얻어오는 메쏘드. 오라클 세션 동기화 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+sql_context pointer. </dl>    </td>
+  </tr>
+</table>
+<a name="a11" doxytag="CDBSession::getKey"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+char * CDBSession::getKey (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+오라클 세션 키를 얻어오는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+Oracle session key(userid/<a href="mailto:password@sid">password@sid</a>) </dl>    </td>
+  </tr>
+</table>
+<a name="a12" doxytag="CDBSession::isOpen"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CDBSession::isOpen (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Oracle database session이 연결되어 있는지 확인하는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+return true if database is open, else return false. </dl>    </td>
+  </tr>
+</table>
+<a name="a8" doxytag="CDBSession::returnConnection"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CDBSession::returnConnection (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Oracle session을 반납하는 메쏘드. 오라클 세션 동기화 메쏘드.     </td>
+  </tr>
+</table>
+<a name="a10" doxytag="CDBSession::setKey"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CDBSession::setKey (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>account</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+오라클 세션 키를 등록하는 메쏘드. 세션 키는 "userid/<a href="mailto:password@sid">password@sid</a>"로 이루어진다. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>userid</em>
+&nbsp;</td><td>
+/<a href="mailto:password@sid">password@sid</a> </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a9" doxytag="CDBSession::setKey"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CDBSession::setKey (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>userid</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+char * <em>password</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+char * <em>sid</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+오라클 세션 키를 등록하는 메쏘드. 세션 키는 "userid/<a href="mailto:password@sid">password@sid</a>"로 이루어진다. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>userid</em>
+&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em>password</em>
+&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em>sid</em>
+&nbsp;</td><td>
+</td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a5" doxytag="CDBSession::setOraInfo"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CDBSession::setOraInfo (
+          </b></td>
+          <td valign="bottom"><b>
+const char * <em>sid</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+const char * <em>userid</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+const char * <em>password</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+오라클 접속에 필요한 계정 정보를 설정하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>oracle</em>
+&nbsp;</td><td>
+sid. </td></tr>
+<tr><td valign=top><em>userid.</em>
+&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em>password.</em>
+&nbsp;</td><td>
+</td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<hr>이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:<ul>
+<li><a class="el" href="CDBSession_8h-source.html">CDBSession.h</a></ul>
+<hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

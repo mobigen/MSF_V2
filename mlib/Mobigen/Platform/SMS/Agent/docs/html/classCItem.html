@@ -1,0 +1,1152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CItem class Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CItem  클래스 참조</h1>수집 대상 item 정보 객체. 
+<a href="#_details">More...</a>
+<p>
+<code>#include &lt;<a class="el" href="CItem_8h-source.html">CItem.h</a>&gt;</code>
+<p>
+<a href="classCItem-members.html">모든 구성원들(members)의 명단</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td colspan=2><br><h2>공용 메소드</h2></td></tr>
+<tr><td nowrap align=right valign=top>&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a0">CItem</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>virtual&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a1">~CItem</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>std::string&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a2">getCode</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>std::string&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a3">getName</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>unsigned long&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a4">getSchedule</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>unsigned long&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a5">getEventSchedule</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>std::string&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a6">getEnable</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>std::string&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a7">getMethod</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>time_t&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a8">getCollectTime</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>time_t&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a9">getEventCollectTime</a> ()</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="classCQueue.html">CQueue</a>*&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a10">getInstanceQ</a> ()</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="classCQueue.html">CQueue</a>*&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a11">getConditionQ</a> ()</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="classCQueue.html">CQueue</a>*&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a12">getAlarmInstanceQ</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a13">setCode</a> (std::string code)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a14">setName</a> (std::string name)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a15">setSchedule</a> (unsigned long schedule)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a16">setEventSchedule</a> (unsigned long eventSchedule)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a17">setEnable</a> (std::string enable)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a18">setMethod</a> (std::string method)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a19">setCollectTime</a> (time_t collect)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a20">setEventCollectTime</a> (time_t eventCollect)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a21">setIsCollect</a> (bool b)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a22">addInstance</a> (<a class="el" href="classCItemInstance.html">CItemInstance</a> *inst)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a23">addCondition</a> (<a class="el" href="classCItemCondition.html">CItemCondition</a> *cond)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a24">delAlarm</a> (st_item_alarm *alarm)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a25">addAlarm</a> (st_item_alarm *alarm)</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a26">isAlarm</a> (st_item_alarm *alarm)</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a27">isCollect</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a28">isEnable</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a29">isPassive</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a30">isReportable</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a31">isEnableEvent</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCItem.html#a32">printItem</a> ()</td></tr>
+</table>
+<hr><a name="_details"></a><h2>상세한 내용</h2>
+수집 대상 item 정보 객체.
+<p>
+item code, 수집 주기(schedule), 장애 수집 주기(eschedule), 수집여부(enable), 상세수집여부(method) 수집 대상 instance, 장애 임계치 판단 condition 정보 등을 관리한다. 
+<p>
+<hr><h2>생성자 &amp; 소멸자 문서화</h2>
+<a name="a0" doxytag="CItem::CItem"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CItem::CItem (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+생성자     </td>
+  </tr>
+</table>
+<a name="a1" doxytag="CItem::~CItem"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CItem::~CItem (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [virtual]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+소멸자     </td>
+  </tr>
+</table>
+<hr><h2>멤버 함수 문서화</h2>
+<a name="a25" doxytag="CItem::addAlarm"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CItem::addAlarm (
+          </b></td>
+          <td valign="bottom"><b>
+st_item_alarm * <em>alarm</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+item에 발생한 장애를 등록. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>condition</em>
+&nbsp;</td><td>
+id, instance name을 키로 하는 추가 대상 장애 정보. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a23" doxytag="CItem::addCondition"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CItem::addCondition (
+          </b></td>
+          <td valign="bottom"><b>
+<a class="el" href="classCItemCondition.html">CItemCondition</a> * <em>cond</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+item에 임계치 판단 조건을 추가하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>CItemCondition</em>
+&nbsp;</td><td>
+) pointer. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a22" doxytag="CItem::addInstance"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CItem::addInstance (
+          </b></td>
+          <td valign="bottom"><b>
+<a class="el" href="classCItemInstance.html">CItemInstance</a> * <em>inst</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+item에 수집 대상 instance를 추가하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>instance</em>
+&nbsp;</td><td>
+(<a class="el" href="classCItemInstance.html">CItemInstance</a>) pointer. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a24" doxytag="CItem::delAlarm"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CItem::delAlarm (
+          </b></td>
+          <td valign="bottom"><b>
+st_item_alarm * <em>alarm</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+item에 현재 발생된 장애 삭제. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>condition</em>
+&nbsp;</td><td>
+id, instance name을 키로 하는 삭제 대상 장애 정보. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a12" doxytag="CItem::getAlarmInstanceQ"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+<a class="el" href="classCQueue.html">CQueue</a> * CItem::getAlarmInstanceQ (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+condition id와 instance 명을 키로하여 장애 발생 여부 정보를 저장하고 있는 리스트를 반환하는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+장애 발생 여부 정보. </dl>    </td>
+  </tr>
+</table>
+<a name="a2" doxytag="CItem::getCode"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+std::string CItem::getCode (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+method for getting item code. <dl compact><dt>
+<b>반환: </b><dd>
+item code. </dl>    </td>
+  </tr>
+</table>
+<a name="a8" doxytag="CItem::getCollectTime"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+time_t CItem::getCollectTime (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+정보 수집 시간을 반환하는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+정보 수집 시간. </dl>    </td>
+  </tr>
+</table>
+<a name="a11" doxytag="CItem::getConditionQ"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+<a class="el" href="classCQueue.html">CQueue</a> * CItem::getConditionQ (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+item별로 장애 판단 임계치 및 장애 수집 대상 instance 정보를 관리하는 condition(CItemCondition) 객체를 저장하고 있는 리스트를 반환하는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+condition(CItemCondition) 객체를 저장하고 있는 리스트 Queue </dl>    </td>
+  </tr>
+</table>
+<a name="a6" doxytag="CItem::getEnable"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+std::string CItem::getEnable (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+정보 수집 여부를 반환하는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+정보 수집 여부('O', 'X') </dl>    </td>
+  </tr>
+</table>
+<a name="a9" doxytag="CItem::getEventCollectTime"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+time_t CItem::getEventCollectTime (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+장애 수집 시간을 반환하는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+정보 수집 시간. </dl>    </td>
+  </tr>
+</table>
+<a name="a5" doxytag="CItem::getEventSchedule"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+unsigned long CItem::getEventSchedule (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+method for getting event schedule period(장애 수집 주기). <dl compact><dt>
+<b>반환: </b><dd>
+event schedule period. </dl>    </td>
+  </tr>
+</table>
+<a name="a10" doxytag="CItem::getInstanceQ"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+<a class="el" href="classCQueue.html">CQueue</a> * CItem::getInstanceQ (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+item별로 수집 등록된 instance(CItemInstance) 객체를 저장하고 있는 리스트를 반환하는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+instance(CItemInstance) 객체를 저장하고 있는 리스트 Queue </dl>    </td>
+  </tr>
+</table>
+<a name="a7" doxytag="CItem::getMethod"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+std::string CItem::getMethod (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+유형별 정보 수집 여부를 반환하는 메쏘드(ACTIVE/PASSIVE/EVENT). <dl compact><dt>
+<b>반환: </b><dd>
+정보 수집 여부('OOO', 'XXX', ...) </dl>    </td>
+  </tr>
+</table>
+<a name="a3" doxytag="CItem::getName"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+std::string CItem::getName (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+method for getting item description. <dl compact><dt>
+<b>반환: </b><dd>
+item code description. </dl>    </td>
+  </tr>
+</table>
+<a name="a4" doxytag="CItem::getSchedule"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+unsigned long CItem::getSchedule (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+method for getting schedule(정보 수집 주기) period. <dl compact><dt>
+<b>반환: </b><dd>
+schedule period. </dl>    </td>
+  </tr>
+</table>
+<a name="a26" doxytag="CItem::isAlarm"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CItem::isAlarm (
+          </b></td>
+          <td valign="bottom"><b>
+st_item_alarm * <em>alarm</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+condition id, instance name을 키로 하는 장애가 발생된 적이 있는지를 판단하는 메쏘드. 장애 중복 처리를 위해 존재. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>condition</em>
+&nbsp;</td><td>
+id, instance name을 키로 하는 장애 정보. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a27" doxytag="CItem::isCollect"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CItem::isCollect (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+현재 item에 대해 정보를 수집중인지 아닌지 여부를 판단하는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+true : 수집중, false : 수집 가능. </dl>    </td>
+  </tr>
+</table>
+<a name="a28" doxytag="CItem::isEnable"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CItem::isEnable (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+정보 수집 가능 여부를 판단하는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+true : 수집 가능, false : 수집 불가. </dl>    </td>
+  </tr>
+</table>
+<a name="a31" doxytag="CItem::isEnableEvent"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CItem::isEnableEvent (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+EVENT 수집 여부를 판단하는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+true : 수집, false : 수집 차단. </dl>    </td>
+  </tr>
+</table>
+<a name="a29" doxytag="CItem::isPassive"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CItem::isPassive (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Manager로부터 command를 수집받아서 수집 하는 기능 차단 여부. <dl compact><dt>
+<b>반환: </b><dd>
+true : 수집 가능, false : 수집 차단. </dl>    </td>
+  </tr>
+</table>
+<a name="a30" doxytag="CItem::isReportable"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CItem::isReportable (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+ACTIVE 메시지 수집 여부를 판단하는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+true : 수집, false : 수집 차단. </dl>    </td>
+  </tr>
+</table>
+<a name="a32" doxytag="CItem::printItem"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CItem::printItem (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+item 개체 정보를 프린트하는 메쏘드     </td>
+  </tr>
+</table>
+<a name="a13" doxytag="CItem::setCode"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CItem::setCode (
+          </b></td>
+          <td valign="bottom"><b>
+std::string <em>code</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+item code 정보를 설정하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>item</em>
+&nbsp;</td><td>
+code. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a19" doxytag="CItem::setCollectTime"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CItem::setCollectTime (
+          </b></td>
+          <td valign="bottom"><b>
+time_t <em>collect</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+다음 정보 수집 시간을 설정하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a17" doxytag="CItem::setEnable"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CItem::setEnable (
+          </b></td>
+          <td valign="bottom"><b>
+std::string <em>enable</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+정보 수집 여부를 설정하는 메쏘드('0' or 'X') <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>O</em>
+&nbsp;</td><td>
+' or 'X') </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a20" doxytag="CItem::setEventCollectTime"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CItem::setEventCollectTime (
+          </b></td>
+          <td valign="bottom"><b>
+time_t <em>eventCollect</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+다음 장애 수집 시간을 설정하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a16" doxytag="CItem::setEventSchedule"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CItem::setEventSchedule (
+          </b></td>
+          <td valign="bottom"><b>
+unsigned long <em>eventSchedule</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+장애 정보 수집 주기를 설정하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>:seconds</em>
+&nbsp;</td><td>
+) </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a21" doxytag="CItem::setIsCollect"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CItem::setIsCollect (
+          </b></td>
+          <td valign="bottom"><b>
+bool <em>b</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+현재 정보를 수집하고 있는지 여부를 판단하는 메쏘드. 현재 정보를 수집하고 있는 item은 scheduler가 수집 요청을 하지 않는다. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>true</em>
+&nbsp;</td><td>
+: 현재 정보 수집 중, false : 정보를 수집하고 있지 않음). </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a18" doxytag="CItem::setMethod"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CItem::setMethod (
+          </b></td>
+          <td valign="bottom"><b>
+std::string <em>method</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+정보 수집 상세 여부를 설정하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>ACTIVE</em>
+&nbsp;</td><td>
+/PASSIVE/EVENT) </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a14" doxytag="CItem::setName"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CItem::setName (
+          </b></td>
+          <td valign="bottom"><b>
+std::string <em>name</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+item description 정보를 설정하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>item</em>
+&nbsp;</td><td>
+description. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a15" doxytag="CItem::setSchedule"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CItem::setSchedule (
+          </b></td>
+          <td valign="bottom"><b>
+unsigned long <em>schedule</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+정보 수집 주기를 설정하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>:seconds</em>
+&nbsp;</td><td>
+) </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<hr>이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:<ul>
+<li><a class="el" href="CItem_8h-source.html">CItem.h</a></ul>
+<hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

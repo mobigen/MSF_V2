@@ -1,0 +1,683 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CSocketWorker class Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CSocketWorker  클래스 참조</h1>TCP/IP 소켓에 관련된 기능을 담당하는 클래스. 
+<a href="#_details">More...</a>
+<p>
+<code>#include &lt;<a class="el" href="CSocketWorker_8h-source.html">CSocketWorker.h</a>&gt;</code>
+<p>
+<p>CSocketWorker에 대한 상속 도표:
+<p><center><img src="classCSocketWorker.gif" usemap="#CSocketWorker_map" border="0"></center>
+<map name="CSocketWorker_map">
+<area href="classCSocketWorkerThread.html" alt="CSocketWorkerThread" shape="rect" coords="0,56,140,80">
+</map>
+<a href="classCSocketWorker-members.html">모든 구성원들(members)의 명단</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td colspan=2><br><h2>공용 메소드</h2></td></tr>
+<tr><td nowrap align=right valign=top>&nbsp;</td><td valign=bottom><a class="el" href="classCSocketWorker.html#a0">CSocketWorker</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>virtual&nbsp;</td><td valign=bottom><a class="el" href="classCSocketWorker.html#a1">~CSocketWorker</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCSocketWorker.html#a2">create</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCSocketWorker.html#a3">bind</a> (int port)</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCSocketWorker.html#a4">listen</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCSocketWorker.html#a5">accept</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCSocketWorker.html#a6">close</a> (int fd)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCSocketWorker.html#a7">close_cli</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>int&nbsp;</td><td valign=bottom><a class="el" href="classCSocketWorker.html#a8">readn</a> (int fd, char *buf, int buf_len, int timeout)</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCSocketWorker.html#a9">connect</a> (std::string host, int port)</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCSocketWorker.html#a10">sendMsg</a> (std::string)</td></tr>
+<tr><td nowrap align=right valign=top>int&nbsp;</td><td valign=bottom><a class="el" href="classCSocketWorker.html#a11">recvMsg</a> (std::string &amp;buf)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCSocketWorker.html#a12">set_non_blocking</a> (bool b)</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCSocketWorker.html#a13">is_valid</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCSocketWorker.html#a14">connectProcess</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>int&nbsp;</td><td valign=bottom><a class="el" href="classCSocketWorker.html#a15">getFD</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>int&nbsp;</td><td valign=bottom><a class="el" href="classCSocketWorker.html#a16">getClientSD</a> ()</td></tr>
+<tr><td colspan=2><br><h2>Protected Attributes</h2></td></tr>
+<tr><td nowrap align=right valign=top>sockaddr_in&nbsp;</td><td valign=bottom><a class="el" href="classCSocketWorker.html#n0">m_addr</a></td></tr>
+</table>
+<hr><a name="_details"></a><h2>상세한 내용</h2>
+TCP/IP 소켓에 관련된 기능을 담당하는 클래스.
+<p>
+<hr><h2>생성자 &amp; 소멸자 문서화</h2>
+<a name="a0" doxytag="CSocketWorker::CSocketWorker"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CSocketWorker::CSocketWorker (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+생성자     </td>
+  </tr>
+</table>
+<a name="a1" doxytag="CSocketWorker::~CSocketWorker"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CSocketWorker::~CSocketWorker (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [virtual]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+소멸자     </td>
+  </tr>
+</table>
+<hr><h2>멤버 함수 문서화</h2>
+<a name="a5" doxytag="CSocketWorker::accept"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CSocketWorker::accept (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Socket accept method. <dl compact><dt>
+<b>반환: </b><dd>
+true if success, else return false. </dl>    </td>
+  </tr>
+</table>
+<a name="a3" doxytag="CSocketWorker::bind"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CSocketWorker::bind (
+          </b></td>
+          <td valign="bottom"><b>
+int <em>port</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+주어진 포트번호로 bind하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>socket</em>
+&nbsp;</td><td>
+listen port. </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>반환: </b><dd>
+true if sucess, else return false. </dl>    </td>
+  </tr>
+</table>
+<a name="a6" doxytag="CSocketWorker::close"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CSocketWorker::close (
+          </b></td>
+          <td valign="bottom"><b>
+int <em>fd</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Socket session close method. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>socket</em>
+&nbsp;</td><td>
+descriptor. </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>반환: </b><dd>
+true if success, else return false. </dl>    </td>
+  </tr>
+</table>
+<a name="a7" doxytag="CSocketWorker::close_cli"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CSocketWorker::close_cli (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Close client socket session method.     </td>
+  </tr>
+</table>
+<a name="a9" doxytag="CSocketWorker::connect"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CSocketWorker::connect (
+          </b></td>
+          <td valign="bottom"><b>
+std::string <em>host</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+int <em>port</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+method to connect to remote host <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>remote</em>
+&nbsp;</td><td>
+host domain name or ip address. </td></tr>
+<tr><td valign=top><em>connect</em>
+&nbsp;</td><td>
+port. </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>반환: </b><dd>
+true if success, else return false. </dl>    </td>
+  </tr>
+</table>
+<a name="a14" doxytag="CSocketWorker::connectProcess"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CSocketWorker::connectProcess (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+method to connect socket session.     </td>
+  </tr>
+</table>
+<a name="a2" doxytag="CSocketWorker::create"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CSocketWorker::create (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+TCP/IP 소켓 초기화 <dl compact><dt>
+<b>반환: </b><dd>
+true if success, else return flase. </dl>    </td>
+  </tr>
+</table>
+<a name="a16" doxytag="CSocketWorker::getClientSD"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+int CSocketWorker::getClientSD (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+method for getting client socket descriptor. <dl compact><dt>
+<b>반환: </b><dd>
+client socket descriptor(client socket session) </dl>    </td>
+  </tr>
+</table>
+<a name="a15" doxytag="CSocketWorker::getFD"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+int CSocketWorker::getFD (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+method for getting socket descriptor. <dl compact><dt>
+<b>반환: </b><dd>
+socket descriptor. </dl>    </td>
+  </tr>
+</table>
+<a name="a13" doxytag="CSocketWorker::is_valid"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CSocketWorker::is_valid (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+method for check if socket session is valid. <dl compact><dt>
+<b>반환: </b><dd>
+true if socket session is valid, else return false. </dl>    </td>
+  </tr>
+</table>
+<a name="a4" doxytag="CSocketWorker::listen"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CSocketWorker::listen (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Socket listen method. <dl compact><dt>
+<b>반환: </b><dd>
+true if succss, else return false. </dl>    </td>
+  </tr>
+</table>
+<a name="a8" doxytag="CSocketWorker::readn"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+int CSocketWorker::readn (
+          </b></td>
+          <td valign="bottom"><b>
+int <em>fd</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+char * <em>buf</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+int <em>buf_len</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+int <em>timeout</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+read data from socket session <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>socket</em>
+&nbsp;</td><td>
+descriptor. </td></tr>
+<tr><td valign=top><em>data</em>
+&nbsp;</td><td>
+buffer. </td></tr>
+<tr><td valign=top><em>data</em>
+&nbsp;</td><td>
+buffer size. </td></tr>
+<tr><td valign=top><em>timeout</em>
+&nbsp;</td><td>
+(seconds). </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>반환: </b><dd>
+read bytes. </dl>    </td>
+  </tr>
+</table>
+<a name="a11" doxytag="CSocketWorker::recvMsg"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+int CSocketWorker::recvMsg (
+          </b></td>
+          <td valign="bottom"><b>
+std::string &amp; <em>buf</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+recieve data from socket session <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>data</em>
+&nbsp;</td><td>
+buffer. </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>반환: </b><dd>
+recieve count </dl>    </td>
+  </tr>
+</table>
+<a name="a10" doxytag="CSocketWorker::sendMsg"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CSocketWorker::sendMsg (
+          </b></td>
+          <td valign="bottom"><b>
+std::string&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+send data to socket session <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>send</em>
+&nbsp;</td><td>
+message </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>반환: </b><dd>
+true if success, else return false </dl>    </td>
+  </tr>
+</table>
+<a name="a12" doxytag="CSocketWorker::set_non_blocking"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CSocketWorker::set_non_blocking (
+          </b></td>
+          <td valign="bottom"><b>
+bool <em>b</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+method for setting blocking mode to socket session. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>true</em>
+&nbsp;</td><td>
+: block mode, false : non block mode. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<hr><h2>멤서 데이타 문서화</h2>
+<a name="n0" doxytag="CSocketWorker::m_addr"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+sockaddr_in CSocketWorker::m_addr<code> [protected]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+sockaddr_in structure     </td>
+  </tr>
+</table>
+<hr>이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:<ul>
+<li><a class="el" href="CSocketWorker_8h-source.html">CSocketWorker.h</a></ul>
+<hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

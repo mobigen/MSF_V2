@@ -1,0 +1,343 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CSyslogMonitorThread class Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CSyslogMonitorThread  클래스 참조</h1>시스로그를 모니터링하는 클래스. 
+<a href="#_details">More...</a>
+<p>
+<code>#include &lt;<a class="el" href="CSyslogMonitorThread_8h-source.html">CSyslogMonitorThread.h</a>&gt;</code>
+<p>
+<p>CSyslogMonitorThread에 대한 상속 도표:
+<p><center><img src="classCSyslogMonitorThread.gif" usemap="#CSyslogMonitorThread_map" border="0"></center>
+<map name="CSyslogMonitorThread_map">
+<area href="classThreadReporter.html" alt="ThreadReporter" shape="rect" coords="152,0,294,24">
+</map>
+<a href="classCSyslogMonitorThread-members.html">모든 구성원들(members)의 명단</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td colspan=2><br><h2>공용 메소드</h2></td></tr>
+<tr><td nowrap align=right valign=top>&nbsp;</td><td valign=bottom><a class="el" href="classCSyslogMonitorThread.html#a0">CSyslogMonitorThread</a> (void *_data, int numElts)</td></tr>
+<tr><td nowrap align=right valign=top>virtual&nbsp;</td><td valign=bottom><a class="el" href="classCSyslogMonitorThread.html#a1">~CSyslogMonitorThread</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>virtual void&nbsp;</td><td valign=bottom><a class="el" href="classCSyslogMonitorThread.html#a2">run</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCSyslogMonitorThread.html#a3">checkFD</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCSyslogMonitorThread.html#a4">checkCondition</a> (char *log)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCSyslogMonitorThread.html#a5">sendEvent</a> (<a class="el" href="classCItemCondition.html">CItemCondition</a> *cond, char *log)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCSyslogMonitorThread.html#a6">lock</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCSyslogMonitorThread.html#a7">unlock</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCSyslogMonitorThread.html#a8">quit</a> ()</td></tr>
+</table>
+<hr><a name="_details"></a><h2>상세한 내용</h2>
+시스로그를 모니터링하는 클래스.
+<p>
+<hr><h2>생성자 &amp; 소멸자 문서화</h2>
+<a name="a0" doxytag="CSyslogMonitorThread::CSyslogMonitorThread"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CSyslogMonitorThread::CSyslogMonitorThread (
+          </b></td>
+          <td valign="bottom"><b>
+void * <em>_data</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+int <em>numElts</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+생성자 <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>data</em>
+&nbsp;</td><td>
+pointer. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a1" doxytag="CSyslogMonitorThread::~CSyslogMonitorThread"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CSyslogMonitorThread::~CSyslogMonitorThread (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline, virtual]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+소멸자     </td>
+  </tr>
+</table>
+<hr><h2>멤버 함수 문서화</h2>
+<a name="a4" doxytag="CSyslogMonitorThread::checkCondition"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CSyslogMonitorThread::checkCondition (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>log</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+수집된 syslog 메시지가 주어진 item condition의 조건에 만족하는지 여부를 확인하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>syslog</em>
+&nbsp;</td><td>
+message </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a3" doxytag="CSyslogMonitorThread::checkFD"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CSyslogMonitorThread::checkFD (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+syslog file pointer의 현재 위치 정보를 판단하는 메쏘드     </td>
+  </tr>
+</table>
+<a name="a6" doxytag="CSyslogMonitorThread::lock"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CSyslogMonitorThread::lock (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+쓰레드 잠금 메쏘드     </td>
+  </tr>
+</table>
+<a name="a8" doxytag="CSyslogMonitorThread::quit"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CSyslogMonitorThread::quit (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+쓰레드 종료 요청 메쏘드     </td>
+  </tr>
+</table>
+<a name="a2" doxytag="CSyslogMonitorThread::run"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CSyslogMonitorThread::run (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [virtual]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+쓰레드 기동 메쏘드     </td>
+  </tr>
+</table>
+<a name="a5" doxytag="CSyslogMonitorThread::sendEvent"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CSyslogMonitorThread::sendEvent (
+          </b></td>
+          <td valign="bottom"><b>
+<a class="el" href="classCItemCondition.html">CItemCondition</a> * <em>cond</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+char * <em>log</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+수집된 syslog 메시지를 SMS Manager로 전송하기 위해 데이터 버퍼로 전송하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>CItemCondition</em>
+&nbsp;</td><td>
+pointer. </td></tr>
+<tr><td valign=top><em>syslog</em>
+&nbsp;</td><td>
+message. </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>참조하시요: </b><dd>
+<a class="el" href="classCItemCondition.html">CItemCondition</a>. </dl>    </td>
+  </tr>
+</table>
+<a name="a7" doxytag="CSyslogMonitorThread::unlock"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CSyslogMonitorThread::unlock (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+쓰레드 잠금 해지 메쏘드     </td>
+  </tr>
+</table>
+<hr>이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:<ul>
+<li><a class="el" href="CSyslogMonitorThread_8h-source.html">CSyslogMonitorThread.h</a></ul>
+<hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

@@ -1,0 +1,75 @@
+\section{CMemory\-Perf\-Collector  클래스 참조}
+\label{classCMemoryPerfCollector}\index{CMemoryPerfCollector@{CMemory\-Perf\-Collector}}
+메모리 성능 정보를 수집하는 클래스. 
+
+
+{\tt \#include $<$CMemory\-Perf\-Collector.h$>$}
+
+CMemory\-Perf\-Collector에 대한 상속 도표:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCMemoryPerfCollector}
+\end{center}
+\end{figure}
+\subsection*{공용 메소드}
+\begin{CompactItemize}
+\item 
+{\bf CMemory\-Perf\-Collector} ()
+\item 
+{\bf $\sim$CMemory\-Perf\-Collector} ()
+\item 
+void {\bf collect} ()
+\item 
+void {\bf make\-Message} ()
+\item 
+void {\bf is\-Over\-Threshold} ({\bf CItem\-Condition} $\ast$cond)
+\end{CompactItemize}
+
+
+\subsection{상세한 내용}
+메모리 성능 정보를 수집하는 클래스.
+
+물리적 메모리(Total Memory size(MB), Free Memory(MB), Memory usage(\%)), Swap 메로리(Total Swap Memory size(MB), Free Swap Memory size(MB), Swap Memory Usage(\%)), 페이지 스캔, 페이지 아웃, 스왑 아웃 정보를 수집하는 클래스. 
+
+
+
+\subsection{생성자 \& 소멸자 문서화}
+\index{CMemoryPerfCollector@{CMemory\-Perf\-Collector}!CMemoryPerfCollector@{CMemoryPerfCollector}}
+\index{CMemoryPerfCollector@{CMemoryPerfCollector}!CMemoryPerfCollector@{CMemory\-Perf\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CMemory\-Perf\-Collector::CMemory\-Perf\-Collector ()}\label{classCMemoryPerfCollector_a0}
+
+
+생성자 \index{CMemoryPerfCollector@{CMemory\-Perf\-Collector}!~CMemoryPerfCollector@{$\sim$CMemoryPerfCollector}}
+\index{~CMemoryPerfCollector@{$\sim$CMemoryPerfCollector}!CMemoryPerfCollector@{CMemory\-Perf\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CMemory\-Perf\-Collector::$\sim$CMemory\-Perf\-Collector ()}\label{classCMemoryPerfCollector_a1}
+
+
+소멸자 
+
+\subsection{멤버 함수 문서화}
+\index{CMemoryPerfCollector@{CMemory\-Perf\-Collector}!collect@{collect}}
+\index{collect@{collect}!CMemoryPerfCollector@{CMemory\-Perf\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CMemory\-Perf\-Collector::collect ()\hspace{0.3cm}{\tt  [virtual]}}\label{classCMemoryPerfCollector_a2}
+
+
+메모리 성능 정보를 수집하여 SMS Manager로 전송하기 위한 메시지 포맷으로 변환하여 메시지 큐로 전송하는 메쏘드. 
+
+{\bf CCollector} {\rm (페이지\,\pageref{classCCollector_a2})}으로부터 재구현된.\index{CMemoryPerfCollector@{CMemory\-Perf\-Collector}!isOverThreshold@{isOverThreshold}}
+\index{isOverThreshold@{isOverThreshold}!CMemoryPerfCollector@{CMemory\-Perf\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CMemory\-Perf\-Collector::is\-Over\-Threshold ({\bf CItem\-Condition} $\ast$ {\em cond})\hspace{0.3cm}{\tt  [inline, virtual]}}\label{classCMemoryPerfCollector_a4}
+
+
+장애 판단을 위한 메쏘드. 현재 사용되지 않음. 
+
+{\bf CCollector} {\rm (페이지\,\pageref{classCCollector_a4})}으로부터 재구현된.\index{CMemoryPerfCollector@{CMemory\-Perf\-Collector}!makeMessage@{makeMessage}}
+\index{makeMessage@{makeMessage}!CMemoryPerfCollector@{CMemory\-Perf\-Collector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CMemory\-Perf\-Collector::make\-Message ()\hspace{0.3cm}{\tt  [virtual]}}\label{classCMemoryPerfCollector_a3}
+
+
+수집된 메모리 성능 정보를 SMS Manager로 전송하기 위한 메시지 포맷으로 변환하는 메쏘드. 
+
+{\bf CCollector} {\rm (페이지\,\pageref{classCCollector_a3})}으로부터 재구현된.
+
+이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:\begin{CompactItemize}
+\item 
+{\bf CMemory\-Perf\-Collector.h}\end{CompactItemize}

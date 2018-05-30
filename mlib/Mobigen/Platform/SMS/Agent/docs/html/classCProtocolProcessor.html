@@ -1,0 +1,725 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CProtocolProcessor class Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CProtocolProcessor  클래스 참조</h1>SMS Manager로부터 수신된 명령 코드를 구문 분석하고 처리하는 클래스. 
+<a href="#_details">More...</a>
+<p>
+<code>#include &lt;<a class="el" href="CProtocolProcessor_8h-source.html">CProtocolProcessor.h</a>&gt;</code>
+<p>
+<a href="classCProtocolProcessor-members.html">모든 구성원들(members)의 명단</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td colspan=2><br><h2>공용 메소드</h2></td></tr>
+<tr><td nowrap align=right valign=top>&nbsp;</td><td valign=bottom><a class="el" href="classCProtocolProcessor.html#a0">CProtocolProcessor</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>&nbsp;</td><td valign=bottom><a class="el" href="classCProtocolProcessor.html#a1">~CProtocolProcessor</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCProtocolProcessor.html#a2">process</a> (char *pcmd)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCProtocolProcessor.html#a3">execute</a> (char *pcmd)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCProtocolProcessor.html#a4">execCOL</a> (char *pcmd)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCProtocolProcessor.html#a5">execGET</a> (char *pcmd)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCProtocolProcessor.html#a6">execSET</a> (char *pcmd)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCProtocolProcessor.html#a7">execGETINST</a> (char *pcmd)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCProtocolProcessor.html#a8">execSETINST</a> (char *pcmd)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCProtocolProcessor.html#a9">execADDINST</a> (char *pcmd)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCProtocolProcessor.html#a10">execDELINST</a> (char *pcmd)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCProtocolProcessor.html#a11">execGETCOND</a> (char *pcmd)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCProtocolProcessor.html#a12">execSETCOND</a> (char *pcmd)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCProtocolProcessor.html#a13">execADDCOND</a> (char *pcmd)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCProtocolProcessor.html#a14">execDELCOND</a> (char *pcmd)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCProtocolProcessor.html#a15">setUserInfo</a> (char *pcmd)</td></tr>
+<tr><td nowrap align=right valign=top>char*&nbsp;</td><td valign=bottom><a class="el" href="classCProtocolProcessor.html#a16">parse</a> (char *pcmd)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCProtocolProcessor.html#a17">setEnvVar</a> (<a class="el" href="classCAgentEnvVar.html">CAgentEnvVar</a> *var)</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="classCAgentEnvVar.html">CAgentEnvVar</a>*&nbsp;</td><td valign=bottom><a class="el" href="classCProtocolProcessor.html#a18">getEnvVar</a> ()</td></tr>
+</table>
+<hr><a name="_details"></a><h2>상세한 내용</h2>
+SMS Manager로부터 수신된 명령 코드를 구문 분석하고 처리하는 클래스.
+<p>
+SMS Manager로부터 수신된 명령 코드가 정해진 syntax에 맞는지 검사하고, 정해진 규약에 따른 명령 코드를 분석하여, 요청 되어진 명령어를 처리하는 클래스. 
+<p>
+<hr><h2>생성자 &amp; 소멸자 문서화</h2>
+<a name="a0" doxytag="CProtocolProcessor::CProtocolProcessor"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CProtocolProcessor::CProtocolProcessor (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+생성자<br>
+ 명령 코드에 대한 정규 표현식을 초기화한다.     </td>
+  </tr>
+</table>
+<a name="a1" doxytag="CProtocolProcessor::~CProtocolProcessor"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CProtocolProcessor::~CProtocolProcessor (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+소멸자     </td>
+  </tr>
+</table>
+<hr><h2>멤버 함수 문서화</h2>
+<a name="a13" doxytag="CProtocolProcessor::execADDCOND"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CProtocolProcessor::execADDCOND (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>pcmd</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Manager로부터 "ADDCOND" 명령 코드로 요청된 경우 이를 처리하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>command</em>
+&nbsp;</td><td>
+message(수신된 명령어). </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a9" doxytag="CProtocolProcessor::execADDINST"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CProtocolProcessor::execADDINST (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>pcmd</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Manager로부터 "ADDINST" 명령 코드로 요청된 경우 이를 처리하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>command</em>
+&nbsp;</td><td>
+message(수신된 명령어). </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a4" doxytag="CProtocolProcessor::execCOL"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CProtocolProcessor::execCOL (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>pcmd</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Manager로부터 "COL" 명령 코드로 요청된 경우 이를 처리하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>command</em>
+&nbsp;</td><td>
+message(수신된 명령어). </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a14" doxytag="CProtocolProcessor::execDELCOND"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CProtocolProcessor::execDELCOND (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>pcmd</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Manager로부터 "DELCOND" 명령 코드로 요청된 경우 이를 처리하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>command</em>
+&nbsp;</td><td>
+message(수신된 명령어). </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a10" doxytag="CProtocolProcessor::execDELINST"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CProtocolProcessor::execDELINST (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>pcmd</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Manager로부터 "DELINST" 명령 코드로 요청된 경우 이를 처리하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>command</em>
+&nbsp;</td><td>
+message(수신된 명령어). </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a5" doxytag="CProtocolProcessor::execGET"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CProtocolProcessor::execGET (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>pcmd</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Manager로부터 "GET" 명령 코드로 요청된 경우 이를 처리하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>command</em>
+&nbsp;</td><td>
+message(수신된 명령어). </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a11" doxytag="CProtocolProcessor::execGETCOND"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CProtocolProcessor::execGETCOND (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>pcmd</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Manager로부터 "GETCOND" 명령 코드로 요청된 경우 이를 처리하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>command</em>
+&nbsp;</td><td>
+message(수신된 명령어). </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a7" doxytag="CProtocolProcessor::execGETINST"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CProtocolProcessor::execGETINST (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>pcmd</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Manager로부터 "GETINST" 명령 코드로 요청된 경우 이를 처리하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>command</em>
+&nbsp;</td><td>
+message(수신된 명령어). </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a6" doxytag="CProtocolProcessor::execSET"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CProtocolProcessor::execSET (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>pcmd</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Manager로부터 "SET" 명령 코드로 요청된 경우 이를 처리하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>command</em>
+&nbsp;</td><td>
+message(수신된 명령어). </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a12" doxytag="CProtocolProcessor::execSETCOND"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CProtocolProcessor::execSETCOND (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>pcmd</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Manager로부터 "SETCOND" 명령 코드로 요청된 경우 이를 처리하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>command</em>
+&nbsp;</td><td>
+message(수신된 명령어). </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a8" doxytag="CProtocolProcessor::execSETINST"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CProtocolProcessor::execSETINST (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>pcmd</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Manager로부터 "SETINST" 명령 코드로 요청된 경우 이를 처리하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>command</em>
+&nbsp;</td><td>
+message(수신된 명령어). </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a3" doxytag="CProtocolProcessor::execute"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CProtocolProcessor::execute (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>pcmd</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Manager로부터 수신된 명령 코드에 따라 분기 처리하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>command</em>
+&nbsp;</td><td>
+message(수신된 명령어). </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a18" doxytag="CProtocolProcessor::getEnvVar"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+<a class="el" href="classCAgentEnvVar.html">CAgentEnvVar</a> * CProtocolProcessor::getEnvVar (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Agent가 기동하는데 필요한 환경 정보 및 item 정보를 관리하는 객체를 조회하는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+CAGentEnvVar pointer. </dl><dl compact><dt>
+<b>참조하시요: </b><dd>
+<a class="el" href="classCAgentEnvVar.html">CAgentEnvVar</a>, <a class="el" href="classCAgentConfigVar.html">CAgentConfigVar</a>. </dl>    </td>
+  </tr>
+</table>
+<a name="a16" doxytag="CProtocolProcessor::parse"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+char * CProtocolProcessor::parse (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>pcmd</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Manager로부터 수신된 명령어가 정해진 규약에 맞는지 검사하고<br>
+ 파싱하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>command</em>
+&nbsp;</td><td>
+message(수신된 명령어) </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>반환: </b><dd>
+파싱된 명령어. </dl>    </td>
+  </tr>
+</table>
+<a name="a2" doxytag="CProtocolProcessor::process"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CProtocolProcessor::process (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>pcmd</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Manager로부터 요청된 명령 코드를 분석 및 처리하는 최상위 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>command</em>
+&nbsp;</td><td>
+message(수신된 명령어). </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a17" doxytag="CProtocolProcessor::setEnvVar"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CProtocolProcessor::setEnvVar (
+          </b></td>
+          <td valign="bottom"><b>
+<a class="el" href="classCAgentEnvVar.html">CAgentEnvVar</a> * <em>var</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Agent가 기동하는데 필요한 환경 정보 및 item 정보를 관리하는 객체를 저장하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>CAgentEnvVar</em>
+&nbsp;</td><td>
+pointer. </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>참조하시요: </b><dd>
+<a class="el" href="classCAgentEnvVar.html">CAgentEnvVar</a>, <a class="el" href="classCAgentConfigVar.html">CAgentConfigVar</a>. </dl>    </td>
+  </tr>
+</table>
+<a name="a15" doxytag="CProtocolProcessor::setUserInfo"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CProtocolProcessor::setUserInfo (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>pcmd</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+SMS Manager로부터 "SET" 명령 중에서 ITEM CODE가 "UserInfo"인 경우<br>
+ SMS Agent 계정 설정을 처리하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>command</em>
+&nbsp;</td><td>
+message(수신된 명령어). </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<hr>이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:<ul>
+<li><a class="el" href="CProtocolProcessor_8h-source.html">CProtocolProcessor.h</a></ul>
+<hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

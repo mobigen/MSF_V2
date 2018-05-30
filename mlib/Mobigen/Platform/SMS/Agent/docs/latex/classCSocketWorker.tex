@@ -1,0 +1,246 @@
+\section{CSocket\-Worker  클래스 참조}
+\label{classCSocketWorker}\index{CSocketWorker@{CSocket\-Worker}}
+TCP/IP 소켓에 관련된 기능을 담당하는 클래스. 
+
+
+{\tt \#include $<$CSocket\-Worker.h$>$}
+
+CSocket\-Worker에 대한 상속 도표:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCSocketWorker}
+\end{center}
+\end{figure}
+\subsection*{공용 메소드}
+\begin{CompactItemize}
+\item 
+{\bf CSocket\-Worker} ()
+\item 
+virtual {\bf $\sim$CSocket\-Worker} ()
+\item 
+bool {\bf create} ()
+\item 
+bool {\bf bind} (int port)
+\item 
+bool {\bf listen} ()
+\item 
+bool {\bf accept} ()
+\item 
+bool {\bf close} (int fd)
+\item 
+void {\bf close\_\-cli} ()
+\item 
+int {\bf readn} (int fd, char $\ast$buf, int buf\_\-len, int timeout)
+\item 
+bool {\bf connect} (std::string host, int port)
+\item 
+bool {\bf send\-Msg} (std::string)
+\item 
+int {\bf recv\-Msg} (std::string \&buf)
+\item 
+void {\bf set\_\-non\_\-blocking} (bool b)
+\item 
+bool {\bf is\_\-valid} ()
+\item 
+void {\bf connect\-Process} ()
+\item 
+int {\bf get\-FD} ()
+\item 
+int {\bf get\-Client\-SD} ()
+\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+sockaddr\_\-in {\bf m\_\-addr}
+\end{CompactItemize}
+
+
+\subsection{상세한 내용}
+TCP/IP 소켓에 관련된 기능을 담당하는 클래스.
+
+
+
+\subsection{생성자 \& 소멸자 문서화}
+\index{CSocketWorker@{CSocket\-Worker}!CSocketWorker@{CSocketWorker}}
+\index{CSocketWorker@{CSocketWorker}!CSocketWorker@{CSocket\-Worker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CSocket\-Worker::CSocket\-Worker ()}\label{classCSocketWorker_a0}
+
+
+생성자 \index{CSocketWorker@{CSocket\-Worker}!~CSocketWorker@{$\sim$CSocketWorker}}
+\index{~CSocketWorker@{$\sim$CSocketWorker}!CSocketWorker@{CSocket\-Worker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CSocket\-Worker::$\sim$CSocket\-Worker ()\hspace{0.3cm}{\tt  [virtual]}}\label{classCSocketWorker_a1}
+
+
+소멸자 
+
+\subsection{멤버 함수 문서화}
+\index{CSocketWorker@{CSocket\-Worker}!accept@{accept}}
+\index{accept@{accept}!CSocketWorker@{CSocket\-Worker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CSocket\-Worker::accept ()}\label{classCSocketWorker_a5}
+
+
+Socket accept method. \begin{Desc}
+\item[{\bf 반환: }]\par
+true if success, else return false. \end{Desc}
+\index{CSocketWorker@{CSocket\-Worker}!bind@{bind}}
+\index{bind@{bind}!CSocketWorker@{CSocket\-Worker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CSocket\-Worker::bind (int {\em port})}\label{classCSocketWorker_a3}
+
+
+주어진 포트번호로 bind하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em socket}]listen port. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 반환: }]\par
+true if sucess, else return false. \end{Desc}
+\index{CSocketWorker@{CSocket\-Worker}!close@{close}}
+\index{close@{close}!CSocketWorker@{CSocket\-Worker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CSocket\-Worker::close (int {\em fd})}\label{classCSocketWorker_a6}
+
+
+Socket session close method. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em socket}]descriptor. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 반환: }]\par
+true if success, else return false. \end{Desc}
+\index{CSocketWorker@{CSocket\-Worker}!close_cli@{close\_\-cli}}
+\index{close_cli@{close\_\-cli}!CSocketWorker@{CSocket\-Worker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CSocket\-Worker::close\_\-cli ()\hspace{0.3cm}{\tt  [inline]}}\label{classCSocketWorker_a7}
+
+
+Close client socket session method. \index{CSocketWorker@{CSocket\-Worker}!connect@{connect}}
+\index{connect@{connect}!CSocketWorker@{CSocket\-Worker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CSocket\-Worker::connect (std::string {\em host}, int {\em port})}\label{classCSocketWorker_a9}
+
+
+method to connect to remote host \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em remote}]host domain name or ip address. \item[
+{\em connect}]port. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 반환: }]\par
+true if success, else return false. \end{Desc}
+\index{CSocketWorker@{CSocket\-Worker}!connectProcess@{connectProcess}}
+\index{connectProcess@{connectProcess}!CSocketWorker@{CSocket\-Worker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CSocket\-Worker::connect\-Process ()}\label{classCSocketWorker_a14}
+
+
+method to connect socket session. \index{CSocketWorker@{CSocket\-Worker}!create@{create}}
+\index{create@{create}!CSocketWorker@{CSocket\-Worker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CSocket\-Worker::create ()}\label{classCSocketWorker_a2}
+
+
+TCP/IP 소켓 초기화 \begin{Desc}
+\item[{\bf 반환: }]\par
+true if success, else return flase. \end{Desc}
+\index{CSocketWorker@{CSocket\-Worker}!getClientSD@{getClientSD}}
+\index{getClientSD@{getClientSD}!CSocketWorker@{CSocket\-Worker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int CSocket\-Worker::get\-Client\-SD ()\hspace{0.3cm}{\tt  [inline]}}\label{classCSocketWorker_a16}
+
+
+method for getting client socket descriptor. \begin{Desc}
+\item[{\bf 반환: }]\par
+client socket descriptor(client socket session) \end{Desc}
+\index{CSocketWorker@{CSocket\-Worker}!getFD@{getFD}}
+\index{getFD@{getFD}!CSocketWorker@{CSocket\-Worker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int CSocket\-Worker::get\-FD ()}\label{classCSocketWorker_a15}
+
+
+method for getting socket descriptor. \begin{Desc}
+\item[{\bf 반환: }]\par
+socket descriptor. \end{Desc}
+\index{CSocketWorker@{CSocket\-Worker}!is_valid@{is\_\-valid}}
+\index{is_valid@{is\_\-valid}!CSocketWorker@{CSocket\-Worker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CSocket\-Worker::is\_\-valid ()\hspace{0.3cm}{\tt  [inline]}}\label{classCSocketWorker_a13}
+
+
+method for check if socket session is valid. \begin{Desc}
+\item[{\bf 반환: }]\par
+true if socket session is valid, else return false. \end{Desc}
+\index{CSocketWorker@{CSocket\-Worker}!listen@{listen}}
+\index{listen@{listen}!CSocketWorker@{CSocket\-Worker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CSocket\-Worker::listen ()}\label{classCSocketWorker_a4}
+
+
+Socket listen method. \begin{Desc}
+\item[{\bf 반환: }]\par
+true if succss, else return false. \end{Desc}
+\index{CSocketWorker@{CSocket\-Worker}!readn@{readn}}
+\index{readn@{readn}!CSocketWorker@{CSocket\-Worker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int CSocket\-Worker::readn (int {\em fd}, char $\ast$ {\em buf}, int {\em buf\_\-len}, int {\em timeout})}\label{classCSocketWorker_a8}
+
+
+read data from socket session \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em socket}]descriptor. \item[
+{\em data}]buffer. \item[
+{\em data}]buffer size. \item[
+{\em timeout}](seconds). \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 반환: }]\par
+read bytes. \end{Desc}
+\index{CSocketWorker@{CSocket\-Worker}!recvMsg@{recvMsg}}
+\index{recvMsg@{recvMsg}!CSocketWorker@{CSocket\-Worker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int CSocket\-Worker::recv\-Msg (std::string \& {\em buf})}\label{classCSocketWorker_a11}
+
+
+recieve data from socket session \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em data}]buffer. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 반환: }]\par
+recieve count \end{Desc}
+\index{CSocketWorker@{CSocket\-Worker}!sendMsg@{sendMsg}}
+\index{sendMsg@{sendMsg}!CSocketWorker@{CSocket\-Worker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CSocket\-Worker::send\-Msg (std::string)}\label{classCSocketWorker_a10}
+
+
+send data to socket session \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em send}]message \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 반환: }]\par
+true if success, else return false \end{Desc}
+\index{CSocketWorker@{CSocket\-Worker}!set_non_blocking@{set\_\-non\_\-blocking}}
+\index{set_non_blocking@{set\_\-non\_\-blocking}!CSocketWorker@{CSocket\-Worker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CSocket\-Worker::set\_\-non\_\-blocking (bool {\em b})}\label{classCSocketWorker_a12}
+
+
+method for setting blocking mode to socket session. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em true}]: block mode, false : non block mode. \end{description}
+\end{Desc}
+
+
+\subsection{멤서 데이타 문서화}
+\index{CSocketWorker@{CSocket\-Worker}!m_addr@{m\_\-addr}}
+\index{m_addr@{m\_\-addr}!CSocketWorker@{CSocket\-Worker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}sockaddr\_\-in CSocket\-Worker::m\_\-addr\hspace{0.3cm}{\tt  [protected]}}\label{classCSocketWorker_n0}
+
+
+sockaddr\_\-in structure 
+
+이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:\begin{CompactItemize}
+\item 
+{\bf CSocket\-Worker.h}\end{CompactItemize}

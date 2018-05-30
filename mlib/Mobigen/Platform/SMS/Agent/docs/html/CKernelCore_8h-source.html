@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CKernelCore.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CKernelCore.h</h1><div class="fragment"><pre>00001 
+00002 <font class="preprocessor">#ifndef __CKERNELCORE_H__</font>
+00003 <font class="preprocessor"></font><font class="preprocessor">#define __CKERNELCORE_H__ 1</font>
+00004 <font class="preprocessor"></font><font class="preprocessor">#include &lt;stdio.h&gt;</font>
+00005 <font class="preprocessor">#include &lt;stdlib.h&gt;</font>
+00006 <font class="preprocessor">#include &lt;string.h&gt;</font>
+00007 <font class="preprocessor">#include &lt;errno.h&gt;</font>
+00008 <font class="preprocessor">#include &lt;pthread.h&gt;</font>
+00009 <font class="preprocessor">#include &lt;string&gt;</font>
+00010 
+00011 <font class="preprocessor">#include "u_time.h"</font>
+00012 <font class="preprocessor">#include "u_debug.h"</font>
+00013 <font class="preprocessor">#include "u_dlist.h"</font>
+00014 <font class="preprocessor">#include "u_process.h"</font>
+00015 <font class="preprocessor">#include "u_operate.h"</font>
+00016 <font class="preprocessor">#include "u_file.h"</font>
+00017 <font class="preprocessor">#include "u_tokenize.h"</font>
+00018 <font class="preprocessor">#include "u_bfsearch.h"</font>
+00019 <font class="preprocessor">#include "u_user.h"</font>
+00020 
+00021 <font class="preprocessor">#include "sc_core.h"</font>
+00022 
+00024 
+<a name="l00028"></a><a class="code" href="classCKernelCore.html">00028</a> <font class="keyword">class </font><a class="code" href="classCKernelCore.html">CKernelCore</a>
+00029 {
+00030         <font class="keyword">public</font>:
+00032                 <a class="code" href="classCKernelCore.html#a0">CKernelCore</a>();
+00034                 <a class="code" href="classCKernelCore.html#a1">~CKernelCore</a>();
+00039                 scCoreView *<a class="code" href="classCKernelCore.html#a2">getCoreView</a>();
+00044                 <font class="keywordtype">void</font> <a class="code" href="classCKernelCore.html#a3">returnCoreView</a>(scCoreView *coreview);
+00048                 <font class="keywordtype">void</font> <a class="code" href="classCKernelCore.html#a4">lock</a>();
+00052                 <font class="keywordtype">void</font> <a class="code" href="classCKernelCore.html#a5">unlock</a>();
+00053 
+00054         <font class="keyword">private</font>:
+00055                 scCoreView *m_coreview; 
+00056                 pthread_mutex_t m_lock; 
+00057 };
+00058 
+00059 <font class="preprocessor">#endif </font><font class="comment">/* __CKERNELCORE_H__ */</font>
+</pre></div><hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

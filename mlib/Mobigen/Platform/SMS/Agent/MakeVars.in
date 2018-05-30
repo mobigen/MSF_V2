@@ -1,0 +1,45 @@
+.SUFFIXES: .pc .cpp .cxx .o
+
+TOP_DIR=@TOP_DIR@
+
+include $(TOP_DIR)/makedir/env_oracle.mk
+
+# System description
+SYSTEM_TYPE=@SYSTEM_TYPE@
+ORA_ENABLE=@ORA_ENABLE@
+
+# Execute command
+AR=@AR@
+CP=@CP@
+CC=@CC@ -W
+CPP=@CPP@ -W
+PROC=@PROC@
+
+# include directory
+INC_DIR=@INC_DIR@
+LIB_DIR=@LIB_DIR@
+ORA_INC_DIR=@ORA_INC_DIR@
+ORA_LIB_DIR=@ORA_LIB_DIR@
+
+
+# Library
+LIBS=@LIBS@
+ORA_LIBS=@ORA_LIBS@
+
+
+
+
+
+
+PROXY_OBJS= ../../lib/lib/libSecureProxy.a ../../lib/lib/libStrUtil.a ../../lib/lib/libMD5.a ../../lib/lib/libPthTask.a ../../lib/lib/libPthSocket.a ../../lib/libOpenThreads.a
+
+CFLAGS=@CFLAGS@ -D$(SYSTEM_TYPE)
+CPPFLAGS=@CPPFLAGS@ -D$(SYSTEM_TYPE)
+PROCFLAGS=@PROCFLAGS@
+DEBUG_FLAGS=@DEBUG_FLAGS@
+
+CORULE = $(CC) -g -c $(CFLAGS) $(INC_DIR) $(ORA_INC_DIR) -o $@ $(@F:.o=.c)
+CPPORULE = $(CPP) -g -c $(CFLAGS) $(INC_DIR) $(ORA_INC_DIR) -o $@ $(@F:.o=.cpp)
+OBJS=@OBJS@
+
+DIST_HOME=@DIST_HOME@

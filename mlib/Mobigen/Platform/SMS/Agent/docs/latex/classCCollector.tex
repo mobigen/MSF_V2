@@ -1,0 +1,173 @@
+\section{CCollector  클래스 참조}
+\label{classCCollector}\index{CCollector@{CCollector}}
+정보 수집 클래스. 
+
+
+{\tt \#include $<$CCollector.h$>$}
+
+CCollector에 대한 상속 도표:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12cm]{classCCollector}
+\end{center}
+\end{figure}
+\subsection*{공용 메소드}
+\begin{CompactItemize}
+\item 
+{\bf CCollector} ()
+\item 
+virtual {\bf $\sim$CCollector} ()
+\item 
+virtual void {\bf collect} ()
+\item 
+virtual void {\bf make\-Message} ()
+\item 
+virtual void {\bf is\-Over\-Threshold} ({\bf CItem\-Condition} $\ast$cond)
+\item 
+void {\bf set\-Policy\-Item} ({\bf CPolicy\-Item} $\ast$pollitem)
+\item 
+{\bf CPolicy\-Item}$\ast$ {\bf get\-Policy\-Item} ()
+\item 
+void {\bf set\-Env\-Var} ({\bf CAgent\-Env\-Var} $\ast$envvar)
+\item 
+{\bf CAgent\-Env\-Var}$\ast$ {\bf get\-Env\-Var} ()
+\item 
+bool {\bf is\-Short\-Perf} ()
+\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+{\bf CAgent\-Env\-Var}$\ast$ {\bf m\_\-envvar}
+\item 
+{\bf CPolicy\-Item}$\ast$ {\bf m\_\-pollitem}
+\item 
+{\bf CMessage\-Formatter} {\bf m\_\-msgfmt}
+\end{CompactItemize}
+
+
+\subsection{상세한 내용}
+정보 수집 클래스.
+
+모든 정보 수집기는 이 클래스를 상속하여 구현된다. 
+
+
+
+\subsection{생성자 \& 소멸자 문서화}
+\index{CCollector@{CCollector}!CCollector@{CCollector}}
+\index{CCollector@{CCollector}!CCollector@{CCollector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CCollector::CCollector ()}\label{classCCollector_a0}
+
+
+생성자 \index{CCollector@{CCollector}!~CCollector@{$\sim$CCollector}}
+\index{~CCollector@{$\sim$CCollector}!CCollector@{CCollector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CCollector::$\sim$CCollector ()\hspace{0.3cm}{\tt  [inline, virtual]}}\label{classCCollector_a1}
+
+
+소멸자 
+
+\subsection{멤버 함수 문서화}
+\index{CCollector@{CCollector}!collect@{collect}}
+\index{collect@{collect}!CCollector@{CCollector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CCollector::collect ()\hspace{0.3cm}{\tt  [inline, virtual]}}\label{classCCollector_a2}
+
+
+정보 수집 쓰레드({\bf SCThread} {\rm (페이지\,\pageref{classSCThread})})에 의해 정보 수집을 요청하는 메쏘드 \begin{Desc}
+\item[{\bf 참조하시요: }]\par
+{\bf SCThread} {\rm (페이지\,\pageref{classSCThread})} \end{Desc}
+
+
+{\bf CCPUConf\-Collector} {\rm (페이지\,\pageref{classCCPUConfCollector_a2})}, {\bf CCPULoad\-Perf\-Collector} {\rm (페이지\,\pageref{classCCPULoadPerfCollector_a2})}, {\bf CCPUPerf\-Collector} {\rm (페이지\,\pageref{classCCPUPerfCollector_a2})}, {\bf CDisk\-Conf\-Collector} {\rm (페이지\,\pageref{classCDiskConfCollector_a2})}, {\bf CDisk\-IOPerf\-Collector} {\rm (페이지\,\pageref{classCDiskIOPerfCollector_a2})}, {\bf CDisk\-Perf\-Collector} {\rm (페이지\,\pageref{classCDiskPerfCollector_a2})}, {\bf CHost\-Conf\-Collector} {\rm (페이지\,\pageref{classCHostConfCollector_a2})}, {\bf CIFConf\-Collector} {\rm (페이지\,\pageref{classCIFConfCollector_a2})}, {\bf CIFPerf\-Collector} {\rm (페이지\,\pageref{classCIFPerfCollector_a2})}, {\bf CLog\-Check\-Collector} {\rm (페이지\,\pageref{classCLogCheckCollector_a2})}, {\bf CMemory\-Conf\-Collector} {\rm (페이지\,\pageref{classCMemoryConfCollector_a2})}, {\bf CMemory\-Perf\-Collector} {\rm (페이지\,\pageref{classCMemoryPerfCollector_a2})}, {\bf CPatch\-Conf\-Collector} {\rm (페이지\,\pageref{classCPatchConfCollector_a2})}, {\bf CProcess\-Perf\-Collector} {\rm (페이지\,\pageref{classCProcessPerfCollector_a2})}, {\bf CShell\-Command\-Collector} {\rm (페이지\,\pageref{classCShellCommandCollector_a2})}, {\bf CSWConf\-Collector} {\rm (페이지\,\pageref{classCSWConfCollector_a2})}, {\bf CTop\-CPUProcess\-Perf\-Collector} {\rm (페이지\,\pageref{classCTopCPUProcessPerfCollector_a2})}, {\bf CTop\-Memory\-Process\-Perf\-Collector} {\rm (페이지\,\pageref{classCTopMemoryProcessPerfCollector_a2})}, {\bf COra\-DBLink\-Collector} {\rm (페이지\,\pageref{classCOraDBLinkCollector_a2})}, {\bf COra\-Hit\-Ratio\-Collector} {\rm (페이지\,\pageref{classCOraHitRatioCollector_a2})}, {\bf COra\-Rollback\-Collector} {\rm (페이지\,\pageref{classCOraRollbackCollector_a2})}, {\bf COra\-Session\-Count\-Collector} {\rm (페이지\,\pageref{classCOraSessionCountCollector_a2})}, {\bf COra\-Table\-Space\-Collector} {\rm (페이지\,\pageref{classCOraTableSpaceCollector_a2})}, and {\bf COra\-Top\-Sql\-Collector} {\rm (페이지\,\pageref{classCOraTopSqlCollector_a2})}에서 재구현된.\index{CCollector@{CCollector}!getEnvVar@{getEnvVar}}
+\index{getEnvVar@{getEnvVar}!CCollector@{CCollector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CAgent\-Env\-Var} $\ast$ CCollector::get\-Env\-Var ()\hspace{0.3cm}{\tt  [inline]}}\label{classCCollector_a8}
+
+
+SMS Agent 환경 정보를 관리하는 클래스를 얻어오는 메쏘드 \begin{Desc}
+\item[{\bf 반환: }]\par
+{\bf CAgent\-Env\-Var} {\rm (페이지\,\pageref{classCAgentEnvVar})} pointer \end{Desc}
+\begin{Desc}
+\item[{\bf 참조하시요: }]\par
+{\bf CAgent\-Env\-Var} {\rm (페이지\,\pageref{classCAgentEnvVar})} \end{Desc}
+\index{CCollector@{CCollector}!getPolicyItem@{getPolicyItem}}
+\index{getPolicyItem@{getPolicyItem}!CCollector@{CCollector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CPolicy\-Item} $\ast$ CCollector::get\-Policy\-Item ()\hspace{0.3cm}{\tt  [inline]}}\label{classCCollector_a6}
+
+
+수집 정책 정보를 얻어오기 위한 메쏘드 \begin{Desc}
+\item[{\bf 반환: }]\par
+{\bf CPolicy\-Item} {\rm (페이지\,\pageref{classCPolicyItem})} pointer. \end{Desc}
+\index{CCollector@{CCollector}!isOverThreshold@{isOverThreshold}}
+\index{isOverThreshold@{isOverThreshold}!CCollector@{CCollector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CCollector::is\-Over\-Threshold ({\bf CItem\-Condition} $\ast$ {\em cond})\hspace{0.3cm}{\tt  [inline, virtual]}}\label{classCCollector_a4}
+
+
+수집된 정보가 임계치({\bf CItem\-Condition} {\rm (페이지\,\pageref{classCItemCondition})})에 위배 되는지 여부를 판단하여 장애를 발생시키는 메쏘드. \begin{Desc}
+\item[{\bf 참조하시요: }]\par
+{\bf CItem\-Condition} {\rm (페이지\,\pageref{classCItemCondition})}, CAalarm\-Processor \end{Desc}
+
+
+{\bf CCPUConf\-Collector} {\rm (페이지\,\pageref{classCCPUConfCollector_a4})}, {\bf CCPULoad\-Perf\-Collector} {\rm (페이지\,\pageref{classCCPULoadPerfCollector_a4})}, {\bf CCPUPerf\-Collector} {\rm (페이지\,\pageref{classCCPUPerfCollector_a4})}, {\bf CDisk\-Conf\-Collector} {\rm (페이지\,\pageref{classCDiskConfCollector_a4})}, {\bf CDisk\-IOPerf\-Collector} {\rm (페이지\,\pageref{classCDiskIOPerfCollector_a4})}, {\bf CDisk\-Perf\-Collector} {\rm (페이지\,\pageref{classCDiskPerfCollector_a4})}, {\bf CHost\-Conf\-Collector} {\rm (페이지\,\pageref{classCHostConfCollector_a4})}, {\bf CIFConf\-Collector} {\rm (페이지\,\pageref{classCIFConfCollector_a4})}, {\bf CIFPerf\-Collector} {\rm (페이지\,\pageref{classCIFPerfCollector_a4})}, {\bf CLog\-Check\-Collector} {\rm (페이지\,\pageref{classCLogCheckCollector_a11})}, {\bf CMemory\-Conf\-Collector} {\rm (페이지\,\pageref{classCMemoryConfCollector_a4})}, {\bf CMemory\-Perf\-Collector} {\rm (페이지\,\pageref{classCMemoryPerfCollector_a4})}, {\bf CPatch\-Conf\-Collector} {\rm (페이지\,\pageref{classCPatchConfCollector_a4})}, {\bf CProcess\-Perf\-Collector} {\rm (페이지\,\pageref{classCProcessPerfCollector_a4})}, {\bf CShell\-Command\-Collector} {\rm (페이지\,\pageref{classCShellCommandCollector_a4})}, {\bf CSWConf\-Collector} {\rm (페이지\,\pageref{classCSWConfCollector_a4})}, {\bf CTop\-CPUProcess\-Perf\-Collector} {\rm (페이지\,\pageref{classCTopCPUProcessPerfCollector_a4})}, and {\bf CTop\-Memory\-Process\-Perf\-Collector} {\rm (페이지\,\pageref{classCTopMemoryProcessPerfCollector_a4})}에서 재구현된.\index{CCollector@{CCollector}!isShortPerf@{isShortPerf}}
+\index{isShortPerf@{isShortPerf}!CCollector@{CCollector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool CCollector::is\-Short\-Perf ()}\label{classCCollector_a9}
+
+
+수집 정책이 단기 수집인지 여부를 판단하는 메쏘드 \begin{Desc}
+\item[{\bf 반환: }]\par
+true if short period, else return false \end{Desc}
+\index{CCollector@{CCollector}!makeMessage@{makeMessage}}
+\index{makeMessage@{makeMessage}!CCollector@{CCollector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CCollector::make\-Message ()\hspace{0.3cm}{\tt  [inline, virtual]}}\label{classCCollector_a3}
+
+
+수집된 정보를 SMS Manager로 전송하기 위한 규약된 메시지 포맷으로 변환하는 메쏘드. 
+
+{\bf CCPUConf\-Collector} {\rm (페이지\,\pageref{classCCPUConfCollector_a3})}, {\bf CCPULoad\-Perf\-Collector} {\rm (페이지\,\pageref{classCCPULoadPerfCollector_a3})}, {\bf CCPUPerf\-Collector} {\rm (페이지\,\pageref{classCCPUPerfCollector_a3})}, {\bf CDisk\-Conf\-Collector} {\rm (페이지\,\pageref{classCDiskConfCollector_a3})}, {\bf CDisk\-IOPerf\-Collector} {\rm (페이지\,\pageref{classCDiskIOPerfCollector_a3})}, {\bf CDisk\-Perf\-Collector} {\rm (페이지\,\pageref{classCDiskPerfCollector_a3})}, {\bf CHost\-Conf\-Collector} {\rm (페이지\,\pageref{classCHostConfCollector_a3})}, {\bf CIFConf\-Collector} {\rm (페이지\,\pageref{classCIFConfCollector_a3})}, {\bf CIFPerf\-Collector} {\rm (페이지\,\pageref{classCIFPerfCollector_a3})}, {\bf CLog\-Check\-Collector} {\rm (페이지\,\pageref{classCLogCheckCollector_a9})}, {\bf CMemory\-Conf\-Collector} {\rm (페이지\,\pageref{classCMemoryConfCollector_a3})}, {\bf CMemory\-Perf\-Collector} {\rm (페이지\,\pageref{classCMemoryPerfCollector_a3})}, {\bf CPatch\-Conf\-Collector} {\rm (페이지\,\pageref{classCPatchConfCollector_a3})}, {\bf CProcess\-Perf\-Collector} {\rm (페이지\,\pageref{classCProcessPerfCollector_a3})}, {\bf CShell\-Command\-Collector} {\rm (페이지\,\pageref{classCShellCommandCollector_a3})}, {\bf CSWConf\-Collector} {\rm (페이지\,\pageref{classCSWConfCollector_a3})}, {\bf CTop\-CPUProcess\-Perf\-Collector} {\rm (페이지\,\pageref{classCTopCPUProcessPerfCollector_a3})}, {\bf CTop\-Memory\-Process\-Perf\-Collector} {\rm (페이지\,\pageref{classCTopMemoryProcessPerfCollector_a3})}, {\bf COra\-DBLink\-Collector} {\rm (페이지\,\pageref{classCOraDBLinkCollector_a4})}, {\bf COra\-Hit\-Ratio\-Collector} {\rm (페이지\,\pageref{classCOraHitRatioCollector_a4})}, {\bf COra\-Rollback\-Collector} {\rm (페이지\,\pageref{classCOraRollbackCollector_a4})}, {\bf COra\-Session\-Count\-Collector} {\rm (페이지\,\pageref{classCOraSessionCountCollector_a4})}, {\bf COra\-Table\-Space\-Collector} {\rm (페이지\,\pageref{classCOraTableSpaceCollector_a4})}, and {\bf COra\-Top\-Sql\-Collector} {\rm (페이지\,\pageref{classCOraTopSqlCollector_a4})}에서 재구현된.\index{CCollector@{CCollector}!setEnvVar@{setEnvVar}}
+\index{setEnvVar@{setEnvVar}!CCollector@{CCollector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CCollector::set\-Env\-Var ({\bf CAgent\-Env\-Var} $\ast$ {\em envvar})\hspace{0.3cm}{\tt  [inline]}}\label{classCCollector_a7}
+
+
+SMS Agent 환경 정보를 관리하는 클래스를 설정하는 메쏘드 \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em CAgent\-Env\-Var}]pointer \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 참조하시요: }]\par
+{\bf CAgent\-Env\-Var} {\rm (페이지\,\pageref{classCAgentEnvVar})} \end{Desc}
+\index{CCollector@{CCollector}!setPolicyItem@{setPolicyItem}}
+\index{setPolicyItem@{setPolicyItem}!CCollector@{CCollector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CCollector::set\-Policy\-Item ({\bf CPolicy\-Item} $\ast$ {\em pollitem})\hspace{0.3cm}{\tt  [inline]}}\label{classCCollector_a5}
+
+
+정보 수집 정책 클래스({\bf CPolicy\-Item} {\rm (페이지\,\pageref{classCPolicyItem})})를 설정하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em .}]\end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 참조하시요: }]\par
+{\bf CPolicy\-Item} {\rm (페이지\,\pageref{classCPolicyItem})} \end{Desc}
+
+
+\subsection{멤서 데이타 문서화}
+\index{CCollector@{CCollector}!m_envvar@{m\_\-envvar}}
+\index{m_envvar@{m\_\-envvar}!CCollector@{CCollector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CAgent\-Env\-Var} $\ast$ CCollector::m\_\-envvar\hspace{0.3cm}{\tt  [protected]}}\label{classCCollector_n0}
+
+
+SMS Agent 환경 정보를 관리하는 클래스 \index{CCollector@{CCollector}!m_msgfmt@{m\_\-msgfmt}}
+\index{m_msgfmt@{m\_\-msgfmt}!CCollector@{CCollector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CMessage\-Formatter} CCollector::m\_\-msgfmt\hspace{0.3cm}{\tt  [protected]}}\label{classCCollector_n2}
+
+
+메시지 변환기 \index{CCollector@{CCollector}!m_pollitem@{m\_\-pollitem}}
+\index{m_pollitem@{m\_\-pollitem}!CCollector@{CCollector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CPolicy\-Item} $\ast$ CCollector::m\_\-pollitem\hspace{0.3cm}{\tt  [protected]}}\label{classCCollector_n1}
+
+
+수집 정책 
+
+이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:\begin{CompactItemize}
+\item 
+{\bf CCollector.h}\end{CompactItemize}

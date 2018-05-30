@@ -1,0 +1,1012 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CItemCondition class Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CItemCondition  클래스 참조</h1>장애 임계치를 판단하는 조건을 저장하는 정보 개체. 
+<a href="#_details">More...</a>
+<p>
+<code>#include &lt;<a class="el" href="CItemCondition_8h-source.html">CItemCondition.h</a>&gt;</code>
+<p>
+<a href="classCItemCondition-members.html">모든 구성원들(members)의 명단</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td colspan=2><br><h2>공용 메소드</h2></td></tr>
+<tr><td nowrap align=right valign=top>&nbsp;</td><td valign=bottom><a class="el" href="classCItemCondition.html#a0">CItemCondition</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>virtual&nbsp;</td><td valign=bottom><a class="el" href="classCItemCondition.html#a1">~CItemCondition</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>unsigned int&nbsp;</td><td valign=bottom><a class="el" href="classCItemCondition.html#a2">getIndex</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>unsigned int&nbsp;</td><td valign=bottom><a class="el" href="classCItemCondition.html#a3">getElement</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>std::string&nbsp;</td><td valign=bottom><a class="el" href="classCItemCondition.html#a4">getInstanceName</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>std::string&nbsp;</td><td valign=bottom><a class="el" href="classCItemCondition.html#a5">getCondition</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>std::string&nbsp;</td><td valign=bottom><a class="el" href="classCItemCondition.html#a6">getSeverity</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCItemCondition.html#a7">setIndex</a> (unsigned int index)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCItemCondition.html#a8">setElement</a> (unsigned int element)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCItemCondition.html#a9">setInstanceName</a> (std::string instName)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCItemCondition.html#a10">setCondition</a> (std::string condition)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCItemCondition.html#a11">setSeverity</a> (std::string severity)</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCItemCondition.html#a12">isOverThreshold</a> (unsigned int value)</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCItemCondition.html#a13">isOverThreshold</a> (unsigned long value)</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCItemCondition.html#a14">isOverThreshold</a> (int value)</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCItemCondition.html#a15">isOverThreshold</a> (long value)</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCItemCondition.html#a16">isOverThreshold</a> (double value)</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCItemCondition.html#a17">isOverThreshold</a> (std::string cond)</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCItemCondition.html#a18">isOverThreshold</a> (char *value)</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCItemCondition.html#a19">checkOperator</a> (char *pcmd)</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCItemCondition.html#a20">checkCondition</a> (<a class="el" href="structst__conditem.html">st_conditem</a> *item, double val)</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCItemCondition.html#a21">checkCondition</a> (<a class="el" href="structst__conditem.html">st_conditem</a> *item, char *val)</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCItemCondition.html#a22">checkCondition</a> (bool b, char op, <a class="el" href="structst__conditem.html">st_conditem</a> *item, double val)</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classCItemCondition.html#a23">checkCondition</a> (bool b, char op, <a class="el" href="structst__conditem.html">st_conditem</a> *item, char *val)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classCItemCondition.html#a24">parseCondition</a> (char *msg)</td></tr>
+</table>
+<hr><a name="_details"></a><h2>상세한 내용</h2>
+장애 임계치를 판단하는 조건을 저장하는 정보 개체.
+<p>
+condition id, 장애 등급(severity or level), 임계치 판단 대상(element), instance(판단 대상 instance) 임계치 판단 조건(condition) 정보를 관리하는 클래스. 현재는 CPUPerf, NetworkPerf에, LogCheck item에 대해서만 적용가능한다. scagent.xml 파일에서 당음과 같은 형식으로 저장된 정보를 기록한다. &lt;conditions&gt; &lt;condition id="1" instance="ALL" element="1" level="Major"&gt;&gt;=5&lt;/condition&gt; &lt;/conditions&gt; 
+<p>
+<hr><h2>생성자 &amp; 소멸자 문서화</h2>
+<a name="a0" doxytag="CItemCondition::CItemCondition"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CItemCondition::CItemCondition (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+생성자     </td>
+  </tr>
+</table>
+<a name="a1" doxytag="CItemCondition::~CItemCondition"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+CItemCondition::~CItemCondition (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [virtual]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+소멸자     </td>
+  </tr>
+</table>
+<hr><h2>멤버 함수 문서화</h2>
+<a name="a23" doxytag="CItemCondition::checkCondition"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CItemCondition::checkCondition (
+          </b></td>
+          <td valign="bottom"><b>
+bool <em>b</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+char <em>op</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+<a class="el" href="structst__conditem.html">st_conditem</a> * <em>item</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+char * <em>val</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+임계치 판단 조건이 여러 조건의 논리 연산(AND, OR)의 조합으로 이루어진 경우 주어진 문자열과 임계치 조건을 비교 판단한 결과값과 이전에 연산 결과을 논리 연산(AND, OR)한 결과를 반환하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em>AND, OR</em>
+&nbsp;</td><td>
+). </td></tr>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+</table>
+</dl><dl compact><dt>
+<b>반환: </b><dd>
+true : 장애 발생, false : 장애 해지. </dl>    </td>
+  </tr>
+</table>
+<a name="a22" doxytag="CItemCondition::checkCondition"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CItemCondition::checkCondition (
+          </b></td>
+          <td valign="bottom"><b>
+bool <em>b</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+char <em>op</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+<a class="el" href="structst__conditem.html">st_conditem</a> * <em>item</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+double <em>val</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+임계치 판단 조건이 여러 조건의 논리 연산(AND, OR)의 조합으로 이루어진 경우 주어진 값(double)과 임계치 조건을 비교 판단한 결과값과 이전에 연산 결과을 논리 연산(AND, OR)한 결과를 반환하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em>AND, OR</em>
+&nbsp;</td><td>
+). </td></tr>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em>double</em>
+&nbsp;</td><td>
+). </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>반환: </b><dd>
+true : 장애 발생, false : 장애 해지. </dl>    </td>
+  </tr>
+</table>
+<a name="a21" doxytag="CItemCondition::checkCondition"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CItemCondition::checkCondition (
+          </b></td>
+          <td valign="bottom"><b>
+<a class="el" href="structst__conditem.html">st_conditem</a> * <em>item</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+char * <em>val</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+주어진 문자열과 임계치 조건(<a class="el" href="structst__conditem.html">st_conditem</a>)을 비교하여 장애 발생 여부를 판단하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em>return</em>
+&nbsp;</td><td>
+true : 장애 발생, false : 장애 해지. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a20" doxytag="CItemCondition::checkCondition"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CItemCondition::checkCondition (
+          </b></td>
+          <td valign="bottom"><b>
+<a class="el" href="structst__conditem.html">st_conditem</a> * <em>item</em>, 
+          </b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>
+double <em>val</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+주어진 값(double)과 임계치 조건(<a class="el" href="structst__conditem.html">st_conditem</a>)을 비교하여 장애 발생 여부를 판단하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em>double</em>
+&nbsp;</td><td>
+) </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>반환: </b><dd>
+true : 장애 발생, false : 장애 해지. </dl>    </td>
+  </tr>
+</table>
+<a name="a19" doxytag="CItemCondition::checkOperator"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CItemCondition::checkOperator (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>pcmd</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+주어진 문자열에서 연산자(&gt;=, &gt;, &lt;=, &lt;, ==, !=, &lt;&lt;, &gt;&gt;)를 파싱한다. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+</table>
+</dl><dl compact><dt>
+<b>반환: </b><dd>
+true : parsing success, false : parsing fail. </dl>    </td>
+  </tr>
+</table>
+<a name="a5" doxytag="CItemCondition::getCondition"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+std::string CItemCondition::getCondition (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+장애 임계치 판단 조건을 반환하는 메쏘드. 전체 instance는 "ALL"로 설정하면 된다. <dl compact><dt>
+<b>반환: </b><dd>
+임계치 판단 조건. </dl>    </td>
+  </tr>
+</table>
+<a name="a3" doxytag="CItemCondition::getElement"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+unsigned int CItemCondition::getElement (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+element 번호를 얻어오는 메쏘드. element는 장애 판단 대상 항목의 번호를 의미하며,  각 항목의 번호는 COL명령으로 데이터를 조회할 경우에 얻어지는 데이터의 테이블의 헤더 순서대로 부여된다. <dl compact><dt>
+<b>반환: </b><dd>
+element number. </dl>    </td>
+  </tr>
+</table>
+<a name="a2" doxytag="CItemCondition::getIndex"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+unsigned int CItemCondition::getIndex (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+condition id를 얻어오는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+condition id. </dl>    </td>
+  </tr>
+</table>
+<a name="a4" doxytag="CItemCondition::getInstanceName"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+std::string CItemCondition::getInstanceName (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+장애 임계치 판단 대상 개체명을 반환하는 메쏘드. <dl compact><dt>
+<b>반환: </b><dd>
+instance name. </dl>    </td>
+  </tr>
+</table>
+<a name="a6" doxytag="CItemCondition::getSeverity"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+std::string CItemCondition::getSeverity (
+          </b></td>
+          <td valign="bottom"><b>
+)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+장애 등급 정보를 반환하는 메쏘스. 설정된 장애 등급('Critical', 'Major', 'Minor', 'Warning', 'Undeterminate')을 반환한다. <dl compact><dt>
+<b>반환: </b><dd>
+alarm severity. </dl>    </td>
+  </tr>
+</table>
+<a name="a18" doxytag="CItemCondition::isOverThreshold"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CItemCondition::isOverThreshold (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>value</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+장애 발생 여부를 판단하는 메쏘드. 주어진 값을 장애 판단 조건과 비교하여 장애 발생 여부를 판단한다. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>character</em>
+&nbsp;</td><td>
+value. </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>반환: </b><dd>
+true : 장애 발생, false : 장애 해지. </dl>    </td>
+  </tr>
+</table>
+<a name="a17" doxytag="CItemCondition::isOverThreshold"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CItemCondition::isOverThreshold (
+          </b></td>
+          <td valign="bottom"><b>
+std::string <em>cond</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+장애 발생 여부를 판단하는 메쏘드. 주어진 값을 장애 판단 조건과 비교하여 장애 발생 여부를 판단한다. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>string</em>
+&nbsp;</td><td>
+value. </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>반환: </b><dd>
+true : 장애 발생, false : 장애 해지. </dl>    </td>
+  </tr>
+</table>
+<a name="a16" doxytag="CItemCondition::isOverThreshold"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CItemCondition::isOverThreshold (
+          </b></td>
+          <td valign="bottom"><b>
+double <em>value</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+장애 발생 여부를 판단하는 메쏘드. 주어진 값을 임계치 판단 조건과 비교하여 장애 발생 여부를 판단한다. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>double</em>
+&nbsp;</td><td>
+value. </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>반환: </b><dd>
+true : 임계치 초과 혹은 장애 발생, false : 임계치 미달 혹은 장애 해지. </dl>    </td>
+  </tr>
+</table>
+<a name="a15" doxytag="CItemCondition::isOverThreshold"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CItemCondition::isOverThreshold (
+          </b></td>
+          <td valign="bottom"><b>
+long <em>value</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+장애 발생 여부를 판단하는 메쏘드. 주어진 값을 임계치 판단 조건과 비교하여 장애 발생 여부를 판단한다. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>long</em>
+&nbsp;</td><td>
+value. </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>반환: </b><dd>
+true : 임계치 초과 혹은 장애 발생, false : 임계치 미달 혹은 장애 해지. </dl>    </td>
+  </tr>
+</table>
+<a name="a14" doxytag="CItemCondition::isOverThreshold"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CItemCondition::isOverThreshold (
+          </b></td>
+          <td valign="bottom"><b>
+int <em>value</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+장애 발생 여부를 판단하는 메쏘드. 주어진 값을 임계치 판단 조건과 비교하여 장애 발생 여부를 판단한다. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>integer</em>
+&nbsp;</td><td>
+value. </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>반환: </b><dd>
+true : 임계치 초과 혹은 장애 발생, false : 임계치 미달 혹은 장애 해지. </dl>    </td>
+  </tr>
+</table>
+<a name="a13" doxytag="CItemCondition::isOverThreshold"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CItemCondition::isOverThreshold (
+          </b></td>
+          <td valign="bottom"><b>
+unsigned long <em>value</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+장애 발생 여부를 판단하는 메쏘드. 주어진 값을 임계치 판단 조건과 비교하여 장애 발생 여부를 판단한다. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>unsigned</em>
+&nbsp;</td><td>
+long value. </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>반환: </b><dd>
+true : 임계치 초과 혹은 장애 발생, false : 임계치 미달 혹은 장애 해지. </dl>    </td>
+  </tr>
+</table>
+<a name="a12" doxytag="CItemCondition::isOverThreshold"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool CItemCondition::isOverThreshold (
+          </b></td>
+          <td valign="bottom"><b>
+unsigned int <em>value</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+장애 발생 여부를 판단하는 메쏘드. 주어진 값을 임계치 판단 조건과 비교하여 장애 발생 여부를 판단한다. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>unsigned</em>
+&nbsp;</td><td>
+integer value. </td></tr>
+</table>
+</dl><dl compact><dt>
+<b>반환: </b><dd>
+true : 임계치 초과 혹은 장애 발생, false : 임계치 미달 혹은 장애 해지. </dl>    </td>
+  </tr>
+</table>
+<a name="a24" doxytag="CItemCondition::parseCondition"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CItemCondition::parseCondition (
+          </b></td>
+          <td valign="bottom"><b>
+char * <em>msg</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+주어진 임계치 판단 조건을 parsing하여 m_parsecondition 변수에 상세 정보를 기록하는 메쏘드. 실제 장애 판단은 m_parsecondition에 주어진 조건과 비교 판단하여 장애 발생 여부를 판단한다. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a10" doxytag="CItemCondition::setCondition"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CItemCondition::setCondition (
+          </b></td>
+          <td valign="bottom"><b>
+std::string <em>condition</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+임계치 판단 조건을 설정하는 메쏘드. 장애 발생 조건(임계치)을 설정한다. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>.</em>
+&nbsp;</td><td>
+</td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a8" doxytag="CItemCondition::setElement"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CItemCondition::setElement (
+          </b></td>
+          <td valign="bottom"><b>
+unsigned int <em>element</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+element number를 설정하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>element</em>
+&nbsp;</td><td>
+number. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a7" doxytag="CItemCondition::setIndex"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CItemCondition::setIndex (
+          </b></td>
+          <td valign="bottom"><b>
+unsigned int <em>index</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+condition id를 설정하는 메쏘드. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>condition</em>
+&nbsp;</td><td>
+id. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a9" doxytag="CItemCondition::setInstanceName"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CItemCondition::setInstanceName (
+          </b></td>
+          <td valign="bottom"><b>
+std::string <em>instName</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Instance 명을 설정하는 메쏘드. 모든 Instance인 경우에는 "ALL"로 설정하면 된다. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>instance</em>
+&nbsp;</td><td>
+name. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<a name="a11" doxytag="CItemCondition::setSeverity"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void CItemCondition::setSeverity (
+          </b></td>
+          <td valign="bottom"><b>
+std::string <em>severity</em>&nbsp;)<code> [inline]</code>
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+장애 등급을 설정하는 메쏘드. 장애 등급('Critical', 'Major', 'Minor', 'Warning', 'Undeterminate' 등)을 설정한다. <dl compact><dt>
+<b>매개변수들: </b><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em>alarm</em>
+&nbsp;</td><td>
+severity. </td></tr>
+</table>
+</dl>    </td>
+  </tr>
+</table>
+<hr>이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:<ul>
+<li><a class="el" href="CItemCondition_8h-source.html">CItemCondition.h</a></ul>
+<hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

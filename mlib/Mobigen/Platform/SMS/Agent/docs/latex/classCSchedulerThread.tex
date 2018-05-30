@@ -1,0 +1,97 @@
+\section{CScheduler\-Thread  클래스 참조}
+\label{classCSchedulerThread}\index{CSchedulerThread@{CScheduler\-Thread}}
+item의 정책을 수행하는 스케쥴러 쓰레드 클래스. 
+
+
+{\tt \#include $<$CScheduler\-Thread.h$>$}
+
+CScheduler\-Thread에 대한 상속 도표:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCSchedulerThread}
+\end{center}
+\end{figure}
+\subsection*{공용 메소드}
+\begin{CompactItemize}
+\item 
+{\bf CScheduler\-Thread} (void $\ast$\_\-data, int num\-Elts)
+\item 
+virtual {\bf $\sim$CScheduler\-Thread} ()
+\item 
+virtual void {\bf run} ()
+\item 
+void {\bf lock} ()
+\item 
+void {\bf unlock} ()
+\item 
+void {\bf add\-Instance\-To\-Poll\-Item} ({\bf CPolicy\-Item} $\ast$pollitem, {\bf CItem} $\ast$item)
+\item 
+void {\bf quit} ()
+\end{CompactItemize}
+
+
+\subsection{상세한 내용}
+item의 정책을 수행하는 스케쥴러 쓰레드 클래스.
+
+item의 정보 수집 주기 및 장애 정보 수집 주기를 검사하여, 수집 주기가 된 item에 대해서 정보 수집 쓰레드에게 정보 수집을 요청하고, 해당 아이템에 다음 정책을 설장하는 클래스. 
+
+
+
+\subsection{생성자 \& 소멸자 문서화}
+\index{CSchedulerThread@{CScheduler\-Thread}!CSchedulerThread@{CSchedulerThread}}
+\index{CSchedulerThread@{CSchedulerThread}!CSchedulerThread@{CScheduler\-Thread}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CScheduler\-Thread::CScheduler\-Thread (void $\ast$ {\em \_\-data}, int {\em num\-Elts})\hspace{0.3cm}{\tt  [inline]}}\label{classCSchedulerThread_a0}
+
+
+생성자 \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em .}]\item[
+{\em element}]number 의미 없음. \end{description}
+\end{Desc}
+\index{CSchedulerThread@{CScheduler\-Thread}!~CSchedulerThread@{$\sim$CSchedulerThread}}
+\index{~CSchedulerThread@{$\sim$CSchedulerThread}!CSchedulerThread@{CScheduler\-Thread}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CScheduler\-Thread::$\sim$CScheduler\-Thread ()\hspace{0.3cm}{\tt  [inline, virtual]}}\label{classCSchedulerThread_a1}
+
+
+소멸자 
+
+\subsection{멤버 함수 문서화}
+\index{CSchedulerThread@{CScheduler\-Thread}!addInstanceToPollItem@{addInstanceToPollItem}}
+\index{addInstanceToPollItem@{addInstanceToPollItem}!CSchedulerThread@{CScheduler\-Thread}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CScheduler\-Thread::add\-Instance\-To\-Poll\-Item ({\bf CPolicy\-Item} $\ast$ {\em pollitem}, {\bf CItem} $\ast$ {\em item})}\label{classCSchedulerThread_a5}
+
+
+{\bf CItem} {\rm (페이지\,\pageref{classCItem})}에 존재하는 인스턴스 정보를 instance name queue를 생성하여 item 정책 클래스({\bf CPolicy\-Item} {\rm (페이지\,\pageref{classCPolicyItem})})에 설정하는 메쏘드 \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em instance}]name queue를 설정할 {\bf CPolicy\-Item} {\rm (페이지\,\pageref{classCPolicyItem})} pointer. \item[
+{\em CItem}]pointer. \end{description}
+\end{Desc}
+\index{CSchedulerThread@{CScheduler\-Thread}!lock@{lock}}
+\index{lock@{lock}!CSchedulerThread@{CScheduler\-Thread}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CScheduler\-Thread::lock ()}\label{classCSchedulerThread_a3}
+
+
+thread 잠금 메쏘드 \index{CSchedulerThread@{CScheduler\-Thread}!quit@{quit}}
+\index{quit@{quit}!CSchedulerThread@{CScheduler\-Thread}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CScheduler\-Thread::quit ()}\label{classCSchedulerThread_a6}
+
+
+thread 종료 요청 메쏘드. \index{CSchedulerThread@{CScheduler\-Thread}!run@{run}}
+\index{run@{run}!CSchedulerThread@{CScheduler\-Thread}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CScheduler\-Thread::run ()\hspace{0.3cm}{\tt  [virtual]}}\label{classCSchedulerThread_a2}
+
+
+쓰레드 기동 메쏘드. 실 비지니스 로직이 존재하는 메쏘드이다. \index{CSchedulerThread@{CScheduler\-Thread}!unlock@{unlock}}
+\index{unlock@{unlock}!CSchedulerThread@{CScheduler\-Thread}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CScheduler\-Thread::unlock ()}\label{classCSchedulerThread_a4}
+
+
+thread 잠금 해지 메쏘드. 
+
+이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:\begin{CompactItemize}
+\item 
+{\bf CScheduler\-Thread.h}\end{CompactItemize}

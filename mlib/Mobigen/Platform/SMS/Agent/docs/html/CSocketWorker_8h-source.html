@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CSocketWorker.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CSocketWorker.h</h1><div class="fragment"><pre>00001 <font class="comment">// Definition of the Socket class</font>
+00002 
+00003 <font class="preprocessor">#ifndef Socket_class</font>
+00004 <font class="preprocessor"></font><font class="preprocessor">#define Socket_class</font>
+00005 <font class="preprocessor"></font>
+00006 
+00007 <font class="preprocessor">#include &lt;sys/types.h&gt;</font>
+00008 <font class="preprocessor">#include &lt;sys/socket.h&gt;</font>
+00009 <font class="preprocessor">#include &lt;sys/signal.h&gt;</font>
+00010 <font class="preprocessor">#include &lt;netinet/in.h&gt;</font>
+00011 <font class="preprocessor">#include &lt;netdb.h&gt;</font>
+00012 <font class="preprocessor">#include &lt;unistd.h&gt;</font>
+00013 <font class="preprocessor">#include &lt;string&gt;</font>
+00014 <font class="preprocessor">#include &lt;arpa/inet.h&gt;</font>
+00015 <font class="preprocessor">#include &lt;stdio.h&gt;</font>
+00016 <font class="preprocessor">#include &lt;errno.h&gt;</font>
+00017 <font class="preprocessor">#include &lt;time.h&gt;</font>
+00018 
+00019 <font class="preprocessor">#define LISTEN_TCP                      0x01</font>
+00020 <font class="preprocessor"></font><font class="preprocessor">#define LISTEN_UDP                      0x02</font>
+00021 <font class="preprocessor"></font><font class="preprocessor">#define LISTEN_NONBLOCK         0x04</font>
+00022 <font class="preprocessor"></font>
+00024 
+<a name="l00025"></a><a class="code" href="classCSocketWorker.html">00025</a> <font class="keyword">class </font><a class="code" href="classCSocketWorker.html">CSocketWorker</a>
+00026 {
+00027  <font class="keyword">public</font>:
+00029   <a class="code" href="classCSocketWorker.html#a0">CSocketWorker</a>();
+00031   <font class="keyword">virtual</font> <a class="code" href="classCSocketWorker.html#a1">~CSocketWorker</a>();
+00036   <font class="keywordtype">bool</font> <a class="code" href="classCSocketWorker.html#a2">create</a>();
+00042   <font class="keywordtype">bool</font> <a class="code" href="classCSocketWorker.html#a3">bind</a> ( <font class="keywordtype">int</font> port );
+00047   <font class="keywordtype">bool</font> <a class="code" href="classCSocketWorker.html#a4">listen</a>() ;
+00052   <font class="keywordtype">bool</font> <a class="code" href="classCSocketWorker.html#a5">accept</a> ( );
+00058   <font class="keywordtype">bool</font> <a class="code" href="classCSocketWorker.html#a6">close</a>( <font class="keywordtype">int</font> fd );
+<a name="l00062"></a><a class="code" href="classCSocketWorker.html#a7">00062</a>   <font class="keywordtype">void</font> <a class="code" href="classCSocketWorker.html#a7">close_cli</a>()<font class="keyword"></font>{ <a class="code" href="classCSocketWorker.html#a6">close</a>(m_clisd); m_clisd = -1; }
+00071   <font class="keywordtype">int</font> <a class="code" href="classCSocketWorker.html#a8">readn</a>(<font class="keywordtype">int</font> fd, <font class="keywordtype">char</font> *buf, <font class="keywordtype">int</font> buf_len, <font class="keywordtype">int</font> timeout);
+00078   <font class="keywordtype">bool</font> <a class="code" href="classCSocketWorker.html#a9">connect</a> ( std::string host, <font class="keywordtype">int</font> port );
+00084   <font class="keywordtype">bool</font> <a class="code" href="classCSocketWorker.html#a10">sendMsg</a> ( std::string );
+00090   <font class="keywordtype">int</font> <a class="code" href="classCSocketWorker.html#a11">recvMsg</a> ( std::string&amp; buf) ;
+00095   <font class="keywordtype">void</font> <a class="code" href="classCSocketWorker.html#a12">set_non_blocking</a> ( <font class="keywordtype">bool</font> b);
+<a name="l00100"></a><a class="code" href="classCSocketWorker.html#a13">00100</a>   <font class="keywordtype">bool</font> <a class="code" href="classCSocketWorker.html#a13">is_valid</a>()<font class="keyword"> </font>{ <font class="keywordflow">return</font> m_sd != -1; }
+00104   <font class="keywordtype">void</font> <a class="code" href="classCSocketWorker.html#a14">connectProcess</a>();
+00109   <font class="keywordtype">int</font> <a class="code" href="classCSocketWorker.html#a15">getFD</a>();
+<a name="l00114"></a><a class="code" href="classCSocketWorker.html#a16">00114</a>   <font class="keywordtype">int</font> <a class="code" href="classCSocketWorker.html#a16">getClientSD</a>()<font class="keyword"></font>{ <font class="keywordflow">return</font> m_clisd; }
+00115 
+00116  <font class="keyword">private</font>:
+00117 
+00118   <font class="keywordtype">int</font> m_sd;     
+00119   <font class="keywordtype">int</font> m_clisd;  
+00125   <font class="keywordtype">int</font> softerror(<font class="keywordtype">int</font> err);
+00132   <font class="keywordtype">int</font> setAddress(<font class="keyword">struct</font> sockaddr_in *addr, <font class="keyword">const</font> <font class="keywordtype">char</font> *host);
+00133 
+00134  <font class="keyword">protected</font>:
+<a name="l00135"></a><a class="code" href="classCSocketWorker.html#n0">00135</a>   sockaddr_in m_addr;   
+00137 };
+00138 
+00139 
+00140 <font class="preprocessor">#endif</font>
+00141 <font class="preprocessor"></font>
+00142 
+</pre></div><hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

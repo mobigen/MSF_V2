@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CCollectorHeader.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CCollectorHeader.h</h1><div class="fragment"><pre>00001 
+00002 
+00003 <font class="preprocessor">#ifndef __CCOLLECTORHEADER_H__</font>
+00004 <font class="preprocessor"></font><font class="preprocessor">#define __CCOLLECTORHEADER_H__ 1</font>
+00005 <font class="preprocessor"></font>
+00006 <font class="preprocessor">#include "CPatchConfCollector.h"</font>
+00007 <font class="preprocessor">#include "CSWConfCollector.h"</font>
+00008 <font class="preprocessor">#include "CCPUConfCollector.h"</font>
+00009 <font class="preprocessor">#include "CMemoryConfCollector.h"</font>
+00010 <font class="preprocessor">#include "CDiskConfCollector.h"</font>
+00011 <font class="preprocessor">#include "CHostConfCollector.h"</font>
+00012 <font class="preprocessor">#include "CIFConfCollector.h"</font>
+00013 <font class="preprocessor">#include "CCPUPerfCollector.h"</font>
+00014 <font class="preprocessor">#include "CCPULoadPerfCollector.h"</font>
+00015 <font class="preprocessor">#include "CMemoryPerfCollector.h"</font>
+00016 <font class="preprocessor">#include "CDiskPerfCollector.h"</font>
+00017 <font class="preprocessor">#include "CDiskIOPerfCollector.h"</font>
+00018 <font class="preprocessor">#include "CIFPerfCollector.h"</font>
+00019 <font class="preprocessor">#include "CProcessPerfCollector.h"</font>
+00020 <font class="preprocessor">#include "CTopCPUProcessPerfCollector.h"</font>
+00021 <font class="preprocessor">#include "CTopMemoryProcessPerfCollector.h"</font>
+00022 <font class="preprocessor">#include "CLogCheckCollector.h"</font>
+00023 <font class="preprocessor">#include "CShellCommandCollector.h"</font>
+00024 
+00025 <font class="preprocessor">#if defined(ORACLE_ENABLE)</font>
+00026 <font class="preprocessor"></font><font class="preprocessor">#include "COraHitRatioCollector.h"</font>
+00027 <font class="preprocessor">#include "COraTopSqlCollector.h"</font>
+00028 <font class="preprocessor">#include "COraSessionCountCollector.h"</font>
+00029 <font class="preprocessor">#include "COraDBLinkCollector.h"</font>
+00030 <font class="preprocessor">#include "COraTableSpaceCollector.h"</font>
+00031 <font class="preprocessor">#include "COraRollbackCollector.h"</font>
+00032 <font class="preprocessor">#endif </font><font class="comment">/* ORACLE_ENABLE */</font>
+00033 
+00034 <font class="preprocessor">#endif </font><font class="comment">/* __CCOLLECTORHEADER_H__ */</font>
+</pre></div><hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>

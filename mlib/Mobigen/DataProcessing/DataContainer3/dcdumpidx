@@ -1,0 +1,27 @@
+#!/usr/bin/python
+
+import sys, struct
+import DataLog
+
+def prn( idxRecNo, dataOffset, msgTime, opt ) :
+	print "idxRecNo, dataOffset, msgTime, opt = %10s %10s %14s %16s" % (idxRecNo, dataOffset, msgTime, opt)
+
+def main() :
+	if len(sys.argv) != 2 :
+		print "usage : %s dbFileName" % sys.argv[0]
+		sys.exit()
+
+	dbFileName = sys.argv[1]
+	db = DataLog.DataLog( dbFileName )
+
+	idxRecNo, dataOffset, msgTime, opt = db.getIdx(0)
+	prn( idxRecNo, dataOffset, msgTime, opt )
+
+	while True :
+		try :
+			idxRecNo, dataOffset, msgTime, opt = db.nextIdx()
+			prn( idxRecNo, dataOffset, msgTime, opt )
+		except Exception, err :
+			break
+
+main()

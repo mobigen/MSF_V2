@@ -1,0 +1,272 @@
+\section{CProtocol\-Processor  클래스 참조}
+\label{classCProtocolProcessor}\index{CProtocolProcessor@{CProtocol\-Processor}}
+SMS Manager로부터 수신된 명령 코드를 구문 분석하고 처리하는 클래스. 
+
+
+{\tt \#include $<$CProtocol\-Processor.h$>$}
+
+\subsection*{공용 메소드}
+\begin{CompactItemize}
+\item 
+{\bf CProtocol\-Processor} ()
+\item 
+{\bf $\sim$CProtocol\-Processor} ()
+\item 
+void {\bf process} (char $\ast$pcmd)
+\item 
+void {\bf execute} (char $\ast$pcmd)
+\item 
+void {\bf exec\-COL} (char $\ast$pcmd)
+\item 
+void {\bf exec\-GET} (char $\ast$pcmd)
+\item 
+void {\bf exec\-SET} (char $\ast$pcmd)
+\item 
+void {\bf exec\-GETINST} (char $\ast$pcmd)
+\item 
+void {\bf exec\-SETINST} (char $\ast$pcmd)
+\item 
+void {\bf exec\-ADDINST} (char $\ast$pcmd)
+\item 
+void {\bf exec\-DELINST} (char $\ast$pcmd)
+\item 
+void {\bf exec\-GETCOND} (char $\ast$pcmd)
+\item 
+void {\bf exec\-SETCOND} (char $\ast$pcmd)
+\item 
+void {\bf exec\-ADDCOND} (char $\ast$pcmd)
+\item 
+void {\bf exec\-DELCOND} (char $\ast$pcmd)
+\item 
+void {\bf set\-User\-Info} (char $\ast$pcmd)
+\item 
+char$\ast$ {\bf parse} (char $\ast$pcmd)
+\item 
+void {\bf set\-Env\-Var} ({\bf CAgent\-Env\-Var} $\ast$var)
+\item 
+{\bf CAgent\-Env\-Var}$\ast$ {\bf get\-Env\-Var} ()
+\end{CompactItemize}
+
+
+\subsection{상세한 내용}
+SMS Manager로부터 수신된 명령 코드를 구문 분석하고 처리하는 클래스.
+
+SMS Manager로부터 수신된 명령 코드가 정해진 syntax에 맞는지 검사하고, 정해진 규약에 따른 명령 코드를 분석하여, 요청 되어진 명령어를 처리하는 클래스. 
+
+
+
+\subsection{생성자 \& 소멸자 문서화}
+\index{CProtocolProcessor@{CProtocol\-Processor}!CProtocolProcessor@{CProtocolProcessor}}
+\index{CProtocolProcessor@{CProtocolProcessor}!CProtocolProcessor@{CProtocol\-Processor}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CProtocol\-Processor::CProtocol\-Processor ()\hspace{0.3cm}{\tt  [inline]}}\label{classCProtocolProcessor_a0}
+
+
+생성자\par
+ 명령 코드에 대한 정규 표현식을 초기화한다. \index{CProtocolProcessor@{CProtocol\-Processor}!~CProtocolProcessor@{$\sim$CProtocolProcessor}}
+\index{~CProtocolProcessor@{$\sim$CProtocolProcessor}!CProtocolProcessor@{CProtocol\-Processor}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CProtocol\-Processor::$\sim$CProtocol\-Processor ()\hspace{0.3cm}{\tt  [inline]}}\label{classCProtocolProcessor_a1}
+
+
+소멸자 
+
+\subsection{멤버 함수 문서화}
+\index{CProtocolProcessor@{CProtocol\-Processor}!execADDCOND@{execADDCOND}}
+\index{execADDCOND@{execADDCOND}!CProtocolProcessor@{CProtocol\-Processor}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CProtocol\-Processor::exec\-ADDCOND (char $\ast$ {\em pcmd})}\label{classCProtocolProcessor_a13}
+
+
+SMS Manager로부터 \char`\"{}ADDCOND\char`\"{} 명령 코드로 요청된 경우 이를 처리하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em command}]message(수신된 명령어). \end{description}
+\end{Desc}
+\index{CProtocolProcessor@{CProtocol\-Processor}!execADDINST@{execADDINST}}
+\index{execADDINST@{execADDINST}!CProtocolProcessor@{CProtocol\-Processor}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CProtocol\-Processor::exec\-ADDINST (char $\ast$ {\em pcmd})}\label{classCProtocolProcessor_a9}
+
+
+SMS Manager로부터 \char`\"{}ADDINST\char`\"{} 명령 코드로 요청된 경우 이를 처리하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em command}]message(수신된 명령어). \end{description}
+\end{Desc}
+\index{CProtocolProcessor@{CProtocol\-Processor}!execCOL@{execCOL}}
+\index{execCOL@{execCOL}!CProtocolProcessor@{CProtocol\-Processor}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CProtocol\-Processor::exec\-COL (char $\ast$ {\em pcmd})}\label{classCProtocolProcessor_a4}
+
+
+SMS Manager로부터 \char`\"{}COL\char`\"{} 명령 코드로 요청된 경우 이를 처리하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em command}]message(수신된 명령어). \end{description}
+\end{Desc}
+\index{CProtocolProcessor@{CProtocol\-Processor}!execDELCOND@{execDELCOND}}
+\index{execDELCOND@{execDELCOND}!CProtocolProcessor@{CProtocol\-Processor}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CProtocol\-Processor::exec\-DELCOND (char $\ast$ {\em pcmd})}\label{classCProtocolProcessor_a14}
+
+
+SMS Manager로부터 \char`\"{}DELCOND\char`\"{} 명령 코드로 요청된 경우 이를 처리하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em command}]message(수신된 명령어). \end{description}
+\end{Desc}
+\index{CProtocolProcessor@{CProtocol\-Processor}!execDELINST@{execDELINST}}
+\index{execDELINST@{execDELINST}!CProtocolProcessor@{CProtocol\-Processor}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CProtocol\-Processor::exec\-DELINST (char $\ast$ {\em pcmd})}\label{classCProtocolProcessor_a10}
+
+
+SMS Manager로부터 \char`\"{}DELINST\char`\"{} 명령 코드로 요청된 경우 이를 처리하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em command}]message(수신된 명령어). \end{description}
+\end{Desc}
+\index{CProtocolProcessor@{CProtocol\-Processor}!execGET@{execGET}}
+\index{execGET@{execGET}!CProtocolProcessor@{CProtocol\-Processor}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CProtocol\-Processor::exec\-GET (char $\ast$ {\em pcmd})}\label{classCProtocolProcessor_a5}
+
+
+SMS Manager로부터 \char`\"{}GET\char`\"{} 명령 코드로 요청된 경우 이를 처리하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em command}]message(수신된 명령어). \end{description}
+\end{Desc}
+\index{CProtocolProcessor@{CProtocol\-Processor}!execGETCOND@{execGETCOND}}
+\index{execGETCOND@{execGETCOND}!CProtocolProcessor@{CProtocol\-Processor}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CProtocol\-Processor::exec\-GETCOND (char $\ast$ {\em pcmd})}\label{classCProtocolProcessor_a11}
+
+
+SMS Manager로부터 \char`\"{}GETCOND\char`\"{} 명령 코드로 요청된 경우 이를 처리하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em command}]message(수신된 명령어). \end{description}
+\end{Desc}
+\index{CProtocolProcessor@{CProtocol\-Processor}!execGETINST@{execGETINST}}
+\index{execGETINST@{execGETINST}!CProtocolProcessor@{CProtocol\-Processor}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CProtocol\-Processor::exec\-GETINST (char $\ast$ {\em pcmd})}\label{classCProtocolProcessor_a7}
+
+
+SMS Manager로부터 \char`\"{}GETINST\char`\"{} 명령 코드로 요청된 경우 이를 처리하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em command}]message(수신된 명령어). \end{description}
+\end{Desc}
+\index{CProtocolProcessor@{CProtocol\-Processor}!execSET@{execSET}}
+\index{execSET@{execSET}!CProtocolProcessor@{CProtocol\-Processor}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CProtocol\-Processor::exec\-SET (char $\ast$ {\em pcmd})}\label{classCProtocolProcessor_a6}
+
+
+SMS Manager로부터 \char`\"{}SET\char`\"{} 명령 코드로 요청된 경우 이를 처리하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em command}]message(수신된 명령어). \end{description}
+\end{Desc}
+\index{CProtocolProcessor@{CProtocol\-Processor}!execSETCOND@{execSETCOND}}
+\index{execSETCOND@{execSETCOND}!CProtocolProcessor@{CProtocol\-Processor}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CProtocol\-Processor::exec\-SETCOND (char $\ast$ {\em pcmd})}\label{classCProtocolProcessor_a12}
+
+
+SMS Manager로부터 \char`\"{}SETCOND\char`\"{} 명령 코드로 요청된 경우 이를 처리하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em command}]message(수신된 명령어). \end{description}
+\end{Desc}
+\index{CProtocolProcessor@{CProtocol\-Processor}!execSETINST@{execSETINST}}
+\index{execSETINST@{execSETINST}!CProtocolProcessor@{CProtocol\-Processor}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CProtocol\-Processor::exec\-SETINST (char $\ast$ {\em pcmd})}\label{classCProtocolProcessor_a8}
+
+
+SMS Manager로부터 \char`\"{}SETINST\char`\"{} 명령 코드로 요청된 경우 이를 처리하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em command}]message(수신된 명령어). \end{description}
+\end{Desc}
+\index{CProtocolProcessor@{CProtocol\-Processor}!execute@{execute}}
+\index{execute@{execute}!CProtocolProcessor@{CProtocol\-Processor}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CProtocol\-Processor::execute (char $\ast$ {\em pcmd})}\label{classCProtocolProcessor_a3}
+
+
+SMS Manager로부터 수신된 명령 코드에 따라 분기 처리하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em command}]message(수신된 명령어). \end{description}
+\end{Desc}
+\index{CProtocolProcessor@{CProtocol\-Processor}!getEnvVar@{getEnvVar}}
+\index{getEnvVar@{getEnvVar}!CProtocolProcessor@{CProtocol\-Processor}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CAgent\-Env\-Var} $\ast$ CProtocol\-Processor::get\-Env\-Var ()\hspace{0.3cm}{\tt  [inline]}}\label{classCProtocolProcessor_a18}
+
+
+SMS Agent가 기동하는데 필요한 환경 정보 및 item 정보를 관리하는 객체를 조회하는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+CAGent\-Env\-Var pointer. \end{Desc}
+\begin{Desc}
+\item[{\bf 참조하시요: }]\par
+{\bf CAgent\-Env\-Var} {\rm (페이지\,\pageref{classCAgentEnvVar})}, {\bf CAgent\-Config\-Var} {\rm (페이지\,\pageref{classCAgentConfigVar})}. \end{Desc}
+\index{CProtocolProcessor@{CProtocol\-Processor}!parse@{parse}}
+\index{parse@{parse}!CProtocolProcessor@{CProtocol\-Processor}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ CProtocol\-Processor::parse (char $\ast$ {\em pcmd})}\label{classCProtocolProcessor_a16}
+
+
+SMS Manager로부터 수신된 명령어가 정해진 규약에 맞는지 검사하고\par
+ 파싱하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em command}]message(수신된 명령어) \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 반환: }]\par
+파싱된 명령어. \end{Desc}
+\index{CProtocolProcessor@{CProtocol\-Processor}!process@{process}}
+\index{process@{process}!CProtocolProcessor@{CProtocol\-Processor}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CProtocol\-Processor::process (char $\ast$ {\em pcmd})}\label{classCProtocolProcessor_a2}
+
+
+SMS Manager로부터 요청된 명령 코드를 분석 및 처리하는 최상위 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em command}]message(수신된 명령어). \end{description}
+\end{Desc}
+\index{CProtocolProcessor@{CProtocol\-Processor}!setEnvVar@{setEnvVar}}
+\index{setEnvVar@{setEnvVar}!CProtocolProcessor@{CProtocol\-Processor}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CProtocol\-Processor::set\-Env\-Var ({\bf CAgent\-Env\-Var} $\ast$ {\em var})\hspace{0.3cm}{\tt  [inline]}}\label{classCProtocolProcessor_a17}
+
+
+SMS Agent가 기동하는데 필요한 환경 정보 및 item 정보를 관리하는 객체를 저장하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em CAgent\-Env\-Var}]pointer. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 참조하시요: }]\par
+{\bf CAgent\-Env\-Var} {\rm (페이지\,\pageref{classCAgentEnvVar})}, {\bf CAgent\-Config\-Var} {\rm (페이지\,\pageref{classCAgentConfigVar})}. \end{Desc}
+\index{CProtocolProcessor@{CProtocol\-Processor}!setUserInfo@{setUserInfo}}
+\index{setUserInfo@{setUserInfo}!CProtocolProcessor@{CProtocol\-Processor}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CProtocol\-Processor::set\-User\-Info (char $\ast$ {\em pcmd})}\label{classCProtocolProcessor_a15}
+
+
+SMS Manager로부터 \char`\"{}SET\char`\"{} 명령 중에서 ITEM CODE가 \char`\"{}User\-Info\char`\"{}인 경우\par
+ SMS Agent 계정 설정을 처리하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em command}]message(수신된 명령어). \end{description}
+\end{Desc}
+
+
+이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:\begin{CompactItemize}
+\item 
+{\bf CProtocol\-Processor.h}\end{CompactItemize}

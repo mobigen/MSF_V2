@@ -1,0 +1,35 @@
+[dataserver]
+
+# dataserver 설치 경로
+root_path = /Users/mega/Documents/workspace-python/DataServer
+
+# dataserver 로그 경로
+log_path = /Users/mega/Documents/workspace-python/DataServer/log
+
+# Cache 정보를 dump 할 경로
+dump_path = /Users/mega/Dump
+
+# 대용량 데이터를 파일로 Caching할 경로
+cache_path = /Users/mega/Cache
+
+# Cache 정보 보관 주기(초). 기본값은 30분(1800초)  
+cache_keep_time = 3600
+
+# client 서비스 포트
+client_port = 9090
+
+# dataserver 관리 포트
+master_port = 9091
+
+
+
+[iris]
+# iris Master 정보
+host = 192.168.100.63:25050
+# host = 58.181.37.188:15050
+
+# iris User 정보
+user = kisa
+
+# iris Password 정보
+password = kisa123

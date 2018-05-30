@@ -1,0 +1,124 @@
+\section{CDBPool  클래스 참조}
+\label{classCDBPool}\index{CDBPool@{CDBPool}}
+Database pool class. 
+
+
+{\tt \#include $<$CDBPool.h$>$}
+
+\subsection*{공용 메소드}
+\begin{CompactItemize}
+\item 
+{\bf CDBPool} ()
+\item 
+virtual {\bf $\sim$CDBPool} ()
+\item 
+void {\bf put\-Session} ({\bf CDBSession} $\ast$session)
+\item 
+{\bf CDBSession}$\ast$ {\bf get\-Session} (char $\ast$userid, char $\ast$passwd, char $\ast$sid)
+\item 
+{\bf CDBSession}$\ast$ {\bf get\-Session} (char $\ast$key)
+\item 
+void {\bf return\-Session} ({\bf CDBSession} $\ast$)
+\item 
+int {\bf size} ()
+\end{CompactItemize}
+
+
+\subsection{상세한 내용}
+Database pool class.
+
+수집 쓰레드에서 데이터 베이스 접근에 필요한 데이터베이스 connect session을 관리하는 클래스. 
+
+
+
+\subsection{생성자 \& 소멸자 문서화}
+\index{CDBPool@{CDBPool}!CDBPool@{CDBPool}}
+\index{CDBPool@{CDBPool}!CDBPool@{CDBPool}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CDBPool::CDBPool ()}\label{classCDBPool_a0}
+
+
+생성자 \index{CDBPool@{CDBPool}!~CDBPool@{$\sim$CDBPool}}
+\index{~CDBPool@{$\sim$CDBPool}!CDBPool@{CDBPool}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CDBPool::$\sim$CDBPool ()\hspace{0.3cm}{\tt  [virtual]}}\label{classCDBPool_a1}
+
+
+소멸자 
+
+\subsection{멤버 함수 문서화}
+\index{CDBPool@{CDBPool}!getSession@{getSession}}
+\index{getSession@{getSession}!CDBPool@{CDBPool}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CDBSession} $\ast$ CDBPool::get\-Session (char $\ast$ {\em key})}\label{classCDBPool_a4}
+
+
+주어진 key에 해당하는 Database session을 얻어오는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em database}]session key(character string). \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 반환: }]\par
+{\bf CDBSession} {\rm (페이지\,\pageref{classCDBSession})} pointer. \end{Desc}
+\begin{Desc}
+\item[{\bf 참조하시요: }]\par
+CDBsession \end{Desc}
+\index{CDBPool@{CDBPool}!getSession@{getSession}}
+\index{getSession@{getSession}!CDBPool@{CDBPool}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CDBSession} $\ast$ CDBPool::get\-Session (char $\ast$ {\em userid}, char $\ast$ {\em passwd}, char $\ast$ {\em sid})}\label{classCDBPool_a3}
+
+
+주어진 User ID, password, SID에 해당하는 Database session을 얻어오는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em oracle}]user id. \item[
+{\em password.}]\item[
+{\em Oracle}]SID. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 반환: }]\par
+{\bf CDBSession} {\rm (페이지\,\pageref{classCDBSession})} pointer. \end{Desc}
+\begin{Desc}
+\item[{\bf 참조하시요: }]\par
+{\bf CDBSession} {\rm (페이지\,\pageref{classCDBSession})} \end{Desc}
+\index{CDBPool@{CDBPool}!putSession@{putSession}}
+\index{putSession@{putSession}!CDBPool@{CDBPool}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CDBPool::put\-Session ({\bf CDBSession} $\ast$ {\em session})}\label{classCDBPool_a2}
+
+
+새로운 데이터베이스 연결 세션을 추가하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em CDBSession}]pointer. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 참조하시요: }]\par
+{\bf CDBSession} {\rm (페이지\,\pageref{classCDBSession})} \end{Desc}
+\index{CDBPool@{CDBPool}!returnSession@{returnSession}}
+\index{returnSession@{returnSession}!CDBPool@{CDBPool}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CDBPool::return\-Session ({\bf CDBSession} $\ast$)}\label{classCDBPool_a5}
+
+
+얻어온 Database session을 Database pool로 반납하는 메쏘드. \begin{Desc}
+\item[{\bf 매개변수들: }]\par
+\begin{description}
+\item[
+{\em CDBSession}]pointer. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[{\bf 참조하시요: }]\par
+{\bf CDBSession} {\rm (페이지\,\pageref{classCDBSession})} \end{Desc}
+\index{CDBPool@{CDBPool}!size@{size}}
+\index{size@{size}!CDBPool@{CDBPool}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int CDBPool::size ()}\label{classCDBPool_a6}
+
+
+현재 데이터베이스 pool에 저장된 Database 연결 세션 개수을 얻어온는 메쏘드. \begin{Desc}
+\item[{\bf 반환: }]\par
+database session count. \end{Desc}
+
+
+이 클래스을 위한 문서화는 다음의 파일로부터 생성되었습니다:\begin{CompactItemize}
+\item 
+{\bf CDBPool.h}\end{CompactItemize}

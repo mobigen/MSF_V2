@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
+<title>CRegex.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body bgcolor="#ffffff">
+<!-- 에 의해 생성된 Doxygen 1.2.8.1 -->
+<center>
+<a class="qindex" href="main.html">주요 페이지</a> &nbsp; <a class="qindex" href="hierarchy.html">클래스 계층(도)</a> &nbsp; <a class="qindex" href="annotated.html">혼합 목록</a> &nbsp; <a class="qindex" href="files.html">파일 목록</a> &nbsp; <a class="qindex" href="functions.html">혼합 멤버들</a> &nbsp; </center>
+<hr><h1>CRegex.h</h1><div class="fragment"><pre>00001 
+00002 <font class="preprocessor">#ifndef __REGEX_H__</font>
+00003 <font class="preprocessor"></font><font class="preprocessor">#define __REGEX_H__</font>
+00004 <font class="preprocessor"></font>
+00005 <font class="preprocessor">#include &lt;stdio.h&gt;</font>
+00006 <font class="preprocessor">#include &lt;stdlib.h&gt;</font>
+00007 <font class="preprocessor">#include &lt;string.h&gt;</font>
+00008 <font class="preprocessor">#include &lt;unistd.h&gt;</font>
+00009 <font class="preprocessor">#include &lt;sys/types.h&gt;</font>
+00010 <font class="preprocessor">#include &lt;errno.h&gt;</font>
+00011 <font class="preprocessor">#include &lt;regex.h&gt;</font>
+00012 
+00013 
+00015 
+<a name="l00018"></a><a class="code" href="classCRegex.html">00018</a> <font class="keyword">class </font><a class="code" href="classCRegex.html">CRegex</a>
+00019 {
+00020         <font class="keyword">protected</font>:
+<a name="l00021"></a><a class="code" href="classCRegex.html#n0">00021</a>                 regex_t m_re; 
+<a name="l00022"></a><a class="code" href="classCRegex.html#n1">00022</a>                 <font class="keywordtype">char</font>    *m_pattern;     
+00029                 <font class="keywordtype">int</font> <a class="code" href="classCRegex.html#b0">initRegex</a>(regex_t *re, <font class="keywordtype">char</font> *msg);
+00037                 <font class="keywordtype">char</font>* <a class="code" href="classCRegex.html#b1">getMatchedString</a>(regex_t *re, <font class="keywordtype">char</font> *msg);
+00044                 <font class="keywordtype">char</font>* <a class="code" href="classCRegex.html#b2">getMatchedStartPoint</a>(regex_t *re, <font class="keywordtype">char</font> *msg);
+00051                 <font class="keywordtype">char</font>* <a class="code" href="classCRegex.html#b3">getMatchedEndPoint</a>(regex_t *re, <font class="keywordtype">char</font> *msg);
+00058                 regmatch_t* <a class="code" href="classCRegex.html#b4">getRegMatch</a>(regex_t *re, <font class="keywordtype">char</font> *msg);
+00063                 <font class="keywordtype">void</font> <a class="code" href="classCRegex.html#b5">freeRegex</a>(regex_t *re);
+00064 
+00065         <font class="keyword">public</font>:
+<a name="l00067"></a><a class="code" href="classCRegex.html#a0">00067</a>                 <a class="code" href="classCRegex.html#a0">CRegex</a>()<font class="keyword"></font>{};
+00072                 <a class="code" href="classCRegex.html#a0">CRegex</a>(<font class="keywordtype">char</font> *pattern);
+00074                 <a class="code" href="classCRegex.html#a2">~CRegex</a>();
+00081                 <font class="keywordtype">char</font>* <a class="code" href="classCRegex.html#b1">getMatchedString</a>(<font class="keywordtype">char</font> *msg);
+00086                 <font class="keywordtype">void</font> <a class="code" href="classCRegex.html#a4">setPattern</a>(<font class="keywordtype">char</font> *pattern);
+00092                 <font class="keywordtype">bool</font> <a class="code" href="classCRegex.html#a5">isMatched</a>(<font class="keywordtype">char</font> *str);
+00093                 
+00094 };
+00095 
+00096 <font class="preprocessor">#endif</font>
+</font></pre></div><hr><address><small>MOBIGEN SMS Agent에 대해 Sun May 7 09:48:25 2006 생성 by
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.gif" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
+ &copy;&nbsp;1997-2001</small></address>
+</body>
+</html>
