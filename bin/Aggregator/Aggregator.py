@@ -2,26 +2,28 @@ import ConfigParser
 import sys
 import os
 import signal
-import dateutil
 import pandas as pd
 
 from sqlalchemy import create_engine
 
-import Mobigen.Common.Log as Log;
+import Mobigen.Common.Log as Log
 
 Log.Init()
 
 G_SHUTDOWN = True
 
-def Shutdown(sigNum = 0, frame = 0) :
+
+def Shutdown(sigNum=0, frame=0):
     global G_SHUTDOWN
     __LOG__.Trace("Recv Signal (%s)" % sigNum)
     G_SHUTDOWN = False
+
 
 signal.signal(signal.SIGTERM, Shutdown)  # Sig Terminate : 15
 signal.signal(signal.SIGINT, Shutdown)   # Sig Inturrupt : 2
 signal.signal(signal.SIGHUP, Shutdown)  # Sig HangUp : 1
 signal.signal(signal.SIGPIPE, Shutdown) # Sig Broken Pipe : 13
+
 
 class Aggregator:
     """
@@ -216,8 +218,8 @@ class Aggregator:
                 prefix, path = stdin.split('://')
             except:
                 __LOG__.Trace("Wrong stdin come in")
-		sys.stderr.write('\n')
-		sys.stderr.flush()
+                sys.stderr.write('\n')
+                sys.stderr.flush()
                 continue
             result = self.aggregate(path)
             __LOG__.Trace("Aggregation success : %s" % path)
