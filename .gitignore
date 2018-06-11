@@ -1,0 +1,8 @@
+bin/*/lib/
+bin/*/lib64/
+bin/*/bin/
+bin/*/include/
+bin/*/pip-selfcheck.json
+bin/*/cx_Oracle-doc
+bin/*/*.swp
+bin/*/*.pyc
