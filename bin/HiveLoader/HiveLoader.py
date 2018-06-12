@@ -7,6 +7,7 @@ import ConfigParser
 
 from pyhive import hive
 from OracleHandler import OracleHandler
+from MySQLHandler import MySQLHandler
 
 import Mobigen.Common.Log as Log
 
@@ -23,12 +24,23 @@ signal.signal(signal.SIGHUP, shutdown)
 signal.signal(signal.SIGPIPE, shutdown)
 
 class HIVEController:
+    """
+         Monitoring STDIN including table name, file path, HIVE partition
+        This module get ddl from DB like Oracle, MySQL ..,
+        create table following ddl and then, data with the
+        specifed path in STDIN will be loaded to the table on Hive.
+
+        Note
+        ----
+        This module do not include the function to create index.
+        Add it as needed.
+    """
     def __init__(self):
         self.module = sys.argv[0]
         self.cfg = ConfigParser.ConfigParser()
         self.cfg.read(sys.argv[1])
         self.connRetry = 3
-        
+
         self.set_logger()
         self.set_config()
 
@@ -48,14 +60,14 @@ class HIVEController:
             if os.path.exists(self.db_confpath):
                 self.cfg_db.read(self.db_confpath)
             else:
-                print "Access wrong DB Config. Check DB config again"
+                print "Error: Access wrong DB Config. Check DB config again"
                 sys.exit()
 
             if self.db_type == "Oracle":
                 self.db_obj = OracleHandler(self.db_section, self.cfg_db)
             elif self.db_type == "MySQL":
                 self.db_obj = MySQLHandler(self.db_section, self.cfg_db)
-            
+
         except Exception, ex:
             __LOG__.Trace("Exception: %s" % ex)
 
@@ -82,6 +94,15 @@ class HIVEController:
                                       self.logFileCount))
 
     def set_table(self, table):
+        """
+            Get DDL for Hive on DB(Oracle, MySQL, ...),
+            and execute the DDL to make table on Hive
+
+            Parameters
+            ----------
+            table: <string>
+                Table name specified in header of STDIN
+        """
         query = "SELECT HIVE_DDL FROM MT_BIGDATA_MODEL WHERE TABLE_NM = '%s'" % table
         data = self.db_obj.executeGetData(query, retry=3)
         for row in data:
@@ -94,6 +115,23 @@ class HIVEController:
             __LOG__.Trace(ex)
 
     def load_data(self, table, path, partition):
+        """
+            Loads the file with the specified path in STDIN to Hive
+
+            Parameters
+            ----------
+            table: <string>
+                table specified in STDIN
+            path: <string>
+                path specified in STDIN
+            partition: <string>
+                partition specified in STDIN
+
+            Note
+            ----
+            The query to execute is carved in this code.
+            Fix it a little as needed.
+        """
         query = "LOAD DATA INPATH '%s' \
                  OVERWRITE INTO TABLE %s \
                  PARTITION(yyyymmdd='%s')" % (path, table, partition)
@@ -109,16 +147,15 @@ class HIVEController:
             stdin = sys.stdin.readline()
             __LOG__.Trace("STD IN : %s" % stdin)
             try:
-				if '://' in stdin:
-					table, data = stdin.split('://')
-					path, partition = data.split('||')
-				else
-					continue
-					
+                if '://' in stdin:
+                    table, data = stdin.split('://')
+                    path, partition = data.split('||')
+                else
+                    continue
             except:
                 __LOG__.Exception()
-				sys.stderr.write('\n')
-				sys.stderr.flush()
+                sys.stderr.write('\n')
+                sys.stderr.flush()
                 continue
             self.set_table(table)
             self.load_data(table, path, partition)
@@ -132,7 +169,6 @@ def main():
 
     obj = HIVEController()
     __LOG__.Trace('---------------HIVEController Start!----------------')
-
     obj.run()
 
 if __name__ == '__main__':
