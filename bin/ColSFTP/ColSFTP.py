@@ -44,7 +44,6 @@ class ColSftp(object):
         self.starttime = 0
         self.endtime = 0
         self.port = 22
-        self.header_info = ''
         self.sleep_time = 5
         self.local_dir = os.getcwd()
         self.index_path = os.getcwd()
@@ -83,8 +82,6 @@ class ColSftp(object):
 
         if self.config.has_option(section, 'ftp_port'):
             self.port = self.config.getint(section, 'ftp_port')
-        if self.config.has_option(section, 'HEADER_INFO'):
-            self.header_info = self.config.get(section, 'HEADER_INFO')
         if self.config.has_option(section, 'SLEEP_TIME'):
             self.sleep_time = self.config.getint(section, 'SLEEP_TIME')
         if self.config.has_option(section, 'LOCAL_DIR'):
@@ -250,9 +247,9 @@ class ColSftp(object):
         self.dump_index(curr_file, curr_time, curr_size)
 
 def search(sftp_obj, path, patt, curr_time, curr_size):
-    # stdin으로 들어온 시간이 없으면 다 추가
-    # sftp연결된 곳의 파일의 수정시간이 stdin으로 들어온 시간보다 크면 추가
-    # stdin으로 들어온 시간이랑 같고 stdin으로 들어온 사이즈랑 다르면 추가 
+    # index에 시간이 표시되있지 않으면 전부 추가
+    # sftp연결된 곳의 파일의 수정시간이 index에 표기된 시간보다 크면 추가
+    # index에 표기된 시간이랑 같고 index에 있는 사이즈랑 다르면 추가 
     try:
         li = []
         __LOG__.Trace(path)
