@@ -1,0 +1,342 @@
+[2018/06/12 15:03:59] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "ColSFTP.py", line 285, in <module>
+
+    es = ColSftp(sys.argv[1], sys.argv[2], options, args)
+
+  File "ColSFTP.py", line 98, in __init__
+
+    os.makedirs(self.local_dir)
+
+  File "/home/msf/usr/local/python/lib/python2.7/os.py", line 157, in makedirs
+
+    mkdir(name, mode)
+
+OSError: [Errno 13] Permission denied: '/data'
+
+[2018/06/12 15:04:39] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "ColSFTP.py", line 285, in <module>
+
+    es = ColSftp(sys.argv[1], sys.argv[2], options, args)
+
+  File "ColSFTP.py", line 98, in __init__
+
+    os.makedirs(self.local_dir)
+
+  File "/home/msf/usr/local/python/lib/python2.7/os.py", line 157, in makedirs
+
+    mkdir(name, mode)
+
+OSError: [Errno 13] Permission denied: '/data'
+
+[2018/06/12 15:07:05] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "ColSFTP.py", line 141, in load_index
+
+    f = open(os.path.join(self.index_path,self.index_name),'r')
+
+IOError: [Errno 2] No such file or directory: '/home/msf/MSF_V2/bin/ColSFTP/index/sftp1.info'
+
+[2018/06/12 15:07:05] 13053, "ColSFTP.py", 205, run : Have no index
+[2018/06/12 15:07:05] 13053, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:07:05] 13053, "ColSFTP.py", 129, connectSFTP : SFTP Connected Success!!
+[2018/06/12 15:07:05] 13053, "ColSFTP.py", 258, search : /home/sdi/garbage
+[2018/06/12 15:07:05] 13053, "ColSFTP.py", 221, run : Be down Number of files : 0
+[2018/06/12 15:07:05] 13053, "ColSFTP.py", 247, run : =================== while end sleep 5 ====================
+[2018/06/12 15:07:10] 13053, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:07:10] 13053, "ColSFTP.py", 129, connectSFTP : SFTP Connected Success!!
+[2018/06/12 15:07:10] 13053, "ColSFTP.py", 258, search : /home/sdi/garbage
+[2018/06/12 15:07:10] 13053, "ColSFTP.py", 221, run : Be down Number of files : 0
+[2018/06/12 15:07:10] 13053, "ColSFTP.py", 247, run : =================== while end sleep 5 ====================
+[2018/06/12 15:07:15] 13053, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:07:16] 13053, "ColSFTP.py", 129, connectSFTP : SFTP Connected Success!!
+[2018/06/12 15:07:16] 13053, "ColSFTP.py", 258, search : /home/sdi/garbage
+[2018/06/12 15:07:16] 13053, "ColSFTP.py", 221, run : Be down Number of files : 0
+[2018/06/12 15:07:16] 13053, "ColSFTP.py", 247, run : =================== while end sleep 5 ====================
+[2018/06/12 15:07:21] 13053, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:07:21] 13053, "ColSFTP.py", 129, connectSFTP : SFTP Connected Success!!
+[2018/06/12 15:07:21] 13053, "ColSFTP.py", 258, search : /home/sdi/garbage
+[2018/06/12 15:07:21] 13053, "ColSFTP.py", 221, run : Be down Number of files : 0
+[2018/06/12 15:07:21] 13053, "ColSFTP.py", 247, run : =================== while end sleep 5 ====================
+[2018/06/12 15:07:26] 13053, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:07:26] 13053, "ColSFTP.py", 129, connectSFTP : SFTP Connected Success!!
+[2018/06/12 15:07:26] 13053, "ColSFTP.py", 258, search : /home/sdi/garbage
+[2018/06/12 15:07:26] 13053, "ColSFTP.py", 221, run : Be down Number of files : 0
+[2018/06/12 15:07:26] 13053, "ColSFTP.py", 247, run : =================== while end sleep 5 ====================
+[2018/06/12 15:07:31] 13053, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:07:31] 13053, "ColSFTP.py", 129, connectSFTP : SFTP Connected Success!!
+[2018/06/12 15:07:31] 13053, "ColSFTP.py", 258, search : /home/sdi/garbage
+[2018/06/12 15:07:31] 13053, "ColSFTP.py", 221, run : Be down Number of files : 0
+[2018/06/12 15:07:31] 13053, "ColSFTP.py", 247, run : =================== while end sleep 5 ====================
+[2018/06/12 15:07:36] 13053, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:07:37] 13053, "ColSFTP.py", 129, connectSFTP : SFTP Connected Success!!
+[2018/06/12 15:07:37] 13053, "ColSFTP.py", 258, search : /home/sdi/garbage
+[2018/06/12 15:07:37] 13053, "ColSFTP.py", 221, run : Be down Number of files : 0
+[2018/06/12 15:07:37] 13053, "ColSFTP.py", 247, run : =================== while end sleep 5 ====================
+[2018/06/12 15:07:42] 13053, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:07:42] 13053, "ColSFTP.py", 129, connectSFTP : SFTP Connected Success!!
+[2018/06/12 15:07:42] 13053, "ColSFTP.py", 258, search : /home/sdi/garbage
+[2018/06/12 15:07:42] 13053, "ColSFTP.py", 221, run : Be down Number of files : 0
+[2018/06/12 15:07:42] 13053, "ColSFTP.py", 247, run : =================== while end sleep 5 ====================
+[2018/06/12 15:07:47] 13053, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:07:47] 13053, "ColSFTP.py", 129, connectSFTP : SFTP Connected Success!!
+[2018/06/12 15:07:47] 13053, "ColSFTP.py", 258, search : /home/sdi/garbage
+[2018/06/12 15:07:47] 13053, "ColSFTP.py", 221, run : Be down Number of files : 0
+[2018/06/12 15:07:47] 13053, "ColSFTP.py", 247, run : =================== while end sleep 5 ====================
+[2018/06/12 15:07:52] 13053, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:07:52] 13053, "ColSFTP.py", 129, connectSFTP : SFTP Connected Success!!
+[2018/06/12 15:07:52] 13053, "ColSFTP.py", 258, search : /home/sdi/garbage
+[2018/06/12 15:07:52] 13053, "ColSFTP.py", 221, run : Be down Number of files : 0
+[2018/06/12 15:07:52] 13053, "ColSFTP.py", 247, run : =================== while end sleep 5 ====================
+[2018/06/12 15:07:57] 13053, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:07:57] 13053, "ColSFTP.py", 129, connectSFTP : SFTP Connected Success!!
+[2018/06/12 15:07:57] 13053, "ColSFTP.py", 258, search : /home/sdi/garbage
+[2018/06/12 15:07:57] 13053, "ColSFTP.py", 221, run : Be down Number of files : 0
+[2018/06/12 15:07:57] 13053, "ColSFTP.py", 247, run : =================== while end sleep 5 ====================
+[2018/06/12 15:07:59] 13053, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:07:59] 13053, "ColSFTP.py", 213, run : SHUTDOWN : True
+[2018/06/12 15:07:59] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "ColSFTP.py", line 151, in dump_index
+
+    content = file_name + '|^|' + str(file_time) + '|^|' + str(file_size)
+
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+[2018/06/12 15:07:59] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "ColSFTP.py", line 286, in <module>
+
+    es.setDaemon(True)
+
+AttributeError: 'ColSftp' object has no attribute 'setDaemon'
+
+[2018/06/12 15:09:07] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "ColSFTP.py", line 141, in load_index
+
+    f = open(os.path.join(self.index_path,self.index_name),'r')
+
+IOError: [Errno 2] No such file or directory: '/home/msf/MSF_V2/bin/ColSFTP/index/sftp1.info'
+
+[2018/06/12 15:09:07] 13817, "ColSFTP.py", 205, run : Have no index
+[2018/06/12 15:09:07] 13817, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:09:07] 13817, "ColSFTP.py", 129, connectSFTP : SFTP Connected Success!!
+[2018/06/12 15:09:07] 13817, "ColSFTP.py", 258, search : /home/sdi/garbage
+[2018/06/12 15:09:07] 13817, "ColSFTP.py", 221, run : Be down Number of files : 0
+[2018/06/12 15:09:07] 13817, "ColSFTP.py", 247, run : =================== while end sleep 5 ====================
+[2018/06/12 15:09:12] 13817, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:09:12] 13817, "ColSFTP.py", 129, connectSFTP : SFTP Connected Success!!
+[2018/06/12 15:09:12] 13817, "ColSFTP.py", 258, search : /home/sdi/garbage
+[2018/06/12 15:09:12] 13817, "ColSFTP.py", 221, run : Be down Number of files : 0
+[2018/06/12 15:09:12] 13817, "ColSFTP.py", 247, run : =================== while end sleep 5 ====================
+[2018/06/12 15:09:17] 13817, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:09:17] 13817, "ColSFTP.py", 129, connectSFTP : SFTP Connected Success!!
+[2018/06/12 15:09:17] 13817, "ColSFTP.py", 258, search : /home/sdi/garbage
+[2018/06/12 15:09:17] 13817, "ColSFTP.py", 221, run : Be down Number of files : 0
+[2018/06/12 15:09:17] 13817, "ColSFTP.py", 247, run : =================== while end sleep 5 ====================
+[2018/06/12 15:09:22] 13817, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:09:22] 13817, "ColSFTP.py", 129, connectSFTP : SFTP Connected Success!!
+[2018/06/12 15:09:22] 13817, "ColSFTP.py", 258, search : /home/sdi/garbage
+[2018/06/12 15:09:22] 13817, "ColSFTP.py", 221, run : Be down Number of files : 0
+[2018/06/12 15:09:22] 13817, "ColSFTP.py", 247, run : =================== while end sleep 5 ====================
+[2018/06/12 15:09:27] 13817, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:09:28] 13817, "ColSFTP.py", 129, connectSFTP : SFTP Connected Success!!
+[2018/06/12 15:09:28] 13817, "ColSFTP.py", 258, search : /home/sdi/garbage
+[2018/06/12 15:09:28] 13817, "ColSFTP.py", 221, run : Be down Number of files : 0
+[2018/06/12 15:09:28] 13817, "ColSFTP.py", 247, run : =================== while end sleep 5 ====================
+[2018/06/12 15:09:33] 13817, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:09:33] 13817, "ColSFTP.py", 129, connectSFTP : SFTP Connected Success!!
+[2018/06/12 15:09:33] 13817, "ColSFTP.py", 258, search : /home/sdi/garbage
+[2018/06/12 15:09:33] 13817, "ColSFTP.py", 221, run : Be down Number of files : 0
+[2018/06/12 15:09:33] 13817, "ColSFTP.py", 247, run : =================== while end sleep 5 ====================
+[2018/06/12 15:09:38] 13817, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:09:38] 13817, "ColSFTP.py", 129, connectSFTP : SFTP Connected Success!!
+[2018/06/12 15:09:38] 13817, "ColSFTP.py", 258, search : /home/sdi/garbage
+[2018/06/12 15:09:38] 13817, "ColSFTP.py", 221, run : Be down Number of files : 1
+[2018/06/12 15:09:38] 13817, "ColSFTP.py", 162, fileTransport : /home/sdi/garbage/TEST2.txt.2
+[2018/06/12 15:09:38] 13817, "ColSFTP.py", 169, fileTransport : /home/msf/MSF_V2/bin/ColSFTP/tmp/sdi/garbage/txt
+[2018/06/12 15:09:38] 13817, "ColSFTP.py", 180, fileTransport : Std out : file:///home/msf/MSF_V2/bin/ColSFTP/tmp/sdi/garbage/txt/TEST2.txt.2
+ 
+[2018/06/12 15:09:38] 13817, "ColSFTP.py", 154, dump_index : Dump Index : /home/sdi/garbage/TEST2.txt.2|^|1528783774|^|10
+[2018/06/12 15:09:38] 13817, "ColSFTP.py", 247, run : =================== while end sleep 5 ====================
+[2018/06/12 15:09:43] 13817, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:09:43] 13817, "ColSFTP.py", 129, connectSFTP : SFTP Connected Success!!
+[2018/06/12 15:09:43] 13817, "ColSFTP.py", 258, search : /home/sdi/garbage
+[2018/06/12 15:09:43] 13817, "ColSFTP.py", 221, run : Be down Number of files : 0
+[2018/06/12 15:09:43] 13817, "ColSFTP.py", 247, run : =================== while end sleep 5 ====================
+[2018/06/12 15:09:48] 13817, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:09:48] 13817, "ColSFTP.py", 213, run : SHUTDOWN : True
+[2018/06/12 15:09:48] 13817, "ColSFTP.py", 154, dump_index : Dump Index : /home/sdi/garbage/TEST2.txt.2|^|1528783774|^|10
+[2018/06/12 15:09:48] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "ColSFTP.py", line 286, in <module>
+
+    es.setDaemon(True)
+
+AttributeError: 'ColSftp' object has no attribute 'setDaemon'
+
+[2018/06/12 15:10:19] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "ColSFTP.py", line 285, in <module>
+
+    es = ColSftp(sys.argv[1], sys.argv[2], options, args)
+
+  File "ColSFTP.py", line 103, in __init__
+
+    self.run()
+
+  File "ColSFTP.py", line 197, in run
+
+    curr_info = self.idx.split('|^|')
+
+AttributeError: 'ColSftp' object has no attribute 'idx'
+
+[2018/06/12 15:10:32] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "ColSFTP.py", line 285, in <module>
+
+    es = ColSftp(sys.argv[1], sys.argv[2], options, args)
+
+  File "ColSFTP.py", line 103, in __init__
+
+    self.run()
+
+  File "ColSFTP.py", line 197, in run
+
+    curr_info = self.idx.split('|^|')
+
+AttributeError: 'ColSftp' object has no attribute 'idx'
+
+[2018/06/12 15:11:06] 14434, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:11:06] 14434, "ColSFTP.py", 129, connectSFTP : SFTP Connected Success!!
+[2018/06/12 15:11:06] 14434, "ColSFTP.py", 258, search : /home/sdi/garbage
+[2018/06/12 15:11:06] 14434, "ColSFTP.py", 221, run : Be down Number of files : 1
+[2018/06/12 15:11:06] 14434, "ColSFTP.py", 162, fileTransport : /home/sdi/garbage/TEST2.txt.2
+[2018/06/12 15:11:06] 14434, "ColSFTP.py", 169, fileTransport : /home/msf/MSF_V2/bin/ColSFTP/tmp/sdi/garbage/txt
+[2018/06/12 15:11:06] 14434, "ColSFTP.py", 180, fileTransport : Std out : file:///home/msf/MSF_V2/bin/ColSFTP/tmp/sdi/garbage/txt/TEST2.txt.2
+ 
+[2018/06/12 15:11:06] 14434, "ColSFTP.py", 154, dump_index : Dump Index : /home/sdi/garbage/TEST2.txt.2|^|1528783774|^|10
+[2018/06/12 15:11:06] 14434, "ColSFTP.py", 247, run : =================== while end sleep 5 ====================
+[2018/06/12 15:11:11] 14434, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:11:11] 14434, "ColSFTP.py", 129, connectSFTP : SFTP Connected Success!!
+[2018/06/12 15:11:11] 14434, "ColSFTP.py", 258, search : /home/sdi/garbage
+[2018/06/12 15:11:11] 14434, "ColSFTP.py", 221, run : Be down Number of files : 0
+[2018/06/12 15:11:11] 14434, "ColSFTP.py", 247, run : =================== while end sleep 5 ====================
+[2018/06/12 15:11:16] 14434, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:11:16] 14434, "ColSFTP.py", 129, connectSFTP : SFTP Connected Success!!
+[2018/06/12 15:11:16] 14434, "ColSFTP.py", 258, search : /home/sdi/garbage
+[2018/06/12 15:11:16] 14434, "ColSFTP.py", 221, run : Be down Number of files : 1
+[2018/06/12 15:11:16] 14434, "ColSFTP.py", 162, fileTransport : /home/sdi/garbage/TEST2.csv.2
+[2018/06/12 15:11:16] 14434, "ColSFTP.py", 169, fileTransport : /home/msf/MSF_V2/bin/ColSFTP/tmp/sdi/garbage/csv
+[2018/06/12 15:11:16] 14434, "ColSFTP.py", 180, fileTransport : Std out : file:///home/msf/MSF_V2/bin/ColSFTP/tmp/sdi/garbage/csv/TEST2.csv.2
+ 
+[2018/06/12 15:11:16] 14434, "ColSFTP.py", 154, dump_index : Dump Index : /home/sdi/garbage/TEST2.csv.2|^|1528783874|^|10
+[2018/06/12 15:11:16] 14434, "ColSFTP.py", 247, run : =================== while end sleep 5 ====================
+[2018/06/12 15:11:21] 14434, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:11:22] 14434, "ColSFTP.py", 129, connectSFTP : SFTP Connected Success!!
+[2018/06/12 15:11:22] 14434, "ColSFTP.py", 258, search : /home/sdi/garbage
+[2018/06/12 15:11:22] 14434, "ColSFTP.py", 221, run : Be down Number of files : 0
+[2018/06/12 15:11:22] 14434, "ColSFTP.py", 247, run : =================== while end sleep 5 ====================
+[2018/06/12 15:11:27] 14434, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:11:27] 14434, "ColSFTP.py", 129, connectSFTP : SFTP Connected Success!!
+[2018/06/12 15:11:27] 14434, "ColSFTP.py", 258, search : /home/sdi/garbage
+[2018/06/12 15:11:27] 14434, "ColSFTP.py", 221, run : Be down Number of files : 1
+[2018/06/12 15:11:27] 14434, "ColSFTP.py", 162, fileTransport : /home/sdi/garbage/TEST2.conf.2
+[2018/06/12 15:11:27] 14434, "ColSFTP.py", 169, fileTransport : /home/msf/MSF_V2/bin/ColSFTP/tmp/sdi/garbage/conf
+[2018/06/12 15:11:27] 14434, "ColSFTP.py", 180, fileTransport : Std out : file:///home/msf/MSF_V2/bin/ColSFTP/tmp/sdi/garbage/conf/TEST2.conf.2
+ 
+[2018/06/12 15:11:27] 14434, "ColSFTP.py", 154, dump_index : Dump Index : /home/sdi/garbage/TEST2.conf.2|^|1528783886|^|10
+[2018/06/12 15:11:27] 14434, "ColSFTP.py", 247, run : =================== while end sleep 5 ====================
+[2018/06/12 15:11:32] 14434, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:11:32] 14434, "ColSFTP.py", 129, connectSFTP : SFTP Connected Success!!
+[2018/06/12 15:11:32] 14434, "ColSFTP.py", 258, search : /home/sdi/garbage
+[2018/06/12 15:11:32] 14434, "ColSFTP.py", 221, run : Be down Number of files : 0
+[2018/06/12 15:11:32] 14434, "ColSFTP.py", 247, run : =================== while end sleep 5 ====================
+[2018/06/12 15:11:37] 14434, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:11:37] 14434, "ColSFTP.py", 213, run : SHUTDOWN : True
+[2018/06/12 15:11:37] 14434, "ColSFTP.py", 154, dump_index : Dump Index : /home/sdi/garbage/TEST2.conf.2|^|1528783886|^|10
+[2018/06/12 15:11:37] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "ColSFTP.py", line 286, in <module>
+
+    es.setDaemon(True)
+
+AttributeError: 'ColSftp' object has no attribute 'setDaemon'
+
+[2018/06/12 15:14:56] 15721, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:14:59] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "ColSFTP.py", line 127, in connectSFTP
+
+    password=pwd)
+
+  File "/home/msf/usr/local/python/lib/python2.7/site-packages/paramiko/transport.py", line 1208, in connect
+
+    self.auth_password(username, password)
+
+  File "/home/msf/usr/local/python/lib/python2.7/site-packages/paramiko/transport.py", line 1381, in auth_password
+
+    return self.auth_handler.wait_for_response(my_event)
+
+  File "/home/msf/usr/local/python/lib/python2.7/site-packages/paramiko/auth_handler.py", line 226, in wait_for_response
+
+    raise e
+
+AuthenticationException: Authentication failed.
+
+[2018/06/12 15:14:59] 15721, "ColSFTP.py", 129, connectSFTP : SFTP Connected Success!!
+[2018/06/12 15:14:59] 15721, "ColSFTP.py", 258, search : /home/sdi/garbage
+[2018/06/12 15:14:59] 15721, "ColSFTP.py", 221, run : Be down Number of files : 0
+[2018/06/12 15:14:59] 15721, "ColSFTP.py", 247, run : =================== while end sleep 5 ====================
+[2018/06/12 15:15:04] 15721, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:15:06] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "ColSFTP.py", line 127, in connectSFTP
+
+    password=pwd)
+
+  File "/home/msf/usr/local/python/lib/python2.7/site-packages/paramiko/transport.py", line 1208, in connect
+
+    self.auth_password(username, password)
+
+  File "/home/msf/usr/local/python/lib/python2.7/site-packages/paramiko/transport.py", line 1381, in auth_password
+
+    return self.auth_handler.wait_for_response(my_event)
+
+  File "/home/msf/usr/local/python/lib/python2.7/site-packages/paramiko/auth_handler.py", line 226, in wait_for_response
+
+    raise e
+
+AuthenticationException: Authentication failed.
+
+[2018/06/12 15:15:06] 15721, "ColSFTP.py", 129, connectSFTP : SFTP Connected Success!!
+[2018/06/12 15:15:06] 15721, "ColSFTP.py", 258, search : /home/sdi/garbage
+[2018/06/12 15:15:06] 15721, "ColSFTP.py", 221, run : Be down Number of files : 0
+[2018/06/12 15:15:06] 15721, "ColSFTP.py", 247, run : =================== while end sleep 5 ====================
+[2018/06/12 15:15:10] 15721, "ColSFTP.py", 211, run : ========================While start ========================
+[2018/06/12 15:15:10] 15721, "ColSFTP.py", 213, run : SHUTDOWN : True
+[2018/06/12 15:15:10] 15721, "ColSFTP.py", 154, dump_index : Dump Index : /home/sdi/garbage/TEST2.conf.2|^|1528783886|^|10
+
+[2018/06/12 15:15:10] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "ColSFTP.py", line 286, in <module>
+
+    es.setDaemon(True)
+
+AttributeError: 'ColSftp' object has no attribute 'setDaemon'
+
