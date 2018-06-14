@@ -159,7 +159,8 @@ class MessageMonitor():
                     wfd.close()
                     #print "DUMP FILE : %s" % file_name
                     __LOG__.Trace("Dump File : %s" % file_name)
-                    sys.stdout.write('%s://%s\n' % (self.topic, os.path.abspath(file_name)))
+                    sys.stdout.write('%s://%s\n' % (self.topic,
+                                                    os.path.abspath(file_name)))
                 else:
                     __LOG__.Trace("be empty queue")
             else:
