@@ -1,10 +1,15 @@
-# Aggregator
+# HIVELoader
 
 **CSV(file path specified in STDIN) -> HIVE(table name, partition specified in STDIN)**
 
 STDIN으로 들어온 table을 Oracle의 특정 테이블을 참조한다.
 Oracle의 특정 테이블의 컬럼은 Table이름, 해당 Hive의 Table을 생성하기 위한 장문의 Hive DDL 로 이루어져 있다. 이 테이블을 참조하여 Hive에 특정 테이블을 생성할 수 있는 DDL을 얻을 수 있으며 이 모듈은 해당 DDL를 사용하여 Hive에 Table을 만들게 된다.
 그리고 STDIN으로 들어온 Path의 CSV파일을 해당 Hive의 Table로 로드하게 된다.
+
+**STDIN form**
+```Bash
+<table>://<path>||<partition>
+```
 
 ## How to use
 ```Bash
@@ -31,6 +36,8 @@ $ python <ConfigFilePath>
 ##Prerequisites
 - Python == 2.7
 - cx_Oracle >= 6.3.1
+- python-devel
+- mysql-devel
 
 ##How to unit test (Dynamic test)
 ```Bash

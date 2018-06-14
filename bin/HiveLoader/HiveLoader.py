@@ -150,15 +150,12 @@ class HIVEController:
                 if '://' in stdin:
                     table, data = stdin.split('://')
                     path, partition = data.split('||')
-                else
-                    continue
+                    self.set_table(table)
+                    self.load_data(table, path, partition)
+                else:
+                    __LOG__.Trace("STDIN with Invalid format")
             except:
                 __LOG__.Exception()
-                sys.stderr.write('\n')
-                sys.stderr.flush()
-                continue
-            self.set_table(table)
-            self.load_data(table, path, partition)
             sys.stderr.write('\n')
             sys.stderr.flush()
 
