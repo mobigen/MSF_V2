@@ -16,86 +16,36 @@ Log.Init()
 TERM = False
 
 def signal_handler(inum, ifrm) :
-
 	__LOG__.Trace("Catch Signal : %s" % inum)
 	global TERM
 	TERM = True
 
 signal.signal(signal.SIGTERM, signal_handler)
 signal.signal(signal.SIGINT , signal_handler)
-try :
-	signal.signal(signal.SIGHUP , signal_handler)
-except :
-	pass
-try :
-	signal.signal(signal.SIGPIPE, signal_handler)
-except :
-	pass
-
+signal.signal(signal.SIGHUP , signal_handler)
+signal.signal(signal.SIGPIPE, signal_handler)
 
 def shutdown() :
 	__LOG__.Trace("Call Shutdown!!")
 	os._exit(1)
 
-
-
 def pars(ixml) :
-
-	#
-	# lsum = [isum, isum, ....]
-	#
-	# isum = {isnm, conn, list} = "Sum_info"
-	#
-	# isnm = "Sumname"
-	#
-	# conn = {host, user, pass} = "Connection"
-	#
-	# host = "url" -&gt; "ip:port"
-	# user = "user"
-	# pass = "pass"
-	#
-	# list = [lque, lque, ....]
-	#
-	# lque = [ique, ique, ....]
-	#
-	# ique = {ikey, ival, ipos, irng, isql} = "Query"
-	#
-	# ikey = "keys"
-	# ival = "values"
-	# ipos = "pos"
-	# irng = "range"
-	# isql = <data>
-	#
-
-	# type = "HASH_MAIN", "HASH_SUB", "HASH_MAIN", "HASH_SUB"
-	#
-	# list = [[0que, 1que] , [2que, 3que]]
-	#
-	# lrec = [ 0que&lt;-1que] + [2que&lt;-3que ]
-	#
-
 	lsum = []
-
-	for nsum in xml.dom.minidom.parse(ixml).getElementsByTagName("Sum_info") :
-
+	for nsum in xml.dom.minidom.parse(ixml).getElementsByTagName("Sum_info"):
 		isum = {}
-
 		isum["sumname"] = str(nsum.getElementsByTagName("Sumname")[0].childNodes[0].data)
 
 		ncon = nsum.getElementsByTagName("Connection")[0]
 
 		isum["connection"] = {}
-
 		isum["connection"]["host"] = str(ncon.getAttribute("url" )).split("//")[1]
 		isum["connection"]["user"] = str(ncon.getAttribute("user"))
 		isum["connection"]["pass"] = str(ncon.getAttribute("pass"))
-
 		isum["querys"] = []
 
 		lque = []
 
-		for nque in nsum.getElementsByTagName("Query") :
-
+		for nque in nsum.getElementsByTagName("Query"):
 			iknd = str(nque.getAttribute("type"  ))
 			ikey = str(nque.getAttribute("keys"  ))
 			ival = str(nque.getAttribute("values"))
@@ -104,12 +54,9 @@ def pars(ixml) :
 			ihin = str(nque.getAttribute("hint" ))
 			summary_range = str(nque.getAttribute("sum_range" ))
 
-			if  iknd in ["UNIQUE", "HASH"] :
-
-				if  lque :
-
+			if iknd in ["UNIQUE", "HASH"]:
+				if lque :
 					isum["querys"].append(lque)
-
 				lque = []
 
 			ique = {}
@@ -331,16 +278,16 @@ def print_usage():
 
 
 if  __name__ == "__main__" :
-
 	module = os.path.basename(sys.argv[0])
 
-	if  len(sys.argv) != 4 :
+	if  len(sys.argv) != 4:
 		print_usage()
 		sys.exit()
 
 	log_file = "~/Columbus/log/%s_%s.log" % (os.path.basename(sys.argv[0]), sys.argv[1])
 	Log.Init()
-	#Log.Init(Log.CRotatingLog(os.path.expanduser(log_file), 10000000, 19))
 
-	try    : main(sys.argv[2: ])
-	except : __LOG__.Exception()
+	try:
+        main(sys.argv[2: ])
+	except:
+        __LOG__.Exception()
