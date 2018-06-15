@@ -38,58 +38,44 @@ proc_manager = None
 
 SHUTDOWN = False
 
-class IndxHandler :
-
-	def __init__(self, sRdir, sBase, sRidx) :
-
+class IndxHandler:
+	def __init__(self, sRdir, sBase, sRidx):
 		self.sRdir = sRdir      # for default filename
 		self.sBase = sBase
 		self.sRidx = sRidx
-
-		if not os.path.exists(os.path.dirname(self.sRidx)) :
+		if not os.path.exists(os.path.dirname(self.sRidx)):
 			os.makedirs(os.path.dirname(self.sRidx))
 
-	def read(self) :
-
-		try :
-
+	def read(self):
+		try:
 			oIndx = open( self.sRidx, 'r')
 			sName, sLnum = oIndx.readline().strip().split(',')
 			oIndx.close()
-
-		except Exception, ex :
-
+		except Exception, ex:
 			sName, sLnum = self.make()
 
 		return ( sName, int(sLnum) )
 
-	def save(self, sName, sLnum) :
-
-		try :
-
+	def save(self, sName, sLnum):
+		try:
 			oIndx = open( self.sRidx, 'w' )
 			oIndx.write( sName + "," + str(sLnum) + "\n")
 			oIndx.close()
-
-		except Exception, ex :
-
+		except Exception, ex:
 			__LOG__.Exception("Oops: %s" % (str(ex)))
 			pass
 
-	def make(self) :
-
-		#self.sBase = self.sBase.replace('%', '%%')
+	def make(self):
 		__LOG__.Trace(self.sBase)
 		sTemp = time.strftime( self.sBase ) if  self.sBase.find('%') >= 0 else self.sBase
-		sRdnm = os.path.join( self.sRdir, sTemp ); sRnum = "0"
+		sRdnm = os.path.join( self.sRdir, sTemp )
+        sRnum = "0"
 		__LOG__.Trace(sRdnm)
 
 		return ( sRdnm, sRnum )
 
-class SSHTailer :
-
-	def __init__(self, sHost, sPort, sUser, sPass, sRdir, sPatn, sBase, sLdir, sRidx,sSect) :#, sIdir, sInam) :
-
+class SSHTailer:
+	def __init__(self, sHost, sPort, sUser, sPass, sRdir, sPatn, sBase, sLdir, sRidx, sSect):#, sIdir, sInam) :
 
 		self.bLoop = True
 
@@ -106,7 +92,7 @@ class SSHTailer :
 
 		self.sSect = sSect
 
-		if not os.path.exists(self.sLdir) :
+		if not os.path.exists(self.sLdir):
 			os.makedirs(self.sLdir)
 
 		# for find command
@@ -131,90 +117,79 @@ class SSHTailer :
 
 		self.encode= ''
 
-		if       "LINUX" in sdata :
+		if "LINUX" in sdata:
 			self.hSSH["C"][1] = 'find %s -maxdepth 1 -name "%s" -print'
 			self.hSSH["T"][1] = 'echo $$; tail -n +%d -f %s'
 			self.encode = 'utf8'
-		elif "SUNOS" in sdata :
+		elif "SUNOS" in sdata:
 			self.hSSH["C"][1] = 'find %s -name "%s" -print'
 			self.hSSH["T"][1] = 'echo $$; tail +%df %s'
 			self.encode = 'cp949'
-		else :
+		else:
 			self.hSSH["C"][1] = 'find %s -name "%s" -print'
 			self.hSSH["T"][1] = 'echo $$; tail -n +%d -f %s'
 
 		self.sOsnm = sdata
 
-	def __del__(self) :
-
+	def __del__(self):
 		self.clear()
 
-	def stop(self) :
-
+	def stop(self):
 		self.bLoop = False
-
 		self.clear()
 
-	def clear(self) :
-
+	def clear(self):
 		try :   self.cleanup()
 		except : pass
 		try :   self.disconnect()
 		except : pass
 
-	def check(self) :
-
-		if      not self.isexistname() :
-
+	def check(self):
+		if not self.isexistname():
 			sName = self.getnextname()
-
-			if      not sName :
+			if not sName:
 				return False
+			self.sName = sName
+            self.iLine = 1
 
-			self.sName = sName; self.iLine = 1
-
-		self.execute(); return True
+		self.execute()
+        return True
 
 	def connect(self) :
-
 		ssh = paramiko.SSHClient()
 		ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-		ssh.connect(hostname=self.sHost, port=int(self.sPort), username=self.sUser, password=self.sPass, timeout = 10)
-
-		__LOG__.Trace("Conn: %s/%s %s/%s" % (self.sHost, self.sPort, self.sUser, self.sPass))
+		ssh.connect(hostname=self.sHost,
+                    port=int(self.sPort),
+                    username=self.sUser,
+                    password=self.sPass,
+                    timeout = 10)
+		__LOG__.Trace("Conn: %s/%s %s/%s" % (self.sHost,
+                                             self.sPort,
+                                             self.sUser,
+                                             self.sPass))
 
 		return ssh
 
-	def reconnect(self) :
-
+	def reconnect(self):
 		self.disconnect()
-
 		self.hSSH["C"][0] = self.connect()
 		self.hSSH["T"][0] = self.connect()
-
 		__LOG__.Trace("Reco: %s/%s" % (self.sHost, self.sPort))
 
-	def disconnect(self) :
-
+	def disconnect(self):
 		try     : self.hSSH["C"][0].close()
 		except : pass
 		try     : self.hSSH["T"][0].close()
 		except : pass
-
 		__LOG__.Trace("Disc: %s/%s" % (self.sHost, self.sPort))
 
-	def getnames(self) :
-
+	def getnames(self):
 		Names = []
-
 #	       self.hSSH["C"][2] = self.hSSH["C"][1] % ( self.sRdir, self.sPatn )
 		self.hSSH["C"][2] = self.hSSH["C"][1] % ( self.sTdir, self.sTnam )
-
-
 		stdin, stdout, stderr= self.hSSH["C"][0].exec_command( self.hSSH["C"][2] )
 
-		for sName in stdout.readlines() :
-
+		for sName in stdout.readlines():
 			sName = sName.strip()
 			Names.append( sName )
 
@@ -225,109 +200,82 @@ class SSHTailer :
 
 		return Names
 
-	def execute(self) :
-
+	def execute(self):
 		Sess = self.hSSH["T"][0].get_transport().open_session()
 		Sess.settimeout(10)
 		self.hSSH["T"][3] = Sess.makefile()
-
 		self.hSSH["T"][2] = self.hSSH["T"][1] % ( self.iLine, self.sName )
 		Sess.exec_command( self.hSSH["T"][2] ) #"cd %s; %s" % ( self.sRdir, sComd ) )
 
 		__LOG__.Trace("Comd: %s" % ( self.hSSH["T"][2] ))
 
-	def cleanup(self) :
-
-
+	def cleanup(self):
 		sComd = 'ps -ef|grep %s|grep -v grep' %(self.sPpid)
 
 		Sess = self.hSSH["T"][0].get_transport().open_session()
 		Temp = Sess.makefile()
 		Sess.exec_command( sComd )
 
-		for sPros in Temp.xreadlines() :
-
+		for sPros in Temp.xreadlines():
 			lWord = sPros.split()
-			if len(lWord) < 2 :
-
+			if len(lWord) < 2:
 				continue
-
-			elif lWord[2] == self.sPpid :
-
+			elif lWord[2] == self.sPpid:
 				sComd = 'kill -9 %s' %(lWord[1])
 				break
+			else:
+				sComd = "kill -9 `ps -fu %s | grep '%s' | \
+                        grep -v grep | awk '{print $2}'`" % \
+                        ( self.sUser, self.hSSH["T"][2] )
 
-			else :
-
-				# ps -fu eva | grep 'tail -f SRQA03-omc_log-20150501.log' | grep -v grep | awk '{print $2}'
-				sComd = "kill -9 `ps -fu %s | grep '%s' | grep -v grep | awk '{print $2}'`" % ( self.sUser, self.hSSH["T"][2] )
-				#sComd = "kill -9 %s"%(self.sPpid)
-
-		self.hSSH["T"][0].get_transport().open_session().exec_command( sComd )
+		self.hSSH["T"][0].get_transport().open_session().exec_command(sComd)
 
 		__LOG__.Trace("Comd: %s" % ( sComd ))
 
-	def getnextnames(self) :
-
+	def getnextnames(self):
 		Nexts = []
-
-		for sName in self.getnames() :
-
-			if  sName > self.sName :
-
-				Nexts.append( sName )
-
+		for sName in self.getnames():
+			if  sName > self.sName:
+				Nexts.append(sName)
 		return Nexts
 
-	def isexistname(self) :
-
-		for sName in self.getnames() :
-
-			if  sName == self.sName :
+	def isexistname(self):
+        # 왜 return (self.sName in self.getnames()) 가 아닌지
+		for sName in self.getnames():
+			if sName == self.sName:
 				return True
-
-		else :
+		else:
 			return False
 
-
-	def getnextname(self) :
-
+	def getnextname(self):
 		Nexts = self.getnextnames()
+		if Nexts:
+            return Nexts.pop(0)
+		return None
 
-		if  Nexts : return Nexts.pop(0)
-		else      : return None
-
-	def collect(self) :
-
+	def collect(self):
 		iRcnt = 0
-
-		while self.bLoop :
-
+		while self.bLoop:
 			data = ''
-
-			try :
-
-				#data = self.hSSH["T"][3].readline()
-				#data = self.hSSH["T"][3].readlines()
+			try:
 				if self.sSect =='PM_ADDNET1' or self.sSect =='PM_ADDNET2':
-					sBnam = time.strftime("STATUS_%Y%m%d.csv")  #SAVE FILE NAME PATTERN
+					sBnam = time.strftime("STATUS_%Y%m%d.csv")
 				else:
 					sBnam = self.sName
-				sLdnm = os.path.join( self.sLdir, os.path.basename( sBnam  ) )
-				self.oFile = open( sLdnm, "a" )
+				sLdnm = os.path.join(self.sLdir, os.path.basename(sBnam))
+				self.oFile = open(sLdnm, "a")
 				tmp = self.hSSH["T"][3].readline().strip()
 
-				if tmp != '' :
-
+				if tmp != '':
 					self.sPpid = tmp
 					iRcnt = 0
 					__LOG__.Watch( self.sPpid )
-
-				else  :
-
+				else:
 					iRcnt += 1
-					if iRcnt >= 10 : raise Exception("Get Line Abnormal State.")
-					else : continue
+					if iRcnt >= 10:
+                        raise Exception("Get Line Abnormal State.")
+					else:
+                        continue
 
 				sTemp = ''
 				if self.encode != 'cp949':
@@ -335,76 +283,62 @@ class SSHTailer :
 				else:
 					sTemp = self.hSSH["T"][3].readline().decode('cp949')
 
-				if not  sTemp.strip() == '' :
-
+				if not sTemp.strip() == '':
 					self.oFile.write( sTemp ); self.oFile.flush()
 					yield  sTemp
 
-
-				for line in self.hSSH["T"][3].xreadlines() :
-
+				for line in self.hSSH["T"][3].xreadlines():
 					self.oFile.write( line ); self.oFile.flush()
 					yield line
 
-			except socket.timeout :
-
+			except socket.timeout:
 				__LOG__.Trace("timeout!")
-
-				if  not self.bLoop :
-
+				if not self.bLoop:
 					break
 
 				sNext = self.getnextname()
 
 				# for simulation
-				if  sNext :
-
+				if sNext:
 					self.cleanup(); time.sleep(10)
-
-					self.sName = sNext; self.iLine = 1
+					self.sName = sNext
+                    self.iLine = 1
 					self.execute()
-
 					continue
 
-				self.cleanup(); time.sleep(10)
-				#self.sName = self.sName; self.iLine = 1
+				self.cleanup()
+                time.sleep(10)
 				self.reconnect()
 				self.execute()
 				continue
 
-			except Exception, ex :
-
+			except Exception, ex:
 				__LOG__.Exception()
 				sNext = self.getnextname()
-
-				if  sNext :
-
-					self.cleanup(); time.sleep(10)
-					self.sName = sNext; self.iLine = 1
+				if sNext:
+					self.cleanup()
+                    time.sleep(10)
+					self.sName = sNext
+                    self.iLine = 1
 					self.execute()
 					continue
 
-				self.cleanup(); time.sleep(10)
-				#self.sName = self.sName; self.iLine = 1
+				self.cleanup()
+                time.sleep(10)
 				self.reconnect()
 				self.execute()
 
-	def fileinfo(self) :
+	def fileinfo(self):
+		return (self.sName, self.iLine)
 
-		return ( self.sName, self.iLine )
-
-	def filename(self) :
-
+	def filename(self):
 		return self.sName
 
-	def fileindx(self) :
-
+	def fileindx(self):
 		return self.iLine
 
 class DBMySQL:
-
-	def __init__(self,sSect,PARSER):
-
+	def __init__(self, sSect, PARSER):
 		self.PARSER = PARSER
 		self.sSect = sSect
 		self.set_config()
@@ -412,15 +346,15 @@ class DBMySQL:
 	def set_config(self):
 		self.li_equip = []
 		self.status_db = -1 # 0: connected 1,2,3,4,,,,: reconnection count
-		try:    self.equip_group_name = self.PARSER.get(self.sSect,'EQUIP_GROUP')
-		except: self.equip_group_name = '-'
+		try:
+            self.equip_group_name = self.PARSER.get(self.sSect,'EQUIP_GROUP')
+		except:
+            self.equip_group_name = '-'
 		__LOG__.Trace(self.equip_group_name)
 
 	def connect_db(self):
-
 		if self.status_db > 0:
 			__LOG__.Trace("Try Reconnection .....(%d)"%self.status_db)
-
 		try:
 			self.con = MySQLdb.connect(
 					host = '211.237.65.153',
@@ -429,7 +363,6 @@ class DBMySQL:
 					passwd = '!Hello.nms0',
 					db = 'SKTLNMS',
 				)
-
 			self.con.set_character_set('UTF8')
 			self.con.autocommit(True)
 			self.cur = self.con.cursor()
@@ -438,18 +371,20 @@ class DBMySQL:
 			__LOG__.Exception()
 			time.sleep(30)
 			self.status_db += 1
-			if self.status_db <4:
+			if self.status_db < 4:
 				self.connect_db()
 			else:
 				sys.exit()
 
-
 	def disconnect_db(self):
-
-		try:    self.cur.close()
-		except: pass
-		try:    self.con.close()
-		except: pass
+		try:
+            self.cur.close()
+		except:
+            pass
+		try:
+            self.con.close()
+		except:
+            pass
 
 	def __del__(self):
 		self.disconnect_db()
@@ -500,21 +435,16 @@ class DBMySQL:
 
 
 	def get_equip(self, ne_info):   # 장비 정보 조회
-
 		ne_key , ne_val = ne_info
 
 		for equip in self.li_equip:
-
 			if equip[ne_key] == ne_val:
-
 				return equip
-
 		return {}
 
 	def query_alarm(self, retry = 0):       # DB에서 알람 정보 GET
 		if self.equip_group_name != '-':
-
-			try :
+			try:
 				sql = """
 					SELECT F.EQUIP_TYPE_ID, ALARM_CODE, ALARM_NAME, ALARM_DESC
 					FROM TB_FM_ALARM_CODE_INFO F,
@@ -525,27 +455,23 @@ class DBMySQL:
 				__LOG__.Trace( sql %( self.equip_group_name ))
 
 				try:
-
 					self.cur.execute( sql % ( self.equip_group_name ) )
 					rows = self.cur.fetchall()
 
 					self.dict_alarm = {}
 					for row in rows:
-
 						try:
-							equip_type_id, alarm_code, alarm_name, alarm_desc  =row
+							equip_type_id, alarm_code, alarm_name, alarm_desc = row
 
 							if equip_type_id not in self.dict_alarm:
 								self.dict_alarm[equip_type_id] = []
 
 							alarm = {}
-
 							alarm['ALARM_CODE']=alarm_code
 							alarm['ALARM_NAME']=alarm_name
 							alarm['ALARM_DESC']=alarm_desc
 
 							self.dict_alarm[equip_type_id].append(alarm)
-
 						except:
 							__LOG__.Exception()
 					__LOG__.Trace("SUCCESS ALARM QUERY")
@@ -565,27 +491,24 @@ class DBMySQL:
 				__LOG__.Exception()
 
 
-
-	def query_alarms(self,equip_type_id,vendor_id, where):
+	def query_alarms(self, equip_type_id, vendor_id, where):
 		li = []
 
 		try :
 			sql = """SELECT ALARM_CODE,ALARM_NAME,ALARM_DESC FROM TB_FM_ALARM_CODE_INFO WHERE EQUIP_TYPE_ID= '%s' AND VENDOR_ID = '%s'"""
 
-			__LOG__.Trace( sql % ( equip_type_id, vendor_id))
+			__LOG__.Trace(sql % (equip_type_id, vendor_id))
 			sql = sql % (equip_type_id, vendor_id)
 
 			sql += where
 			try:
-				self.cur.execute( sql )
+				self.cur.execute(sql)
 				rows = self.cur.fetchall()
 				for cols in rows :
 					li.append(cols)
-
 			except MySQLdb.OperationalError as e:
 				__LOG__.Trace("ERROE : %s"%e)
 				self.connect_db()
-
 			except Exception:
 				pass
 				#__LOG__.Exception()
@@ -597,28 +520,21 @@ class DBMySQL:
 		return li
 
 	def get_alarm(self,alarm_info): # 알람 조회
-
 		equip_type_id , alarm_key , alarm_val = alarm_info
 
 		li_alarm = self.dict_alarm[equip_type_id]
-
 		for alarm in li_alarm:
-
 			if alarm[alarm_key] == alarm_val:
-
 				return alarm
-
 		return {}
 
 	def listen_stdin(self): #구성정보나 알람정보 변경시 갱신
-
 		data = ''
 
 		global SHUTDOWN
 		__LOG__.Trace('listen_stdin START............')
 		while not SHUTDOWN:
 			try:
-
 				data = sys.stdin.readline()
 				__LOG__.Trace('STD IN : %s'%data)
 				prefix, alarm_date = data.split('://')
@@ -636,40 +552,29 @@ class DBMySQL:
 
 
 	def run(self):
-
 		try:
-
 			self.connect_db()
 			self.query_equip()
 			self.query_alarm()
 			thread_listen = threading.Thread(target=self.listen_stdin,args=())
 			thread_listen.daemon = True
 			thread_listen.start()
-
-
 		except Exception:
 			__LOG__.Exception()
 
-class ProcessManager(threading.Thread) :
-
-	def __init__(self) :
-
+class ProcessManager(threading.Thread):
+	def __init__(self):
 		threading.Thread.__init__(self)
 		self.process_		   self.start_process()
 
-
-	def stop(self) :
-
+	def stop(self):
 		self.shutdown = True
 
-
-	def run(self) :
-
+	def run(self):
 		self.start_process()
 		base = ''
 
-		while not self.shutdown :
-
+		while not self.shutdown:
 			self.chk_process()
 			"""
 			curr = time.strftime("%Y%m%d%H%M")
@@ -689,10 +594,8 @@ class ProcessManager(threading.Thread) :
 			time.sleep(1)
 		self.close_porcess()
 
-class Worker :
-
-	def __init__(self, sSect, sConf) :
-
+class Worker:
+	def __init__(self, sSect, sConf):
 		self.bLoop = True
 
 		self.sSect = sSect
@@ -726,10 +629,11 @@ class Worker :
 		self.sLdir = Conf.get( sSect, "LDIR" )
 		self.sRidx = Conf.get( sSect, "RIDX" )
 
-
 		# for simulation
-		try     : self.sIntv = Conf.get( sSect, "INTV" )
-		except : self.sIntv = "1"
+		try:
+            self.sIntv = Conf.get( sSect, "INTV" )
+		except:
+            self.sIntv = "1"
 
 		self.oData = None
 		self.oSndr = None
@@ -746,7 +650,6 @@ class Worker :
 		except : pass
 
 		def get_pwd():
-
 			while True:
 				for pwd in self.pwd_list:
 					yield pwd
@@ -755,37 +658,30 @@ class Worker :
 
 
 	# 15:Terminate, 2:Interrupt, 1:Hangup, 13:BrokenPipe
-	def sign(self, iNum=0, iFrm=0) :
-
+	def sign(self, iNum=0, iFrm=0):
 		__LOG__.Trace("Sign: %d" % (iNum))
-
 		self.bLoop = False
-
-		if      self.oData :
-
+		if self.oData:
 			self.oData.stop()
 
-
-	def work(self) :
-
+	def work(self):
 		__LOG__.Trace("Work: strt")
-
 		sBase = time.strftime("%Y%m%d%H%M")
-
 		db_handler = DBMySQL(self.sSect,self.Conf)
 		db_handler.run()
-
-		while self.bLoop :
-
+		while self.bLoop:
 			# check dictionary
-			try :
-				self.oData = SSHTailer( self.sHost, self.sPort, self.sUser, self.sPass, self.sRdir, self.sPatn, self.sBase, self.sLdir, self.sRidx,self.sSect)
+			try:
+				self.oData = SSHTailer(self.sHost, self.sPort, self.sUser, self.sPass, self.sRdir, self.sPatn, self.sBase, self.sLdir, self.sRidx,self.sSect)
 				break
-			except paramiko.ssh_exception.AuthenticationException:	  self.sPass = next(self.pwd_iter)
-			except :
+			except paramiko.ssh_exception.AuthenticationException:
+                self.sPass = next(self.pwd_iter)
+			except:
 				__LOG__.Exception()
-				try : self.oData.stop()
-				except : pass
+				try:
+                    self.oData.stop()
+				except:
+                    pass
 
 				__LOG__.Exception()
 				time.sleep(60)
@@ -799,67 +695,73 @@ class Worker :
 		#proc_manager.start()
 
 
-		while self.bLoop :
-
-			try :
-
-				while self.bLoop :
-
-					if      self.oData.check() :
-
+		while self.bLoop:
+			try:
+				while self.bLoop:
+					if self.oData.check():
 						break
-
 					__LOG__.Trace("None: not found '%s'" % ( self.oData.filename() ))
-
 					time.sleep(10)
-
-			except Exception :
-
+			except Exception:
 				__LOG__.Exception()
-
 				self.oData.stop()
 				time.sleep(1)
-				try : self.oData = SSHTailer( self.sHost, self.sPort, self.sUser, self.sPass, self.sRdir, self.sPatn, self.sBase, self.sLdir, self.sRidx,self.sSect)
-				except paramiko.ssh_exception.AuthenticationException:	  self.sPass = next(self.pwd_iter)
-				except : self.oData.stop(); __LOG__.Exception(); time.sleep(10)
+				try:
+                    self.oData = SSHTailer(self.sHost, self.sPort, self.sUser, self.sPass, self.sRdir, self.sPatn, self.sBase, self.sLdir, self.sRidx,self.sSect)
+                except paramiko.ssh_exception.AuthenticationException:
+                    self.sPass = next(self.pwd_iter)
+				except:
+                    self.oData.stop()
+                    __LOG__.Exception()
+                    time.sleep(10)
 
 
 			sBase = ''
 			sCurr = ''
 			sTemp = ''
 			iBase = 0
-
 			iCnt = 0
 
 			#Parser 선정
-			if       self.sSect ==  "SMSIOAM"	       : self.oPasr = SMSIParser( self.sSect , self.sEndp )
-			elif self.sSect ==      "SMSI1"		 : self.oPasr = SMSIParser( self.sSect , self.sEndp )
-			elif self.sSect ==      "ADDNET1" or self.sSect ==  "ADDNET2" or self.sSect == 'ADDNET_TEST'	    : self.oPasr = AddNetDefaultParser( self.sSect ,self.Conf)
-			elif self.sSect ==  "PM_ADDNET1" or self.sSect ==  "PM_ADDNET2"	 : self.oPasr = PM_AddNetParser( self.sSect, self.Conf )
-			elif "EMP"	in  self.sSect		: self.oPasr = EMPParser(self.sSect,self.Conf)
-			elif self.sSect == 'z2-SKTL-INT'	: self.oPasr = Z2_INT_Parser(self.sSect,self.Conf)
-			elif self.sSect == 'z1-SKTL-ECI'	: self.oPasr = Z1_ECI_Parser(self.sSect,self.Conf)
-			elif 'SMSC'     in self.sSect		   : self.oPasr = SMSCParser(self.sEndp, db_handler)
+			if self.sSect == "SMSIOAM":
+                self.oPasr = SMSIParser(self.sSect, self.sEndp)
+			elif self.sSect == "SMSI1":
+                self.oPasr = SMSIParser( self.sSect , self.sEndp )
+			elif self.sSect == "ADDNET1" or \
+                    self.sSect ==  "ADDNET2" or \
+                    self.sSect == 'ADDNET_TEST':
+                self.oPasr = AddNetDefaultParser( self.sSect ,self.Conf)
+			elif self.sSect ==  "PM_ADDNET1" or \
+                    self.sSect ==  "PM_ADDNET2":
+                self.oPasr = PM_AddNetParser( self.sSect, self.Conf )
+			elif "EMP" in self.sSect:
+                self.oPasr = EMPParser(self.sSect,self.Conf)
+			elif self.sSect == 'z2-SKTL-INT':
+                self.oPasr = Z2_INT_Parser(self.sSect,self.Conf)
+			elif self.sSect == 'z1-SKTL-ECI':
+                self.oPasr = Z1_ECI_Parser(self.sSect,self.Conf)
+			elif 'SMSC' in self.sSect:
+                self.oPasr = SMSCParser(self.sEndp, db_handler)
 
-			while self.bLoop :
-
-				try :
-
+			while self.bLoop:
+				try:
 					oLine = self.oData.collect() # taiㅣ 수집 데이터
-					if      oLine  :
-						for sline in oLine :
+					if oLine:
+						for sline in oLine:
 							__LOG__.Trace("SLINE : %s" % sline)
 
-							if not self.bLoop : break
+							if not self.bLoop:
+                                break
 							self.oData.iLine += 1
 
 
-							if sline == '' : time.sleep(0); continue
+							if sline == '' :
+                                time.sleep(0); continue
 
 							#sline = re.sub('\r|\x8c|\x00', '', sline)
 							sline = re.sub('\r', '', sline)
 
-							if sline :
+							if sline:
 
 								#sLine = re.sub('\r|\x8c|\x00', '', sLine)
 								#__LOG__.Watch(sline)
@@ -968,19 +870,14 @@ def main() :
 	sLogm = _.Trace("process strt: ( pid:%d ) >>>" % (os.getpid()))
 
 	try :
-
 		oWork = Worker(sSect, sConf)
 		oWork.work()
-
 	except Exception, ex :
-
 		__LOG__.Exception()
 
 	#proc_manager.stop()
 	time.sleep(5)
-
 	__LOG__.Trace("process stop: ( pid:%d ) <<<" % (os.getpid()))
 
 if __name__ == '__main__' :
-
 	main()
