@@ -13,15 +13,15 @@ $ python Scheduler.py <Section> <ConfigFilePath>
 |Section  |Option       |Range    |Description|
 |:-------:|:-----------:|---------|-----------------------------|
 |GENERAL  |LOG_DIR      |(string) | 로그가 저장될 디렉토리 경로 |
-|[Section]| YEAR        |(int|str)| 4-digit year number        |
-|         | MONTH       |(int|str)| month number (1-12)      |
-|         | DAY         |(int|str)| day of the month (1-31)   |
-|         | WEEK        |(int|str)| ISO week number (1-53)       |
-|         | DAY_OF_WEEK |(int|str)| number or name of weekday (0-6 or mon,tue,wed,thu,fri,sat,sun)     |
-|         | HOUR        |(int|str)| hour (0-23)    |
-|         | MINUTE      |(int|str)| (0-59)  |
-|         | SECOND      |(int|str)| (0-59)     |
-|         | OUTPUT      |(int|str)| 출력할 OUTPUT 형식   |
+|[Section]| YEAR        |(int or str)| 4-digit year number        |
+|         | MONTH       |(int or str)| month number (1-12)      |
+|         | DAY         |(int or str)| day of the month (1-31)   |
+|         | WEEK        |(int or str)| ISO week number (1-53)       |
+|         | DAY_OF_WEEK |(int or str)| number or name of weekday (0-6 or mon,tue,wed,thu,fri,sat,sun)     |
+|         | HOUR        |(int or str)| hour (0-23)    |
+|         | MINUTE      |(int or str)| (0-59)  |
+|         | SECOND      |(int or str)| (0-59)     |
+|         | OUTPUT      |(int or str)| 출력할 OUTPUT 형식   |
 
 ## STDIN
 없음
