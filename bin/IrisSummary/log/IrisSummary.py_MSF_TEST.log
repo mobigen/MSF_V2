@@ -1,0 +1,599 @@
+[2018/06/15 18:07:01] 3387, "IrisSummary.py", 327, main : strt process
+[2018/06/15 18:07:01] 3387, "IrisSummary.py", 333, main : ixml conf/IS.xml
+[2018/06/15 18:07:01] 3387, "IrisSummary.py", 334, main : idir tmp
+[2018/06/15 18:07:01] 3387, "IrisSummary.py", 251, loop : strt loop...
+[2018/06/15 18:18:09] 3387, "IrisSummary.py", 20, signal_handler : Catch Signal : 2
+[2018/06/15 18:18:10] 3387, "IrisSummary.py", 262, loop : read 
+[2018/06/15 18:18:10] 3387, "IrisSummary.py", 265, loop : Require Prefix 'noti://' : 
+[2018/06/15 18:18:10] 3387, "IrisSummary.py", 322, loop : stop loop...
+[2018/06/15 18:18:10] 3387, "IrisSummary.py", 344, main : stop process
+[2018/06/15 18:19:23] 6360, "IrisSummary.py", 327, main : strt process
+[2018/06/15 18:19:23] 6360, "IrisSummary.py", 333, main : ixml conf/IS.xml
+[2018/06/15 18:19:23] 6360, "IrisSummary.py", 334, main : idir tmp
+[2018/06/15 18:19:23] 6360, "IrisSummary.py", 251, loop : strt loop...
+[2018/06/15 18:19:24] 6360, "IrisSummary.py", 262, loop : read noti://20180615181800
+[2018/06/15 18:19:24] 6360, "IrisSummary.py", 293, loop : summ stime : 201806151818  summ name : MSF_TEST
+[2018/06/15 18:19:24] 6360, "IrisSummary.py", 187, summ : 20180615181000 <= PARTITION AND PARTITION <= 20180615181500  where  20180615181300 <= TIMESTAMP AND TIMESTAMP <= 20180615181800
+[2018/06/15 18:19:24] 6360, "IrisSummary.py", 198, summ :  ** SQL ** 
+/*+ LOCATION ( '20180615181000' <= PARTITION AND PARTITION <= '20180615181500'  ) */
+SELECT
+                 k, p, SUM(income), SUM(expenses)
+                 FROM MSF_TEST_TABLE_MAIN
+                 GROUP BY k, p;
+[2018/06/15 18:19:25] 6360, "IrisSummary.py", 214, summ : lres length = 0
+[2018/06/15 18:19:25] 6360, "IrisSummary.py", 244, summ : lrec length = 0
+[2018/06/15 18:19:25] 6360, "IrisSummary.py", 315, loop : Std OUT : tmp/MSF_TEST-0-20180615181800.dat  Processing Time : 0.18
+[2018/06/15 18:19:25] 6360, "IrisSummary.py", 317, loop : Total Processing Time : 0.18
+[2018/06/15 18:19:30] 6360, "IrisSummary.py", 20, signal_handler : Catch Signal : 2
+[2018/06/15 18:19:32] 6360, "IrisSummary.py", 262, loop : read 
+[2018/06/15 18:19:32] 6360, "IrisSummary.py", 265, loop : Require Prefix 'noti://' : 
+[2018/06/15 18:19:32] 6360, "IrisSummary.py", 322, loop : stop loop...
+[2018/06/15 18:19:32] 6360, "IrisSummary.py", 344, main : stop process
+[2018/06/15 18:25:51] 8021, "IrisSummary.py", 327, main : strt process
+[2018/06/15 18:25:51] 8021, "IrisSummary.py", 333, main : ixml conf/IS.xml
+[2018/06/15 18:25:51] 8021, "IrisSummary.py", 334, main : idir tmp
+[2018/06/15 18:25:51] 8021, "IrisSummary.py", 251, loop : strt loop...
+[2018/06/15 18:25:59] 8021, "IrisSummary.py", 262, loop : read noti://20180615182500
+[2018/06/15 18:25:59] 8021, "IrisSummary.py", 293, loop : summ stime : 201806151825  summ name : MSF_TEST
+[2018/06/15 18:25:59] 8021, "IrisSummary.py", 187, summ : 20180615182000 <= PARTITION AND PARTITION <= 20180615182500  where  20180615182000 <= TIMESTAMP AND TIMESTAMP <= 20180615182500
+[2018/06/15 18:25:59] 8021, "IrisSummary.py", 198, summ :  ** SQL ** 
+/*+ LOCATION ( '20180615182000' <= PARTITION AND PARTITION < '20180615182500'  ) */
+SELECT
+                 k, p, SUM(income), SUM(expenses)
+                 FROM MSF_TEST_TABLE_MAIN
+                 GROUP BY k, p;
+[2018/06/15 18:25:59] 8021, "IrisSummary.py", 214, summ : lres length = 0
+[2018/06/15 18:25:59] 8021, "IrisSummary.py", 244, summ : lrec length = 0
+[2018/06/15 18:25:59] 8021, "IrisSummary.py", 315, loop : Std OUT : tmp/MSF_TEST-0-20180615182500.dat  Processing Time : 0.18
+[2018/06/15 18:25:59] 8021, "IrisSummary.py", 317, loop : Total Processing Time : 0.18
+[2018/06/15 18:26:03] 8021, "IrisSummary.py", 20, signal_handler : Catch Signal : 2
+[2018/06/15 18:26:05] 8021, "IrisSummary.py", 262, loop : read 
+[2018/06/15 18:26:05] 8021, "IrisSummary.py", 265, loop : Require Prefix 'noti://' : 
+[2018/06/15 18:26:05] 8021, "IrisSummary.py", 322, loop : stop loop...
+[2018/06/15 18:26:05] 8021, "IrisSummary.py", 344, main : stop process
+[2018/06/15 18:29:22] 8922, "IrisSummary.py", 327, main : strt process
+[2018/06/15 18:29:22] 8922, "IrisSummary.py", 333, main : ixml conf/IS.xml
+[2018/06/15 18:29:22] 8922, "IrisSummary.py", 334, main : idir tmp
+[2018/06/15 18:29:22] 8922, "IrisSummary.py", 251, loop : strt loop...
+[2018/06/15 18:29:29] 8922, "IrisSummary.py", 262, loop : read noti://20180615182900
+[2018/06/15 18:29:29] 8922, "IrisSummary.py", 293, loop : summ stime : 201806151829  summ name : MSF_TEST
+[2018/06/15 18:29:29] 8922, "IrisSummary.py", 187, summ : 20180615182000 <= PARTITION AND PARTITION <= 20180615182500  where  20180615182400 <= TIMESTAMP AND TIMESTAMP <= 20180615182900
+[2018/06/15 18:29:29] 8922, "IrisSummary.py", 198, summ :  ** SQL ** 
+/*+ LOCATION ( '20180615182000' <= PARTITION AND PARTITION <= '20180615182500'  ) */
+SELECT
+                 k, p, SUM(income), SUM(expenses)
+                 FROM MSF_TEST_TABLE_MAIN
+                 GROUP BY k, p;
+[2018/06/15 18:29:29] 8922, "IrisSummary.py", 214, summ : lres length = 0
+[2018/06/15 18:29:29] 8922, "IrisSummary.py", 187, summ : 20180615182000 <= PARTITION AND PARTITION <= 20180615182500  where  20180615182400 <= TIMESTAMP AND TIMESTAMP <= 20180615182900
+[2018/06/15 18:29:29] 8922, "IrisSummary.py", 198, summ :  ** SQL ** 
+/*+ LOCATION ( '20180615182000' <= PARTITION AND PARTITION <= '20180615182500'  ) */
+SELECT
+                k, income, expenses
+                FROM MSF_TEST_TALBE_SUB;
+[2018/06/15 18:29:29] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "IrisSummary.py", line 204, in summ
+
+    curs.Execute2(isql)
+
+  File "/home/msf/mlib/API/M6/M6_Cursor.py", line 168, in Execute2
+
+    if msg[0] != "+" : raise Exception, msg
+
+Exception: -ERR Table does not exists.
+
+
+[2018/06/15 18:29:29] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "IrisSummary.py", line 204, in summ
+
+    curs.Execute2(isql)
+
+  File "/home/msf/mlib/API/M6/M6_Cursor.py", line 168, in Execute2
+
+    if msg[0] != "+" : raise Exception, msg
+
+Exception: -ERR Table does not exists.
+
+
+[2018/06/15 18:29:29] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "IrisSummary.py", line 204, in summ
+
+    curs.Execute2(isql)
+
+  File "/home/msf/mlib/API/M6/M6_Cursor.py", line 168, in Execute2
+
+    if msg[0] != "+" : raise Exception, msg
+
+Exception: -ERR Table does not exists.
+
+
+[2018/06/15 18:29:29] 8922, "IrisSummary.py", 244, summ : lrec length = 0
+[2018/06/15 18:29:29] 8922, "IrisSummary.py", 315, loop : Std OUT : tmp/MSF_TEST-0-20180615182900.dat  Processing Time : 0.28
+[2018/06/15 18:29:29] 8922, "IrisSummary.py", 317, loop : Total Processing Time : 0.28
+[2018/06/15 18:29:31] 8922, "IrisSummary.py", 20, signal_handler : Catch Signal : 2
+[2018/06/15 18:29:32] 8922, "IrisSummary.py", 322, loop : stop loop...
+[2018/06/15 18:29:32] 8922, "IrisSummary.py", 344, main : stop process
+[2018/06/18 09:28:40] 12913, "IrisSummary.py", 327, main : strt process
+[2018/06/18 09:28:40] 12913, "IrisSummary.py", 333, main : ixml conf/IS.xml
+[2018/06/18 09:28:40] 12913, "IrisSummary.py", 334, main : idir tmp
+[2018/06/18 09:28:40] 12913, "IrisSummary.py", 251, loop : strt loop...
+[2018/06/18 09:30:50] 12913, "IrisSummary.py", 262, loop : read noti://20180618093000
+[2018/06/18 09:30:50] 12913, "IrisSummary.py", 293, loop : summ stime : 201806180930  summ name : MSF_TEST
+[2018/06/18 09:30:50] 12913, "IrisSummary.py", 187, summ : 20180618092500 <= PARTITION AND PARTITION <= 20180618093000  where  20180618092500 <= TIMESTAMP AND TIMESTAMP <= 20180618093000
+[2018/06/18 09:30:50] 12913, "IrisSummary.py", 198, summ :  ** SQL ** 
+/*+ LOCATION ( '20180618092500' <= PARTITION AND PARTITION < '20180618093000'  ) */
+SELECT
+                 k, p, SUM(income), SUM(expenses)
+                 FROM MSF_TEST_TABLE_MAIN
+                 GROUP BY k, p;
+[2018/06/18 09:30:50] 12913, "IrisSummary.py", 214, summ : lres length = 0
+[2018/06/18 09:30:50] 12913, "IrisSummary.py", 187, summ : 20180618092500 <= PARTITION AND PARTITION <= 20180618093000  where  20180618092500 <= TIMESTAMP AND TIMESTAMP <= 20180618093000
+[2018/06/18 09:30:50] 12913, "IrisSummary.py", 198, summ :  ** SQL ** 
+/*+ LOCATION ( '20180618092500' <= PARTITION AND PARTITION < '20180618093000'  ) */
+SELECT
+                k, income, expenses
+                FROM MSF_TEST_TALBE_SUB;
+[2018/06/18 09:30:50] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "IrisSummary.py", line 204, in summ
+
+    curs.Execute2(isql)
+
+  File "/home/msf/mlib/API/M6/M6_Cursor.py", line 168, in Execute2
+
+    if msg[0] != "+" : raise Exception, msg
+
+Exception: -ERR Table does not exists.
+
+
+[2018/06/18 09:30:50] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "IrisSummary.py", line 204, in summ
+
+    curs.Execute2(isql)
+
+  File "/home/msf/mlib/API/M6/M6_Cursor.py", line 168, in Execute2
+
+    if msg[0] != "+" : raise Exception, msg
+
+Exception: -ERR Table does not exists.
+
+
+[2018/06/18 09:30:50] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "IrisSummary.py", line 204, in summ
+
+    curs.Execute2(isql)
+
+  File "/home/msf/mlib/API/M6/M6_Cursor.py", line 168, in Execute2
+
+    if msg[0] != "+" : raise Exception, msg
+
+Exception: -ERR Table does not exists.
+
+
+[2018/06/18 09:30:50] 12913, "IrisSummary.py", 244, summ : lrec length = 0
+[2018/06/18 09:30:50] 12913, "IrisSummary.py", 315, loop : Std OUT : tmp/MSF_TEST-0-20180618093000.dat  Processing Time : 0.27
+[2018/06/18 09:30:50] 12913, "IrisSummary.py", 317, loop : Total Processing Time : 0.27
+[2018/06/18 09:32:07] 12913, "IrisSummary.py", 20, signal_handler : Catch Signal : 2
+[2018/06/18 09:32:10] 12913, "IrisSummary.py", 262, loop : read 
+[2018/06/18 09:32:10] 12913, "IrisSummary.py", 265, loop : Require Prefix 'noti://' : 
+[2018/06/18 09:32:10] 12913, "IrisSummary.py", 322, loop : stop loop...
+[2018/06/18 09:32:10] 12913, "IrisSummary.py", 344, main : stop process
+[2018/06/18 09:33:03] 14032, "IrisSummary.py", 327, main : strt process
+[2018/06/18 09:33:03] 14032, "IrisSummary.py", 333, main : ixml conf/IS.xml
+[2018/06/18 09:33:03] 14032, "IrisSummary.py", 334, main : idir tmp
+[2018/06/18 09:33:03] 14032, "IrisSummary.py", 251, loop : strt loop...
+[2018/06/18 09:33:18] 14032, "IrisSummary.py", 262, loop : read noti://20180618093300
+[2018/06/18 09:33:18] 14032, "IrisSummary.py", 293, loop : summ stime : 201806180933  summ name : MSF_TEST
+[2018/06/18 09:33:18] 14032, "IrisSummary.py", 187, summ : 20180618092500 <= PARTITION AND PARTITION <= 20180618093000  where  20180618092800 <= TIMESTAMP AND TIMESTAMP <= 20180618093300
+[2018/06/18 09:33:18] 14032, "IrisSummary.py", 198, summ :  ** SQL ** 
+/*+ LOCATION ( '20180618092500' <= PARTITION AND PARTITION <= '20180618093000'  ) */
+SELECT
+                 k, p, SUM(income), SUM(expenses)
+                 FROM MSF_TEST_TABLE_MAIN
+                 GROUP BY k, p;
+[2018/06/18 09:33:18] 14032, "IrisSummary.py", 214, summ : lres length = 0
+[2018/06/18 09:33:18] 14032, "IrisSummary.py", 187, summ : 20180618092500 <= PARTITION AND PARTITION <= 20180618093000  where  20180618092800 <= TIMESTAMP AND TIMESTAMP <= 20180618093300
+[2018/06/18 09:33:18] 14032, "IrisSummary.py", 198, summ :  ** SQL ** 
+/*+ LOCATION ( '20180618092500' <= PARTITION AND PARTITION <= '20180618093000'  ) */
+SELECT
+                k, income, expenses
+                FROM MSF_TEST_TABLE_SUB;
+[2018/06/18 09:33:18] 14032, "IrisSummary.py", 214, summ : lres length = 0
+[2018/06/18 09:33:18] 14032, "IrisSummary.py", 244, summ : lrec length = 0
+[2018/06/18 09:33:18] 14032, "IrisSummary.py", 315, loop : Std OUT : tmp/MSF_TEST-0-20180618093300.dat  Processing Time : 0.25
+[2018/06/18 09:33:18] 14032, "IrisSummary.py", 317, loop : Total Processing Time : 0.25
+[2018/06/18 09:33:20] 14032, "IrisSummary.py", 20, signal_handler : Catch Signal : 2
+[2018/06/18 09:33:21] 14032, "IrisSummary.py", 262, loop : read 
+[2018/06/18 09:33:21] 14032, "IrisSummary.py", 265, loop : Require Prefix 'noti://' : 
+[2018/06/18 09:33:21] 14032, "IrisSummary.py", 322, loop : stop loop...
+[2018/06/18 09:33:21] 14032, "IrisSummary.py", 344, main : stop process
+[2018/06/18 09:36:59] 15030, "IrisSummary.py", 327, main : strt process
+[2018/06/18 09:36:59] 15030, "IrisSummary.py", 333, main : ixml conf/IS.xml
+[2018/06/18 09:36:59] 15030, "IrisSummary.py", 334, main : idir tmp
+[2018/06/18 09:36:59] 15030, "IrisSummary.py", 251, loop : strt loop...
+[2018/06/18 09:37:10] 15030, "IrisSummary.py", 262, loop : read noti://20180615000000
+[2018/06/18 09:37:10] 15030, "IrisSummary.py", 293, loop : summ stime : 201806150000  summ name : MSF_TEST
+[2018/06/18 09:37:10] 15030, "IrisSummary.py", 187, summ : 20180614235500 <= PARTITION AND PARTITION <= 20180615000000  where  20180614235500 <= TIMESTAMP AND TIMESTAMP <= 20180615000000
+[2018/06/18 09:37:10] 15030, "IrisSummary.py", 198, summ :  ** SQL ** 
+/*+ LOCATION ( '20180614235500' <= PARTITION AND PARTITION < '20180615000000'  ) */
+SELECT
+                 k, p, SUM(income), SUM(expenses)
+                 FROM MSF_TEST_TABLE_MAIN
+                 GROUP BY k, p;
+[2018/06/18 09:37:10] 15030, "IrisSummary.py", 214, summ : lres length = 0
+[2018/06/18 09:37:10] 15030, "IrisSummary.py", 187, summ : 20180614235500 <= PARTITION AND PARTITION <= 20180615000000  where  20180614235500 <= TIMESTAMP AND TIMESTAMP <= 20180615000000
+[2018/06/18 09:37:10] 15030, "IrisSummary.py", 198, summ :  ** SQL ** 
+/*+ LOCATION ( '20180614235500' <= PARTITION AND PARTITION < '20180615000000'  ) */
+SELECT
+                k, income, expenses
+                FROM MSF_TEST_TABLE_SUB;
+[2018/06/18 09:37:10] 15030, "IrisSummary.py", 214, summ : lres length = 0
+[2018/06/18 09:37:10] 15030, "IrisSummary.py", 244, summ : lrec length = 0
+[2018/06/18 09:37:10] 15030, "IrisSummary.py", 315, loop : Std OUT : tmp/MSF_TEST-0-20180615000000.dat  Processing Time : 0.24
+[2018/06/18 09:37:10] 15030, "IrisSummary.py", 317, loop : Total Processing Time : 0.25
+[2018/06/18 09:37:13] 15030, "IrisSummary.py", 20, signal_handler : Catch Signal : 2
+[2018/06/18 09:37:14] 15030, "IrisSummary.py", 262, loop : read 
+[2018/06/18 09:37:14] 15030, "IrisSummary.py", 265, loop : Require Prefix 'noti://' : 
+[2018/06/18 09:37:14] 15030, "IrisSummary.py", 322, loop : stop loop...
+[2018/06/18 09:37:14] 15030, "IrisSummary.py", 344, main : stop process
+[2018/06/18 09:40:00] 15755, "IrisSummary.py", 327, main : strt process
+[2018/06/18 09:40:00] 15755, "IrisSummary.py", 333, main : ixml conf/IS.xml
+[2018/06/18 09:40:00] 15755, "IrisSummary.py", 334, main : idir tmp
+[2018/06/18 09:40:00] 15755, "IrisSummary.py", 251, loop : strt loop...
+[2018/06/18 09:40:15] 15755, "IrisSummary.py", 262, loop : read noti://20180615101000
+[2018/06/18 09:40:15] 15755, "IrisSummary.py", 293, loop : summ stime : 201806151010  summ name : MSF_TEST
+[2018/06/18 09:40:15] 15755, "IrisSummary.py", 187, summ : 20180615100500 <= PARTITION AND PARTITION <= 20180615101000  where  20180615100500 <= TIMESTAMP AND TIMESTAMP <= 20180615101000
+[2018/06/18 09:40:15] 15755, "IrisSummary.py", 198, summ :  ** SQL ** 
+/*+ LOCATION ( '20180615100500' <= PARTITION AND PARTITION < '20180615101000'  ) */
+SELECT
+                 k, p, SUM(income), SUM(expenses)
+                 FROM MSF_TEST_TABLE_MAIN
+                 GROUP BY k, p;
+[2018/06/18 09:40:15] 15755, "IrisSummary.py", 214, summ : lres length = 0
+[2018/06/18 09:40:15] 15755, "IrisSummary.py", 187, summ : 20180615100500 <= PARTITION AND PARTITION <= 20180615101000  where  20180615100500 <= TIMESTAMP AND TIMESTAMP <= 20180615101000
+[2018/06/18 09:40:15] 15755, "IrisSummary.py", 198, summ :  ** SQL ** 
+/*+ LOCATION ( '20180615100500' <= PARTITION AND PARTITION < '20180615101000'  ) */
+SELECT
+                k, income, expenses
+                FROM MSF_TEST_TABLE_SUB;
+[2018/06/18 09:40:15] 15755, "IrisSummary.py", 214, summ : lres length = 0
+[2018/06/18 09:40:15] 15755, "IrisSummary.py", 244, summ : lrec length = 0
+[2018/06/18 09:40:15] 15755, "IrisSummary.py", 315, loop : Std OUT : tmp/MSF_TEST-0-20180615101000.dat  Processing Time : 0.24
+[2018/06/18 09:40:15] 15755, "IrisSummary.py", 317, loop : Total Processing Time : 0.24
+[2018/06/18 09:40:16] 15755, "IrisSummary.py", 20, signal_handler : Catch Signal : 2
+[2018/06/18 09:40:18] 15755, "IrisSummary.py", 262, loop : read [A
+[2018/06/18 09:40:18] 15755, "IrisSummary.py", 265, loop : Require Prefix 'noti://' : [A
+[2018/06/18 09:40:18] 15755, "IrisSummary.py", 322, loop : stop loop...
+[2018/06/18 09:40:18] 15755, "IrisSummary.py", 344, main : stop process
+[2018/06/18 09:42:50] 16459, "IrisSummary.py", 327, main : strt process
+[2018/06/18 09:42:50] 16459, "IrisSummary.py", 333, main : ixml conf/IS.xml
+[2018/06/18 09:42:50] 16459, "IrisSummary.py", 334, main : idir tmp
+[2018/06/18 09:42:50] 16459, "IrisSummary.py", 251, loop : strt loop...
+[2018/06/18 09:42:55] 16459, "IrisSummary.py", 262, loop : read noti://20180615003000
+[2018/06/18 09:42:55] 16459, "IrisSummary.py", 293, loop : summ stime : 201806150030  summ name : MSF_TEST
+[2018/06/18 09:42:55] 16459, "IrisSummary.py", 187, summ : 20180615002500 <= PARTITION AND PARTITION <= 20180615003000  where  20180615002500 <= TIMESTAMP AND TIMESTAMP <= 20180615003000
+[2018/06/18 09:42:55] 16459, "IrisSummary.py", 198, summ :  ** SQL ** 
+/*+ LOCATION ( '20180615002500' <= PARTITION AND PARTITION < '20180615003000'  ) */
+SELECT
+                 k, p, SUM(income), SUM(expenses)
+                 FROM MSF_TEST_TABLE_MAIN
+                 GROUP BY k, p;
+[2018/06/18 09:42:55] 16459, "IrisSummary.py", 214, summ : lres length = 0
+[2018/06/18 09:42:55] 16459, "IrisSummary.py", 187, summ : 20180615002500 <= PARTITION AND PARTITION <= 20180615003000  where  20180615002500 <= TIMESTAMP AND TIMESTAMP <= 20180615003000
+[2018/06/18 09:42:55] 16459, "IrisSummary.py", 198, summ :  ** SQL ** 
+/*+ LOCATION ( '20180615002500' <= PARTITION AND PARTITION < '20180615003000'  ) */
+SELECT
+                k, income, expenses
+                FROM MSF_TEST_TABLE_SUB;
+[2018/06/18 09:42:55] 16459, "IrisSummary.py", 214, summ : lres length = 0
+[2018/06/18 09:42:55] 16459, "IrisSummary.py", 244, summ : lrec length = 0
+[2018/06/18 09:42:55] 16459, "IrisSummary.py", 315, loop : Std OUT : tmp/MSF_TEST-0-20180615003000.dat  Processing Time : 0.24
+[2018/06/18 09:42:55] 16459, "IrisSummary.py", 317, loop : Total Processing Time : 0.24
+[2018/06/18 09:42:59] 16459, "IrisSummary.py", 20, signal_handler : Catch Signal : 2
+[2018/06/18 09:42:59] 16459, "IrisSummary.py", 262, loop : read 
+[2018/06/18 09:42:59] 16459, "IrisSummary.py", 265, loop : Require Prefix 'noti://' : 
+[2018/06/18 09:42:59] 16459, "IrisSummary.py", 322, loop : stop loop...
+[2018/06/18 09:42:59] 16459, "IrisSummary.py", 344, main : stop process
+[2018/06/18 10:05:16] 21998, "IrisSummary.py", 327, main : strt process
+[2018/06/18 10:05:16] 21998, "IrisSummary.py", 333, main : ixml conf/IS.xml
+[2018/06/18 10:05:16] 21998, "IrisSummary.py", 334, main : idir tmp
+[2018/06/18 10:05:16] 21998, "IrisSummary.py", 251, loop : strt loop...
+[2018/06/18 10:05:20] 21998, "IrisSummary.py", 262, loop : read noti://20180615003000
+[2018/06/18 10:05:20] 21998, "IrisSummary.py", 293, loop : summ stime : 201806150030  summ name : MSF_TEST
+[2018/06/18 10:05:20] 21998, "IrisSummary.py", 187, summ : 20180615002500 <= PARTITION AND PARTITION <= 20180615003000  where  20180615002500 <= TIMESTAMP AND TIMESTAMP <= 20180615003000
+[2018/06/18 10:05:20] 21998, "IrisSummary.py", 198, summ :  ** SQL ** 
+/*+ LOCATION ( '20180615002500' <= PARTITION AND PARTITION < '20180615003000'  ) */
+SELECT
+                 k, p, SUM(income), SUM(expenses)
+                 FROM MSF_TEST_TABLE_MAIN
+                 GROUP BY k, p;
+[2018/06/18 10:05:20] 21998, "IrisSummary.py", 214, summ : lres length = 0
+[2018/06/18 10:05:20] 21998, "IrisSummary.py", 187, summ : 20180615002500 <= PARTITION AND PARTITION <= 20180615003000  where  20180615002500 <= TIMESTAMP AND TIMESTAMP <= 20180615003000
+[2018/06/18 10:05:20] 21998, "IrisSummary.py", 198, summ :  ** SQL ** 
+/*+ LOCATION ( '20180615002500' <= PARTITION AND PARTITION < '20180615003000'  ) */
+SELECT
+                k, income, expenses
+                FROM MSF_TEST_TABLE_SUB;
+[2018/06/18 10:05:20] 21998, "IrisSummary.py", 214, summ : lres length = 0
+[2018/06/18 10:05:20] 21998, "IrisSummary.py", 244, summ : lrec length = 0
+[2018/06/18 10:05:20] 21998, "IrisSummary.py", 315, loop : Std OUT : tmp/MSF_TEST-0-20180615003000.dat  Processing Time : 0.24
+[2018/06/18 10:05:20] 21998, "IrisSummary.py", 317, loop : Total Processing Time : 0.24
+[2018/06/18 10:05:23] 21998, "IrisSummary.py", 20, signal_handler : Catch Signal : 2
+[2018/06/18 10:05:23] 21998, "IrisSummary.py", 262, loop : read [A
+[2018/06/18 10:05:23] 21998, "IrisSummary.py", 265, loop : Require Prefix 'noti://' : [A
+[2018/06/18 10:05:23] 21998, "IrisSummary.py", 322, loop : stop loop...
+[2018/06/18 10:05:23] 21998, "IrisSummary.py", 344, main : stop process
+[2018/06/18 10:08:52] 22902, "IrisSummary.py", 327, main : strt process
+[2018/06/18 10:08:52] 22902, "IrisSummary.py", 333, main : ixml conf/IS.xml
+[2018/06/18 10:08:52] 22902, "IrisSummary.py", 334, main : idir tmp
+[2018/06/18 10:08:52] 22902, "IrisSummary.py", 251, loop : strt loop...
+[2018/06/18 10:08:58] 22902, "IrisSummary.py", 262, loop : read noti://20180615003000
+[2018/06/18 10:08:58] 22902, "IrisSummary.py", 293, loop : summ stime : 201806150030  summ name : MSF_TEST
+[2018/06/18 10:08:58] 22902, "IrisSummary.py", 187, summ : 20180615002500 <= PARTITION AND PARTITION <= 20180615003000  where  20180615002500 <= TIMESTAMP AND TIMESTAMP <= 20180615003000
+[2018/06/18 10:08:58] 22902, "IrisSummary.py", 198, summ :  ** SQL ** 
+/*+ LOCATION ( '20180615002500' <= PARTITION AND PARTITION < '20180615003000'  ) */
+SELECT
+                 k, p, SUM(income), SUM(expenses)
+                 FROM MSF_TEST_TABLE_MAIN
+                 GROUP BY k, p;
+[2018/06/18 10:08:58] 22902, "IrisSummary.py", 214, summ : lres length = 0
+[2018/06/18 10:08:58] 22902, "IrisSummary.py", 187, summ : 20180615000000 <= PARTITION AND PARTITION <= 20180615000000  where  20180615002500 <= TIMESTAMP AND TIMESTAMP <= 20180615003000
+[2018/06/18 10:08:58] 22902, "IrisSummary.py", 198, summ :  ** SQL ** 
+/*+ LOCATION ( '20180615000000' <= PARTITION AND PARTITION <= '20180615000000'  ) */
+SELECT
+                k, income, expenses
+                FROM MSF_TEST_TABLE_SUB;
+[2018/06/18 10:08:58] 22902, "IrisSummary.py", 214, summ : lres length = 1
+[2018/06/18 10:08:58] 22902, "IrisSummary.py", 244, summ : lrec length = 1
+[2018/06/18 10:08:58] 22902, "IrisSummary.py", 315, loop : Std OUT : tmp/MSF_TEST-0-20180615003000.dat  Processing Time : 0.25
+[2018/06/18 10:08:58] 22902, "IrisSummary.py", 317, loop : Total Processing Time : 0.25
+[2018/06/18 10:08:59] 22902, "IrisSummary.py", 20, signal_handler : Catch Signal : 2
+[2018/06/18 10:09:00] 22902, "IrisSummary.py", 262, loop : read 
+[2018/06/18 10:09:00] 22902, "IrisSummary.py", 265, loop : Require Prefix 'noti://' : 
+[2018/06/18 10:09:00] 22902, "IrisSummary.py", 322, loop : stop loop...
+[2018/06/18 10:09:00] 22902, "IrisSummary.py", 344, main : stop process
+[2018/06/18 10:12:57] 23936, "IrisSummary.py", 327, main : strt process
+[2018/06/18 10:12:57] 23936, "IrisSummary.py", 333, main : ixml conf/IS.xml
+[2018/06/18 10:12:57] 23936, "IrisSummary.py", 334, main : idir tmp
+[2018/06/18 10:12:57] 23936, "IrisSummary.py", 251, loop : strt loop...
+[2018/06/18 10:13:04] 23936, "IrisSummary.py", 262, loop : read noti://201806150030
+[2018/06/18 10:13:04] 23936, "IrisSummary.py", 293, loop : summ stime : 201806150030  summ name : MSF_TEST
+[2018/06/18 10:13:04] 23936, "IrisSummary.py", 187, summ : 20180615002500 <= PARTITION AND PARTITION <= 20180615003000  where  20180615002500 <= TIMESTAMP AND TIMESTAMP <= 20180615003000
+[2018/06/18 10:13:04] 23936, "IrisSummary.py", 198, summ :  ** SQL ** 
+/*+ LOCATION ( '20180615002500' <= PARTITION AND PARTITION < '20180615003000'  ) */
+SELECT
+                 k, p, SUM(income), SUM(expenses)
+                 FROM MSF_TEST_TABLE_MAIN
+                 GROUP BY k, p;
+[2018/06/18 10:13:04] 23936, "IrisSummary.py", 214, summ : lres length = 0
+[2018/06/18 10:13:04] 23936, "IrisSummary.py", 187, summ : 20180615000000 <= PARTITION AND PARTITION <= 20180615000000  where  20180615002500 <= TIMESTAMP AND TIMESTAMP <= 20180615003000
+[2018/06/18 10:13:04] 23936, "IrisSummary.py", 198, summ :  ** SQL ** 
+/*+ LOCATION ( '20180615000000' <= PARTITION AND PARTITION <= '20180615000000'  ) */
+SELECT
+                k, income, expenses
+                FROM MSF_TEST_TABLE_SUB;
+[2018/06/18 10:13:04] 23936, "IrisSummary.py", 214, summ : lres length = 1
+[2018/06/18 10:13:04] 23936, "IrisSummary.py", 244, summ : lrec length = 1
+[2018/06/18 10:13:04] 23936, "IrisSummary.py", 315, loop : Std OUT : tmp/MSF_TEST-0-20180615003000.dat  Processing Time : 0.26
+[2018/06/18 10:13:04] 23936, "IrisSummary.py", 317, loop : Total Processing Time : 0.26
+[2018/06/18 10:13:08] 23936, "IrisSummary.py", 20, signal_handler : Catch Signal : 2
+[2018/06/18 10:13:10] 23936, "IrisSummary.py", 262, loop : read v
+[2018/06/18 10:13:10] 23936, "IrisSummary.py", 265, loop : Require Prefix 'noti://' : v
+[2018/06/18 10:13:10] 23936, "IrisSummary.py", 322, loop : stop loop...
+[2018/06/18 10:13:10] 23936, "IrisSummary.py", 344, main : stop process
+[2018/06/18 10:21:05] 25909, "IrisSummary.py", 327, main : strt process
+[2018/06/18 10:21:05] 25909, "IrisSummary.py", 333, main : ixml conf/IS.xml
+[2018/06/18 10:21:05] 25909, "IrisSummary.py", 334, main : idir tmp
+[2018/06/18 10:21:05] 25909, "IrisSummary.py", 251, loop : strt loop...
+[2018/06/18 10:21:17] 25909, "IrisSummary.py", 262, loop : read noti://20180615000000
+[2018/06/18 10:21:17] 25909, "IrisSummary.py", 293, loop : summ stime : 201806150000  summ name : MSF_TEST
+[2018/06/18 10:21:17] 25909, "IrisSummary.py", 187, summ : 20180614235500 <= PARTITION AND PARTITION <= 20180615000000  where  20180614235500 <= TIMESTAMP AND TIMESTAMP <= 20180615000000
+[2018/06/18 10:21:17] 25909, "IrisSummary.py", 198, summ :  ** SQL ** 
+/*+ LOCATION ( '20180614235500' <= PARTITION AND PARTITION < '20180615000000'  ) */
+SELECT
+                 k, p, SUM(income), SUM(expenses)
+                 FROM MSF_TEST_TABLE_MAIN
+                 GROUP BY k, p;
+[2018/06/18 10:21:17] 25909, "IrisSummary.py", 214, summ : lres length = 0
+[2018/06/18 10:21:17] 25909, "IrisSummary.py", 187, summ : 20180614000000 <= PARTITION AND PARTITION <= 20180615000000  where  20180614235500 <= TIMESTAMP AND TIMESTAMP <= 20180615000000
+[2018/06/18 10:21:17] 25909, "IrisSummary.py", 198, summ :  ** SQL ** 
+/*+ LOCATION ( '20180614000000' <= PARTITION AND PARTITION < '20180615000000'  ) */
+SELECT
+                k, income, expenses
+                FROM MSF_TEST_TABLE_SUB;
+[2018/06/18 10:21:17] 25909, "IrisSummary.py", 214, summ : lres length = 0
+[2018/06/18 10:21:17] 25909, "IrisSummary.py", 244, summ : lrec length = 0
+[2018/06/18 10:21:17] 25909, "IrisSummary.py", 315, loop : Std OUT : tmp/MSF_TEST-0-20180615000000.dat  Processing Time : 0.24
+[2018/06/18 10:21:17] 25909, "IrisSummary.py", 317, loop : Total Processing Time : 0.24
+[2018/06/18 10:21:18] 25909, "IrisSummary.py", 20, signal_handler : Catch Signal : 2
+[2018/06/18 10:21:19] 25909, "IrisSummary.py", 262, loop : read 
+[2018/06/18 10:21:19] 25909, "IrisSummary.py", 265, loop : Require Prefix 'noti://' : 
+[2018/06/18 10:21:19] 25909, "IrisSummary.py", 322, loop : stop loop...
+[2018/06/18 10:21:19] 25909, "IrisSummary.py", 344, main : stop process
+[2018/06/18 10:21:42] 26082, "IrisSummary.py", 327, main : strt process
+[2018/06/18 10:21:42] 26082, "IrisSummary.py", 333, main : ixml conf/IS.xml
+[2018/06/18 10:21:42] 26082, "IrisSummary.py", 334, main : idir tmp
+[2018/06/18 10:21:42] 26082, "IrisSummary.py", 251, loop : strt loop...
+[2018/06/18 10:21:48] 26082, "IrisSummary.py", 262, loop : read noti://20180616000000
+[2018/06/18 10:21:48] 26082, "IrisSummary.py", 293, loop : summ stime : 201806160000  summ name : MSF_TEST
+[2018/06/18 10:21:48] 26082, "IrisSummary.py", 187, summ : 20180615235500 <= PARTITION AND PARTITION <= 20180616000000  where  20180615235500 <= TIMESTAMP AND TIMESTAMP <= 20180616000000
+[2018/06/18 10:21:48] 26082, "IrisSummary.py", 198, summ :  ** SQL ** 
+/*+ LOCATION ( '20180615235500' <= PARTITION AND PARTITION < '20180616000000'  ) */
+SELECT
+                 k, p, SUM(income), SUM(expenses)
+                 FROM MSF_TEST_TABLE_MAIN
+                 GROUP BY k, p;
+[2018/06/18 10:21:48] 26082, "IrisSummary.py", 214, summ : lres length = 0
+[2018/06/18 10:21:48] 26082, "IrisSummary.py", 187, summ : 20180615000000 <= PARTITION AND PARTITION <= 20180616000000  where  20180615235500 <= TIMESTAMP AND TIMESTAMP <= 20180616000000
+[2018/06/18 10:21:48] 26082, "IrisSummary.py", 198, summ :  ** SQL ** 
+/*+ LOCATION ( '20180615000000' <= PARTITION AND PARTITION < '20180616000000'  ) */
+SELECT
+                k, income, expenses
+                FROM MSF_TEST_TABLE_SUB;
+[2018/06/18 10:21:49] 26082, "IrisSummary.py", 214, summ : lres length = 7
+[2018/06/18 10:21:49] 26082, "IrisSummary.py", 244, summ : lrec length = 3
+[2018/06/18 10:21:49] 26082, "IrisSummary.py", 315, loop : Std OUT : tmp/MSF_TEST-0-20180616000000.dat  Processing Time : 0.27
+[2018/06/18 10:21:49] 26082, "IrisSummary.py", 317, loop : Total Processing Time : 0.27
+[2018/06/18 10:21:50] 26082, "IrisSummary.py", 20, signal_handler : Catch Signal : 2
+[2018/06/18 10:21:52] 26082, "IrisSummary.py", 262, loop : read 
+[2018/06/18 10:21:52] 26082, "IrisSummary.py", 265, loop : Require Prefix 'noti://' : 
+[2018/06/18 10:21:52] 26082, "IrisSummary.py", 322, loop : stop loop...
+[2018/06/18 10:21:52] 26082, "IrisSummary.py", 344, main : stop process
+[2018/06/18 10:35:43] 29464, "IrisSummary.py", 327, main : strt process
+[2018/06/18 10:35:43] 29464, "IrisSummary.py", 333, main : ixml conf/IS.xml
+[2018/06/18 10:35:43] 29464, "IrisSummary.py", 334, main : idir tmp
+[2018/06/18 10:35:43] 29464, "IrisSummary.py", 251, loop : strt loop...
+[2018/06/18 10:35:44] 29464, "IrisSummary.py", 20, signal_handler : Catch Signal : 2
+[2018/06/18 10:35:45] 29464, "IrisSummary.py", 262, loop : read 
+[2018/06/18 10:35:45] 29464, "IrisSummary.py", 265, loop : Require Prefix 'noti://' : 
+[2018/06/18 10:35:45] 29464, "IrisSummary.py", 322, loop : stop loop...
+[2018/06/18 10:35:45] 29464, "IrisSummary.py", 344, main : stop process
+[2018/06/18 10:45:19] 31806, "IrisSummary.py", 327, main : strt process
+[2018/06/18 10:45:19] 31806, "IrisSummary.py", 333, main : ixml conf/IS.xml
+[2018/06/18 10:45:19] 31806, "IrisSummary.py", 334, main : idir tmp
+[2018/06/18 10:45:19] 31806, "IrisSummary.py", 251, loop : strt loop...
+[2018/06/18 10:45:28] 31806, "IrisSummary.py", 262, loop : read noti://20180616000000
+[2018/06/18 10:45:28] 31806, "IrisSummary.py", 293, loop : summ stime : 201806160000  summ name : MSF_TEST
+[2018/06/18 10:45:28] 31806, "IrisSummary.py", 187, summ : 20180615000000 <= PARTITION AND PARTITION <= 20180616000000  where  20180615235500 <= TIMESTAMP AND TIMESTAMP <= 20180616000000
+[2018/06/18 10:45:28] 31806, "IrisSummary.py", 198, summ :  ** SQL ** 
+/*+ LOCATION ( '20180615000000' <= PARTITION AND PARTITION < '20180616000000'  ) */
+SELECT
+                 k, p, SUM(income), SUM(expenses)
+                 FROM MSF_TEST_TABLE_MAIN
+                 GROUP BY k, p;
+[2018/06/18 10:45:28] 31806, "IrisSummary.py", 214, summ : lres length = 7
+[2018/06/18 10:45:28] 31806, "IrisSummary.py", 187, summ : 20180615000000 <= PARTITION AND PARTITION <= 20180616000000  where  20180615235500 <= TIMESTAMP AND TIMESTAMP <= 20180616000000
+[2018/06/18 10:45:28] 31806, "IrisSummary.py", 198, summ :  ** SQL ** 
+/*+ LOCATION ( '20180615000000' <= PARTITION AND PARTITION < '20180616000000'  ) */
+SELECT
+                k, income, expenses
+                FROM MSF_TEST_TABLE_SUB;
+[2018/06/18 10:45:29] 31806, "IrisSummary.py", 214, summ : lres length = 7
+[2018/06/18 10:45:29] 31806, "IrisSummary.py", 244, summ : lrec length = 3
+[2018/06/18 10:45:29] 31806, "IrisSummary.py", 315, loop : Std OUT : tmp/MSF_TEST-0-20180616000000.dat  Processing Time : 0.30
+[2018/06/18 10:45:29] 31806, "IrisSummary.py", 317, loop : Total Processing Time : 0.30
+[2018/06/18 10:45:33] 31806, "IrisSummary.py", 20, signal_handler : Catch Signal : 2
+[2018/06/18 10:45:34] 31806, "IrisSummary.py", 262, loop : read 
+[2018/06/18 10:45:34] 31806, "IrisSummary.py", 265, loop : Require Prefix 'noti://' : 
+[2018/06/18 10:45:34] 31806, "IrisSummary.py", 322, loop : stop loop...
+[2018/06/18 10:45:34] 31806, "IrisSummary.py", 344, main : stop process
+[2018/06/18 13:29:29] 6723, "IrisSummary.py", 331, main : strt process
+[2018/06/18 13:29:29] 6723, "IrisSummary.py", 337, main : ixml conf/IS.xml
+[2018/06/18 13:29:29] 6723, "IrisSummary.py", 338, main : idir tmp
+[2018/06/18 13:29:29] 6723, "IrisSummary.py", 254, loop : strt loop...
+[2018/06/18 13:29:37] 6723, "IrisSummary.py", 265, loop : read noti://20180616000000
+[2018/06/18 13:29:37] 6723, "IrisSummary.py", 296, loop : summ stime : 201806160000  summ name : MSF_TEST
+[2018/06/18 13:29:37] 6723, "IrisSummary.py", 190, summ : 20180615000000 <= PARTITION AND PARTITION <= 20180616000000  where  20180615235500 <= TIMESTAMP AND TIMESTAMP <= 20180616000000
+[2018/06/18 13:29:37] 6723, "IrisSummary.py", 201, summ :  ** SQL ** 
+/*+ LOCATION ( '20180615000000' <= PARTITION AND PARTITION < '20180616000000'  ) */
+SELECT
+                 k, p, SUM(income), SUM(expenses)
+                 FROM MSF_TEST_TABLE_MAIN
+                 GROUP BY k, p;
+[2018/06/18 13:29:37] 6723, "IrisSummary.py", 217, summ : lres length = 7
+[2018/06/18 13:29:37] 6723, "IrisSummary.py", 190, summ : 20180615000000 <= PARTITION AND PARTITION <= 20180616000000  where  20180615235500 <= TIMESTAMP AND TIMESTAMP <= 20180616000000
+[2018/06/18 13:29:37] 6723, "IrisSummary.py", 201, summ :  ** SQL ** 
+/*+ LOCATION ( '20180615000000' <= PARTITION AND PARTITION < '20180616000000'  ) */
+SELECT
+                k, income, expenses
+                FROM MSF_TEST_TABLE_SUB;
+[2018/06/18 13:29:37] 6723, "IrisSummary.py", 217, summ : lres length = 7
+[2018/06/18 13:29:37] 6723, "IrisSummary.py", 247, summ : lrec length = 3
+[2018/06/18 13:29:37] 6723, "IrisSummary.py", 319, loop : Std OUT : tmp/MSF_TEST-0-20180616000000.dat  Processing Time : 0.31
+[2018/06/18 13:29:37] 6723, "IrisSummary.py", 321, loop : Total Processing Time : 0.31
+[2018/06/18 13:29:38] 6723, "IrisSummary.py", 20, signal_handler : Catch Signal : 2
+[2018/06/18 13:29:39] 6723, "IrisSummary.py", 265, loop : read 
+[2018/06/18 13:29:39] 6723, "IrisSummary.py", 268, loop : Require Prefix 'noti://' : 
+[2018/06/18 13:29:39] 6723, "IrisSummary.py", 326, loop : stop loop...
+[2018/06/18 13:29:39] 6723, "IrisSummary.py", 348, main : stop process
+[2018/06/18 13:30:14] 6915, "IrisSummary.py", 331, main : strt process
+[2018/06/18 13:30:14] 6915, "IrisSummary.py", 337, main : ixml conf/IS.xml
+[2018/06/18 13:30:14] 6915, "IrisSummary.py", 338, main : idir tmp
+[2018/06/18 13:30:14] 6915, "IrisSummary.py", 254, loop : strt loop...
+[2018/06/18 13:30:17] 6915, "IrisSummary.py", 265, loop : read noti://20180616000000
+[2018/06/18 13:30:17] 6915, "IrisSummary.py", 296, loop : summ stime : 201806160000  summ name : MSF_TEST
+[2018/06/18 13:30:17] 6915, "IrisSummary.py", 190, summ : 20180615000000 <= PARTITION AND PARTITION <= 20180616000000  where  20180615235500 <= TIMESTAMP AND TIMESTAMP <= 20180616000000
+[2018/06/18 13:30:17] 6915, "IrisSummary.py", 201, summ :  ** SQL ** 
+/*+ LOCATION ( '20180615000000' <= PARTITION AND PARTITION < '20180616000000'  ) */
+SELECT
+                 k, p, SUM(income), SUM(expenses)
+                 FROM MSF_TEST_TABLE_MAIN
+                 GROUP BY k, p;
+[2018/06/18 13:30:17] 6915, "IrisSummary.py", 217, summ : lres length = 7
+[2018/06/18 13:30:17] 6915, "IrisSummary.py", 247, summ : lrec length = 7
+[2018/06/18 13:30:17] 6915, "IrisSummary.py", 319, loop : Std OUT : tmp/MSF_TEST-0-20180616000000.dat  Processing Time : 0.21
+[2018/06/18 13:30:17] 6915, "IrisSummary.py", 321, loop : Total Processing Time : 0.21
+[2018/06/18 13:30:18] 6915, "IrisSummary.py", 20, signal_handler : Catch Signal : 2
+[2018/06/18 13:30:18] 6915, "IrisSummary.py", 265, loop : read 
+[2018/06/18 13:30:18] 6915, "IrisSummary.py", 268, loop : Require Prefix 'noti://' : 
+[2018/06/18 13:30:18] 6915, "IrisSummary.py", 326, loop : stop loop...
+[2018/06/18 13:30:18] 6915, "IrisSummary.py", 348, main : stop process
+[2018/06/18 13:31:07] 7136, "IrisSummary.py", 331, main : strt process
+[2018/06/18 13:31:07] 7136, "IrisSummary.py", 337, main : ixml conf/IS.xml
+[2018/06/18 13:31:07] 7136, "IrisSummary.py", 338, main : idir tmp
+[2018/06/18 13:31:07] 7136, "IrisSummary.py", 254, loop : strt loop...
+[2018/06/18 13:31:13] 7136, "IrisSummary.py", 265, loop : read noti://20180616000000
+[2018/06/18 13:31:13] 7136, "IrisSummary.py", 296, loop : summ stime : 201806160000  summ name : MSF_TEST
+[2018/06/18 13:31:13] 7136, "IrisSummary.py", 190, summ : 20180615000000 <= PARTITION AND PARTITION <= 20180616000000  where  20180615235500 <= TIMESTAMP AND TIMESTAMP <= 20180616000000
+[2018/06/18 13:31:13] 7136, "IrisSummary.py", 201, summ :  ** SQL ** 
+/*+ LOCATION ( '20180615000000' <= PARTITION AND PARTITION < '20180616000000'  ) */
+SELECT
+                 k, p, SUM(income), SUM(expenses)
+                 FROM MSF_TEST_TABLE_MAIN
+                 GROUP BY k, p;
+[2018/06/18 13:31:13] 7136, "IrisSummary.py", 217, summ : lres length = 7
+[2018/06/18 13:31:13] 7136, "IrisSummary.py", 190, summ : 20180615000000 <= PARTITION AND PARTITION <= 20180616000000  where  20180615235500 <= TIMESTAMP AND TIMESTAMP <= 20180616000000
+[2018/06/18 13:31:13] 7136, "IrisSummary.py", 201, summ :  ** SQL ** 
+/*+ LOCATION ( '20180615000000' <= PARTITION AND PARTITION < '20180616000000'  ) */
+SELECT
+                k, income, expenses
+                FROM MSF_TEST_TABLE_SUB;
+[2018/06/18 13:31:13] 7136, "IrisSummary.py", 217, summ : lres length = 7
+[2018/06/18 13:31:13] 7136, "IrisSummary.py", 247, summ : lrec length = 3
+[2018/06/18 13:31:13] 7136, "IrisSummary.py", 319, loop : Std OUT : tmp/MSF_TEST-0-20180616000000.dat  Processing Time : 0.30
+[2018/06/18 13:31:13] 7136, "IrisSummary.py", 321, loop : Total Processing Time : 0.30
+[2018/06/18 13:31:14] 7136, "IrisSummary.py", 20, signal_handler : Catch Signal : 2
+[2018/06/18 13:31:15] 7136, "IrisSummary.py", 265, loop : read 
+[2018/06/18 13:31:15] 7136, "IrisSummary.py", 268, loop : Require Prefix 'noti://' : 
+[2018/06/18 13:31:15] 7136, "IrisSummary.py", 326, loop : stop loop...
+[2018/06/18 13:31:15] 7136, "IrisSummary.py", 348, main : stop process
+[2018/06/18 13:34:02] 7866, "IrisSummary.py", 331, main : strt process
+[2018/06/18 13:34:02] 7866, "IrisSummary.py", 337, main : ixml conf/IS.xml
+[2018/06/18 13:34:02] 7866, "IrisSummary.py", 338, main : idir tmp
+[2018/06/18 13:34:02] 7866, "IrisSummary.py", 254, loop : strt loop...
+[2018/06/18 13:34:09] 7866, "IrisSummary.py", 265, loop : read noti://20180616000000
+[2018/06/18 13:34:09] 7866, "IrisSummary.py", 296, loop : summ stime : 201806160000  summ name : MSF_TEST
+[2018/06/18 13:34:10] 7866, "IrisSummary.py", 190, summ : 20180615000000 <= PARTITION AND PARTITION <= 20180616000000  where  20180615235500 <= TIMESTAMP AND TIMESTAMP <= 20180616000000
+[2018/06/18 13:34:10] 7866, "IrisSummary.py", 201, summ :  ** SQL ** 
+/*+ LOCATION ( '20180615000000' <= PARTITION AND PARTITION < '20180616000000'  ) */
+SELECT
+                 k, p, SUM(income), SUM(expenses)
+                 FROM MSF_TEST_TABLE_MAIN
+                 GROUP BY k;
+[2018/06/18 13:34:10] 7866, "IrisSummary.py", 217, summ : lres length = 3
+[2018/06/18 13:34:10] 7866, "IrisSummary.py", 190, summ : 20180615000000 <= PARTITION AND PARTITION <= 20180616000000  where  20180615235500 <= TIMESTAMP AND TIMESTAMP <= 20180616000000
+[2018/06/18 13:34:10] 7866, "IrisSummary.py", 201, summ :  ** SQL ** 
+/*+ LOCATION ( '20180615000000' <= PARTITION AND PARTITION < '20180616000000'  ) */
+SELECT
+                k, income, expenses
+                FROM MSF_TEST_TABLE_SUB;
+[2018/06/18 13:34:10] 7866, "IrisSummary.py", 217, summ : lres length = 7
+[2018/06/18 13:34:10] 7866, "IrisSummary.py", 247, summ : lrec length = 3
+[2018/06/18 13:34:10] 7866, "IrisSummary.py", 319, loop : Std OUT : tmp/MSF_TEST-0-20180616000000.dat  Processing Time : 0.30
+[2018/06/18 13:34:10] 7866, "IrisSummary.py", 321, loop : Total Processing Time : 0.30
+[2018/06/18 13:34:11] 7866, "IrisSummary.py", 20, signal_handler : Catch Signal : 2
+[2018/06/18 13:34:11] 7866, "IrisSummary.py", 265, loop : read 
+[2018/06/18 13:34:11] 7866, "IrisSummary.py", 268, loop : Require Prefix 'noti://' : 
+[2018/06/18 13:34:11] 7866, "IrisSummary.py", 326, loop : stop loop...
+[2018/06/18 13:34:11] 7866, "IrisSummary.py", 348, main : stop process

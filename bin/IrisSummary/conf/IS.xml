@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<SummaryConfig>
+   <Summary sourcename="MSF_TEST" termtype="0" term="1">
+      <Sum_info>
+         <Sumname>MSF_TEST</Sumname>
+         <Connection url="jdbc:iris://192.168.101.104:5050" user="vsfs" pass="vsfs123"></Connection> <!-- Connection string -->
+         <Query type="HASH" keys="0" partition_range="10000"><![CDATA[SELECT
+                 k, p, SUM(income), SUM(expenses)
+                 FROM MSF_TEST_TABLE_MAIN
+                 GROUP BY k;]]></Query> <!-- IRIS or Oracle -->
+         <Query type="HASH" keys="0" values="1,2" pos="2,3" partition_range="10000"><![CDATA[SELECT
+                k, income, expenses
+                FROM MSF_TEST_TABLE_SUB;]]></Query> <!-- IRIS or Oracle -->
+	  </Sum_info>
+  </Summary>
+</SummaryConfig> 

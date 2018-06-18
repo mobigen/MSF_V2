@@ -165,18 +165,21 @@ def summ(istm, iptm, isum):
         ival = ique["values"]
         irng = ique["partition_range" ] + '00'
         ihit = ique["hint"  ]
-        isrn = ique["summary_range"]
+        isrn = ique["summary_range"] # 분 단위
 
         if isrn.lower() == "daily":
-            st_time = istm[:8] + "000000"
+            st_time = istm[:8] + "000000" # "20180618104800" -> "20180618000000"
         elif isrn.lower() == "hourly":
             st_time = istm[:10] + "0000"
-        else:
+        else: # "20180618104800" -> '20180618100000'
             st_time = time.strftime("%Y%m%d%H%M%S",
                     time.localtime(time.mktime(time.strptime(istm, "%Y%m%d%H%M%S")) - \
                             (int(isrn) * 60)))
+            # st_time = stdin들어온 시간 - summary_range
+
         en_time = istm
 
+        # st_time, en_time 을 partition_range +'00' 자리수만큼 내림
         st_part = str(int(st_time) - (int(st_time) % int(irng)))
         en_part = str(int(en_time) - (int(en_time) % int(irng)))
 
@@ -214,17 +217,18 @@ def summ(istm, iptm, isum):
         __LOG__.Trace("lres length = %d" % (len(lres)))
 
         joined_key = dict()
-        if ityp == "HASH":
 
-            for row in lres :
+        if ityp == "HASH":
+            # join_hash 만들기
+            # join_hash = {"key1|^|...|^|keyN": [val1, ... , valM]}
+            for row in lres:
                 key = "|^|".join([str(row[idx]) for idx in ikey])
                 val = [str(row[idx]) for idx in ival]
-
-                try :
+                try:
                     if not joined_key.has_key(key):
                         join_hash[key].extend(val)
                         joined_key[key] = None
-                except :
+                except:
                     join_hash[key] = [''] * val_length
                     join_hash[key].extend(val)
 
@@ -232,7 +236,6 @@ def summ(istm, iptm, isum):
             for key in join_hash:
                 if len(join_hash[key]) < val_length:
                     join_hash[key].extend([''] * (val_length - len(join_hash[key])))
-
         else :
             lrec = lrec + lres
 
@@ -307,7 +310,8 @@ def loop(lsum, idir) :
             fime = os.path.join(idir, "%s-%s-%s.dat" % (isnm, isuf, istm + "00"))
 
             fd = open(fime, "w")
-            for irec in lrec : fd.write(",".join([str(i) for i in irec]) + "\n")
+            for irec in lrec:
+                fd.write(",".join([str(i) for i in irec]) + "\n")
             fd.close()
 
             sys.stdout.write("file://%s\n" % (fime))
@@ -350,14 +354,13 @@ def print_usage():
 
 
 if  __name__ == "__main__" :
-
     module = os.path.basename(sys.argv[0])
 
     if  len(sys.argv) < 4 :
         print_usage()
         sys.exit()
 
-    log_file = "~/TANGO-A/log/%s_%s.log" % (os.path.basename(sys.argv[0]), sys.argv[1])
+    log_file = "log/%s_%s.log" % (os.path.basename(sys.argv[0]), sys.argv[1])
     if '-d' in sys.argv:
         Log.Init()
         sys.argv.remove('-d')
