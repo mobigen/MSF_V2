@@ -1,5 +1,5 @@
 # Kafka Modules
-1. Producer가 STDIN을 입력 받음 (STDIN format : DATE://<YYYYmmddHHMMSS>)
+1. Producer가 STDIN을 입력 받음 (STDIN format : DATE://[YYYYmmddHHMMSS])
 2. Producer가 STDIN으로 들어온 DATE와 Config에 입력된 쿼리를 바탕으로 해당하는 DB에 쿼리를 입력하여 결과를 얻는다.
 3. Config에 입력된 크기의 수로 데이터를 나눈 후 나눈 데이터마다 Config에 설정된 Start delimiter와 End delimiter 를 기준으로 나눠 데이터를 Broker server로 전송한다.
 4. MessageMonitor가 해당 메세지들을 입력받는다. End delimiter가 메세지로 전송될 경우 현재까지 쌓인 큐의 데이터를 Config에 입력된 경로로 csv파일로 덤프하게 된다.
@@ -20,6 +20,7 @@ $ python MessageMonitor.py <Section> <ConfigFilePath>
 ## Configuration
 
 **Producer.conf**
+
 |Section|Option|Range|Description|
 |:------:|:-------------:|-----------|-----------------------------|
 |Log     |logfilepath    | (string) |  log가 저장될 경로           |
@@ -34,6 +35,7 @@ $ python MessageMonitor.py <Section> <ConfigFilePath>
 |        | COL_DELIMITER |(string)| DB로 받은 데이터를 broker로 보낼때의 컬럼구분자|
 
 **MessageMonitor.conf**
+
 |Section|Option|Range|Description|
 |:------:|:-------------:|-----------|-----------------------------|
 |Log     |logfilepath    | (string) |  log가 저장될 경로           |
@@ -46,6 +48,7 @@ $ python MessageMonitor.py <Section> <ConfigFilePath>
 |        | 그외   || https://kafka.apache.org/documentation/#consumerconfigs 참고|
 
 **MySQL.conf**
+
 |Section  |Option|Range   |Description|
 |:-------:|:----:|:------:|--------------------|
 |[SECTION]|HOST  |(string)| MySQL Host IP      |
@@ -55,6 +58,7 @@ $ python MessageMonitor.py <Section> <ConfigFilePath>
 |         |DB    |(string)| MySQL 접속 DB      |
 
 **Oracle.conf**
+
 |Section  |Option|Range   |Description|
 |:-------:|:----:|:------:|--------------------|
 |[SECTION]|HOST  |(string)| Oracle Host IP      |
