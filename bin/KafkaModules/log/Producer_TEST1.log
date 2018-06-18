@@ -1,0 +1,65 @@
+[2018/06/18 16:50:10] 56178, "Producer.py", 172, main : ---------------TEST1 Producer Start!-----------------
+[2018/06/18 16:50:12] 56178, "Producer.py", 17, Shutdown : Recv Signal (2)
+[2018/06/18 16:50:12] 56178, "Producer.py", 139, run : STD IN : 
+
+[2018/06/18 16:50:12] 56178, "Producer.py", 143, run : Unmatched prefix
+[2018/06/18 16:50:12] 56178, "OracleHandler.py", 42, disconnect : DB Disconnect!!
+[2018/06/18 16:57:29] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "Producer.py", line 114, in GetConfig
+
+    if self.cfg.has_option(section, "bootstrap.servers"):
+
+AttributeError: Producer instance has no attribute 'cfg'
+
+[2018/06/18 16:57:29] 58015, "OracleHandler.py", 42, disconnect : DB Disconnect!!
+[2018/06/18 17:00:12] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "Producer.py", line 114, in GetConfig
+
+    if self.PARSER.has_option(section, "bootstrap.servers"):
+
+NameError: global name 'section' is not defined
+
+[2018/06/18 17:00:12] 58747, "OracleHandler.py", 42, disconnect : DB Disconnect!!
+[2018/06/18 17:02:32] 59347, "Producer.py", 192, main : ---------------TEST1 Producer Start!-----------------
+[2018/06/18 17:02:36] 59347, "Producer.py", 17, Shutdown : Recv Signal (2)
+[2018/06/18 17:02:37] 59347, "Producer.py", 159, run : STD IN : 
+
+[2018/06/18 17:02:37] 59347, "Producer.py", 163, run : Unmatched prefix
+[2018/06/18 17:02:37] 59347, "OracleHandler.py", 42, disconnect : DB Disconnect!!
+[2018/06/18 17:04:51] 59933, "Producer.py", 192, main : ---------------TEST1 Producer Start!-----------------
+[2018/06/18 17:04:54] 59933, "Producer.py", 17, Shutdown : Recv Signal (2)
+[2018/06/18 17:04:55] 59933, "Producer.py", 159, run : STD IN : 
+
+[2018/06/18 17:04:55] 59933, "Producer.py", 163, run : Unmatched prefix
+[2018/06/18 17:04:55] 59933, "OracleHandler.py", 42, disconnect : DB Disconnect!!
+[2018/06/18 17:09:23] 61067, "Producer.py", 195, main : ---------------TEST1 Producer Start!-----------------
+[2018/06/18 17:09:41] 61067, "Producer.py", 17, Shutdown : Recv Signal (2)
+[2018/06/18 17:09:42] 61067, "Producer.py", 162, run : STD IN : 
+
+[2018/06/18 17:09:42] 61067, "Producer.py", 166, run : Unmatched prefix
+[2018/06/18 17:09:42] 61067, "OracleHandler.py", 42, disconnect : DB Disconnect!!
+[2018/06/18 17:16:53] 63997, "Producer.py", 195, main : ---------------TEST1 Producer Start!-----------------
+[2018/06/18 17:18:53] 63997, "Producer.py", 17, Shutdown : Recv Signal (2)
+[2018/06/18 17:18:54] 63997, "Producer.py", 162, run : STD IN : 
+
+[2018/06/18 17:18:54] 63997, "Producer.py", 166, run : Unmatched prefix
+[2018/06/18 17:18:54] 63997, "OracleHandler.py", 42, disconnect : DB Disconnect!!
+[2018/06/18 17:20:40] 65041, "Producer.py", 195, main : ---------------TEST1 Producer Start!-----------------
+[2018/06/18 17:20:46] 65041, "Producer.py", 162, run : STD IN : DATE://20180618000000
+
+[2018/06/18 17:20:46] 65041, "OracleHandler.py", 47, executeGetData : SELECT * FROM DEPT
+[2018/06/18 17:20:48] 65041, "Producer.py", 58, delivery_callback : Message delivered to TEST1 [0] @ 0
+[2018/06/18 17:20:48] 65041, "Producer.py", 58, delivery_callback : Message delivered to TEST1 [0] @ 1
+[2018/06/18 17:20:48] 65041, "Producer.py", 58, delivery_callback : Message delivered to TEST1 [0] @ 2
+[2018/06/18 17:20:48] 65041, "Producer.py", 58, delivery_callback : Message delivered to TEST1 [0] @ 3
+[2018/06/18 17:20:48] 65041, "Producer.py", 58, delivery_callback : Message delivered to TEST1 [0] @ 4
+[2018/06/18 17:20:48] 65041, "Producer.py", 58, delivery_callback : Message delivered to TEST1 [0] @ 5
+[2018/06/18 17:20:52] 65041, "Producer.py", 17, Shutdown : Recv Signal (2)
+[2018/06/18 17:20:53] 65041, "Producer.py", 162, run : STD IN : 
+
+[2018/06/18 17:20:53] 65041, "Producer.py", 166, run : Unmatched prefix
+[2018/06/18 17:20:53] 65041, "OracleHandler.py", 42, disconnect : DB Disconnect!!

@@ -1,0 +1,88 @@
+[2018/06/18 17:18:16] 64375, "Consumer.py", 51, polling : TEST1 [0] reached end at offset 0
+[2018/06/18 17:18:56] 64375, "Consumer.py", 65, polling : Aborted by user
+
+[2018/06/18 17:18:56] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "MessageMonitor.py", line 203, in <module>
+
+    main()
+
+  File "MessageMonitor.py", line 199, in main
+
+    MessageMonitor(module, section, cfgfile).run()
+
+  File "MessageMonitor.py", line 166, in run
+
+    msg = self.Consumer.polling(1)
+
+  File "/home/msf/MSF_V2/bin/KafkaModules/Consumer.py", line 68, in polling
+
+    c.close()
+
+NameError: global name 'c' is not defined
+
+[2018/06/18 17:20:04] 64908, "Consumer.py", 51, polling : TEST1 [0] reached end at offset 0
+[2018/06/18 17:20:11] 64908, "Consumer.py", 65, polling : Aborted by user
+
+[2018/06/18 17:20:11] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "MessageMonitor.py", line 203, in <module>
+
+    main()
+
+  File "MessageMonitor.py", line 199, in main
+
+    MessageMonitor(module, section, cfgfile).run()
+
+  File "MessageMonitor.py", line 166, in run
+
+    msg = self.Consumer.polling(1)
+
+  File "/home/msf/MSF_V2/bin/KafkaModules/Consumer.py", line 44, in polling
+
+    msg = self.c.poll(timeout)
+
+RuntimeError: Consumer closed
+
+[2018/06/18 17:20:32] 65034, "Consumer.py", 51, polling : TEST1 [0] reached end at offset 0
+[2018/06/18 17:20:48] 65034, "Consumer.py", 60, polling : TEST1 [0] at offset 0 with key None:
+[2018/06/18 17:20:48] 65034, "Consumer.py", 61, polling : START|^|20180618000000
+|^|0
+[2018/06/18 17:20:48] 65034, "MessageMonitor.py", 133, save_index : Save Index : dump/TEST1/20180618000000_0.csv
+[2018/06/18 17:20:48] 65034, "Consumer.py", 60, polling : TEST1 [0] at offset 1 with key None:
+[2018/06/18 17:20:48] 65034, "Consumer.py", 61, polling : 10|ACCOUNTING|NEW YORK
+[2018/06/18 17:20:48] 65034, "Consumer.py", 60, polling : TEST1 [0] at offset 2 with key None:
+[2018/06/18 17:20:48] 65034, "Consumer.py", 61, polling : 20|RESEARCH|DALLAS
+[2018/06/18 17:20:48] 65034, "Consumer.py", 60, polling : TEST1 [0] at offset 3 with key None:
+[2018/06/18 17:20:48] 65034, "Consumer.py", 61, polling : 30|SALES|CHICAGO
+[2018/06/18 17:20:48] 65034, "Consumer.py", 60, polling : TEST1 [0] at offset 4 with key None:
+[2018/06/18 17:20:48] 65034, "Consumer.py", 61, polling : 40|OPERATIONS|BOSTON
+[2018/06/18 17:20:48] 65034, "Consumer.py", 60, polling : TEST1 [0] at offset 5 with key None:
+[2018/06/18 17:20:48] 65034, "Consumer.py", 61, polling : END
+[2018/06/18 17:20:48] 65034, "MessageMonitor.py", 178, run : Dump File : dump/TEST1/20180618000000_0.csv
+[2018/06/18 17:20:48] 65034, "Consumer.py", 51, polling : TEST1 [0] reached end at offset 6
+[2018/06/18 17:20:55] 65034, "Consumer.py", 65, polling : Aborted by user
+
+[2018/06/18 17:20:55] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "MessageMonitor.py", line 203, in <module>
+
+    main()
+
+  File "MessageMonitor.py", line 199, in main
+
+    MessageMonitor(module, section, cfgfile).run()
+
+  File "MessageMonitor.py", line 166, in run
+
+    msg = self.Consumer.polling(1)
+
+  File "/home/msf/MSF_V2/bin/KafkaModules/Consumer.py", line 44, in polling
+
+    msg = self.c.poll(timeout)
+
+RuntimeError: Consumer closed
+
