@@ -23,6 +23,9 @@ signal.signal(signal.SIGHUP, Shutdown)  # Sig HangUp : 1
 signal.signal(signal.SIGPIPE, Shutdown) # Sig Broken Pipe : 13
 
 class Producer():
+    '''
+        This module can't assure the order of data if you set multi brokers up!
+    '''
     def __init__(self):
         self.topic = sys.argv[1]
         self.cfgfile = sys.argv[2]
@@ -110,6 +113,26 @@ class Producer():
                 self.db_obj = MySQLHandler(self.db_section, self.PARSER_DB)
 
             self.QUERY_STRING = self.PARSER.get(self.topic, 'QUERY')
+
+            if self.PARSER.has_option('Kafka', "bootstrap.servers"):
+                self.producer_cfg["bootstrap.servers"] = \
+                        self.PARSER.get('Kafka', "bootstrap.servers")
+            if self.PARSER.has_option('Kafka', "message.max.bytes"):
+                self.producer_cfg["message.max.bytes"] = \
+                        self.PARSER.get('Kafka', "message.max.bytes")
+            if self.PARSER.has_option('Kafka', "metadata.request.timeout.ms"):
+                self.producer_cfg["metadata.request.timeout.ms"] = \
+                        self.PARSER.get('Kafka', "metadata.request.timeout.ms")
+            if self.PARSER.has_option('Kafka', "produce.offset.report"):
+                self.producer_cfg["produce.offset.report"] = \
+                        self.PARSER.get('Kafka', "produce.offset.report")
+            if self.PARSER.has_option('Kafka', "request.required.acks"):
+                self.producer_cfg["request.required.acks"] = \
+                        self.PARSER.get('Kafka', "request.required.acks")
+            if self.PARSER.has_option('Kafka', "auto.commit.enable"):
+                self.producer_cfg["auto.commit.enable"] = \
+                        self.PARSER.get('Kafka', "auto.commit.enable")
+
             # self.INDEX_PATH = self.PARSER.get('COMMON','INDEX_PATH')
         except :
             __LOG__.Exception()
@@ -170,7 +193,6 @@ def main():
 
     obj = Producer()
     __LOG__.Trace('---------------%s Producer Start!-----------------' % sys.argv[1])
-
     obj.run()
 
 if __name__ == '__main__':

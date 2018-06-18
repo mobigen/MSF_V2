@@ -20,6 +20,14 @@ def Handler(signum, frame):
 signal.signal(signal.SIGTERM, Handler)
 
 class MessageMonitor():
+    '''
+        Monitor message
+        This module get three kinds of message from the producer
+        1. Start-Message containing delimiter to start to write file
+        2. Content-Message which will be written on file orderly
+        3. End-Message containing delimiter to close and save file
+        Once a file is made, <Topic>://<FilePath> will be printed on STDOUT.
+    '''
     def __init__(self, module, section, cfgfile):
         self.module = module
         self.topic = section
@@ -46,18 +54,20 @@ class MessageMonitor():
         self.Consumer = Consumer(self.topic, self.consumer_cfg)
 
     def get_parser(self, module, cfgfile):
-        try:
-            self.cfg = ConfigParser.ConfigParser()
-            if os.path.exists(cfgfile): self.cfg.read(cfgfile)
-            else: self.cfg = None
-        except:
-            print "get_parser Error"
-            self.PARSER = None
-
-        if self.cfg is None:
-            print 'usage : %s <Topic> <ConfigFile>' % module
+        self.cfg = ConfigParser.ConfigParser()
+        if os.path.exists(cfgfile):
+            self.cfg.read(cfgfile)
+        else:
+            print 'ERROR: Wrong config file path'
+            sys.exit()
 
     def set_config(self):
+        '''
+            Note
+            ----
+            User can add options of kafka as needed
+        '''
+
         section = self.topic
 
         try:
@@ -112,6 +122,10 @@ class MessageMonitor():
 
 
     def save_index(self, file_name):
+        '''
+            Inactive method
+            Use this as you wish
+        '''
         idx_file = self.idx_file
         wfd = open(idx_file, 'w')
         wfd.write(file_name + '\n')
@@ -119,6 +133,10 @@ class MessageMonitor():
         __LOG__.Trace("Save Index : %s" % file_name)
 
     def load_index(self):
+        '''
+            Inactive method
+            Use this as you wish
+        '''
         print self.idx_file
         if os.path.exists(self.idx_file):
             with open(idx_file, "r") as rfd:
@@ -131,7 +149,6 @@ class MessageMonitor():
         return curr
 
     def get_filename(self, msg):
-        # now = dt.datetime.now().strftime("%Y%m%d%H%M%S.txt")
         date, seq = msg.split('|^|')[1:]
         final_dir = os.path.join(self.dump_path, self.topic)
         filename = "%s_%s.csv" % (date.strip(), seq)

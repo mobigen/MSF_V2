@@ -5,6 +5,7 @@ bin/*/include/
 bin/*/pip-selfcheck.json
 bin/*/cx_Oracle-doc
 bin/*/*.swp
+bin/*/*/*.swp
 bin/*/*.pyc
 bin/*/lib64
 bin/*/man

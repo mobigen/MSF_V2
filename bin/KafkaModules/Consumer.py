@@ -65,5 +65,5 @@ class Consumer:
             __LOG__.Trace('Aborted by user\n')
 
         # Close down consumer to commit final offsets
-        c.close()
+        self.c.close()
 
