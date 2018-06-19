@@ -15,6 +15,14 @@ $ python [File] [Section] [Config path] [--help] [--stime|--etime] (year/month/d
 - --stime : stime 이상의 시간에 생성및 수정된 파일들을 감시한다.
 - --etime : etime 이하의 시간에 생성및 수정된 파일들만 감시한다.
 
+## STDIN
+없음
+
+## STDOUT
+```Bash
+file://<저장된 파일 경로>
+```
+
 ## Configuration
 
 **ColSFTP.conf**
