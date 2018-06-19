@@ -10,6 +10,14 @@ STDIN으로 들어온 Path의 CSV파일을 집계(SUM, COUNT, ...)하여 DB(MySQ
 $ python Aggregator.py <Section> <ConfigFilePath>
 ```
 
+## STDIN
+```Bash
+file://<File path>
+```
+
+## STDOUT
+없음
+
 ## Configuration
 
 **Aggregator.conf**
