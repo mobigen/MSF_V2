@@ -1,0 +1,97 @@
+[2018/06/19 14:08:53] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "IrisSplitter.py", line 74, in GetConfig
+
+    ksidx = self.PARSER.getint('COMMON', 'KEY_START_INDEX')
+
+  File "/home/msf/usr/local/python/lib/python2.7/ConfigParser.py", line 359, in getint
+
+    return self._get(section, int, option)
+
+  File "/home/msf/usr/local/python/lib/python2.7/ConfigParser.py", line 356, in _get
+
+    return conv(self.get(section, option))
+
+ValueError: invalid literal for int() with base 10: ''
+
+[2018/06/19 14:12:59] 45247, "IrisSplitter.py", 109, run : Start Make Iris Loader File!!
+[2018/06/19 14:13:06] 45247, "IrisSplitter.py", 17, Shutdown : Recv Signal (2)
+[2018/06/19 14:13:07] 45247, "IrisSplitter.py", 114, run : stdin : 
+
+[2018/06/19 14:13:07] 45247, "IrisSplitter.py", 118, run : Error Stdin Data ==> 
+
+[2018/06/19 14:13:07] 45247, "IrisSplitter.py", 193, <module> : PROCESS END...
+
+[2018/06/19 14:13:28] 45389, "IrisSplitter.py", 109, run : Start Make Iris Loader File!!
+[2018/06/19 14:13:43] 45389, "IrisSplitter.py", 114, run : stdin : file://data/MSF_TEST-0-20180616000000.dat
+
+[2018/06/19 14:13:43] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "IrisSplitter.py", line 141, in run
+
+    Partition = row[self.PARTITION_INDEX] #YYYYMMDDHHMMSS
+
+IndexError: list index out of range
+
+[2018/06/19 14:13:43] 45389, "IrisSplitter.py", 193, <module> : PROCESS END...
+
+[2018/06/19 14:14:26] 45619, "IrisSplitter.py", 109, run : Start Make Iris Loader File!!
+[2018/06/19 14:14:31] 45619, "IrisSplitter.py", 114, run : stdin : file://data/MSF_TEST-0-20180616000000.dat
+
+[2018/06/19 14:14:31] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "IrisSplitter.py", line 141, in run
+
+    Partition = row[self.PARTITION_INDEX] #YYYYMMDDHHMMSS
+
+IndexError: list index out of range
+
+[2018/06/19 14:14:31] 45619, "IrisSplitter.py", 195, <module> : PROCESS END...
+
+[2018/06/19 14:14:59] 45760, "IrisSplitter.py", 109, run : Start Make Iris Loader File!!
+[2018/06/19 14:15:01] 45760, "IrisSplitter.py", 114, run : stdin : file://data/MSF_TEST-0-20180616000000.dat
+
+[2018/06/19 14:15:01] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "IrisSplitter.py", line 143, in run
+
+    Partition = row[self.PARTITION_INDEX] #YYYYMMDDHHMMSS
+
+IndexError: list index out of range
+
+[2018/06/19 14:15:01] 45760, "IrisSplitter.py", 195, <module> : PROCESS END...
+
+[2018/06/19 14:15:36] 45938, "IrisSplitter.py", 109, run : Start Make Iris Loader File!!
+[2018/06/19 14:15:38] 45938, "IrisSplitter.py", 114, run : stdin : file://data/MSF_TEST-0-20180616000000.dat
+
+[2018/06/19 14:15:38] 45938, "IrisSplitter.py", 172, run : file://tmp/_20180615000000_MSF_TEST-0-20180616000000.dat
+
+[2018/06/19 14:15:45] 45938, "IrisSplitter.py", 17, Shutdown : Recv Signal (2)
+[2018/06/19 14:15:46] 45938, "IrisSplitter.py", 114, run : stdin : 
+
+[2018/06/19 14:15:46] 45938, "IrisSplitter.py", 118, run : Error Stdin Data ==> 
+
+[2018/06/19 14:15:46] 45938, "IrisSplitter.py", 195, <module> : PROCESS END...
+
+[2018/06/19 14:18:49] 46711, "IrisSplitter.py", 109, run : Start Make Iris Loader File!!
+[2018/06/19 14:18:54] 46711, "IrisSplitter.py", 114, run : stdin : file://data/MSF_TEST-0-20180616000000.dat
+
+[2018/06/19 14:18:54] 46711, "IrisSplitter.py", 170, run : file://tmp/_20180615000000_MSF_TEST-0-20180616000000.dat
+
+[2018/06/19 14:18:54] 46711, "IrisSplitter.py", 170, run : file://tmp/_20180615003000_MSF_TEST-0-20180616000000.dat
+
+[2018/06/19 14:18:54] 46711, "IrisSplitter.py", 170, run : file://tmp/_20180615002000_MSF_TEST-0-20180616000000.dat
+
+[2018/06/19 14:18:54] 46711, "IrisSplitter.py", 170, run : file://tmp/_20180615001000_MSF_TEST-0-20180616000000.dat
+
+[2018/06/19 14:18:58] 46711, "IrisSplitter.py", 17, Shutdown : Recv Signal (2)
+[2018/06/19 14:18:59] 46711, "IrisSplitter.py", 114, run : stdin : 
+
+[2018/06/19 14:18:59] 46711, "IrisSplitter.py", 118, run : Error Stdin Data ==> 
+
+[2018/06/19 14:18:59] 46711, "IrisSplitter.py", 193, <module> : PROCESS END...
+
