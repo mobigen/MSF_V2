@@ -8,6 +8,16 @@ Stdin 으로 입력받은 data파일의 시간에 대한 summary
 $ python IrisSummary.py <SUMMARY_NAME> <XML_FILE_PATH> <OUTPUT_DIR_PATH>
 ```
 
+## STDIN
+```Bash
+noti://<YYYYmmddHHMMSS>
+```
+
+## STDOUT
+```Bash
+file://<저장된 파일 경로>
+```
+
 ## Configuration
 ```
 <?xml version="1.0" encoding="utf-8" ?>
