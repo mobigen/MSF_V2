@@ -12,6 +12,14 @@ $ python [File] [Section] [Config path]
 - Section : 실행한 Config의 섹션
 - Config path : 실행할 Config의 경로
 
+## STDIN
+없음
+
+## STDOUT
+```Bash
+file://<FilePath>
+```
+
 ## Configuration
 
 **FilePatternMonitor.conf**
