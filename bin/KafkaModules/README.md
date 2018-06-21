@@ -87,3 +87,10 @@ $ nosetests -v --with-coverage --with-doctest --cover-erase --exe  --cover-packa
 ```Bash
 $ pylint --disable=C --disable=E0602 --extension-pkg-whitelist=MySQLdb,cx_Oracle --generated-members=message,code,ProgrammingError,OperationalError --msg-template='{path}:{line}:[{msg_id}({symbol}),{obj}]{msg}' *.py
 ```
+
+## Example
+1. 우선 Kafka 서버가 동작하고 있어야 합니다. 현재 Config는 localhost:9092가 bootstrap.servers 로 설정되어있습니다. Kafka 서버 실행방법은 http://kafka.apache.org/documentation.html 를 참고해 주세요.
+2. dump와 index 디렉토리를 비워주세요.
+3. example.sh를 실행시키면 Producer.py를 실행시킨뒤 STDIN으로 DATE://20180621000000 를 입력하게 됩니다.
+4. Producer.py는 처리된 메세지를 Broker서버에 전송하고 MessageMonitor.py가 2초뒤 실행되어 해당 메세지를 받게 됩니다.
+5. MessageMonitor.py는 받은 메세지를 dump 디렉토리에 덤프시키게 됩니다.

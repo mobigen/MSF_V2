@@ -19,9 +19,9 @@ SHUTDOWN = False
 
 def usage():
     print >> sys.stderr,"""usage : python [File] [Section] [Config path] [--help] [--stime|--etime] (year/month/day/hour/minute)
-    exam : python ColSftp.py SFTPCONF ColSftp.conf --stime 201504240600 --etime 201504270600
-    exam : python ColSftp.py SFTPCONF ColSftp.conf --stime 201504240600
-    exam : python ColSftp.py SFTPCONF ColSftp.conf
+    exam : python SFTPCollector.py SFTPCONF SFTPCollector.conf --stime 201504240600 --etime 201504270600
+    exam : python SFTPCollector.py SFTPCONF SFTPCollector.conf --stime 201504240600
+    exam : python SFTPCollector.py SFTPCONF SFTPCollector.conf
 
     stime = start time
     etime = end time
@@ -37,7 +37,7 @@ signal.signal(signal.SIGTERM, signalShutdownHandler) #sigNum 15 : Terminate
 signal.signal(signal.SIGINT, signalShutdownHandler)  # sigNum  2 : Interrupt
 
 
-class ColSftp(object):
+class SFTPCollector(object):
     def __init__(self, section, conf_path, options, args):
         self.options = options
         self.args = args
@@ -249,7 +249,7 @@ class ColSftp(object):
 def search(sftp_obj, path, patt, curr_time, curr_size):
     # index에 시간이 표시되있지 않으면 전부 추가
     # sftp연결된 곳의 파일의 수정시간이 index에 표기된 시간보다 크면 추가
-    # index에 표기된 시간이랑 같고 index에 있는 사이즈랑 다르면 추가 
+    # index에 표기된 시간이랑 같고 index에 있는 사이즈랑 다르면 추가
     try:
         li = []
         __LOG__.Trace(path)
@@ -279,13 +279,13 @@ if __name__=='__main__':
             os._exit(1)
 
         options, args = getopt.getopt(sys.argv[3:], "s:e:", ["stime=", "etime=", "help"])
-        es = ColSftp(sys.argv[1], sys.argv[2], options, args)
+        es = SFTPCollector(sys.argv[1], sys.argv[2], options, args)
         es.setDaemon(True)
         es.start()
 
         while G_SHUTDOWN :
             if not es or not es.isAlive() :
-                es = ColSftp(options, args)
+                es = SFTPCollector(options, args)
                 es.setDaemon(True)
                 es.start()
 

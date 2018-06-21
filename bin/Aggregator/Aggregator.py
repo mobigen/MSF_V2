@@ -3,8 +3,11 @@ import sys
 import os
 import signal
 import pandas as pd
+import MySQLdb
+import sqlalchemy
 
 from sqlalchemy import create_engine
+
 
 import Mobigen.Common.Log as Log
 
@@ -55,7 +58,7 @@ class Aggregator:
         self.cols_groupby = []
         self.agg = {}
         self.engine_type = {"Oracle": "oracle+cx_oracle://%s:%s@%s:%s/?service_name=%s",
-                "MySQL": "mysql+mysqlconnector://%s:%s@%s:%s/%s"}
+                "MySQL": "mysql://%s:%s@%s:%s/%s"}
 
         self.get_conf_parser()
         self.set_config()
@@ -181,8 +184,8 @@ class Aggregator:
             df.to_sql(name=self.db_table, con=engine,
                       if_exists='append', index=False)
             __LOG__.Trace("query success to insert to %s" % self.db_type)
-        except Exception, ex:
-            __LOG__.Trace(ex)
+        except sqlalchemy.exc.OperationalError:
+            print exc.args
 
 
     def aggregate(self, path):
@@ -202,9 +205,9 @@ class Aggregator:
         """
         try:
             data = pd.DataFrame.from_csv(path, sep=self.sep, index_col=None)
-            __LOG__.Trace("Load csv success : %s" % data) 
+            __LOG__.Trace("Load csv success : %s" % data)
             #data['date'] = data['date'].apply(dateutil.parser.parse, dayfirst=True)
-            return data.groupby(self.cols_groupby).agg(self.agg)
+            return data.groupby(self.cols_groupby, as_index=False).agg(self.agg)
         except Exception, ex:
             __LOG__.Trace("Oops: %s" % ex)
             __LOG__.Trace("cols_groupby : %s" % self.cols_groupby)
@@ -221,9 +224,10 @@ class Aggregator:
                 sys.stderr.write('\n')
                 sys.stderr.flush()
                 continue
-            result = self.aggregate(path)
-            __LOG__.Trace("Aggregation success : %s" % path)
-            self.load(result)
+            if prefix == 'file':
+                result = self.aggregate(path)
+                __LOG__.Trace("Aggregation success : %s" % path)
+                self.load(result)
         sys.stderr.write('\n')
         sys.stderr.flush()
 

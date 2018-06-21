@@ -1,0 +1,92 @@
+[2018/06/20 09:39:03] 5591, "HiveLoader.py", 53, set_config : Exception: No module named sasl
+[2018/06/20 09:39:03] 5591, "HiveLoader.py", 128, main : ---------------HIVEController Start!----------------
+[2018/06/20 09:39:11] 5591, "HiveLoader.py", 16, shutdown : Recv Signal (2)
+[2018/06/20 09:39:13] 5591, "HiveLoader.py", 108, run : STD IN : 
+
+[2018/06/20 09:39:13] 5591, "HiveLoader.py", 116, run : STDIN with Invalid format
+[2018/06/20 15:22:29] 24731, "HiveLoader.py", 47, set_config : Exception: No module named sasl
+[2018/06/20 15:22:29] 24731, "HiveLoader.py", 125, main : ---------------HIVEController Start!----------------
+[2018/06/20 15:22:30] 24731, "HiveLoader.py", 16, shutdown : Recv Signal (2)
+[2018/06/20 15:22:31] 24731, "HiveLoader.py", 105, run : STD IN : 
+
+[2018/06/20 15:22:31] 24731, "HiveLoader.py", 113, run : STDIN with Invalid format
+[2018/06/20 15:24:05] 25150, "HiveLoader.py", 47, set_config : Exception: No module named sasl
+[2018/06/20 15:24:05] 25150, "HiveLoader.py", 125, main : ---------------HIVEController Start!----------------
+[2018/06/20 15:24:23] 25150, "HiveLoader.py", 16, shutdown : Recv Signal (2)
+[2018/06/20 15:24:24] 25150, "HiveLoader.py", 105, run : STD IN : 
+
+[2018/06/20 15:24:24] 25150, "HiveLoader.py", 113, run : STDIN with Invalid format
+[2018/06/20 15:24:32] 25241, "HiveLoader.py", 47, set_config : Exception: No module named sasl
+[2018/06/20 15:24:32] 25241, "HiveLoader.py", 125, main : ---------------HIVEController Start!----------------
+[2018/06/20 15:26:22] 25241, "HiveLoader.py", 105, run : STD IN : file://data/test_file.csv||2018||06
+
+[2018/06/20 15:26:22] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "HiveLoader.py", line 111, in run
+
+    self.load_data(path, partition_val)
+
+  File "HiveLoader.py", line 88, in load_data
+
+    for x in range(len(self.partitions)):
+
+AttributeError: HIVEController instance has no attribute 'partitions'
+
+[2018/06/20 15:26:32] 25241, "HiveLoader.py", 16, shutdown : Recv Signal (2)
+[2018/06/20 15:26:33] 25241, "HiveLoader.py", 105, run : STD IN : 
+
+[2018/06/20 15:26:33] 25241, "HiveLoader.py", 113, run : STDIN with Invalid format
+[2018/06/20 15:27:22] 26056, "HiveLoader.py", 48, set_config : Exception: No module named sasl
+[2018/06/20 15:27:22] 26056, "HiveLoader.py", 126, main : ---------------HIVEController Start!----------------
+[2018/06/20 15:27:31] 26056, "HiveLoader.py", 106, run : STD IN : file://data/test_file.csv||2018||06
+
+[2018/06/20 15:27:31] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "HiveLoader.py", line 112, in run
+
+    self.load_data(path, partition_val)
+
+  File "HiveLoader.py", line 89, in load_data
+
+    for x in range(len(self.partitions)):
+
+AttributeError: HIVEController instance has no attribute 'partitions'
+
+[2018/06/20 15:27:39] 26056, "HiveLoader.py", 16, shutdown : Recv Signal (2)
+[2018/06/20 15:27:39] 26056, "HiveLoader.py", 106, run : STD IN : 
+
+[2018/06/20 15:27:39] 26056, "HiveLoader.py", 114, run : STDIN with Invalid format
+[2018/06/20 15:31:17] 27114, "HiveLoader.py", 47, set_config : Exception: No module named sasl
+[2018/06/20 15:31:17] 27114, "HiveLoader.py", 125, main : ---------------HIVEController Start!----------------
+[2018/06/20 15:31:28] 27114, "HiveLoader.py", 16, shutdown : Recv Signal (2)
+[2018/06/20 15:31:28] 27114, "HiveLoader.py", 105, run : STD IN : 
+
+[2018/06/20 15:31:28] 27114, "HiveLoader.py", 113, run : STDIN with Invalid format
+[2018/06/20 15:34:57] 28052, "HiveLoader.py", 47, set_config : Exception: No module named thrift_sasl
+[2018/06/20 15:34:57] 28052, "HiveLoader.py", 125, main : ---------------HIVEController Start!----------------
+[2018/06/20 15:35:01] 28052, "HiveLoader.py", 16, shutdown : Recv Signal (2)
+[2018/06/20 15:35:02] 28052, "HiveLoader.py", 105, run : STD IN : 
+
+[2018/06/20 15:35:02] 28052, "HiveLoader.py", 113, run : STDIN with Invalid format
+[2018/06/20 15:35:22] 28171, "HiveLoader.py", 16, shutdown : Recv Signal (2)
+[2018/06/20 15:35:22] 28171, "HiveLoader.py", 47, set_config : Exception: Could not connect to any of [('192.168.10.3', 10000)]
+[2018/06/20 15:35:22] 28171, "HiveLoader.py", 125, main : ---------------HIVEController Start!----------------
+[2018/06/20 15:35:31] 28178, "HiveLoader.py", 16, shutdown : Recv Signal (2)
+[2018/06/20 15:35:31] 28178, "HiveLoader.py", 47, set_config : Exception: Could not connect to any of [('192.168.10.3', 10000)]
+[2018/06/20 15:35:31] 28178, "HiveLoader.py", 125, main : ---------------HIVEController Start!----------------
+[2018/06/20 15:39:03] 29048, "HiveLoader.py", 16, shutdown : Recv Signal (2)
+[2018/06/20 15:39:03] 29048, "HiveLoader.py", 46, set_config : Exception: Could not connect to any of [('192.168.10.3', 10000)]
+[2018/06/20 15:39:53] 29311, "HiveLoader.py", 16, shutdown : Recv Signal (2)
+[2018/06/20 15:39:53] 29311, "HiveLoader.py", 47, set_config : Exception: Could not connect to any of [('192.168.10.3', 10000)]
+[2018/06/20 15:40:03] 29369, "HiveLoader.py", 16, shutdown : Recv Signal (2)
+[2018/06/20 15:40:03] 29369, "HiveLoader.py", 48, set_config : Exception: Could not connect to any of [('192.168.10.3', 10000)]
+[2018/06/20 15:41:03] 29611, "HiveLoader.py", 16, shutdown : Recv Signal (2)
+[2018/06/20 15:41:03] 29611, "HiveLoader.py", 49, set_config : Exception: Could not connect to any of [('192.168.10.3', 10000)]
+[2018/06/20 15:41:38] 29785, "HiveLoader.py", 16, shutdown : Recv Signal (2)
+[2018/06/20 15:41:38] 29785, "HiveLoader.py", 49, set_config : Exception: Could not connect to any of [('192.168.10.3', 10000)]
+[2018/06/20 15:42:11] 29899, "HiveLoader.py", 16, shutdown : Recv Signal (2)
+[2018/06/20 15:42:11] 29899, "HiveLoader.py", 49, set_config : Exception: Could not start SASL: Error in sasl_client_start (-4) SASL(-4): no mechanism available: No worthy mechs found
+[2018/06/20 15:45:39] 30374, "HiveLoader.py", 16, shutdown : Recv Signal (2)
+[2018/06/20 15:45:39] 30374, "HiveLoader.py", 49, set_config : Exception: Could not connect to any of [('192.168.10.3', 10000)]

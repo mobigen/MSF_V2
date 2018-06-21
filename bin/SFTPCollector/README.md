@@ -59,3 +59,9 @@ $ nosetests -v --with-coverage --with-doctest --cover-erase --exe  --cover-packa
 ```Bash
 $ pylint --disable=C --disable=E0602 --msg-template='{path}:{line}:[{msg_id}({symbol}),{obj}]{msg}' *.py
 ```
+
+## Example
+1. 우선 index, data, tmp 세 디렉토리의 안을 비워줍시다.
+2. example.sh를 실행시키면 10개의 파일이 각각 Config에 지정한 디렉토리에 1초마다 생기고 해당 모듈이 Config에 지정된 시간(현재 5초)마다 감시된 파일을 STDOUT으로 출력하는 것을 볼 수 있습니다.
+3. 그리고 감시된 파일은 Config에 지정된 디렉토리(현재 tmp)로 받아오는걸 확인 할 수 있습니다.
+3. 마지막으로 log와 index를 확인하세요.

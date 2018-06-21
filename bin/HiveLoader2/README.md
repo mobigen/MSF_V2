@@ -35,9 +35,9 @@ $ python <ConfigFilePath>
 
 ##Prerequisites
 - Python == 2.7
-- cx_Oracle >= 6.3.1
 - python-devel
-- mysql-devel
+- cyrus-sasl
+- cyrus-sasl-devel
 
 ##How to unit test (Dynamic test)
 ```Bash

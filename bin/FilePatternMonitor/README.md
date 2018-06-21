@@ -46,3 +46,7 @@ $ nosetests -v --with-coverage --with-doctest --cover-erase --exe  --cover-packa
 ```Bash
 $ pylint --disable=C --disable=E0602 --msg-template='{path}:{line}:[{msg_id}({symbol}),{obj}]{msg}' *.py
 ```
+
+## Example
+1. 우선 index와 tmp 디렉토리를 비워주세요
+2. example.sh를 실행시키면 tmp 디렉토리에 새로운 파일이 생길때마다 어떻게 STDOUT을 출력하고 index가 어떻게 생성되는지 확인 할 수 있습니다.

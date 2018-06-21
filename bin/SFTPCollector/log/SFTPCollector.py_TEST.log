@@ -1,0 +1,1096 @@
+[2018/06/21 15:32:27] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 138, in load_index
+
+    f = open(os.path.join(self.index_path,self.index_name),'r')
+
+IOError: [Errno 2] No such file or directory: 'index/sftp1.info'
+
+[2018/06/21 15:32:27] 57225, "SFTPCollector.py", 202, run : Have no index
+[2018/06/21 15:32:27] 57225, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:32:28] 57225, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:32:28] 57225, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:32:28] 57225, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:32:28] 57225, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:32:33] 57225, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:32:33] 57225, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:32:33] 57225, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:32:33] 57225, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:32:33] 57225, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:32:38] 57225, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:32:38] 57225, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:32:38] 57225, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:32:38] 57225, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:32:38] 57225, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:32:43] 57225, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:32:43] 57225, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:32:43] 57225, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:32:43] 57225, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:32:43] 57225, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:32:48] 57225, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:32:49] 57225, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:32:49] 57225, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:32:49] 57225, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:32:49] 57225, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:32:54] 57225, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:32:54] 57225, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:32:54] 57225, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:32:54] 57225, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:32:54] 57225, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:32:58] 57225, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:32:58] 57225, "SFTPCollector.py", 210, run : SHUTDOWN : True
+[2018/06/21 15:32:58] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 148, in dump_index
+
+    content = file_name + '|^|' + str(file_time) + '|^|' + str(file_size)
+
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+[2018/06/21 15:32:58] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 283, in <module>
+
+    es.setDaemon(True)
+
+AttributeError: 'ColSftp' object has no attribute 'setDaemon'
+
+[2018/06/21 15:33:33] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 138, in load_index
+
+    f = open(os.path.join(self.index_path,self.index_name),'r')
+
+IOError: [Errno 2] No such file or directory: 'index/sftp1.info'
+
+[2018/06/21 15:33:33] 57617, "SFTPCollector.py", 202, run : Have no index
+[2018/06/21 15:33:33] 57617, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:33:33] 57617, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:33:33] 57617, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:33:33] 57617, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:33:33] 57617, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:33:36] 57617, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:33:36] 57617, "SFTPCollector.py", 210, run : SHUTDOWN : True
+[2018/06/21 15:33:36] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 148, in dump_index
+
+    content = file_name + '|^|' + str(file_time) + '|^|' + str(file_size)
+
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+[2018/06/21 15:33:36] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 283, in <module>
+
+    es.setDaemon(True)
+
+AttributeError: 'ColSftp' object has no attribute 'setDaemon'
+
+[2018/06/21 15:33:38] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 138, in load_index
+
+    f = open(os.path.join(self.index_path,self.index_name),'r')
+
+IOError: [Errno 2] No such file or directory: 'index/sftp1.info'
+
+[2018/06/21 15:33:38] 57640, "SFTPCollector.py", 202, run : Have no index
+[2018/06/21 15:33:38] 57640, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:33:38] 57640, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:33:38] 57640, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:33:38] 57640, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:33:38] 57640, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:33:43] 57640, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:33:44] 57640, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:33:44] 57640, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:33:44] 57640, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:33:44] 57640, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:33:46] 57640, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:33:46] 57640, "SFTPCollector.py", 210, run : SHUTDOWN : True
+[2018/06/21 15:33:46] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 148, in dump_index
+
+    content = file_name + '|^|' + str(file_time) + '|^|' + str(file_size)
+
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+[2018/06/21 15:33:46] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 283, in <module>
+
+    es.setDaemon(True)
+
+AttributeError: 'ColSftp' object has no attribute 'setDaemon'
+
+[2018/06/21 15:33:54] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 138, in load_index
+
+    f = open(os.path.join(self.index_path,self.index_name),'r')
+
+IOError: [Errno 2] No such file or directory: 'index/sftp1.info'
+
+[2018/06/21 15:33:54] 57756, "SFTPCollector.py", 202, run : Have no index
+[2018/06/21 15:33:54] 57756, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:33:54] 57756, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:33:54] 57756, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:33:54] 57756, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:33:54] 57756, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:33:59] 57756, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:34:00] 57756, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:34:00] 57756, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:34:00] 57756, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:34:00] 57756, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:34:05] 57756, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:34:05] 57756, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:34:05] 57756, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:34:05] 57756, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:34:05] 57756, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:34:10] 57756, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:34:10] 57756, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:34:10] 57756, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:34:10] 57756, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:34:10] 57756, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:34:10] 57756, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:34:10] 57756, "SFTPCollector.py", 210, run : SHUTDOWN : True
+[2018/06/21 15:34:10] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 148, in dump_index
+
+    content = file_name + '|^|' + str(file_time) + '|^|' + str(file_size)
+
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+[2018/06/21 15:34:10] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 283, in <module>
+
+    es.setDaemon(True)
+
+AttributeError: 'ColSftp' object has no attribute 'setDaemon'
+
+[2018/06/21 15:38:56] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 138, in load_index
+
+    f = open(os.path.join(self.index_path,self.index_name),'r')
+
+IOError: [Errno 2] No such file or directory: 'index/sftp1.info'
+
+[2018/06/21 15:38:56] 59275, "SFTPCollector.py", 202, run : Have no index
+[2018/06/21 15:38:56] 59275, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:38:56] 59275, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:38:56] 59275, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:38:56] 59275, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:38:56] 59275, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:39:01] 59275, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:39:01] 59275, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:39:01] 59275, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:39:01] 59275, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:39:01] 59275, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:39:06] 59275, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:39:06] 59275, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:39:06] 59275, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:39:06] 59275, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:39:06] 59275, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:39:11] 59275, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:39:12] 59275, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:39:12] 59275, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:39:12] 59275, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:39:12] 59275, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:39:17] 59275, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:39:17] 59275, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:39:17] 59275, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:39:17] 59275, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:39:17] 59275, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:39:22] 59275, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:39:22] 59275, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:39:22] 59275, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:39:22] 59275, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:39:22] 59275, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:39:25] 59275, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:39:25] 59275, "SFTPCollector.py", 210, run : SHUTDOWN : True
+[2018/06/21 15:39:25] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 148, in dump_index
+
+    content = file_name + '|^|' + str(file_time) + '|^|' + str(file_size)
+
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+[2018/06/21 15:39:25] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 283, in <module>
+
+    es.setDaemon(True)
+
+AttributeError: 'SFTPCollector' object has no attribute 'setDaemon'
+
+[2018/06/21 15:39:29] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 138, in load_index
+
+    f = open(os.path.join(self.index_path,self.index_name),'r')
+
+IOError: [Errno 2] No such file or directory: 'index/sftp1.info'
+
+[2018/06/21 15:39:29] 59510, "SFTPCollector.py", 202, run : Have no index
+[2018/06/21 15:39:29] 59510, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:39:29] 59510, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:39:29] 59510, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:39:29] 59510, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:39:29] 59510, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:39:34] 59510, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:39:35] 59510, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:39:35] 59510, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:39:35] 59510, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:39:35] 59510, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:39:40] 59510, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:39:40] 59510, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:39:40] 59510, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:39:40] 59510, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:39:40] 59510, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:39:45] 59510, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:39:45] 59510, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:39:45] 59510, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:39:45] 59510, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:39:45] 59510, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:39:50] 59510, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:39:51] 59510, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:39:51] 59510, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:39:51] 59510, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:39:51] 59510, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:39:56] 59510, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:39:56] 59510, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:39:56] 59510, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:39:56] 59510, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:39:56] 59510, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:40:01] 59510, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:40:01] 59510, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:40:01] 59510, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:40:01] 59510, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:40:01] 59510, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:40:06] 59510, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:40:06] 59510, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:40:06] 59510, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:40:06] 59510, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:40:06] 59510, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:40:11] 59510, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:40:12] 59510, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:40:12] 59510, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:40:12] 59510, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:40:12] 59510, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:40:17] 59510, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:40:17] 59510, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:40:17] 59510, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:40:17] 59510, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:40:17] 59510, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:40:22] 59510, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:40:22] 59510, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:40:22] 59510, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:40:22] 59510, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:40:22] 59510, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:40:27] 59510, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:40:27] 59510, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:40:27] 59510, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:40:27] 59510, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:40:27] 59510, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:40:29] 59510, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:40:29] 59510, "SFTPCollector.py", 210, run : SHUTDOWN : True
+[2018/06/21 15:40:29] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 148, in dump_index
+
+    content = file_name + '|^|' + str(file_time) + '|^|' + str(file_size)
+
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+[2018/06/21 15:40:29] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 283, in <module>
+
+    es.setDaemon(True)
+
+AttributeError: 'SFTPCollector' object has no attribute 'setDaemon'
+
+[2018/06/21 15:42:59] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 138, in load_index
+
+    f = open(os.path.join(self.index_path,self.index_name),'r')
+
+IOError: [Errno 2] No such file or directory: 'index/sftp1.info'
+
+[2018/06/21 15:42:59] 60631, "SFTPCollector.py", 202, run : Have no index
+[2018/06/21 15:42:59] 60631, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:43:00] 60631, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:43:00] 60631, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:43:00] 60631, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:43:00] 60631, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:43:05] 60631, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:43:05] 60631, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:43:05] 60631, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:43:05] 60631, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:43:05] 60631, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:43:10] 60631, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:43:10] 60631, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:43:10] 60631, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:43:10] 60631, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:43:10] 60631, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:43:15] 60631, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:43:15] 60631, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:43:15] 60631, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:43:15] 60631, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:43:16] 60631, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:43:21] 60631, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:43:21] 60631, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:43:21] 60631, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:43:21] 60631, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:43:21] 60631, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:43:21] 60631, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:43:21] 60631, "SFTPCollector.py", 210, run : SHUTDOWN : True
+[2018/06/21 15:43:21] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 148, in dump_index
+
+    content = file_name + '|^|' + str(file_time) + '|^|' + str(file_size)
+
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+[2018/06/21 15:43:21] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 283, in <module>
+
+    es.setDaemon(True)
+
+AttributeError: 'SFTPCollector' object has no attribute 'setDaemon'
+
+[2018/06/21 15:43:28] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 138, in load_index
+
+    f = open(os.path.join(self.index_path,self.index_name),'r')
+
+IOError: [Errno 2] No such file or directory: 'index/sftp1.info'
+
+[2018/06/21 15:43:28] 60846, "SFTPCollector.py", 202, run : Have no index
+[2018/06/21 15:43:28] 60846, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:43:28] 60846, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:43:28] 60846, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:43:28] 60846, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:43:28] 60846, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:43:33] 60846, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:43:33] 60846, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:43:33] 60846, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:43:33] 60846, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:43:33] 60846, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:43:38] 60846, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:43:38] 60846, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:43:38] 60846, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:43:38] 60846, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:43:38] 60846, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:43:43] 60846, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:43:44] 60846, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:43:44] 60846, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:43:44] 60846, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:43:44] 60846, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:43:49] 60846, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:43:49] 60846, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:43:49] 60846, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:43:49] 60846, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:43:49] 60846, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:43:54] 60846, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:43:54] 60846, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:43:54] 60846, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:43:54] 60846, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:43:54] 60846, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:43:57] 60846, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:43:57] 60846, "SFTPCollector.py", 210, run : SHUTDOWN : True
+[2018/06/21 15:43:57] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 148, in dump_index
+
+    content = file_name + '|^|' + str(file_time) + '|^|' + str(file_size)
+
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+[2018/06/21 15:43:57] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 283, in <module>
+
+    es.setDaemon(True)
+
+AttributeError: 'SFTPCollector' object has no attribute 'setDaemon'
+
+[2018/06/21 15:44:02] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 138, in load_index
+
+    f = open(os.path.join(self.index_path,self.index_name),'r')
+
+IOError: [Errno 2] No such file or directory: 'index/sftp1.info'
+
+[2018/06/21 15:44:02] 61083, "SFTPCollector.py", 202, run : Have no index
+[2018/06/21 15:44:02] 61083, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:44:02] 61083, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:44:02] 61083, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:44:02] 61083, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:44:02] 61083, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:44:07] 61083, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:44:07] 61083, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:44:07] 61083, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:44:07] 61083, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:44:07] 61083, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:44:12] 61083, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:44:12] 61083, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:44:12] 61083, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:44:12] 61083, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:44:12] 61083, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:44:17] 61083, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:44:18] 61083, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:44:18] 61083, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:44:18] 61083, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:44:18] 61083, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:44:22] 61083, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:44:22] 61083, "SFTPCollector.py", 210, run : SHUTDOWN : True
+[2018/06/21 15:44:22] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 148, in dump_index
+
+    content = file_name + '|^|' + str(file_time) + '|^|' + str(file_size)
+
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+[2018/06/21 15:44:22] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 283, in <module>
+
+    es.setDaemon(True)
+
+AttributeError: 'SFTPCollector' object has no attribute 'setDaemon'
+
+[2018/06/21 15:45:02] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 138, in load_index
+
+    f = open(os.path.join(self.index_path,self.index_name),'r')
+
+IOError: [Errno 2] No such file or directory: 'index/sftp1.info'
+
+[2018/06/21 15:45:02] 61455, "SFTPCollector.py", 202, run : Have no index
+[2018/06/21 15:45:02] 61455, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:45:02] 61455, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 15:45:02] 61455, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 15:45:02] 61455, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 15:45:02] 61455, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 15:45:07] 61455, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 15:45:07] 61455, "SFTPCollector.py", 210, run : SHUTDOWN : True
+[2018/06/21 15:45:07] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 148, in dump_index
+
+    content = file_name + '|^|' + str(file_time) + '|^|' + str(file_size)
+
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+[2018/06/21 15:45:07] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 283, in <module>
+
+    es.setDaemon(True)
+
+AttributeError: 'SFTPCollector' object has no attribute 'setDaemon'
+
+[2018/06/21 16:13:24] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 138, in load_index
+
+    f = open(os.path.join(self.index_path,self.index_name),'r')
+
+IOError: [Errno 2] No such file or directory: 'index/sftp1.info'
+
+[2018/06/21 16:13:24] 3521, "SFTPCollector.py", 202, run : Have no index
+[2018/06/21 16:13:24] 3521, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:13:24] 3521, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 16:13:24] 3521, "SFTPCollector.py", 256, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 16:13:24] 3521, "SFTPCollector.py", 219, run : Be down Number of files : 0
+[2018/06/21 16:13:24] 3521, "SFTPCollector.py", 245, run : =================== while end sleep 5 ====================
+[2018/06/21 16:13:29] 3521, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:13:29] 3521, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 16:13:29] 3521, "SFTPCollector.py", 256, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 16:13:29] 3521, "SFTPCollector.py", 219, run : Be down Number of files : 0
+[2018/06/21 16:13:29] 3521, "SFTPCollector.py", 245, run : =================== while end sleep 5 ====================
+[2018/06/21 16:13:31] 3521, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:13:31] 3521, "SFTPCollector.py", 210, run : SHUTDOWN : True
+[2018/06/21 16:13:31] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 148, in dump_index
+
+    content = file_name + '|^|' + str(file_time) + '|^|' + str(file_size)
+
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+[2018/06/21 16:13:31] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 284, in <module>
+
+    es.setDaemon(True)
+
+AttributeError: 'SFTPCollector' object has no attribute 'setDaemon'
+
+[2018/06/21 16:14:52] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 138, in load_index
+
+    f = open(os.path.join(self.index_path,self.index_name),'r')
+
+IOError: [Errno 2] No such file or directory: 'index/sftp1.info'
+
+[2018/06/21 16:14:52] 3971, "SFTPCollector.py", 202, run : Have no index
+[2018/06/21 16:14:52] 3971, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:14:52] 3971, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 16:14:52] 3971, "SFTPCollector.py", 256, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 16:14:52] 3971, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 16:14:52] 3971, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 16:14:54] 3971, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:14:54] 3971, "SFTPCollector.py", 210, run : SHUTDOWN : True
+[2018/06/21 16:14:54] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 148, in dump_index
+
+    content = file_name + '|^|' + str(file_time) + '|^|' + str(file_size)
+
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+[2018/06/21 16:14:54] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 284, in <module>
+
+    es.setDaemon(True)
+
+AttributeError: 'SFTPCollector' object has no attribute 'setDaemon'
+
+[2018/06/21 16:18:01] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 138, in load_index
+
+    f = open(os.path.join(self.index_path,self.index_name),'r')
+
+IOError: [Errno 2] No such file or directory: 'index/sftp1.info'
+
+[2018/06/21 16:18:01] 4785, "SFTPCollector.py", 202, run : Have no index
+[2018/06/21 16:18:01] 4785, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:18:01] 4785, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 16:18:01] 4785, "SFTPCollector.py", 256, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 16:18:01] 4785, "SFTPCollector.py", 218, run : Be down Number of files : 3
+[2018/06/21 16:18:01] 4785, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/TEST1.txt
+[2018/06/21 16:18:01] 4785, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:18:01] 4785, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/TEST1.txt
+ 
+[2018/06/21 16:18:01] 4785, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/TEST2.txt
+[2018/06/21 16:18:01] 4785, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:18:01] 4785, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/TEST2.txt
+ 
+[2018/06/21 16:18:01] 4785, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/TEST2.txt.2
+[2018/06/21 16:18:01] 4785, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:18:01] 4785, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/TEST2.txt.2
+ 
+[2018/06/21 16:18:01] 4785, "SFTPCollector.py", 151, dump_index : Dump Index : /home/msf/MSF_V2/bin/SFTPCollector/data/TEST2.txt.2|^|1529562179|^|10
+[2018/06/21 16:18:01] 4785, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 16:18:03] 4785, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:18:03] 4785, "SFTPCollector.py", 210, run : SHUTDOWN : True
+[2018/06/21 16:18:03] 4785, "SFTPCollector.py", 151, dump_index : Dump Index : /home/msf/MSF_V2/bin/SFTPCollector/data/TEST2.txt.2|^|1529562179|^|10
+[2018/06/21 16:18:03] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 284, in <module>
+
+    es.setDaemon(True)
+
+AttributeError: 'SFTPCollector' object has no attribute 'setDaemon'
+
+[2018/06/21 16:20:29] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 138, in load_index
+
+    f = open(os.path.join(self.index_path,self.index_name),'r')
+
+IOError: [Errno 2] No such file or directory: 'index/sftp1.info'
+
+[2018/06/21 16:20:29] 5518, "SFTPCollector.py", 202, run : Have no index
+[2018/06/21 16:20:29] 5518, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:20:30] 5518, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 16:20:30] 5518, "SFTPCollector.py", 256, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 16:20:30] 5518, "SFTPCollector.py", 218, run : Be down Number of files : 3
+[2018/06/21 16:20:30] 5518, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/TestSubject.txt
+[2018/06/21 16:20:30] 5518, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:20:30] 5518, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/TestSubject.txt
+ 
+[2018/06/21 16:20:30] 5518, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/TestSubject2.txt
+[2018/06/21 16:20:30] 5518, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:20:30] 5518, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/TestSubject2.txt
+ 
+[2018/06/21 16:20:30] 5518, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/TestSubject3.txt
+[2018/06/21 16:20:30] 5518, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:20:30] 5518, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/TestSubject3.txt
+ 
+[2018/06/21 16:20:30] 5518, "SFTPCollector.py", 151, dump_index : Dump Index : /home/msf/MSF_V2/bin/SFTPCollector/data/TestSubject3.txt|^|1529565583|^|321
+[2018/06/21 16:20:30] 5518, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 16:20:32] 5518, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:20:32] 5518, "SFTPCollector.py", 210, run : SHUTDOWN : True
+[2018/06/21 16:20:32] 5518, "SFTPCollector.py", 151, dump_index : Dump Index : /home/msf/MSF_V2/bin/SFTPCollector/data/TestSubject3.txt|^|1529565583|^|321
+[2018/06/21 16:20:32] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 284, in <module>
+
+    es.setDaemon(True)
+
+AttributeError: 'SFTPCollector' object has no attribute 'setDaemon'
+
+[2018/06/21 16:20:46] 5601, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:20:46] 5601, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 16:20:46] 5601, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 16:20:46] 5601, "SFTPCollector.py", 218, run : Be down Number of files : 1
+[2018/06/21 16:20:46] 5601, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/TestSubject3.txt
+[2018/06/21 16:20:46] 5601, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:20:46] 5601, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/TestSubject3.txt
+ 
+[2018/06/21 16:20:46] 5601, "SFTPCollector.py", 151, dump_index : Dump Index : /home/msf/MSF_V2/bin/SFTPCollector/data/TestSubject3.txt|^|1529565583|^|321
+[2018/06/21 16:20:46] 5601, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 16:20:51] 5601, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:20:51] 5601, "SFTPCollector.py", 210, run : SHUTDOWN : True
+[2018/06/21 16:20:51] 5601, "SFTPCollector.py", 151, dump_index : Dump Index : /home/msf/MSF_V2/bin/SFTPCollector/data/TestSubject3.txt|^|1529565583|^|321
+[2018/06/21 16:20:51] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 283, in <module>
+
+    es.setDaemon(True)
+
+AttributeError: 'SFTPCollector' object has no attribute 'setDaemon'
+
+[2018/06/21 16:20:53] 5661, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:20:53] 5661, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 16:20:53] 5661, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 16:20:53] 5661, "SFTPCollector.py", 218, run : Be down Number of files : 1
+[2018/06/21 16:20:53] 5661, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/TestSubject3.txt
+[2018/06/21 16:20:53] 5661, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:20:53] 5661, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/TestSubject3.txt
+ 
+[2018/06/21 16:20:53] 5661, "SFTPCollector.py", 151, dump_index : Dump Index : /home/msf/MSF_V2/bin/SFTPCollector/data/TestSubject3.txt|^|1529565583|^|321
+[2018/06/21 16:20:53] 5661, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 16:20:55] 5661, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:20:55] 5661, "SFTPCollector.py", 210, run : SHUTDOWN : True
+[2018/06/21 16:20:55] 5661, "SFTPCollector.py", 151, dump_index : Dump Index : /home/msf/MSF_V2/bin/SFTPCollector/data/TestSubject3.txt|^|1529565583|^|321
+[2018/06/21 16:20:55] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 283, in <module>
+
+    es.setDaemon(True)
+
+AttributeError: 'SFTPCollector' object has no attribute 'setDaemon'
+
+[2018/06/21 16:23:33] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 138, in load_index
+
+    f = open(os.path.join(self.index_path,self.index_name),'r')
+
+IOError: [Errno 2] No such file or directory: 'index/sftp1.info'
+
+[2018/06/21 16:23:33] 6356, "SFTPCollector.py", 202, run : Have no index
+[2018/06/21 16:23:33] 6356, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:23:33] 6356, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 16:23:33] 6356, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 16:23:33] 6356, "SFTPCollector.py", 218, run : Be down Number of files : 3
+[2018/06/21 16:23:33] 6356, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/TestSubject.txt
+[2018/06/21 16:23:33] 6356, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:23:33] 6356, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/TestSubject.txt
+ 
+[2018/06/21 16:23:33] 6356, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/TestSubject2.txt
+[2018/06/21 16:23:33] 6356, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:23:33] 6356, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/TestSubject2.txt
+ 
+[2018/06/21 16:23:33] 6356, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/TestSubject3.txt
+[2018/06/21 16:23:33] 6356, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:23:33] 6356, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/TestSubject3.txt
+ 
+[2018/06/21 16:23:33] 6356, "SFTPCollector.py", 151, dump_index : Dump Index : /home/msf/MSF_V2/bin/SFTPCollector/data/TestSubject3.txt|^|1529565583|^|321
+[2018/06/21 16:23:33] 6356, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 16:23:35] 6356, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:23:35] 6356, "SFTPCollector.py", 210, run : SHUTDOWN : True
+[2018/06/21 16:23:35] 6356, "SFTPCollector.py", 151, dump_index : Dump Index : /home/msf/MSF_V2/bin/SFTPCollector/data/TestSubject3.txt|^|1529565583|^|321
+[2018/06/21 16:23:35] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 283, in <module>
+
+    es.setDaemon(True)
+
+AttributeError: 'SFTPCollector' object has no attribute 'setDaemon'
+
+[2018/06/21 16:25:54] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 138, in load_index
+
+    f = open(os.path.join(self.index_path,self.index_name),'r')
+
+IOError: [Errno 2] No such file or directory: 'index/sftp1.info'
+
+[2018/06/21 16:25:54] 7029, "SFTPCollector.py", 202, run : Have no index
+[2018/06/21 16:25:54] 7029, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:25:55] 7029, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 16:25:55] 7029, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 16:25:55] 7029, "SFTPCollector.py", 218, run : Be down Number of files : 3
+[2018/06/21 16:25:55] 7029, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/TestSubject.txt
+[2018/06/21 16:25:55] 7029, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:25:55] 7029, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/TestSubject.txt
+ 
+[2018/06/21 16:25:55] 7029, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/TestSubject2.txt
+[2018/06/21 16:25:55] 7029, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:25:55] 7029, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/TestSubject2.txt
+ 
+[2018/06/21 16:25:55] 7029, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/TestSubject3.txt
+[2018/06/21 16:25:55] 7029, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:25:55] 7029, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/TestSubject3.txt
+ 
+[2018/06/21 16:25:55] 7029, "SFTPCollector.py", 151, dump_index : Dump Index : /home/msf/MSF_V2/bin/SFTPCollector/data/TestSubject3.txt|^|1529565583|^|321
+[2018/06/21 16:25:55] 7029, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 16:26:00] 7029, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:26:00] 7029, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 16:26:00] 7029, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 16:26:00] 7029, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 16:26:00] 7029, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 16:26:10] 7139, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:26:10] 7139, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 16:26:10] 7139, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 16:26:10] 7139, "SFTPCollector.py", 218, run : Be down Number of files : 1
+[2018/06/21 16:26:10] 7139, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/TestSubject3.txt
+[2018/06/21 16:26:10] 7139, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:26:10] 7139, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/TestSubject3.txt
+ 
+[2018/06/21 16:26:10] 7139, "SFTPCollector.py", 151, dump_index : Dump Index : /home/msf/MSF_V2/bin/SFTPCollector/data/TestSubject3.txt|^|1529565583|^|321
+[2018/06/21 16:26:10] 7139, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 16:26:15] 7139, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:26:15] 7139, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 16:26:15] 7139, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 16:26:15] 7139, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/21 16:26:15] 7139, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 16:28:36] 7854, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:28:36] 7854, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 16:28:36] 7854, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 16:28:36] 7854, "SFTPCollector.py", 218, run : Be down Number of files : 1
+[2018/06/21 16:28:36] 7854, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject0.txt
+[2018/06/21 16:28:36] 7854, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:28:36] 7854, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject0.txt
+ 
+[2018/06/21 16:28:36] 7854, "SFTPCollector.py", 151, dump_index : Dump Index : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject0.txt|^|1529566116|^|321
+[2018/06/21 16:28:36] 7854, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 16:28:41] 7854, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:28:42] 7854, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 16:28:42] 7854, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 16:28:42] 7854, "SFTPCollector.py", 218, run : Be down Number of files : 5
+[2018/06/21 16:28:42] 7854, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject1.txt
+[2018/06/21 16:28:42] 7854, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:28:42] 7854, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject1.txt
+ 
+[2018/06/21 16:28:42] 7854, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject2.txt
+[2018/06/21 16:28:42] 7854, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:28:42] 7854, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject2.txt
+ 
+[2018/06/21 16:28:42] 7854, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject3.txt
+[2018/06/21 16:28:42] 7854, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:28:42] 7854, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject3.txt
+ 
+[2018/06/21 16:28:42] 7854, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject4.txt
+[2018/06/21 16:28:42] 7854, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:28:42] 7854, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject4.txt
+ 
+[2018/06/21 16:28:42] 7854, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject5.txt
+[2018/06/21 16:28:42] 7854, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:28:42] 7854, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject5.txt
+ 
+[2018/06/21 16:28:42] 7854, "SFTPCollector.py", 151, dump_index : Dump Index : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject5.txt|^|1529566121|^|321
+[2018/06/21 16:28:42] 7854, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 16:28:48] 7967, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:28:48] 7967, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 16:28:48] 7967, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 16:28:48] 7967, "SFTPCollector.py", 218, run : Be down Number of files : 6
+[2018/06/21 16:28:48] 7967, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject0.txt
+[2018/06/21 16:28:48] 7967, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:28:48] 7967, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject0.txt
+ 
+[2018/06/21 16:28:48] 7967, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject5.txt
+[2018/06/21 16:28:48] 7967, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:28:48] 7967, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject5.txt
+ 
+[2018/06/21 16:28:48] 7967, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject6.txt
+[2018/06/21 16:28:48] 7967, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:28:48] 7967, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject6.txt
+ 
+[2018/06/21 16:28:48] 7967, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject7.txt
+[2018/06/21 16:28:48] 7967, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:28:48] 7967, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject7.txt
+ 
+[2018/06/21 16:28:48] 7967, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject8.txt
+[2018/06/21 16:28:48] 7967, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:28:48] 7967, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject8.txt
+ 
+[2018/06/21 16:28:48] 7967, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject9.txt
+[2018/06/21 16:28:48] 7967, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:28:48] 7967, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject9.txt
+ 
+[2018/06/21 16:28:48] 7967, "SFTPCollector.py", 151, dump_index : Dump Index : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject9.txt|^|1529566125|^|321
+[2018/06/21 16:28:48] 7967, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 16:28:53] 7967, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:28:54] 7967, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 16:28:54] 7967, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 16:28:54] 7967, "SFTPCollector.py", 218, run : Be down Number of files : 6
+[2018/06/21 16:28:54] 7967, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject0.txt
+[2018/06/21 16:28:54] 7967, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:28:54] 7967, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject0.txt
+ 
+[2018/06/21 16:28:54] 7967, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject1.txt
+[2018/06/21 16:28:54] 7967, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:28:54] 7967, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject1.txt
+ 
+[2018/06/21 16:28:54] 7967, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject2.txt
+[2018/06/21 16:28:54] 7967, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:28:54] 7967, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject2.txt
+ 
+[2018/06/21 16:28:54] 7967, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject3.txt
+[2018/06/21 16:28:54] 7967, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:28:54] 7967, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject3.txt
+ 
+[2018/06/21 16:28:54] 7967, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject4.txt
+[2018/06/21 16:28:54] 7967, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:28:54] 7967, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject4.txt
+ 
+[2018/06/21 16:28:54] 7967, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject5.txt
+[2018/06/21 16:28:54] 7967, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:28:54] 7967, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject5.txt
+ 
+[2018/06/21 16:28:54] 7967, "SFTPCollector.py", 151, dump_index : Dump Index : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject5.txt|^|1529566133|^|321
+[2018/06/21 16:28:54] 7967, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 16:28:58] 7967, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:28:58] 7967, "SFTPCollector.py", 210, run : SHUTDOWN : True
+[2018/06/21 16:28:58] 7967, "SFTPCollector.py", 151, dump_index : Dump Index : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject5.txt|^|1529566133|^|321
+[2018/06/21 16:28:58] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 283, in <module>
+
+    es.setDaemon(True)
+
+AttributeError: 'SFTPCollector' object has no attribute 'setDaemon'
+
+[2018/06/21 16:29:45] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 138, in load_index
+
+    f = open(os.path.join(self.index_path,self.index_name),'r')
+
+IOError: [Errno 2] No such file or directory: 'index/sftp1.info'
+
+[2018/06/21 16:29:45] 8314, "SFTPCollector.py", 202, run : Have no index
+[2018/06/21 16:29:45] 8314, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:29:45] 8314, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 16:29:45] 8314, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 16:29:45] 8314, "SFTPCollector.py", 218, run : Be down Number of files : 1
+[2018/06/21 16:29:45] 8314, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject0.txt
+[2018/06/21 16:29:45] 8314, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:29:45] 8314, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject0.txt
+ 
+[2018/06/21 16:29:45] 8314, "SFTPCollector.py", 151, dump_index : Dump Index : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject0.txt|^|1529566185|^|321
+[2018/06/21 16:29:45] 8314, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 16:29:50] 8314, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:29:50] 8314, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 16:29:50] 8314, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 16:29:50] 8314, "SFTPCollector.py", 218, run : Be down Number of files : 1
+[2018/06/21 16:29:50] 8314, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject1.txt
+[2018/06/21 16:29:50] 8314, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:29:50] 8314, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject1.txt
+ 
+[2018/06/21 16:29:50] 8314, "SFTPCollector.py", 151, dump_index : Dump Index : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject1.txt|^|1529566189|^|321
+[2018/06/21 16:29:50] 8314, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 16:29:55] 8314, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:29:56] 8314, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 16:29:56] 8314, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 16:29:56] 8314, "SFTPCollector.py", 218, run : Be down Number of files : 1
+[2018/06/21 16:29:56] 8314, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject2.txt
+[2018/06/21 16:29:56] 8314, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:29:56] 8314, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject2.txt
+ 
+[2018/06/21 16:29:56] 8314, "SFTPCollector.py", 151, dump_index : Dump Index : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject2.txt|^|1529566193|^|321
+[2018/06/21 16:29:56] 8314, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 16:30:01] 8314, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:30:01] 8314, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 16:30:01] 8314, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 16:30:01] 8314, "SFTPCollector.py", 218, run : Be down Number of files : 2
+[2018/06/21 16:30:01] 8314, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject3.txt
+[2018/06/21 16:30:01] 8314, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:30:01] 8314, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject3.txt
+ 
+[2018/06/21 16:30:01] 8314, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject4.txt
+[2018/06/21 16:30:01] 8314, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:30:01] 8314, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject4.txt
+ 
+[2018/06/21 16:30:01] 8314, "SFTPCollector.py", 151, dump_index : Dump Index : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject4.txt|^|1529566201|^|321
+[2018/06/21 16:30:01] 8314, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 16:30:06] 8314, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:30:06] 8314, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 16:30:06] 8314, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 16:30:06] 8314, "SFTPCollector.py", 218, run : Be down Number of files : 1
+[2018/06/21 16:30:06] 8314, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject5.txt
+[2018/06/21 16:30:06] 8314, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:30:06] 8314, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject5.txt
+ 
+[2018/06/21 16:30:06] 8314, "SFTPCollector.py", 151, dump_index : Dump Index : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject5.txt|^|1529566205|^|321
+[2018/06/21 16:30:06] 8314, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 16:30:11] 8314, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:30:11] 8314, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 16:30:11] 8314, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 16:30:12] 8314, "SFTPCollector.py", 218, run : Be down Number of files : 1
+[2018/06/21 16:30:12] 8314, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject6.txt
+[2018/06/21 16:30:12] 8314, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:30:12] 8314, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject6.txt
+ 
+[2018/06/21 16:30:12] 8314, "SFTPCollector.py", 151, dump_index : Dump Index : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject6.txt|^|1529566209|^|321
+[2018/06/21 16:30:12] 8314, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 16:30:17] 8314, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:30:17] 8314, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 16:30:17] 8314, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 16:30:17] 8314, "SFTPCollector.py", 218, run : Be down Number of files : 2
+[2018/06/21 16:30:17] 8314, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject7.txt
+[2018/06/21 16:30:17] 8314, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:30:17] 8314, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject7.txt
+ 
+[2018/06/21 16:30:17] 8314, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject8.txt
+[2018/06/21 16:30:17] 8314, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:30:17] 8314, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject8.txt
+ 
+[2018/06/21 16:30:17] 8314, "SFTPCollector.py", 151, dump_index : Dump Index : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject8.txt|^|1529566217|^|321
+[2018/06/21 16:30:17] 8314, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 16:30:22] 8314, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:30:22] 8314, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 16:30:22] 8314, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 16:30:22] 8314, "SFTPCollector.py", 218, run : Be down Number of files : 1
+[2018/06/21 16:30:22] 8314, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject9.txt
+[2018/06/21 16:30:22] 8314, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:30:22] 8314, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject9.txt
+ 
+[2018/06/21 16:30:22] 8314, "SFTPCollector.py", 151, dump_index : Dump Index : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject9.txt|^|1529566221|^|321
+[2018/06/21 16:30:22] 8314, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 16:31:01] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 138, in load_index
+
+    f = open(os.path.join(self.index_path,self.index_name),'r')
+
+IOError: [Errno 2] No such file or directory: 'index/sftp1.info'
+
+[2018/06/21 16:31:01] 8820, "SFTPCollector.py", 202, run : Have no index
+[2018/06/21 16:31:01] 8820, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:31:02] 8820, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 16:31:02] 8820, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 16:31:02] 8820, "SFTPCollector.py", 218, run : Be down Number of files : 1
+[2018/06/21 16:31:02] 8820, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject0.txt
+[2018/06/21 16:31:02] 8820, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:31:02] 8820, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject0.txt
+ 
+[2018/06/21 16:31:02] 8820, "SFTPCollector.py", 151, dump_index : Dump Index : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject0.txt|^|1529566261|^|321
+[2018/06/21 16:31:02] 8820, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 16:31:07] 8820, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:31:07] 8820, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 16:31:07] 8820, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 16:31:07] 8820, "SFTPCollector.py", 218, run : Be down Number of files : 5
+[2018/06/21 16:31:07] 8820, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject1.txt
+[2018/06/21 16:31:07] 8820, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:31:07] 8820, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject1.txt
+ 
+[2018/06/21 16:31:07] 8820, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject2.txt
+[2018/06/21 16:31:07] 8820, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:31:07] 8820, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject2.txt
+ 
+[2018/06/21 16:31:07] 8820, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject3.txt
+[2018/06/21 16:31:07] 8820, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:31:07] 8820, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject3.txt
+ 
+[2018/06/21 16:31:07] 8820, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject4.txt
+[2018/06/21 16:31:07] 8820, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:31:07] 8820, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject4.txt
+ 
+[2018/06/21 16:31:07] 8820, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject5.txt
+[2018/06/21 16:31:07] 8820, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:31:07] 8820, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject5.txt
+ 
+[2018/06/21 16:31:07] 8820, "SFTPCollector.py", 151, dump_index : Dump Index : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject5.txt|^|1529566266|^|321
+[2018/06/21 16:31:07] 8820, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/21 16:31:12] 8820, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/21 16:31:12] 8820, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/21 16:31:12] 8820, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/21 16:31:12] 8820, "SFTPCollector.py", 218, run : Be down Number of files : 4
+[2018/06/21 16:31:12] 8820, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject6.txt
+[2018/06/21 16:31:12] 8820, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:31:12] 8820, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject6.txt
+ 
+[2018/06/21 16:31:12] 8820, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject7.txt
+[2018/06/21 16:31:12] 8820, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:31:12] 8820, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject7.txt
+ 
+[2018/06/21 16:31:12] 8820, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject8.txt
+[2018/06/21 16:31:12] 8820, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:31:12] 8820, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject8.txt
+ 
+[2018/06/21 16:31:12] 8820, "SFTPCollector.py", 159, fileTransport : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject9.txt
+[2018/06/21 16:31:12] 8820, "SFTPCollector.py", 166, fileTransport : tmp/msf/MSF_V2/txt
+[2018/06/21 16:31:12] 8820, "SFTPCollector.py", 177, fileTransport : Std out : file://tmp/msf/MSF_V2/txt/testsubject9.txt
+ 
+[2018/06/21 16:31:12] 8820, "SFTPCollector.py", 151, dump_index : Dump Index : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject9.txt|^|1529566270|^|321
+[2018/06/21 16:31:12] 8820, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================

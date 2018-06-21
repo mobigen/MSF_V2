@@ -42,3 +42,5 @@ $ nosetests -v --with-coverage --with-doctest --cover-erase --exe  --cover-packa
 $ pylint --disable=C --disable=E0602 --extension-pkg-whitelist=MySQLdb,cx_Oracle --generated-members=message,code,ProgrammingError,OperationalError --msg-template='{path}:{line}:[{msg_id}({symbol}),{obj}]{msg}' *.py
 ```
 
+## Example
+1. example.sh를 실행시키면 3초 동안 작동하는걸 볼 수 있습니다. 해당 테스트셋의 config는 1초마다 STDOUT을 출력하는것으로 되어있습니다.

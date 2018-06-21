@@ -24,6 +24,7 @@ file://<저장된 FilePath>
 ## Configuration
 
 **IrisSplitter.conf**
+
 |Section  |Option          |Range   |Description|
 |:-------:|:--------------:|--------|------------------------------------------------|
 |Log      |logfilepath     |(string)| log가 저장될 경로                              |
@@ -52,3 +53,9 @@ $ nosetests -v --with-coverage --with-doctest --cover-erase --exe  --cover-packa
 ## How to lint (Static test)
 ```Bash
 $ pylint --disable=C --disable=E0602 --msg-template='{path}:{line}:[{msg_id}({symbol}),{obj}]{msg}' *.py
+```
+
+## Example
+1. 우선 tmp 디렉토리를 비워주세요.
+2. 해당 모듈을 실행시키고 STDIN으로 file://data/MSF_TEST-0-20180616000000.dat 을 주었을때 tmp 디렉토리에 어떤 결과들이 생성되는지 확인하세요.
+3. 로그를 확인하세요.
