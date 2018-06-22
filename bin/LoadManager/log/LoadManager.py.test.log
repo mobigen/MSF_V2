@@ -1,0 +1,241 @@
+[2018/06/22 17:32:13] 55018, "LoadManager.py", 200, <module> : LoadManager.py Started...
+[2018/06/22 17:32:17] 55018, "LoadManager.py", 147, main : [STDIN] file://conf/TEST_2.conf
+[2018/06/22 17:32:17] 55018, "LoadManager.py", 63, getDBMgr : Selected source DBMS : ORACLE
+[2018/06/22 17:32:17] 55018, "LoadManager.py", 75, getDBMgr : Selected destination DBMS : IRIS
+[2018/06/22 17:32:22] 55018, "DBMgr.py", 306, unload : OracleMgr Unloading time : 5.427
+
+[2018/06/22 17:32:22] 55018, "IrisMgr.py", 131, load : IrisMgr Loading time : 0.001
+
+[2018/06/22 17:32:22] 55018, "LoadManager.py", 177, main : [STDOUT] file://conf/TEST_2.conf
+[2018/06/22 17:32:22] 55018, "LoadManager.py", 184, main : [STDERR] file://conf/TEST_2.conf
+[2018/06/22 17:32:53] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "LoadManager.py", line 203, in <module>
+
+    main()
+
+  File "LoadManager.py", line 144, in main
+
+    sys.stderr.write("conf_path(%S) does not exists.\n" % confPath)
+
+ValueError: unsupported format character 'S' (0x53) at index 11
+
+[2018/06/22 17:32:55] 55216, "LoadManager.py", 200, <module> : LoadManager.py Started...
+[2018/06/22 17:32:59] 55216, "LoadManager.py", 147, main : [STDIN] file://conf/TEST_2.conf
+[2018/06/22 17:32:59] 55216, "LoadManager.py", 63, getDBMgr : Selected source DBMS : ORACLE
+[2018/06/22 17:32:59] 55216, "LoadManager.py", 75, getDBMgr : Selected destination DBMS : IRIS
+[2018/06/22 17:33:04] 55216, "DBMgr.py", 306, unload : OracleMgr Unloading time : 5.434
+
+[2018/06/22 17:33:04] 55216, "IrisMgr.py", 131, load : IrisMgr Loading time : 0.001
+
+[2018/06/22 17:33:04] 55216, "LoadManager.py", 177, main : [STDOUT] file://conf/TEST_2.conf
+[2018/06/22 17:33:04] 55216, "LoadManager.py", 184, main : [STDERR] file://conf/TEST_2.conf
+[2018/06/22 17:35:58] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "LoadManager.py", line 203, in <module>
+
+    main()
+
+  File "LoadManager.py", line 144, in main
+
+    sys.stderr.write("conf_path(%S) does not exists.\n" % confPath)
+
+ValueError: unsupported format character 'S' (0x53) at index 11
+
+[2018/06/22 17:35:59] 56090, "LoadManager.py", 200, <module> : LoadManager.py Started...
+[2018/06/22 17:36:03] 56090, "LoadManager.py", 147, main : [STDIN] file://conf/TEST_2.conf
+[2018/06/22 17:36:03] 56090, "LoadManager.py", 63, getDBMgr : Selected source DBMS : ORACLE
+[2018/06/22 17:36:03] 56090, "LoadManager.py", 75, getDBMgr : Selected destination DBMS : IRIS
+[2018/06/22 17:36:08] 56090, "DBMgr.py", 306, unload : OracleMgr Unloading time : 5.448
+
+[2018/06/22 17:36:08] 56090, "LoadManager.py", 184, main : [STDERR] file://conf/TEST_2.conf
+[2018/06/22 17:36:08] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "LoadManager.py", line 203, in <module>
+
+    main()
+
+  File "LoadManager.py", line 165, in main
+
+    srcDBMgr.unload(sql, destDBMgr.isSplit())
+
+  File "/home/msf/MSF_V2/bin/LoadManager/DBMgr.py", line 253, in unload
+
+    (conn, cur) = self.execute(sql)
+
+  File "/home/msf/MSF_V2/bin/LoadManager/OracleMgr.py", line 57, in execute
+
+    cur.execute(sql)
+
+DatabaseError: ORA-00911: invalid character
+
+[2018/06/22 17:36:28] 56244, "LoadManager.py", 200, <module> : LoadManager.py Started...
+[2018/06/22 17:36:30] 56244, "LoadManager.py", 147, main : [STDIN] file://conf/TEST_2.conf
+[2018/06/22 17:36:30] 56244, "LoadManager.py", 63, getDBMgr : Selected source DBMS : ORACLE
+[2018/06/22 17:36:30] 56244, "LoadManager.py", 75, getDBMgr : Selected destination DBMS : IRIS
+[2018/06/22 17:36:35] 56244, "DBMgr.py", 306, unload : OracleMgr Unloading time : 5.438
+
+[2018/06/22 17:36:35] 56244, "IrisMgr.py", 131, load : IrisMgr Loading time : 0.001
+
+[2018/06/22 17:36:35] 56244, "LoadManager.py", 177, main : [STDOUT] file://conf/TEST_2.conf
+[2018/06/22 17:36:35] 56244, "LoadManager.py", 184, main : [STDERR] file://conf/TEST_2.conf
+[2018/06/22 17:38:30] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "LoadManager.py", line 203, in <module>
+
+    main()
+
+  File "LoadManager.py", line 144, in main
+
+    sys.stderr.write("conf_path(%S) does not exists.\n" % confPath)
+
+ValueError: unsupported format character 'S' (0x53) at index 11
+
+[2018/06/22 17:39:20] 56981, "LoadManager.py", 200, <module> : LoadManager.py Started...
+[2018/06/22 17:39:23] 56981, "LoadManager.py", 147, main : [STDIN] file://conf/TEST_2.conf
+[2018/06/22 17:39:23] 56981, "LoadManager.py", 63, getDBMgr : Selected source DBMS : ORACLE
+[2018/06/22 17:39:23] 56981, "LoadManager.py", 75, getDBMgr : Selected destination DBMS : IRIS
+[2018/06/22 17:39:28] 56981, "DBMgr.py", 307, unload : OracleMgr Unloading time : 5.417
+
+[2018/06/22 17:39:28] 56981, "IrisMgr.py", 131, load : IrisMgr Loading time : 0.001
+
+[2018/06/22 17:39:28] 56981, "LoadManager.py", 177, main : [STDOUT] file://conf/TEST_2.conf
+[2018/06/22 17:39:28] 56981, "LoadManager.py", 184, main : [STDERR] file://conf/TEST_2.conf
+[2018/06/22 17:39:35] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "LoadManager.py", line 203, in <module>
+
+    main()
+
+  File "LoadManager.py", line 144, in main
+
+    sys.stderr.write("conf_path(%S) does not exists.\n" % confPath)
+
+ValueError: unsupported format character 'S' (0x53) at index 11
+
+[2018/06/22 17:39:46] 57109, "LoadManager.py", 200, <module> : LoadManager.py Started...
+[2018/06/22 17:39:51] 57109, "LoadManager.py", 147, main : [STDIN] file://conf/TEST_2.conf
+[2018/06/22 17:39:51] 57109, "LoadManager.py", 63, getDBMgr : Selected source DBMS : ORACLE
+[2018/06/22 17:39:51] 57109, "LoadManager.py", 75, getDBMgr : Selected destination DBMS : IRIS
+[2018/06/22 17:39:56] 57109, "DBMgr.py", 307, unload : OracleMgr Unloading time : 5.434
+
+[2018/06/22 17:39:56] 57109, "IrisMgr.py", 131, load : IrisMgr Loading time : 0.001
+
+[2018/06/22 17:39:56] 57109, "LoadManager.py", 177, main : [STDOUT] file://conf/TEST_2.conf
+[2018/06/22 17:39:56] 57109, "LoadManager.py", 184, main : [STDERR] file://conf/TEST_2.conf
+[2018/06/22 17:40:24] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "LoadManager.py", line 203, in <module>
+
+    main()
+
+  File "LoadManager.py", line 144, in main
+
+    sys.stderr.write("conf_path(%S) does not exists.\n" % confPath)
+
+ValueError: unsupported format character 'S' (0x53) at index 11
+
+[2018/06/22 17:40:44] 57337, "LoadManager.py", 200, <module> : LoadManager.py Started...
+[2018/06/22 17:40:48] 57337, "LoadManager.py", 147, main : [STDIN] file://conf/TEST_2.conf
+[2018/06/22 17:40:48] 57337, "LoadManager.py", 63, getDBMgr : Selected source DBMS : ORACLE
+[2018/06/22 17:40:48] 57337, "LoadManager.py", 75, getDBMgr : Selected destination DBMS : IRIS
+[2018/06/22 17:40:53] 57337, "DBMgr.py", 307, unload : OracleMgr Unloading time : 5.440
+
+[2018/06/22 17:40:53] 57337, "IrisMgr.py", 131, load : IrisMgr Loading time : 0.001
+
+[2018/06/22 17:40:53] 57337, "LoadManager.py", 177, main : [STDOUT] file://conf/TEST_2.conf
+[2018/06/22 17:40:53] 57337, "LoadManager.py", 184, main : [STDERR] file://conf/TEST_2.conf
+[2018/06/22 17:40:56] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "LoadManager.py", line 203, in <module>
+
+    main()
+
+  File "LoadManager.py", line 144, in main
+
+    sys.stderr.write("conf_path(%S) does not exists.\n" % confPath)
+
+ValueError: unsupported format character 'S' (0x53) at index 11
+
+[2018/06/22 17:41:09] 57432, "LoadManager.py", 200, <module> : LoadManager.py Started...
+[2018/06/22 17:41:10] 57432, "LoadManager.py", 147, main : [STDIN] file://conf/TEST_2.conf
+[2018/06/22 17:41:10] 57432, "LoadManager.py", 63, getDBMgr : Selected source DBMS : ORACLE
+[2018/06/22 17:41:10] 57432, "LoadManager.py", 75, getDBMgr : Selected destination DBMS : IRIS
+[2018/06/22 17:41:16] 57432, "DBMgr.py", 307, unload : OracleMgr Unloading time : 5.414
+
+[2018/06/22 17:41:16] 57432, "IrisMgr.py", 131, load : IrisMgr Loading time : 0.001
+
+[2018/06/22 17:41:16] 57432, "LoadManager.py", 177, main : [STDOUT] file://conf/TEST_2.conf
+[2018/06/22 17:41:16] 57432, "LoadManager.py", 184, main : [STDERR] file://conf/TEST_2.conf
+[2018/06/22 17:41:17] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "LoadManager.py", line 203, in <module>
+
+    main()
+
+  File "LoadManager.py", line 144, in main
+
+    sys.stderr.write("conf_path(%S) does not exists.\n" % confPath)
+
+ValueError: unsupported format character 'S' (0x53) at index 11
+
+[2018/06/22 17:42:32] 57772, "LoadManager.py", 200, <module> : LoadManager.py Started...
+[2018/06/22 17:42:34] 57772, "LoadManager.py", 147, main : [STDIN] file://conf/TEST_2.conf
+[2018/06/22 17:42:34] 57772, "LoadManager.py", 63, getDBMgr : Selected source DBMS : ORACLE
+[2018/06/22 17:42:34] 57772, "LoadManager.py", 75, getDBMgr : Selected destination DBMS : IRIS
+[2018/06/22 17:42:39] 57772, "DBMgr.py", 307, unload : OracleMgr Unloading time : 5.446
+
+[2018/06/22 17:42:39] 57772, "IrisMgr.py", 131, load : IrisMgr Loading time : 0.001
+
+[2018/06/22 17:42:39] 57772, "LoadManager.py", 177, main : [STDOUT] file://conf/TEST_2.conf
+[2018/06/22 17:42:39] 57772, "LoadManager.py", 184, main : [STDERR] file://conf/TEST_2.conf
+[2018/06/22 17:42:42] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "LoadManager.py", line 203, in <module>
+
+    main()
+
+  File "LoadManager.py", line 144, in main
+
+    sys.stderr.write("conf_path(%S) does not exists.\n" % confPath)
+
+ValueError: unsupported format character 'S' (0x53) at index 11
+
+[2018/06/22 17:56:51] 61331, "LoadManager.py", 200, <module> : LoadManager.py Started...
+[2018/06/22 17:56:56] 61331, "LoadManager.py", 147, main : [STDIN] file://conf/TEST_2.conf
+[2018/06/22 17:56:56] 61331, "LoadManager.py", 63, getDBMgr : Selected source DBMS : ORACLE
+[2018/06/22 17:56:56] 61331, "LoadManager.py", 75, getDBMgr : Selected destination DBMS : IRIS
+[2018/06/22 17:57:01] 61331, "DBMgr.py", 306, unload : OracleMgr Unloading time : 5.438
+
+[2018/06/22 17:57:01] 61331, "IrisMgr.py", 124, load : LOAD_SEMA.acquire()
+[2018/06/22 17:57:01] 61331, "IrisMgr.py", 124, load : LOAD_SEMA.acquire()
+[2018/06/22 17:57:01] 61331, "IrisMgr.py", 124, load : LOAD_SEMA.acquire()
+[2018/06/22 17:57:01] 61331, "IrisMgr.py", 131, load : IrisMgr Loading time : 0.003
+
+[2018/06/22 17:57:01] 61331, "LoadManager.py", 177, main : [STDOUT] file://conf/TEST_2.conf
+[2018/06/22 17:57:01] 61331, "LoadManager.py", 184, main : [STDERR] file://conf/TEST_2.conf
+[2018/06/22 17:57:02] 61331, "IrisMgr.py", 68, run : LOAD_SEMA.release()
+[2018/06/22 17:57:02] 61331, "IrisMgr.py", 68, run : LOAD_SEMA.release()
+[2018/06/22 17:57:03] 61331, "IrisMgr.py", 68, run : LOAD_SEMA.release()
+[2018/06/22 17:57:29] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "LoadManager.py", line 203, in <module>
+
+    main()
+
+  File "LoadManager.py", line 144, in main
+
+    sys.stderr.write("conf_path(%S) does not exists.\n" % confPath)
+
+ValueError: unsupported format character 'S' (0x53) at index 11
+
