@@ -7,6 +7,7 @@ import ConfigParser
 import time
 import datetime
 import os
+import shutil
 
 import Mobigen.Common.Log as Log
 import API.M6 as M6
@@ -74,6 +75,18 @@ class IrisLoader():
             self.FILE_REMOVE = self.PARSER.get('IRIS', 'FILE_REMOVE')
             self.KEY_FILTER = self.PARSER.get('IRIS', 'KEY_FILTER')
             self.TIMEOUT = self.PARSER.getint('IRIS', 'TIMEOUT')
+            self.ERROR_PATH = self.PARSER.get('IRIS', 'ERROR_PATH')
+
+            if os.path.exists(self.ERROR_PATH):
+                if not os.path.isdir(self.ERROR_PATH):
+                    __LOG__.Trace("ERROR_PATH on ConfigFile already exists \
+                                    as kind of file not directory")
+                    sys.exit()
+            else:
+                try:
+                    os.makedirs(self.ERROR_PATH)
+                except:
+                    __LOG__.Exception()
 
             if self.PARSER.has_option('IRIS', 'SEPARATE'):
                 self.SEPARATE = self.PARSER.get('IRIS', 'SEPARATE')
@@ -106,6 +119,17 @@ class IrisLoader():
             __LOG__.Exception()
             sys.exit()
 
+    def isolate_file(self, strFilePath):
+        try:
+            section_path = os.path.join(self.ERROR_PATH, self.SECTION)
+            if not os.path.exists(section_path):
+                os.makedirs(section_path)
+            errfile_path = os.path.join(section_path, os.path.basename(strFilePath))
+            shutil.copy(strFilePath, errfile_path)
+            __LOG__.Trace("Copy dat-file for error to: %s" % errfile_path)
+        except:
+            __LOG__.Exception()
+
     def run(self):
         __LOG__.Trace('Start IrisLoaer!!!!!')
 
@@ -126,26 +150,26 @@ class IrisLoader():
                 strFilePath = strFilePath[7:]
                 __LOG__.Trace(strFilePath)
 
-				#ex -> KEY_PARTITION.dat
-				Key = os.path.basename(strFilePath).split('.')[0].split('_')[0]
+                #ex -> KEY_PARTITION.dat
+                Key = os.path.basename(strFilePath).split('.')[0].split('_')[0]
                 Partition = os.path.basename(strFilePath).split('.')[0].split('_')[1]
                 CtlPath = self.CTL_PATH
 
-				#키 필터
+                #키 필터
                 if self.KEY_FILTER != None :
                     if not Key in self.KEY_FILTER :
                         sys.stderr.write("\n")
                         sys.stderr.flush()
                         continue
 
-				#파일 존재 확인
+                #파일 존재 확인
                 if not os.path.exists(strFilePath) :
                     __LOG__.Trace('Error Path [%s]' % strFilePath)
                     sys.stderr.write("\n")
                     sys.stderr.flush()
                     continue
 
-				#파일 사이즈 확인
+                #파일 사이즈 확인
                 if  os.path.getsize(strFilePath) == 0 :
                     __LOG__.Trace('File Size Error [%s]' % strFilePath)
 
@@ -170,9 +194,9 @@ class IrisLoader():
                 #IRIS 접속
                 conn = M6.Connection(self.IRIS_IP,
                                      self.IRIS_ID,
-                                     self.IRIS_PWD,
-                                     Direct = True)
-				c = conn.Cursor()
+                                     self.IRIS_PWD
+                                    )
+                c = conn.Cursor()
                 c.SetFieldSep(self.SEPARATE)
                 c.SetRecordSep('\n')
                 c.SetTimeout(self.TIMEOUT) #60초 TimeOut시간 줌
@@ -180,7 +204,12 @@ class IrisLoader():
                 __LOG__.Trace('%s %s %s %s %s' % \
                         (self.TABLE, Key, Partition, CtlPath, strFilePath))
 
-                strResult = c.Load(self.TABLE, Key, Partition, CtlPath, strFilePath)
+                try:
+                    strResult = c.Load(self.TABLE, Key, Partition, CtlPath, strFilePath)
+                except:
+                    __LOG__.Exception()
+                    self.isolate_file(strFilePath)
+
                 if strResult[0:3] == '+OK':
                     __LOG__.Trace(strResult)
 
@@ -197,15 +226,15 @@ class IrisLoader():
                                  Partition,
                                  strFilePath.split('.')[1]))
                         sys.stdout.flush()
-
                 else:
                     if len(strResult) > 1000:
                         strResult = strResult[:1000]
                     __LOG__.Trace(strResult)
+                    self.isolate_file(strFilePath)
 
                 c.Close()
                 conn.close()
-				sys.stderr.write('\n')
+                sys.stderr.write('\n')
                 sys.stderr.flush()
             except:
                 __LOG__.Exception()
