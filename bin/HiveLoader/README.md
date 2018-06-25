@@ -33,13 +33,13 @@ $ python <ConfigFilePath>
 |        | USERNAME      | (string)  | 접속할 HDFS user name                         |
 |        | DATABASE      | (string)  | 접속할 Hive Database                          |
 
-##Prerequisites
+## Prerequisites
 - Python == 2.7
 - python-devel
 - cyrus-sasl
 - cyrus-sasl-devel
 
-##How to unit test (Dynamic test)
+## How to unit test (Dynamic test)
 ```Bash
 $ nosetests -v --with-coverage --with-doctest --cover-erase --exe  --cover-package=. tests/*.py
 ```
