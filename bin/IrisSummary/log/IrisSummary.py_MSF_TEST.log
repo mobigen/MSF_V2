@@ -1043,3 +1043,58 @@ UnboundLocalError: local variable 'lrec' referenced before assignment
 [2018/06/19 11:33:17] 6141, "IrisSummary.py", 269, loop : Require Prefix 'noti://' : 
 [2018/06/19 11:33:17] 6141, "IrisSummary.py", 327, loop : stop loop...
 [2018/06/19 11:33:17] 6141, "IrisSummary.py", 349, main : stop process
+[2018/06/25 09:28:05] 12289, "IrisSummary.py", 331, main : strt process
+[2018/06/25 09:28:05] 12289, "IrisSummary.py", 337, main : ixml conf/IS.xml
+[2018/06/25 09:28:05] 12289, "IrisSummary.py", 338, main : idir tmp
+[2018/06/25 09:28:05] 12289, "IrisSummary.py", 254, loop : strt loop...
+[2018/06/25 09:28:18] 12289, "IrisSummary.py", 20, signal_handler : Catch Signal : 2
+[2018/06/25 09:28:18] 12289, "IrisSummary.py", 265, loop : read 
+[2018/06/25 09:28:18] 12289, "IrisSummary.py", 268, loop : Require Prefix 'noti://' : 
+[2018/06/25 09:28:18] 12289, "IrisSummary.py", 326, loop : stop loop...
+[2018/06/25 09:28:18] 12289, "IrisSummary.py", 348, main : stop process
+[2018/06/25 09:29:08] 12572, "IrisSummary.py", 331, main : strt process
+[2018/06/25 09:29:08] 12572, "IrisSummary.py", 337, main : ixml conf/IS.xml
+[2018/06/25 09:29:08] 12572, "IrisSummary.py", 338, main : idir tmp
+[2018/06/25 09:29:08] 12572, "IrisSummary.py", 254, loop : strt loop...
+[2018/06/25 09:29:15] 12572, "IrisSummary.py", 265, loop : read noti://20180625000000
+[2018/06/25 09:29:15] 12572, "IrisSummary.py", 296, loop : summ stime : 201806250000  summ name : MSF_TEST
+[2018/06/25 09:29:15] 12572, "IrisSummary.py", 190, summ : 20180618000000 <= PARTITION AND PARTITION <= 20180625000000  where  20180618012000 <= TIMESTAMP AND TIMESTAMP <= 20180625000000
+[2018/06/25 09:29:15] 12572, "IrisSummary.py", 201, summ :  ** SQL ** 
+/*+ LOCATION ( '20180618000000' <= PARTITION AND PARTITION < '20180625000000'  ) */
+
+		 SELECT
+                 k, p, income, expenses
+                 FROM MSF_TEST_TABLE_MAIN;
+                 
+[2018/06/25 09:29:15] 12572, "IrisSummary.py", 217, summ : lres length = 0
+[2018/06/25 09:29:15] 12572, "IrisSummary.py", 247, summ : lrec length = 0
+[2018/06/25 09:29:15] 12572, "IrisSummary.py", 319, loop : Std OUT : tmp/MSF_TEST-0-20180625000000.dat  Processing Time : 0.18
+[2018/06/25 09:29:15] 12572, "IrisSummary.py", 321, loop : Total Processing Time : 0.18
+[2018/06/25 09:29:16] 12572, "IrisSummary.py", 20, signal_handler : Catch Signal : 2
+[2018/06/25 09:29:16] 12572, "IrisSummary.py", 265, loop : read 
+[2018/06/25 09:29:16] 12572, "IrisSummary.py", 268, loop : Require Prefix 'noti://' : 
+[2018/06/25 09:29:16] 12572, "IrisSummary.py", 326, loop : stop loop...
+[2018/06/25 09:29:16] 12572, "IrisSummary.py", 348, main : stop process
+[2018/06/25 09:30:06] 12883, "IrisSummary.py", 331, main : strt process
+[2018/06/25 09:30:06] 12883, "IrisSummary.py", 337, main : ixml conf/IS.xml
+[2018/06/25 09:30:06] 12883, "IrisSummary.py", 338, main : idir tmp
+[2018/06/25 09:30:06] 12883, "IrisSummary.py", 254, loop : strt loop...
+[2018/06/25 09:30:11] 12883, "IrisSummary.py", 265, loop : read noti://20180616000000
+[2018/06/25 09:30:11] 12883, "IrisSummary.py", 296, loop : summ stime : 201806160000  summ name : MSF_TEST
+[2018/06/25 09:30:11] 12883, "IrisSummary.py", 190, summ : 20180609000000 <= PARTITION AND PARTITION <= 20180616000000  where  20180609012000 <= TIMESTAMP AND TIMESTAMP <= 20180616000000
+[2018/06/25 09:30:11] 12883, "IrisSummary.py", 201, summ :  ** SQL ** 
+/*+ LOCATION ( '20180609000000' <= PARTITION AND PARTITION < '20180616000000'  ) */
+
+		 SELECT
+                 k, p, income, expenses
+                 FROM MSF_TEST_TABLE_MAIN;
+                 
+[2018/06/25 09:30:11] 12883, "IrisSummary.py", 217, summ : lres length = 10
+[2018/06/25 09:30:11] 12883, "IrisSummary.py", 247, summ : lrec length = 10
+[2018/06/25 09:30:11] 12883, "IrisSummary.py", 319, loop : Std OUT : tmp/MSF_TEST-0-20180616000000.dat  Processing Time : 0.21
+[2018/06/25 09:30:11] 12883, "IrisSummary.py", 321, loop : Total Processing Time : 0.21
+[2018/06/25 09:30:12] 12883, "IrisSummary.py", 20, signal_handler : Catch Signal : 2
+[2018/06/25 09:30:13] 12883, "IrisSummary.py", 265, loop : read 
+[2018/06/25 09:30:13] 12883, "IrisSummary.py", 268, loop : Require Prefix 'noti://' : 
+[2018/06/25 09:30:13] 12883, "IrisSummary.py", 326, loop : stop loop...
+[2018/06/25 09:30:13] 12883, "IrisSummary.py", 348, main : stop process

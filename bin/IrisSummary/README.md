@@ -87,3 +87,8 @@ $ nosetests -v --with-coverage --with-doctest --cover-erase --exe  --cover-packa
 ```Bash
 $ pylint --disable=C --disable=E0602 --extension-pkg-whitelist=MySQLdb,cx_Oracle --generated-members=message,code,ProgrammingError,OperationalError --msg-template='{path}:{line}:[{msg_id}({symbol}),{obj}]{msg}' *.py
 ```
+
+## Example
+1. 우선 Config와 일치하는 IRIS가 준비되어 있어야 합니다. 그리고 MSF_TEST_TABLE_MAIN 테이블이 있다면 지워주세요.
+2. Example.sh 를 실행시키면 우선 테이블을 만들게 되고 Config의 조건에 맞는 쿼리를 실행시키게 되고 결과를 tmp 디렉토리에 생성하게 됩니다.
+3. IRIS에서 생성된 테이블을 확인하고 tmp 디렉토리에 어떤 파일이 생성됬는지 확인하세요.
