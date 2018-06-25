@@ -13050,3 +13050,18 @@
 [2018/06/21 17:50:05] 29712, "Producer.py", 162, run : STD IN : 
 [2018/06/21 17:50:05] 29712, "Producer.py", 166, run : Unmatched prefix
 [2018/06/21 17:50:05] 29712, "Producer.py", 162, run : STD IN : 
+[2018/06/25 17:03:35] 9503, "Producer.py", 195, main : ---------------TEST1 Producer Start!-----------------
+[2018/06/25 17:03:35] 9503, "Producer.py", 162, run : STD IN : 
+
+[2018/06/25 17:03:35] 9503, "Producer.py", 166, run : Unmatched prefix
+[2018/06/25 17:03:35] 9503, "Producer.py", 162, run : STD IN : 
+
+[2018/06/25 17:03:35] 9503, "Producer.py", 166, run : Unmatched prefix
+[2018/06/25 17:03:37] 9503, "Producer.py", 17, Shutdown : Recv Signal (2)
+[2018/06/25 17:03:37] 9503, "Producer.py", 162, run : STD IN : 
+
+[2018/06/25 17:03:37] 9503, "Producer.py", 166, run : Unmatched prefix
+[2018/06/25 17:03:37] 9503, "OracleHandler.py", 42, disconnect : DB Disconnect!!
+[2018/06/25 17:06:31] 10404, "Producer.py", 17, Shutdown : Recv Signal (2)
+[2018/06/25 17:06:31] 10404, "Producer.py", 195, main : ---------------TEST1 Producer Start!-----------------
+[2018/06/25 17:06:31] 10404, "OracleHandler.py", 42, disconnect : DB Disconnect!!

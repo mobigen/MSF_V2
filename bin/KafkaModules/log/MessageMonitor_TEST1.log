@@ -386,3 +386,171 @@ RuntimeError: Consumer closed
 [2018/06/21 17:51:36] 30250, "Consumer.py", 61, polling : END
 [2018/06/21 17:51:36] 30250, "MessageMonitor.py", 178, run : Dump File : dump/TEST1/20180621000000_0.csv
 [2018/06/21 17:51:36] 30250, "Consumer.py", 51, polling : TEST1 [0] reached end at offset 48
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 0 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : START|^|20180618000000
+|^|0
+[2018/06/25 17:04:16] 9758, "MessageMonitor.py", 133, save_index : Save Index : dump/TEST1/20180618000000_0.csv
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 1 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 10|ACCOUNTING|NEW YORK
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 2 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 20|RESEARCH|DALLAS
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 3 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 30|SALES|CHICAGO
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 4 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 40|OPERATIONS|BOSTON
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 5 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : END
+[2018/06/25 17:04:16] 9758, "MessageMonitor.py", 178, run : Dump File : dump/TEST1/20180618000000_0.csv
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 6 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : START|^|20180621170600
+|^|0
+[2018/06/25 17:04:16] 9758, "MessageMonitor.py", 133, save_index : Save Index : dump/TEST1/20180621170600_0.csv
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 7 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 10|ACCOUNTING|NEW YORK
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 8 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 20|RESEARCH|DALLAS
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 9 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 30|SALES|CHICAGO
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 10 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 40|OPERATIONS|BOSTON
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 11 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : END
+[2018/06/25 17:04:16] 9758, "MessageMonitor.py", 178, run : Dump File : dump/TEST1/20180621170600_0.csv
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 12 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : START|^|20180621173700
+|^|0
+[2018/06/25 17:04:16] 9758, "MessageMonitor.py", 133, save_index : Save Index : dump/TEST1/20180621173700_0.csv
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 13 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 10|ACCOUNTING|NEW YORK
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 14 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 20|RESEARCH|DALLAS
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 15 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 30|SALES|CHICAGO
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 16 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 40|OPERATIONS|BOSTON
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 17 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : END
+[2018/06/25 17:04:16] 9758, "MessageMonitor.py", 178, run : Dump File : dump/TEST1/20180621173700_0.csv
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 18 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : START|^|20180621173800
+|^|0
+[2018/06/25 17:04:16] 9758, "MessageMonitor.py", 133, save_index : Save Index : dump/TEST1/20180621173800_0.csv
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 19 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 10|ACCOUNTING|NEW YORK
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 20 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 20|RESEARCH|DALLAS
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 21 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 30|SALES|CHICAGO
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 22 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 40|OPERATIONS|BOSTON
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 23 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : END
+[2018/06/25 17:04:16] 9758, "MessageMonitor.py", 178, run : Dump File : dump/TEST1/20180621173800_0.csv
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 24 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : START|^|20180621000000
+|^|0
+[2018/06/25 17:04:16] 9758, "MessageMonitor.py", 133, save_index : Save Index : dump/TEST1/20180621000000_0.csv
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 25 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 10|ACCOUNTING|NEW YORK
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 26 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 20|RESEARCH|DALLAS
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 27 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 30|SALES|CHICAGO
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 28 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 40|OPERATIONS|BOSTON
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 29 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : END
+[2018/06/25 17:04:16] 9758, "MessageMonitor.py", 178, run : Dump File : dump/TEST1/20180621000000_0.csv
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 30 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : START|^|20180621000000
+|^|0
+[2018/06/25 17:04:16] 9758, "MessageMonitor.py", 133, save_index : Save Index : dump/TEST1/20180621000000_0.csv
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 31 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 10|ACCOUNTING|NEW YORK
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 32 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 20|RESEARCH|DALLAS
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 33 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 30|SALES|CHICAGO
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 34 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 40|OPERATIONS|BOSTON
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 35 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : END
+[2018/06/25 17:04:16] 9758, "MessageMonitor.py", 178, run : Dump File : dump/TEST1/20180621000000_0.csv
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 36 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : START|^|20180621000000
+|^|0
+[2018/06/25 17:04:16] 9758, "MessageMonitor.py", 133, save_index : Save Index : dump/TEST1/20180621000000_0.csv
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 37 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 10|ACCOUNTING|NEW YORK
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 38 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 20|RESEARCH|DALLAS
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 39 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 30|SALES|CHICAGO
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 40 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 40|OPERATIONS|BOSTON
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 41 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : END
+[2018/06/25 17:04:16] 9758, "MessageMonitor.py", 178, run : Dump File : dump/TEST1/20180621000000_0.csv
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 42 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : START|^|20180621000000
+|^|0
+[2018/06/25 17:04:16] 9758, "MessageMonitor.py", 133, save_index : Save Index : dump/TEST1/20180621000000_0.csv
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 43 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 10|ACCOUNTING|NEW YORK
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 44 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 20|RESEARCH|DALLAS
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 45 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 30|SALES|CHICAGO
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 46 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : 40|OPERATIONS|BOSTON
+[2018/06/25 17:04:16] 9758, "Consumer.py", 60, polling : TEST1 [0] at offset 47 with key None:
+[2018/06/25 17:04:16] 9758, "Consumer.py", 61, polling : END
+[2018/06/25 17:04:16] 9758, "MessageMonitor.py", 178, run : Dump File : dump/TEST1/20180621000000_0.csv
+[2018/06/25 17:04:16] 9758, "Consumer.py", 51, polling : TEST1 [0] reached end at offset 48
+[2018/06/25 17:04:18] 9758, "Consumer.py", 65, polling : Aborted by user
+
+[2018/06/25 17:04:18] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "MessageMonitor.py", line 203, in <module>
+
+    main()
+
+  File "MessageMonitor.py", line 199, in main
+
+    MessageMonitor(module, section, cfgfile).run()
+
+  File "MessageMonitor.py", line 166, in run
+
+    msg = self.Consumer.polling(1)
+
+  File "/home/msf/MSF_V2/bin/KafkaModules/Consumer.py", line 44, in polling
+
+    msg = self.c.poll(timeout)
+
+RuntimeError: Consumer closed
+
+[2018/06/25 17:06:36] 10451, "Consumer.py", 51, polling : TEST1 [0] reached end at offset 48
+[2018/06/25 17:06:43] 10451, "Consumer.py", 65, polling : Aborted by user
+
+[2018/06/25 17:06:43] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "MessageMonitor.py", line 203, in <module>
+
+    main()
+
+  File "MessageMonitor.py", line 199, in main
+
+    MessageMonitor(module, section, cfgfile).run()
+
+  File "MessageMonitor.py", line 166, in run
+
+    msg = self.Consumer.polling(1)
+
+  File "/home/msf/MSF_V2/bin/KafkaModules/Consumer.py", line 44, in polling
+
+    msg = self.c.poll(timeout)
+
+RuntimeError: Consumer closed
+

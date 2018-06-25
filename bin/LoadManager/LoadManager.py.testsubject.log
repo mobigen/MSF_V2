@@ -1,0 +1,14 @@
+[2018/06/25 17:12:06] 12225, "LoadManager.py", 200, <module> : LoadManager.py Started...
+[2018/06/25 17:12:12] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "LoadManager.py", line 203, in <module>
+
+    main()
+
+  File "LoadManager.py", line 144, in main
+
+    sys.stderr.write("conf_path(%S) does not exists.\n" % confPath)
+
+ValueError: unsupported format character 'S' (0x53) at index 11
+

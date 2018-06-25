@@ -1,0 +1,7 @@
+future==0.16.0
+PyHive==0.6.0
+python-dateutil==2.7.3
+sasl==0.2.1
+six==1.11.0
+thrift==0.11.0
+thrift-sasl==0.3.0

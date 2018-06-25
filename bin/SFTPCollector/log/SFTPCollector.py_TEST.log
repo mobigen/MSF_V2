@@ -1094,3 +1094,43 @@ IOError: [Errno 2] No such file or directory: 'index/sftp1.info'
  
 [2018/06/21 16:31:12] 8820, "SFTPCollector.py", 151, dump_index : Dump Index : /home/msf/MSF_V2/bin/SFTPCollector/data/testsubject9.txt|^|1529566270|^|321
 [2018/06/21 16:31:12] 8820, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/25 17:08:47] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 138, in load_index
+
+    f = open(os.path.join(self.index_path,self.index_name),'r')
+
+IOError: [Errno 2] No such file or directory: 'index/sftp1.info'
+
+[2018/06/25 17:08:47] 11140, "SFTPCollector.py", 202, run : Have no index
+[2018/06/25 17:08:47] 11140, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/25 17:08:47] 11140, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/25 17:08:47] 11140, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/25 17:08:47] 11140, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/25 17:08:47] 11140, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/25 17:08:52] 11140, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/25 17:08:53] 11140, "SFTPCollector.py", 126, connectSFTP : SFTP Connected Success!!
+[2018/06/25 17:08:53] 11140, "SFTPCollector.py", 255, search : /home/msf/MSF_V2/bin/SFTPCollector/data
+[2018/06/25 17:08:53] 11140, "SFTPCollector.py", 218, run : Be down Number of files : 0
+[2018/06/25 17:08:53] 11140, "SFTPCollector.py", 244, run : =================== while end sleep 5 ====================
+[2018/06/25 17:08:56] 11140, "SFTPCollector.py", 208, run : ========================While start ========================
+[2018/06/25 17:08:56] 11140, "SFTPCollector.py", 210, run : SHUTDOWN : True
+[2018/06/25 17:08:56] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 148, in dump_index
+
+    content = file_name + '|^|' + str(file_time) + '|^|' + str(file_size)
+
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+[2018/06/25 17:08:56] !!! Exception !!!
+Traceback (most recent call last):
+
+  File "SFTPCollector.py", line 283, in <module>
+
+    es.setDaemon(True)
+
+AttributeError: 'SFTPCollector' object has no attribute 'setDaemon'
+

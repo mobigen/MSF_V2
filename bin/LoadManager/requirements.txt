@@ -1,0 +1,2 @@
+cx-Oracle==6.3.1
+MySQL-python==1.2.5

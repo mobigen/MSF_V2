@@ -1,0 +1,6 @@
+APScheduler==3.5.1
+funcsigs==1.0.2
+futures==3.2.0
+pytz==2018.4
+six==1.11.0
+tzlocal==1.5.1
