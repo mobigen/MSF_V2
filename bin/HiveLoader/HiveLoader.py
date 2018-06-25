@@ -6,8 +6,6 @@ import datetime as dt
 import ConfigParser
 
 from pyhive import hive
-from OracleHandler import OracleHandler
-from MySQLHandler import MySQLHandler
 
 import Mobigen.Common.Log as Log
 
@@ -24,21 +22,11 @@ signal.signal(signal.SIGHUP, shutdown)
 signal.signal(signal.SIGPIPE, shutdown)
 
 class HIVEController:
-    """
-         Monitoring STDIN including table name, file path, HIVE partition
-        This module get ddl from DB like Oracle, MySQL ..,
-        create table following ddl and then, data with the
-        specifed path in STDIN will be loaded to the table on Hive.
-
-        Note
-        ----
-        This module do not include the function to create index.
-        Add it as needed.
-    """
     def __init__(self):
         self.module = sys.argv[0]
+        self.section = sys.argv[1]
         self.cfg = ConfigParser.ConfigParser()
-        self.cfg.read(sys.argv[1])
+        self.cfg.read(sys.argv[2])
         self.connRetry = 3
 
         self.set_logger()
@@ -46,30 +34,20 @@ class HIVEController:
 
     def set_config(self):
         try:
+            print "HI"
             self.conn_info = {
                 "host": self.cfg.get("HIVE", "IP"),
                 "port": self.cfg.get("HIVE", "PORT")
             }
+            print self.conn_info
             self.cursor = hive.connect(**self.conn_info).cursor()
-
-            self.db_type = self.cfg.get("DB", "DB_TYPE")
-            self.db_confpath = self.cfg.get("DB", "DB_CONFPATH")
-            self.db_section = self.cfg.get("DB", "DB_SECTION")
-            self.cfg_db = ConfigParser.ConfigParser()
-
-            if os.path.exists(self.db_confpath):
-                self.cfg_db.read(self.db_confpath)
-            else:
-                print "Error: Access wrong DB Config. Check DB config again"
-                sys.exit()
-
-            if self.db_type == "Oracle":
-                self.db_obj = OracleHandler(self.db_section, self.cfg_db)
-            elif self.db_type == "MySQL":
-                self.db_obj = MySQLHandler(self.db_section, self.cfg_db)
-
+            self.table = self.cfg.get(self.section, "Table")
+            print self.table
+            self.partitions = self.cfg.get(self.section, "Partitions").split(',')
+            print self.partitions
         except Exception, ex:
             __LOG__.Trace("Exception: %s" % ex)
+            sys.exit()
 
     def set_logger(self):
         self.logFilePath = 'Log'
@@ -93,38 +71,15 @@ class HIVEController:
                                       self.logFileSize,
                                       self.logFileCount))
 
-    def set_table(self, table):
-        """
-            Get DDL for Hive on DB(Oracle, MySQL, ...),
-            and execute the DDL to make table on Hive
-
-            Parameters
-            ----------
-            table: <string>
-                Table name specified in header of STDIN
-        """
-        query = "SELECT HIVE_DDL FROM MT_BIGDATA_MODEL WHERE TABLE_NM = '%s'" % table
-        data = self.db_obj.executeGetData(query, retry=3)
-        for row in data:
-            hive_ddl = row[0][:-1]
-        __LOG__.Trace(hive_ddl)
-        try:
-            self.cursor = hive.connect(**self.conn_info).cursor()
-            self.cursor.execute(hive_ddl)
-        except Exception, ex:
-            __LOG__.Trace(ex)
-
-    def load_data(self, table, path, partition):
+    def load_data(self, path, partition_val):
         """
             Loads the file with the specified path in STDIN to Hive
 
             Parameters
             ----------
-            table: <string>
-                table specified in STDIN
             path: <string>
                 path specified in STDIN
-            partition: <string>
+            partition_val: <list>
                 partition specified in STDIN
 
             Note
@@ -132,9 +87,14 @@ class HIVEController:
             The query to execute is carved in this code.
             Fix it a little as needed.
         """
+        partition_lst = []
+        for x in range(len(self.partitions)):
+            partition_lst.append("%s='%s'" % (self.partitions[x], partition_val[x]))
+        partition_str = ','.join(lst)
+
         query = "LOAD DATA INPATH '%s' \
                  OVERWRITE INTO TABLE %s \
-                 PARTITION(yyyymmdd='%s')" % (path, table, partition)
+                 PARTITION(%s)" % (path, self.table, partition_str)
         __LOG__.Trace(query)
         try:
             self.cursor = hive.connect(**self.conn_info).cursor()
@@ -147,11 +107,11 @@ class HIVEController:
             stdin = sys.stdin.readline()
             __LOG__.Trace("STD IN : %s" % stdin)
             try:
-                if '://' in stdin:
-                    table, data = stdin.split('://')
-                    path, partition = data.split('||')
-                    self.set_table(table)
-                    self.load_data(table, path, partition)
+                if stdin[:7] == 'file://':
+                    data = stdin.split('://')[1].strip()
+                    path, partition_val = data.split('||')[0], data.split('||')[1:]
+                    # self.set_table(table)
+                    self.load_data(path, partition_val)
                 else:
                     __LOG__.Trace("STDIN with Invalid format")
             except:
@@ -160,8 +120,8 @@ class HIVEController:
             sys.stderr.flush()
 
 def main():
-    if len(sys.argv) != 2:
-        print 'Usage : %s ConfigFilePath' % sys.argv[0]
+    if len(sys.argv) != 3:
+        print 'Usage : %s <Section> <ConfigFilePath>' % sys.argv[0]
         sys.exit()
 
     obj = HIVEController()

@@ -35,9 +35,9 @@ $ python <ConfigFilePath>
 
 ##Prerequisites
 - Python == 2.7
-- cx_Oracle >= 6.3.1
 - python-devel
-- mysql-devel
+- cyrus-sasl
+- cyrus-sasl-devel
 
 ##How to unit test (Dynamic test)
 ```Bash
@@ -48,3 +48,8 @@ $ nosetests -v --with-coverage --with-doctest --cover-erase --exe  --cover-packa
 ```Bash
 $ pylint --disable=C --disable=E0602 --msg-template='{path}:{line}:[{msg_id}({symbol}),{obj}]{msg}' *.py
 ```
+
+## Example
+1. 해당 HDFS에 접속을 하여 config와 example의 예제로 들어가는 stdin의 파티션에 해당하는 디렉토리를 비워주세요.
+2. example을 실행시키면 stdin으로 들어온 partition을 통해 HDFS에 디렉토리를 생성하고 그 디렉토리에 해당 파일을 저장하게 됩니다.
+3. example 실행이 끝난 뒤 해당 HDFS 디렉토리에 어떤 파일이 생성되었는지 확인하세요.
