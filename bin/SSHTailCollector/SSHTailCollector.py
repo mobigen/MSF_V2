@@ -607,7 +607,18 @@ class Worker :
 
                                                                 if sline[-1] != '\n' : sline += '\n'
 
-                                                                #StdOut 할지 파일 저장할지 여기▒ == 'H' : FileName = '%s_%s.dat' % (self.sSect, datetime.datetime.now().strftime('%Y%m%d%H') + '0000')
+                                                                #StdOut 할지 파일 저장할지 여기서 처리
+                                                                if self.PROC_TYPE.find('O') >= 0 :
+                                                                        __LOG__.Trace('data://%s' % sline)
+                                                                        sys.stdout.write('data://%s' % sline)
+                                                                        sys.stdout.flush()
+
+                                                                if self.PROC_TYPE.find('F') >= 0 :
+
+                                                                        FileName = ''
+
+                                                                        if self.SAVE_RANGE == 'D' : FileName = '%s_%s.dat' % (self.sSect, datetime.datetime.now().strftime('%Y%m%d') + '000000')
+                                                                        elif self.SAVE_RANGE == 'H' : FileName = '%s_%s.dat' % (self.sSect, datetime.datetime.now().strftime('%Y%m%d%H') + '0000')
                                                                         elif self.SAVE_RANGE == 'M' : FileName = '%s_%s.dat' % (self.sSect, datetime.datetime.now().strftime('%Y%m%d%H%M') + '00')
                                                                         elif self.SAVE_RANGE == 'S' : FileName = '%s_%s.dat' % (self.sSect, datetime.datetime.now().strftime('%Y%m%d%H%M%S'))
 
