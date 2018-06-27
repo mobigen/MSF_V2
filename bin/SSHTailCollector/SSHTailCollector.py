@@ -4,17 +4,14 @@
 import sys
 import re
 import os
-import types
 import time
-import re
 import socket  # socket
 import signal
-import collections
 import ConfigParser
 
 import paramiko
 import threading
-
+import datetime
 
 #import Mobigen.Common.Log as Log; Log.Init()
 import Mobigen.Common.Log as Log
@@ -141,8 +138,6 @@ class SSHTailer :
         def clear(self) :
 
                 try :   self.cleanup()
-                except : pass
-                try :   self.disconnect()
                 except : pass
 
         def check(self) :
@@ -489,14 +484,6 @@ class Worker :
                 self.sUser = Conf.get( sSect, "USER" )
                 self.pwd_list = Conf.get( sSect, "PASS" ).split(',')
                 self.sPass = self.pwd_list[0]
-                self.sType = Conf.get( sSect, "TYPE" )
-                self.eType = Conf.get( sSect, "EQUIP_TYPE" )
-
-                self.dHost = Conf.get( 'DBMS', "HOST" )
-                self.dPort = Conf.get( 'DBMS', "PORT" )
-                self.dUser = Conf.get( 'DBMS', "USER" )
-                self.dPass = Conf.get( 'DBMS', "PASS" )
-                self.dBase = Conf.get( 'DBMS', "BASE" )
 
                 self.sUids = Conf.get( sSect, "UIDS" )
                 self.sEndp = Conf.get( sSect, "EPTN" )
@@ -524,7 +511,7 @@ class Worker :
                 self.oPasr = None
                 self.oDict = None
 
-                __LOG__.Trace( "Conf: %s" % ( [ self.sType, self.sUids, self.sEndp] ))
+                __LOG__.Trace( "Conf: %s" % ( [ self.sUids, self.sEndp] ))
 
                 signal.signal(signal.SIGTERM, self.sign)
                 signal.signal(signal.SIGINT , self.sign)
@@ -583,7 +570,11 @@ class Worker :
 
                                         if      self.oData.check() :
 
-                                                bree.sleep(10)
+                                                break
+
+                                        __LOG__.Trace("None: not found '%s'" % ( self.oData.filename() ))
+
+                                        time.sleep(10)
 
                         except Exception :
 
@@ -614,24 +605,15 @@ class Worker :
 
                                                         if sline :
 
-                                                                #StdOut 할지 파일 저장할지 여기서 처리
-                                                                if self.PROC_TYPE.find('O') >= 0 :
-                                                                        __LOG__.Trace('data://%s' % sline)
-                                                                        sys.stdout.write('data://%s\n' % sline)
-                                                                        sys.stdout.flush()
+                                                                if sline[-1] != '\n' : sline += '\n'
 
-                                                                if self.PROC_TYPE.find('F') >= 0 :
-
-                                                                        FileName = ''
-
-                                                                        if self.SAVE_RANGE == 'D' : FileName = '%s_%s.dat' % (self.sSect, datetime.datetime.now('%Y%m%d') + '000000')
-                                                                        elif self.SAVE_RANGE == 'H' : FileName = '%s_%s.dat' % (self.sSect, datetime.datetime.now('%Y%m%d%H') + '0000')
-                                                                        elif self.SAVE_RANGE == 'M' : FileName = '%s_%s.dat' % (self.sSect, datetime.datetime.now('%Y%m%d%H%M') + '00')
-                                                                        elif self.SAVE_RANGE == 'S' : FileName = '%s_%s.dat' % (self.sSect, datetime.datetime.now('%Y%m%d%H%M%S'))
+                                                                #StdOut 할지 파일 저장할지 여기▒ == 'H' : FileName = '%s_%s.dat' % (self.sSect, datetime.datetime.now().strftime('%Y%m%d%H') + '0000')
+                                                                        elif self.SAVE_RANGE == 'M' : FileName = '%s_%s.dat' % (self.sSect, datetime.datetime.now().strftime('%Y%m%d%H%M') + '00')
+                                                                        elif self.SAVE_RANGE == 'S' : FileName = '%s_%s.dat' % (self.sSect, datetime.datetime.now().strftime('%Y%m%d%H%M%S'))
 
                                                                         if len(FileName) :
                                                                                 with open(os.path.join(self.SAVE_PATH, FileName), 'a') as fd :
-                                                                                        fd.write('sline' + '\n')
+                                                                                        fd.write(sline)
 
                                                                 #index 저장
                                                                 self.oData.oIndx.save( self.oData.sName, self.oData.iLine )
@@ -648,8 +630,6 @@ class Worker :
                                         try: self.oData = SSHTailer( self.sHost, self.sPort, self.sUser, self.sPass, self.sRdir, self.sPatn, self.sBase, self.sLdir, self.sRidx,self.sSect)
                                         except paramiko.ssh_exception.AuthenticationException:          self.sPass = next(self.pwd_iter)
                                         time.sleep(1)
-
-                db_handler.disconnect_db()
 
                 __LOG__.Trace("Work: stop")
 
