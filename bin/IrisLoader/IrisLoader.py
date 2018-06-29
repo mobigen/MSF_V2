@@ -143,7 +143,7 @@ class IrisLoader():
 
                 if strFilePath[:7] != 'file://' :
                     __LOG__.Trace('stdin Error [%s]' % strFilePath)
-                    sys.stderr.write("\n")
+                    sys.stderr.write(strFilePath)
                     sys.stderr.flush()
                     continue
 
@@ -158,14 +158,14 @@ class IrisLoader():
                 #키 필터
                 if self.KEY_FILTER != None :
                     if not Key in self.KEY_FILTER :
-                        sys.stderr.write("\n")
+                        sys.stderr.write(strFilePath)
                         sys.stderr.flush()
                         continue
 
                 #파일 존재 확인
                 if not os.path.exists(strFilePath) :
                     __LOG__.Trace('Error Path [%s]' % strFilePath)
-                    sys.stderr.write("\n")
+                    sys.stderr.write(strFilePath)
                     sys.stderr.flush()
                     continue
 
@@ -187,7 +187,7 @@ class IrisLoader():
                                  strFilePath.split('.')[1]))
                         sys.stdout.flush()
 
-                    sys.stderr.write("\n")
+                    sys.stderr.write(strFilePath)
                     sys.stderr.flush()
                     continue
 
@@ -234,13 +234,13 @@ class IrisLoader():
 
                 c.Close()
                 conn.close()
-                sys.stderr.write('\n')
+                sys.stderr.write(strFilePath)
                 sys.stderr.flush()
             except:
                 __LOG__.Exception()
 
-            sys.stderr.write("\n")
-            sys.stderr.flush()
+            #sys.stderr.write("")
+            #sys.stderr.flush()
             #time.sleep(1)
 
 if __name__ == "__main__":
