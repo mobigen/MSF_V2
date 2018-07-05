@@ -1,9 +1,10 @@
-# ColSFTP
+# SFTPCollector
 
 **Remote files -> (SFTP) -> local, STDOUT**
 
-원격 서버에 SFTP 프로토콜로 연결하여 sleep_time 마다 설정된 remote_dir을 감시한다.
-파일이름의 끝이 remote_patt 패턴과 일치하는 파일이 확인될 경우 local_dir안에 해당 파일을 다운로드 하고 다운로드 된 경로를 STDOUT으로 출력한다.
+1. 원격 서버에 SFTP 프로토콜로 연결하여 sleep_time 마다 설정된 remote_dir을 감시한다.
+2. 파일이름의 끝이 remote_patt 패턴과 일치하는 파일이 확인될 경우 local_dir안에 해당 파일을 다운로드 하고 다운로드 된 경로를 STDOUT으로 출력한다.
+3. index 기능이 있으며 index를 통해 파일을 어디까지 감시했는지 확인하여 중복되는 파일은 가져오지 않는다.
 
 ## How to use
 ```Bash
