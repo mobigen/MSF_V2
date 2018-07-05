@@ -10209,3 +10209,531 @@
 [2018/06/21 14:07:30] 35593, "Aggregator.py", 223, run : Wrong stdin come in
 [2018/06/21 14:07:30] 35593, "Aggregator.py", 219, run : STD IN : 
 [2018/06/21 14:07:30] 35593, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 240, main : ---------------TEST1 Aggregator Start!--------------
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : file://data/test_file.csv
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 208, aggregate : Load csv success :         name  age        area   major
+0    dong-in   29   bok-jeong  server
+1   se-kyung   38   jung-rang  server
+2   jong-joo   29  eun-pyeong     web
+3  seung-min   30      anyang  server
+4   jung-soo   34  tae-pyeong     web
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 229, run : Aggregation success : data/test_file.csv
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 186, load : query success to insert to MySQL
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
+[2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
