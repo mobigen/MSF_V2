@@ -1,51 +1,18 @@
 # MSF_V2
 
 ## SMS-master
-Iris/System등의 Resource를 확인하여 Email/SMS 전송 라이브러리
-Cron을 사용하여 스케쥴링한다.
+Iris, System등의 Resource를 확인하여 Email/SMS 전송 라이브러리
+
+Cron을 사용하여 스케쥴링해서 쓰는 라이브러리입니다.
+
+실시간 Resource monitoring은 아닙니다.
 
 ## bin
-단일 공통 모듈 저장소
+SI 업무를 하는데 필요한 단일 모듈들을 정리해놓은 디렉토리입니다.
 
-### Aggregator
-CSV -> Aggregation -> DB
-
-### FilePatternMonitor
-Monitoring files in directory -> STDOUT
-
-### HdfsLoader
-Local to HDFS
-
-### HiveLoader
-HDFS to Hive
-
-### IrisLoader
-.dat to IRIS
-
-### IrisSplitter
-.csv to .dat and .ctl for loading to IRIS
-
-### IrisSummary
-쿼리를 실행하여 stdin으로 입력받은 data파일의 시간에 대한 summary
-
-### KafkaModules
-Producer, Consumer python 모듈
-
-### LoadManager
-DB to DB
-
-### MySQLHandler
-MySQLHandling class
-
-### SFTPCollector
-Remote files -> (SFTP) -> Local
-
-### SSHTailCollector
-Remote files -> (SSH, tail명령어) -> Local
-
-### Scheduler
-Crontab과 기능 동일
+주로 수집, 파싱, 적재 역할을 담당하는 모듈들이 있습니다.
 
 ## mlib
-모비젠 공통 모듈 저장소
+모비젠 공통 모듈 저장소 입니다.
 
+EventFlow, M6 API 등등의 모듈들이 있습니다.
