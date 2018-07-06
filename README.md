@@ -1,4 +1,7 @@
 # MSF_V2
+SI업무하는데 필요한 모비젠의 라이브러리들을 정리합니다.
+
+추가적으로 필요하며 범용적으로 쓰일 수 있는 기술은 WIKI에 기술합니다.
 
 ## SMS-master
 Iris, System등의 Resource를 확인하여 Email/SMS 전송 라이브러리
