@@ -1,3 +1,4 @@
+import SConfigParser
 import ConfigParser
 import sys
 import os
@@ -49,10 +50,11 @@ class Aggregator:
         If you want to add new engine on self.engine_type
         refer to http://docs.sqlalchemy.org/en/latest/core/engines.html
     """
-    def __init__(self, module, section, conf_path):
+    def __init__(self, module, section, conf_path, key_path):
         self.module = module
         self.section = section
         self.conf_path = conf_path
+        self.key_path = key_path
         self.conf_parser = None
         self.agg_options = ["SUM", "MAX", "MIN", "MEAN", "COUNT"]
         self.cols_groupby = []
@@ -65,12 +67,17 @@ class Aggregator:
         self.set_logger()
 
     def get_conf_parser(self):
-        self.conf_parser = ConfigParser.ConfigParser()
+        self.conf_parser = SConfigParser.SConfigParser()
         if os.path.exists(self.conf_path):
-            self.conf_parser.read(self.conf_path)
+            if os.path.exists(self.key_path):
+                self.conf_parser.read(self.conf_path, self.key_path)
+            else:
+                print "Wrong key path"
+                print "%s <SECTION> <CONFIG PATH> <KEY PATH>" % self.module
+                sys.exit()
         else:
             print "Wrong config path"
-            print "%s <SECTION> <CONFIG PATH>" % self.module
+            print "%s <SECTION> <CONFIG PATH> <KEY PATH>" % self.module
             sys.exit()
 
     def make_aggdict(self, cols, option):
@@ -120,6 +127,7 @@ class Aggregator:
                 print " STORAGE_CONFPATH error occured on config file"
                 sys.exit()
         except:
+            __LOG__.Exception()
             print "STORAGE configuration error occured on config file"
             sys.exit()
 
@@ -232,8 +240,8 @@ class Aggregator:
         sys.stderr.flush()
 
 def main():
-    if len(sys.argv) != 3:
-        print 'Usage : %s <Section> <ConfigFilePath>' % sys.argv[0]
+    if len(sys.argv) != 4:
+        print 'Usage : %s <Section> <ConfigFilePath> <KeyFilePath>' % sys.argv[0]
         sys.exit()
 
     obj = Aggregator(*sys.argv)

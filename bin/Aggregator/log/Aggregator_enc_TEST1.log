@@ -1,0 +1,4 @@
+[2018/07/09 11:37:16] 18825, "Aggregator_enc.py", 249, main : ---------------TEST1 Aggregator Start!--------------
+[2018/07/09 11:37:19] 18825, "Aggregator_enc.py", 22, Shutdown : Recv Signal (2)
+[2018/07/09 11:37:19] 18825, "Aggregator_enc.py", 228, run : STD IN : 
+[2018/07/09 11:37:19] 18825, "Aggregator_enc.py", 232, run : Wrong stdin come in
