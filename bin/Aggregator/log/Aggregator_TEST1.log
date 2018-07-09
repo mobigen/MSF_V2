@@ -10737,3 +10737,199 @@
 [2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
 [2018/07/04 14:17:53] 15061, "Aggregator.py", 219, run : STD IN : 
 [2018/07/04 14:17:53] 15061, "Aggregator.py", 223, run : Wrong stdin come in
+[2018/07/09 14:29:39] 65471, "Aggregator.py", 257, main : ---------------TEST1 Aggregator Start!--------------
+[2018/07/09 14:29:43] 65471, "Aggregator.py", 21, Shutdown : Recv Signal (2)
+[2018/07/09 14:29:43] 65471, "Aggregator.py", 236, run : STD IN : 
+[2018/07/09 14:29:43] 65471, "Aggregator.py", 240, run : Wrong stdin come in
+[2018/07/09 14:30:23] 485, "Aggregator.py", 257, main : ---------------TEST1 Aggregator Start!--------------
+[2018/07/09 14:30:24] 485, "Aggregator.py", 236, run : STD IN : file://data/test_file.csv
+[2018/07/09 14:30:24] 485, "Aggregator.py", 225, aggregate : Load csv success :         name  age        area   major
+0    dong-in   29   bok-jeong  server
+1   se-kyung   38   jung-rang  server
+2   jong-joo   29  eun-pyeong     web
+3  seung-min   30      anyang  server
+4   jung-soo   34  tae-pyeong     web
+[2018/07/09 14:30:24] 485, "Aggregator.py", 246, run : Aggregation success : data/test_file.csv
+[2018/07/09 14:32:01] 1011, "Aggregator.py", 257, main : ---------------TEST1 Aggregator Start!--------------
+[2018/07/09 14:32:03] 1011, "Aggregator.py", 236, run : STD IN : file://data/test_file.csv
+[2018/07/09 14:32:03] 1011, "Aggregator.py", 225, aggregate : Load csv success :         name  age        area   major
+0    dong-in   29   bok-jeong  server
+1   se-kyung   38   jung-rang  server
+2   jong-joo   29  eun-pyeong     web
+3  seung-min   30      anyang  server
+4   jung-soo   34  tae-pyeong     web
+[2018/07/09 14:32:03] 1011, "Aggregator.py", 246, run : Aggregation success : data/test_file.csv
+[2018/07/09 14:37:52] 2760, "Aggregator.py", 258, main : ---------------TEST1 Aggregator Start!--------------
+[2018/07/09 14:37:54] 2760, "Aggregator.py", 237, run : STD IN : file://data/test_file.csv
+[2018/07/09 14:37:54] 2760, "Aggregator.py", 226, aggregate : Load csv success :         name  age        area   major
+0    dong-in   29   bok-jeong  server
+1   se-kyung   38   jung-rang  server
+2   jong-joo   29  eun-pyeong     web
+3  seung-min   30      anyang  server
+4   jung-soo   34  tae-pyeong     web
+[2018/07/09 14:37:54] 2760, "Aggregator.py", 247, run : Aggregation success : data/test_file.csv
+[2018/07/09 14:38:29] 2921, "Aggregator.py", 256, main : ---------------TEST1 Aggregator Start!--------------
+[2018/07/09 14:38:31] 2921, "Aggregator.py", 235, run : STD IN : file://data/test_file.csv
+[2018/07/09 14:38:32] 2921, "Aggregator.py", 224, aggregate : Load csv success :         name  age        area   major
+0    dong-in   29   bok-jeong  server
+1   se-kyung   38   jung-rang  server
+2   jong-joo   29  eun-pyeong     web
+3  seung-min   30      anyang  server
+4   jung-soo   34  tae-pyeong     web
+[2018/07/09 14:38:32] 2921, "Aggregator.py", 245, run : Aggregation success : data/test_file.csv
+[2018/07/09 14:39:42] 3261, "Aggregator.py", 257, main : ---------------TEST1 Aggregator Start!--------------
+[2018/07/09 14:39:44] 3261, "Aggregator.py", 236, run : STD IN : file://data/test_file.csv
+[2018/07/09 14:39:44] 3261, "Aggregator.py", 225, aggregate : Load csv success :         name  age        area   major
+0    dong-in   29   bok-jeong  server
+1   se-kyung   38   jung-rang  server
+2   jong-joo   29  eun-pyeong     web
+3  seung-min   30      anyang  server
+4   jung-soo   34  tae-pyeong     web
+[2018/07/09 14:39:44] 3261, "Aggregator.py", 246, run : Aggregation success : data/test_file.csv
+[2018/07/09 14:43:03] 4159, "Aggregator.py", 258, main : ---------------TEST1 Aggregator Start!--------------
+[2018/07/09 14:43:05] 4159, "Aggregator.py", 237, run : STD IN : file://data/test_file.csv
+[2018/07/09 14:43:05] 4159, "Aggregator.py", 226, aggregate : Load csv success :         name  age        area   major
+0    dong-in   29   bok-jeong  server
+1   se-kyung   38   jung-rang  server
+2   jong-joo   29  eun-pyeong     web
+3  seung-min   30      anyang  server
+4   jung-soo   34  tae-pyeong     web
+[2018/07/09 14:43:05] 4159, "Aggregator.py", 247, run : Aggregation success : data/test_file.csv
+[2018/07/09 14:49:39] 5945, "Aggregator.py", 257, main : ---------------TEST1 Aggregator Start!--------------
+[2018/07/09 14:49:42] 5945, "Aggregator.py", 236, run : STD IN : file://data/test_file.csv
+[2018/07/09 14:49:42] 5945, "Aggregator.py", 225, aggregate : Load csv success :         name  age        area   major
+0    dong-in   29   bok-jeong  server
+1   se-kyung   38   jung-rang  server
+2   jong-joo   29  eun-pyeong     web
+3  seung-min   30      anyang  server
+4   jung-soo   34  tae-pyeong     web
+[2018/07/09 14:49:42] 5945, "Aggregator.py", 246, run : Aggregation success : data/test_file.csv
+[2018/07/09 14:50:24] 6227, "Aggregator.py", 257, main : ---------------TEST1 Aggregator Start!--------------
+[2018/07/09 14:50:27] 6227, "Aggregator.py", 236, run : STD IN : file://data/test_file.csv
+[2018/07/09 14:50:27] 6227, "Aggregator.py", 225, aggregate : Load csv success :         name  age        area   major
+0    dong-in   29   bok-jeong  server
+1   se-kyung   38   jung-rang  server
+2   jong-joo   29  eun-pyeong     web
+3  seung-min   30      anyang  server
+4   jung-soo   34  tae-pyeong     web
+[2018/07/09 14:50:27] 6227, "Aggregator.py", 246, run : Aggregation success : data/test_file.csv
+[2018/07/09 14:50:52] 6378, "Aggregator.py", 258, main : ---------------TEST1 Aggregator Start!--------------
+[2018/07/09 14:50:54] 6378, "Aggregator.py", 237, run : STD IN : file://data/test_file.csv
+[2018/07/09 14:50:54] 6378, "Aggregator.py", 226, aggregate : Load csv success :         name  age        area   major
+0    dong-in   29   bok-jeong  server
+1   se-kyung   38   jung-rang  server
+2   jong-joo   29  eun-pyeong     web
+3  seung-min   30      anyang  server
+4   jung-soo   34  tae-pyeong     web
+[2018/07/09 14:50:54] 6378, "Aggregator.py", 247, run : Aggregation success : data/test_file.csv
+[2018/07/09 15:07:14] 10811, "Aggregator.py", 274, main : ---------------TEST1 Aggregator Start!--------------
+[2018/07/09 15:07:16] 10811, "Aggregator.py", 253, run : STD IN : file://data/test_file.csv
+[2018/07/09 15:07:16] 10811, "Aggregator.py", 242, aggregate : Load csv success :         name  age        area   major
+0    dong-in   29   bok-jeong  server
+1   se-kyung   38   jung-rang  server
+2   jong-joo   29  eun-pyeong     web
+3  seung-min   30      anyang  server
+4   jung-soo   34  tae-pyeong     web
+[2018/07/09 15:07:16] 10811, "Aggregator.py", 263, run : Aggregation success : data/test_file.csv
+[2018/07/09 15:07:55] 10995, "Aggregator.py", 264, main : ---------------TEST1 Aggregator Start!--------------
+[2018/07/09 15:07:56] 10995, "Aggregator.py", 243, run : STD IN : file://data/test_file.csv
+[2018/07/09 15:07:56] 10995, "Aggregator.py", 232, aggregate : Load csv success :         name  age        area   major
+0    dong-in   29   bok-jeong  server
+1   se-kyung   38   jung-rang  server
+2   jong-joo   29  eun-pyeong     web
+3  seung-min   30      anyang  server
+4   jung-soo   34  tae-pyeong     web
+[2018/07/09 15:07:56] 10995, "Aggregator.py", 253, run : Aggregation success : data/test_file.csv
+[2018/07/09 15:08:19] 10995, "Aggregator.py", 21, Shutdown : Recv Signal (2)
+[2018/07/09 15:08:19] 10995, "Aggregator.py", 243, run : STD IN : 
+[2018/07/09 15:08:19] 10995, "Aggregator.py", 247, run : Wrong stdin come in
+[2018/07/09 15:08:41] 11248, "Aggregator.py", 265, main : ---------------TEST1 Aggregator Start!--------------
+[2018/07/09 15:08:43] 11248, "Aggregator.py", 244, run : STD IN : file://data/test_file.csv
+[2018/07/09 15:08:44] 11248, "Aggregator.py", 233, aggregate : Load csv success :         name  age        area   major
+0    dong-in   29   bok-jeong  server
+1   se-kyung   38   jung-rang  server
+2   jong-joo   29  eun-pyeong     web
+3  seung-min   30      anyang  server
+4   jung-soo   34  tae-pyeong     web
+[2018/07/09 15:08:44] 11248, "Aggregator.py", 254, run : Aggregation success : data/test_file.csv
+[2018/07/09 15:08:49] 11248, "Aggregator.py", 21, Shutdown : Recv Signal (2)
+[2018/07/09 15:08:50] 11248, "Aggregator.py", 244, run : STD IN : 
+[2018/07/09 15:08:50] 11248, "Aggregator.py", 248, run : Wrong stdin come in
+[2018/07/09 15:09:50] 11649, "Aggregator.py", 265, main : ---------------TEST1 Aggregator Start!--------------
+[2018/07/09 15:09:52] 11649, "Aggregator.py", 244, run : STD IN : file://data/test_file.csv
+[2018/07/09 15:09:52] 11649, "Aggregator.py", 233, aggregate : Load csv success :         name  age        area   major
+0    dong-in   29   bok-jeong  server
+1   se-kyung   38   jung-rang  server
+2   jong-joo   29  eun-pyeong     web
+3  seung-min   30      anyang  server
+4   jung-soo   34  tae-pyeong     web
+[2018/07/09 15:09:52] 11649, "Aggregator.py", 254, run : Aggregation success : data/test_file.csv
+[2018/07/09 15:09:59] 11649, "Aggregator.py", 21, Shutdown : Recv Signal (2)
+[2018/07/09 15:10:00] 11649, "Aggregator.py", 244, run : STD IN : 
+[2018/07/09 15:10:00] 11649, "Aggregator.py", 248, run : Wrong stdin come in
+[2018/07/09 15:10:36] 11862, "Aggregator.py", 265, main : ---------------TEST1 Aggregator Start!--------------
+[2018/07/09 15:10:38] 11862, "Aggregator.py", 244, run : STD IN : file://data/test_file.csv
+[2018/07/09 15:10:38] 11862, "Aggregator.py", 233, aggregate : Load csv success :         name  age        area   major
+0    dong-in   29   bok-jeong  server
+1   se-kyung   38   jung-rang  server
+2   jong-joo   29  eun-pyeong     web
+3  seung-min   30      anyang  server
+4   jung-soo   34  tae-pyeong     web
+[2018/07/09 15:10:38] 11862, "Aggregator.py", 254, run : Aggregation success : data/test_file.csv
+[2018/07/09 15:10:41] 11862, "Aggregator.py", 21, Shutdown : Recv Signal (2)
+[2018/07/09 15:10:42] 11862, "Aggregator.py", 244, run : STD IN : 
+[2018/07/09 15:10:42] 11862, "Aggregator.py", 248, run : Wrong stdin come in
+[2018/07/09 15:11:42] 12157, "Aggregator.py", 265, main : ---------------TEST1 Aggregator Start!--------------
+[2018/07/09 15:11:43] 12157, "Aggregator.py", 244, run : STD IN : file://data/test_file.csv
+[2018/07/09 15:11:43] 12157, "Aggregator.py", 233, aggregate : Load csv success :         name  age        area   major
+0    dong-in   29   bok-jeong  server
+1   se-kyung   38   jung-rang  server
+2   jong-joo   29  eun-pyeong     web
+3  seung-min   30      anyang  server
+4   jung-soo   34  tae-pyeong     web
+[2018/07/09 15:11:43] 12157, "Aggregator.py", 254, run : Aggregation success : data/test_file.csv
+[2018/07/09 15:11:53] 12218, "Aggregator.py", 265, main : ---------------TEST1 Aggregator Start!--------------
+[2018/07/09 15:11:57] 12218, "Aggregator.py", 244, run : STD IN : file://data/test_file.csv
+[2018/07/09 15:11:57] 12218, "Aggregator.py", 233, aggregate : Load csv success :         name  age        area   major
+0    dong-in   29   bok-jeong  server
+1   se-kyung   38   jung-rang  server
+2   jong-joo   29  eun-pyeong     web
+3  seung-min   30      anyang  server
+4   jung-soo   34  tae-pyeong     web
+[2018/07/09 15:11:57] 12218, "Aggregator.py", 254, run : Aggregation success : data/test_file.csv
+[2018/07/09 15:13:07] 12556, "Aggregator.py", 265, main : ---------------TEST1 Aggregator Start!--------------
+[2018/07/09 15:13:09] 12556, "Aggregator.py", 244, run : STD IN : file://data/test_file.csv
+[2018/07/09 15:13:09] 12556, "Aggregator.py", 233, aggregate : Load csv success :         name  age        area   major
+0    dong-in   29   bok-jeong  server
+1   se-kyung   38   jung-rang  server
+2   jong-joo   29  eun-pyeong     web
+3  seung-min   30      anyang  server
+4   jung-soo   34  tae-pyeong     web
+[2018/07/09 15:13:09] 12556, "Aggregator.py", 254, run : Aggregation success : data/test_file.csv
+[2018/07/09 15:13:35] 12556, "Aggregator.py", 21, Shutdown : Recv Signal (2)
+[2018/07/09 15:13:36] 12556, "Aggregator.py", 244, run : STD IN : 
+[2018/07/09 15:13:36] 12556, "Aggregator.py", 248, run : Wrong stdin come in
+[2018/07/09 15:14:11] 12887, "Aggregator.py", 265, main : ---------------TEST1 Aggregator Start!--------------
+[2018/07/09 15:14:14] 12887, "Aggregator.py", 244, run : STD IN : file://data/test_file.csv
+[2018/07/09 15:14:14] 12887, "Aggregator.py", 233, aggregate : Load csv success :         name  age        area   major
+0    dong-in   29   bok-jeong  server
+1   se-kyung   38   jung-rang  server
+2   jong-joo   29  eun-pyeong     web
+3  seung-min   30      anyang  server
+4   jung-soo   34  tae-pyeong     web
+[2018/07/09 15:14:14] 12887, "Aggregator.py", 254, run : Aggregation success : data/test_file.csv
+[2018/07/09 15:14:30] 12887, "Aggregator.py", 21, Shutdown : Recv Signal (2)
+[2018/07/09 15:14:30] 12887, "Aggregator.py", 244, run : STD IN : 
+[2018/07/09 15:14:30] 12887, "Aggregator.py", 248, run : Wrong stdin come in
+[2018/07/09 15:18:27] 14067, "Aggregator.py", 270, main : ---------------TEST1 Aggregator Start!--------------
+[2018/07/09 15:18:31] 14067, "Aggregator.py", 249, run : STD IN : file://data/test_file.csv
+[2018/07/09 15:18:31] 14067, "Aggregator.py", 238, aggregate : Load csv success :         name  age        area   major
+0    dong-in   29   bok-jeong  server
+1   se-kyung   38   jung-rang  server
+2   jong-joo   29  eun-pyeong     web
+3  seung-min   30      anyang  server
+4   jung-soo   34  tae-pyeong     web
+[2018/07/09 15:18:31] 14067, "Aggregator.py", 259, run : Aggregation success : data/test_file.csv
+[2018/07/09 15:22:55] 14067, "Aggregator.py", 21, Shutdown : Recv Signal (2)
+[2018/07/09 15:22:56] 14067, "Aggregator.py", 249, run : STD IN : 
+[2018/07/09 15:22:56] 14067, "Aggregator.py", 253, run : Wrong stdin come in

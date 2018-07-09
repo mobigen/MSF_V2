@@ -109,13 +109,15 @@ class Aggregator:
             self.make_aggdict(self.section, option)
 
         try:
-            self.db_type = self.conf_parser.get(self.section, 'STORAGE_TYPE')
-            self.db_confpath = self.conf_parser.get(self.section, 'STORAGE_CONFPATH')
-            self.db_section = self.conf_parser.get(self.section, 'STORAGE_SECTION')
-            self.db_table = self.conf_parser.get(self.section, 'STORAGE_TABLE')
-            self.parser_db = ConfigParser.ConfigParser()
-            if os.path.exists(self.db_confpath):
-                self.parser_db.read(self.db_confpath)
+            self.storage_type = self.conf_parser.get(self.section, 'STORAGE_TYPE')
+            self.storage_confpath = self.conf_parser.get(self.section,
+                                                         'STORAGE_CONFPATH')
+            self.storage_section = self.conf_parser.get(self.section, 'STORAGE_SECTION')
+            if self.conf_parser.has_option(self.section, 'STORAGE_TABLE'):
+                self.storage_table = self.conf_parser.get(self.section, 'STORAGE_TABLE')
+            self.parser_storage = ConfigParser.ConfigParser()
+            if os.path.exists(self.storage_confpath):
+                self.parser_storage.read(self.storage_confpath)
             else:
                 print " STORAGE_CONFPATH error occured on config file"
                 sys.exit()
@@ -147,6 +149,43 @@ class Aggregator:
                                       int(self.logFileSize),
                                       int(self.logFileCount)))
 
+    def load_db(self, df, engine_str):
+        conn_info = self.engine_type[self.storage_type] % engine_str
+        try:
+            engine = create_engine(conn_info, encoding='utf-8')
+            conn = engine.connect()
+            df.to_sql(name=self.storage_table, con=engine,
+                      if_exists='append', index=False)
+            __LOG__.Trace("query success to insert to %s" % self.storage_type)
+        except sqlalchemy.exc.OperationalError:
+            print exc.args
+
+    def load_file(self, df):
+        '''
+            Add options on config file as you need.
+            refer to http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_csv.html#pandas.DataFrame.to_csv
+        '''
+        directory = self.parser_storage.get(self.storage_section, 'DIRPATH')
+        filename = self.parser_storage.get(self.storage_section, 'FILENAME')
+        path_ = os.path.join(directory, filename)
+
+        item_keys = self.parser_storage.options(self.storage_section)
+        item_keys.remove('dirpath')
+        item_keys.remove('filename')
+        parameters = {}
+        for item_key in item_keys:
+            if self.parser_storage.get(self.storage_section, item_key) == "True":
+                parameters[item_key] = True
+            elif self.parser_storage.get(self.storage_section, item_key) == "False":
+                parameters[item_key] = False
+            else:
+                parameters[item_key] = self.parser_storage.get(self.storage_section,
+                                                               item_key)
+        parameters['path_or_buf'] = path_
+
+        df.to_csv(**parameters)
+
+
     def load(self, df):
         """
             Insert pandas.DataFrame into STORAGE like MySQL, Oracle, ...
@@ -161,31 +200,25 @@ class Aggregator:
             also add branch of new one.
         """
 
-        if self.db_type == "MySQL":
-            engine_str = (self.parser_db.get(self.db_section, 'ID'),
-                          self.parser_db.get(self.db_section, 'PWD'),
-                          self.parser_db.get(self.db_section, 'HOST'),
-                          self.parser_db.get(self.db_section, 'PORT'),
-                          self.parser_db.get(self.db_section, 'DB'))
-        elif self.db_type == "Oracle":
-            engine_str = (self.parser_db.get(self.db_section, 'ID'),
-                          self.parser_db.get(self.db_section, 'PWD'),
-                          self.parser_db.get(self.db_section, 'HOST'),
-                          self.parser_db.get(self.db_section, 'PORT'),
-                          self.parser_db.get(self.db_section, 'SID'))
+        if self.storage_type == "MySQL":
+            engine_str = (self.parser_storage.get(self.storage_section, 'ID'),
+                          self.parser_storage.get(self.storage_section, 'PWD'),
+                          self.parser_storage.get(self.storage_section, 'HOST'),
+                          self.parser_storage.get(self.storage_section, 'PORT'),
+                          self.parser_storage.get(self.storage_section, 'DB'))
+            self.load_db(df, engine_str)
+        elif self.storage_type == "Oracle":
+            engine_str = (self.parser_storage.get(self.storage_section, 'ID'),
+                          self.parser_storage.get(self.storage_section, 'PWD'),
+                          self.parser_storage.get(self.storage_section, 'HOST'),
+                          self.parser_storage.get(self.storage_section, 'PORT'),
+                          self.parser_storage.get(self.storage_section, 'SID'))
+            self.load_db(df, engine_str)
+        elif self.storage_type == "File":
+            self.load_file(df)
         else:
             print "Wrong STORAGE info on config file"
             sys.exit()
-
-        conn_info = self.engine_type[self.db_type] % engine_str
-        try:
-            engine = create_engine(conn_info, encoding='utf-8')
-            conn = engine.connect()
-            df.to_sql(name=self.db_table, con=engine,
-                      if_exists='append', index=False)
-            __LOG__.Trace("query success to insert to %s" % self.db_type)
-        except sqlalchemy.exc.OperationalError:
-            print exc.args
 
 
     def aggregate(self, path):
