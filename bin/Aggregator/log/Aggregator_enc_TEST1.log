@@ -2,3 +2,11 @@
 [2018/07/09 11:37:19] 18825, "Aggregator_enc.py", 22, Shutdown : Recv Signal (2)
 [2018/07/09 11:37:19] 18825, "Aggregator_enc.py", 228, run : STD IN : 
 [2018/07/09 11:37:19] 18825, "Aggregator_enc.py", 232, run : Wrong stdin come in
+[2018/07/12 13:31:06] 17551, "Aggregator_enc.py", 248, main : ---------------TEST1 Aggregator Start!--------------
+[2018/07/12 13:31:10] 17551, "Aggregator_enc.py", 227, run : STD IN : 
+[2018/07/12 13:31:10] 17551, "Aggregator_enc.py", 231, run : Wrong stdin come in
+[2018/07/12 13:31:10] 17551, "Aggregator_enc.py", 227, run : STD IN : 
+[2018/07/12 13:31:10] 17551, "Aggregator_enc.py", 231, run : Wrong stdin come in
+[2018/07/12 13:31:11] 17551, "Aggregator_enc.py", 22, Shutdown : Recv Signal (2)
+[2018/07/12 13:31:11] 17551, "Aggregator_enc.py", 227, run : STD IN : 
+[2018/07/12 13:31:11] 17551, "Aggregator_enc.py", 231, run : Wrong stdin come in
