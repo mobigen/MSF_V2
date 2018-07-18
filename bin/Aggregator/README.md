@@ -2,8 +2,9 @@
 
 **CSV -> Aggregation -> STORAGE**
 
-STDIN으로 들어온 Path의 CSV파일을 집계(SUM, COUNT, ...)하여 STORAGE(MySQL, Oracle, File ...)로 로드
-현재 STDIN의 prefix는 역할이 없으므로 필요에 맞게 수정하여 사용 가능
+STDIN으로 들어온 Path의 CSV파일을 설정된 컬럼 기준으로 집계(SUM, COUNT, ...)통계를 생성하여 STORAGE(MySQL, Oracle)로 로드 또는 File을 output으로 생성 합니다.
+
+현재 STDIN의 prefix는 역할이 없으므로 필요에 맞게 수정하여 사용 가능합니다.
 
 ## How to use
 ```Bash
@@ -25,13 +26,13 @@ file://<File path>
 |Section|Option|Range|Description|
 |:------:|:-------------:|-----------|-----------------------------|
 |Log    |logfilepath    | (string) |  log가 저장될 경로           |
-|          |logfilesize     | (int)      |   log파일의 최대 사이즈   |
+|          |logfilesize     | (int)      |   log파일의 최대 사이즈(단위: byte)   |
 |          |logfilecount  | (int)      |   log파일의 최대 수          |
 |Section| SEP   |(string)| 읽을 csv파일의 컬럼 구분자        |
-|| GROUPBY   |(string)| groupby 할 컬럼 이름들      |
-|| SUM   |(string)| SUM 연산할 컬럼   |
-|| MAX   |(string)| MAX 연산할 컬럼       |
-|| MIN   |(string)| MIN 연산할 컬럼      |
+|| GROUPBY   |(string)| min, max, avg 통계를 생성하기 위한 대상 컬럼 리스트, 복수개 입력 가능      |
+|| SUM   |(string)| Groupby 컬럼을 기준으로 합계를 생성하기 위한 컬럼 정의 , 복수개 입력 가능   |
+|| MAX   |(string)| Groupby 컬럼을 기준으로 최대값을 생성하기 위한 컬럼 정의 , 복수개 입력 가능       |
+|| MIN   |(string)| Groupby 컬럼을 기준으로 최소값을 생성하기 위한 컬럼 정의 , 복수개 입력 가능      |
 || STORAGE_TYPE   |(string)| Load할 STORAGE Type(ex: MySQL, Oracle, File...)    |
 || STORAGE_CONFPATH   |(string)| Load할 STORAGE의 config가 저장된 경로   |
 || STORAGE_SECTION   |(string)| Load할 STORAGE의 config의 section        |
