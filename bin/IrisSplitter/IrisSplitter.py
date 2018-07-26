@@ -71,9 +71,9 @@ class IrisSplitter():
             #키 인덱스
             self.KEY_INDEX = self.PARSER.getint('COMMON', 'KEY_INDEX')
             if self.PARSER.has_option('COMMON', 'KEY_START_INDEX'):
-                ksidx = self.PARSER.getint('COMMON', 'KEY_START_INDEX')
+                ksidx = self.PARSER.get('COMMON', 'KEY_START_INDEX')
             if self.PARSER.has_option('COMMON', 'KEY_END_INDEX'):
-                keidx = self.PARSER.getint('COMMON', 'KEY_END_INDEX')
+                keidx = self.PARSER.get('COMMON', 'KEY_END_INDEX')
 
             self.PARTITION_RANGE = self.PARSER.getint('COMMON', 'PARTITION_RANGE')
             self.PARTITION_INDEX = self.PARSER.getint('COMMON', 'PARTITION_INDEX')
@@ -92,10 +92,16 @@ class IrisSplitter():
             if self.PARSER.has_option(self.SECTION, 'KEY_INDEX'):
                 self.KEY_INDEX = self.PARSER.getint(self.SECTION, 'KEY_INDEX')
             if self.PARSER.has_option(self.SECTION, 'KEY_START_INDEX'):
-                ksidx = self.PARSER.getint(self.SECTION, 'KEY_START_INDEX')
+                ksidx = self.PARSER.get(self.SECTION, 'KEY_START_INDEX')
             if self.PARSER.has_option(self.SECTION, 'KEY_END_INDEX'):
-                keidx = self.PARSER.getint(self.SECTION, 'KEY_END_INDEX')
+                keidx = self.PARSER.get(self.SECTION, 'KEY_END_INDEX')
 
+            if ksidx == '' : ksidx = None
+            else : ksidx = int(ksidx)
+
+            if keidx == '' : keidx = None
+            else : keidx = int(keidx)
+                
             self.KEY_SLICE = slice(ksidx, keidx)
 
             if not os.path.exists(self.SAVE_PATH):
