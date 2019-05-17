@@ -117,7 +117,7 @@ class ServerWatch(object):
 			flist.append(line.split())
 
 		#total = used + free + buffers + cached
-		total = int(flist[1][2])+int(flist[1][3])+int(flist[1][5])+int(flist[1][6])
+		total = int(flist[1][2])+int(flist[1][3])+int(flist[1][5])
 		#real free memory = free + buffers + cached
 		free_memory = int(flist[1][3])+int(flist[1][5])+int(flist[1][6])
 		#real use memory = total - (free + buffers + cached)
