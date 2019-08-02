@@ -265,33 +265,18 @@ originalFlowFile = session.get()
 if originalFlowFile != None:
     '''
         -Essential properties which must be listed-
-            ip
-            port
-            user
-            pwd
-            db
             field_sep
             record_sep
-            timeout
-            direct
-            ctl_path
             process_id
             remove
             error_path
-            log_dir
             log_suffix
     '''
-    ip = str(ip)
-    port = str(port)
-    user = str(user)
-    pwd = str(pwd)
-    db = str(db)
     field_sep = str(field_sep)
     record_sep = str(record_sep)
     timeout = str(timeout)
     remove = str(remove)
     error_path = str(error_path)
-    log_dir = str(log_dir)
     log_suffix = str(log_suffix)
 
     iris_conn['field_sep'] = field_sep

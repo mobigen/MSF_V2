@@ -23,7 +23,6 @@ if originalFlowFile != None:
     log.info("=== Start ===")
 
     # Get properties
-    log_dir = str(log_dir)
     log_suffix = str(log_suffix)
     
     log_name = '%s-%s.log' % (str(context.name), log_suffix)

@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template encoding-version="1.2">
+    <description></description>
+    <groupId>39cc1854-115c-116b-6239-a0e0479880ef</groupId>
+    <name>IrisSummary sample</name>
+    <snippet>
+        <connections>
+            <id>341fd2fa-ec3c-3fec-0000-000000000000</id>
+            <parentGroupId>51ef932e-e89f-3293-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <destination>
+                <groupId>51ef932e-e89f-3293-0000-000000000000</groupId>
+                <id>f65d2bcf-7c4c-34dd-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>1</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name></name>
+            <selectedRelationships>success</selectedRelationships>
+            <source>
+                <groupId>51ef932e-e89f-3293-0000-000000000000</groupId>
+                <id>2763041f-c029-3a1f-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <processors>
+            <id>2763041f-c029-3a1f-0000-000000000000</id>
+            <parentGroupId>51ef932e-e89f-3293-0000-000000000000</parentGroupId>
+            <position>
+                <x>0.0</x>
+                <y>0.0</y>
+            </position>
+            <bundle>
+                <artifact>nifi-scripting-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.9.2</version>
+            </bundle>
+            <config>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments></comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>Script Engine</key>
+                        <value>
+                            <name>Script Engine</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Script File</key>
+                        <value>
+                            <name>Script File</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Script Body</key>
+                        <value>
+                            <name>Script Body</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Module Directory</key>
+                        <value>
+                            <name>Module Directory</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>customers</key>
+                        <value>
+                            <name>customers</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>field_sep</key>
+                        <value>
+                            <name>field_sep</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>log_suffix</key>
+                        <value>
+                            <name>log_suffix</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>orders</key>
+                        <value>
+                            <name>orders</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>products</key>
+                        <value>
+                            <name>products</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>query</key>
+                        <value>
+                            <name>query</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>save_path</key>
+                        <value>
+                            <name>save_path</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>Script Engine</key>
+                        <value>python</value>
+                    </entry>
+                    <entry>
+                        <key>Script File</key>
+                        <value>/home/eva/user/sdi/IrisSummary-NiFi.py</value>
+                    </entry>
+                    <entry>
+                        <key>Script Body</key>
+                    </entry>
+                    <entry>
+                        <key>Module Directory</key>
+                        <value>/home/eva/lib,/home/eva/user/sdi</value>
+                    </entry>
+                    <entry>
+                        <key>customers</key>
+                        <value>/*+ LOCATION ( PARTITION &gt;= '${now():toNumber():minus(86400000):format('yyyyMMdd000000')}' AND PARTITION &lt; '${now():format('yyyyMMdd000000')}' ) */
+select * from customers;</value>
+                    </entry>
+                    <entry>
+                        <key>field_sep</key>
+                        <value>,</value>
+                    </entry>
+                    <entry>
+                        <key>log_suffix</key>
+                        <value>SummaryTest</value>
+                    </entry>
+                    <entry>
+                        <key>orders</key>
+                        <value>/*+ LOCATION ( PARTITION &gt;= '${now():toNumber():minus(86400000):format('yyyyMMdd000000')}' AND PARTITION &lt; '${now():format('yyyyMMdd000000')}' ) */
+select * from orders;</value>
+                    </entry>
+                    <entry>
+                        <key>products</key>
+                        <value>/*+ LOCATION ( PARTITION &gt;= '${now():toNumber():minus(86400000):format('yyyyMMdd000000')}' AND PARTITION &lt; '${now():format('yyyyMMdd000000')}' ) */
+select * from products;</value>
+                    </entry>
+                    <entry>
+                        <key>query</key>
+                        <value>SELECT
+	customers.customer_id,
+	orders.order_id,
+	orders.order_date,
+	products.product_name,
+	products.category_id
+FROM
+	customers
+LEFT OUTER JOIN orders
+	ON customers.customer_id = orders.customer_id
+INNER JOIN products
+	ON orders.order_id = products.product_id</value>
+                    </entry>
+                    <entry>
+                        <key>save_path</key>
+                        <value>/home/eva/user/sdi/dat/SummaryTest_${now():toNumber():minus(86400000):format('yyyyMMdd000000')}.dat</value>
+                    </entry>
+                </properties>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>*/5 * * * * ?</schedulingPeriod>
+                <schedulingStrategy>CRON_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>IrisSummaryByEmbededScheduling</name>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>failure</name>
+            </relationships>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>success</name>
+            </relationships>
+            <state>STOPPED</state>
+            <style/>
+            <type>org.apache.nifi.processors.script.ExecuteScript</type>
+        </processors>
+        <processors>
+            <id>f65d2bcf-7c4c-34dd-0000-000000000000</id>
+            <parentGroupId>51ef932e-e89f-3293-0000-000000000000</parentGroupId>
+            <position>
+                <x>0.49999237060546875</x>
+                <y>232.49998474121094</y>
+            </position>
+            <bundle>
+                <artifact>nifi-update-attribute-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.9.2</version>
+            </bundle>
+            <config>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments></comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>Delete Attributes Expression</key>
+                        <value>
+                            <name>Delete Attributes Expression</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Store State</key>
+                        <value>
+                            <name>Store State</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Stateful Variables Initial Value</key>
+                        <value>
+                            <name>Stateful Variables Initial Value</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>canonical-value-lookup-cache-size</key>
+                        <value>
+                            <name>canonical-value-lookup-cache-size</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>Delete Attributes Expression</key>
+                    </entry>
+                    <entry>
+                        <key>Store State</key>
+                        <value>Do not store state</value>
+                    </entry>
+                    <entry>
+                        <key>Stateful Variables Initial Value</key>
+                    </entry>
+                    <entry>
+                        <key>canonical-value-lookup-cache-size</key>
+                        <value>100</value>
+                    </entry>
+                </properties>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>UpdateAttribute</name>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>success</name>
+            </relationships>
+            <state>STOPPED</state>
+            <style/>
+            <type>org.apache.nifi.processors.attributes.UpdateAttribute</type>
+        </processors>
+    </snippet>
+    <timestamp>08/02/2019 10:17:30 KST</timestamp>
+</template>
