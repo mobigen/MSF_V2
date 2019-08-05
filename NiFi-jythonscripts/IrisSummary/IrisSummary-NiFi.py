@@ -6,7 +6,6 @@ import os
 import re
 import datetime as dt
 import traceback
-import ConfigParser
 
 from threading import Thread
 from logging import handlers
@@ -64,23 +63,6 @@ def retry_decorator(func):
                     raise Exception("Failed retry 3 times")
         return result
     return wrapper
-
-def get_conf(path):
-    '''
-        ConfigParser -> Dict
-        conf_dict[section][option] = conf.get(section, option)
-    '''
-    conf = ConfigParser.ConfigParser()
-    conf.read(path)
-    conf_dict = {}
-    for section in conf.sections():
-        if section in conf_dict.keys():
-            LOG.error("Duplicated section names: %s" % section)
-        conf_dict[section] = dict()
-        for option in conf.options(section):
-            conf_dict[section][option.lower()] = conf.get(section, option)
-
-    return conf_dict
 
 class WriteCallback(OutputStreamCallback):
     def __init__(self, content=None):
@@ -246,7 +228,7 @@ def to_dict(handler_obj, key_cols=False):
         # Retrieve indexes of key columns
         key_idx = [handler_obj.colname_dict[key_col] for key_col in key_cols]
             
-        # Concatenate key column values with '|^|'
+        # assign key column values with tuple
         for row in handler_obj.cursor:
             key = tuple([str(row[idx]) for idx in key_idx])
             key_to_row_dict[key].append(row)
