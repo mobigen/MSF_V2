@@ -1,3 +1,8 @@
+#ExecuteScrpit 참고
+https://community.hortonworks.com/articles/75032/executescript-cookbook-part-1.html
+https://community.hortonworks.com/articles/75545/executescript-cookbook-part-2.html
+https://community.hortonworks.com/articles/77739/executescript-cookbook-part-3.html
+
 # Jython script modules
 NiFi에 기본적으로 제공되는 기능들로 구성하기 힘들거나 불가능한 요구사항을 처리하기 위한 모듈.
 
