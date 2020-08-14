@@ -1,0 +1,13 @@
+uuid
+domain
+url
+keyword
+top_sentence
+top_word
+sentences
+words
+text
+body
+date
+section
+pdate

@@ -19,3 +19,7 @@ SI 업무를 하는데 필요한 단일 모듈들을 정리해놓은 디렉토�
 모비젠 공통 모듈 저장소 입니다.
 
 EventFlow, M6 API 등등의 모듈들이 있습니다.
+
+
+## Crawler
+Python으로 구현된 Scrapy/Selenium Request를 지원하는 크롤러 모듈입니다.

@@ -1,0 +1,14 @@
+beautifulsoup4==4.9.1
+pyquery==1.4.1
+tldextract==2.2.2
+Scrapy==2.1.0
+zmq==0.0.0
+pyzmq==19.0.1
+spyne==2.13.15
+w3lib==1.22.0
+msgpack==1.0.0
+fs==2.4.11
+selenium==3.141.0
+Twisted==20.3.0
+croniter==0.3.34
+pytest==5.4.3
