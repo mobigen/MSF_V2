@@ -391,10 +391,7 @@ class XmlItemExporter(BaseItemExporter):
 class IrisItemExporter(BaseItemExporter):
 	name = 'IRIS'
 
-	try:
-		import lib.M6 as M6
-	except:
-		logger.error('IrisLoadExporter can not import M6')
+
 
 	def __init__(self, conf=None, section=None, insert_query=None, include_headers_line=True, join_multivalued=',', **kwargs):
 		super().__init__(dont_fail=True, **kwargs)
@@ -422,6 +419,10 @@ class IrisItemExporter(BaseItemExporter):
 		pass
 
 	def start_exporting(self):
+		try:
+			import lib.M6 as M6
+		except:
+			logger.error('IrisLoadExporter can not import M6')
 		self.conn = M6.Connection(self.conf.get(self.section, 'iris_host'), self.conf.get(self.section, 'iris_id'), self.conf.get(self.section, 'iris_passwd'),
 		                          Direct=True if self.conf.get(self.section, 'iris_direct').upper() is 'TRUE' else False, Database=self.conf.get(self.section, 'iris_database'))
 		self.cursor = self.conn.Cursor()
@@ -480,10 +481,6 @@ class IrisItemExporter(BaseItemExporter):
 
 class IrisLoadExporter(BaseItemExporter):
 	name = 'IRIS_LOAD' 
-	try:
-		import lib.M6 as M6
-	except:
-		logger.error('IrisLoadExporter can not import M6')
 
 	def __init__(self, conf=None, section=None, include_headers_line=True, join_multivalued=',', **kwargs):
 		super().__init__(dont_fail=True, **kwargs)
@@ -531,6 +528,10 @@ class IrisLoadExporter(BaseItemExporter):
 		return value
 
 	def load_iris(self):
+		try:
+			import lib.M6 as M6
+		except:
+			logger.error('IrisLoadExporter can not import M6')
 		conn = M6.Connection(self.conf.get(self.section, 'iris_host'), self.conf.get(self.section, 'iris_id'), self.conf.get(self.section, 'iris_passwd'),
 		                     Direct=True if self.conf.get(self.section, 'iris_direct').upper() is 'TRUE' else False, Database=self.conf.get(self.section, 'iris_database'))
 		c = conn.Cursor()
