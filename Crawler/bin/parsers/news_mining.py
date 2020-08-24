@@ -23,6 +23,7 @@ class news_mining(iparser):
 
 	def __init__(self, *args, **kwargs):
 		super(news_mining, self).__init__(*args, **kwargs)
+		self.start_pdate = None
 
 	def parse(self, item, *args, **kwargs):
 		try:
@@ -31,13 +32,17 @@ class news_mining(iparser):
 			text = soup.extract().get_text()
 
 			if self.conf.has_option(self.section, 'exclude_keywords'):
-				exclude_keywords = ast.literal_eval(self.conf.get(self.section,'exclude_keywords'))
+				exclude_keywords = ast.literal_eval(self.conf.get(self.section, 'exclude_keywords'))
 				for ex_word in exclude_keywords:
-					text = text.replace(ex_word,'')
+					text = text.replace(ex_word, '')
 
 			tm_result = tm.get(text)
 			item.fields["pdate"] = CommonField()
 			item["pdate"] = datetime.datetime.now().strftime('%Y%m%d%H%M00')
+
+			if self.start_pdate is None:
+				self.start_pdate = item["pdate"]
+
 			item['body'] = str(item['body']).replace('\n', ' ').strip()
 
 			item.fields["text"] = CommonField()
@@ -65,3 +70,14 @@ class news_mining(iparser):
 
 		except Exception as ex:
 			print(ex)
+
+	def close_parser(self):
+		if self.exporter:
+			self.exporter.finish_exporting()
+		self.parser_opened = False
+		msg = str('%s %s %s' % (self.name, self.start_pdate, datetime.datetime.now().strftime('%Y%m%d%H%M00')))
+		sys.stdout.write(msg + '\n')
+		sys.stdout.flush()
+		sys.stderr.write(msg + '\n')
+		sys.stderr.flush() 
+		pass
