@@ -160,7 +160,8 @@ class QueueItemExporter(BaseItemExporter):
 
 			fields = self._get_serialized_fields(item, default_value='',
 			                                     include_empty=True)
-			self.encoding = item['encoding']
+			if 'encoding' in item.fields:
+				self.encoding = item['encoding']
 			values = list(self._build_row(x for _, x in fields))
 
 			p_msg = msgpack.packb(values, use_bin_type=True)
@@ -183,7 +184,9 @@ class QueueItemExporter(BaseItemExporter):
 				else:
 					# use fields declared in Item
 					self.fields_to_export = list(item.fields.keys())
-			self.encoding = item['encoding']
+
+			if 'encoding' in item.fields:
+				self.encoding = item['encoding']
 			row = list(self._build_row(self.fields_to_export))
 
 
@@ -256,6 +259,8 @@ class CsvItemExporter(BaseItemExporter):
 
 		fields = self._get_serialized_fields(item, default_value='',
 		                                     include_empty=True)
+		if 'encoding' in item.fields:
+			self.encoding = item['encoding']
 		values = list(self._build_row(x for _, x in fields))
 		self.csv_writer.writerow(values)
 
@@ -275,6 +280,8 @@ class CsvItemExporter(BaseItemExporter):
 				else:
 					# use fields declared in Item
 					self.fields_to_export = list(item.fields.keys())
+			if 'encoding' in item.fields:
+				self.encoding = item['encoding']
 			row = list(self._build_row(self.fields_to_export))
 			self.csv_writer.writerow(row)
 
@@ -475,6 +482,8 @@ class IrisItemExporter(BaseItemExporter):
 				else:
 					# use fields declared in Item
 					self.fields_to_export = list(item.fields.keys())
+			if 'encoding' in item.fields:
+				self.encoding = item['encoding']
 			row = list(self._build_row(self.fields_to_export))
 
 
@@ -582,6 +591,8 @@ class IrisLoadExporter(BaseItemExporter):
 			fields = self._get_serialized_fields(item, default_value='',
 			                                     include_empty=True)
 
+			if 'encoding' in item.fields:
+				self.encoding = item['encoding']
 			values = list(self._build_row(x for _, x in fields))
 
 			if self.current_pdt is None:
@@ -617,6 +628,8 @@ class IrisLoadExporter(BaseItemExporter):
 				else:
 					# use fields declared in Item
 					self.fields_to_export = list(item.fields.keys())
+			if 'encoding' in item.fields:
+				self.encoding = item['encoding']
 			row = list(self._build_row(self.fields_to_export))
 
 
