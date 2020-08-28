@@ -10,7 +10,7 @@ import re
 from lib.scrapy.exporters import CsvItemExporter, IrisItemExporter, IrisLoadExporter
 from lib.scrapy.items import CommonItem, CommonField
 
-from textmine import textmine
+from lib.pretreatment.textmine import textmine
 
 import ast
 

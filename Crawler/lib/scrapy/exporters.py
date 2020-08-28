@@ -160,7 +160,7 @@ class QueueItemExporter(BaseItemExporter):
 
 			fields = self._get_serialized_fields(item, default_value='',
 			                                     include_empty=True)
-
+			self.encoding = item['encoding']
 			values = list(self._build_row(x for _, x in fields))
 
 			p_msg = msgpack.packb(values, use_bin_type=True)
@@ -183,6 +183,7 @@ class QueueItemExporter(BaseItemExporter):
 				else:
 					# use fields declared in Item
 					self.fields_to_export = list(item.fields.keys())
+			self.encoding = item['encoding']
 			row = list(self._build_row(self.fields_to_export))
 
 
@@ -391,8 +392,6 @@ class XmlItemExporter(BaseItemExporter):
 class IrisItemExporter(BaseItemExporter):
 	name = 'IRIS'
 
-
-
 	def __init__(self, conf=None, section=None, insert_query=None, include_headers_line=True, join_multivalued=',', **kwargs):
 		super().__init__(dont_fail=True, **kwargs)
 		if not self.encoding:
@@ -480,7 +479,7 @@ class IrisItemExporter(BaseItemExporter):
 
 
 class IrisLoadExporter(BaseItemExporter):
-	name = 'IRIS_LOAD' 
+	name = 'IRIS_LOAD'
 
 	def __init__(self, conf=None, section=None, include_headers_line=True, join_multivalued=',', **kwargs):
 		super().__init__(dont_fail=True, **kwargs)
@@ -622,7 +621,7 @@ class IrisLoadExporter(BaseItemExporter):
 
 
 class ElasticSearchExporter(BaseItemExporter):
-	name = 'ELASTICSEARCH' 
+	name = 'ELASTICSEARCH'
 	try:
 		from elasticsearch import Elasticsearch
 	except:
@@ -704,7 +703,6 @@ class PostgreSqlExporter(BaseItemExporter):
 		import psycopg2
 	except:
 		logger.error('PostgreSqlExporter can not import psycopg2')
-
 
 	def __init__(self, conf=None, section=None, insert_query=None, include_headers_line=True, join_multivalued=',', **kwargs):
 		super().__init__(dont_fail=True, **kwargs)

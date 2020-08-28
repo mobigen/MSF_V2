@@ -14,4 +14,5 @@ class CommonParser:
 		item.setdefault('url',response.url)
 		item.setdefault('domain', ext.registered_domain)
 		item.setdefault('body', response.body)
+		item.setdefault('encoding', response.encoding)
 		yield item

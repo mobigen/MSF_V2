@@ -24,6 +24,7 @@ class CommonItem(baseItem):
 	domain = Field()
 	body = Field()
 	spider_name = Field()
+	encoding = Field()
 
 
 class NewsItem(baseItem):
