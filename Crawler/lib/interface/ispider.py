@@ -11,7 +11,7 @@ class ispider(scrapy.Spider):
 		self.section = self.handler.parent.section
 		self.handler.management_info['spider_err_count'] = 0
 
-	def engine_started(self):
+	def engine_started(self): 
 		pass
 
 	def engine_stopped(self):
