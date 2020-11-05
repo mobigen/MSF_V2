@@ -1,0 +1,17 @@
+version: "3"
+services:
+    crawler:
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        container_name: crawler
+        user: etl
+        working_dir: /home/mlib/crawler
+        command: bash -c "
+            source ~/.bash_profile
+            && /home/etl/mlib/Mobigen/bin/SIOEF2 0.0.0.0 40000 /home/mlib/crawler/conf/SIOEF.conf"
+        restart: always
+        ports:
+            - "40000:40000"
+
+     

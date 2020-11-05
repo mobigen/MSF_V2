@@ -23,6 +23,18 @@ class news_mining(iparser):
 
 	def __init__(self, *args, **kwargs):
 		super(news_mining, self).__init__(*args, **kwargs)
+
+		if self.conf.has_option(self.section, 'output_path'):
+			self.output_path = self.conf.get(self.section, 'output_path')
+			if not os.path.exists(self.output_path):
+				try:
+					os.makedirs(self.output_path)
+				except:
+					pass
+
+			self.output_name = '%s_%s.dat' % (os.path.splitext(os.path.basename(sys.argv[0]))[0], self.name)
+			self.exporter.output_filename = os.path.join(self.output_path, self.output_name)
+
 		self.start_pdate = None
 
 	def parse(self, item, *args, **kwargs):

@@ -59,6 +59,7 @@ class DaumSpider(ispider):
 			item["url"] = response.url
 			item["domain"] = ext_domain.registered_domain
 			item["body"] = response.body
+			item["encoding"] = response.encoding
 
 			item.fields["section"] = CommonField()
 			item["section"] = self.section
