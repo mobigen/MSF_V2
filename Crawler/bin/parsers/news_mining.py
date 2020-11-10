@@ -49,16 +49,16 @@ class news_mining(iparser):
 					text = text.replace(ex_word, '')
 
 			tm_result = tm.get(text)
-			item.fields["pdate"] = CommonField()
-			item["pdate"] = datetime.datetime.now().strftime('%Y%m%d%H%M00')
+			# item.fields["pdate"] = CommonField()
+			# item["pdate"] = datetime.datetime.now().strftime('%Y%m%d%H%M00')
 
-			if self.start_pdate is None:
-				self.start_pdate = item["pdate"]
+			# if self.start_pdate is None:
+			# 	self.start_pdate = item["pdate"]
 
-			item['body'] = str(item['body']).replace('\n', ' ').strip()
+			# item['body'] = str(item['body']).replace('\n', ' ').strip()
 
-			item.fields["text"] = CommonField()
-			item["text"] = text.replace('\n', ' ').strip()
+			# item.fields["text"] = CommonField()
+			# item["text"] = text.replace('\n', ' ').strip()
 
 			item.fields["top_sentence"] = CommonField()
 			item.fields["top_word"] = CommonField()
@@ -76,7 +76,8 @@ class news_mining(iparser):
 			if len(tm_result) > 1:
 				item["words"] = str(tm_result[1]).replace('\n', ' ').strip()
 
-			self.exporter.fields_to_export = ['uuid', 'domain', 'url', 'keyword', 'top_sentence', 'top_word', 'sentences', 'words', 'text', 'body', 'date', 'section', 'pdate']
+			# self.exporter.fields_to_export = ['uuid', 'domain', 'url', 'keyword', 'top_sentence', 'top_word', 'sentences', 'words', 'text', 'body', 'date', 'section', 'pdate']
+			self.exporter.fields_to_export = ['uuid', 'domain', 'url', 'keyword', 'top_sentence', 'top_word', 'sentences', 'words', 'date', 'section']
 
 			yield item
 

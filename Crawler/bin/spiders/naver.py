@@ -47,7 +47,7 @@ class NaverSpider(ispider):
 			yield Request(url, self.parse, cb_kwargs={'keyword': keyword})
 
 	def parse(self, response, keyword):
-		for url in response.css('a._sp_each_title::attr(href)').getall():
+		for url in response.css('a.news_tit::attr(href)').getall():
 			yield response.follow(url, self.content_parse, cb_kwargs={'keyword': keyword})
 
 	def content_parse(self, response, keyword):

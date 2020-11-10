@@ -12,3 +12,8 @@ selenium==3.141.0
 Twisted==20.3.0
 croniter==0.3.34
 pytest==5.4.3
+scipy==1.5.2
+scrapy-selenium==0.0.7
+numpy==1.19.1
+scikit-learn==0.23.1
+sklearn==0.0

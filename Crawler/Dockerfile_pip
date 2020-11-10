@@ -1,0 +1,11 @@
+#docker build -t crawler . && docker run -p 40000:40000 -v /home/etl/data:/home/etl/data -v /home/etl/crawler/conf:/home/etl/crawler/conf --name Crawler crawler 
+FROM centos8_etl:latest
+#FROM crawl:latest
+WORKDIR .
+USER root
+COPY . /home/mlib/crawler
+RUN chown -R etl /home/mlib/crawler
+RUN chgrp -R etl /home/mlib/crawler
+USER etl
+RUN pip3 install --user -r /home/mlib/crawler/requirements.txt
+
