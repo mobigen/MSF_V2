@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: mobigen.processors.FileSplitter.FileSplitterTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.419 s - in mobigen.processors.FileSplitter.FileSplitterTest
