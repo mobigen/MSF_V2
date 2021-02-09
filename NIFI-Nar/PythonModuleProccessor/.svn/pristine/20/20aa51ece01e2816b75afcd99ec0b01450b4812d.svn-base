@@ -1,0 +1,275 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package mobigen.PythonModuleService;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.lang.ProcessBuilder.Redirect;
+import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import org.apache.nifi.annotation.documentation.CapabilityDescription;
+import org.apache.nifi.annotation.documentation.Tags;
+import org.apache.nifi.annotation.lifecycle.OnDisabled;
+import org.apache.nifi.annotation.lifecycle.OnEnabled;
+import org.apache.nifi.components.PropertyDescriptor;
+import org.apache.nifi.controller.AbstractControllerService;
+import org.apache.nifi.controller.ConfigurationContext;
+import org.apache.nifi.logging.ComponentLog;
+import org.apache.nifi.processor.exception.ProcessException;
+import org.apache.nifi.processor.util.StandardValidators;
+import org.apache.nifi.reporting.InitializationException;
+
+@Tags({ "example" })
+@CapabilityDescription("Example ControllerService implementation of MyService.")
+public class StandardMyService extends AbstractControllerService implements PythonService {
+
+	public static final PropertyDescriptor MY_PROPERTY = new PropertyDescriptor.Builder().name("MY_PROPERTY")
+			.displayName("My Property").description("Example Property").required(true)
+			.addValidator(StandardValidators.NON_EMPTY_VALIDATOR).build();
+
+	private static final List<PropertyDescriptor> properties;
+
+	static {
+		final List<PropertyDescriptor> props = new ArrayList<>();
+		props.add(MY_PROPERTY);
+		properties = Collections.unmodifiableList(props);
+	}
+
+	@Override
+	protected List<PropertyDescriptor> getSupportedPropertyDescriptors() {
+		return properties;
+	}
+
+	private static SingleThreadPython singleThreadPython;
+	private static Thread thrd;
+
+	/**
+	 * @param context the configuration context
+	 * @throws InitializationException if unable to create a database connection
+	 * @throws IOException
+	 */
+	@OnEnabled
+	public void onEnabled(final ConfigurationContext context) throws InitializationException, IOException {
+		ComponentLog logger = getLogger();
+		logger.info("=======================================================>onEnabled3");
+		singleThreadPython = new SingleThreadPython();
+		thrd = new Thread(singleThreadPython, "PythonThread");
+//		thrd.start();
+
+	}
+
+	@SuppressWarnings("removal")
+	@OnDisabled
+	public void shutdown() throws InterruptedException {
+		ComponentLog logger = getLogger();
+//		singleThreadPython.StopProccessor();
+ 
+		logger.info("=======================================================>shutdown3");
+	}
+
+	@Override
+	public void execute() throws ProcessException {
+		ComponentLog logger = getLogger();
+		logger.info("=======================================================>execute3");
+	}
+
+	public class SingleThreadPython implements Runnable {
+		private ProcessBuilder processBuilder;
+		private Process process;
+
+		private ReadStdOut readStdOut;
+		private Thread read_thrd;
+
+		private ErrStdOut errStdOut;
+		private Thread err_thrd;
+
+		private WriteStdIn writeStdIn;
+		private Thread write_thrd;
+
+		private boolean is_continue = true;
+
+		public SingleThreadPython() throws IOException {
+			processBuilder = new ProcessBuilder("python3", "/home/mlib/python_modules/bin/empty_template.py",
+					"/home/mlib/python_modules/conf/CsvToIris.conf", "IRIS");
+		}
+
+		public void StopProccessor() throws InterruptedException {
+			this.is_continue = false;
+			process.destroyForcibly();
+			process.waitFor();
+			readStdOut.Stop();
+			errStdOut.Stop();
+			writeStdIn.Stop();
+		}
+
+		@Override
+		public void run() {
+			ComponentLog logger = getLogger();
+
+			try {
+				process = processBuilder.start();
+
+				readStdOut = new ReadStdOut(process);
+				read_thrd = new Thread(readStdOut, "readStdOut");
+				read_thrd.start();
+
+				errStdOut = new ErrStdOut(process);
+				err_thrd = new Thread(errStdOut, "errStdOut");
+				err_thrd.start();
+
+				writeStdIn = new WriteStdIn(process);
+				write_thrd = new Thread(writeStdIn, "writeStdIn");
+				write_thrd.start();
+
+				while (this.is_continue) {
+//					String line = "";
+//					Thread.sleep(1000);
+//					logger.info("process.isAlive=======================================================>"
+//							+ process.isAlive());
+					Thread.sleep(500);
+					if (Thread.interrupted()) {
+						break;
+					}
+				}
+
+			} catch (IOException | InterruptedException e1) {
+				// TODO Auto-generated catch block
+				StringWriter sw = new StringWriter();
+				e1.printStackTrace(new PrintWriter(sw));
+				String exceptionAsString = sw.toString();
+				logger.info("===========>" + exceptionAsString);
+			}
+
+		}
+
+	}
+
+	public class ReadStdOut implements Runnable {
+		private Process process;
+		private boolean is_continue = true;
+
+		public ReadStdOut(Process _process) throws IOException {
+			process = _process;
+		}
+
+		@Override
+		public void run() {
+			ComponentLog logger = getLogger();
+			InputStream stdout = process.getInputStream();
+			BufferedReader reader = new BufferedReader(new InputStreamReader(stdout));
+			String line = "";
+			try {
+				while ((line = reader.readLine()) != null && is_continue) {
+//					logger.info("READ=======================================================>" + line);
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				StringWriter sw = new StringWriter();
+				e.printStackTrace(new PrintWriter(sw));
+				String exceptionAsString = sw.toString();
+				logger.info("===========>" + exceptionAsString);
+			}
+		}
+
+		public void Stop() {
+			this.is_continue = false;
+		}
+	}
+
+	public class ErrStdOut implements Runnable {
+		private Process process;
+		private boolean is_continue = true;
+
+		public ErrStdOut(Process _process) throws IOException {
+			process = _process;
+		}
+
+		@Override
+		public void run() {
+			ComponentLog logger = getLogger();
+			InputStream stderr = process.getErrorStream();
+			BufferedReader reader = new BufferedReader(new InputStreamReader(stderr));
+			String line = "";
+			try {
+				while ((line = reader.readLine()) != null && is_continue) {
+//					logger.info("ERR=======================================================>" + line);
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				StringWriter sw = new StringWriter();
+				e.printStackTrace(new PrintWriter(sw));
+				String exceptionAsString = sw.toString();
+				logger.info("===========>" + exceptionAsString);
+			}
+		}
+
+		public void Stop() {
+			this.is_continue = false;
+		}
+	}
+
+	public class WriteStdIn implements Runnable {
+		private Process process;
+		private boolean is_continue = true;
+
+		public WriteStdIn(Process _process) throws IOException {
+			process = _process;
+
+		}
+
+		@SuppressWarnings({ "static-access", "resource" })
+		@Override
+		public void run() {
+			ComponentLog logger = getLogger();
+			OutputStream stdin = process.getOutputStream();
+			try {
+				while (is_continue) {
+//					logger.info("writer=======================================================>");
+//
+					String aaa = "asdasdasd";
+					stdin.write(aaa.getBytes(Charset.forName("UTF-8")));
+//
+//					stdin.write('\n');
+//
+//					stdin.flush();
+
+					Thread.sleep(100);
+				}
+			} catch (IOException | InterruptedException e) {
+				// TODO Auto-generated catch block
+				StringWriter sw = new StringWriter();
+				e.printStackTrace(new PrintWriter(sw));
+				String exceptionAsString = sw.toString();
+				logger.info("===========>" + exceptionAsString);
+			}
+		}
+
+		public void Stop() {
+			this.is_continue = false;
+		}
+	}
+}

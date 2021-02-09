@@ -23,6 +23,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
@@ -42,8 +43,6 @@ import org.apache.nifi.logging.ComponentLog;
 import org.apache.nifi.processor.exception.ProcessException;
 import org.apache.nifi.processor.util.StandardValidators;
 import org.apache.nifi.reporting.InitializationException;
-import org.apache.nifi.util.MockConfigurationContext;
-import org.apache.nifi.util.ReflectionUtils;
 
 @Tags({ "PythonModuleService" })
 @CapabilityDescription("ControllerService for Python Module Subproccessor.")
@@ -77,12 +76,12 @@ public class PythonModuleService extends AbstractControllerService implements Py
 		return properties;
 	}
 
-	private static Boolean IsAlive = true;
-	private static Queue<String> std_ins = new LinkedList<>();
-	private static Queue<String> std_outs = new LinkedList<>();
-	private static Queue<String> std_errs = new LinkedList<>();
-	private static SingleThreadPython singleThreadPython;
-	private static Thread thrd;
+	private Boolean IsAlive = true;
+	private Queue<String> std_ins = new LinkedList<>();
+	private Queue<String> std_outs = new LinkedList<>();
+	private Queue<String> std_errs = new LinkedList<>();
+	private SingleThreadPython singleThreadPython;
+	private Thread thrd;
 
 	/**
 	 * @param context the configuration context
@@ -164,12 +163,16 @@ public class PythonModuleService extends AbstractControllerService implements Py
 				i++;
 			}
 			processBuilder = new ProcessBuilder(cmd);
+
 		}
 
 		public void StopProccessor() throws InterruptedException {
+
 			this.is_continue = false;
+
 			process.destroyForcibly();
 			process.waitFor();
+ 
 			readStdOut.Stop();
 			errStdOut.Stop();
 			writeStdIn.Stop();
@@ -218,6 +221,19 @@ public class PythonModuleService extends AbstractControllerService implements Py
 
 		}
 
+		private int tryGetPid(Process process) {
+			if (process.getClass().getName().equals("java.lang.UNIXProcess")) {
+				try {
+					Field f = process.getClass().getDeclaredField("pid");
+					f.setAccessible(true);
+					return f.getInt(process);
+				} catch (IllegalAccessException | IllegalArgumentException | NoSuchFieldException
+						| SecurityException e) {
+				}
+			}
+
+			return -1;
+		}
 	}
 
 	public class ReadStdOut implements Runnable {
