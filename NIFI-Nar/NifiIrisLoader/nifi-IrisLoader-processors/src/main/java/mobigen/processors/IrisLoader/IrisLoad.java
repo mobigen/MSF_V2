@@ -90,8 +90,8 @@ public class IrisLoad extends AbstractProcessor {
 			.addValidator(StandardValidators.NON_EMPTY_VALIDATOR).build();
 
 	public static final PropertyDescriptor IRIS_PASS = new PropertyDescriptor.Builder().name("IRIS_PASS")
-			.displayName("UserPasswrod").description("Input Iris User Password").defaultValue("").required(true)
-			.addValidator(StandardValidators.NON_EMPTY_VALIDATOR).build();
+			.displayName("UserPassword").description("Input Iris User Password").defaultValue("").required(true)
+			.sensitive(true).addValidator(StandardValidators.NON_EMPTY_VALIDATOR).build();
 
 	public static final PropertyDescriptor IRIS_DATABASE = new PropertyDescriptor.Builder().name("IRIS_DATABASE")
 			.displayName("Database").description("Input Iris Database Name").defaultValue("root").required(true)
@@ -116,7 +116,7 @@ public class IrisLoad extends AbstractProcessor {
 			"PARTITION_DATE From Date of Today");
 
 	public static final PropertyDescriptor P_DATE_FROM = new PropertyDescriptor.Builder().name("P_DATE_FROM")
-			.displayName("Partition Data From").description("Choice Partition Date from")
+			.displayName("Partition Date From").description("Choice Partition Date from")
 			.allowableValues(P_DATE_ATTRIBUTE, P_DATE_TODAY).defaultValue(P_DATE_TODAY.getValue()).build();
 
 	public static final PropertyDescriptor PARTITION_KEY_ATTRIBUTE = new PropertyDescriptor.Builder()
@@ -158,7 +158,8 @@ public class IrisLoad extends AbstractProcessor {
 	public static final AllowableValue WND_NEWLINE = new AllowableValue("\r\n", "\\r\\n", "Windows Newline");
 
 	public static final PropertyDescriptor RECORD_SEP = new PropertyDescriptor.Builder().name("RECORD_SEP")
-			.displayName("Record Seperator").description("Record Separator").allowableValues(LNX_NEWLINE, WND_NEWLINE).defaultValue("\n").build();
+			.displayName("Record Seperator").description("Record Separator").allowableValues(LNX_NEWLINE, WND_NEWLINE)
+			.defaultValue("\n").build();
 
 	public static final PropertyDescriptor IS_DIRECT = new PropertyDescriptor.Builder().name("DIRECT")
 			.description("Connect to Iris").allowableValues(IS_DIRECT_TRUE, IS_DIRECT_FALSE).defaultValue("false")
