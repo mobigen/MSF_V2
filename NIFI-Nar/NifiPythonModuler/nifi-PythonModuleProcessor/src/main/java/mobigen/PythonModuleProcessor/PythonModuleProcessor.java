@@ -113,29 +113,46 @@ public class PythonModuleProcessor extends AbstractProcessor {
 		if (flowFile != null) {
 			String std_in_property = context.getProperty(STDIN_PROPERTY).evaluateAttributeExpressions(flowFile)
 					.getValue();
-
+			
+//			logger.info("===========> in : " + std_in_property);
 			service.Put_StdIn(std_in_property);
-			try {
-
-				Boolean is_continue = true;
-				while (is_continue) {
+			try { 
+				Boolean is_check_stderr = false;
+				while (!is_check_stderr) {
 					Queue<String> errs = service.Get_StdErr();
-					Queue<String> outs = service.Get_StdOut();
-					while (!outs.isEmpty()) {
-						String out = outs.poll();
-						FlowFile new_flowfile = session.create();
-						session.putAttribute(new_flowfile, "STD_OUT", out);
-						session.transfer(new_flowfile, STD_OUT);
-					}
-					while (!errs.isEmpty()) {
-						String err = errs.poll();
+					is_check_stderr = false;
+					if (!errs.isEmpty()) {
+//						logger.info("===========> !errs.isEmpty()");
+						String err = errs.poll(); 
+//						logger.info("===========> err : " + err);
 						if (err.compareTo(std_in_property.toString()) == 0) {
-							session.remove(flowFile);
-							is_continue = false;
-							break;
-						}
+//							logger.info("===========> is_check_stderr true");
+							is_check_stderr = true;
+						} 
 					}
 				}
+				
+				Queue<String> outs = service.Get_StdOut();	
+				while (!outs.isEmpty()) { 
+					outs = service.Get_StdOut();	
+					String out = outs.poll();
+					logger.info("===========> out : " + out);
+					
+					FlowFile new_flowfile = session.create();
+					session.putAllAttributes(new_flowfile, flowFile.getAttributes());
+					session.putAttribute(new_flowfile, "STD_OUT", out);
+					session.transfer(new_flowfile, STD_OUT); 
+				}
+				
+				if(is_check_stderr)
+				{
+					session.remove(flowFile);
+				}
+				else
+				{
+					session.rollback();
+				} 
+
 			} catch (Exception e) {
 				StringWriter sw = new StringWriter();
 				e.printStackTrace(new PrintWriter(sw));
