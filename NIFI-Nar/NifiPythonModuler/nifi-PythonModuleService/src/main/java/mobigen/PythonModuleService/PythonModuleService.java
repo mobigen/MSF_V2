@@ -96,6 +96,11 @@ public class PythonModuleService extends AbstractControllerService implements Py
 			IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		ComponentLog logger = getLogger();
 		logger.info("=======================================================>onEnabled");
+		
+		Queue<String> std_ins = new LinkedList<>();
+		Queue<String> std_outs = new LinkedList<>();
+		Queue<String> std_errs = new LinkedList<>();		
+		
 		singleThreadPython = new SingleThreadPython(context);
 		thrd = new Thread(singleThreadPython, "PythonThread");
 		thrd.start();
@@ -106,6 +111,11 @@ public class PythonModuleService extends AbstractControllerService implements Py
 	public void shutdown() throws InterruptedException {
 		ComponentLog logger = getLogger();
 		singleThreadPython.StopProccessor();
+		
+		Queue<String> std_ins = new LinkedList<>();
+		Queue<String> std_outs = new LinkedList<>();
+		Queue<String> std_errs = new LinkedList<>();	
+		
 		logger.info("=======================================================>shutdown");
 
 	}
