@@ -967,14 +967,9 @@
 	</profiles>
 
 	<modules>
-		<module>nifi-IrisLoader-processors</module>
-		<module>nifi-IrisLoader-nar</module>
-		<module>nifi-FileSplitter-processors</module>
-		<module>nifi-FileSplitter-nar</module>
-		<module>nifi-PythonModuleProcessor</module>
-		<!-- <module>nifi-PythonModuleProcessor-nar</module> -->
-		<module>nifi-PythonModuleService-api</module>
-		<module>nifi-PythonModuleService</module>
+		<module>NifiFileSplitter</module>
+		<module>NifiIrisLoader</module>
+		<module>NifiPythonModuler</module> 
 	</modules>
 
 </project>

@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Built-By: ds1az
+Build-Jdk: 15.0.2
+Specification-Title: nifi-IrisLoader-processors
+Specification-Version: 0.0
+Specification-Vendor: Apache NiFi Project
+Implementation-Title: nifi-IrisLoader-processors
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.mobigen.nifi
+Implementation-Vendor: Apache NiFi Project
+Implementation-URL: https://nifi.apache.org/nifi-nar-bundles/NifiIrisLoa
+ der/nifi-IrisLoader-processors
+Created-By: Maven Integration for Eclipse
+

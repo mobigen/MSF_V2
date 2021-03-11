@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Built-By: ds1az
+Build-Jdk: 15.0.2
+Specification-Title: nifi-PythonModuleService
+Specification-Version: 0.0
+Specification-Vendor: Apache NiFi Project
+Implementation-Title: nifi-PythonModuleService
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.mobigen.nifi
+Implementation-Vendor: Apache NiFi Project
+Implementation-URL: https://nifi.apache.org/nifi-nar-bundles/NifiPythonM
+ oduler/nifi-PythonModuleService
+Created-By: Maven Integration for Eclipse
+
