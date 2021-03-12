@@ -7,7 +7,7 @@ nifi-IrisLoader-processors
 
 
 From: 'an unknown organization'
-  - mobigen-iris-jdbc  com.mobigen.iris.jdbc:mobigen-iris-jdbc:pom:2.1.0.4
+  - mobigen-iris-jdbc  com.mobigen.iris.jdbc:mobigen-iris-jdbc:jar:2.1.0.4
 
 
 From: 'Apache NiFi Project' (https://nifi.apache.org/)

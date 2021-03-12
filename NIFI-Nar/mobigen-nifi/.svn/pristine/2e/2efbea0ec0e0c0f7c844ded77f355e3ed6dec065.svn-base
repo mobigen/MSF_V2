@@ -1,0 +1,5 @@
+com\mobigen\nifi\PythonModuleService\PythonModuleService$WriteStdIn.class
+com\mobigen\nifi\PythonModuleService\PythonModuleService$ErrStdOut.class
+com\mobigen\nifi\PythonModuleService\PythonModuleService$ReadStdOut.class
+com\mobigen\nifi\PythonModuleService\PythonModuleService$SingleThreadPython.class
+com\mobigen\nifi\PythonModuleService\PythonModuleService.class
