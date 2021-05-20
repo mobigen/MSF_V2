@@ -18,9 +18,12 @@ SI 업무를 하는데 필요한 단일 모듈들을 정리해놓은 디렉토�
 ## Nifi/bin
 SI 업무를 하는데 필요한 단일 모듈들을 정리해놓은 디렉토리입니다.(Nifi용)  
 ### 공통
-#### NifiSubprocess.py
+#### NifiSubprocess.py 
+- python 모듈을 subprocess로 실행시켜 주는 모듈
 #### CommonNifi.py  
+- 공통 기능들이 있는 모듈 (config 정보, 수집 정보 GET ...)
 #### CommonDB.py  
+- 여러 DB를 핸들링 할 수 있는 공통 모듈
 #### 
 ### 수집
 #### GetCollectInfo.py  
