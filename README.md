@@ -32,10 +32,13 @@ SI 업무를 하는데 필요한 단일 모듈들을 정리해놓은 디렉토�
 #### DBCollector.py
 - 여러 DB를 조회 가능하며 결과를 파일로 생성하는 모듈
 ### 파싱
-#### 
+#### ASOSParser.py
+- 기상데이터 파서 모듈
+#### ReferLandParser.py
+- 공시지가 파서 모듈
 #### IrisSplitter.py
 - 수집된 파일을 key-partition별로 나눠서 생성하는 모듈
-### 로딩
+### 로더
 #### HdfsLoader.py
 - 하둡 적재 모듈
 #### IrisLoader.py
