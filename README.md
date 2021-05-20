@@ -24,16 +24,24 @@ SI 업무를 하는데 필요한 단일 모듈들을 정리해놓은 디렉토�
 - 공통 기능들이 있는 모듈 (config 정보, 수집 정보 GET ...)
 #### CommonDB.py  
 - 여러 DB를 핸들링 할 수 있는 공통 모듈
-#### 
 ### 수집
+#### RequestUrl.py
+- restful api를 사용한 수집 모듈
 #### GetCollectInfo.py  
+- 수집 정보(DB정보,쿼리 등)을 config attribute로 생성하는 모듈
+#### DBCollector.py
+- 여러 DB를 조회 가능하며 결과를 파일로 생성하는 모듈
 ### 파싱
-####
+#### 
 #### IrisSplitter.py
+- 수집된 파일을 key-partition별로 나눠서 생성하는 모듈
 ### 로딩
 #### HdfsLoader.py
+- 하둡 적재 모듈
 #### IrisLoader.py
-#### 
+- IRIS 적재 모듈
+#### IrisUpdate.py
+- 로딩 결과를 기록하는 모듈
 
 ## mlib
 모비젠 공통 모듈 저장소 입니다.
