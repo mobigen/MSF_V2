@@ -17,11 +17,20 @@ SI 업무를 하는데 필요한 단일 모듈들을 정리해놓은 디렉토�
 
 ## Nifi/bin
 SI 업무를 하는데 필요한 단일 모듈들을 정리해놓은 디렉토리입니다.(Nifi용)  
+### 공통
+#### NifiSubprocess.py
+#### CommonNifi.py  
+#### CommonDB.py  
+#### 
 ### 수집
-#### GetCollectInfo.py
+#### GetCollectInfo.py  
 ### 파싱
+####
+#### IrisSplitter.py
 ### 로딩
-
+#### HdfsLoader.py
+#### IrisLoader.py
+#### 
 
 ## mlib
 모비젠 공통 모듈 저장소 입니다.
