@@ -1,7 +1,7 @@
 beautifulsoup4==4.9.1
 pyquery==1.4.1
 tldextract==2.2.2
-Scrapy==2.1.0
+Scrapy==2.5.1
 zmq==0.0.0
 pyzmq==19.0.1
 spyne==2.13.15
