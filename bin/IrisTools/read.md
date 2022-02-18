@@ -41,4 +41,12 @@ csv 데이터 파일을 IRIS DB 테이블(미리 생성되어 있어야 함)에 
     ./N_004_load_NO_partition_local.py tablename data_directory [-header]
     
     
+### P_001_merge_by_YEAR.py
+
+year 파티션은 'YYYY0101000000' 으로 partition 기준 컬럼의 값을 통일해야 합니다.
+백업받은 파일에서 파티션 기준 컬럼을 자동으로 year 파티션 값으로 변경해서 파일을 merge  하는 스크립트 입니다.
+
+
+    ./P_001_merge_by_YEAR.py table이름 백업디렉토리 year_merge파일디렉토리
+
 
