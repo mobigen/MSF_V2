@@ -63,12 +63,12 @@ class IRIS_CONNECT :
 
 if __name__ == "__main__" :
 
-    addr = '192.168.107.22' 
-    id = 'test' 
-    #passwd = '!hello.iris0'
-    passwd = 'test'
+    addr = 'xxx.xx.xx.xx' 
+    id = 'id' 
+    
+    passwd = 'pwd'
     port = 5050 
-    db = 'test' 
+    db = 'mydb' 
 
 
     fld_sep = '|^|'
