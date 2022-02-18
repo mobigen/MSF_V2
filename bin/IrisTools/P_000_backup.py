@@ -67,11 +67,12 @@ class IRIS_CONNECT :
 
 if __name__ == "__main__" :
 
-    addr = '192.168.107.22' 
-    id = 'test' 
-    passwd = 'test'
+    addr = 'xxx.xxx.xxx.xx' 
+    id = 'id' 
+   
+    passwd = 'passwd'
     port = 5050 
-    db = 'test' 
+    db = 'mydb' 
 
 
     column_sep = '|^|'
