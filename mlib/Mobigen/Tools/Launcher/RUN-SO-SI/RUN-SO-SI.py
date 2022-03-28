@@ -423,7 +423,7 @@ class SFLauncher(threading.Thread) :
 
 			if r:
 				logThread = LogThread(self.send_port, self.errHash)
-				logThread.setDaemon(True)
+				logThread.daemon = True
 				logThread.start()
 				self.processList.append(logThread)
 
@@ -563,7 +563,7 @@ def main() :
 
 	
 	countProcess = SFLauncher(args, log_port)
-	countProcess.setDaemon(True)
+	countProcess.daemon = True
 	countProcess.start()
 
 	global SHUTDOWN

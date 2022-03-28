@@ -135,7 +135,7 @@ if __name__ == "__main__" :
 	r = DCReader.DCReader(mdfs_client, "/RAW_DATA/CollectDir", "/Index/Share.idx", "1")
 
 	l = ListenServer("50001", r)
-	l.setDaemon(True)
+	l.daemon = True
 	l.start()
 
 	import time

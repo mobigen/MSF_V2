@@ -2,7 +2,7 @@
 # -*- coding: cp949 -*-
 
 VERSION = '1.4'
-# 	V1.3 (051107) :	memory leak 수정
+# 	V1.3 (051107) :	memory leak 占쏙옙占쏙옙
 #	V1.4 (051114) : -f option, -b option, log add
 
 import time, os, sys, threading, struct, cPickle, getopt, collections
@@ -51,7 +51,7 @@ class EventQueueServer(threading.Thread) :
 					continue
 
 				eqc = EventQueueChild(conn, Mode=self.mode)
-				eqc.setDaemon(True)
+				eqc.daemon = True
 				self.eqcList.append(eqc)
 				eqc.start()
 		except :
@@ -181,11 +181,11 @@ def main() :
 		eqcList = []
 
 		eqs =  EventQueueServer(sendPort, eqcList, Mode=mode)
-		eqs.setDaemon(True)
+		eqs.daemon = True
 		eqs.start()
 
 		server = EventQueueDist( eqcList, RecvType=socketType, RecvPort=recvPort, Mode=mode )
-		server.setDaemon(True)
+		server.daemon = True
 		server.start()
 
 		while 1 :

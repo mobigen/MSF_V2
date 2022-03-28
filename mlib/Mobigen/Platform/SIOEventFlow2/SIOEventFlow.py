@@ -667,7 +667,7 @@ class EventFlow(threading.Thread) :
 					retStrList.append("NOK : %s : process node name not exist\n" % groupName)
 
 		for thObj in thList :
-			thObj.setDaemon(True)
+			thObj.daemon = True
 			thObj.start()
 		for thObj in thList :
 			thObj.join()

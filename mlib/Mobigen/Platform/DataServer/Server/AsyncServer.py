@@ -78,7 +78,7 @@ class AsyncServer(threading.Thread) :
 				handle = \
 					self.RequestHandlerClass(request, self.conf, client_addr)
 				channel = AsyncChannel(request, client_addr, handle)
-				channel.setDaemon(True)
+				channel.daemon = True
 				channel.start()
 			except:
 				__LOG__.Exception()

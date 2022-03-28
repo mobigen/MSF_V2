@@ -204,7 +204,7 @@ def main() :
 			print 'fileTime=%s, key=%s, val=%s, opt=%s' % ( fileTime, key, val, opt )
 	
 	obj = Test('150.23.15.92', 'eva', 'hello.mobigen', '150.23.15.94', 60374, '/home/eva/mlib/PyModules/DataContainer/testdata', '20050801230000', 0, True )
-	obj.setDaemon(True)
+	obj.daemon = True
 	obj.start()
 
 	while True :

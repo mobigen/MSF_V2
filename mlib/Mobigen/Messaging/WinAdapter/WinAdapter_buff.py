@@ -5,12 +5,12 @@
 # version | date : writer : description
 #---------------------------------------------------------------
 # V1.0    | 070525 : jjinylee : begin
-# V2.0    | 070628 : jjinylee : buffer ¸ðµå, SendMessage -> SendMessageTimeout
-# V2.1    | 070630 : jjinylee : log ¸¦ client ¿Í  °ü·ÃµÈ log ´Â INFO ·Î ³²°ÜÁÜ
-# V2.2    | 070705 : jjinylee : SendMessageTimeout ÀÇ timeout À» 5sec
-# V2.3    | 070706 : jjinylee : putNoti - dereg ÇÒ¶§ connectorList ÀÇ Á¶ÀÛÀÌ ÀÏ¾î³ª¹Ç·Î, index ·Î Á¢±Ù
+# V2.0    | 070628 : jjinylee : buffer ï¿½ï¿½ï¿½, SendMessage -> SendMessageTimeout
+# V2.1    | 070630 : jjinylee : log ï¿½ï¿½ client ï¿½ï¿½  ï¿½ï¿½ï¿½Ãµï¿½ log ï¿½ï¿½ INFO ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+# V2.2    | 070705 : jjinylee : SendMessageTimeout ï¿½ï¿½ timeout ï¿½ï¿½ 5sec
+# V2.3    | 070706 : jjinylee : putNoti - dereg ï¿½Ò¶ï¿½ connectorList ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï¾î³ªï¿½Ç·ï¿½, index ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 # V3.0    | 070706 : jjinylee : health check
-# V3.1    | 070724 : jjinylee : SendMessageTimeout timeout Argument Ã³¸®, fail ½Ã  retry
+# V3.1    | 070724 : jjinylee : SendMessageTimeout timeout Argument Ã³ï¿½ï¿½, fail ï¿½ï¿½  retry
 #---------------------------------------------------------------
 
 
@@ -916,11 +916,11 @@ class gsWindow:
 		self.serverIp	= serverIp
 		self.serverPort	= serverPort
 		self.busTh 		= busThread( self.serverIp, self.serverPort, **opts )
-		self.busTh.setDaemon(True)
+		self.busTh.daemon = True
 		self.busTh.start()
 
 		self.queueTh 		= queueThread( )
-		self.queueTh.setDaemon(True)
+		self.queueTh.daemon = True
 		self.queueTh.start()		
 
 	#------------------------------------------------------------
