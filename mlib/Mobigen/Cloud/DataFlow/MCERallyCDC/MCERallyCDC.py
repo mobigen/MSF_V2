@@ -87,12 +87,12 @@ def main(args, buf_size, dc_mode, is_local) :
 	th_list = []
 
 	server = ListenServer.ListenServer(listen_port, deq)
-	server.setDaemon(True)
+	server.daemon = True
 	server.start()
 	th_list.append(server)
 
 	writer = DCWriter.DCWriter(mdfs_client, output_dir, buf_size, dc_mode, deq)
-	writer.setDaemon(True)
+	writer.daemon = True
 	writer.start()
 	th_list.append(writer)
 

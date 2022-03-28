@@ -5,13 +5,13 @@
 # version | date : writer : description
 #---------------------------------------------------------------
 # V1.0    | 070525 : jjinylee : begin
-# V2.0    | 070628 : jjinylee : buffer ¸ðµå, SendMessage -> SendMessageTimeout
-# V2.1    | 070630 : jjinylee : log ¸¦ client ¿Í  °ü·ÃµÈ log ´Â INFO ·Î ³²°ÜÁÜ
-# V2.2    | 070705 : jjinylee : SendMessageTimeout ÀÇ timeout À» 5sec
-# V2.3    | 070706 : jjinylee : putNoti - dereg ÇÒ¶§ connectorList ÀÇ Á¶ÀÛÀÌ ÀÏ¾î³ª¹Ç·Î, index ·Î Á¢±Ù
+# V2.0    | 070628 : jjinylee : buffer ï¿½ï¿½ï¿½, SendMessage -> SendMessageTimeout
+# V2.1    | 070630 : jjinylee : log ï¿½ï¿½ client ï¿½ï¿½  ï¿½ï¿½ï¿½Ãµï¿½ log ï¿½ï¿½ INFO ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+# V2.2    | 070705 : jjinylee : SendMessageTimeout ï¿½ï¿½ timeout ï¿½ï¿½ 5sec
+# V2.3    | 070706 : jjinylee : putNoti - dereg ï¿½Ò¶ï¿½ connectorList ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï¾î³ªï¿½Ç·ï¿½, index ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 # V3.0    | 070706 : jjinylee : health check
-# V3.1    | 070928 : jjinylee : SendMessageTimeout fail ½Ã , retry Argument Ã³¸® - 1¹ø retry
-# V3.2	  | 071121 : jjinylee : Client -> BUS ·Î NTI/STI º¸³¾¶§ strip('\n' ) ÇÏ´ø°É ¾ÈÇÏ°Ô ¼öÁ¤ ( gui ¿¡¼­ º¸³»´Â ´ë·Î by pass )
+# V3.1    | 070928 : jjinylee : SendMessageTimeout fail ï¿½ï¿½ , retry Argument Ã³ï¿½ï¿½ - 1ï¿½ï¿½ retry
+# V3.2	  | 071121 : jjinylee : Client -> BUS ï¿½ï¿½ NTI/STI ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ strip('\n' ) ï¿½Ï´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ ( gui ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ by pass )
 #---------------------------------------------------------------
 
 
@@ -201,7 +201,7 @@ def putNoti( cmd, connectorList, notiKey, msg ):
 
 				#-------------------------------------------------------
 				# if SendMessage  Failed, retry Flag : 07.09.28
-				# retry ÇÏÁö ¾ÊÀ»°æ¿ì : list ÀÇ index ¸¦  next ·Î Áõ°¡ÇÏ¿© ´ÙÀ½ connector ÁöÁ¤
+				# retry ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : list ï¿½ï¿½ index ï¿½ï¿½  next ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ connector ï¿½ï¿½ï¿½ï¿½
 				#-------------------------------------------------------
 				if g_RETRY_SENDFLAG == False :
 					idx 	= idx + 1
@@ -823,11 +823,11 @@ class gsWindow:
 		self.serverIp	= serverIp
 		self.serverPort	= serverPort
 		self.busTh 		= busThread( self.serverIp, self.serverPort, **opts )
-		self.busTh.setDaemon(True)
+		self.busTh.daemon = True
 		self.busTh.start()
 
 		self.queueTh 		= queueThread( )
-		self.queueTh.setDaemon(True)
+		self.queueTh.daemon = True
 		self.queueTh.start()		
 
 	#------------------------------------------------------------
@@ -1096,7 +1096,7 @@ if __name__ == "__main__":
 
 	try :
 		optStr = sfp.getOptStr()
-		optList, args = getopt.getopt(sys.argv[1:], optStr+'t:r', ['level=', 'output-file='] )	# 07.09.28 : 'r' Ãß°¡
+		optList, args = getopt.getopt(sys.argv[1:], optStr+'t:r', ['level=', 'output-file='] )	# 07.09.28 : 'r' ï¿½ß°ï¿½
 		if len(args) < 4 : raise Exception
 		opts = {}
 		for optKey, optVal in optList : opts[optKey] = optVal

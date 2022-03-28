@@ -86,7 +86,7 @@ def main(args, index_cycle, is_local) :
 	reader = DCReader.DCReader(mdfs_client, read_dir, index_file, index_cycle)
 
 	server = ListenServer.ListenServer(listen_port, reader, is_local)
-	server.setDaemon(True)
+	server.daemon = True
 	server.start()
 
 	if (mce_handler != None) :

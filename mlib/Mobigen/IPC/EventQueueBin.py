@@ -48,7 +48,7 @@ class EventQueueServer(threading.Thread) :
 		while 1 :
 			(conn, addr) = self.svrsock.accept()	
 			eqc = EventQueueChild(conn)
-			eqc.setDaemon(True)
+			eqc.daemon = True
 			self.eqcList.append(eqc)
 			eqc.start()
 	
@@ -93,7 +93,7 @@ class EventQueueDist(threading.Thread, SockIPC.SockIPC) :
 
 		self.eqcList = []
 		self.eqs =  EventQueueServer(sendPort, self.eqcList, **args)
-		self.eqs.setDaemon(True)
+		self.eqs.daemon = True
 
 	def actionAppendLeft(self, val) :
 		return val
@@ -145,7 +145,7 @@ def main() :
 		sys.exit()
 
 	server = EventQueueDist( int(args[1]), RecvPort=args[0] )
-	server.setDaemon(True)
+	server.daemon = True
 	server.start()
 
 	while 1 :

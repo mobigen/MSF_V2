@@ -62,7 +62,7 @@ if __name__ == "__main__" :
 	deq = collections.deque()
 
 	dcw = DCWriter(mdfs_client, "/RAW_DATA/CollectDir", 0, "a", deq)
-	dcw.setDaemon(True)
+	dcw.daemon = True
 	dcw.start()
 
 	for i in range(0, 100) :

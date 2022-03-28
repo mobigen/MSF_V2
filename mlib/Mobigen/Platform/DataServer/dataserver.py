@@ -64,7 +64,7 @@ def main() :
 	thread_list.append(CacheDump.start(conf))
 
 	for thread in thread_list :
-		thread.setDaemon(True)
+		thread.daemon = True
 		thread.start()
 
 	try :
