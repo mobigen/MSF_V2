@@ -280,20 +280,20 @@ if __name__=='__main__':
 
         options, args = getopt.getopt(sys.argv[3:], "s:e:", ["stime=", "etime=", "help"])
         es = SFTPCollector(sys.argv[1], sys.argv[2], options, args)
-        es.setDaemon(True)
+        es.daemon = True
         es.start()
 
         while G_SHUTDOWN :
             if not es or not es.isAlive() :
                 es = SFTPCollector(options, args)
-                es.setDaemon(True)
+                es.daemon = True
                 es.start()
 
             #30분동안 동작하지 않았다면?????
             if es.RUN_TIME < datetime.datetime.now() - datetime.timedelta(minutes = 30) :
                 __LOG__.Trace('Process Hangs......ReStart')
                 es = Collector_FTP()
-                es.setdaemon(True)
+                es.daemon = True
                 es.start()
 
             time.sleep(60)
