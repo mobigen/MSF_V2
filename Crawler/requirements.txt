@@ -9,7 +9,7 @@ w3lib==1.22.0
 msgpack==1.0.0
 fs==2.4.11
 selenium==3.141.0
-Twisted==20.3.0
+Twisted==22.4.0
 croniter==0.3.34
 pytest==5.4.3
 scipy==1.5.2
